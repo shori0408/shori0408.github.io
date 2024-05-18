@@ -258,11 +258,14 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\frac &#123;\partial J(\theta)&#125;&#123;\partial \theta_j&#125;=-\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))\frac&#123;\partial&#125;&#123;\partial \theta_j&#125;(y^i-h_\theta(x^i))\\</span><br><span class="line">=-\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))\frac&#123;\partial&#125;&#123;\partial\theta_j&#125;(\sum_&#123;j=0&#125;^&#123;n&#125;\theta_jx_j^i-y^i)=\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))x^i_j</span><br></pre></td></tr></table></figure>
 
 
-<p>$$<br>\frac {\partial J(\theta)}{\partial \theta_j}&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial \theta_j}(y^i-h_\theta(x^i))\<br>&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial\theta_j}(\sum_{j&#x3D;0}^{n}\theta_jx_j^i-y^i)&#x3D;\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))x^i_j<br>$$</p>
+<p>$$<br>\frac {\partial J(\theta)}{\partial \theta_j}&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial \theta_j}(y^i-h_\theta(x^i))\<br>$$</p>
+<p>$$<br>&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial\theta_j}(\sum_{j&#x3D;0}^{n}\theta_jx_j^i-y^i)&#x3D;\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))x^i_j<br>$$</p>
 <ol start="5">
-<li><p>case环境的使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">\int x\,\mathrm&#123;d&#125; x\\</span><br><span class="line">b^2</span><br><span class="line">\end&#123;cases&#125;</span><br></pre></td></tr></table></figure></li>
+<li>case环境的使用</li>
 </ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">\int x\,\mathrm&#123;d&#125; x\\</span><br><span class="line">b^2</span><br><span class="line">\end&#123;cases&#125;</span><br></pre></td></tr></table></figure>
+
+
 <p>$$<br>a&#x3D;<br>\begin{cases}<br>\int x,\mathrm{d} x\<br>b^2<br>\end{cases}<br>$$</p>
 <ol start="6">
 <li><p>带方框的等式</p>
