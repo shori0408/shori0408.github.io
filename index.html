@@ -334,6 +334,300 @@
 
 
 <p>$$<br>\begin{aligned}<br>\left.\begin{aligned}<br>B’&amp;&#x3D;-\partial \times E \<br>E’&amp;&#x3D;\partial\times B-4paij<br>\end{aligned}<br>\right}<br>\quad \text{Maxwell’s equations}<br>\end{aligned}<br>$$</p>
+<p>$$<br>\begin{aligned}<br>\sigma_1&amp;&#x3D;x+y\quad&amp;\sigma_2&amp;&#x3D;\frac{x}{y}\<br>\sigma_1&amp;’&#x3D;\frac{\partial x+y}{\partial x}\quad&amp;\sigma_2&amp;&#x3D;\frac{\partial \frac{x}{y}}{\partial x}<br>\end{aligned}\[5ex]<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">\sigma_1&amp;=x+y\quad&amp;\sigma_2&amp;=\frac&#123;x&#125;&#123;y&#125;\\</span><br><span class="line">\sigma_1&amp;&#x27;=\frac&#123;\partial x+y&#125;&#123;\partial x&#125;\quad&amp;\sigma_2&amp;=\frac&#123;\partial \frac&#123;x&#125;&#123;y&#125;&#125;&#123;\partial x&#125;</span><br><span class="line">\end&#123;aligned&#125;\\[5ex]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">a_n=\frac&#123;1&#125;&#123;pai&#125;&amp;\int_&#123;-pai&#125;^&#123;pai&#125;f(x)\cos nx\mathrm&#123;d&#125;x\\</span><br><span class="line">=\frac&#123;1&#125;&#123;pai&#125;&amp;\int_&#123;-pai&#125;^&#123;pai&#125;x^2\cos nx\mathrm&#123;d&#125;x\\</span><br><span class="line">J(\theta)=-frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=1&#125;^&#123;m&#125;y_ilogh_\theta(x_i)+(1-y_i)log(1-h_\theta(x_i))</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\begin{aligned}<br>a_n&#x3D;\frac{1}{pai}&amp;\int_{-pai}^{pai}f(x)\cos nx\mathrm{d}x\<br>&#x3D;\frac{1}{pai}&amp;\int_{-pai}^{pai}x^2\cos nx\mathrm{d}x\<br>J(\theta)&#x3D;-frac{1}{m}\sum_{i&#x3D;1}^{m}y_ilogh_\theta(x_i)+(1-y_i)log(1-h_\theta(x_i))<br>\end{aligned}<br>$$</p>
+<p><strong>公式编辑的编号设置</strong></p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\tag{标号}</td>
+<td>公式宏包序号设置命令，可以用于带星号公式环境中的公式行</td>
+</tr>
+<tr>
+<td>\tag*{标号}</td>
+<td>作用与\tag相同，知识标号两侧没有圆括号</td>
+</tr>
+</tbody></table>
+<p>数学算式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x^2+y^2=z^2\tag&#123;1$&#x27;$&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>$$<br>\begin{aligned}<br>x^2+y^2&#x3D;z^2<br>\end{aligned}<br>\tag{1}<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x^4+y^4=z^4\tag&#123;*&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\begin{aligned}<br>x^4+y^4&#x3D;z^4<br>\end{aligned}<br>\tag{*}<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x^5+y^5=z^5\tag*&#123;*&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>x^5+y^5&#x3D;z^5\tag*{*}<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x^6+y^6=z^6\tag&#123;1-1&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>x^6+y^6&#x3D;z^6\tag{1-1}<br>$$</p>
+<h2 id="矩阵-1"><a href="#矩阵-1" class="headerlink" title="矩阵"></a><strong>矩阵</strong></h2><p>数学算式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;pmatrix&#125;1 &amp; 2 \\ 3 &amp; 4\\ \end&#123;pmatrix&#125;\\</span><br><span class="line">\begin&#123;bmatrix&#125;1&amp;2\\3&amp;4\\ \end&#123;bmatrix&#125;\\</span><br><span class="line">\begin&#123;Bmatrix&#125;1&amp;2\\3&amp;4\\ \end&#123;Bmatrix&#125;\\</span><br><span class="line">\begin&#123;Vmatrix&#125;1&amp;2\\3&amp;4\\ \end&#123;Vmatrix&#125;\\</span><br><span class="line">\begin&#123;pmatrix&#125;1&amp;a_1&amp;a_1^2&amp;\cdots&amp;a_1^n\\</span><br><span class="line">1&amp;a_2&amp;a_2^2&amp;\cdots&amp;a_2^n&amp;\\</span><br><span class="line">\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\</span><br><span class="line">1&amp;a_m&amp;a_m^2&amp;\cdots&amp;a_n^n</span><br><span class="line">\end&#123;pmatrix&#125;</span><br><span class="line">\tag&#123;n&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\begin{pmatrix}1 &amp; 2 \ 3 &amp; 4\ \end{pmatrix}\<br>\begin{bmatrix}1&amp;2\3&amp;4\ \end{bmatrix}\<br>\begin{Bmatrix}1&amp;2\3&amp;4\ \end{Bmatrix}\<br>\begin{Vmatrix}1&amp;2\3&amp;4\ \end{Vmatrix}\<br>\begin{pmatrix}1&amp;a_1&amp;a_1^2&amp;\cdots&amp;a_1^n\<br>1&amp;a_2&amp;a_2^2&amp;\cdots&amp;a_2^n&amp;\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>1&amp;a_m&amp;a_m^2&amp;\cdots&amp;a_n^n<br>\end{pmatrix}<br>\tag{n}<br>$$</p>
+<ol>
+<li><p>不带括号的矩阵</p>
+<p>数学算式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\tag&#123;1&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>$$<br>\begin{matrix}<br>1&amp;2&amp;3\<br>4&amp;5&amp;6\<br>7&amp;8&amp;9<br>\end{matrix}<br>\tag{1}<br>$$</p>
+</li>
+<li><p>带小括号的矩阵</p>
+</li>
+</ol>
+<p>   数学算式：</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left(</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right)</span><br><span class="line">\tag&#123;2&#125;</span><br></pre></td></tr></table></figure>
+
+<p>   $$<br>   \left(<br>   \begin{matrix}<br>   1&amp;2&amp;3\<br>   4&amp;5&amp;6\<br>   7&amp;8&amp;9<br>   \end{matrix}<br>   \right)<br>   \tag{2}<br>   $$</p>
+<ol start="3">
+<li><p>带中括号的矩阵</p>
+<p>数学算式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right\&#125;</span><br><span class="line">\tag&#123;3&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\left[<br>\begin{matrix}<br>1&amp;2&amp;3\<br>4&amp;5&amp;6\<br>7&amp;8&amp;9<br>\end{matrix}<br>\right]<br>\tag{3}<br>$$</p>
+</li>
+<li><p>带大括号的矩阵</p>
+<p>数学算式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left&#123;</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right&#125;</span><br><span class="line">\tag&#123;4&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\left{<br>\begin{matrix}<br>1&amp;2&amp;3\<br>4&amp;5&amp;6\<br>7&amp;8&amp;9<br>\end{matrix}<br>\right}<br>\tag{4}<br>$$</p>
+</li>
+<li><p>带省略号的矩阵</p>
+<p>数学算式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\left[</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">a&amp;b&amp;\cdots&amp;a\\</span><br><span class="line">b&amp;b&amp;\cdots&amp;b\\</span><br><span class="line">\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\</span><br><span class="line">c&amp;c&amp;\cdots&amp;c&amp;</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right]</span><br><span class="line">\tag&#123;5&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\left[<br>\begin{matrix}<br>a&amp;b&amp;\cdots&amp;a\<br>b&amp;b&amp;\cdots&amp;b\<br>\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>c&amp;c&amp;\cdots&amp;c&amp;<br>\end{matrix}<br>\right]<br>\tag{5}<br>$$</p>
+</li>
+<li><p>带横线&#x2F;竖线分割的矩阵：</p>
+<p>数学算式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left[</span><br><span class="line">\begin&#123;array&#125;&#123;c|cc&#125;</span><br><span class="line">1&amp;2&amp;3&amp;\\</span><br><span class="line">4&amp;5&amp;6&amp;\\</span><br><span class="line">7&amp;8&amp;9&amp;</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right]</span><br><span class="line">\tag&#123;6&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\left[<br>\begin{array}{c|cc}<br>1&amp;2&amp;3&amp;\<br>4&amp;5&amp;6&amp;\<br>7&amp;8&amp;9&amp;<br>\end{array}<br>\right]<br>\tag{6}<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\left[</span><br><span class="line">\begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">1&amp;2&amp;3&amp;\\ \hline</span><br><span class="line">4&amp;5&amp;6&amp;\\</span><br><span class="line">7&amp;8&amp;9&amp;</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right]</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\left[<br>\begin{array}{ccc}<br>1&amp;2&amp;3&amp;\ \hline<br>4&amp;5&amp;6&amp;\<br>7&amp;8&amp;9&amp;<br>\end{array}<br>\right]<br>$$</p>
+</li>
+</ol>
+<p><strong>上下符号</strong></p>
+<table>
+<thead>
+<tr>
+<th>数学算式</th>
+<th>Markdown公式</th>
+<th>核心语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$a_i$,$a_{pre}$</td>
+<td>a_i,a_{pre}</td>
+<td>下标使用_</td>
+</tr>
+<tr>
+<td>$a^i$,$a^{pre}$</td>
+<td>a^i,a^{pre}</td>
+<td>上标使用^</td>
+</tr>
+<tr>
+<td>$\bar{a}$</td>
+<td>\bar{a}</td>
+<td></td>
+</tr>
+<tr>
+<td>${a}$</td>
+<td>\cute{a}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\breve{a}$</td>
+<td>\breve{a}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\grave{a}$</td>
+<td>\grave{a}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\dot{a}$</td>
+<td>\dot{a}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\ddot{a}$</td>
+<td>\ddot{a}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\dot{\dot x}$</td>
+<td>\dot{\dot x}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\hat{a}$</td>
+<td>\hat{a}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\widehat{xy}$</td>
+<td>\widehat{xy}</td>
+<td>多字符可用</td>
+</tr>
+<tr>
+<td>$\check{a}$</td>
+<td>\check{a}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\tilde{a}$</td>
+<td>\tilde{a}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\vec{a}$</td>
+<td>\vec{a}</td>
+<td>矢量使用vec{}</td>
+</tr>
+<tr>
+<td>$\overrightarrow{xy}$</td>
+<td>\overrightarow{xy}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\overline{a+b+c+d}$</td>
+<td>\overline{a+b+c+d}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\underline{a+b+c+d}$</td>
+<td>\underline{a+b+c+d}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\overbrace{a+b+c+d}$</td>
+<td>\overbrace{a+b+c+d}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\underbrace{a+b+c+d}$</td>
+<td>\underbrace{a+b+c+d}</td>
+<td></td>
+</tr>
+<tr>
+<td>$\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}$</td>
+<td>\overbrace{a+underbrace{b+c}_1.0}+d}^{2.0}</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="括号-1"><a href="#括号-1" class="headerlink" title="括号"></a><strong>括号</strong></h3><p>小括号与方括号</p>
+<ol>
+<li><p>使用原始的()，[]得到的括号大小是固定的，如(2+3)[3+4]:</p>
+</li>
+<li><p>使用\left(或者\right)可以使括号大小与邻近的公式相适应（改语句适用于所有括号类型），如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\left(</span><br><span class="line">\frac&#123;x&#125;&#123;y&#125;</span><br><span class="line">\right)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>$$<br>\left(<br>\frac{x}{y}<br>\right)<br>$$</p>
+<table>
+<thead>
+<tr>
+<th>数学算式</th>
+<th>Markdown公式</th>
+<th>核心语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(,)$</td>
+<td>(,)</td>
+<td></td>
+</tr>
+<tr>
+<td>$[,]$</td>
+<td>[,]</td>
+<td></td>
+</tr>
+<tr>
+<td>$&lt;,&gt;$</td>
+<td>\lang,\lang</td>
+<td></td>
+</tr>
+<tr>
+<td>$</td>
+<td>,</td>
+<td>$</td>
+</tr>
+<tr>
+<td>$\lvert,\rvert$</td>
+<td>\lvert,\rvert</td>
+<td></td>
+</tr>
+<tr>
+<td>$\lbrace,\rbrace$</td>
+<td>\lbrace,\rbiace</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>增大括号的方法：</p>
+<table>
+<thead>
+<tr>
+<th>数学算式</th>
+<th>Markdown</th>
+<th>核心语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$(x)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$\big(x\big)$</td>
+<td>\big(x\big)</td>
+<td></td>
+</tr>
+<tr>
+<td>$\Big(x\Big)$</td>
+<td>\Big(x\Big)</td>
+<td></td>
+</tr>
+<tr>
+<td>$\bigg(x\bigg)$</td>
+<td>\bigg(x\bigg)</td>
+<td></td>
+</tr>
+<tr>
+<td>$\Bigg(x\Bigg)$</td>
+<td>\Bigg(x\Bigg)</td>
+<td></td>
+</tr>
+<tr>
+<td>$\Bigg(\bigg(\Big(\big(x\big)\Big)\bigg)\Bigg)$</td>
+<td>\Bigg(\bigg(\Big(\big(x\big)\Big)\bigg)\Bigg)</td>
+<td></td>
+</tr>
+<tr>
+<td>$\Bigg[\bigg[\Big[\big[x\big]\Big]\bigg]\Bigg]$</td>
+<td>\Bigg[\bigg[\Big[\big[x\big]\Big]\bigg]\Bigg]</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="分数与根式"><a href="#分数与根式" class="headerlink" title="分数与根式"></a><strong>分数与根式</strong></h3><p>分式的表示方法：</p>
+<ol>
+<li>使用\frac{a}{b}表示分式，比如$\frac{a+c+1}{b+c+2}$;</li>
+<li>使用\over来分割一个组的前后两部分，如$\over{b+1}{a+1}$</li>
+</ol>
+<p>\frac 表示连分式：</p>
+<p>数学算式：<br>$$<br>x&#x3D;a_0+\frac{1^2}<br>$$</p>
  
       <!-- reward -->
       
