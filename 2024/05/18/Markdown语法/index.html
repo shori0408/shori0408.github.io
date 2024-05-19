@@ -178,11 +178,11 @@
 </ol>
 <p>$$<br>\frac{\partial J(\theta)}{\partial \theta_j}&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))x^i<br>$$</p>
 <p>推导过程</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\frac &#123;\partial J(\theta)&#125;&#123;\partial \theta_j&#125;=-\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))\frac&#123;\partial&#125;&#123;\partial \theta_j&#125;(y^i-h_\theta(x^i))\\</span><br><span class="line">=-\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))\frac&#123;\partial&#125;&#123;\partial\theta_j&#125;(\sum_&#123;j=0&#125;^&#123;n&#125;\theta_jx_j^i-y^i)=\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))x^i_j</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\frac &#123;\partial J(\theta)&#125;&#123;\partial \theta_j&#125;=\\</span><br><span class="line">-\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))\frac&#123;\partial&#125;&#123;\partial \theta_j&#125;(y^i-h_\theta(x^i))</span><br><span class="line">=-\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))\frac&#123;\partial&#125;&#123;\partial\theta_j&#125;(\sum_&#123;j=0&#125;^&#123;n&#125;\theta_jx_j^i-y^i&#125;\\</span><br><span class="line">=\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))x^i_j</span><br></pre></td></tr></table></figure>
 
 
-<p>$$<br>\frac {\partial J(\theta)}{\partial \theta_j}&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial \theta_j}(y^i-h_\theta(x^i))\<br>$$</p>
-<p>$$<br>&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial\theta_j}(\sum_{j&#x3D;0}^{n}\theta_jx_j^i-y^i)&#x3D;\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))x^i_j<br>$$</p>
+<p>$$<br>\frac {\partial J(\theta)}{\partial \theta_j}&#x3D;\\-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial \theta_j}(y^i-h_\theta(x^i))\<br>$$</p>
+<p>$$<br>&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial\theta_j}(\sum_{j&#x3D;0}^{n}\theta_jx_j^i-y^i)\\&#x3D;\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))x^i_j<br>$$</p>
 <ol start="5">
 <li>case环境的使用</li>
 </ol>
@@ -262,7 +262,7 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">a_n=\frac&#123;1&#125;&#123;pai&#125;&amp;\int_&#123;-pai&#125;^&#123;pai&#125;f(x)\cos nx\mathrm&#123;d&#125;x\\</span><br><span class="line">=\frac&#123;1&#125;&#123;pai&#125;&amp;\int_&#123;-pai&#125;^&#123;pai&#125;x^2\cos nx\mathrm&#123;d&#125;x\\</span><br><span class="line">J(\theta)=-frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=1&#125;^&#123;m&#125;y_ilogh_\theta(x_i)+(1-y_i)log(1-h_\theta(x_i))</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure>
 
-<p>$$<br>\begin{aligned}<br>a_n&#x3D;\frac{1}{pai}&amp;\int_{-pai}^{pai}f(x)\cos nx\mathrm{d}x\<br>&#x3D;\frac{1}{pai}&amp;\int_{-pai}^{pai}x^2\cos nx\mathrm{d}x\<br>J(\theta)&#x3D;-frac{1}{m}\sum_{i&#x3D;1}^{m}y_ilogh_\theta(x_i)+(1-y_i)log(1-h_\theta(x_i))<br>\end{aligned}<br>$$</p>
+<p>$$<br>\begin{aligned}<br>a_n&#x3D;&amp;\frac{1}{\pi}&amp;\int_{-\pi}^{\pi}&amp;f(x)\cos nx&amp;\mathrm{d}x&amp;\<br>&#x3D;&amp;\frac{1}{\pi}&amp;\int_{-\pi}^{\pi}&amp;x^2\cos nx&amp;\mathrm{d}x&amp;\<br>J(\theta)&#x3D;&amp;-\frac{1}{m}&amp;\sum_{i&#x3D;1}^{m}&amp;y_ilogh_\theta(x_i)&amp;+(1-y_i)&amp;log(1-h_\theta(x_i))&amp;<br>\end{aligned}<br>$$</p>
 <p><strong>公式编辑的编号设置</strong></p>
 <table>
 <thead>
@@ -297,7 +297,11 @@
 <h2 id="矩阵-1"><a href="#矩阵-1" class="headerlink" title="矩阵"></a><strong>矩阵</strong></h2><p>数学算式：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;pmatrix&#125;1 &amp; 2 \\ 3 &amp; 4\\ \end&#123;pmatrix&#125;\\</span><br><span class="line">\begin&#123;bmatrix&#125;1&amp;2\\3&amp;4\\ \end&#123;bmatrix&#125;\\</span><br><span class="line">\begin&#123;Bmatrix&#125;1&amp;2\\3&amp;4\\ \end&#123;Bmatrix&#125;\\</span><br><span class="line">\begin&#123;Vmatrix&#125;1&amp;2\\3&amp;4\\ \end&#123;Vmatrix&#125;\\</span><br><span class="line">\begin&#123;pmatrix&#125;1&amp;a_1&amp;a_1^2&amp;\cdots&amp;a_1^n\\</span><br><span class="line">1&amp;a_2&amp;a_2^2&amp;\cdots&amp;a_2^n&amp;\\</span><br><span class="line">\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\</span><br><span class="line">1&amp;a_m&amp;a_m^2&amp;\cdots&amp;a_n^n</span><br><span class="line">\end&#123;pmatrix&#125;</span><br><span class="line">\tag&#123;n&#125;</span><br></pre></td></tr></table></figure>
 
-<p>$$<br>\begin{pmatrix}1 &amp; 2 \ 3 &amp; 4\ \end{pmatrix}\<br>\begin{bmatrix}1&amp;2\3&amp;4\ \end{bmatrix}\<br>\begin{Bmatrix}1&amp;2\3&amp;4\ \end{Bmatrix}\<br>\begin{Vmatrix}1&amp;2\3&amp;4\ \end{Vmatrix}\<br>\begin{pmatrix}1&amp;a_1&amp;a_1^2&amp;\cdots&amp;a_1^n\<br>1&amp;a_2&amp;a_2^2&amp;\cdots&amp;a_2^n&amp;\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>1&amp;a_m&amp;a_m^2&amp;\cdots&amp;a_n^n<br>\end{pmatrix}<br>\tag{n}<br>$$</p>
+<p>$$<br>\begin{pmatrix}1 &amp; 2 \ 3 &amp; 4\ \end{pmatrix}\<br>$$</p>
+<p>$$<br>\begin{bmatrix}1&amp;2\3&amp;4\ \end{bmatrix}\<br>$$</p>
+<p>$$<br>\begin{Bmatrix}1&amp;2\3&amp;4\ \end{Bmatrix}\<br>$$</p>
+<p>$$<br>\begin{Vmatrix}1&amp;2\3&amp;4\ \end{Vmatrix}\<br>$$</p>
+<p>$$<br>\begin{pmatrix}1&amp;a_1&amp;a_1^2&amp;\cdots&amp;a_1^n\<br>1&amp;a_2&amp;a_2^2&amp;\cdots&amp;a_2^n&amp;\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>1&amp;a_m&amp;a_m^2&amp;\cdots&amp;a_n^n<br>\end{pmatrix}<br>\tag{n}<br>$$</p>
 <ol>
 <li><p>不带括号的矩阵</p>
 <p>数学算式：</p>
@@ -307,13 +311,11 @@
 <p>$$<br>\begin{matrix}<br>1&amp;2&amp;3\<br>4&amp;5&amp;6\<br>7&amp;8&amp;9<br>\end{matrix}<br>\tag{1}<br>$$</p>
 </li>
 <li><p>带小括号的矩阵</p>
-</li>
-</ol>
-<p>   数学算式：</p>
-   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left(</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right)</span><br><span class="line">\tag&#123;2&#125;</span><br></pre></td></tr></table></figure>
+<p>数学算式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left(</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right)</span><br><span class="line">\tag&#123;2&#125;</span><br></pre></td></tr></table></figure>
 
-<p>   $$<br>   \left(<br>   \begin{matrix}<br>   1&amp;2&amp;3\<br>   4&amp;5&amp;6\<br>   7&amp;8&amp;9<br>   \end{matrix}<br>   \right)<br>   \tag{2}<br>   $$</p>
-<ol start="3">
+<p>$$<br>\left(<br>\begin{matrix}<br>1&amp;2&amp;3\<br>4&amp;5&amp;6\<br>7&amp;8&amp;9<br>\end{matrix}<br>\right)<br>\tag{2}<br>$$</p>
+</li>
 <li><p>带中括号的矩阵</p>
 <p>数学算式：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right\&#125;</span><br><span class="line">\tag&#123;3&#125;</span><br></pre></td></tr></table></figure>

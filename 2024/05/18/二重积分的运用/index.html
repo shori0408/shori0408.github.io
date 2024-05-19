@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">997</span>
+            <span class="post-count">1.6k</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">4 min</span>
+            <span class="post-count">7 min</span>
         </span>
     </span>
 </div>
@@ -120,7 +120,13 @@
 <p>例题1：求半径为R的半球体的表面积。<br>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\\<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>&#x3D;2\int_{-R}^{R}\mathrm{d}x\int_{0}^{\sqrt{R^2-x^2}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}y\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^R&#x3D;2\pi R<br>$$<br>答案为2$\pi$R.</p>
 <p>例题2：设由一颗地球同步轨道通信卫星，距地面的高度为h&#x3D;36.000km，运行的角速度与地球自转的角速度相同，试计算该通信卫星的覆盖面积与地球表面积的比值(地球半径R&#x3D;6400km)。</p>
 <p>由分析可知，卫星信号的半顶角可以设为$\alpha$,则覆盖面积的投影为$D_{xy}$&#x3D;{$(x,y)$|$x^2+y^2&lt;&#x3D;R^2\sin^2\alpha$},</p>
-<p>而原本的方程为$z&#x3D;\sqrt{R^2-x^2-y^2}$,那么我们可以写出对应的面积公式。<br>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\ \<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R\sin\alpha}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^{R\sin\alpha}&#x3D;2\pi R(1-\cos\alpha)\\<br>而地球的表面积S_1&#x3D;4\pi R\\<br>故比值\mu&#x3D;\frac{S}{S_1}\times100%\\<br>\mu&#x3D;\frac{1+\cos\alpha}{2}\\<br>\cos \alpha&#x3D;\frac{H}{H+h}\\<br>得\mu&#x3D;42.5%<br>$$</p>
+<p>而原本的方程为$z&#x3D;\sqrt{R^2-x^2-y^2}$,那么我们可以写出对应的面积公式。</p>
+<p>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\ \<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R\sin\alpha}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^{R\sin\alpha}&#x3D;2\pi R(1-\cos\alpha)\\<br>而地球的表面积S_1&#x3D;4\pi R\\<br>故比值\mu&#x3D;\frac{S}{S_1}\times100%\\<br>\mu&#x3D;\frac{1+\cos\alpha}{2}\\<br>\cos \alpha&#x3D;\frac{H}{H+h}\\<br>得\mu&#x3D;42.5%<br>$$</p>
+<h2 id="质心"><a href="#质心" class="headerlink" title="质心"></a>质心</h2><p>设有一平面薄片，占有xOy平面上的闭区域D，在点$(x,y)$处的面密度为$\rho(x,y)$,假定$\mu(x,y)$在D上连续。现在求该薄片的质心坐标。</p>
+<p>在闭区域D上任取一点$P(x,y)$及包含点P的直径很小的闭区域$\mathrm{d}{\sigma}$，则平面薄片对x轴和y轴的静力矩元素分别为<br>$$<br>\mathrm{d}M_x&#x3D;y\mu(x,y)\mathrm{d}{\sigma}\\<br>M_x&#x3D;\iint_{D}y\mu(x,y)\mathrm{d}{\sigma}\\<br>\mathrm{d}M_y&#x3D;x\mu(x,y)\mathrm{d}{\sigma}\\<br>M_y&#x3D;\iint_{D}xy(x,y)\mathrm{d}{\sigma}\\<br>M&#x3D;\iint_{D}\mu(x,y)\mathrm{d}{\sigma}<br>$$<br>设平面薄片的质心坐标为$(\bar x,\bar y)$，由于$\bar x M&#x3D;M_y,\bar y M&#x3D;M_x$，于是：<br>$$<br>\bar x&#x3D;\frac{M_y}{M}&#x3D;\frac{\iint_{D}x\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>\bar y&#x3D;\frac{M_x}{M}&#x3D;\frac{\iint_{D}y\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>$$<br>若平面薄片的面密度是常数，面积为$\sigma$​，则平面薄片的质心（成为形心）的公式为<br>$$<br>\bar x&#x3D;\frac{1}{\sigma}\iint_{D}x{d}{\sigma}\\<br>\bar y&#x3D;\frac{1}{\sigma}\iint_{D}y{d}{\sigma}\\<br>$$<br><strong>例题3</strong></p>
+<p>求位于两圆$\rho&#x3D;2\sin\theta$和$\rho&#x3D;4\sin\theta$之间的均匀薄片的质心</p>
+<p>分析可知，图形关于y轴对称，最后质心一定在y轴上，且面密度为常数。<br>$$<br>\bar y&#x3D;\frac{\iint_{D}y{d}{\sigma}}{S_总}\\<br>\iint_{D}y{d}{\sigma}&#x3D;\int_{0}^{\pi}{d}{\theta}\int_{2\sin {\theta}}^{4\sin\theta}\rho\sin\theta\rho{d}{\rho}{}\\<br>&#x3D;\int_{0}^{\pi}\sin\theta[\frac{1}{3}\rho^3]<em>{2\sin\theta}^{4sin\theta}{d}{\theta}\\<br>&#x3D;\frac{56}{3}\int</em>{0}^{\pi}\sin^4\theta{d}{\theta}\\<br>&#x3D;\frac{112}{3}\frac{3}{4}\frac{1}{2}\frac{\pi}{2}\\<br>&#x3D;7\pi<br>$$<br><strong>例题4</strong></p>
+<p>求均匀半球体的质心<br>$$<br>x^2+y^2+z^2&#x3D;R^2\\<br>可以得知，质心在z轴上\\<br>\bar z&#x3D;\frac{1}{V_总}\iiint_{V_1}z{d}{V}\\<br>\iiint_{V_1}z{d}{V}&#x3D;\\<br>&#x3D;\int_{0}^{\frac{\pi}{2}}{d}{\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho\cos\phi\rho^2\sin\phi{d}{\rho}\\<br>&#x3D;\frac{1}{4}\int_{0}^{\frac{\pi}{2}}\sin2\phi{d}{2\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho^3{d}{\rho}\\<br>&#x3D;\frac{\pi}{4}R^4\\<br>所以\bar z&#x3D;\\<br>\frac{\frac{\pi}{4}R^4}{\frac{2\pi R^3}{3}}\\<br>&#x3D;\frac{3a}{8}\\<br>故最后坐标为\left(0,0,\frac{3a}{8}\right)<br>$$</p>
  
       <!-- reward -->
       
