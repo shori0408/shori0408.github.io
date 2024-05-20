@@ -316,11 +316,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>大学物理</title>
-    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>二重积分的运用</title>
     <url>/2024/05/18/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%94%A8/</url>
     <content><![CDATA[<h1 id="曲面的面积"><a href="#曲面的面积" class="headerlink" title="曲面的面积"></a>曲面的面积</h1><p>先讨论空间平面Ⅱ中的有界闭区域的面积和它在Oxy面上投影面的面积的关系。设平面Ⅱ与xOy平面的夹角为$\theta$(0&lt;&#x3D;$\theta$&lt;&#x3D;$\frac{\pi}{2}$),就是说平面Ⅱ方向上的法向量$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角为$\theta$.任意取平面Ⅱ上一片矩形区域A，其边界与x轴或者y轴平行（如图8.43所示），则矩形区域A的面积为A&#x3D;ab，其在xOy平面上的投影的面积</p>
@@ -344,31 +339,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>存在与虚无</title>
-    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
-    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
-<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>函数</title>
-    <url>/2024/05/17/%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<p>   ▪   函数定义：<br>将我们设计好的算法，单独封装出来。<br>函数的参数，计算所需要的参数或者条件。<br>函数的返回值、可有可无。<br>功能性函数和数值形函数。<br>定义一个函数<br>1：定义函数名<br>类型标识符 函数名（形式参数表）<br>｛语句序列<br>｝<br>形式参数定义模式：<type1> num1.<br>2：形参只在函数中具有效果。<br>返回值就是函数的计算结果。<br>类型标识符（函数返回值的类型） 函数名（形式参数表）<br>｛语句序列<br>return xx；<br>｝<br>无返回值的函数用void作为类型标识符，也不用写return语句。<br>   ▪   函数调用：<br>对于定义好的函数，以及c++库里面的函数，我们直接调用就可以了。<br>调用函数的规则：<br>1：调用函数之前需要事前声明<br>函数的定义和调用不在一个程序之中。<br>调用函数之前，我们需要进行一个函数的原型声明。<br>调用形式：<br>函数名（实参列表）<br>2：嵌套调用：<br>函数之间互相调用。<br>3：递归调用：<br>函数自己调用自己。<br>例题1：指数函数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int i,j;<br>int c;<br>cout&lt;&lt;”Please enter the numbers”<br>cin&gt;&gt;i;<br>cin&gt;&gt;j;<br>c&#x3D;pow(i,j);<br>cout&lt;&lt;c&lt;&lt;end;<br>return 0;<br>}<br>例题2：将二进制数转化为十进制数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int value&#x3D;9;<br>cout&lt;&lt;”Enter an 8bit binary number”;<br>for(int i&#x3D;7;i&gt;&#x3D;0;i–)<br>{char ch;<br>cin&gt;&gt;ch;<br>if(ch&#x3D;&#x3D;‘1’)<br>{velus+&#x3D;static_cast<int>(power(2,i);}<br>cout&lt;&lt;”Decimal value is”&lt;&lt;value&lt;&lt;endl;<br>}<br>double power (double x,int n)<br>{<br>double val&#x3D;1.0;<br>while(n–)<br>val*&#x3D;x;<br>return val;}</int></type1></p>
-<p>例题三：计算π的值<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>double arctanx(int x)<br>{double sqr&#x3D;x<em>x;<br>double e&#x3D;x;<br>double r&#x3D;0;<br>int i&#x3D;1;<br>while(e&#x2F;i&gt;1e-15)<br>{double f&#x3D;e&#x2F;i;<br>r&#x3D;(i%4&#x3D;&#x3D;1)?r+f:r-f;<br>e</em>&#x3D;sqr;<br>1+&#x3D;2;}<br>return r;<br>}<br>int main()<br>{<br>double a&#x3D;16.0<em>arctan(1&#x2F;5.0);<br>double b&#x3D;4.0</em>arctan(1&#x2F;239.0);<br>cout&lt;&lt;”PI&#x3D;”&lt;&lt;a-b&lt;&lt;endl;<br>return 0;<br>}<br>例题4：寻找回文数字<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>bool symm(unsigned n)<br>{unsigned i&#x3D;n;<br>unsigned m&#x3D;0;<br>while(i&gt;0)<br>{m&#x3D;m<em>10+i%10;<br>i&#x2F;&#x3D;10;}<br>return m&#x3D;&#x3D;n;<br>}<br>int main()<br>{for(int i&#x3D;11;i&lt;&#x3D;999;i++)<br>{if(symm(m)&amp;&amp;symm(m*m)&amp;&amp;summ(m*m*m))}<br>cout&lt;&lt;m&lt;&lt;m*m&lt;&lt;m*m*m&lt;&lt;endl;<br>return 0;<br>}<br>例题5：分段函数<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>double sin(double a)<br>{<br>double g&#x3D;0;<br>double t&#x3D;x;<br>int n&#x3D;1;<br>do<br>{<br>g+&#x3D;t;<br>n++;<br>t&#x3D;-t</em>x<em>x&#x2F;(2</em>n-1)&#x2F;(2<em>n-2);<br>}while(fabs(t)&gt;&#x3D;1e-10);<br>return g;<br>｝<br>int main()<br>{double k,r,s;<br>cout&lt;&lt;”r&#x3D;”;<br>cin&gt;&gt;r;<br>cout&lt;&lt;”s&#x3D;”;<br>cin&gt;&gt;s;<br>if(r</em>r&lt;&#x3D;s*s)<br>k&#x3D;sqrt(sin(r)*sin(r)+sin(s)<em>sin(s));<br>else k&#x3D;sin(r</em>s)&#x2F;2;<br>cout&lt;&lt;k&lt;&lt;endl;<br>return 0;}<br>例题六：投骰子</p>
-<p>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>&#x2F;*srand函数<br>原型：void srand（unsigned int seed）<br>参数：seed产生随机数的种子<br>需要头文件：<cstdlib><br>功能：为使rand（）产生一系列伪随机整数而设置起始点。使用1作为seed参数，可以重新初始化rand（）<br><em>&#x2F;<br>enum GameStatus{WIN,LOSE,PLAYING};<br>int main(){<br>int sum,myPoint;<br>GameStaus staus;<br>unsigned seed;<br>int rollDice();<br>cout&lt;&lt;”Please enter an unsigned integer”;<br>cin&gt;&gt;seed;<br>srand(seed);<br>sum&#x3D;rollDice();<br>switch(sun){<br>case 7:<br>case 11:<br>staus&#x3D;WIN;<br>break;<br>case 2:<br>case 3:<br>case 12;<br>staus &#x3D;LOSE;<br>break;<br>default;<br>staus&#x3D;PLAYING;<br>myPoint&#x3D;sum;<br>cout&lt;&lt;”point is”&lt;&lt;myPoint&lt;&lt;endl;<br>break;}<br>while(staus&#x3D;&#x3D;PLAYING)<br>{sum&#x3D;doolDice();<br>if(sum&#x3D;&#x3D;myPoint()<br>staus&#x3D;WIN;<br>else if(sum&#x3D;&#x3D;)}<br>int rollDice()<br>{int die1&#x3D;1+rand()%6;<br>int die2&#x3D;1+rand()%6;<br>int sum&#x3D;die1+die2;<br>cout&lt;&lt;”player rolled”&lt;&lt;die1&lt;&lt;”+”&lt;&lt;<br>die2&lt;&lt;”&#x3D;”&lt;&lt;sum&lt;&lt;endl;<br>return sum;}<br>   ▪   函数的嵌套调用<br>主函数调用a函数，a函数调用b函数。<br>就是在一个流程中，不断嵌套新函数。<br>为什么能够精准地返回第一时间的位置呢？<br>因为有栈的存在。<br>例子：<br>int fun2（int m）<br>｛return m</em>m｝<br>int fun1（int a，int b）<br>{return fun2(a)+fun2(b)}</cstdlib></p>
-<p>   ▪   函数的递归调用<br>函数自己调用自己。<br>函数可以直接或者间接地调用自身。<br>例题1：计算n！<br>公式n！&#x3D;n*（n-1）！&#x2F;&#x2F;递归就是可以转化为数列前后两项的关系。<br>int fun（int a）<br>{if(a&#x3D;0) fun(a)&#x3D;1;<br>return afun(a-1);}<br>例题2：从n个人里面选择k个人作为委员会。<br>C（n，k）&#x3D;n！&#x2F;k!*n-k）！<br>C(n,k)&#x3D;C(n-1,k)+C(n-1,k-1)<br>终止条件在递归里面很重要。<br>int comm（int n，int k）<br>｛if（k&gt;n）return 0;<br>else if(n&#x3D;&#x3D;k||k&#x3D;&#x3D;0) return 1;<br>else return comm(n-1,k)+comm(n-1,k-1);｝<br>tip:找出递归边界的方法：<br>数列本身的限制，公式计算的极限。<br>例题3：汉诺塔问题</p>
-<p>void move（char src,char dest）<br>{cout&lt;&lt;src&lt;&lt;”–&gt;”&lt;&lt;dest&lt;&lt;endl;}<br>void hanoi(int n,char scr,char medium,char dest){<br>if(n&#x3D;&#x3D;1) move(src,dest);<br>else {hanoi(n-1,src,dest,medium);<br>move(src,dest);<br>hanoi(n-1,medium,scr,dest);}<br>}<br>int main()<br>{int m;<br>hanoi(m,a,b,c);<br>return 0;<br>}<br>&#x2F;&#x2F;追踪递归过程：<br>&#x2F;&#x2F;进入，n！&#x3D;1.调用自身<br>&#x2F;&#x2F;每一次数据规模都在缩小<br>&#x2F;&#x2F;第一次3 A B C<br>&#x2F;&#x2F;第二次（调用自身）2 A C B<br>&#x2F;&#x2F;第三次（调用自身）1 A B C<br>&#x2F;&#x2F;第四次（调用move（））A-&gt;C<br>&#x2F;&#x2F;第五次（退回n&#x3D;2的状态，调用move（））A-&gt;B<br>&#x2F;&#x2F;第六次（调用自身）1 B A C<br>&#x2F;&#x2F;第七次（调用move（））B-&gt;C<br>&#x2F;&#x2F;第八次（退回n&#x3D;2的状态）<br>执行完之后，退回入栈的状态，深入递归点进入后，形成流程。<br>   ▪   函数的参数传递<br>形式参数是不占内存的，当调用函数的时候，才会给形参分配内存空间。<br>实参可以是常量，变量和表达式。<br>转化（隐含）：将实参转化为形参。<br>单向传值的作用，被调用函数只会处理形参，形参得到形参的值的时候，就切割了。<br>return语句只能返回一个值。<br>现在需要一个双向传值的事物，方法是传引用&amp;。传引用作参数可以保障实参数据的安全。<br>   ▪   引用类型<br>值传递：单向传递。<br>引用传递：双向传递。<br>引用类型、<br>引用（&amp;）是标识符的别名<br>定义一个引用的时候，必须同时对它进行初始化，使它指向一个已存在的对象。<br>例如：<br>int i，j;<br>int &amp;ri&#x3D;i;&#x2F;&#x2F;定义int引用ri，并初始化为变量i的引用。<br>j&#x3D;10;<br>ri&#x3D;j;&#x2F;&#x2F;相当于把j赋值给i<br>一旦一个引用被初始化后，就不能改为指向其他对象<br>引用可以作为形参<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>void swap(int a,int b){<br>int t&#x3D;a;a&#x3D;b;b&#x3D;t;<br>}<br>int main(){<br>int x&#x3D;5,y&#x3D;10;<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>swap(x,y);<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>return 0;<br>}<br>&#x2F;&#x2F;不会发生变化<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>void swap(int&amp; a,int&amp; b){<br>int t&#x3D;a;a&#x3D;b;b&#x3D;t;<br>}<br>int main(){<br>int x&#x3D;5,y&#x3D;10;<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>swap(x,y);<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>return 0;<br>}<br>   ▪   含有可以变化的参数的函数<br>可以变化长度的参数表：<br>如果所有的实参类型相同，可以传递一个initializer_list的标准库类型<br>如果实参的类型不同，我们可以编写可变参数的模板<br>initializer_list<br>initializer_list是一种标准库类型，用于表示某种特定类型的值的数组，该类型定义在同名的头文件中。<br>具体操作：<br>initializer_list<T>lst;&#x2F;&#x2F;默认初始化，T类型元素的空列表<br>nitializer_list<T>lst{a,b,c};&#x2F;&#x2F;lst的元素数量和初始值一样多，lst的元素是对应初始值的副本；列表中的元素是const<br>lst2(lst)&#x2F;&#x2F;拷贝或者赋值一个initializer_list对象但不拷贝列表中的元素；拷贝后原始列表和副本共享元素。<br>lst2&#x3D;lst<br>lst.size(）&#x2F;&#x2F;列表中的元素数量<br>lst.begin（）&#x2F;&#x2F;返回指向lst首元素的指针<br>lst.end()&#x2F;&#x2F;返回指向lst尾元素下一位置的指针<br>在编写代码输出程序所产生的错误信息时，最好统一用一个函数实现该功能，使得对所有错误的处理都能够整齐划一，<br>然而错误信息的种类不同，<br>调用错误星系时输出函数时传递的参数也会各不相同<br>使用initializer_list编写一个错误信息输出函数，使其可以作用于可变数量的形参。<br>   ▪   内联函数<br>简单地说，就是在调用简单函数提高效率的工具。<br>减少调用函数的麻烦。<br>内联函数声明时的关键字 inline<br>编译时在调用处用函数体进行替换<br>节省了参数传递<br>控制转移等开销<br>注意：<br>内联函数中不能有循环语句和switch语句<br>内联函数的定义必须出现在内联函数在第一次被调用之前<br>例子：<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namesapce std;<br>const double PI&#x3D;3.14159265358979;<br>inline double calArea(double radius){<br>return PI<em>radius</em>radius;<br>}<br>int main() {<br>double r&#x3D;3.0;<br>double area&#x3D;calArea(r);<br>cout&lt;&lt;area&lt;&lt;endl;<br>return 0;<br>}<br>   ▪   Constexpr函数（常量表达式函数）<br>他修饰的函数中，当所有参数都是constexpr时，一定返回constexpr。<br>只要给的是常量，那么返回的也是一个常量。<br>constexpr int get_size（）｛return 20；｝<br>constexpr int foo&#x3D;get_size();<br>&#x2F;&#x2F;正确：foo是一个常量表达式。<br>   ▪   带默认参数值的函数<br>可以在调用的时候，不给予参数也可以有一个默认形参可以使用。<br>int add（int x&#x3D;5，int y&#x3D;6）｛<br>return x+y;｝<br>int main()<br>{add(10,20);&#x2F;&#x2F;10+20<br>add(10);&#x2F;&#x2F;10+6<br>add();&#x2F;&#x2F;5+6<br>}<br>&#x2F;&#x2F;所有有默认参数的形参都必须列在形参列表的最右，即默认参数值的右边不能有无默认值的参数；<br>调用时，实参和形参的结合次序是从左向右<br>int add（int x，int y&#x3D;5，int z&#x3D;6）;&#x2F;&#x2F;正确<br>int add（int x&#x3D;1，int y&#x3D;5，int z）；&#x2F;&#x2F;错误<br>int add（int x&#x3D;1，int y，int z&#x3D;6）；&#x2F;&#x2F;错误<br>默认参数值与函数的调用位置<br>如果一个函数有原型声明，且原型声明在定义之前，则默认参数值应该在函数原型声明中给出；<br>如果只有函数的定义，或函数定义在前，<br>则默认参数值可以在函数定义中给出。<br>int add（int x&#x3D;5，int y&#x3D;6）；<br>int main（）<br>｛add（）；｝<br>int add（int x，int y）｛<br>return x+y；｝</T></T></p>
-<p>int add（int x&#x3D;5，int y&#x3D;6）｛<br>return x+y；｝<br>int main（）<br>｛add（）；｝<br>例题1：<br>函数getVolume计算体积<br>有三个形参：length、width、height<br>其中width和height带有默认值2和3<br>主函数中以不同形式调用getVolume<br>int getVloume（int length，int width，int height&#x3D;3）；<br>int main（）<br>{const int X&#x3D;10,Y&#x3D;12,Z&#x3D;15;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,Y,Z)&lt;&lt;endl;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,Y)&lt;&lt;endl;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,&lt;&lt;endl;<br>return 0;<br>}<br>int getVolume(int length,int width,int height){<br>cout&lt;&lt;setw(5)&lt;&lt;length&lt;&lt;setw(5)&lt;&lt;width&lt;&lt;setw(5)&lt;&lt;height&lt;&lt;’\t’<br>return length<em>width</em>height;<br>}<br>   ▪   函数重载<br>函数多态性的体现，C++中允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。<br>int add(int x,int y);<br>float add(float x,float y);<br>int add(int x,int y,int z);<br>注意事项，重载函数的形参必须不同：个数不同或者类型不同。<br>编译程序将根据实参和形参的类型及个数的最佳匹配来选择调用哪一个函数。<br>int add(int x,int y);<br>int add(int x,int y);<br>编译器不以形参名来区分<br>int add(int x,int y);<br>void add(int x,int y);<br>编译器不以返回值来区分<br>不要将不同功能的函数声明为重载函数，以免出现调用结果的误解，混淆，这样不好。<br>int add(int x,int y)<br>{return x+y;}<br>float add(float x,float y)<br>{return x-y;}<br>int sumOfSquare(int a,int b){<br>return a<em>a+b</em>b;<br>}<br>Double sumOfSquare(double a,double b){<br>return a<em>a+b</em>b;<br>}<br>   ▪   C++系统函数<br>C++的系统库提供了几百个函数可以供程序员使用，例如：<br>求平方根函数（sqrt）<br>求绝对值函数（abs）<br>使用系统函数时要包含相应的头文件，例如；<br>cmath<br>例题一：从键盘中输出一个角度值，求出该角度的正弦值，余弦值和正切值。<br>分析：系统函数中提供了求正弦值，余弦值和正切值的函数：sin（），cos（），tan（），函数的声明在头文件cmath中。</p>
-<p>#include<iostream><br>#include<cmath><br>int main(){</cmath></iostream></p>
-<p>   ▪   第三章总结<br>函数的定义与调用，参数传递<br>内联函数，带默认值的函数，函数重载<br>C++系统函数</p>
-<p>   ▪   实验三（上）<br>本部分的主要实验任务是通过实验练习来进一步理解以下内容：<br>1、掌握函数的定义和调用方法。<br>2、学习debug的step into 功能追踪到函数内部。<br>3、递归算法<br>例题一、编写函数float Convert(float TempFer)<br>参数和返回值都是float类型<br>实现算法C&#x3D;（F-32）*5&#x2F;9;<br>float Convert(float F){<br>return (F-32)*5&#x2F;9;<br>}<br>例题二、编写斐波那契数列<br>a（n）&#x3D;a（n-1）+a（n-2）；<br>int a（int n）{<br>if(n&lt;3) return 1;<br>else if(n&lt;&#x3D;0) break;<br>return a(n-1)+a(n-2);<br>}</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>拉康和弗洛伊德关于无意识的论述</title>
-    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
-    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
-]]></content>
+    <title>大学物理</title>
+    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>markdown语法</title>
@@ -820,6 +793,49 @@
 ]]></content>
   </entry>
   <entry>
+    <title>小他者、对象a、大他者</title>
+    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
+    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>存在与虚无</title>
+    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
+    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
+<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
+    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
+<blockquote>
+<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
+</blockquote>
+<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>differance</td>
+<td>延异</td>
+<td>共时性</td>
+</tr>
+<tr>
+<td>difference</td>
+<td>差异</td>
+<td>历时性</td>
+</tr>
+</tbody></table>
+<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>日语n1文法</title>
     <url>/2024/05/19/%E6%97%A5%E8%AF%ADn1%E6%96%87%E6%B3%95/</url>
     <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><ol>
@@ -871,9 +887,17 @@
 ]]></content>
   </entry>
   <entry>
-    <title>小他者、对象a、大他者</title>
-    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
-    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+    <title>函数</title>
+    <url>/2024/05/17/%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<p>   ▪   函数定义：<br>将我们设计好的算法，单独封装出来。<br>函数的参数，计算所需要的参数或者条件。<br>函数的返回值、可有可无。<br>功能性函数和数值形函数。<br>定义一个函数<br>1：定义函数名<br>类型标识符 函数名（形式参数表）<br>｛语句序列<br>｝<br>形式参数定义模式：<type1> num1.<br>2：形参只在函数中具有效果。<br>返回值就是函数的计算结果。<br>类型标识符（函数返回值的类型） 函数名（形式参数表）<br>｛语句序列<br>return xx；<br>｝<br>无返回值的函数用void作为类型标识符，也不用写return语句。<br>   ▪   函数调用：<br>对于定义好的函数，以及c++库里面的函数，我们直接调用就可以了。<br>调用函数的规则：<br>1：调用函数之前需要事前声明<br>函数的定义和调用不在一个程序之中。<br>调用函数之前，我们需要进行一个函数的原型声明。<br>调用形式：<br>函数名（实参列表）<br>2：嵌套调用：<br>函数之间互相调用。<br>3：递归调用：<br>函数自己调用自己。<br>例题1：指数函数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int i,j;<br>int c;<br>cout&lt;&lt;”Please enter the numbers”<br>cin&gt;&gt;i;<br>cin&gt;&gt;j;<br>c&#x3D;pow(i,j);<br>cout&lt;&lt;c&lt;&lt;end;<br>return 0;<br>}<br>例题2：将二进制数转化为十进制数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int value&#x3D;9;<br>cout&lt;&lt;”Enter an 8bit binary number”;<br>for(int i&#x3D;7;i&gt;&#x3D;0;i–)<br>{char ch;<br>cin&gt;&gt;ch;<br>if(ch&#x3D;&#x3D;‘1’)<br>{velus+&#x3D;static_cast<int>(power(2,i);}<br>cout&lt;&lt;”Decimal value is”&lt;&lt;value&lt;&lt;endl;<br>}<br>double power (double x,int n)<br>{<br>double val&#x3D;1.0;<br>while(n–)<br>val*&#x3D;x;<br>return val;}</int></type1></p>
+<p>例题三：计算π的值<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>double arctanx(int x)<br>{double sqr&#x3D;x<em>x;<br>double e&#x3D;x;<br>double r&#x3D;0;<br>int i&#x3D;1;<br>while(e&#x2F;i&gt;1e-15)<br>{double f&#x3D;e&#x2F;i;<br>r&#x3D;(i%4&#x3D;&#x3D;1)?r+f:r-f;<br>e</em>&#x3D;sqr;<br>1+&#x3D;2;}<br>return r;<br>}<br>int main()<br>{<br>double a&#x3D;16.0<em>arctan(1&#x2F;5.0);<br>double b&#x3D;4.0</em>arctan(1&#x2F;239.0);<br>cout&lt;&lt;”PI&#x3D;”&lt;&lt;a-b&lt;&lt;endl;<br>return 0;<br>}<br>例题4：寻找回文数字<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>bool symm(unsigned n)<br>{unsigned i&#x3D;n;<br>unsigned m&#x3D;0;<br>while(i&gt;0)<br>{m&#x3D;m<em>10+i%10;<br>i&#x2F;&#x3D;10;}<br>return m&#x3D;&#x3D;n;<br>}<br>int main()<br>{for(int i&#x3D;11;i&lt;&#x3D;999;i++)<br>{if(symm(m)&amp;&amp;symm(m*m)&amp;&amp;summ(m*m*m))}<br>cout&lt;&lt;m&lt;&lt;m*m&lt;&lt;m*m*m&lt;&lt;endl;<br>return 0;<br>}<br>例题5：分段函数<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>double sin(double a)<br>{<br>double g&#x3D;0;<br>double t&#x3D;x;<br>int n&#x3D;1;<br>do<br>{<br>g+&#x3D;t;<br>n++;<br>t&#x3D;-t</em>x<em>x&#x2F;(2</em>n-1)&#x2F;(2<em>n-2);<br>}while(fabs(t)&gt;&#x3D;1e-10);<br>return g;<br>｝<br>int main()<br>{double k,r,s;<br>cout&lt;&lt;”r&#x3D;”;<br>cin&gt;&gt;r;<br>cout&lt;&lt;”s&#x3D;”;<br>cin&gt;&gt;s;<br>if(r</em>r&lt;&#x3D;s*s)<br>k&#x3D;sqrt(sin(r)*sin(r)+sin(s)<em>sin(s));<br>else k&#x3D;sin(r</em>s)&#x2F;2;<br>cout&lt;&lt;k&lt;&lt;endl;<br>return 0;}<br>例题六：投骰子</p>
+<p>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>&#x2F;*srand函数<br>原型：void srand（unsigned int seed）<br>参数：seed产生随机数的种子<br>需要头文件：<cstdlib><br>功能：为使rand（）产生一系列伪随机整数而设置起始点。使用1作为seed参数，可以重新初始化rand（）<br><em>&#x2F;<br>enum GameStatus{WIN,LOSE,PLAYING};<br>int main(){<br>int sum,myPoint;<br>GameStaus staus;<br>unsigned seed;<br>int rollDice();<br>cout&lt;&lt;”Please enter an unsigned integer”;<br>cin&gt;&gt;seed;<br>srand(seed);<br>sum&#x3D;rollDice();<br>switch(sun){<br>case 7:<br>case 11:<br>staus&#x3D;WIN;<br>break;<br>case 2:<br>case 3:<br>case 12;<br>staus &#x3D;LOSE;<br>break;<br>default;<br>staus&#x3D;PLAYING;<br>myPoint&#x3D;sum;<br>cout&lt;&lt;”point is”&lt;&lt;myPoint&lt;&lt;endl;<br>break;}<br>while(staus&#x3D;&#x3D;PLAYING)<br>{sum&#x3D;doolDice();<br>if(sum&#x3D;&#x3D;myPoint()<br>staus&#x3D;WIN;<br>else if(sum&#x3D;&#x3D;)}<br>int rollDice()<br>{int die1&#x3D;1+rand()%6;<br>int die2&#x3D;1+rand()%6;<br>int sum&#x3D;die1+die2;<br>cout&lt;&lt;”player rolled”&lt;&lt;die1&lt;&lt;”+”&lt;&lt;<br>die2&lt;&lt;”&#x3D;”&lt;&lt;sum&lt;&lt;endl;<br>return sum;}<br>   ▪   函数的嵌套调用<br>主函数调用a函数，a函数调用b函数。<br>就是在一个流程中，不断嵌套新函数。<br>为什么能够精准地返回第一时间的位置呢？<br>因为有栈的存在。<br>例子：<br>int fun2（int m）<br>｛return m</em>m｝<br>int fun1（int a，int b）<br>{return fun2(a)+fun2(b)}</cstdlib></p>
+<p>   ▪   函数的递归调用<br>函数自己调用自己。<br>函数可以直接或者间接地调用自身。<br>例题1：计算n！<br>公式n！&#x3D;n*（n-1）！&#x2F;&#x2F;递归就是可以转化为数列前后两项的关系。<br>int fun（int a）<br>{if(a&#x3D;0) fun(a)&#x3D;1;<br>return afun(a-1);}<br>例题2：从n个人里面选择k个人作为委员会。<br>C（n，k）&#x3D;n！&#x2F;k!*n-k）！<br>C(n,k)&#x3D;C(n-1,k)+C(n-1,k-1)<br>终止条件在递归里面很重要。<br>int comm（int n，int k）<br>｛if（k&gt;n）return 0;<br>else if(n&#x3D;&#x3D;k||k&#x3D;&#x3D;0) return 1;<br>else return comm(n-1,k)+comm(n-1,k-1);｝<br>tip:找出递归边界的方法：<br>数列本身的限制，公式计算的极限。<br>例题3：汉诺塔问题</p>
+<p>void move（char src,char dest）<br>{cout&lt;&lt;src&lt;&lt;”–&gt;”&lt;&lt;dest&lt;&lt;endl;}<br>void hanoi(int n,char scr,char medium,char dest){<br>if(n&#x3D;&#x3D;1) move(src,dest);<br>else {hanoi(n-1,src,dest,medium);<br>move(src,dest);<br>hanoi(n-1,medium,scr,dest);}<br>}<br>int main()<br>{int m;<br>hanoi(m,a,b,c);<br>return 0;<br>}<br>&#x2F;&#x2F;追踪递归过程：<br>&#x2F;&#x2F;进入，n！&#x3D;1.调用自身<br>&#x2F;&#x2F;每一次数据规模都在缩小<br>&#x2F;&#x2F;第一次3 A B C<br>&#x2F;&#x2F;第二次（调用自身）2 A C B<br>&#x2F;&#x2F;第三次（调用自身）1 A B C<br>&#x2F;&#x2F;第四次（调用move（））A-&gt;C<br>&#x2F;&#x2F;第五次（退回n&#x3D;2的状态，调用move（））A-&gt;B<br>&#x2F;&#x2F;第六次（调用自身）1 B A C<br>&#x2F;&#x2F;第七次（调用move（））B-&gt;C<br>&#x2F;&#x2F;第八次（退回n&#x3D;2的状态）<br>执行完之后，退回入栈的状态，深入递归点进入后，形成流程。<br>   ▪   函数的参数传递<br>形式参数是不占内存的，当调用函数的时候，才会给形参分配内存空间。<br>实参可以是常量，变量和表达式。<br>转化（隐含）：将实参转化为形参。<br>单向传值的作用，被调用函数只会处理形参，形参得到形参的值的时候，就切割了。<br>return语句只能返回一个值。<br>现在需要一个双向传值的事物，方法是传引用&amp;。传引用作参数可以保障实参数据的安全。<br>   ▪   引用类型<br>值传递：单向传递。<br>引用传递：双向传递。<br>引用类型、<br>引用（&amp;）是标识符的别名<br>定义一个引用的时候，必须同时对它进行初始化，使它指向一个已存在的对象。<br>例如：<br>int i，j;<br>int &amp;ri&#x3D;i;&#x2F;&#x2F;定义int引用ri，并初始化为变量i的引用。<br>j&#x3D;10;<br>ri&#x3D;j;&#x2F;&#x2F;相当于把j赋值给i<br>一旦一个引用被初始化后，就不能改为指向其他对象<br>引用可以作为形参<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>void swap(int a,int b){<br>int t&#x3D;a;a&#x3D;b;b&#x3D;t;<br>}<br>int main(){<br>int x&#x3D;5,y&#x3D;10;<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>swap(x,y);<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>return 0;<br>}<br>&#x2F;&#x2F;不会发生变化<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>void swap(int&amp; a,int&amp; b){<br>int t&#x3D;a;a&#x3D;b;b&#x3D;t;<br>}<br>int main(){<br>int x&#x3D;5,y&#x3D;10;<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>swap(x,y);<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>return 0;<br>}<br>   ▪   含有可以变化的参数的函数<br>可以变化长度的参数表：<br>如果所有的实参类型相同，可以传递一个initializer_list的标准库类型<br>如果实参的类型不同，我们可以编写可变参数的模板<br>initializer_list<br>initializer_list是一种标准库类型，用于表示某种特定类型的值的数组，该类型定义在同名的头文件中。<br>具体操作：<br>initializer_list<T>lst;&#x2F;&#x2F;默认初始化，T类型元素的空列表<br>nitializer_list<T>lst{a,b,c};&#x2F;&#x2F;lst的元素数量和初始值一样多，lst的元素是对应初始值的副本；列表中的元素是const<br>lst2(lst)&#x2F;&#x2F;拷贝或者赋值一个initializer_list对象但不拷贝列表中的元素；拷贝后原始列表和副本共享元素。<br>lst2&#x3D;lst<br>lst.size(）&#x2F;&#x2F;列表中的元素数量<br>lst.begin（）&#x2F;&#x2F;返回指向lst首元素的指针<br>lst.end()&#x2F;&#x2F;返回指向lst尾元素下一位置的指针<br>在编写代码输出程序所产生的错误信息时，最好统一用一个函数实现该功能，使得对所有错误的处理都能够整齐划一，<br>然而错误信息的种类不同，<br>调用错误星系时输出函数时传递的参数也会各不相同<br>使用initializer_list编写一个错误信息输出函数，使其可以作用于可变数量的形参。<br>   ▪   内联函数<br>简单地说，就是在调用简单函数提高效率的工具。<br>减少调用函数的麻烦。<br>内联函数声明时的关键字 inline<br>编译时在调用处用函数体进行替换<br>节省了参数传递<br>控制转移等开销<br>注意：<br>内联函数中不能有循环语句和switch语句<br>内联函数的定义必须出现在内联函数在第一次被调用之前<br>例子：<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namesapce std;<br>const double PI&#x3D;3.14159265358979;<br>inline double calArea(double radius){<br>return PI<em>radius</em>radius;<br>}<br>int main() {<br>double r&#x3D;3.0;<br>double area&#x3D;calArea(r);<br>cout&lt;&lt;area&lt;&lt;endl;<br>return 0;<br>}<br>   ▪   Constexpr函数（常量表达式函数）<br>他修饰的函数中，当所有参数都是constexpr时，一定返回constexpr。<br>只要给的是常量，那么返回的也是一个常量。<br>constexpr int get_size（）｛return 20；｝<br>constexpr int foo&#x3D;get_size();<br>&#x2F;&#x2F;正确：foo是一个常量表达式。<br>   ▪   带默认参数值的函数<br>可以在调用的时候，不给予参数也可以有一个默认形参可以使用。<br>int add（int x&#x3D;5，int y&#x3D;6）｛<br>return x+y;｝<br>int main()<br>{add(10,20);&#x2F;&#x2F;10+20<br>add(10);&#x2F;&#x2F;10+6<br>add();&#x2F;&#x2F;5+6<br>}<br>&#x2F;&#x2F;所有有默认参数的形参都必须列在形参列表的最右，即默认参数值的右边不能有无默认值的参数；<br>调用时，实参和形参的结合次序是从左向右<br>int add（int x，int y&#x3D;5，int z&#x3D;6）;&#x2F;&#x2F;正确<br>int add（int x&#x3D;1，int y&#x3D;5，int z）；&#x2F;&#x2F;错误<br>int add（int x&#x3D;1，int y，int z&#x3D;6）；&#x2F;&#x2F;错误<br>默认参数值与函数的调用位置<br>如果一个函数有原型声明，且原型声明在定义之前，则默认参数值应该在函数原型声明中给出；<br>如果只有函数的定义，或函数定义在前，<br>则默认参数值可以在函数定义中给出。<br>int add（int x&#x3D;5，int y&#x3D;6）；<br>int main（）<br>｛add（）；｝<br>int add（int x，int y）｛<br>return x+y；｝</T></T></p>
+<p>int add（int x&#x3D;5，int y&#x3D;6）｛<br>return x+y；｝<br>int main（）<br>｛add（）；｝<br>例题1：<br>函数getVolume计算体积<br>有三个形参：length、width、height<br>其中width和height带有默认值2和3<br>主函数中以不同形式调用getVolume<br>int getVloume（int length，int width，int height&#x3D;3）；<br>int main（）<br>{const int X&#x3D;10,Y&#x3D;12,Z&#x3D;15;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,Y,Z)&lt;&lt;endl;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,Y)&lt;&lt;endl;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,&lt;&lt;endl;<br>return 0;<br>}<br>int getVolume(int length,int width,int height){<br>cout&lt;&lt;setw(5)&lt;&lt;length&lt;&lt;setw(5)&lt;&lt;width&lt;&lt;setw(5)&lt;&lt;height&lt;&lt;’\t’<br>return length<em>width</em>height;<br>}<br>   ▪   函数重载<br>函数多态性的体现，C++中允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。<br>int add(int x,int y);<br>float add(float x,float y);<br>int add(int x,int y,int z);<br>注意事项，重载函数的形参必须不同：个数不同或者类型不同。<br>编译程序将根据实参和形参的类型及个数的最佳匹配来选择调用哪一个函数。<br>int add(int x,int y);<br>int add(int x,int y);<br>编译器不以形参名来区分<br>int add(int x,int y);<br>void add(int x,int y);<br>编译器不以返回值来区分<br>不要将不同功能的函数声明为重载函数，以免出现调用结果的误解，混淆，这样不好。<br>int add(int x,int y)<br>{return x+y;}<br>float add(float x,float y)<br>{return x-y;}<br>int sumOfSquare(int a,int b){<br>return a<em>a+b</em>b;<br>}<br>Double sumOfSquare(double a,double b){<br>return a<em>a+b</em>b;<br>}<br>   ▪   C++系统函数<br>C++的系统库提供了几百个函数可以供程序员使用，例如：<br>求平方根函数（sqrt）<br>求绝对值函数（abs）<br>使用系统函数时要包含相应的头文件，例如；<br>cmath<br>例题一：从键盘中输出一个角度值，求出该角度的正弦值，余弦值和正切值。<br>分析：系统函数中提供了求正弦值，余弦值和正切值的函数：sin（），cos（），tan（），函数的声明在头文件cmath中。</p>
+<p>#include<iostream><br>#include<cmath><br>int main(){</cmath></iostream></p>
+<p>   ▪   第三章总结<br>函数的定义与调用，参数传递<br>内联函数，带默认值的函数，函数重载<br>C++系统函数</p>
+<p>   ▪   实验三（上）<br>本部分的主要实验任务是通过实验练习来进一步理解以下内容：<br>1、掌握函数的定义和调用方法。<br>2、学习debug的step into 功能追踪到函数内部。<br>3、递归算法<br>例题一、编写函数float Convert(float TempFer)<br>参数和返回值都是float类型<br>实现算法C&#x3D;（F-32）*5&#x2F;9;<br>float Convert(float F){<br>return (F-32)*5&#x2F;9;<br>}<br>例题二、编写斐波那契数列<br>a（n）&#x3D;a（n-1）+a（n-2）；<br>int a（int n）{<br>if(n&lt;3) return 1;<br>else if(n&lt;&#x3D;0) break;<br>return a(n-1)+a(n-2);<br>}</p>
 ]]></content>
   </entry>
   <entry>
@@ -883,10 +907,16 @@
 ]]></content>
   </entry>
   <entry>
+    <title>拉康和弗洛伊德关于无意识的论述</title>
+    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
+    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
+]]></content>
+  </entry>
+  <entry>
     <title>第六章杆件的内力</title>
     <url>/2024/05/20/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E6%9D%86%E4%BB%B6%E7%9A%84%E5%86%85%E5%8A%9B/</url>
     <content><![CDATA[<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><h3 id="杆件的内力"><a href="#杆件的内力" class="headerlink" title="杆件的内力"></a>杆件的内力</h3><h3 id="6-1-内力的定义及其符号规定"><a href="#6-1-内力的定义及其符号规定" class="headerlink" title="6.1 内力的定义及其符号规定"></a>6.1 内力的定义及其符号规定</h3><p>​	如何考察承受外载荷的杆件中的内力呢？可以想象用一个横截面将杆件截开，移走一部分，留下一部分作为考察对象，如图6.2所示。那么一走部分对留下部分一定存在着力学作用，由于外荷载作用的复杂性，截面上各部分的力的大小和方向都可能时不相同的，因而这种力学作用时一种分布力系。但是，无论这个分布力系多么复杂，总是可以将其简化为形心上沿坐标轴方向的三个主矢和主矩分量。</p>
-<p><a href="https://p.sda1.dev/17/90260dae0de07e66c510844895cb082c/QQ%E6%88%AA%E5%9B%BE20240520183919.png">https://p.sda1.dev/17/90260dae0de07e66c510844895cb082c/QQ截图20240520183919.png</a></p>
+<p><img src="https://p.sda1.dev/17/90260dae0de07e66c510844895cb082c/QQ%E6%88%AA%E5%9B%BE20240520183919.png"></p>
 <blockquote>
 <p>就是说，将外界的力分为不同的段，这样来便于研究不同的力的作用效果，后面的剪力图，弯矩图都是为了这一步而存在的。</p>
 </blockquote>
@@ -894,8 +924,8 @@
 <p>​	沿着x轴的主矢分量$F_x$有着使横截面沿x轴方向平移的趋势，如图6.3（a）所示。称这个主矢分量为<strong>轴力（axial force）</strong>，记为$F_N$.</p>
 <p>​	沿着y轴的主矢分量$F_y$有着使横截面沿y轴方向错切的趋势，如图6.3（b）所示。称这个主矢分量为<strong>剪力（shearing force）</strong>，记为$F_S$.沿着y方向的剪力记为$F_{sy}$​容易看出，沿着z轴的主矢量也是一种剪力，如图6.3(c)，因而记为$F_{sz}$。<br>​	矢量方向沿着x轴的主矩分量$M_x$有着使横截面绕着x轴旋转的趋势。如图6.4(a)所示，称这个主矩分量为**扭矩(torque)**，记为T。</p>
 <p>​	矢量方向沿着y轴的主矩分量有着使横截面绕着y轴转动的趋势，如图6.4(b)所示，称这样的主矩分量为**弯矩(bending moment)**，记为 $M_y$。矢量方向沿着v轴的弯矩记为$M$。容易看出，矢量方向沿着z轴的主矩分量也是一种弯矩，如图6.4(c)所示，因而记为 $M_z$​。</p>
-<p><a href="https://p.sda1.dev/17/e3f1b59a1e7405bfafb84f1e35181f31/QQ%E6%88%AA%E5%9B%BE20240520183951.png">https://p.sda1.dev/17/e3f1b59a1e7405bfafb84f1e35181f31/QQ截图20240520183951.png</a></p>
-<p><a href="https://p.sda1.dev/17/aef937c109cce221c1da9caa8e559234/QQ%E6%88%AA%E5%9B%BE20240520184001.png">https://p.sda1.dev/17/aef937c109cce221c1da9caa8e559234/QQ截图20240520184001.png</a></p>
+<p><img src="https://p.sda1.dev/17/e3f1b59a1e7405bfafb84f1e35181f31/QQ%E6%88%AA%E5%9B%BE20240520183951.png"></p>
+<p><img src="https://p.sda1.dev/17/aef937c109cce221c1da9caa8e559234/QQ%E6%88%AA%E5%9B%BE20240520184001.png"></p>
 <blockquote>
 <p>这里讲解了主矢和主矩的一些关系，按照这里建立的坐标系来区分，</p>
 </blockquote>
@@ -930,7 +960,7 @@
 <p>同一个符号其实对两边都起作用，就是对这个未切割前的截面起作用</p>
 </blockquote>
 <p>​	在横截面处取杆件的一个微元长度区段，如图6.6所示。图中的 4、B 两面与图 6.5中的4、8面相对应。如果把这个微元区段看成一个实体，那么图中的”方向就是这个区段两个端面的外法线方向。</p>
-<p><a href="https://p.sda1.dev/17/40e0a8ce3ec1548db1aa2b16c254f7ca/QQ%E6%88%AA%E5%9B%BE20240520184009.png">https://p.sda1.dev/17/40e0a8ce3ec1548db1aa2b16c254f7ca/QQ截图20240520184009.png</a></p>
+<p><img src="https://p.sda1.dev/17/40e0a8ce3ec1548db1aa2b16c254f7ca/QQ%E6%88%AA%E5%9B%BE20240520184009.png"></p>
 <p>​	图6.7将截面上的四个内力分量的正负号规定表示了出来。图中上面一行均为正内力,<br>下面一行均为负内力。</p>
 <table>
 <thead>
@@ -970,7 +1000,7 @@
 <p>对这样的一个圆轴进行受内力和外力的总分析</p>
 </blockquote>
 <p>​	如果希望求出A截面处的内力，那么就可以想象用一个截面在处将轴切开，将其中一部分移走，留下另一部分。留下作为研究对象的这部分称为脱离体，也称自由体。显然，移走部分对脱离体的作用就体现为A截面上的内力，如图6.8(b)所示。</p>
-<p><a href="https://p.sda1.dev/17/f2a37440edaef26a898feb0a1cfe624c/QQ%E6%88%AA%E5%9B%BE20240520184016.png">https://p.sda1.dev/17/f2a37440edaef26a898feb0a1cfe624c/QQ截图20240520184016.png</a></p>
+<p><img src="https://p.sda1.dev/17/f2a37440edaef26a898feb0a1cfe624c/QQ%E6%88%AA%E5%9B%BE20240520184016.png"></p>
 <p>​	脱离体的所有外力和内力一起构成平衡力系，即有<br>$$<br>\sum F_x&#x3D;0,\sum F_y&#x3D;0,\sum F_z&#x3D;0\\<br>\tag{6.1a}<br>$$</p>
 <p>$$<br>\sum M_x&#x3D;0,\sum M_y&#x3D;0,\sum M_z&#x3D;0<br>\tag{6.1b}<br>$$</p>
 <p>利用上述平衡方程，便可求解出相应的内力。一般地对于直杆，总是将件的轴线方向确定为x方向，内力表达为坐标x的函数，这就是内力方程。</p>
@@ -987,7 +1017,7 @@
 <blockquote>
 <p>解:塔体可视为杆件。塔体是等截面的，因此，塔体的自重可简化为轴线方向上的均布荷载，这个均布<br>荷载的大小 $q&#x3D;\frac{1}{4}\rho g\pi(D^2-d^2)$。而瞭望台的重量可认为是在距上端h处加在轴线上的集中力。这样，塔体<br>可简化为图6.9(b)所示的力学模型。同时可以确认，截面上只存在着轴力。</p>
 </blockquote>
-<p>以塔顶处为原点，坐标x以竖直向下为正，建立如图6.9(b)的坐标系。用截面法求解此问题时，可选择<br>截面上方塔体为脱离体。注意到在离坐标原点h处即瞭望台处有一集中力P，因此截面取在瞭望台上方时脱<br>离体将不包含P，而截面取在瞭望台下方时脱离体将包含P。因此，应该分段建立轴力方程。<br>    第一步，先将截面取在瞭望台上方，如图6.9(c)所示。设轴力F为正，故方向向下。根据竖直方向上<br>的力平衡，可得<br>$$<br>F_{N1}+\frac{1}{4}(D^2-d^2)\pi\rho gx&#x3D;0<br>$$<br><a href="https://p.sda1.dev/17/351b15dad0693d76fe01e73dea9f861c/QQ%E6%88%AA%E5%9B%BE20240520184023.png">https://p.sda1.dev/17/351b15dad0693d76fe01e73dea9f861c/QQ截图20240520184023.png</a></p>
+<p>以塔顶处为原点，坐标x以竖直向下为正，建立如图6.9(b)的坐标系。用截面法求解此问题时，可选择<br>截面上方塔体为脱离体。注意到在离坐标原点h处即瞭望台处有一集中力P，因此截面取在瞭望台上方时脱<br>离体将不包含P，而截面取在瞭望台下方时脱离体将包含P。因此，应该分段建立轴力方程。<br>    第一步，先将截面取在瞭望台上方，如图6.9(c)所示。设轴力F为正，故方向向下。根据竖直方向上<br>的力平衡，可得<br>$$<br>F_{N1}+\frac{1}{4}(D^2-d^2)\pi\rho gx&#x3D;0<br>$$<br><img src="https://p.sda1.dev/17/351b15dad0693d76fe01e73dea9f861c/QQ%E6%88%AA%E5%9B%BE20240520184023.png"></p>
 <p>由此可得<br>$$<br>F_{N1}&#x3D;-\frac{1}{4}(D^2-d^2)\pi\rho gx\tag{0&lt;&#x3D;x&lt;h}<br>$$<br>第二步，将截面放在瞭望台下方，如图6.9（d）所示。此时轴力记为$F_{N2}$,并有力平衡方程<br>$$<br>F_{N2}+\frac{1}{4}(D^2-d^2)\pi\rho gx+P&#x3D;0<br>$$</p>
 <p>$$<br>F_{N2}&#x3D;-\frac{1}{4}(D^2-d^2)\pi\rho gx-P\tag{h&lt;x&lt;&#x3D;H}<br>$$</p>
 <p>上面所得到的$F_{N1}$和$F_{N2}$​表达式便是本例中的轴力方程。根据这两个方程，可以画出相应的轴力图，如图6.9(e)所示。轴力图的x轴沿着塔体轴向，另一个与之垂直的轴用以表示轴力。注意到在坐标h处，即瞭望台位置处，轴力有一个突变，即集中力加载位置之前与之后轴力的绝对值增加了，增加的幅度就是集中力户的大小。</p>
@@ -1000,11 +1030,11 @@
 </blockquote>
 <p>作用在丝锥顶部的力偶矩<br>$$<br>m&#x3D;2\times 150\times10&#x3D;3000 Nmm<br>$$</p>
 <p>由于丝锥所受的全部外荷载构成平衡力系，所以作用在齿部的分布力偶矩<br>$$<br>t&#x3D;\frac{3000}{20}&#x3D;150Nmm&#x2F;mm<br>$$<br>​	可以根据上述数据列出扭矩方程，再画出扭矩图，也可以直接考虑扭矩图。先在AB区间内任意取一个截面，取左边部分为脱离体，那么这个截面上的扭矩T都与m平衡，因此，在这个区段内的扭矩是常数。对应的扭矩图轮廓线是平行于横轴的直线。而且，截面上的扭矩的旋向与左端m的旋向相反因此其扭矩为负值。从B到C的区间内，仍取左边部分为离体，随着反向的均布力偶矩的逐渐加入，扭矩绝对值必定会逐渐地成比例地减小，因而相应的扭矩图必定是斜直线。在锥右端C截面处，全部外力已构成平衡力系，因而扭矩为<br>由此 ，便可画出构件的扭矩图，如图6.11所示。</p>
-<p><a href="https://p.sda1.dev/17/4b6b03cd57e84632500a98c0aae13924/QQ%E6%88%AA%E5%9B%BE20240520184029.png">https://p.sda1.dev/17/4b6b03cd57e84632500a98c0aae13924/QQ截图20240520184029.png</a></p>
+<p><img src="https://p.sda1.dev/17/4b6b03cd57e84632500a98c0aae13924/QQ%E6%88%AA%E5%9B%BE20240520184029.png">)</p>
 <blockquote>
 <p>类比载荷力，力矩也是可以载荷分布的，作用于整个物体就是全为一个数，如果由整个面作用，就是按长度分布的。</p>
 </blockquote>
-<p><a href="https://p.sda1.dev/17/af0fd4d26c32346d9d115f19e3ae8bb0/QQ%E6%88%AA%E5%9B%BE20240520184035.png">https://p.sda1.dev/17/af0fd4d26c32346d9d115f19e3ae8bb0/QQ截图20240520184035.png</a></p>
+<p><img src="https://p.sda1.dev/17/af0fd4d26c32346d9d115f19e3ae8bb0/QQ%E6%88%AA%E5%9B%BE20240520184035.png"></p>
 <p>【例6.3】求图6.12(a)所示的承受均布荷载的简支梁内力方程，并画出相应的剪力图和弯矩图。</p>
 <blockquote>
 <p>解:把坐标系原点取在梁的左端。</p>
@@ -1017,49 +1047,20 @@
 <blockquote>
 <p>以中点取矩<br>$$<br>\frac{1}{2}<br>$$</p>
 </blockquote>
-<p>​	注意到剪力方程①中，剪力是坐标x的线性函数，因此相应的剪力曲线是一条直线。在这种情况下，可以由两点来确定这条直线。例如，在x&#x3D;0处$F_s&#x3D;\frac{1}{2}qL$;在x&#x3D;L处$F_s&#x3D;-\frac{1}{2}qL$由此即可画出相应的剪力图，如图6.13(a)所示。<a href="https://p.sda1.dev/17/766c739787dd1415f99ba7697fd2d5c4/QQ%E6%88%AA%E5%9B%BE20240520184042.png">https://p.sda1.dev/17/766c739787dd1415f99ba7697fd2d5c4/QQ截图20240520184042.png</a></p>
-<p>​	弯矩方程②中，弯矩$M$是坐标x的二次函数，因此弯矩曲线是一条抛物线，此时可以由两端和中点这三点的弯矩值来确定这条曲线，如图6.13（b）所示。</p>
+<p>​	注意到剪力方程①中，剪力是坐标x的线性函数，因此相应的剪力曲线是一条直线。在这种情况下，可以由两点来确定这条直线。例如，在x&#x3D;0处$F_s&#x3D;\frac{1}{2}qL$;在x&#x3D;L处$F_s&#x3D;-\frac{1}{2}qL$由此即可画出相应的剪力图，如图6.13(a)所示。<img src="https://p.sda1.dev/17/766c739787dd1415f99ba7697fd2d5c4/QQ%E6%88%AA%E5%9B%BE20240520184042.png"></p>
+<p>​	弯矩方程②中，</p>
+<p>弯矩$M$是坐标x的二次函数，因此弯矩曲线是一条抛物线，此时可以由两端和中点这三点的弯矩值来确定这条曲线，如图6.13（b)所示。</p>
 <p>​	从上例可以得出这样的结论:直梁某截面上的剪力在数值上等于该截面左端(如果脱离体取为左端部分)或者右端(如果脱离体取为右端部分)所有向力(包括支反力)的代数和。代数和中各项的符号可以这样确定:与所求剪力方向相同的横向力取负，方向相反的<br>向力取正。<br>​	与此类似，直梁某截面上的弯矩在数值上等于该截面左端(如果脱离体取为左端部分)或者右端(如果脱离体取为右端部分)所有横向力(包括支反力)对于该截面的矩，以及所有力偶矩的代数和。代数和中各项的符号可以这样确定:与所求弯矩方向相同的矩取负，方向相反的矩取正。<br>​	利用上述性质，可以很快地确定梁中某指定截面的剪力和弯矩。<br>​	应充分重视和熟悉约束处内力的性质。图6.14中画出了一些常见的约束情况(上一排)</p>
-<p><a href="https://p.sda1.dev/17/f768a2fcfca1bf1c24c00ce2c441792d/QQ%E6%88%AA%E5%9B%BE20240520184047.png">https://p.sda1.dev/17/f768a2fcfca1bf1c24c00ce2c441792d/QQ截图20240520184047.png</a></p>
+<p><img src="https://p.sda1.dev/17/f768a2fcfca1bf1c24c00ce2c441792d/QQ%E6%88%AA%E5%9B%BE20240520184047.png"></p>
 <p>及其相应的简化图形(下一排)。读者可自行对这些约束处的内力特点进行分析。例如，在图6.14(b)、(c)、(d)中，如果铰附近没有集中力偶矩作用，则该处弯矩为零。<br>    在例6.3中，分别用了一个式子，就表示了全梁的剪力方程和弯矩方程。但是，梁弯曲的绝大多数情况并非如此简单。例如图6.15(a)所表示的外伸梁,如果在图6.15(b)和图 6.15(c)这两种不同位置取截面，可以看出，图6.15()的脱离体多出一个集中力作用;同时，在B截面右面，不再有均布荷载作用，因此，AB区段和BC区段的剪力弯矩方程必定是不同的。同理，BC区段和CD区段的剪力弯矩方程也是不同的，所以，这个梁的方程应分三个区段建立。其脱离体一般可以按图6.15(b)、(c)、(d)三种情况截取。</p>
-<p><a href="https://p.sda1.dev/17/d6eb6b71591c8d0fb0dc33a347fedccc/QQ%E6%88%AA%E5%9B%BE20240520184054.png">https://p.sda1.dev/17/d6eb6b71591c8d0fb0dc33a347fedccc/QQ截图20240520184054.png</a></p>
+<p><img src="https://p.sda1.dev/17/d6eb6b71591c8d0fb0dc33a347fedccc/QQ%E6%88%AA%E5%9B%BE20240520184054.png"></p>
 <p>【例6.4】如图6.16(a)所示的曲梁是四分之一圆，求这个曲梁的内力。</p>
 <blockquote>
 <p>解:对于曲梁，把截面形心处的主矢和主矩按照截面的法线方向和切面方向定义为轴力、剪力、扭矩和<br>弯矩。在本例的曲梁中，外力F就作用在曲梁所在的平面中，因此截面上的内力应该包含轴力、剪力和弯矩<br>这三种。<br>同样可用截面法求解这一问题。如图6.16(b)所示，在与过圆心0的竖直线成α角的方位上取截面，把<br>截下的右上部作为脱离体。在截面上，分别假设轴力(沿截面法向)、剪力(沿截面切向)和弯矩的作用方<br>向如图6.16(b)所示，然后将轴力、剪力和弯矩分别表示为a的函数，即内力方程。</p>
 </blockquote>
 <p>根据脱离体的平衡可得<br>轴力:				$F_N&#x3D;F\cos\alpha$<br>剪力:				$F_s&#x3D;F\sin\alpha$<br>弯矩:				$M&#x3D;-FR(1-\cos\alpha)$</p>
-<p><a href="https://p.sda1.dev/17/973ed8f965ae686e90957884e3f958a2/QQ%E6%88%AA%E5%9B%BE20240520184100.png">https://p.sda1.dev/17/973ed8f965ae686e90957884e3f958a2/QQ截图20240520184100.png</a></p>
+<p><img src="https://p.sda1.dev/17/973ed8f965ae686e90957884e3f958a2/QQ%E6%88%AA%E5%9B%BE20240520184100.png"></p>
 <p>上面式中各内力的符号可采用与直梁类似的规定，只不过观察者应进入曲梁所包围的区域之内。在曲梁中任取一个截面，保留左边部分，在截面上均为正号的轴力、剪力、弯矩如图6.17(a)所示。图6.17(b)则表示了保留右边部分均取正号的各内力方向。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
-    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
-<blockquote>
-<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
-</blockquote>
-<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>名称</th>
-<th>性质</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>differance</td>
-<td>延异</td>
-<td>共时性</td>
-</tr>
-<tr>
-<td>difference</td>
-<td>差异</td>
-<td>历时性</td>
-</tr>
-</tbody></table>
-<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
 ]]></content>
   </entry>
   <entry>
