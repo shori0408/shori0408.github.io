@@ -316,44 +316,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>二重积分的运用</title>
-    <url>/2024/05/18/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="曲面的面积"><a href="#曲面的面积" class="headerlink" title="曲面的面积"></a>曲面的面积</h1><p>​	先讨论空间平面Ⅱ中的有界闭区域的面积和它在Oxy面上投影面的面积的关系。设平面Ⅱ与xOy平面的夹角为$\theta$(0&lt;&#x3D;$\theta$&lt;&#x3D;$\frac{\pi}{2}$),就是说平面Ⅱ方向上的法向量$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角为$\theta$.任意取平面Ⅱ上一片矩形区域A，其边界与x轴或者y轴平行（如图8.43所示），则矩形区域A的面积为A&#x3D;ab，其在xOy平面上的投影的面积</p>
-<p>$\sigma&#x3D;A$$\cos \theta$.</p>
-<p>由相似性，上式对平面Ⅱ上任意的区域A也成立。</p>
-<p>​	下面讨论空间曲面的情形，设曲面$\sum$由一阶连续可导函数z&#x3D;f(x,y)确定，在xOy面上的投影区域为$D_{xy}$,求曲面的面积$\sum$.</p>
-<p>​	如图8.44所示，在曲面$\sum$上任取一点M(x,y,z).过其投影P(x,y)点任取$D_{xy}$内的一小片区域$\mathrm{d}\sigma$,并作以$\mathrm{d}\sigma$的边界曲线为准线而母线平行于z轴的细柱面。在这细柱面内包含的那一小片区域$\mathrm{d}S$&#x3D;$\mathrm{d}A$.通常我们取曲面$\sum$在点M处方向上的法向量为$\mathbf{n}$&#x3D;($-f_x$,$-f_y$,$-1$),</p>
-<p>则$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角的余弦值为：<br>$$<br>\cos \theta&#x3D;\frac{\mathbf{n}\mathbf{k}}{|\mathbf{n}||\mathbf{k}|}&#x3D;\frac{1}{\sqrt{1+f_x^2(x,y)+f_y^2(x,y)}}\tag{1}<br>$$<br>式中，$f_x$表示$f(x,y)$对$x$的偏导数，$f_y$同理。</p>
-<p>​	所以，曲面$\sum$的面积为<br>$$<br>S&#x3D;\iint_{D}\sqrt{1+f_x^2(x,y)+f_x^2(x,y)}\mathrm{d}\sigma\tag{2}<br>$$<br>x、y、z三者之间的关系可以相互交换。</p>
-<p><strong>例题</strong></p>
-<h3 id="例1"><a href="#例1" class="headerlink" title="例1"></a>例1</h3><p>​	求半径为R的半球体的表面积。<br>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\\<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>&#x3D;2\int_{-R}^{R}\mathrm{d}x\int_{0}^{\sqrt{R^2-x^2}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}y\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^R&#x3D;2\pi R<br>$$<br>答案为2$\pi$R.</p>
-<h3 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h3><p>​	设由一颗地球同步轨道通信卫星，距地面的高度为h&#x3D;36.000km，运行的角速度与地球自转的角速度相同，试计算该通信卫星的覆盖面积与地球表面积的比值(地球半径R&#x3D;6400km)。</p>
-<p>由分析可知，卫星信号的半顶角可以设为$\alpha$,则覆盖面积的投影为$D_{xy}$&#x3D;{$(x,y)$|$x^2+y^2&lt;&#x3D;R^2\sin^2\alpha$},</p>
-<p>而原本的方程为$z&#x3D;\sqrt{R^2-x^2-y^2}$,那么我们可以写出对应的面积公式。</p>
-<p>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\ \<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R\sin\alpha}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^{R\sin\alpha}&#x3D;2\pi R(1-\cos\alpha)\\<br>而地球的表面积S_1&#x3D;4\pi R\\<br>故比值\mu&#x3D;\frac{S}{S_1}\times100%\\<br>\mu&#x3D;\frac{1+\cos\alpha}{2}\\<br>\cos \alpha&#x3D;\frac{H}{H+h}\\<br>得\mu&#x3D;42.5%<br>$$</p>
-<h2 id="质心"><a href="#质心" class="headerlink" title="质心"></a>质心</h2><p>​	设有一平面薄片，占有xOy平面上的闭区域D，在点$(x,y)$处的面密度为$\rho(x,y)$,假定$\mu(x,y)$在D上连续。现在求该薄片的质心坐标。</p>
-<p>在闭区域D上任取一点$P(x,y)$及包含点P的直径很小的闭区域$\mathrm{d}{\sigma}$，则平面薄片对x轴和y轴的静力矩元素分别为<br>$$<br>\mathrm{d}M_x&#x3D;y\mu(x,y)\mathrm{d}{\sigma}\\<br>M_x&#x3D;\iint_{D}y\mu(x,y)\mathrm{d}{\sigma}\\<br>\mathrm{d}M_y&#x3D;x\mu(x,y)\mathrm{d}{\sigma}\\<br>M_y&#x3D;\iint_{D}xy(x,y)\mathrm{d}{\sigma}\\<br>M&#x3D;\iint_{D}\mu(x,y)\mathrm{d}{\sigma}<br>$$<br>设平面薄片的质心坐标为$(\bar x,\bar y)$，由于$\bar x M&#x3D;M_y,\bar y M&#x3D;M_x$，于是：<br>$$<br>\bar x&#x3D;\frac{M_y}{M}&#x3D;\frac{\iint_{D}x\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>\bar y&#x3D;\frac{M_x}{M}&#x3D;\frac{\iint_{D}y\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>$$<br>若平面薄片的面密度是常数，面积为$\sigma$​，则平面薄片的质心（成为形心）的公式为<br>$$<br>\bar x&#x3D;\frac{1}{\sigma}\iint_{D}x{d}{\sigma}\\<br>\bar y&#x3D;\frac{1}{\sigma}\iint_{D}y{d}{\sigma}\\<br>$$</p>
-<h3 id="例3"><a href="#例3" class="headerlink" title="例3"></a>例3</h3><p>​	求位于两圆$\rho&#x3D;2\sin\theta$和$\rho&#x3D;4\sin\theta$之间的均匀薄片的质心</p>
-<p>分析可知，图形关于y轴对称，最后质心一定在y轴上，且面密度为常数。<br>$$<br>\bar y&#x3D;\frac{\iint_{D}y{d}{\sigma}}{S_总}\\<br>\iint_{D}y{d}{\sigma}&#x3D;\int_{0}^{\pi}{d}{\theta}\int_{2\sin {\theta}}^{4\sin\theta}\rho\sin\theta\rho{d}{\rho}{}\\<br>&#x3D;\int_{0}^{\pi}\sin\theta[\frac{1}{3}\rho^3]<em>{2\sin\theta}^{4sin\theta}{d}{\theta}\\<br>&#x3D;\frac{56}{3}\int</em>{0}^{\pi}\sin^4\theta{d}{\theta}\\<br>&#x3D;\frac{112}{3}\frac{3}{4}\frac{1}{2}\frac{\pi}{2}\\<br>&#x3D;7\pi<br>$$</p>
-<h3 id="例4"><a href="#例4" class="headerlink" title="例4"></a>例4</h3><p>​	求均匀半球体的质心<br>$$<br>x^2+y^2+z^2&#x3D;R^2\\<br>可以得知，质心在z轴上\\<br>\bar z&#x3D;\frac{1}{V_总}\iiint_{V_1}z{d}{V}\\<br>\iiint_{V_1}z{d}{V}&#x3D;\\<br>&#x3D;\int_{0}^{\frac{\pi}{2}}{d}{\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho\cos\phi\rho^2\sin\phi{d}{\rho}\\<br>&#x3D;\frac{1}{4}\int_{0}^{\frac{\pi}{2}}\sin2\phi{d}{2\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho^3{d}{\rho}\\<br>&#x3D;\frac{\pi}{4}R^4\\<br>所以\bar z&#x3D;\\<br>\frac{\frac{\pi}{4}R^4}{\frac{2\pi R^3}{3}}\\<br>&#x3D;\frac{3a}{8}\\<br>故最后坐标为\left(0,0,\frac{3a}{8}\right)<br>$$</p>
-<h2 id="转动惯量"><a href="#转动惯量" class="headerlink" title="转动惯量"></a>转动惯量</h2><p>​	设由一平面薄片，占有xOy面上的闭区域D，在点$P(x,y)$处的面密度为$\mu(x,y)$,假定$\rho(x,y)$在 D上连续.现在求该薄片对于x轴的转动惯量和y轴的转动惯量.</p>
-<p>​	在闭区域 D上任取一点 P(x，y)，及包含点 P 的一直径很小的闭区域 $\mathrm{d}{ \sigma}$，则平面薄片对于x轴的转动惯量和y轴的转动惯量的元素分别为<br>$$<br>dI_x&#x3D;y^2\mu(x,y)d{\sigma}\\<br>dI_y&#x3D;x^2\mu(x,y)d{\sigma}\\<br>$$<br>整片平面薄片对于z轴的转动惯量和y轴的转动惯量分别为<br>$$<br>I_x&#x3D;\iint_{D}y^2\mu(x,y)d{\sigma}\\<br>I_y&#x3D;\iint_{D}x^2\mu(x,y)d{\sigma}<br>$$</p>
-<h3 id="例5"><a href="#例5" class="headerlink" title="例5"></a>例5</h3><p>求半径为a的均匀半圆薄片(面密度为常量μ)对其直径边的转动惯量.</p>
-<p>解 建立坐标系,如图 8.47 所示，则薄片所占闭区域 D可表示为<br>$$<br>D&#x3D;{(x,y)|x^2+y^2&lt;&#x3D;a^2.y&gt;&#x3D;0}\<br>则半圆薄片对于x轴的转动惯量为\\<br>I_x&#x3D;\iint_{D}\mu y^2d{\sigma}\\<br>&#x3D;\mu\int_{0}^{\pi}\sin^2d{\theta}\int_{0}^{a}\rho^3d{\rho}\\<br>&#x3D;\frac{1}{4}\mu a^4\frac{\pi}{2}\\<br>&#x3D;\frac{1}{4}Ma^2\\<br>M&#x3D;\frac{1}{2}\pi a^2\mu为半圆薄片的质量<br>$$</p>
-<h3 id="例6"><a href="#例6" class="headerlink" title="例6"></a>例6</h3><p>​	求密度为$\mu$的均匀球体对于过球心的一条轴l的转动惯量.<br>解 取球心为坐标原点，z轴与轴l重合,又设球的半径为a,则球体所占空间闭区域为：<br>$$<br>V&#x3D;(x,y,z)|x^2+y^2+z^2&lt;&#x3D;a^2\\<br>所求转动惯量即对于z轴的转动惯量I_z为\\<br>I_z&#x3D;\iiint_{V}(x^2+y^2){\rho}d{v}\\<br>&#x3D;\rho\iiint_{D}(r^2\sin^2\varphi\cos\theta+r^2sin^2\varphi \sin^2\theta)r^2\sin\varphi drd\varphi d\theta\\<br>&#x3D;{\rho}\iiint_{D}r^4\sin^3\varphi drd\varphi d\theta\\<br>&#x3D;{\rho}\int_{0}^{2\pi}d\theta\int_0^\pi \sin^3\varphi d\varphi\int_{0}^{a}r^4dr\\<br>&#x3D;\frac{8}{15}\pi a^5{\rho}<br>$$</p>
-<h2 id="引力"><a href="#引力" class="headerlink" title="引力"></a>引力</h2><p>考虑空间一物体对于物体外一点 P(īo,yo,zo)处的单位质量的质点的引力问题.设<br>物体占有空间有界闭区域 $Ω$，它在点$(x,y,z)$处的密度为$\rho(x，y，z)$,并假定<br>${\rho(x,y,z)}$在$Ω$上连续.<br>在物体内任取一点 $M(x,y,z)$及包含该点的一直径很小的闭区域 $d{v}$.把这小闭区域<br>看作一个质点,其质量元素为 $\rho dv$，它对位于$P_0$处的单位质量的质点的引力元素为<br>$$<br>dF&#x3D;(dF_x,dF_y,dF_z)\\<br>&#x3D;(\frac{x-x_0}{r^2}G\rho dv,\frac{y-y_0}{r^2}G\rho dv,\frac{z-z_0}{r^2}G\rho dv)<br>$$<br>式中，G 为引力常数,$\rho &#x3D;\rho(x，y,z),r&#x3D;\sqrt{(x-x_0)2+(y-y_0)2+(z-z_0)2}，dF_x,<br>dF_y,dF_z$.为引力元素 $dF$ 在三个坐标轴上的分量.将$dF_x,,dF_y,,dF_z$.在Ω上分别作三重积分，即可得$F_x，F_y，F_z$.</p>
-<h3 id="例7"><a href="#例7" class="headerlink" title="例7"></a>例7</h3><p>设半径为 R 的匀质球占有空间闭区域$Ω&#x3D;(x,y,z)|x^2+y^2+z^2≤R^2$.求它对于位于点$M_0(0,0,a)(a&gt;R)$处的单位质量的质点的引力,<br>解 设球的密度为$\rho_0$，由题意知$F_x&#x3D;F_y&#x3D;0$,所求引力沿z轴的分量为<br>$$<br>F_z&#x3D;\iiint_{o}G\rho_0 \frac{z-a}{[x^2+y^2+(z-a)^2]^{\frac{3}{2}}}dv\\<br>&#x3D;G\rho_0{}\int_{-R}^{R}(z-a)dz\int_{0}^{2\pi}d\theta\int_{0}^{\sqrt{R^2-z^2}}\frac{\rho d\rho}{[\rho^2+(z-a)^2]^{\frac{3}{2}}}\\<br>&#x3D;-G\frac{4\pi R^3}{3}\frac{1}{a^2}\rho_0\\<br>&#x3D;-G\frac{M}{a^2}\\<br>式中，M&#x3D;\frac{4\pi R^3}{3}\rho_0\\<br>由上述结果可知，匀质球体对求外一指点的引力如同球体的质量集中在球心，两质点间的引力。<br>$$</p>
-<p>上述结果表明，勾质球体对球外一质点的引力如同球体的质量集中于球心时两质点间的<br>引力.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>jqv</title>
     <url>/2024/05/21/jqv/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>大学物理</title>
-    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -1936,6 +1900,55 @@
 ]]></content>
   </entry>
   <entry>
+    <title>二重积分的运用</title>
+    <url>/2024/05/18/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="曲面的面积"><a href="#曲面的面积" class="headerlink" title="曲面的面积"></a>曲面的面积</h1><p>​	先讨论空间平面Ⅱ中的有界闭区域的面积和它在Oxy面上投影面的面积的关系。设平面Ⅱ与xOy平面的夹角为$\theta$(0&lt;&#x3D;$\theta$&lt;&#x3D;$\frac{\pi}{2}$),就是说平面Ⅱ方向上的法向量$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角为$\theta$.任意取平面Ⅱ上一片矩形区域A，其边界与x轴或者y轴平行（如图8.43所示），则矩形区域A的面积为A&#x3D;ab，其在xOy平面上的投影的面积</p>
+<p>$\sigma&#x3D;A$$\cos \theta$.</p>
+<p>由相似性，上式对平面Ⅱ上任意的区域A也成立。</p>
+<p>​	下面讨论空间曲面的情形，设曲面$\sum$由一阶连续可导函数z&#x3D;f(x,y)确定，在xOy面上的投影区域为$D_{xy}$,求曲面的面积$\sum$.</p>
+<p>​	如图8.44所示，在曲面$\sum$上任取一点M(x,y,z).过其投影P(x,y)点任取$D_{xy}$内的一小片区域$\mathrm{d}\sigma$,并作以$\mathrm{d}\sigma$的边界曲线为准线而母线平行于z轴的细柱面。在这细柱面内包含的那一小片区域$\mathrm{d}S$&#x3D;$\mathrm{d}A$.通常我们取曲面$\sum$在点M处方向上的法向量为$\mathbf{n}$&#x3D;($-f_x$,$-f_y$,$-1$),</p>
+<p>则$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角的余弦值为：<br>$$<br>\cos \theta&#x3D;\frac{\mathbf{n}\mathbf{k}}{|\mathbf{n}||\mathbf{k}|}&#x3D;\frac{1}{\sqrt{1+f_x^2(x,y)+f_y^2(x,y)}}\tag{1}<br>$$<br>式中，$f_x$表示$f(x,y)$对$x$的偏导数，$f_y$同理。</p>
+<p>​	所以，曲面$\sum$的面积为<br>$$<br>S&#x3D;\iint_{D}\sqrt{1+f_x^2(x,y)+f_x^2(x,y)}\mathrm{d}\sigma\tag{2}<br>$$<br>x、y、z三者之间的关系可以相互交换。</p>
+<p><strong>例题</strong></p>
+<h3 id="例1"><a href="#例1" class="headerlink" title="例1"></a>例1</h3><p>​	求半径为R的半球体的表面积。<br>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\\<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>&#x3D;2\int_{-R}^{R}\mathrm{d}x\int_{0}^{\sqrt{R^2-x^2}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}y\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^R&#x3D;2\pi R<br>$$<br>答案为2$\pi$R.</p>
+<h3 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h3><p>​	设由一颗地球同步轨道通信卫星，距地面的高度为h&#x3D;36.000km，运行的角速度与地球自转的角速度相同，试计算该通信卫星的覆盖面积与地球表面积的比值(地球半径R&#x3D;6400km)。</p>
+<p>由分析可知，卫星信号的半顶角可以设为$\alpha$,则覆盖面积的投影为$D_{xy}$&#x3D;{$(x,y)$|$x^2+y^2&lt;&#x3D;R^2\sin^2\alpha$},</p>
+<p>而原本的方程为$z&#x3D;\sqrt{R^2-x^2-y^2}$,那么我们可以写出对应的面积公式。</p>
+<p>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\ \<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R\sin\alpha}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^{R\sin\alpha}&#x3D;2\pi R(1-\cos\alpha)\\<br>而地球的表面积S_1&#x3D;4\pi R\\<br>故比值\mu&#x3D;\frac{S}{S_1}\times100%\\<br>\mu&#x3D;\frac{1+\cos\alpha}{2}\\<br>\cos \alpha&#x3D;\frac{H}{H+h}\\<br>得\mu&#x3D;42.5%<br>$$</p>
+<h2 id="质心"><a href="#质心" class="headerlink" title="质心"></a>质心</h2><p>​	设有一平面薄片，占有xOy平面上的闭区域D，在点$(x,y)$处的面密度为$\rho(x,y)$,假定$\mu(x,y)$在D上连续。现在求该薄片的质心坐标。</p>
+<p>在闭区域D上任取一点$P(x,y)$及包含点P的直径很小的闭区域$\mathrm{d}{\sigma}$，则平面薄片对x轴和y轴的静力矩元素分别为<br>$$<br>\mathrm{d}M_x&#x3D;y\mu(x,y)\mathrm{d}{\sigma}\\<br>M_x&#x3D;\iint_{D}y\mu(x,y)\mathrm{d}{\sigma}\\<br>\mathrm{d}M_y&#x3D;x\mu(x,y)\mathrm{d}{\sigma}\\<br>M_y&#x3D;\iint_{D}xy(x,y)\mathrm{d}{\sigma}\\<br>M&#x3D;\iint_{D}\mu(x,y)\mathrm{d}{\sigma}<br>$$<br>设平面薄片的质心坐标为$(\bar x,\bar y)$，由于$\bar x M&#x3D;M_y,\bar y M&#x3D;M_x$，于是：<br>$$<br>\bar x&#x3D;\frac{M_y}{M}&#x3D;\frac{\iint_{D}x\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>\bar y&#x3D;\frac{M_x}{M}&#x3D;\frac{\iint_{D}y\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>$$<br>若平面薄片的面密度是常数，面积为$\sigma$​，则平面薄片的质心（成为形心）的公式为<br>$$<br>\bar x&#x3D;\frac{1}{\sigma}\iint_{D}x{d}{\sigma}\\<br>\bar y&#x3D;\frac{1}{\sigma}\iint_{D}y{d}{\sigma}\\<br>$$</p>
+<h3 id="例3"><a href="#例3" class="headerlink" title="例3"></a>例3</h3><p>​	求位于两圆$\rho&#x3D;2\sin\theta$和$\rho&#x3D;4\sin\theta$之间的均匀薄片的质心</p>
+<p>分析可知，图形关于y轴对称，最后质心一定在y轴上，且面密度为常数。<br>$$<br>\bar y&#x3D;\frac{\iint_{D}y{d}{\sigma}}{S_总}\\<br>\iint_{D}y{d}{\sigma}&#x3D;\int_{0}^{\pi}{d}{\theta}\int_{2\sin {\theta}}^{4\sin\theta}\rho\sin\theta\rho{d}{\rho}{}\\<br>&#x3D;\int_{0}^{\pi}\sin\theta[\frac{1}{3}\rho^3]<em>{2\sin\theta}^{4sin\theta}{d}{\theta}\\<br>&#x3D;\frac{56}{3}\int</em>{0}^{\pi}\sin^4\theta{d}{\theta}\\<br>&#x3D;\frac{112}{3}\frac{3}{4}\frac{1}{2}\frac{\pi}{2}\\<br>&#x3D;7\pi<br>$$</p>
+<h3 id="例4"><a href="#例4" class="headerlink" title="例4"></a>例4</h3><p>​	求均匀半球体的质心<br>$$<br>x^2+y^2+z^2&#x3D;R^2\\<br>可以得知，质心在z轴上\\<br>\bar z&#x3D;\frac{1}{V_总}\iiint_{V_1}z{d}{V}\\<br>\iiint_{V_1}z{d}{V}&#x3D;\\<br>&#x3D;\int_{0}^{\frac{\pi}{2}}{d}{\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho\cos\phi\rho^2\sin\phi{d}{\rho}\\<br>&#x3D;\frac{1}{4}\int_{0}^{\frac{\pi}{2}}\sin2\phi{d}{2\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho^3{d}{\rho}\\<br>&#x3D;\frac{\pi}{4}R^4\\<br>所以\bar z&#x3D;\\<br>\frac{\frac{\pi}{4}R^4}{\frac{2\pi R^3}{3}}\\<br>&#x3D;\frac{3a}{8}\\<br>故最后坐标为\left(0,0,\frac{3a}{8}\right)<br>$$</p>
+<h2 id="转动惯量"><a href="#转动惯量" class="headerlink" title="转动惯量"></a>转动惯量</h2><p>​	设由一平面薄片，占有xOy面上的闭区域D，在点$P(x,y)$处的面密度为$\mu(x,y)$,假定$\rho(x,y)$在 D上连续.现在求该薄片对于x轴的转动惯量和y轴的转动惯量.</p>
+<p>​	在闭区域 D上任取一点 P(x，y)，及包含点 P 的一直径很小的闭区域 $\mathrm{d}{ \sigma}$，则平面薄片对于x轴的转动惯量和y轴的转动惯量的元素分别为<br>$$<br>dI_x&#x3D;y^2\mu(x,y)d{\sigma}\\<br>dI_y&#x3D;x^2\mu(x,y)d{\sigma}\\<br>$$<br>整片平面薄片对于z轴的转动惯量和y轴的转动惯量分别为<br>$$<br>I_x&#x3D;\iint_{D}y^2\mu(x,y)d{\sigma}\\<br>I_y&#x3D;\iint_{D}x^2\mu(x,y)d{\sigma}<br>$$</p>
+<h3 id="例5"><a href="#例5" class="headerlink" title="例5"></a>例5</h3><p>求半径为a的均匀半圆薄片(面密度为常量μ)对其直径边的转动惯量.</p>
+<p>解 建立坐标系,如图 8.47 所示，则薄片所占闭区域 D可表示为<br>$$<br>D&#x3D;{(x,y)|x^2+y^2&lt;&#x3D;a^2.y&gt;&#x3D;0}\<br>则半圆薄片对于x轴的转动惯量为\\<br>I_x&#x3D;\iint_{D}\mu y^2d{\sigma}\\<br>&#x3D;\mu\int_{0}^{\pi}\sin^2d{\theta}\int_{0}^{a}\rho^3d{\rho}\\<br>&#x3D;\frac{1}{4}\mu a^4\frac{\pi}{2}\\<br>&#x3D;\frac{1}{4}Ma^2\\<br>M&#x3D;\frac{1}{2}\pi a^2\mu为半圆薄片的质量<br>$$</p>
+<h3 id="例6"><a href="#例6" class="headerlink" title="例6"></a>例6</h3><p>​	求密度为$\mu$的均匀球体对于过球心的一条轴l的转动惯量.<br>解 取球心为坐标原点，z轴与轴l重合,又设球的半径为a,则球体所占空间闭区域为：<br>$$<br>V&#x3D;(x,y,z)|x^2+y^2+z^2&lt;&#x3D;a^2\\<br>所求转动惯量即对于z轴的转动惯量I_z为\\<br>I_z&#x3D;\iiint_{V}(x^2+y^2){\rho}d{v}\\<br>&#x3D;\rho\iiint_{D}(r^2\sin^2\varphi\cos\theta+r^2sin^2\varphi \sin^2\theta)r^2\sin\varphi drd\varphi d\theta\\<br>&#x3D;{\rho}\iiint_{D}r^4\sin^3\varphi drd\varphi d\theta\\<br>&#x3D;{\rho}\int_{0}^{2\pi}d\theta\int_0^\pi \sin^3\varphi d\varphi\int_{0}^{a}r^4dr\\<br>&#x3D;\frac{8}{15}\pi a^5{\rho}<br>$$</p>
+<h2 id="引力"><a href="#引力" class="headerlink" title="引力"></a>引力</h2><p>考虑空间一物体对于物体外一点 P(īo,yo,zo)处的单位质量的质点的引力问题.设<br>物体占有空间有界闭区域 $Ω$，它在点$(x,y,z)$处的密度为$\rho(x，y，z)$,并假定<br>${\rho(x,y,z)}$在$Ω$上连续.<br>在物体内任取一点 $M(x,y,z)$及包含该点的一直径很小的闭区域 $d{v}$.把这小闭区域<br>看作一个质点,其质量元素为 $\rho dv$，它对位于$P_0$处的单位质量的质点的引力元素为<br>$$<br>dF&#x3D;(dF_x,dF_y,dF_z)\\<br>&#x3D;(\frac{x-x_0}{r^2}G\rho dv,\frac{y-y_0}{r^2}G\rho dv,\frac{z-z_0}{r^2}G\rho dv)<br>$$<br>式中，G 为引力常数,$\rho &#x3D;\rho(x，y,z),r&#x3D;\sqrt{(x-x_0)2+(y-y_0)2+(z-z_0)2}，dF_x,<br>dF_y,dF_z$.为引力元素 $dF$ 在三个坐标轴上的分量.将$dF_x,,dF_y,,dF_z$.在Ω上分别作三重积分，即可得$F_x，F_y，F_z$.</p>
+<h3 id="例7"><a href="#例7" class="headerlink" title="例7"></a>例7</h3><p>设半径为 R 的匀质球占有空间闭区域$Ω&#x3D;(x,y,z)|x^2+y^2+z^2≤R^2$.求它对于位于点$M_0(0,0,a)(a&gt;R)$处的单位质量的质点的引力,<br>解 设球的密度为$\rho_0$，由题意知$F_x&#x3D;F_y&#x3D;0$,所求引力沿z轴的分量为<br>$$<br>F_z&#x3D;\iiint_{o}G\rho_0 \frac{z-a}{[x^2+y^2+(z-a)^2]^{\frac{3}{2}}}dv\\<br>&#x3D;G\rho_0{}\int_{-R}^{R}(z-a)dz\int_{0}^{2\pi}d\theta\int_{0}^{\sqrt{R^2-z^2}}\frac{\rho d\rho}{[\rho^2+(z-a)^2]^{\frac{3}{2}}}\\<br>&#x3D;-G\frac{4\pi R^3}{3}\frac{1}{a^2}\rho_0\\<br>&#x3D;-G\frac{M}{a^2}\\<br>式中，M&#x3D;\frac{4\pi R^3}{3}\rho_0\\<br>由上述结果可知，匀质球体对求外一指点的引力如同球体的质量集中在球心，两质点间的引力。<br>$$</p>
+<p>上述结果表明，勾质球体对球外一质点的引力如同球体的质量集中于球心时两质点间的<br>引力.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>小他者、对象a、大他者</title>
+    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
+    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>大学物理</title>
+    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>存在与虚无</title>
+    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
+    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
+<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
+]]></content>
+  </entry>
+  <entry>
     <title>函数</title>
     <url>/2024/05/17/%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<p>   ▪   函数定义：<br>将我们设计好的算法，单独封装出来。<br>函数的参数，计算所需要的参数或者条件。<br>函数的返回值、可有可无。<br>功能性函数和数值形函数。<br>定义一个函数<br>1：定义函数名<br>类型标识符 函数名（形式参数表）<br>｛语句序列<br>｝<br>形式参数定义模式：<type1> num1.<br>2：形参只在函数中具有效果。<br>返回值就是函数的计算结果。<br>类型标识符（函数返回值的类型） 函数名（形式参数表）<br>｛语句序列<br>return xx；<br>｝<br>无返回值的函数用void作为类型标识符，也不用写return语句。<br>   ▪   函数调用：<br>对于定义好的函数，以及c++库里面的函数，我们直接调用就可以了。<br>调用函数的规则：<br>1：调用函数之前需要事前声明<br>函数的定义和调用不在一个程序之中。<br>调用函数之前，我们需要进行一个函数的原型声明。<br>调用形式：<br>函数名（实参列表）<br>2：嵌套调用：<br>函数之间互相调用。<br>3：递归调用：<br>函数自己调用自己。<br>例题1：指数函数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int i,j;<br>int c;<br>cout&lt;&lt;”Please enter the numbers”<br>cin&gt;&gt;i;<br>cin&gt;&gt;j;<br>c&#x3D;pow(i,j);<br>cout&lt;&lt;c&lt;&lt;end;<br>return 0;<br>}<br>例题2：将二进制数转化为十进制数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int value&#x3D;9;<br>cout&lt;&lt;”Enter an 8bit binary number”;<br>for(int i&#x3D;7;i&gt;&#x3D;0;i–)<br>{char ch;<br>cin&gt;&gt;ch;<br>if(ch&#x3D;&#x3D;‘1’)<br>{velus+&#x3D;static_cast<int>(power(2,i);}<br>cout&lt;&lt;”Decimal value is”&lt;&lt;value&lt;&lt;endl;<br>}<br>double power (double x,int n)<br>{<br>double val&#x3D;1.0;<br>while(n–)<br>val*&#x3D;x;<br>return val;}</int></type1></p>
@@ -1953,42 +1966,6 @@
     <title>拉康和弗洛伊德关于无意识的论述</title>
     <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
     <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>小他者、对象a、大他者</title>
-    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
-    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
-    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
-<blockquote>
-<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
-</blockquote>
-<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>名称</th>
-<th>性质</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>differance</td>
-<td>延异</td>
-<td>共时性</td>
-</tr>
-<tr>
-<td>difference</td>
-<td>差异</td>
-<td>历时性</td>
-</tr>
-</tbody></table>
-<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
 ]]></content>
   </entry>
   <entry>
@@ -2043,17 +2020,54 @@
 ]]></content>
   </entry>
   <entry>
+    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
+    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
+<blockquote>
+<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
+</blockquote>
+<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>differance</td>
+<td>延异</td>
+<td>共时性</td>
+</tr>
+<tr>
+<td>difference</td>
+<td>差异</td>
+<td>历时性</td>
+</tr>
+</tbody></table>
+<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>爱与典范</title>
     <url>/2024/05/17/%E7%88%B1%E4%B8%8E%E5%85%B8%E8%8C%83/</url>
     <content><![CDATA[<p>   ▪   爱的典范：<br>不是讲述对与错的问题，典雅爱情中，起作用的是一种符号爱完成生化成了一种符号，成为了一首诗歌。<br>在虐恋之中，症状代替了符号。<br>使徒的爱：圣爱是幻想父亲的爱，对自己的幻想的爱的一种回应，他正在永恒地爱着我，我也可以永恒地爱着她。这只手是一种幻影，幻想自己的手是可以伸进火堆里而幻想出的大他者的手。<br>在使徒在受鞭笞的时候，他们会处于那种极致的享乐之中，他们真的能感受到大他者拉着了他。<br>“性关系的尽头是爱，因此我不会说并不存在爱，我知识说性关系不存在”<br>一朵曼妙的花朵<br>一个新鲜的水果<br>在我双手触碰两者的时候，突然有一只手伸了出来。在触碰这只手的过程中，那只手突然着火了。我只能用作为表达失败的方式来表达爱，在爱的灰烬之处，向我伸出了一只手。<br>lacan：这灰烬之手是一种镜像的自恋结构。<br>古典的爱中，典雅爱情之中，性是不可能，自恋式的想象。<br>原作者的解释不是权威，作者已死。<br>爱处于偶然的逻辑相中，爱的相遇链接了原本两个没有关系的能指。其如其分的神迹，直接有了一朵美丽的花。她仿佛有无限的可能，在诱惑着我。<br>1、Darian Loader《拉康》：这两只手一定不是对称结构。<br>2、Bruce Fink：爱必须是一种回应（积极的解读）<br>从灰烬中伸出的那只手理解为父之名，在爱之中，我们和父之名打交道。父之名认可了你的爱，将你的爱注册在案。没有爱就没有注册在安的结婚证，爱是一种必然的创伤，爱召唤出了父之名。给了我们一种担保，让我们不至于过于哀悼我们成为灰烬的爱情。<br>   ▪   爱的表达<br>说、写、做<br>说就是言说：任何对爱的表达都是对爱的缺失，“我爱你”的意思就是你来爱我吧。苏格拉底把爱当成了背爱，而不是爱人。<br>小宝宝在刚出生的时候，所有的言爱都是对爱的请求。<br>分析师保持沉默的原因：避免向来访者索取爱。<br>说爱就等于要求被爱，说我爱你就等于在说你来爱我吧，这并不是对爱的表达，而是对爱的索取。<br>写就是一个人无法谈论爱，但是当那个人写出来的时候，就能打动你，在书写与字母不存在爱与言说的矛盾，情书比任何通过言语而表达的爱都要真实。<br>爱在停止书写的地方，是未断却无法写出之物。<br>你觉得你写的东西可能不太正确，但是你的爱却有了一个实在的参照物。可以告诉自己，我的爱就在信纸背后，在留白之处，它有一个可以寄托的场所。<br>做的维度（make love）：在完全简化为某个行为之前，就是单纯的求爱，对于男人，在做的时候，与其说他们实在做，不如说他们是在享受性，感知对方的一个部位，感受到了自己的膨胀和丰满，就意味着无所缺失，我不知道他在激动什么，不能被菲勒斯完全收编，部分认同男性（癔症式的），沦为一个普遍的像男人认同阳具一样的女性认同，女人不存在，没有所谓的女人，女人不存在。<br>如何表达爱：没有性关系，写只能在写不出的地方表达爱，说我爱你的实际意思是我缺少爱，请你来爱我。给出你所没有的，表达爱，给出你所没有的，爱的表达本身就是一种自返的结构，在说写做之中，都会遇到挫折，在说不了，写不了，做不了的地方，爱就出现在这里：请拒我所赠，盖非也。<br>给出你所没有的，你和她面对面，站在苍茫的雪地里，两个人都冻的瑟瑟发抖，但是你就是想要抱住她，你就想向她伸出手。<br>   ▪   如果试图“言说”爱<br>爱处在偶然的逻辑相中，是停止却无法写出的东西，只能以诗的形式写出。情不知所起，一往情深。相顾无言，唯有泪千行。<br>只有当语言死亡的时候，你才能活得一瞬间的真实。<br>晚期拉康是比较可怜的，是一个无法忍受自己年龄的人，说脏话，说悖论，试图将自己的平生所学一起用一遍，1975年之后拉康进入了一个强热的思辨当中，进入了一个Fichte的绝对知识，用数学的方式，将自己的理论封装起来：数理逻辑、拓扑学、波罗米结。<br>《若灵根的守灵夜》晚年的拉康奢侈无度，但是他又非常地吝啬：是爱使享乐得以屈从。到底我思是什么东西？在我思之万物之处我不在，我在我不死不在之处，即是说我等于爱。我思是一种爱与恨的战场，是Gott与魔鬼交战的战场，在诗人的角度，诗人透过自己的作品，以某种斜视，一瞥而见了作品的作者。ich&#x3D;ich（自我命名）<br>母子关系：demand-need&#x3D;desire<br>恋爱关系：desire（爱&#x2F;请求的反向投资）+need（信的内容）&#x3D;demand（情书）<br>“请拒我所赠，该非也”：否定信中的内容，不能送早餐，过分夸大的实在物，太过于压迫别人了。<br>如果没有爱的话，我们还是会在转喻链上延宕。<br>不是万物都可以计算（资本主义）：个人的价值不可以计算。</p>
 ]]></content>
   </entry>
   <entry>
-    <title>存在与虚无</title>
-    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
-    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
-<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
-]]></content>
+    <title>线代</title>
+    <url>/2024/05/22/%E7%BA%BF%E4%BB%A3/</url>
+    <content><![CDATA[<h1 id="第一章-线性方程组"><a href="#第一章-线性方程组" class="headerlink" title="第一章 线性方程组"></a>第一章 线性方程组</h1><h2 id="xi1-1-线性方程组高斯消元法与矩阵"><a href="#xi1-1-线性方程组高斯消元法与矩阵" class="headerlink" title="$\xi1.1$	线性方程组	高斯消元法与矩阵"></a>$\xi1.1$	线性方程组	高斯消元法与矩阵</h2><h2 id="xi1-2-行化简和阶梯形矩阵解的存在性和唯一性"><a href="#xi1-2-行化简和阶梯形矩阵解的存在性和唯一性" class="headerlink" title="$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性"></a>$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性</h2><h2 id="xi1-3-线性方程组的应用"><a href="#xi1-3-线性方程组的应用" class="headerlink" title="$\xi1.3$	线性方程组的应用"></a>$\xi1.3$	线性方程组的应用</h2><h1 id="第二章矩阵代数"><a href="#第二章矩阵代数" class="headerlink" title="第二章	矩阵代数"></a>第二章	矩阵代数</h1><h2 id="xi2-1-矩阵和向量"><a href="#xi2-1-矩阵和向量" class="headerlink" title="$\xi2.1$	矩阵和向量"></a>$\xi2.1$	矩阵和向量</h2><h2 id="xi2-2-矩阵的代数运算"><a href="#xi2-2-矩阵的代数运算" class="headerlink" title="$\xi2.2$	矩阵的代数运算"></a>$\xi2.2$	矩阵的代数运算</h2><h2 id="xi-2-3逆矩阵与矩阵的初等变换"><a href="#xi-2-3逆矩阵与矩阵的初等变换" class="headerlink" title="$\xi$2.3	逆矩阵与矩阵的初等变换"></a>$\xi$2.3	逆矩阵与矩阵的初等变换</h2><h2 id="xi-2-4转置矩阵与一些重要的方阵"><a href="#xi-2-4转置矩阵与一些重要的方阵" class="headerlink" title="$\xi$2.4	转置矩阵与一些重要的方阵"></a>$\xi$2.4	转置矩阵与一些重要的方阵</h2><h2 id="xi-2-5分块矩阵"><a href="#xi-2-5分块矩阵" class="headerlink" title="$\xi$2.5	分块矩阵"></a>$\xi$2.5	分块矩阵</h2><h1 id="第三章行列式"><a href="#第三章行列式" class="headerlink" title="第三章	行列式"></a>第三章	行列式</h1><h2 id="xi-3-1方阵的行列式"><a href="#xi-3-1方阵的行列式" class="headerlink" title="$\xi$3.1	方阵的行列式"></a>$\xi$3.1	方阵的行列式</h2><h2 id="xi-3-2行列式的主要性质"><a href="#xi-3-2行列式的主要性质" class="headerlink" title="$\xi$3.2	行列式的主要性质"></a>$\xi$3.2	行列式的主要性质</h2><h2 id="xi-3-3行列式的应用"><a href="#xi-3-3行列式的应用" class="headerlink" title="$\xi$3.3	行列式的应用"></a>$\xi$3.3	行列式的应用</h2><h1 id="第四章向量空间"><a href="#第四章向量空间" class="headerlink" title="第四章	向量空间"></a>第四章	向量空间</h1><h2 id="xi-4-1向量的定义及其运算"><a href="#xi-4-1向量的定义及其运算" class="headerlink" title="$\xi$4.1	向量的定义及其运算"></a>$\xi$4.1	向量的定义及其运算</h2><h2 id="xi-4-2向量的线性相关性"><a href="#xi-4-2向量的线性相关性" class="headerlink" title="$\xi$4.2	向量的线性相关性"></a>$\xi$4.2	向量的线性相关性</h2><h2 id="xi-4-3向量组的极大线性无关组和秩"><a href="#xi-4-3向量组的极大线性无关组和秩" class="headerlink" title="$\xi$4.3	向量组的极大线性无关组和秩"></a>$\xi$4.3	向量组的极大线性无关组和秩</h2><h2 id="xi-4-4子空间"><a href="#xi-4-4子空间" class="headerlink" title="$\xi$4.4	子空间"></a>$\xi$4.4	子空间</h2><h2 id="xi-4-5基和维数"><a href="#xi-4-5基和维数" class="headerlink" title="$\xi$4.5	基和维数"></a>$\xi$4.5	基和维数</h2><h2 id="xi-4-6矩阵的秩"><a href="#xi-4-6矩阵的秩" class="headerlink" title="$\xi$4.6	矩阵的秩"></a>$\xi$4.6	矩阵的秩</h2><h2 id="xi-4-7线性方程组的有解条件及解的结构"><a href="#xi-4-7线性方程组的有解条件及解的结构" class="headerlink" title="$\xi$4.7	线性方程组的有解条件及解的结构"></a>$\xi$4.7	线性方程组的有解条件及解的结构</h2><h2 id="xi-4-8-R-n-到-R-m-的线性映射"><a href="#xi-4-8-R-n-到-R-m-的线性映射" class="headerlink" title="$\xi$4.8	$R^n$到$R^m$的线性映射"></a>$\xi$4.8	$R^n$到$R^m$的线性映射</h2><h1 id="第五章特征值与特征向量"><a href="#第五章特征值与特征向量" class="headerlink" title="第五章	特征值与特征向量"></a>第五章	特征值与特征向量</h1><h2 id="xi-5-1矩阵的特征值与特征向量"><a href="#xi-5-1矩阵的特征值与特征向量" class="headerlink" title="$\xi$5.1	矩阵的特征值与特征向量"></a>$\xi$5.1	矩阵的特征值与特征向量</h2><h2 id="xi-5-2矩阵的相似对角化"><a href="#xi-5-2矩阵的相似对角化" class="headerlink" title="$\xi$5.2	矩阵的相似对角化"></a>$\xi$5.2	矩阵的相似对角化</h2><h2 id="xi-5-3实对称矩阵的正交相似对角化"><a href="#xi-5-3实对称矩阵的正交相似对角化" class="headerlink" title="$\xi$5.3	实对称矩阵的正交相似对角化"></a>$\xi$5.3	实对称矩阵的正交相似对角化</h2><p>​	由定理5.2.1知，一个n阶矩阵能否对角化取决于它是否有n个线性无关的特征向量.那么什么样的矩阵一定有n个线性无关的特征向量呢?下面我们就来证明任一n阶实对称矩阵一定存在n个线性无关的特征向量,从而可以对角化.也就是说,存在可逆阵$P$，使得$P^{-1}AP&#x3D;\Lambda$为对角阵。进一步，我们还可证明存在正交矩阵$Q$,使得$Q^T AQ&#x3D;\Lambda$为对角阵.为此，我们先引人如下概念.</p>
+<p>​	定义 5.3.1	设$\alpha&#x3D;[a_1,a_2.\cdots,a_n]^T,\beta&#x3D;[b_1,b_2,\cdots,b_n]^T$称<br>$$<br>(\alpha,\beta)&#x3D;\alpha^T\cdot\beta&#x3D;\sum_{i&#x3D;i}^na_ib_i<br>$$<br>为向量$\alpha,\beta$的内积，显然，$(\alpha,\alpha)&gt;&#x3D;0$,当且仅当$\alpha&#x3D;0$时等号成立，关于向量内积，还有如下性质：<br>$$<br>(1)(\alpha,\beta)&#x3D;(\beta,\alpha),\\<br>(2)(\alpha+\beta,\gamma)&#x3D;(\alpha,\gamma)+(\alpha,\gamma),\\<br>(3)k\alpha,\beta)&#x3D;k(\alpha,\beta),k\in R.\\<br>(4)(0,\alpha)&#x3D;(\alpha,0)&#x3D;0.\\<br>(5)(\sum_{i&#x3D;1}^{n}k_i\alpha_i,\alpha)&#x3D;\sum_{i&#x3D;1}^{n}k_i(\alpha_i,\alpha),k_i\in R,i&#x3D;1,\cdots,n.\\<br>$$<br>​	定义 5.3.2 称$|\alpha|&#x3D;\sqrt{(\alpha,\alpha)}$为向量$\alpha$的长度（或范数），长度为1的向量成为单位向量（unit vector）。</p>
+<p>​	一个向量$\alpha $的长度代表了n维空间中与$\alpha $所对应的点到原点（零向量所对应的点）的“距离”。因此，对于任意两个n维向量$\alpha,\beta $所对应的n维空间的两个点之间的距离可以表示为$|\alpha-\beta|$.</p>
+<p>​	关于向量长度，有如下性质：<br>$$<br>设\alpha\in R^n,\beta \in R^n,k \in R\\<br>(1)非负性：|k\alpha|&#x3D;|k||\alpha|\\<br>(2)正齐性：|k\alpha|&#x3D;|k||\alpha|\\<br>(3)柯西—许瓦兹不等式：|(\alpha,\beta)|&lt;&#x3D;|\alpha||\beta|\\<br>(4)三角不等式|\alpha|+|\beta|&gt;&#x3D;|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>我们仅就性质(3),(4)证明\\<br>$$</p>
+<p>$$<br>证明(3)\forall t\in R,构造关于t的二次多项式\\<br>0&lt;&#x3D;(\alpha+t\beta,\alpha+t\beta)&#x3D;(\alpha,\alpha)+2(\alpha,\alpha)t+(\beta,\beta)t^2\\<br>所以\\<br>\Delta&#x3D;4(\alpha,\beta)^2-4(\alpha,\alpha)(\beta,\beta)&lt;&#x3D;0.\\<br>即\\<br>（\alpha,\beta）^2&lt;&#x3D;(\alpha,\alpha)(\beta,\beta)&#x3D;|\alpha|^2\cdot|\beta|^2,\\<br>所以\\<br>|(\alpha,\beta)|&lt;&#x3D;|\alpha|\cdot|\beta|<br>$$</p>
+<p>$$<br>(4)|\alpha-\beta|^2&#x3D;(\alpha-\beta,\alpha-\beta)&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\</p>
+<blockquote>
+<p>&#x3D;|\alpha|^2-2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;(|\alpha|-|\beta|)^2\\<br>故\\<br>|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>(|\alpha|+|\beta|)^2&#x3D;|\alpha|^2+2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\<br>&#x3D;(\alpha-\beta,\alpha-\beta)\\<br>&#x3D;|\alpha-\beta|^2.<br>$$</p>
+</blockquote>
+<h1 id="第六章二次型"><a href="#第六章二次型" class="headerlink" title="第六章	二次型"></a>第六章	二次型</h1><h2 id="xi-6-1二次型及其矩阵表示"><a href="#xi-6-1二次型及其矩阵表示" class="headerlink" title="$\xi$6.1	二次型及其矩阵表示"></a>$\xi$6.1	二次型及其矩阵表示</h2><h2 id="xi-6-2二次型化位标准型"><a href="#xi-6-2二次型化位标准型" class="headerlink" title="$\xi$6.2	二次型化位标准型"></a>$\xi$6.2	二次型化位标准型</h2><h2 id="xi-6-3正定二次型"><a href="#xi-6-3正定二次型" class="headerlink" title="$\xi$6.3	正定二次型"></a>$\xi$6.3	正定二次型</h2><h2 id="xi-6-4二次型的应用"><a href="#xi-6-4二次型的应用" class="headerlink" title="$\xi$6.4	二次型的应用"></a>$\xi$6.4	二次型的应用</h2><h1 id="第七章线性空间与线性变换"><a href="#第七章线性空间与线性变换" class="headerlink" title="第七章	线性空间与线性变换"></a>第七章	线性空间与线性变换</h1><h2 id="xi-7-1线性空间"><a href="#xi-7-1线性空间" class="headerlink" title="$\xi$7.1	线性空间"></a>$\xi$7.1	线性空间</h2><h2 id="xi-7-2线性变换"><a href="#xi-7-2线性变换" class="headerlink" title="$\xi$7.2	线性变换"></a>$\xi$7.2	线性变换</h2><h2 id="xi-7-3线性变换的矩阵表示"><a href="#xi-7-3线性变换的矩阵表示" class="headerlink" title="$\xi$7.3	线性变换的矩阵表示"></a>$\xi$7.3	线性变换的矩阵表示</h2><h2 id="xi-7-4线性变换的特征值与特征向量"><a href="#xi-7-4线性变换的特征值与特征向量" class="headerlink" title="$\xi$7.4	线性变换的特征值与特征向量"></a>$\xi$7.4	线性变换的特征值与特征向量</h2><h2 id="xi-7-5欧几里得空间简介"><a href="#xi-7-5欧几里得空间简介" class="headerlink" title="$\xi$7.5	欧几里得空间简介"></a>$\xi$7.5	欧几里得空间简介</h2><h1 id="MATLAB在线性代数中的作用"><a href="#MATLAB在线性代数中的作用" class="headerlink" title="MATLAB在线性代数中的作用"></a>MATLAB在线性代数中的作用</h1><h2 id="xi-8-1MATLAB简介"><a href="#xi-8-1MATLAB简介" class="headerlink" title="$\xi$8.1	MATLAB简介"></a>$\xi$8.1	MATLAB简介</h2><h2 id="xi-8-2MATLAB的基本操作"><a href="#xi-8-2MATLAB的基本操作" class="headerlink" title="$\xi$8.2	MATLAB的基本操作"></a>$\xi$8.2	MATLAB的基本操作</h2><h2 id="xi-8-3向量的生成与运算"><a href="#xi-8-3向量的生成与运算" class="headerlink" title="$\xi$8.3	向量的生成与运算"></a>$\xi$8.3	向量的生成与运算</h2><h2 id="xi-8-4矩阵的生成与运算"><a href="#xi-8-4矩阵的生成与运算" class="headerlink" title="$\xi$8.4	矩阵的生成与运算"></a>$\xi$8.4	矩阵的生成与运算</h2><h2 id="xi-8-5常用的矩阵函数"><a href="#xi-8-5常用的矩阵函数" class="headerlink" title="$\xi$8.5	常用的矩阵函数"></a>$\xi$8.5	常用的矩阵函数</h2><h2 id="xi-8-6线性方程组求解"><a href="#xi-8-6线性方程组求解" class="headerlink" title="$\xi$8.6	线性方程组求解"></a>$\xi$8.6	线性方程组求解</h2>]]></content>
   </entry>
   <entry>
     <title>第六章杆件的内力</title>
@@ -2206,12 +2220,26 @@
 <p>根据脱离体的平衡可得<br>轴力:				$F_N&#x3D;F\cos\alpha$<br>剪力:				$F_s&#x3D;F\sin\alpha$<br>弯矩:				$M&#x3D;-FR(1-\cos\alpha)$</p>
 <p><img src="https://p.sda1.dev/17/973ed8f965ae686e90957884e3f958a2/QQ%E6%88%AA%E5%9B%BE20240520184100.png"></p>
 <p>上面式中各内力的符号可采用与直梁类似的规定，只不过观察者应进入曲梁所包围的区域之内。在曲梁中任取一个截面，保留左边部分，在截面上均为正号的轴力、剪力、弯矩如图6.17(a)所示。图6.17(b)则表示了保留右边部分均取正号的各内力方向。</p>
+<h2 id="梁的平衡微分方程及其应用"><a href="#梁的平衡微分方程及其应用" class="headerlink" title="梁的平衡微分方程及其应用"></a>梁的平衡微分方程及其应用</h2><p>​	由于梁弯曲问题的重要性，在本小节中，将专门讨论梁的弯曲内力，即剪力和弯矩。在<br>上小节中，用截面法可以建立剪力和弯矩的方程，由此可以画出剪力图和弯矩图，并可以进<br>一步确定人们所关心的关键截面上的剪力和弯矩值。但是，如果梁中存在着不同荷载形式时，<br>必须分段讨论建立方程，这是比较繁琐的。有没有可能更快速便捷地画出内力图，得到关键<br>截面的内力值呢?这便是本小节要解决的主要问题。显然，当梁承受横向荷载产生弯曲变形<br>时，其内力是由外荷载引起的，因此剪力和弯矩必定与外荷载之间存在着某种函数关系。本<br>小节将分别讨论几种典型荷载作用下的这种关系，然后再利用这种关系，根据外荷载直接画<br>出剪力弯矩图。</p>
+<h3 id="6-3-1-梁的平衡微分方程"><a href="#6-3-1-梁的平衡微分方程" class="headerlink" title="6.3.1 梁的平衡微分方程"></a>6.3.1 梁的平衡微分方程</h3><p>​	首先考虑在分布力作用的情况下，荷载9、剪力F和弯矩M之间存在的关系。<br>​	在有分布力 $q(x)$作用的梁上取出一个微元长度区段，其长度为$dx$，如图6.18所示。坐<br>标系$x$轴正向水平向右，$y$轴竖直向上。荷载$q$向上为正。由于$dx$很小，故可认为在微元区<br>段内$q$为常数。微元段左侧面有剪力$F$和弯矩$F$。在右侧面,由于所在的坐标比左侧面多出 $dx$,<br>因而剪力弯矩都有了增量而分别成为$F_s+dF_s$和$M+dM$。由v方向上力的平衡可得<br>$$<br>F_s+qdx-(F_s+dF_s)&#x3D;0<br>$$<br>由之可知<br>$$<br>q&#x3D;\frac{dF_s}{dx}<br>$$<br>再对微元区段右截面中点取矩可得<br>$$<br>M+dM-M-F_sdx-\frac{1}{2}q(dx)^2&#x3D;0<br>$$<br>注意到上式中的$(dx)^2$是二阶微量，因而可以忽略不计，由此可得<br>$$<br>F_S&#x3D;\frac{dM}{dx}<br>$$<br>两个式子都称作梁的平衡微分方程(differential equations of equibrium).</p>
+<p>​	由梁的平衡微分方程可以导出，在梁的A截面到B截面之间（B截面在A截面右边），如果只有分布力作用。那么便有。<br>$$<br>F_s(B)&#x3D;F_s(A)+\int_{A}^{B}q(x)dx\\<br>M(B)&#x3D;M(A)+\int_{A}^{B}F_s(x)dx<br>$$<br>由式(6.3a)可知，从 A截面到B截面剪力的增量等于 AB区段内横向分布力的总量。或者说，<br>等于 AB区段内分布荷载图的面积，即图6.19中灰色区域的面积。显然，如果在 AB区段内q<br>是常数，式(6.3a)便可进一步简化为</p>
+<p>同样，由式(6.3b)可知，从A截面到B截面弯矩的增量等于AB区段内剪力图的面积<br>此处应注意，剪力图在横轴下方的部分，其“面积”应是负数。<br>由式(6.2)和式(6.3)，还可以得到一系列有意义的结论。<br>如果在 AB区段内没有任何荷载作用，那么剪力在此区段内必定是常数，因而相应的剪力<br>图线必定是平行于x轴的直线:而弯矩必然是x的线性函数，弯矩图线必定是斜直线。进一<br>步地，如果这个区段内剪力图线位于横轴上方，即剪力为正，则对应的弯矩图线向右上倾斜:<br>反之，如果剪力图线位于横轴下方，即剪力为负，则弯矩图线向右下倾斜:如果剪力在此区<br>段内恒等于零，则对应的弯矩图转化为平直线了，如图6.20所示。<br>如果从A截面到B截面有均布荷载g的作用，那么剪力函数必定是x的线性函数，因而</p>
+<p>6.3.2 梁承受集中荷载的情况<br>应该注意，梁的平衡微分方程只是在梁的微元长度段上承受分布力的情况下导出的。如<br>果出现其他形式的荷载，则可以根据微元的力平衡和力矩平衡推导出其他形式的方程。<br>集中力和集中力偶矩作用，是梁中经常出现的情况。下面将考虑它们对剪力和弯矩的影<br>响。如图6.21(a)所示，梁中A处有集中力F的作用。在A处取微元区段x，将集中力作用<br>点的左侧面的剪力记为F，右侧面的剪力记为。根据力平衡即可得<br>F*&#x3D;F+F<br>(6.4)<br>这就是说，集中力F的作用使剪力在其作用处产生一个大小为F的增量。因此，如果从左到<br>右地考虑集中力作用处剪力图的变化，那么剪力图在此处将会产生一个跃变，跃变的方向与<br>作用力方向相同，跃变的幅度就是作用力的大小，如图6.21(b)所示。<br>另一方面，由于在集中力作用点以前和以后的区段内剪力数值有了差异，也就是作为弯<br>矩导数的数值有了差异，因而弯矩图线在该点处的斜率有了差异。这样，弯矩图线在该处必<br>定会出现一个不光滑点，即尖角。尖角的朝向与集中力方向相反，如图6.21(c)所示。</p>
+<p>用同样的方式考察集中力偶矩对弯矩的影响，如图6.22(a)所示。设在A处有顺时针方向<br>作用的集中力偶矩m，而把A偏左截面的弯矩记为M，偏右截面的弯矩记为M<em>，根据矩<br>的平衡可得<br>M</em>&#x3D;M-+m<br>(6.5)<br>这说明，集中力偶矩m使得其作用点处的弯矩产生了一个大小为m的增量。如果从左到右地<br>观察相应弯矩图的变化就会发现，若力偶矩作用是顺时针方向的，弯矩图则向上跃变，如图<br>6.22(b)所示;若力偶矩作用是逆时针方向，弯矩图则向下跃变;跃变的幅度就是m。<br>由于力偶矩的作用不直接影响作用点处微元段处力的平衡，因此作用点处左右两侧面的<br>剪力值不会因为力偶矩的作用而产生差异。<br>要注意上述规律是与一定的坐标系相对应的。这个坐标系就是:x轴正向水平向右，纵轴<br>剪力和弯矩都取向上为正。有的教材和文献规定弯矩图纵轴正向朝下，那么上述有关弯矩图</p>
+<p>的规律便刚好相反，这一点请读者注意。同时，上面所叙述的规律都是按图形从左到右的顺<br>序得到的，如果从右到左地观察图形，这些规律也应相应地予以修正。<br>6.3.3<br>根据外荷载画剪力弯矩图<br>利用上两小节所得到的一系列结论，便可以根据外荷载直接画出梁的剪力弯矩图。一般<br>总是把坐标原点放在梁的最左端。在画图时应注意以下的要点。<br>①首先求出约束处的支反力及支反力偶矩。求出之后，支反力及支反力偶矩便与其他外<br>荷载同等看待。<br>②根据各个荷载作用的位置将梁划分为若干个区段，从左到右依次画出连续的图线<br>③ 应根据荷载、剪力、弯矩之间的微分关系明确图线的走向,并根据式(6.3)~式(6.5)确<br>定各荷载作用处剪力和弯矩的数值。<br>4图形最左端应从原点开始，右端的结束点应该在横轴上。<br>⑤注意标出图形转折点和局部极值点的数值。<br>下面便用一个实例来说明剪力弯矩图的画法。<br>图6.23(a)是一个长度为2a的简支梁，前半段承受向下的均布荷载q，中点处承受顺时针<br>方向的集中力偶矩 qa。<br>先求支反力。对左端铰A取矩，即可求出C处的支反力为向上作用的ga。对右端铰C取<br>即可求出A处的支反力为向上作用的-ga。这两个支反力已用虚线标注在图6.23(a)中了。<br>矩，<br>画出剪力图的坐标系后即可开始画剪力图，如图6.23(b)所示。原点对应着左端面A。首<br>先注意到，4处有向上的集中力一ga，因此剪<br>力图线有一个向上的跃变,从而使剪力值从零升<br>至qa。从A到B之间有向下的均布力，因而<br>da主A<br>剪力图线应向右下倾斜。由于AB间向下的均布<br>力作用总量为qa，因此其剪力值也应下降qa，<br>即从-ga下降到–qa。容易看出，这条倾斜<br>qd:<br>的剪力图线在离A点-a处穿越了横轴。<br>3qa&#x2F;4<br>(a)<br>A&#x2F;A<br>(6)<br>在B处有一个集中力偶矩的作用，但它并不<br>直接影响剪力图的走势。从B到C之间没有任何<br>荷载作用，因此剪力图线保持水平直线直到C。</p>
+<p>程中肯定存在错误;或者，在开始时支反力的求解就有错误，<br>建立弯矩图的坐标系后即可开始画弯矩图，如图6.23(c)所示。在左端 A 处结构为铰，<br>而且没有集中力偶矩作用，因此A处弯矩是零。从A到B之间剪力图向右下倾斜，故弯矩<br>线为凸的抛物线。由于A点偏右处剪力值为正数ga，因而弯矩图线从A处开始时应向着右上<br>方倾斜延伸。<br>注意到剪力图在距左端-a处穿越横轴，因此抛物线将在该处达到局部极大值之后转而<br>向右下倾斜延伸。由于左端铰处弯矩为零,这个局部极大值就等于零到-a处剪力图的面积<br>也就是<br>329a<br>B处的弯矩值应为AB之间剪力图面积的代数和，注意横轴下方的面积为负值，因而B<br>处的弯矩值是–qa’。抛物线在这个位置上达到了它的终点。<br>由于B处有一个顺时针方向的集中力偶矩，因而该处弯矩图线有一个向上的跃变。跃变<br>的幅度即力偶矩的大小 qa’，因此弯矩数值从–qa’升至 qa’。<br>从B到C，由于相应区段的剪力图线是横轴下方的一条平直线，因而弯矩图线应该是向<br>右下方倾斜的直线。在此区间，弯矩值下降的幅度等于此区间内剪力图的面积，即二ga’。这<br>使得弯矩图线结束在横轴上。由于C处梁为铰支承，而且没有集中力偶矩作用，因而弯矩应<br>该是零，这一点印证了所画出的弯矩图的正确性。<br>上面的例子详细地说明了剪力弯矩图的作法。在计算各处剪力弯矩值时，上面用到了式<br>(6.3)所表述的“几何”的方法;同时，计算也可以采用上节中所表述的“力学”的方法(即<br>“直梁某截面上的剪力在数值上等于该截面左端所有横向力的代数和”等)。这两类方法可以<br>视情况灵活地交替使用。<br>在实际作图过程中，除了熟练地应用上两小节所叙述的一系列图线走向的规律之外，还<br>应熟练掌握梁的支承处的剪力弯矩特点。<br>同时，还应观察结构及其受力特点。例如在图6.24(a)中，形成了对称结构承受对称<br>荷载的情况。画出内力图后就会发现，它的剪力图是关于中点反对称的，而弯矩图则是<br>关于中点对称的。这一特点可以这样定性地说明:如果荷载是关于中点对称的，那么，<br>若以中点为原点，荷载便可以表达为一个偶函数。通过式(6.3a)和式(6.3b)的积分，<br>剪力便是奇函数，弯矩便是偶函数。这样，剪力图便关于中点反对称，弯矩图便关于中</p>
+<p>点对称。<br>根据同样的理由，如图6.24(b)所表示的那样，对称结构承受反对称荷载，其剪力图对称<br>而弯矩图反对称。<br>6.3.4 弯矩的峰值<br>由于弯矩在梁的强度计算中将起到很重要的作用，因此本小节将特别讨论弯矩的局部极<br>值，也就是弯矩的峰值。在弯矩图中，这些峰值应特别地标示出其数值，如图6.23(c)中的三<br>个弯矩值。</p>
+<p>容易看出，弯矩的峰值一般会出现在下面几种情况下:在有分布荷载作用的区段，若某<br>截面的剪力为零，则该截面处就会出现弯矩的局部极值，如图6.23中距左端处，就有弯<br>32:在集中力作用处(包括支座)，弯矩图会出现尖点，这些尖点就可能构成弯矩<br>矩峰值 ga<br>的峰值:同时，在集中力偶矩作用处，弯矩会产生跃变，跃变前后的弯矩值也都会成为弯知<br>的峰值。<br>在全梁上考虑绝对值最大的弯矩时，梁的端点处也是值得注意的地方，例如图6.25中承<br>受均布荷载的简支梁，由于其两端作用有集中力偶矩，其绝对值最大的弯矩并没有出现在剪<br>力为零处，而是出现在左端面，如图6.26所示。</p>
+<p>对于更为复杂的问题，则需要将各方面的因素综合加以考虑。下面用两个例子来说明。<br>【例6.5】如图6.27所示的承受均布荷载的简支梁长度为L，为了提高它的承载能力，可以考虑它的两<br>个支座关于中截面对称地向中点移动，记移动的距离为图中的a。欲使梁中绝对值最大的弯矩为最小，求a<br>与L之比:并求这样移动后,梁中绝对值最大的弯矩所下降的百分数。<br>解:由于结构关于中点对称，因此两个支座的支反力均为只要两个支座不靠近中点，梁的弯矩图就具有图6.28(a)的形式。其中<br>在D截面具有最大的负弯矩M，中截面C处具有最大的正弯矩Mc。<br>它们构成两个弯矩峰值。D截面的弯矩就是AD长度上均布荷载对D截面的矩，故有而C截面的弯矩是AC长度上均荷载q对C截面的矩与支座反力对C截面矩的代数和，因而有显然，Mc和M的数值随着a的变化而变化。为了了解这两个弯矩峰值关于a的变化规律，图6.28(b)中画出了它们关于a的函数图像。从图中可以看出，随着a的增加，M的绝对值趋于增加，而M趋于减小。因此，要使梁中绝对值最大的弯矩为最小，应取两条弯矩曲线的交点处的弯矩，即两个弯矩峰值的绝对值应该相等，故取</p>
+<p>由之可解出</p>
+<p>​	支座移动前，其最大弯矩为M…–qL。按上述比例移动后，最大弯矩</p>
+<p>故弯矩降低的比例</p>
+<p>个降低的百分比是很高的</p>
+<p>【例6.6】如图6.29所示，自重$W&#x3D;20kN$的简易起重机两轮间距为16m，起重机自身重心位于两轮中点。起重机可在跨度为$5m$的简支梁上来回运行，求起吊重量$F&#x3D;5kN$时梁中的最大弯矩。<br>    解:起重机与起吊重物对横梁的作用体现为两轮C和D处对横梁的集中力P和P2，如图6.30(a)所示。<br>以起重机为研究对象，分别对C和D取矩可得(为方便计算，本题中长度的单位取m，力的单位取kN)<br>$$<br>P&#x3D;6.25kN，P&#x3D;18.75 kN<br>$$<br>由于横梁上只有集中力$P_1$和$P_2$作用，因而其弯矩图必定为图$6.30(b)$所示的形状，且峰值一定出现在C、D两个截面处。</p>
+<p>​	由于起重机可移动，因此梁中的弯矩将随着起重机的移动而发生连续的变化。针对这种情况，可引入一个表示起重机位置的参量，并将弯矩峰值表达为该参量的函数。假定起重机左轮C处与梁左端铰的距离为x，如图6.30(a)所示。对B取矩，便可得左端铰处的支反力<br>Ã &#x3D;-[6.25x(5-x)+18.75x(5-x-1.6)]<br>R,&#x3D;19-5x(kN)<br>良萨<br>由此可得C、D两个截面处的弯矩<br>Mc&#x3D;Rx&#x3D;19x-5x(kN.m)<br>M,&#x3D;R(x+1.6)-1.6P<br>&#x3D;20.4+11x-5x(kN.m)<br>R<br>800<br>800<br>5 m<br>图 6.29<br>起重机简图<br>P<br>P<br>1.6 m<br>5 m<br>(a)<br>Ms<br>M<br>(b)<br>图6.30 梁中的弯矩使C截面弯矩取极值的x应满足<br>dM&#x3D;19-10x&#x3D;0，即x&#x3D;19m<br>dx<br>Mc&#x3D;19x1.9-5x1.9’&#x3D;18.05 kN.m<br>使D截面弯矩取极值的x应满足<br>dM2&#x3D;11-10x&#x3D;0，即x&#x3D;11m<br>dr<br>M&#x3D;20.4+11x1.1-5x1.1&#x3D;26.45 kN·m<br>由此可知，当起重机左轮C与简支梁左端铰的距离为1.1m时，起重机右轮D处截面的弯矩值<br>26.45kN·m是起重机移动过程中梁中产生的最大弯矩。<br>故有<br>故有<br>下面将上面的问题做一个更加一般性的讨论。如图6.31所示,简支梁承受一组集中移动荷载(E,F,…<br>F)的作用，这些力的间距不变。求这个梁的绝对值最大的弯矩。<br>F<br>F<br>a&#x2F;2a&#x2F;2<br>L&#x2F;2<br>L12<br>图6.31 移动荷载作用<br>在(F，尸，…，F)作用下，无论荷载在梁上的任何位置，弯矩图的峰值点总是发生在集中荷载的作<br>用点，由此可以认为绝对最大弯矩一定发生在某一荷载作用截面。下面先任选某一个集中荷载，来讨论移动<br>荷载处于什么位置时，该荷载的作用截面的弯矩达到最大值。由于移动荷载个数是有限的，就可求出各荷载<br>作用截面的最大弯矩，从而确定绝对最大弯矩。设F与A点的距离为x，梁上荷载的合力F与F 的作用线<br>之间的距离为 a。<br>由M。&#x3D;0得<br>F &#x3D;F l-x-a<br>L<br>当F位于F的左侧时，则F作用截面的弯矩为<br>M&#x3D;F x-M &#x3D;£(-x-@)x-M<br>式中，M，表示F，以左梁上的所有荷载对F、作用点的力矩总和，它是一个与x无关的常数。根据极<br>值条件，有<br>由式①可得绝对最大弯矩的位置，即<br>dMF(L-2x-a)<br>&#x3D;0<br>Ax<br>a<br>N<br>4<br>巴</p>
+<p>同理，当只 位于后的右侧时，可求得x&#x3D;-+”为发生绝对最大弯矩的位置。故简支梁发生绝对最大<br>弯矩所在截面由下式确定<br>x之巧<br>式 ③ 表明，当F 与荷载合力尸 对称于跨中截面时，F,作用点的截面上弯矩为最大值，其值为<br>M.–(LFa)-M<br>4</p>
+<p>在应用式③和式④计算荷载作用处截面最大弯矩时，应该注意的是:<br>①F在F右方时，a取正值:F在F左方时，a取负值。<br>②F 是实际荷载的合力。在F 和F对称于跨中截面时，可能有的荷载不再位于梁上，或有新的荷载<br>进入梁上，这时应重新计算合力和作用位置。<br>按上述方法可算出每一个荷载作用处截面的最大弯矩，并加以比较，其中最大者就是绝对最大弯矩</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>线代</title>
-    <url>/2024/05/22/%E7%BA%BF%E4%BB%A3/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>镜像阶段：关系即伪，无中生伪有</title>
@@ -2224,6 +2252,186 @@
     <url>/2024/05/17/%E9%80%A3%E6%BF%81/</url>
     <content><![CDATA[<p>連濁（れんだく）：連濁とは、ある語と語が組み合わさって、熟語（じゅくご）や複合語（ふくごうご）になったとき、後ろの語の先頭の音が、清音から濁音に変化する現象のことです、連濁は例外も多いのですが、それでも一般的なルールがありますので、次のようにまとめてみました。<br>連濁が起こりやすいグループと、連濁が起こりにくいグループに分けました。<br>連濁が起こりやすい：OO＋和語<br>和語とは、日本で古くから使われていた言葉で、基本的に訓読みします。<br>連濁が起こりにくい：OO＋外来語　OO＋かんご<br>それにたいして漢語とは、中国から伝わった言葉で、基本的に音読みします。<br>和語＋和語の組み合わせのとき、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>貝殻（かいがら）、長靴（ながぐつ）、夜空（よぞら）、巻き寿司（まきずし）、<br>鼻血（はなじ）、時々（ときどき）、前歯（まえば）、生け花（いけばな）<br>漢語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>気軽（きがる）、仕事（しごと）、豚汁（とんじる）、人数（にんずう）、<br>団子（だんご）、台所（だいどころ）、茶畑（ちゃばたけ）、煎餅(せんべい)。<br>変温現象：発音安くするの変化<br>舌を上顎につけてから「お」というと、自然に「の」になりますね。<br>外来語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>スナック菓子（がし）、サラダ皿（ざら）、スイーツ処（どころ）、キャベツ畑（ばたけ）<br>即ち、熟語や複合語の後ろの語側語、かつ後ろの語の先頭のかなが清音の場合、連濁することが多いです。<br>はな＋たば：はなだば（ｘ）はなたば<br>前にご紹介した基本のルールの通り、熟語や複合語の後ろの語が和語の場合、後ろの語の先頭のかなは濁音化すべきですが、もしその先頭のかなに濁音がある場合、連濁ないことがあります。<br>無傷（むきず）、座敷（ざしき）、絵筆（えふで）、ベイト先（さき）<br>次に、先後が並列構造になっている場合は、あまり連濁しません、<br>例えば、「すき嫌い」という複合語は、基本のルールならば「すきぎらい」となりますよね、<br>ですが「すき」と「嫌い」には並列構造がありますので連濁しません。<br>山川（やまかわ）、押し引き（おしひき）、嬉し悲しい（うれしかなしい）<br>まずは、熟語や複合語の後ろの語に漢語がくるときです<br>和語＋漢語の組み合わせのとき、ほとんど連濁しません<br>株券（かぶけん）、寒気（さむけ）、畑仕事（はたけしごと）、場所（ばしょ）、<br>家賃（やちん）、手帳（てちょう）、手本（てほん）、見本（みほん）<br>漢語＋漢語の組み合わせのとき、ほとんど連濁しません<br>価格（かかく）、旅行（ようこう）、完成（かんせい）、基礎（きそ）<br>携帯（けいたい）、位置（いち）、後輩（こはい）、警報（けいほう）<br>外来語＋漢語の組み合わせのとき、ほとんど連濁しません<br>グローバル化（か）、ヒット作、サービス単価（たんか）、リサイクル品（ひん）<br>例外１：<br>湯気（ゆげ）、足し算（たしざん）、登山（とざん）<br>例外２：長音<br>三本（さんぼん）、中国（ちゅごく）、定規（じょうぎ）、漫才（まんざい）、単行本（たんこんぼん）<br>和語＋外来語の組み合わせのとき、ほとんど連濁しません<br>一コース、一人カラオケ、負けチーム<br>漢語＋外来語の組み合わせのとき、ほとんど連濁しません<br>健康（けんこう）チェック、筋肉（きんにく）トレーニング、薬用（やくよう）ファンデション<br>外来語＋外来語<br>アフターサービス、レイトショー、ヘルスチェック、ワーキングホリデー。<br>連濁の一般的な規則をまとめますと、まずは熟語や複合語の後ろの語が何語なのかを確認します、<br>そして、和語なら連濁が起こりやすく、漢語や外来語が起こりにくいと考えてください。<br>転音：転音とは、熟語や複合語の前の語の最後の母音が変わることです。<br>例えば、「酒」＋「屋」の組み合わせの場合、前の語「酒」の最後の母音「え」が「あ」に変化します<br>さけ＋や＝さかや<br>「白」＋「玉」の組み合わせの場合、前の語「白」の最後の母音「お」が「あ」に変化します、<br>しろ＋たま＝しらたま<br>「船」＋「便」の組む合わせの場合、前の語「船」の最後の母音「え」が「あ」に変化します<br>ふね＋びん＝ふなびん<br>「🌴」＋「陰」の組む合わせの場合、前の語「木」の最後の母音「い」が「お」に変化します<br>き＋かげ＝こかげ<br>促音化：促音化とは、熟語や複合語の前の語の最後のかなと後ろの語の先頭のかながの子音が無声子音の場合、<br>前の語の最後のかなが促音になる変化です。<br>無声子音は「か、さ、た、は、ぱ」行の子音のことです<br>かつ＋て＝かって（勝＋手＝勝手）、けつ＋てい＝けってい(決＋定＝決定)、せつ＋てい＝せってい(説＋定＝設定)<br>いち＋てい＝いってい（一定）、せき＋けん＝せっけん（石鹸）、あつ＋かん＝あっかん（圧巻）<br>半濁音化：半濁音化とは、熟語や複合語の後ろの語のセントうのかなが「はぎょう」から「パ行」に変わることです。<br>例えば、「審判」の場合、後ろの語の先頭のかな「は」が「ぱ」にかわり、「しんぱん」と読みます<br>出発（しゅっぱつ）、鉛筆「えんぴつ」、扇風機「せんぷうき」、漢方（かんぽう）<br>ちなみに、半濁音化と促音化は同時に起こることも多いです、<br>いち＋ほん＝いっぽん<br>特に、前の語の最後のかなが「く、ち、つ」で、後ろに「は」行のかなが来るときです<br>六本木（ろっぽんぎ）、一本（いっぽん）、割烹（かっぽん）<br>音韻添加：音韻添加とは、熟語や複合語の後ろの語の先頭に、新しい音素がはいることをいいます。<br>例えば、「こさめ」の場合、そのまま読むと「こあめ」ですが「あめ」のまえにしい・ｓ・のおとが入って、「こさめ」とよみます。<br>春雨（はるさめ）<br>「真っ白」のように、「しろ」のまえに子音が・ｓ・のおとが入って、しいん・ｓ・が２つ連続することによって促音になることもあります<br>真っ青（まっさお）、真っ直ぐ（まっすぐ）<br>また、「真ん中」のように、「なか」のまえに発音「ｎ」の音が入ることもあります。<br>音韻脱落：<br>音韻脱落とは、音の一部がなくなることです、例えば、「河原」の場合、そのまま読むと「かわはら」ですが、「は」がなくなって、「かわら」と読みます。<br>なんで<br>音韻融合：<br>音韻融合とは、熟語や複合語の前の語の終わりと後ろの語の先頭が、混ざってような音になることです。<br>例えば、「狩人」の場合、そのまま読むと「かりひと」ですが、「り」と「ひと」が混ざって「りょうど」になり、「かりょうど」とみます。<br>素人（しろうと）、仲人（なこうど）<br>連声：<br>連声とは、熟語や複合語のまえの語のおわりが「ん」や「つ」で、後ろの語の先頭が、母音「あいうえお」「や行」「わ行」であるとき、<br>後ろの先頭が「た行」「な行」「ま行」に変わることです、漢語でよく見られます。<br>例えば、「反応」の場合、前の語のおわりが「ん」で、後ろの語の先頭が母音「お」なので、「お」が「な」行の「の」にへんかして「はんのう」と読みます。<br>因縁（いんねん）、銀杏（ぎんなん）、陰陽（おんみょう）</p>
 <p>まとめ：<br>変音現象は、発音しやすくするためのへんかです、変音現象には沢山の種類があり、また一度に複数の変温現象が起こることもあります、何故変音すると、発音しやすくなるでしょうか、もう一度「反応」を見てみましょう、もし変化しないまま「はんおん」とははっきり発音しょうとすると、「ん」から「お」に舌の形を変えるときに、息が途切れて発音がしにくいですね、では「ん」で舌を上顎につけてから「お」というどうしようか？息が繋がって、発音しやすいと思います、舌を上顎につけてから「お」というと、自然に「の」になりますね</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>神树之馆汉化日志</title>
+    <url>/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<blockquote>
+<p>神树之馆简要介绍</p>
+<p>民俗学を専攻する大学生の主人公、工月秋成（くげつ あきなり）は、卒業論文に必要な資料を探していた。大学の友人である四ツ谷麻子（よつたに あさこ）は、四国の山中にそびえ立つ親類の那越（なごし）邸、通称「真珠邸」を工月に紹介し、2人でそこへ赴くことになった。車で真珠邸にたどり着いた2人は、館をひとり管理するメイドの知里紫織（ともさと しおり）に迎えられ、案内された書庫で資料を探し始める。<br>館の住人は紫織の他に3人。そのうちの2人である双子の少女、斎（いつき）と伊美（いみ）は、外部の人間を警戒してか工月たちに近付こうとせず、もう1人である館の主人にいたっては姿さえ現さない。<br>館に着いた夜、工月は夢の中で真珠邸の奥に囚われたアルビノの少女に出会う。そして、2人を館に閉じ込めるように降りしきる雨。工月は、この不可解な館に知らず足を踏み入れてゆくのだった。</p>
+</blockquote>
+<h2 id="主要人物"><a href="#主要人物" class="headerlink" title="主要人物"></a>主要人物</h2><p><strong>工月秋成（くげつ あきなり）</strong>：主人公。大学生であり卒業論文を書いている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/62/f7/89831_crt_O42aS.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>四ツ谷麻子（よつたに あさこ）</strong>：主人公と同じ大学に通う学生。主人公とは友達以上、恋人未満の関係。いわゆる世話焼きヒロインタイプで、処女。しっかりしているように見られやすいが、意外ともろい部分があり、実は寂しがり屋。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/15/87/89832_crt_2Ee63.jpg" alt="img" style="zoom: 67%;">
+
+<p><strong>知里紫織（ともさと しおり）</strong>：館の一切を取り仕切っているメイド。穏やかで優しい性格。書物全般に対して造詣が深い。昼は淑女、夜は娼婦、といったタイプ。性に関する技術や、男を喜ばせるテクニックに長けていて、主人公に対しては、誘惑者の役割。非処女。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/9d/a7/89833_crt_NN70S.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>斎（いつき）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/48/e6/89834_crt_CHc06.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>伊美（いみ）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/5a/bc/89835_crt_xHIG8.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>竜胆（りんどう）</strong>：謎の住人。透き通るほどに白い、アルビノの少女。屋敷の奥で生活しているらしく、普段、顔を出すことは滅多にない。「神樹の館」の守り神的存在。住人たちの間では、一種のタブーとして畏れ、敬われている。彼女の意思ひとつで、館はその姿を変貌させる。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/2b/f5/89836_crt_w3pjt.jpg" alt="img" style="zoom:67%;">
+
+<h2 id="翻译日记"><a href="#翻译日记" class="headerlink" title="翻译日记"></a>翻译日记</h2><p>Q1：日语的连体形是否可以望文生义？</p>
+<p>Q2：推量助词该怎么翻译？</p>
+<p>Q3：语气词该怎么翻译？</p>
+<h2 id="翻译生词"><a href="#翻译生词" class="headerlink" title="翻译生词"></a>翻译生词</h2><ol>
+<li><p><a href="https://www.weblio.jp/content/%E3%81%9F%E3%81%BE%E3%81%92%E3%82%8B">「たまげる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E3%82%86%E3%81%8B%E3%82%8A">「ゆかり」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+<blockquote>
+<p>ゆかりの花言葉は？</p>
+<p>Conversation. ユカリさんは多分、紫草からかな……花言葉は<strong>「追憶」「あなたを忘れない」</strong>みたいな意味合いだし……紫は縁(ゆかり)の色ですからね……</p>
+</blockquote>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E6%AD%AF%E5%88%87%E3%82%8C%E3%81%8C%E6%82%AA%E3%81%84#:~:text=%E8%A8%80%E3%81%84%E6%A7%98%E3%81%8C%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%97%E3%81%AA%E3%81%84%E3%81%95%E3%81%BE,%E3%81%AA%E3%81%A9%E3%82%92%E6%84%8F%E5%91%B3%E3%81%99%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">「歯切れが悪い(はぎれがわるい)」の意味や … - Weblio国語辞典</a></p>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E5%BC%95%E3%81%8D%E5%AF%84%E3%81%9B%E3%82%8B">「引き寄せる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+</ol>
+<h2 id="文言文"><a href="#文言文" class="headerlink" title="文言文"></a>文言文</h2><h3 id="梅圣俞诗集序"><a href="#梅圣俞诗集序" class="headerlink" title="梅圣俞诗集序"></a>梅圣俞诗集序</h3><ol>
+<li><p>予闻世谓诗人少达而多穷，夫岂然哉？盖世所传诗者，多出于古穷人之辞也。凡士之蕴其所有，而不得施于世者，多喜自放于山巅水涯之外，见虫鱼草木风云鸟兽之状类，往往探其奇怪，内有忧思感愤之<strong>郁积</strong>，其兴于怨刺，以道<strong>羁臣寡妇</strong>之所叹，而写人情之难言。盖愈穷则愈工。然则非诗之能穷人，<strong>殆</strong>穷者而后工也。</p>
+<blockquote>
+<p>我听到世人常说：诗人仕途畅达的少，困厄的多。难道真是这样吗？大概是由于世上所流传的诗歌，多出于古代困厄之士的笔下吧。大凡胸藏才智而又不能充分施展于世的士人，大都喜爱到山头水边去放浪形骸，看见虫鱼草木风云鸟兽等事物，往往探究它们的奇特怪异之处，内心有着忧愁感慨愤激的郁积，这些情感化为诗兴，即寄托在怨恨讽刺之中，道出了逐臣寡妇的慨叹，而写出了人所难于言传的感受来。大概越困厄就越能写得工巧。如此说来，并非写诗使人穷困潦倒，大概是穷困潦倒后才能写出好诗来。</p>
+</blockquote>
+</li>
+<li><p>予友梅圣俞，少以<strong>荫补</strong>为吏，累举进士，<strong>辄抑</strong>于有司，困于州县，凡十余年。年今五十，犹从辟书，为人之佐，郁其所蓄，不得奋见于事业。其家宛陵，幼习于诗，自为童子，出语已惊其长老。既长，学乎六经仁义之说，其为文章，<strong>简古纯粹</strong>，不求<strong>苟说</strong>于世。世之人徒知其诗而已。然时无贤愚，语诗者必求之圣俞；圣俞亦自以其不得志者，乐于诗而发之，故其平生所作，于诗尤多。世既知之矣，而未有荐于上者。昔王文康公尝见而叹曰：“二百年无此作矣！”虽知之深，亦不果荐也。若使其幸得用于朝廷，作为雅、颂，以歌咏大宋之功德，荐之清庙，而追商、周、鲁颂之作者，岂不伟欤！奈何使其老不得志，而为穷者之诗，乃徒发于虫鱼物类，羁愁感叹之言。世徒喜其工，不知其穷之久而将老也！可不惜哉！</p>
+<blockquote>
+<p>我的朋友梅圣俞，年轻时由于荫袭补为下级官吏，屡次考进士，总是遭到主考部门的压制，在地方上困厄了十多年。年已五十了，还要靠别人下聘书，去当人家的办事员。郁积着自己的才能智慧，不能在事业上充分地表现出来。他家乡在宛陵，幼年时就学习诗歌，从他还是个孩童时起，写出诗句来就已使得父老长辈惊异了。等到长大，学习了六经仁义的学问，他写出的文章简古纯正，不希求苟且取悦于世人，因此世人只知道他会写诗罢了。然而当时人不论贤愚，谈论诗歌必然会向圣俞请教。圣俞也把自己不得志的地方，喜欢通过诗歌来发泄，因此他平时所写的东西，其中诗歌就特别多。社会上已经知道他了，却没有人向朝廷推荐他。从前王文康公曾看到他的诗作，慨叹地说：“二百年没有这样的作品了！”虽然对他了解很深，可还是没有加以推荐。假使他有幸得到朝廷的任用，写出如《诗经》中雅、颂那样的作品，来歌颂大宋的功业恩德，献给宗庙，使他类似于商颂、周颂、鲁颂等作者，难道不是很壮伟的吗？可惜他到老也不得志，只能写困厄者的诗歌，白白地在虫鱼之类上抒发穷苦愁闷的感叹。社会上只喜爱他诗歌的工巧，却不知道他困厄已久将要老死了，这难道不值得叹息吗？</p>
+</blockquote>
+</li>
+<li><p>圣俞诗既多，不自收拾。其妻之兄子谢景初，惧其多而易失也，取其自洛阳至于吴兴以来所作，次为十卷。予尝嗜圣俞诗，而患不能尽得之，<strong>遽喜</strong>谢氏之能类次也，<strong>辄序</strong>而藏之。</p>
+<blockquote>
+<p>圣俞的诗很多，自己却不收拾整理。他的内侄谢景初担心它太多容易散失，选取他从洛阳到吴兴这段时间的作品，编为十卷。我曾经酷爱圣俞的诗作，担心不能全部得到它，十分高兴谢氏能为它分类编排，就为之作序并保存起来。</p>
+</blockquote>
+</li>
+<li><p>其后十五年，圣俞以疾卒于京师，余<strong>既</strong>哭而铭之，因索于其家，得其遗稿千余篇，并旧所藏，<strong>掇</strong>其尤者六百七十七篇，为一十五卷。呜呼！吾于圣俞诗论之详矣，故不复云。</p>
+<blockquote>
+<p>从那以后过了十五年，圣俞因病在京师去世，我已痛哭着为他写好了墓志铭，便向他家索求，得到他的遗稿一千多篇，连同先前所保存的，选取其中特别好的共六百七十七篇，分为十五卷。啊，我对圣俞的诗歌已经评论得很多了，所以不再重复。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="中古日语"><a href="#中古日语" class="headerlink" title="中古日语"></a>中古日语</h2><table>
+<thead>
+<tr>
+<th>活用型 （活用の種類）</th>
+<th>例語</th>
+<th>語幹</th>
+<th>未然</th>
+<th>連用</th>
+<th>終止</th>
+<th>連体</th>
+<th>已然</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>四段</td>
+<td>聞く</td>
+<td>聞</td>
+<td>か</td>
+<td>き</td>
+<td>く</td>
+<td>く</td>
+<td>け</td>
+<td>け</td>
+</tr>
+<tr>
+<td>上二段</td>
+<td>起く</td>
+<td>起</td>
+<td>き</td>
+<td>き</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>きょ</td>
+</tr>
+<tr>
+<td>下二段</td>
+<td>受く</td>
+<td>受</td>
+<td>け</td>
+<td>け</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>けよ</td>
+</tr>
+<tr>
+<td>上一段</td>
+<td>着る</td>
+<td>着</td>
+<td>き</td>
+<td>き</td>
+<td>きる</td>
+<td>きる</td>
+<td>きれ</td>
+<td>きよ</td>
+</tr>
+<tr>
+<td>下一段</td>
+<td>蹴る</td>
+<td>蹴</td>
+<td>け</td>
+<td>け</td>
+<td>ける</td>
+<td>ける</td>
+<td>けれ</td>
+<td>けよ</td>
+</tr>
+<tr>
+<td>カ行変格</td>
+<td>来</td>
+<td>来</td>
+<td>こ</td>
+<td>き</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>こ$\cdot$こよ</td>
+</tr>
+<tr>
+<td>サ行変格</td>
+<td>為</td>
+<td>為</td>
+<td>せ</td>
+<td>し</td>
+<td>す</td>
+<td>する</td>
+<td>すれ</td>
+<td>せよ</td>
+</tr>
+<tr>
+<td>ナ行変格</td>
+<td>往ぬ</td>
+<td>往</td>
+<td>な</td>
+<td>に</td>
+<td>ぬ</td>
+<td>ぬる</td>
+<td>ぬれ</td>
+<td>ぬ</td>
+</tr>
+<tr>
+<td>ラ行変格</td>
+<td>あり</td>
+<td>あ</td>
+<td>ら</td>
+<td>り</td>
+<td>り</td>
+<td>る</td>
+<td>れ</td>
+<td>れ</td>
+</tr>
+</tbody></table>
 ]]></content>
   </entry>
 </search>
