@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>神树之馆汉化日志 |  SHIOKOU</title>
+      <title>洛谷P1002过河卒带来的思考 |  SHIOKOU</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -58,7 +58,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-神树之馆汉化日志"
+  id="post-洛谷P1002过河卒带来的思考"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -69,7 +69,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  神树之馆汉化日志
+  洛谷P1002过河卒带来的思考
 </h1>
  
 
@@ -77,15 +77,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/" class="article-date">
-  <time datetime="2024-05-23T11:13:07.000Z" itemprop="datePublished">2024-05-23</time>
+      <a href="/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/" class="article-date">
+  <time datetime="2024-05-23T18:18:39.000Z" itemprop="datePublished">2024-05-24</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">2.1k</span>
+            <span class="post-count">982</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">7 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
@@ -109,182 +109,86 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <blockquote>
-<p>神树之馆简要介绍</p>
-<p>民俗学を専攻する大学生の主人公、工月秋成（くげつ あきなり）は、卒業論文に必要な資料を探していた。大学の友人である四ツ谷麻子（よつたに あさこ）は、四国の山中にそびえ立つ親類の那越（なごし）邸、通称「真珠邸」を工月に紹介し、2人でそこへ赴くことになった。車で真珠邸にたどり着いた2人は、館をひとり管理するメイドの知里紫織（ともさと しおり）に迎えられ、案内された書庫で資料を探し始める。<br>館の住人は紫織の他に3人。そのうちの2人である双子の少女、斎（いつき）と伊美（いみ）は、外部の人間を警戒してか工月たちに近付こうとせず、もう1人である館の主人にいたっては姿さえ現さない。<br>館に着いた夜、工月は夢の中で真珠邸の奥に囚われたアルビノの少女に出会う。そして、2人を館に閉じ込めるように降りしきる雨。工月は、この不可解な館に知らず足を踏み入れてゆくのだった。</p>
-</blockquote>
-<h2 id="主要人物"><a href="#主要人物" class="headerlink" title="主要人物"></a>主要人物</h2><p><strong>工月秋成（くげつ あきなり）</strong>：主人公。大学生であり卒業論文を書いている。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/62/f7/89831_crt_O42aS.jpg" alt="img" style="zoom:67%;">
+  <h1 id="动态规划（Dynamic-Programing）"><a href="#动态规划（Dynamic-Programing）" class="headerlink" title="动态规划（Dynamic Programing）"></a>动态规划（Dynamic Programing）</h1><h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><p>dynamic programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems.</p>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">斐波那契数列可以看作一个简易的DP问题</span><br><span class="line">F(n)=F(n-1)+F(n-2);(n&gt;=3)</span><br><span class="line">F(10)=F(9)+F(8);</span><br><span class="line">F(9)=F(8)+F(7);</span><br><span class="line">……</span><br><span class="line">F(3)=F(2)+F(1);</span><br></pre></td></tr></table></figure>
 
-<p><strong>四ツ谷麻子（よつたに あさこ）</strong>：主人公と同じ大学に通う学生。主人公とは友達以上、恋人未満の関係。いわゆる世話焼きヒロインタイプで、処女。しっかりしているように見られやすいが、意外ともろい部分があり、実は寂しがり屋。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/15/87/89832_crt_2Ee63.jpg" alt="img" style="zoom: 67%;">
-
-<p><strong>知里紫織（ともさと しおり）</strong>：館の一切を取り仕切っているメイド。穏やかで優しい性格。書物全般に対して造詣が深い。昼は淑女、夜は娼婦、といったタイプ。性に関する技術や、男を喜ばせるテクニックに長けていて、主人公に対しては、誘惑者の役割。非処女。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/9d/a7/89833_crt_NN70S.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>斎（いつき）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/48/e6/89834_crt_CHc06.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>伊美（いみ）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/5a/bc/89835_crt_xHIG8.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>竜胆（りんどう）</strong>：謎の住人。透き通るほどに白い、アルビノの少女。屋敷の奥で生活しているらしく、普段、顔を出すことは滅多にない。「神樹の館」の守り神的存在。住人たちの間では、一種のタブーとして畏れ、敬われている。彼女の意思ひとつで、館はその姿を変貌させる。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/2b/f5/89836_crt_w3pjt.jpg" alt="img" style="zoom:67%;">
-
-<h2 id="翻译日记"><a href="#翻译日记" class="headerlink" title="翻译日记"></a>翻译日记</h2><p>Q1：日语的连体形是否可以望文生义？</p>
-<p>Q2：推量助词该怎么翻译？</p>
-<p>Q3：语气词该怎么翻译？</p>
-<h2 id="翻译生词"><a href="#翻译生词" class="headerlink" title="翻译生词"></a>翻译生词</h2><ol>
-<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E3%81%9F%E3%81%BE%E3%81%92%E3%82%8B">「たまげる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E3%82%86%E3%81%8B%E3%82%8A">「ゆかり」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
-<blockquote>
-<p>ゆかりの花言葉は？</p>
-<p>Conversation. ユカリさんは多分、紫草からかな……花言葉は<strong>「追憶」「あなたを忘れない」</strong>みたいな意味合いだし……紫は縁(ゆかり)の色ですからね……</p>
+<p>如果是使用递归思路，那么程序需要将每一次需要的元素都重新算一次，会导致重复的运算，如果是在DP算法里面，每一次算过的数都用一个数组或者哈希表存储起来，之后就可以复用了，这样能减少运算量。</p>
+<h2 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h2><h4 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h4><p>F(n-1)和F(n-2)称为F(n)的最优子结构</p>
+<h4 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h4><p>F(n)&#x3D;F(n-1)+F(n-2)就称为状态转移方程</p>
+<h4 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h4><p>F(1) &#x3D; 1, F(2) &#x3D; 2 就是边界啦</p>
+<h4 id="重叠子问题"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题</h4><p>比如F(10)&#x3D; F(9)+F(8),F(9) &#x3D; F(8) + F(7) ,f(8)就是重叠子问题</p>
+<h2 id="适用例题"><a href="#适用例题" class="headerlink" title="适用例题"></a>适用例题</h2><blockquote>
+<p>如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。</p>
 </blockquote>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E6%AD%AF%E5%88%87%E3%82%8C%E3%81%8C%E6%82%AA%E3%81%84#:~:text=%E8%A8%80%E3%81%84%E6%A7%98%E3%81%8C%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%97%E3%81%AA%E3%81%84%E3%81%95%E3%81%BE,%E3%81%AA%E3%81%A9%E3%82%92%E6%84%8F%E5%91%B3%E3%81%99%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">「歯切れが悪い(はぎれがわるい)」の意味や … - Weblio国語辞典</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E5%BC%95%E3%81%8D%E5%AF%84%E3%81%9B%E3%82%8B">「引き寄せる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
-</li>
-</ol>
-<h2 id="文言文"><a href="#文言文" class="headerlink" title="文言文"></a>文言文</h2><h3 id="梅圣俞诗集序"><a href="#梅圣俞诗集序" class="headerlink" title="梅圣俞诗集序"></a>梅圣俞诗集序</h3><ol>
-<li><p>予闻世谓诗人少达而多穷，夫岂然哉？盖世所传诗者，多出于古穷人之辞也。凡士之蕴其所有，而不得施于世者，多喜自放于山巅水涯之外，见虫鱼草木风云鸟兽之状类，往往探其奇怪，内有忧思感愤之<strong>郁积</strong>，其兴于怨刺，以道<strong>羁臣寡妇</strong>之所叹，而写人情之难言。盖愈穷则愈工。然则非诗之能穷人，<strong>殆</strong>穷者而后工也。</p>
-<blockquote>
-<p>我听到世人常说：诗人仕途畅达的少，困厄的多。难道真是这样吗？大概是由于世上所流传的诗歌，多出于古代困厄之士的笔下吧。大凡胸藏才智而又不能充分施展于世的士人，大都喜爱到山头水边去放浪形骸，看见虫鱼草木风云鸟兽等事物，往往探究它们的奇特怪异之处，内心有着忧愁感慨愤激的郁积，这些情感化为诗兴，即寄托在怨恨讽刺之中，道出了逐臣寡妇的慨叹，而写出了人所难于言传的感受来。大概越困厄就越能写得工巧。如此说来，并非写诗使人穷困潦倒，大概是穷困潦倒后才能写出好诗来。</p>
+<p>比如一些求最值的场景，如<strong>最长递增子序列、最小编辑距离、背包问题、凑零钱问题</strong>等等，都是动态规划的经典应用场景。</p>
+<p>动态规划的核心思想就是<strong>拆分子问题，记住过往，减少重复计算。</strong> 并且动态规划一般都是自底向上的，因此到这里，基于<strong>青蛙跳阶</strong>问题，我总结了一下我做动态规划的思路：</p>
+<h4 id="穷举分析"><a href="#穷举分析" class="headerlink" title="穷举分析"></a>穷举分析</h4><h4 id="确定边界"><a href="#确定边界" class="headerlink" title="确定边界"></a>确定边界</h4><h4 id="找出规律，确定最优子结构"><a href="#找出规律，确定最优子结构" class="headerlink" title="找出规律，确定最优子结构"></a>找出规律，确定最优子结构</h4><h4 id="写出状态转移方程"><a href="#写出状态转移方程" class="headerlink" title="写出状态转移方程"></a>写出状态转移方程</h4><h4 id="leetcode案例分析"><a href="#leetcode案例分析" class="headerlink" title="leetcode案例分析"></a>leetcode案例分析</h4><blockquote>
+<p>给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。</p>
 </blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [10,9,2,5,3,7,101,18]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,1,0,3,2,3]</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>穷举分析</p>
+<p>因为动态规划，核心思想包括<strong>拆分子问题，记住过往，减少重复计算。</strong> 所以我们在思考原问题：<strong>数组num[i]的最长递增子序列长度时</strong>，可以思考下<strong>相关子问题</strong>，比如原问题是否跟<strong>子问题</strong>num[i-1]的最长递增子序列长度有关呢？</p>
 </li>
-<li><p>予友梅圣俞，少以<strong>荫补</strong>为吏，累举进士，<strong>辄抑</strong>于有司，困于州县，凡十余年。年今五十，犹从辟书，为人之佐，郁其所蓄，不得奋见于事业。其家宛陵，幼习于诗，自为童子，出语已惊其长老。既长，学乎六经仁义之说，其为文章，<strong>简古纯粹</strong>，不求<strong>苟说</strong>于世。世之人徒知其诗而已。然时无贤愚，语诗者必求之圣俞；圣俞亦自以其不得志者，乐于诗而发之，故其平生所作，于诗尤多。世既知之矣，而未有荐于上者。昔王文康公尝见而叹曰：“二百年无此作矣！”虽知之深，亦不果荐也。若使其幸得用于朝廷，作为雅、颂，以歌咏大宋之功德，荐之清庙，而追商、周、鲁颂之作者，岂不伟欤！奈何使其老不得志，而为穷者之诗，乃徒发于虫鱼物类，羁愁感叹之言。世徒喜其工，不知其穷之久而将老也！可不惜哉！</p>
-<blockquote>
-<p>我的朋友梅圣俞，年轻时由于荫袭补为下级官吏，屡次考进士，总是遭到主考部门的压制，在地方上困厄了十多年。年已五十了，还要靠别人下聘书，去当人家的办事员。郁积着自己的才能智慧，不能在事业上充分地表现出来。他家乡在宛陵，幼年时就学习诗歌，从他还是个孩童时起，写出诗句来就已使得父老长辈惊异了。等到长大，学习了六经仁义的学问，他写出的文章简古纯正，不希求苟且取悦于世人，因此世人只知道他会写诗罢了。然而当时人不论贤愚，谈论诗歌必然会向圣俞请教。圣俞也把自己不得志的地方，喜欢通过诗歌来发泄，因此他平时所写的东西，其中诗歌就特别多。社会上已经知道他了，却没有人向朝廷推荐他。从前王文康公曾看到他的诗作，慨叹地说：“二百年没有这样的作品了！”虽然对他了解很深，可还是没有加以推荐。假使他有幸得到朝廷的任用，写出如《诗经》中雅、颂那样的作品，来歌颂大宋的功业恩德，献给宗庙，使他类似于商颂、周颂、鲁颂等作者，难道不是很壮伟的吗？可惜他到老也不得志，只能写困厄者的诗歌，白白地在虫鱼之类上抒发穷苦愁闷的感叹。社会上只喜爱他诗歌的工巧，却不知道他困厄已久将要老死了，这难道不值得叹息吗？</p>
-</blockquote>
+<li><p>在穷举分析的时候，可以将元素写成两个数组的形式，这样便于找寻规律。</p>
 </li>
-<li><p>圣俞诗既多，不自收拾。其妻之兄子谢景初，惧其多而易失也，取其自洛阳至于吴兴以来所作，次为十卷。予尝嗜圣俞诗，而患不能尽得之，<strong>遽喜</strong>谢氏之能类次也，<strong>辄序</strong>而藏之。</p>
-<blockquote>
-<p>圣俞的诗很多，自己却不收拾整理。他的内侄谢景初担心它太多容易散失，选取他从洛阳到吴兴这段时间的作品，编为十卷。我曾经酷爱圣俞的诗作，担心不能全部得到它，十分高兴谢氏能为它分类编排，就为之作序并保存起来。</p>
-</blockquote>
-</li>
-<li><p>其后十五年，圣俞以疾卒于京师，余<strong>既</strong>哭而铭之，因索于其家，得其遗稿千余篇，并旧所藏，<strong>掇</strong>其尤者六百七十七篇，为一十五卷。呜呼！吾于圣俞诗论之详矣，故不复云。</p>
-<blockquote>
-<p>从那以后过了十五年，圣俞因病在京师去世，我已痛哭着为他写好了墓志铭，便向他家索求，得到他的遗稿一千多篇，连同先前所保存的，选取其中特别好的共六百七十七篇，分为十五卷。啊，我对圣俞的诗歌已经评论得很多了，所以不再重复。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="中古日语"><a href="#中古日语" class="headerlink" title="中古日语"></a>中古日语</h2><table>
+<li><p>现在让我们分析一下</p>
+<table>
 <thead>
 <tr>
-<th>活用型 （活用の種類）</th>
-<th>例語</th>
-<th>語幹</th>
-<th>未然</th>
-<th>連用</th>
-<th>終止</th>
-<th>連体</th>
-<th>已然</th>
-<th>命令</th>
+<th>nums的元素数量</th>
+<th>最大子序列长度</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>四段</td>
-<td>聞く</td>
-<td>聞</td>
-<td>か</td>
-<td>き</td>
-<td>く</td>
-<td>く</td>
-<td>け</td>
-<td>け</td>
+<td>1</td>
+<td>{10} 1</td>
 </tr>
 <tr>
-<td>上二段</td>
-<td>起く</td>
-<td>起</td>
-<td>き</td>
-<td>き</td>
-<td>く</td>
-<td>くる</td>
-<td>くれ</td>
-<td>きょ</td>
+<td>2</td>
+<td>{10}||{9} 1</td>
 </tr>
 <tr>
-<td>下二段</td>
-<td>受く</td>
-<td>受</td>
-<td>け</td>
-<td>け</td>
-<td>く</td>
-<td>くる</td>
-<td>くれ</td>
-<td>けよ</td>
+<td>3</td>
+<td>{10}||{9}||{2} 1</td>
 </tr>
 <tr>
-<td>上一段</td>
-<td>着る</td>
-<td>着</td>
-<td>き</td>
-<td>き</td>
-<td>きる</td>
-<td>きる</td>
-<td>きれ</td>
-<td>きよ</td>
+<td>4</td>
+<td>{2，5} 2</td>
 </tr>
 <tr>
-<td>下一段</td>
-<td>蹴る</td>
-<td>蹴</td>
-<td>け</td>
-<td>け</td>
-<td>ける</td>
-<td>ける</td>
-<td>けれ</td>
-<td>けよ</td>
+<td>5</td>
+<td>{2，3}||{2，5} 2</td>
 </tr>
 <tr>
-<td>カ行変格</td>
-<td>来</td>
-<td>来</td>
-<td>こ</td>
-<td>き</td>
-<td>く</td>
-<td>くる</td>
-<td>くれ</td>
-<td>こ$\cdot$こよ</td>
+<td>6</td>
+<td>{2，3，7}||{2，5，7} 3</td>
 </tr>
 <tr>
-<td>サ行変格</td>
-<td>為</td>
-<td>為</td>
-<td>せ</td>
-<td>し</td>
-<td>す</td>
-<td>する</td>
-<td>すれ</td>
-<td>せよ</td>
+<td>7</td>
+<td>{2，3，7，101}||{2，5，7，101} 4</td>
 </tr>
 <tr>
-<td>ナ行変格</td>
-<td>往ぬ</td>
-<td>往</td>
-<td>な</td>
-<td>に</td>
-<td>ぬ</td>
-<td>ぬる</td>
-<td>ぬれ</td>
-<td>ぬ</td>
-</tr>
-<tr>
-<td>ラ行変格</td>
-<td>あり</td>
-<td>あ</td>
-<td>ら</td>
-<td>り</td>
-<td>り</td>
-<td>る</td>
-<td>れ</td>
-<td>れ</td>
+<td>8</td>
+<td>{2，3，7，18}||{2，5，7，18} 4</td>
 </tr>
 </tbody></table>
- 
+<p>可以得到，最大子序列长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Dp[i]=max&#123;Dp[j]&#125;+1;</span><br><span class="line">j&gt;=0&amp;&amp;j&lt;=i-1;</span><br><span class="line">nums[i]&gt;nums[j];</span><br></pre></td></tr></table></figure>
+
+<p>符合这样的状态转移方程</p>
+<p>最优子结构：max{Dp[j]}+1.</p>
+<p>状态转移方程：Dp[i]&#x3D;max{Dp[j]}+1.</p>
+<p>边界：Dp[0]&#x3D;1.</p>
+<p>出现了重叠子问题.</p>
+<p>所以给出本题的题解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int lengthOfLIS(int[] nums) &#123;</span><br><span class="line">    if(nums.size()==0)</span><br><span class="line">    &#123;return 0;&#125;</span><br><span class="line">    //保证程序的健壮性</span><br><span class="line">    int Dp[nums.size()];</span><br><span class="line">    Dp[0]=1;</span><br><span class="line">    //声明一个数组，用来存储目标值</span><br><span class="line">    for(int i=0;i&lt;nums.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">    for(int j=0;j&lt;i-1;j++)</span><br><span class="line">    &#123;</span><br><span class="line">    if(nums[i]&gt;nums[j])</span><br><span class="line">    &#123;</span><br><span class="line">    Dp[i]=max(Dp[j])+1;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;Dp[i]=max(Dp[j]);&#125;</span><br><span class="line">    //分类：满足飞升条件的+1，不满足的占位</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //利用双重循环遍历所列举的情况，将最终值算出来</span><br><span class="line">    return Dp[nums.size()-1];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="几种不同的解决思路"><a href="#几种不同的解决思路" class="headerlink" title="几种不同的解决思路"></a>几种不同的解决思路</h1><p>下面是过河卒的集中不同思路。</p>
+<h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1> 
       <!-- reward -->
       
       <div id="reword-out">
@@ -354,7 +258,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -365,19 +269,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            洛谷P1002过河卒带来的思考
-          
-        </div>
-      </a>
     
-    
-      <a href="/2024/05/22/%E7%BA%BF%E4%BB%A3/" class="article-nav-link">
+      <a href="/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">线代</div>
+        <div class="article-nav-title">神树之馆汉化日志</div>
       </a>
     
   </nav>

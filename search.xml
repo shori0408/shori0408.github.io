@@ -316,42 +316,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>jqv</title>
-    <url>/2024/05/21/jqv/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>c++模板</title>
-    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
-<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你使用这个食谱时，你可以指定不同的材料：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用这个三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用特化后的三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
     <title>markdown语法</title>
     <url>/2024/05/18/Markdown%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="常见公式"><a href="#常见公式" class="headerlink" title="常见公式"></a>常见公式</h2><ul>
@@ -1900,6 +1864,58 @@
 ]]></content>
   </entry>
   <entry>
+    <title>c++模板</title>
+    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
+<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你使用这个食谱时，你可以指定不同的材料：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用这个三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用特化后的三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>函数</title>
+    <url>/2024/05/17/%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<p>   ▪   函数定义：<br>将我们设计好的算法，单独封装出来。<br>函数的参数，计算所需要的参数或者条件。<br>函数的返回值、可有可无。<br>功能性函数和数值形函数。<br>定义一个函数<br>1：定义函数名<br>类型标识符 函数名（形式参数表）<br>｛语句序列<br>｝<br>形式参数定义模式：<type1> num1.<br>2：形参只在函数中具有效果。<br>返回值就是函数的计算结果。<br>类型标识符（函数返回值的类型） 函数名（形式参数表）<br>｛语句序列<br>return xx；<br>｝<br>无返回值的函数用void作为类型标识符，也不用写return语句。<br>   ▪   函数调用：<br>对于定义好的函数，以及c++库里面的函数，我们直接调用就可以了。<br>调用函数的规则：<br>1：调用函数之前需要事前声明<br>函数的定义和调用不在一个程序之中。<br>调用函数之前，我们需要进行一个函数的原型声明。<br>调用形式：<br>函数名（实参列表）<br>2：嵌套调用：<br>函数之间互相调用。<br>3：递归调用：<br>函数自己调用自己。<br>例题1：指数函数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int i,j;<br>int c;<br>cout&lt;&lt;”Please enter the numbers”<br>cin&gt;&gt;i;<br>cin&gt;&gt;j;<br>c&#x3D;pow(i,j);<br>cout&lt;&lt;c&lt;&lt;end;<br>return 0;<br>}<br>例题2：将二进制数转化为十进制数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int value&#x3D;9;<br>cout&lt;&lt;”Enter an 8bit binary number”;<br>for(int i&#x3D;7;i&gt;&#x3D;0;i–)<br>{char ch;<br>cin&gt;&gt;ch;<br>if(ch&#x3D;&#x3D;‘1’)<br>{velus+&#x3D;static_cast<int>(power(2,i);}<br>cout&lt;&lt;”Decimal value is”&lt;&lt;value&lt;&lt;endl;<br>}<br>double power (double x,int n)<br>{<br>double val&#x3D;1.0;<br>while(n–)<br>val*&#x3D;x;<br>return val;}</int></type1></p>
+<p>例题三：计算π的值<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>double arctanx(int x)<br>{double sqr&#x3D;x<em>x;<br>double e&#x3D;x;<br>double r&#x3D;0;<br>int i&#x3D;1;<br>while(e&#x2F;i&gt;1e-15)<br>{double f&#x3D;e&#x2F;i;<br>r&#x3D;(i%4&#x3D;&#x3D;1)?r+f:r-f;<br>e</em>&#x3D;sqr;<br>1+&#x3D;2;}<br>return r;<br>}<br>int main()<br>{<br>double a&#x3D;16.0<em>arctan(1&#x2F;5.0);<br>double b&#x3D;4.0</em>arctan(1&#x2F;239.0);<br>cout&lt;&lt;”PI&#x3D;”&lt;&lt;a-b&lt;&lt;endl;<br>return 0;<br>}<br>例题4：寻找回文数字<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>bool symm(unsigned n)<br>{unsigned i&#x3D;n;<br>unsigned m&#x3D;0;<br>while(i&gt;0)<br>{m&#x3D;m<em>10+i%10;<br>i&#x2F;&#x3D;10;}<br>return m&#x3D;&#x3D;n;<br>}<br>int main()<br>{for(int i&#x3D;11;i&lt;&#x3D;999;i++)<br>{if(symm(m)&amp;&amp;symm(m*m)&amp;&amp;summ(m*m*m))}<br>cout&lt;&lt;m&lt;&lt;m*m&lt;&lt;m*m*m&lt;&lt;endl;<br>return 0;<br>}<br>例题5：分段函数<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>double sin(double a)<br>{<br>double g&#x3D;0;<br>double t&#x3D;x;<br>int n&#x3D;1;<br>do<br>{<br>g+&#x3D;t;<br>n++;<br>t&#x3D;-t</em>x<em>x&#x2F;(2</em>n-1)&#x2F;(2<em>n-2);<br>}while(fabs(t)&gt;&#x3D;1e-10);<br>return g;<br>｝<br>int main()<br>{double k,r,s;<br>cout&lt;&lt;”r&#x3D;”;<br>cin&gt;&gt;r;<br>cout&lt;&lt;”s&#x3D;”;<br>cin&gt;&gt;s;<br>if(r</em>r&lt;&#x3D;s*s)<br>k&#x3D;sqrt(sin(r)*sin(r)+sin(s)<em>sin(s));<br>else k&#x3D;sin(r</em>s)&#x2F;2;<br>cout&lt;&lt;k&lt;&lt;endl;<br>return 0;}<br>例题六：投骰子</p>
+<p>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>&#x2F;*srand函数<br>原型：void srand（unsigned int seed）<br>参数：seed产生随机数的种子<br>需要头文件：<cstdlib><br>功能：为使rand（）产生一系列伪随机整数而设置起始点。使用1作为seed参数，可以重新初始化rand（）<br><em>&#x2F;<br>enum GameStatus{WIN,LOSE,PLAYING};<br>int main(){<br>int sum,myPoint;<br>GameStaus staus;<br>unsigned seed;<br>int rollDice();<br>cout&lt;&lt;”Please enter an unsigned integer”;<br>cin&gt;&gt;seed;<br>srand(seed);<br>sum&#x3D;rollDice();<br>switch(sun){<br>case 7:<br>case 11:<br>staus&#x3D;WIN;<br>break;<br>case 2:<br>case 3:<br>case 12;<br>staus &#x3D;LOSE;<br>break;<br>default;<br>staus&#x3D;PLAYING;<br>myPoint&#x3D;sum;<br>cout&lt;&lt;”point is”&lt;&lt;myPoint&lt;&lt;endl;<br>break;}<br>while(staus&#x3D;&#x3D;PLAYING)<br>{sum&#x3D;doolDice();<br>if(sum&#x3D;&#x3D;myPoint()<br>staus&#x3D;WIN;<br>else if(sum&#x3D;&#x3D;)}<br>int rollDice()<br>{int die1&#x3D;1+rand()%6;<br>int die2&#x3D;1+rand()%6;<br>int sum&#x3D;die1+die2;<br>cout&lt;&lt;”player rolled”&lt;&lt;die1&lt;&lt;”+”&lt;&lt;<br>die2&lt;&lt;”&#x3D;”&lt;&lt;sum&lt;&lt;endl;<br>return sum;}<br>   ▪   函数的嵌套调用<br>主函数调用a函数，a函数调用b函数。<br>就是在一个流程中，不断嵌套新函数。<br>为什么能够精准地返回第一时间的位置呢？<br>因为有栈的存在。<br>例子：<br>int fun2（int m）<br>｛return m</em>m｝<br>int fun1（int a，int b）<br>{return fun2(a)+fun2(b)}</cstdlib></p>
+<p>   ▪   函数的递归调用<br>函数自己调用自己。<br>函数可以直接或者间接地调用自身。<br>例题1：计算n！<br>公式n！&#x3D;n*（n-1）！&#x2F;&#x2F;递归就是可以转化为数列前后两项的关系。<br>int fun（int a）<br>{if(a&#x3D;0) fun(a)&#x3D;1;<br>return afun(a-1);}<br>例题2：从n个人里面选择k个人作为委员会。<br>C（n，k）&#x3D;n！&#x2F;k!*n-k）！<br>C(n,k)&#x3D;C(n-1,k)+C(n-1,k-1)<br>终止条件在递归里面很重要。<br>int comm（int n，int k）<br>｛if（k&gt;n）return 0;<br>else if(n&#x3D;&#x3D;k||k&#x3D;&#x3D;0) return 1;<br>else return comm(n-1,k)+comm(n-1,k-1);｝<br>tip:找出递归边界的方法：<br>数列本身的限制，公式计算的极限。<br>例题3：汉诺塔问题</p>
+<p>void move（char src,char dest）<br>{cout&lt;&lt;src&lt;&lt;”–&gt;”&lt;&lt;dest&lt;&lt;endl;}<br>void hanoi(int n,char scr,char medium,char dest){<br>if(n&#x3D;&#x3D;1) move(src,dest);<br>else {hanoi(n-1,src,dest,medium);<br>move(src,dest);<br>hanoi(n-1,medium,scr,dest);}<br>}<br>int main()<br>{int m;<br>hanoi(m,a,b,c);<br>return 0;<br>}<br>&#x2F;&#x2F;追踪递归过程：<br>&#x2F;&#x2F;进入，n！&#x3D;1.调用自身<br>&#x2F;&#x2F;每一次数据规模都在缩小<br>&#x2F;&#x2F;第一次3 A B C<br>&#x2F;&#x2F;第二次（调用自身）2 A C B<br>&#x2F;&#x2F;第三次（调用自身）1 A B C<br>&#x2F;&#x2F;第四次（调用move（））A-&gt;C<br>&#x2F;&#x2F;第五次（退回n&#x3D;2的状态，调用move（））A-&gt;B<br>&#x2F;&#x2F;第六次（调用自身）1 B A C<br>&#x2F;&#x2F;第七次（调用move（））B-&gt;C<br>&#x2F;&#x2F;第八次（退回n&#x3D;2的状态）<br>执行完之后，退回入栈的状态，深入递归点进入后，形成流程。<br>   ▪   函数的参数传递<br>形式参数是不占内存的，当调用函数的时候，才会给形参分配内存空间。<br>实参可以是常量，变量和表达式。<br>转化（隐含）：将实参转化为形参。<br>单向传值的作用，被调用函数只会处理形参，形参得到形参的值的时候，就切割了。<br>return语句只能返回一个值。<br>现在需要一个双向传值的事物，方法是传引用&amp;。传引用作参数可以保障实参数据的安全。<br>   ▪   引用类型<br>值传递：单向传递。<br>引用传递：双向传递。<br>引用类型、<br>引用（&amp;）是标识符的别名<br>定义一个引用的时候，必须同时对它进行初始化，使它指向一个已存在的对象。<br>例如：<br>int i，j;<br>int &amp;ri&#x3D;i;&#x2F;&#x2F;定义int引用ri，并初始化为变量i的引用。<br>j&#x3D;10;<br>ri&#x3D;j;&#x2F;&#x2F;相当于把j赋值给i<br>一旦一个引用被初始化后，就不能改为指向其他对象<br>引用可以作为形参<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>void swap(int a,int b){<br>int t&#x3D;a;a&#x3D;b;b&#x3D;t;<br>}<br>int main(){<br>int x&#x3D;5,y&#x3D;10;<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>swap(x,y);<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>return 0;<br>}<br>&#x2F;&#x2F;不会发生变化<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>void swap(int&amp; a,int&amp; b){<br>int t&#x3D;a;a&#x3D;b;b&#x3D;t;<br>}<br>int main(){<br>int x&#x3D;5,y&#x3D;10;<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>swap(x,y);<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>return 0;<br>}<br>   ▪   含有可以变化的参数的函数<br>可以变化长度的参数表：<br>如果所有的实参类型相同，可以传递一个initializer_list的标准库类型<br>如果实参的类型不同，我们可以编写可变参数的模板<br>initializer_list<br>initializer_list是一种标准库类型，用于表示某种特定类型的值的数组，该类型定义在同名的头文件中。<br>具体操作：<br>initializer_list<T>lst;&#x2F;&#x2F;默认初始化，T类型元素的空列表<br>nitializer_list<T>lst{a,b,c};&#x2F;&#x2F;lst的元素数量和初始值一样多，lst的元素是对应初始值的副本；列表中的元素是const<br>lst2(lst)&#x2F;&#x2F;拷贝或者赋值一个initializer_list对象但不拷贝列表中的元素；拷贝后原始列表和副本共享元素。<br>lst2&#x3D;lst<br>lst.size(）&#x2F;&#x2F;列表中的元素数量<br>lst.begin（）&#x2F;&#x2F;返回指向lst首元素的指针<br>lst.end()&#x2F;&#x2F;返回指向lst尾元素下一位置的指针<br>在编写代码输出程序所产生的错误信息时，最好统一用一个函数实现该功能，使得对所有错误的处理都能够整齐划一，<br>然而错误信息的种类不同，<br>调用错误星系时输出函数时传递的参数也会各不相同<br>使用initializer_list编写一个错误信息输出函数，使其可以作用于可变数量的形参。<br>   ▪   内联函数<br>简单地说，就是在调用简单函数提高效率的工具。<br>减少调用函数的麻烦。<br>内联函数声明时的关键字 inline<br>编译时在调用处用函数体进行替换<br>节省了参数传递<br>控制转移等开销<br>注意：<br>内联函数中不能有循环语句和switch语句<br>内联函数的定义必须出现在内联函数在第一次被调用之前<br>例子：<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namesapce std;<br>const double PI&#x3D;3.14159265358979;<br>inline double calArea(double radius){<br>return PI<em>radius</em>radius;<br>}<br>int main() {<br>double r&#x3D;3.0;<br>double area&#x3D;calArea(r);<br>cout&lt;&lt;area&lt;&lt;endl;<br>return 0;<br>}<br>   ▪   Constexpr函数（常量表达式函数）<br>他修饰的函数中，当所有参数都是constexpr时，一定返回constexpr。<br>只要给的是常量，那么返回的也是一个常量。<br>constexpr int get_size（）｛return 20；｝<br>constexpr int foo&#x3D;get_size();<br>&#x2F;&#x2F;正确：foo是一个常量表达式。<br>   ▪   带默认参数值的函数<br>可以在调用的时候，不给予参数也可以有一个默认形参可以使用。<br>int add（int x&#x3D;5，int y&#x3D;6）｛<br>return x+y;｝<br>int main()<br>{add(10,20);&#x2F;&#x2F;10+20<br>add(10);&#x2F;&#x2F;10+6<br>add();&#x2F;&#x2F;5+6<br>}<br>&#x2F;&#x2F;所有有默认参数的形参都必须列在形参列表的最右，即默认参数值的右边不能有无默认值的参数；<br>调用时，实参和形参的结合次序是从左向右<br>int add（int x，int y&#x3D;5，int z&#x3D;6）;&#x2F;&#x2F;正确<br>int add（int x&#x3D;1，int y&#x3D;5，int z）；&#x2F;&#x2F;错误<br>int add（int x&#x3D;1，int y，int z&#x3D;6）；&#x2F;&#x2F;错误<br>默认参数值与函数的调用位置<br>如果一个函数有原型声明，且原型声明在定义之前，则默认参数值应该在函数原型声明中给出；<br>如果只有函数的定义，或函数定义在前，<br>则默认参数值可以在函数定义中给出。<br>int add（int x&#x3D;5，int y&#x3D;6）；<br>int main（）<br>｛add（）；｝<br>int add（int x，int y）｛<br>return x+y；｝</T></T></p>
+<p>int add（int x&#x3D;5，int y&#x3D;6）｛<br>return x+y；｝<br>int main（）<br>｛add（）；｝<br>例题1：<br>函数getVolume计算体积<br>有三个形参：length、width、height<br>其中width和height带有默认值2和3<br>主函数中以不同形式调用getVolume<br>int getVloume（int length，int width，int height&#x3D;3）；<br>int main（）<br>{const int X&#x3D;10,Y&#x3D;12,Z&#x3D;15;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,Y,Z)&lt;&lt;endl;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,Y)&lt;&lt;endl;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,&lt;&lt;endl;<br>return 0;<br>}<br>int getVolume(int length,int width,int height){<br>cout&lt;&lt;setw(5)&lt;&lt;length&lt;&lt;setw(5)&lt;&lt;width&lt;&lt;setw(5)&lt;&lt;height&lt;&lt;’\t’<br>return length<em>width</em>height;<br>}<br>   ▪   函数重载<br>函数多态性的体现，C++中允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。<br>int add(int x,int y);<br>float add(float x,float y);<br>int add(int x,int y,int z);<br>注意事项，重载函数的形参必须不同：个数不同或者类型不同。<br>编译程序将根据实参和形参的类型及个数的最佳匹配来选择调用哪一个函数。<br>int add(int x,int y);<br>int add(int x,int y);<br>编译器不以形参名来区分<br>int add(int x,int y);<br>void add(int x,int y);<br>编译器不以返回值来区分<br>不要将不同功能的函数声明为重载函数，以免出现调用结果的误解，混淆，这样不好。<br>int add(int x,int y)<br>{return x+y;}<br>float add(float x,float y)<br>{return x-y;}<br>int sumOfSquare(int a,int b){<br>return a<em>a+b</em>b;<br>}<br>Double sumOfSquare(double a,double b){<br>return a<em>a+b</em>b;<br>}<br>   ▪   C++系统函数<br>C++的系统库提供了几百个函数可以供程序员使用，例如：<br>求平方根函数（sqrt）<br>求绝对值函数（abs）<br>使用系统函数时要包含相应的头文件，例如；<br>cmath<br>例题一：从键盘中输出一个角度值，求出该角度的正弦值，余弦值和正切值。<br>分析：系统函数中提供了求正弦值，余弦值和正切值的函数：sin（），cos（），tan（），函数的声明在头文件cmath中。</p>
+<p>#include<iostream><br>#include<cmath><br>int main(){</cmath></iostream></p>
+<p>   ▪   第三章总结<br>函数的定义与调用，参数传递<br>内联函数，带默认值的函数，函数重载<br>C++系统函数</p>
+<p>   ▪   实验三（上）<br>本部分的主要实验任务是通过实验练习来进一步理解以下内容：<br>1、掌握函数的定义和调用方法。<br>2、学习debug的step into 功能追踪到函数内部。<br>3、递归算法<br>例题一、编写函数float Convert(float TempFer)<br>参数和返回值都是float类型<br>实现算法C&#x3D;（F-32）*5&#x2F;9;<br>float Convert(float F){<br>return (F-32)*5&#x2F;9;<br>}<br>例题二、编写斐波那契数列<br>a（n）&#x3D;a（n-1）+a（n-2）；<br>int a（int n）{<br>if(n&lt;3) return 1;<br>else if(n&lt;&#x3D;0) break;<br>return a(n-1)+a(n-2);<br>}</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>存在与虚无</title>
+    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
+    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
+<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
+]]></content>
+  </entry>
+  <entry>
     <title>二重积分的运用</title>
     <url>/2024/05/18/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%94%A8/</url>
     <content><![CDATA[<h1 id="曲面的面积"><a href="#曲面的面积" class="headerlink" title="曲面的面积"></a>曲面的面积</h1><p>​	先讨论空间平面Ⅱ中的有界闭区域的面积和它在Oxy面上投影面的面积的关系。设平面Ⅱ与xOy平面的夹角为$\theta$(0&lt;&#x3D;$\theta$&lt;&#x3D;$\frac{\pi}{2}$),就是说平面Ⅱ方向上的法向量$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角为$\theta$.任意取平面Ⅱ上一片矩形区域A，其边界与x轴或者y轴平行（如图8.43所示），则矩形区域A的面积为A&#x3D;ab，其在xOy平面上的投影的面积</p>
@@ -1931,42 +1947,14 @@
 ]]></content>
   </entry>
   <entry>
-    <title>小他者、对象a、大他者</title>
-    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
-    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
-]]></content>
+    <title>jqv</title>
+    <url>/2024/05/21/jqv/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>大学物理</title>
     <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>存在与虚无</title>
-    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
-    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
-<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>函数</title>
-    <url>/2024/05/17/%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<p>   ▪   函数定义：<br>将我们设计好的算法，单独封装出来。<br>函数的参数，计算所需要的参数或者条件。<br>函数的返回值、可有可无。<br>功能性函数和数值形函数。<br>定义一个函数<br>1：定义函数名<br>类型标识符 函数名（形式参数表）<br>｛语句序列<br>｝<br>形式参数定义模式：<type1> num1.<br>2：形参只在函数中具有效果。<br>返回值就是函数的计算结果。<br>类型标识符（函数返回值的类型） 函数名（形式参数表）<br>｛语句序列<br>return xx；<br>｝<br>无返回值的函数用void作为类型标识符，也不用写return语句。<br>   ▪   函数调用：<br>对于定义好的函数，以及c++库里面的函数，我们直接调用就可以了。<br>调用函数的规则：<br>1：调用函数之前需要事前声明<br>函数的定义和调用不在一个程序之中。<br>调用函数之前，我们需要进行一个函数的原型声明。<br>调用形式：<br>函数名（实参列表）<br>2：嵌套调用：<br>函数之间互相调用。<br>3：递归调用：<br>函数自己调用自己。<br>例题1：指数函数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int i,j;<br>int c;<br>cout&lt;&lt;”Please enter the numbers”<br>cin&gt;&gt;i;<br>cin&gt;&gt;j;<br>c&#x3D;pow(i,j);<br>cout&lt;&lt;c&lt;&lt;end;<br>return 0;<br>}<br>例题2：将二进制数转化为十进制数<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namespace std;<br>int pow(int a,int b)<br>{for(int i&#x3D;1;i&lt;&#x3D;b;i++)<br>a*&#x3D;a;<br>return a;<br>}<br>int main()<br>{int value&#x3D;9;<br>cout&lt;&lt;”Enter an 8bit binary number”;<br>for(int i&#x3D;7;i&gt;&#x3D;0;i–)<br>{char ch;<br>cin&gt;&gt;ch;<br>if(ch&#x3D;&#x3D;‘1’)<br>{velus+&#x3D;static_cast<int>(power(2,i);}<br>cout&lt;&lt;”Decimal value is”&lt;&lt;value&lt;&lt;endl;<br>}<br>double power (double x,int n)<br>{<br>double val&#x3D;1.0;<br>while(n–)<br>val*&#x3D;x;<br>return val;}</int></type1></p>
-<p>例题三：计算π的值<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>double arctanx(int x)<br>{double sqr&#x3D;x<em>x;<br>double e&#x3D;x;<br>double r&#x3D;0;<br>int i&#x3D;1;<br>while(e&#x2F;i&gt;1e-15)<br>{double f&#x3D;e&#x2F;i;<br>r&#x3D;(i%4&#x3D;&#x3D;1)?r+f:r-f;<br>e</em>&#x3D;sqr;<br>1+&#x3D;2;}<br>return r;<br>}<br>int main()<br>{<br>double a&#x3D;16.0<em>arctan(1&#x2F;5.0);<br>double b&#x3D;4.0</em>arctan(1&#x2F;239.0);<br>cout&lt;&lt;”PI&#x3D;”&lt;&lt;a-b&lt;&lt;endl;<br>return 0;<br>}<br>例题4：寻找回文数字<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>bool symm(unsigned n)<br>{unsigned i&#x3D;n;<br>unsigned m&#x3D;0;<br>while(i&gt;0)<br>{m&#x3D;m<em>10+i%10;<br>i&#x2F;&#x3D;10;}<br>return m&#x3D;&#x3D;n;<br>}<br>int main()<br>{for(int i&#x3D;11;i&lt;&#x3D;999;i++)<br>{if(symm(m)&amp;&amp;symm(m*m)&amp;&amp;summ(m*m*m))}<br>cout&lt;&lt;m&lt;&lt;m*m&lt;&lt;m*m*m&lt;&lt;endl;<br>return 0;<br>}<br>例题5：分段函数<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>double sin(double a)<br>{<br>double g&#x3D;0;<br>double t&#x3D;x;<br>int n&#x3D;1;<br>do<br>{<br>g+&#x3D;t;<br>n++;<br>t&#x3D;-t</em>x<em>x&#x2F;(2</em>n-1)&#x2F;(2<em>n-2);<br>}while(fabs(t)&gt;&#x3D;1e-10);<br>return g;<br>｝<br>int main()<br>{double k,r,s;<br>cout&lt;&lt;”r&#x3D;”;<br>cin&gt;&gt;r;<br>cout&lt;&lt;”s&#x3D;”;<br>cin&gt;&gt;s;<br>if(r</em>r&lt;&#x3D;s*s)<br>k&#x3D;sqrt(sin(r)*sin(r)+sin(s)<em>sin(s));<br>else k&#x3D;sin(r</em>s)&#x2F;2;<br>cout&lt;&lt;k&lt;&lt;endl;<br>return 0;}<br>例题六：投骰子</p>
-<p>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>&#x2F;*srand函数<br>原型：void srand（unsigned int seed）<br>参数：seed产生随机数的种子<br>需要头文件：<cstdlib><br>功能：为使rand（）产生一系列伪随机整数而设置起始点。使用1作为seed参数，可以重新初始化rand（）<br><em>&#x2F;<br>enum GameStatus{WIN,LOSE,PLAYING};<br>int main(){<br>int sum,myPoint;<br>GameStaus staus;<br>unsigned seed;<br>int rollDice();<br>cout&lt;&lt;”Please enter an unsigned integer”;<br>cin&gt;&gt;seed;<br>srand(seed);<br>sum&#x3D;rollDice();<br>switch(sun){<br>case 7:<br>case 11:<br>staus&#x3D;WIN;<br>break;<br>case 2:<br>case 3:<br>case 12;<br>staus &#x3D;LOSE;<br>break;<br>default;<br>staus&#x3D;PLAYING;<br>myPoint&#x3D;sum;<br>cout&lt;&lt;”point is”&lt;&lt;myPoint&lt;&lt;endl;<br>break;}<br>while(staus&#x3D;&#x3D;PLAYING)<br>{sum&#x3D;doolDice();<br>if(sum&#x3D;&#x3D;myPoint()<br>staus&#x3D;WIN;<br>else if(sum&#x3D;&#x3D;)}<br>int rollDice()<br>{int die1&#x3D;1+rand()%6;<br>int die2&#x3D;1+rand()%6;<br>int sum&#x3D;die1+die2;<br>cout&lt;&lt;”player rolled”&lt;&lt;die1&lt;&lt;”+”&lt;&lt;<br>die2&lt;&lt;”&#x3D;”&lt;&lt;sum&lt;&lt;endl;<br>return sum;}<br>   ▪   函数的嵌套调用<br>主函数调用a函数，a函数调用b函数。<br>就是在一个流程中，不断嵌套新函数。<br>为什么能够精准地返回第一时间的位置呢？<br>因为有栈的存在。<br>例子：<br>int fun2（int m）<br>｛return m</em>m｝<br>int fun1（int a，int b）<br>{return fun2(a)+fun2(b)}</cstdlib></p>
-<p>   ▪   函数的递归调用<br>函数自己调用自己。<br>函数可以直接或者间接地调用自身。<br>例题1：计算n！<br>公式n！&#x3D;n*（n-1）！&#x2F;&#x2F;递归就是可以转化为数列前后两项的关系。<br>int fun（int a）<br>{if(a&#x3D;0) fun(a)&#x3D;1;<br>return afun(a-1);}<br>例题2：从n个人里面选择k个人作为委员会。<br>C（n，k）&#x3D;n！&#x2F;k!*n-k）！<br>C(n,k)&#x3D;C(n-1,k)+C(n-1,k-1)<br>终止条件在递归里面很重要。<br>int comm（int n，int k）<br>｛if（k&gt;n）return 0;<br>else if(n&#x3D;&#x3D;k||k&#x3D;&#x3D;0) return 1;<br>else return comm(n-1,k)+comm(n-1,k-1);｝<br>tip:找出递归边界的方法：<br>数列本身的限制，公式计算的极限。<br>例题3：汉诺塔问题</p>
-<p>void move（char src,char dest）<br>{cout&lt;&lt;src&lt;&lt;”–&gt;”&lt;&lt;dest&lt;&lt;endl;}<br>void hanoi(int n,char scr,char medium,char dest){<br>if(n&#x3D;&#x3D;1) move(src,dest);<br>else {hanoi(n-1,src,dest,medium);<br>move(src,dest);<br>hanoi(n-1,medium,scr,dest);}<br>}<br>int main()<br>{int m;<br>hanoi(m,a,b,c);<br>return 0;<br>}<br>&#x2F;&#x2F;追踪递归过程：<br>&#x2F;&#x2F;进入，n！&#x3D;1.调用自身<br>&#x2F;&#x2F;每一次数据规模都在缩小<br>&#x2F;&#x2F;第一次3 A B C<br>&#x2F;&#x2F;第二次（调用自身）2 A C B<br>&#x2F;&#x2F;第三次（调用自身）1 A B C<br>&#x2F;&#x2F;第四次（调用move（））A-&gt;C<br>&#x2F;&#x2F;第五次（退回n&#x3D;2的状态，调用move（））A-&gt;B<br>&#x2F;&#x2F;第六次（调用自身）1 B A C<br>&#x2F;&#x2F;第七次（调用move（））B-&gt;C<br>&#x2F;&#x2F;第八次（退回n&#x3D;2的状态）<br>执行完之后，退回入栈的状态，深入递归点进入后，形成流程。<br>   ▪   函数的参数传递<br>形式参数是不占内存的，当调用函数的时候，才会给形参分配内存空间。<br>实参可以是常量，变量和表达式。<br>转化（隐含）：将实参转化为形参。<br>单向传值的作用，被调用函数只会处理形参，形参得到形参的值的时候，就切割了。<br>return语句只能返回一个值。<br>现在需要一个双向传值的事物，方法是传引用&amp;。传引用作参数可以保障实参数据的安全。<br>   ▪   引用类型<br>值传递：单向传递。<br>引用传递：双向传递。<br>引用类型、<br>引用（&amp;）是标识符的别名<br>定义一个引用的时候，必须同时对它进行初始化，使它指向一个已存在的对象。<br>例如：<br>int i，j;<br>int &amp;ri&#x3D;i;&#x2F;&#x2F;定义int引用ri，并初始化为变量i的引用。<br>j&#x3D;10;<br>ri&#x3D;j;&#x2F;&#x2F;相当于把j赋值给i<br>一旦一个引用被初始化后，就不能改为指向其他对象<br>引用可以作为形参<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>void swap(int a,int b){<br>int t&#x3D;a;a&#x3D;b;b&#x3D;t;<br>}<br>int main(){<br>int x&#x3D;5,y&#x3D;10;<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>swap(x,y);<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>return 0;<br>}<br>&#x2F;&#x2F;不会发生变化<br>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>void swap(int&amp; a,int&amp; b){<br>int t&#x3D;a;a&#x3D;b;b&#x3D;t;<br>}<br>int main(){<br>int x&#x3D;5,y&#x3D;10;<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>swap(x,y);<br>cout&lt;&lt;”x&#x3D;”&lt;&lt;x&lt;&lt;”y&#x3D;”&lt;&lt;u&lt;&lt;endl;<br>return 0;<br>}<br>   ▪   含有可以变化的参数的函数<br>可以变化长度的参数表：<br>如果所有的实参类型相同，可以传递一个initializer_list的标准库类型<br>如果实参的类型不同，我们可以编写可变参数的模板<br>initializer_list<br>initializer_list是一种标准库类型，用于表示某种特定类型的值的数组，该类型定义在同名的头文件中。<br>具体操作：<br>initializer_list<T>lst;&#x2F;&#x2F;默认初始化，T类型元素的空列表<br>nitializer_list<T>lst{a,b,c};&#x2F;&#x2F;lst的元素数量和初始值一样多，lst的元素是对应初始值的副本；列表中的元素是const<br>lst2(lst)&#x2F;&#x2F;拷贝或者赋值一个initializer_list对象但不拷贝列表中的元素；拷贝后原始列表和副本共享元素。<br>lst2&#x3D;lst<br>lst.size(）&#x2F;&#x2F;列表中的元素数量<br>lst.begin（）&#x2F;&#x2F;返回指向lst首元素的指针<br>lst.end()&#x2F;&#x2F;返回指向lst尾元素下一位置的指针<br>在编写代码输出程序所产生的错误信息时，最好统一用一个函数实现该功能，使得对所有错误的处理都能够整齐划一，<br>然而错误信息的种类不同，<br>调用错误星系时输出函数时传递的参数也会各不相同<br>使用initializer_list编写一个错误信息输出函数，使其可以作用于可变数量的形参。<br>   ▪   内联函数<br>简单地说，就是在调用简单函数提高效率的工具。<br>减少调用函数的麻烦。<br>内联函数声明时的关键字 inline<br>编译时在调用处用函数体进行替换<br>节省了参数传递<br>控制转移等开销<br>注意：<br>内联函数中不能有循环语句和switch语句<br>内联函数的定义必须出现在内联函数在第一次被调用之前<br>例子：<br>#include&lt;bits&#x2F;stdc++&gt;<br>using namesapce std;<br>const double PI&#x3D;3.14159265358979;<br>inline double calArea(double radius){<br>return PI<em>radius</em>radius;<br>}<br>int main() {<br>double r&#x3D;3.0;<br>double area&#x3D;calArea(r);<br>cout&lt;&lt;area&lt;&lt;endl;<br>return 0;<br>}<br>   ▪   Constexpr函数（常量表达式函数）<br>他修饰的函数中，当所有参数都是constexpr时，一定返回constexpr。<br>只要给的是常量，那么返回的也是一个常量。<br>constexpr int get_size（）｛return 20；｝<br>constexpr int foo&#x3D;get_size();<br>&#x2F;&#x2F;正确：foo是一个常量表达式。<br>   ▪   带默认参数值的函数<br>可以在调用的时候，不给予参数也可以有一个默认形参可以使用。<br>int add（int x&#x3D;5，int y&#x3D;6）｛<br>return x+y;｝<br>int main()<br>{add(10,20);&#x2F;&#x2F;10+20<br>add(10);&#x2F;&#x2F;10+6<br>add();&#x2F;&#x2F;5+6<br>}<br>&#x2F;&#x2F;所有有默认参数的形参都必须列在形参列表的最右，即默认参数值的右边不能有无默认值的参数；<br>调用时，实参和形参的结合次序是从左向右<br>int add（int x，int y&#x3D;5，int z&#x3D;6）;&#x2F;&#x2F;正确<br>int add（int x&#x3D;1，int y&#x3D;5，int z）；&#x2F;&#x2F;错误<br>int add（int x&#x3D;1，int y，int z&#x3D;6）；&#x2F;&#x2F;错误<br>默认参数值与函数的调用位置<br>如果一个函数有原型声明，且原型声明在定义之前，则默认参数值应该在函数原型声明中给出；<br>如果只有函数的定义，或函数定义在前，<br>则默认参数值可以在函数定义中给出。<br>int add（int x&#x3D;5，int y&#x3D;6）；<br>int main（）<br>｛add（）；｝<br>int add（int x，int y）｛<br>return x+y；｝</T></T></p>
-<p>int add（int x&#x3D;5，int y&#x3D;6）｛<br>return x+y；｝<br>int main（）<br>｛add（）；｝<br>例题1：<br>函数getVolume计算体积<br>有三个形参：length、width、height<br>其中width和height带有默认值2和3<br>主函数中以不同形式调用getVolume<br>int getVloume（int length，int width，int height&#x3D;3）；<br>int main（）<br>{const int X&#x3D;10,Y&#x3D;12,Z&#x3D;15;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,Y,Z)&lt;&lt;endl;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,Y)&lt;&lt;endl;<br>cout&lt;&lt;”Some box data is”;<br>cout&lt;&lt;getVolume(X,&lt;&lt;endl;<br>return 0;<br>}<br>int getVolume(int length,int width,int height){<br>cout&lt;&lt;setw(5)&lt;&lt;length&lt;&lt;setw(5)&lt;&lt;width&lt;&lt;setw(5)&lt;&lt;height&lt;&lt;’\t’<br>return length<em>width</em>height;<br>}<br>   ▪   函数重载<br>函数多态性的体现，C++中允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。<br>int add(int x,int y);<br>float add(float x,float y);<br>int add(int x,int y,int z);<br>注意事项，重载函数的形参必须不同：个数不同或者类型不同。<br>编译程序将根据实参和形参的类型及个数的最佳匹配来选择调用哪一个函数。<br>int add(int x,int y);<br>int add(int x,int y);<br>编译器不以形参名来区分<br>int add(int x,int y);<br>void add(int x,int y);<br>编译器不以返回值来区分<br>不要将不同功能的函数声明为重载函数，以免出现调用结果的误解，混淆，这样不好。<br>int add(int x,int y)<br>{return x+y;}<br>float add(float x,float y)<br>{return x-y;}<br>int sumOfSquare(int a,int b){<br>return a<em>a+b</em>b;<br>}<br>Double sumOfSquare(double a,double b){<br>return a<em>a+b</em>b;<br>}<br>   ▪   C++系统函数<br>C++的系统库提供了几百个函数可以供程序员使用，例如：<br>求平方根函数（sqrt）<br>求绝对值函数（abs）<br>使用系统函数时要包含相应的头文件，例如；<br>cmath<br>例题一：从键盘中输出一个角度值，求出该角度的正弦值，余弦值和正切值。<br>分析：系统函数中提供了求正弦值，余弦值和正切值的函数：sin（），cos（），tan（），函数的声明在头文件cmath中。</p>
-<p>#include<iostream><br>#include<cmath><br>int main(){</cmath></iostream></p>
-<p>   ▪   第三章总结<br>函数的定义与调用，参数传递<br>内联函数，带默认值的函数，函数重载<br>C++系统函数</p>
-<p>   ▪   实验三（上）<br>本部分的主要实验任务是通过实验练习来进一步理解以下内容：<br>1、掌握函数的定义和调用方法。<br>2、学习debug的step into 功能追踪到函数内部。<br>3、递归算法<br>例题一、编写函数float Convert(float TempFer)<br>参数和返回值都是float类型<br>实现算法C&#x3D;（F-32）*5&#x2F;9;<br>float Convert(float F){<br>return (F-32)*5&#x2F;9;<br>}<br>例题二、编写斐波那契数列<br>a（n）&#x3D;a（n-1）+a（n-2）；<br>int a（int n）{<br>if(n&lt;3) return 1;<br>else if(n&lt;&#x3D;0) break;<br>return a(n-1)+a(n-2);<br>}</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>拉康和弗洛伊德关于无意识的论述</title>
-    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
-    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
-]]></content>
   </entry>
   <entry>
     <title>日语n1文法</title>
@@ -2020,6 +2008,102 @@
 ]]></content>
   </entry>
   <entry>
+    <title>小他者、对象a、大他者</title>
+    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
+    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>拉康和弗洛伊德关于无意识的论述</title>
+    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
+    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>洛谷P1002过河卒带来的思考</title>
+    <url>/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/</url>
+    <content><![CDATA[<h1 id="动态规划（Dynamic-Programing）"><a href="#动态规划（Dynamic-Programing）" class="headerlink" title="动态规划（Dynamic Programing）"></a>动态规划（Dynamic Programing）</h1><h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><p>dynamic programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems.</p>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">斐波那契数列可以看作一个简易的DP问题</span><br><span class="line">F(n)=F(n-1)+F(n-2);(n&gt;=3)</span><br><span class="line">F(10)=F(9)+F(8);</span><br><span class="line">F(9)=F(8)+F(7);</span><br><span class="line">……</span><br><span class="line">F(3)=F(2)+F(1);</span><br></pre></td></tr></table></figure>
+
+<p>如果是使用递归思路，那么程序需要将每一次需要的元素都重新算一次，会导致重复的运算，如果是在DP算法里面，每一次算过的数都用一个数组或者哈希表存储起来，之后就可以复用了，这样能减少运算量。</p>
+<h2 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h2><h4 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h4><p>F(n-1)和F(n-2)称为F(n)的最优子结构</p>
+<h4 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h4><p>F(n)&#x3D;F(n-1)+F(n-2)就称为状态转移方程</p>
+<h4 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h4><p>F(1) &#x3D; 1, F(2) &#x3D; 2 就是边界啦</p>
+<h4 id="重叠子问题"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题</h4><p>比如F(10)&#x3D; F(9)+F(8),F(9) &#x3D; F(8) + F(7) ,f(8)就是重叠子问题</p>
+<h2 id="适用例题"><a href="#适用例题" class="headerlink" title="适用例题"></a>适用例题</h2><blockquote>
+<p>如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。</p>
+</blockquote>
+<p>比如一些求最值的场景，如<strong>最长递增子序列、最小编辑距离、背包问题、凑零钱问题</strong>等等，都是动态规划的经典应用场景。</p>
+<p>动态规划的核心思想就是<strong>拆分子问题，记住过往，减少重复计算。</strong> 并且动态规划一般都是自底向上的，因此到这里，基于<strong>青蛙跳阶</strong>问题，我总结了一下我做动态规划的思路：</p>
+<h4 id="穷举分析"><a href="#穷举分析" class="headerlink" title="穷举分析"></a>穷举分析</h4><h4 id="确定边界"><a href="#确定边界" class="headerlink" title="确定边界"></a>确定边界</h4><h4 id="找出规律，确定最优子结构"><a href="#找出规律，确定最优子结构" class="headerlink" title="找出规律，确定最优子结构"></a>找出规律，确定最优子结构</h4><h4 id="写出状态转移方程"><a href="#写出状态转移方程" class="headerlink" title="写出状态转移方程"></a>写出状态转移方程</h4><h4 id="leetcode案例分析"><a href="#leetcode案例分析" class="headerlink" title="leetcode案例分析"></a>leetcode案例分析</h4><blockquote>
+<p>给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [10,9,2,5,3,7,101,18]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [0,1,0,3,2,3]</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>穷举分析</p>
+<p>因为动态规划，核心思想包括<strong>拆分子问题，记住过往，减少重复计算。</strong> 所以我们在思考原问题：<strong>数组num[i]的最长递增子序列长度时</strong>，可以思考下<strong>相关子问题</strong>，比如原问题是否跟<strong>子问题</strong>num[i-1]的最长递增子序列长度有关呢？</p>
+</li>
+<li><p>在穷举分析的时候，可以将元素写成两个数组的形式，这样便于找寻规律。</p>
+</li>
+<li><p>现在让我们分析一下</p>
+<table>
+<thead>
+<tr>
+<th>nums的元素数量</th>
+<th>最大子序列长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>{10} 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>{10}||{9} 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>{10}||{9}||{2} 1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>{2，5} 2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>{2，3}||{2，5} 2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>{2，3，7}||{2，5，7} 3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>{2，3，7，101}||{2，5，7，101} 4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>{2，3，7，18}||{2，5，7，18} 4</td>
+</tr>
+</tbody></table>
+<p>可以得到，最大子序列长度</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Dp[i]=max&#123;Dp[j]&#125;+1;</span><br><span class="line">j&gt;=0&amp;&amp;j&lt;=i-1;</span><br><span class="line">nums[i]&gt;nums[j];</span><br></pre></td></tr></table></figure>
+
+<p>符合这样的状态转移方程</p>
+<p>最优子结构：max{Dp[j]}+1.</p>
+<p>状态转移方程：Dp[i]&#x3D;max{Dp[j]}+1.</p>
+<p>边界：Dp[0]&#x3D;1.</p>
+<p>出现了重叠子问题.</p>
+<p>所以给出本题的题解</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int lengthOfLIS(int[] nums) &#123;</span><br><span class="line">    if(nums.size()==0)</span><br><span class="line">    &#123;return 0;&#125;</span><br><span class="line">    //保证程序的健壮性</span><br><span class="line">    int Dp[nums.size()];</span><br><span class="line">    Dp[0]=1;</span><br><span class="line">    //声明一个数组，用来存储目标值</span><br><span class="line">    for(int i=0;i&lt;nums.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">    for(int j=0;j&lt;i-1;j++)</span><br><span class="line">    &#123;</span><br><span class="line">    if(nums[i]&gt;nums[j])</span><br><span class="line">    &#123;</span><br><span class="line">    Dp[i]=max(Dp[j])+1;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;Dp[i]=max(Dp[j]);&#125;</span><br><span class="line">    //分类：满足飞升条件的+1，不满足的占位</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //利用双重循环遍历所列举的情况，将最终值算出来</span><br><span class="line">    return Dp[nums.size()-1];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="几种不同的解决思路"><a href="#几种不同的解决思路" class="headerlink" title="几种不同的解决思路"></a>几种不同的解决思路</h1><p>下面是过河卒的集中不同思路。</p>
+<h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1>]]></content>
+  </entry>
+  <entry>
     <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
     <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
     <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
@@ -2056,18 +2140,184 @@
 ]]></content>
   </entry>
   <entry>
-    <title>线代</title>
-    <url>/2024/05/22/%E7%BA%BF%E4%BB%A3/</url>
-    <content><![CDATA[<h1 id="第一章-线性方程组"><a href="#第一章-线性方程组" class="headerlink" title="第一章 线性方程组"></a>第一章 线性方程组</h1><h2 id="xi1-1-线性方程组高斯消元法与矩阵"><a href="#xi1-1-线性方程组高斯消元法与矩阵" class="headerlink" title="$\xi1.1$	线性方程组	高斯消元法与矩阵"></a>$\xi1.1$	线性方程组	高斯消元法与矩阵</h2><h2 id="xi1-2-行化简和阶梯形矩阵解的存在性和唯一性"><a href="#xi1-2-行化简和阶梯形矩阵解的存在性和唯一性" class="headerlink" title="$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性"></a>$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性</h2><h2 id="xi1-3-线性方程组的应用"><a href="#xi1-3-线性方程组的应用" class="headerlink" title="$\xi1.3$	线性方程组的应用"></a>$\xi1.3$	线性方程组的应用</h2><h1 id="第二章矩阵代数"><a href="#第二章矩阵代数" class="headerlink" title="第二章	矩阵代数"></a>第二章	矩阵代数</h1><h2 id="xi2-1-矩阵和向量"><a href="#xi2-1-矩阵和向量" class="headerlink" title="$\xi2.1$	矩阵和向量"></a>$\xi2.1$	矩阵和向量</h2><h2 id="xi2-2-矩阵的代数运算"><a href="#xi2-2-矩阵的代数运算" class="headerlink" title="$\xi2.2$	矩阵的代数运算"></a>$\xi2.2$	矩阵的代数运算</h2><h2 id="xi-2-3逆矩阵与矩阵的初等变换"><a href="#xi-2-3逆矩阵与矩阵的初等变换" class="headerlink" title="$\xi$2.3	逆矩阵与矩阵的初等变换"></a>$\xi$2.3	逆矩阵与矩阵的初等变换</h2><h2 id="xi-2-4转置矩阵与一些重要的方阵"><a href="#xi-2-4转置矩阵与一些重要的方阵" class="headerlink" title="$\xi$2.4	转置矩阵与一些重要的方阵"></a>$\xi$2.4	转置矩阵与一些重要的方阵</h2><h2 id="xi-2-5分块矩阵"><a href="#xi-2-5分块矩阵" class="headerlink" title="$\xi$2.5	分块矩阵"></a>$\xi$2.5	分块矩阵</h2><h1 id="第三章行列式"><a href="#第三章行列式" class="headerlink" title="第三章	行列式"></a>第三章	行列式</h1><h2 id="xi-3-1方阵的行列式"><a href="#xi-3-1方阵的行列式" class="headerlink" title="$\xi$3.1	方阵的行列式"></a>$\xi$3.1	方阵的行列式</h2><h2 id="xi-3-2行列式的主要性质"><a href="#xi-3-2行列式的主要性质" class="headerlink" title="$\xi$3.2	行列式的主要性质"></a>$\xi$3.2	行列式的主要性质</h2><h2 id="xi-3-3行列式的应用"><a href="#xi-3-3行列式的应用" class="headerlink" title="$\xi$3.3	行列式的应用"></a>$\xi$3.3	行列式的应用</h2><h1 id="第四章向量空间"><a href="#第四章向量空间" class="headerlink" title="第四章	向量空间"></a>第四章	向量空间</h1><h2 id="xi-4-1向量的定义及其运算"><a href="#xi-4-1向量的定义及其运算" class="headerlink" title="$\xi$4.1	向量的定义及其运算"></a>$\xi$4.1	向量的定义及其运算</h2><h2 id="xi-4-2向量的线性相关性"><a href="#xi-4-2向量的线性相关性" class="headerlink" title="$\xi$4.2	向量的线性相关性"></a>$\xi$4.2	向量的线性相关性</h2><h2 id="xi-4-3向量组的极大线性无关组和秩"><a href="#xi-4-3向量组的极大线性无关组和秩" class="headerlink" title="$\xi$4.3	向量组的极大线性无关组和秩"></a>$\xi$4.3	向量组的极大线性无关组和秩</h2><h2 id="xi-4-4子空间"><a href="#xi-4-4子空间" class="headerlink" title="$\xi$4.4	子空间"></a>$\xi$4.4	子空间</h2><h2 id="xi-4-5基和维数"><a href="#xi-4-5基和维数" class="headerlink" title="$\xi$4.5	基和维数"></a>$\xi$4.5	基和维数</h2><h2 id="xi-4-6矩阵的秩"><a href="#xi-4-6矩阵的秩" class="headerlink" title="$\xi$4.6	矩阵的秩"></a>$\xi$4.6	矩阵的秩</h2><h2 id="xi-4-7线性方程组的有解条件及解的结构"><a href="#xi-4-7线性方程组的有解条件及解的结构" class="headerlink" title="$\xi$4.7	线性方程组的有解条件及解的结构"></a>$\xi$4.7	线性方程组的有解条件及解的结构</h2><h2 id="xi-4-8-R-n-到-R-m-的线性映射"><a href="#xi-4-8-R-n-到-R-m-的线性映射" class="headerlink" title="$\xi$4.8	$R^n$到$R^m$的线性映射"></a>$\xi$4.8	$R^n$到$R^m$的线性映射</h2><h1 id="第五章特征值与特征向量"><a href="#第五章特征值与特征向量" class="headerlink" title="第五章	特征值与特征向量"></a>第五章	特征值与特征向量</h1><h2 id="xi-5-1矩阵的特征值与特征向量"><a href="#xi-5-1矩阵的特征值与特征向量" class="headerlink" title="$\xi$5.1	矩阵的特征值与特征向量"></a>$\xi$5.1	矩阵的特征值与特征向量</h2><h2 id="xi-5-2矩阵的相似对角化"><a href="#xi-5-2矩阵的相似对角化" class="headerlink" title="$\xi$5.2	矩阵的相似对角化"></a>$\xi$5.2	矩阵的相似对角化</h2><h2 id="xi-5-3实对称矩阵的正交相似对角化"><a href="#xi-5-3实对称矩阵的正交相似对角化" class="headerlink" title="$\xi$5.3	实对称矩阵的正交相似对角化"></a>$\xi$5.3	实对称矩阵的正交相似对角化</h2><p>​	由定理5.2.1知，一个n阶矩阵能否对角化取决于它是否有n个线性无关的特征向量.那么什么样的矩阵一定有n个线性无关的特征向量呢?下面我们就来证明任一n阶实对称矩阵一定存在n个线性无关的特征向量,从而可以对角化.也就是说,存在可逆阵$P$，使得$P^{-1}AP&#x3D;\Lambda$为对角阵。进一步，我们还可证明存在正交矩阵$Q$,使得$Q^T AQ&#x3D;\Lambda$为对角阵.为此，我们先引人如下概念.</p>
-<p>​	定义 5.3.1	设$\alpha&#x3D;[a_1,a_2.\cdots,a_n]^T,\beta&#x3D;[b_1,b_2,\cdots,b_n]^T$称<br>$$<br>(\alpha,\beta)&#x3D;\alpha^T\cdot\beta&#x3D;\sum_{i&#x3D;i}^na_ib_i<br>$$<br>为向量$\alpha,\beta$的内积，显然，$(\alpha,\alpha)&gt;&#x3D;0$,当且仅当$\alpha&#x3D;0$时等号成立，关于向量内积，还有如下性质：<br>$$<br>(1)(\alpha,\beta)&#x3D;(\beta,\alpha),\\<br>(2)(\alpha+\beta,\gamma)&#x3D;(\alpha,\gamma)+(\alpha,\gamma),\\<br>(3)k\alpha,\beta)&#x3D;k(\alpha,\beta),k\in R.\\<br>(4)(0,\alpha)&#x3D;(\alpha,0)&#x3D;0.\\<br>(5)(\sum_{i&#x3D;1}^{n}k_i\alpha_i,\alpha)&#x3D;\sum_{i&#x3D;1}^{n}k_i(\alpha_i,\alpha),k_i\in R,i&#x3D;1,\cdots,n.\\<br>$$<br>​	定义 5.3.2 称$|\alpha|&#x3D;\sqrt{(\alpha,\alpha)}$为向量$\alpha$的长度（或范数），长度为1的向量成为单位向量（unit vector）。</p>
-<p>​	一个向量$\alpha $的长度代表了n维空间中与$\alpha $所对应的点到原点（零向量所对应的点）的“距离”。因此，对于任意两个n维向量$\alpha,\beta $所对应的n维空间的两个点之间的距离可以表示为$|\alpha-\beta|$.</p>
-<p>​	关于向量长度，有如下性质：<br>$$<br>设\alpha\in R^n,\beta \in R^n,k \in R\\<br>(1)非负性：|k\alpha|&#x3D;|k||\alpha|\\<br>(2)正齐性：|k\alpha|&#x3D;|k||\alpha|\\<br>(3)柯西—许瓦兹不等式：|(\alpha,\beta)|&lt;&#x3D;|\alpha||\beta|\\<br>(4)三角不等式|\alpha|+|\beta|&gt;&#x3D;|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>我们仅就性质(3),(4)证明\\<br>$$</p>
-<p>$$<br>证明(3)\forall t\in R,构造关于t的二次多项式\\<br>0&lt;&#x3D;(\alpha+t\beta,\alpha+t\beta)&#x3D;(\alpha,\alpha)+2(\alpha,\alpha)t+(\beta,\beta)t^2\\<br>所以\\<br>\Delta&#x3D;4(\alpha,\beta)^2-4(\alpha,\alpha)(\beta,\beta)&lt;&#x3D;0.\\<br>即\\<br>（\alpha,\beta）^2&lt;&#x3D;(\alpha,\alpha)(\beta,\beta)&#x3D;|\alpha|^2\cdot|\beta|^2,\\<br>所以\\<br>|(\alpha,\beta)|&lt;&#x3D;|\alpha|\cdot|\beta|<br>$$</p>
-<p>$$<br>(4)|\alpha-\beta|^2&#x3D;(\alpha-\beta,\alpha-\beta)&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\</p>
-<blockquote>
-<p>&#x3D;|\alpha|^2-2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;(|\alpha|-|\beta|)^2\\<br>故\\<br>|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>(|\alpha|+|\beta|)^2&#x3D;|\alpha|^2+2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\<br>&#x3D;(\alpha-\beta,\alpha-\beta)\\<br>&#x3D;|\alpha-\beta|^2.<br>$$</p>
+    <title>神树之馆汉化日志</title>
+    <url>/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<blockquote>
+<p>神树之馆简要介绍</p>
+<p>民俗学を専攻する大学生の主人公、工月秋成（くげつ あきなり）は、卒業論文に必要な資料を探していた。大学の友人である四ツ谷麻子（よつたに あさこ）は、四国の山中にそびえ立つ親類の那越（なごし）邸、通称「真珠邸」を工月に紹介し、2人でそこへ赴くことになった。車で真珠邸にたどり着いた2人は、館をひとり管理するメイドの知里紫織（ともさと しおり）に迎えられ、案内された書庫で資料を探し始める。<br>館の住人は紫織の他に3人。そのうちの2人である双子の少女、斎（いつき）と伊美（いみ）は、外部の人間を警戒してか工月たちに近付こうとせず、もう1人である館の主人にいたっては姿さえ現さない。<br>館に着いた夜、工月は夢の中で真珠邸の奥に囚われたアルビノの少女に出会う。そして、2人を館に閉じ込めるように降りしきる雨。工月は、この不可解な館に知らず足を踏み入れてゆくのだった。</p>
 </blockquote>
-<h1 id="第六章二次型"><a href="#第六章二次型" class="headerlink" title="第六章	二次型"></a>第六章	二次型</h1><h2 id="xi-6-1二次型及其矩阵表示"><a href="#xi-6-1二次型及其矩阵表示" class="headerlink" title="$\xi$6.1	二次型及其矩阵表示"></a>$\xi$6.1	二次型及其矩阵表示</h2><h2 id="xi-6-2二次型化位标准型"><a href="#xi-6-2二次型化位标准型" class="headerlink" title="$\xi$6.2	二次型化位标准型"></a>$\xi$6.2	二次型化位标准型</h2><h2 id="xi-6-3正定二次型"><a href="#xi-6-3正定二次型" class="headerlink" title="$\xi$6.3	正定二次型"></a>$\xi$6.3	正定二次型</h2><h2 id="xi-6-4二次型的应用"><a href="#xi-6-4二次型的应用" class="headerlink" title="$\xi$6.4	二次型的应用"></a>$\xi$6.4	二次型的应用</h2><h1 id="第七章线性空间与线性变换"><a href="#第七章线性空间与线性变换" class="headerlink" title="第七章	线性空间与线性变换"></a>第七章	线性空间与线性变换</h1><h2 id="xi-7-1线性空间"><a href="#xi-7-1线性空间" class="headerlink" title="$\xi$7.1	线性空间"></a>$\xi$7.1	线性空间</h2><h2 id="xi-7-2线性变换"><a href="#xi-7-2线性变换" class="headerlink" title="$\xi$7.2	线性变换"></a>$\xi$7.2	线性变换</h2><h2 id="xi-7-3线性变换的矩阵表示"><a href="#xi-7-3线性变换的矩阵表示" class="headerlink" title="$\xi$7.3	线性变换的矩阵表示"></a>$\xi$7.3	线性变换的矩阵表示</h2><h2 id="xi-7-4线性变换的特征值与特征向量"><a href="#xi-7-4线性变换的特征值与特征向量" class="headerlink" title="$\xi$7.4	线性变换的特征值与特征向量"></a>$\xi$7.4	线性变换的特征值与特征向量</h2><h2 id="xi-7-5欧几里得空间简介"><a href="#xi-7-5欧几里得空间简介" class="headerlink" title="$\xi$7.5	欧几里得空间简介"></a>$\xi$7.5	欧几里得空间简介</h2><h1 id="MATLAB在线性代数中的作用"><a href="#MATLAB在线性代数中的作用" class="headerlink" title="MATLAB在线性代数中的作用"></a>MATLAB在线性代数中的作用</h1><h2 id="xi-8-1MATLAB简介"><a href="#xi-8-1MATLAB简介" class="headerlink" title="$\xi$8.1	MATLAB简介"></a>$\xi$8.1	MATLAB简介</h2><h2 id="xi-8-2MATLAB的基本操作"><a href="#xi-8-2MATLAB的基本操作" class="headerlink" title="$\xi$8.2	MATLAB的基本操作"></a>$\xi$8.2	MATLAB的基本操作</h2><h2 id="xi-8-3向量的生成与运算"><a href="#xi-8-3向量的生成与运算" class="headerlink" title="$\xi$8.3	向量的生成与运算"></a>$\xi$8.3	向量的生成与运算</h2><h2 id="xi-8-4矩阵的生成与运算"><a href="#xi-8-4矩阵的生成与运算" class="headerlink" title="$\xi$8.4	矩阵的生成与运算"></a>$\xi$8.4	矩阵的生成与运算</h2><h2 id="xi-8-5常用的矩阵函数"><a href="#xi-8-5常用的矩阵函数" class="headerlink" title="$\xi$8.5	常用的矩阵函数"></a>$\xi$8.5	常用的矩阵函数</h2><h2 id="xi-8-6线性方程组求解"><a href="#xi-8-6线性方程组求解" class="headerlink" title="$\xi$8.6	线性方程组求解"></a>$\xi$8.6	线性方程组求解</h2>]]></content>
+<h2 id="主要人物"><a href="#主要人物" class="headerlink" title="主要人物"></a>主要人物</h2><p><strong>工月秋成（くげつ あきなり）</strong>：主人公。大学生であり卒業論文を書いている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/62/f7/89831_crt_O42aS.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>四ツ谷麻子（よつたに あさこ）</strong>：主人公と同じ大学に通う学生。主人公とは友達以上、恋人未満の関係。いわゆる世話焼きヒロインタイプで、処女。しっかりしているように見られやすいが、意外ともろい部分があり、実は寂しがり屋。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/15/87/89832_crt_2Ee63.jpg" alt="img" style="zoom: 67%;">
+
+<p><strong>知里紫織（ともさと しおり）</strong>：館の一切を取り仕切っているメイド。穏やかで優しい性格。書物全般に対して造詣が深い。昼は淑女、夜は娼婦、といったタイプ。性に関する技術や、男を喜ばせるテクニックに長けていて、主人公に対しては、誘惑者の役割。非処女。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/9d/a7/89833_crt_NN70S.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>斎（いつき）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/48/e6/89834_crt_CHc06.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>伊美（いみ）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/5a/bc/89835_crt_xHIG8.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>竜胆（りんどう）</strong>：謎の住人。透き通るほどに白い、アルビノの少女。屋敷の奥で生活しているらしく、普段、顔を出すことは滅多にない。「神樹の館」の守り神的存在。住人たちの間では、一種のタブーとして畏れ、敬われている。彼女の意思ひとつで、館はその姿を変貌させる。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/2b/f5/89836_crt_w3pjt.jpg" alt="img" style="zoom:67%;">
+
+<h2 id="翻译日记"><a href="#翻译日记" class="headerlink" title="翻译日记"></a>翻译日记</h2><p>Q1：日语的连体形是否可以望文生义？</p>
+<p>Q2：推量助词该怎么翻译？</p>
+<p>Q3：语气词该怎么翻译？</p>
+<h2 id="翻译生词"><a href="#翻译生词" class="headerlink" title="翻译生词"></a>翻译生词</h2><ol>
+<li><p><a href="https://www.weblio.jp/content/%E3%81%9F%E3%81%BE%E3%81%92%E3%82%8B">「たまげる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E3%82%86%E3%81%8B%E3%82%8A">「ゆかり」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+<blockquote>
+<p>ゆかりの花言葉は？</p>
+<p>Conversation. ユカリさんは多分、紫草からかな……花言葉は<strong>「追憶」「あなたを忘れない」</strong>みたいな意味合いだし……紫は縁(ゆかり)の色ですからね……</p>
+</blockquote>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E6%AD%AF%E5%88%87%E3%82%8C%E3%81%8C%E6%82%AA%E3%81%84#:~:text=%E8%A8%80%E3%81%84%E6%A7%98%E3%81%8C%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%97%E3%81%AA%E3%81%84%E3%81%95%E3%81%BE,%E3%81%AA%E3%81%A9%E3%82%92%E6%84%8F%E5%91%B3%E3%81%99%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">「歯切れが悪い(はぎれがわるい)」の意味や … - Weblio国語辞典</a></p>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E5%BC%95%E3%81%8D%E5%AF%84%E3%81%9B%E3%82%8B">「引き寄せる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+</ol>
+<h2 id="文言文"><a href="#文言文" class="headerlink" title="文言文"></a>文言文</h2><h3 id="梅圣俞诗集序"><a href="#梅圣俞诗集序" class="headerlink" title="梅圣俞诗集序"></a>梅圣俞诗集序</h3><ol>
+<li><p>予闻世谓诗人少达而多穷，夫岂然哉？盖世所传诗者，多出于古穷人之辞也。凡士之蕴其所有，而不得施于世者，多喜自放于山巅水涯之外，见虫鱼草木风云鸟兽之状类，往往探其奇怪，内有忧思感愤之<strong>郁积</strong>，其兴于怨刺，以道<strong>羁臣寡妇</strong>之所叹，而写人情之难言。盖愈穷则愈工。然则非诗之能穷人，<strong>殆</strong>穷者而后工也。</p>
+<blockquote>
+<p>我听到世人常说：诗人仕途畅达的少，困厄的多。难道真是这样吗？大概是由于世上所流传的诗歌，多出于古代困厄之士的笔下吧。大凡胸藏才智而又不能充分施展于世的士人，大都喜爱到山头水边去放浪形骸，看见虫鱼草木风云鸟兽等事物，往往探究它们的奇特怪异之处，内心有着忧愁感慨愤激的郁积，这些情感化为诗兴，即寄托在怨恨讽刺之中，道出了逐臣寡妇的慨叹，而写出了人所难于言传的感受来。大概越困厄就越能写得工巧。如此说来，并非写诗使人穷困潦倒，大概是穷困潦倒后才能写出好诗来。</p>
+</blockquote>
+</li>
+<li><p>予友梅圣俞，少以<strong>荫补</strong>为吏，累举进士，<strong>辄抑</strong>于有司，困于州县，凡十余年。年今五十，犹从辟书，为人之佐，郁其所蓄，不得奋见于事业。其家宛陵，幼习于诗，自为童子，出语已惊其长老。既长，学乎六经仁义之说，其为文章，<strong>简古纯粹</strong>，不求<strong>苟说</strong>于世。世之人徒知其诗而已。然时无贤愚，语诗者必求之圣俞；圣俞亦自以其不得志者，乐于诗而发之，故其平生所作，于诗尤多。世既知之矣，而未有荐于上者。昔王文康公尝见而叹曰：“二百年无此作矣！”虽知之深，亦不果荐也。若使其幸得用于朝廷，作为雅、颂，以歌咏大宋之功德，荐之清庙，而追商、周、鲁颂之作者，岂不伟欤！奈何使其老不得志，而为穷者之诗，乃徒发于虫鱼物类，羁愁感叹之言。世徒喜其工，不知其穷之久而将老也！可不惜哉！</p>
+<blockquote>
+<p>我的朋友梅圣俞，年轻时由于荫袭补为下级官吏，屡次考进士，总是遭到主考部门的压制，在地方上困厄了十多年。年已五十了，还要靠别人下聘书，去当人家的办事员。郁积着自己的才能智慧，不能在事业上充分地表现出来。他家乡在宛陵，幼年时就学习诗歌，从他还是个孩童时起，写出诗句来就已使得父老长辈惊异了。等到长大，学习了六经仁义的学问，他写出的文章简古纯正，不希求苟且取悦于世人，因此世人只知道他会写诗罢了。然而当时人不论贤愚，谈论诗歌必然会向圣俞请教。圣俞也把自己不得志的地方，喜欢通过诗歌来发泄，因此他平时所写的东西，其中诗歌就特别多。社会上已经知道他了，却没有人向朝廷推荐他。从前王文康公曾看到他的诗作，慨叹地说：“二百年没有这样的作品了！”虽然对他了解很深，可还是没有加以推荐。假使他有幸得到朝廷的任用，写出如《诗经》中雅、颂那样的作品，来歌颂大宋的功业恩德，献给宗庙，使他类似于商颂、周颂、鲁颂等作者，难道不是很壮伟的吗？可惜他到老也不得志，只能写困厄者的诗歌，白白地在虫鱼之类上抒发穷苦愁闷的感叹。社会上只喜爱他诗歌的工巧，却不知道他困厄已久将要老死了，这难道不值得叹息吗？</p>
+</blockquote>
+</li>
+<li><p>圣俞诗既多，不自收拾。其妻之兄子谢景初，惧其多而易失也，取其自洛阳至于吴兴以来所作，次为十卷。予尝嗜圣俞诗，而患不能尽得之，<strong>遽喜</strong>谢氏之能类次也，<strong>辄序</strong>而藏之。</p>
+<blockquote>
+<p>圣俞的诗很多，自己却不收拾整理。他的内侄谢景初担心它太多容易散失，选取他从洛阳到吴兴这段时间的作品，编为十卷。我曾经酷爱圣俞的诗作，担心不能全部得到它，十分高兴谢氏能为它分类编排，就为之作序并保存起来。</p>
+</blockquote>
+</li>
+<li><p>其后十五年，圣俞以疾卒于京师，余<strong>既</strong>哭而铭之，因索于其家，得其遗稿千余篇，并旧所藏，<strong>掇</strong>其尤者六百七十七篇，为一十五卷。呜呼！吾于圣俞诗论之详矣，故不复云。</p>
+<blockquote>
+<p>从那以后过了十五年，圣俞因病在京师去世，我已痛哭着为他写好了墓志铭，便向他家索求，得到他的遗稿一千多篇，连同先前所保存的，选取其中特别好的共六百七十七篇，分为十五卷。啊，我对圣俞的诗歌已经评论得很多了，所以不再重复。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="中古日语"><a href="#中古日语" class="headerlink" title="中古日语"></a>中古日语</h2><table>
+<thead>
+<tr>
+<th>活用型 （活用の種類）</th>
+<th>例語</th>
+<th>語幹</th>
+<th>未然</th>
+<th>連用</th>
+<th>終止</th>
+<th>連体</th>
+<th>已然</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>四段</td>
+<td>聞く</td>
+<td>聞</td>
+<td>か</td>
+<td>き</td>
+<td>く</td>
+<td>く</td>
+<td>け</td>
+<td>け</td>
+</tr>
+<tr>
+<td>上二段</td>
+<td>起く</td>
+<td>起</td>
+<td>き</td>
+<td>き</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>きょ</td>
+</tr>
+<tr>
+<td>下二段</td>
+<td>受く</td>
+<td>受</td>
+<td>け</td>
+<td>け</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>けよ</td>
+</tr>
+<tr>
+<td>上一段</td>
+<td>着る</td>
+<td>着</td>
+<td>き</td>
+<td>き</td>
+<td>きる</td>
+<td>きる</td>
+<td>きれ</td>
+<td>きよ</td>
+</tr>
+<tr>
+<td>下一段</td>
+<td>蹴る</td>
+<td>蹴</td>
+<td>け</td>
+<td>け</td>
+<td>ける</td>
+<td>ける</td>
+<td>けれ</td>
+<td>けよ</td>
+</tr>
+<tr>
+<td>カ行変格</td>
+<td>来</td>
+<td>来</td>
+<td>こ</td>
+<td>き</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>こ$\cdot$こよ</td>
+</tr>
+<tr>
+<td>サ行変格</td>
+<td>為</td>
+<td>為</td>
+<td>せ</td>
+<td>し</td>
+<td>す</td>
+<td>する</td>
+<td>すれ</td>
+<td>せよ</td>
+</tr>
+<tr>
+<td>ナ行変格</td>
+<td>往ぬ</td>
+<td>往</td>
+<td>な</td>
+<td>に</td>
+<td>ぬ</td>
+<td>ぬる</td>
+<td>ぬれ</td>
+<td>ぬ</td>
+</tr>
+<tr>
+<td>ラ行変格</td>
+<td>あり</td>
+<td>あ</td>
+<td>ら</td>
+<td>り</td>
+<td>り</td>
+<td>る</td>
+<td>れ</td>
+<td>れ</td>
+</tr>
+</tbody></table>
+]]></content>
   </entry>
   <entry>
     <title>第六章杆件的内力</title>
@@ -2255,183 +2505,17 @@
 ]]></content>
   </entry>
   <entry>
-    <title>神树之馆汉化日志</title>
-    <url>/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/</url>
-    <content><![CDATA[<blockquote>
-<p>神树之馆简要介绍</p>
-<p>民俗学を専攻する大学生の主人公、工月秋成（くげつ あきなり）は、卒業論文に必要な資料を探していた。大学の友人である四ツ谷麻子（よつたに あさこ）は、四国の山中にそびえ立つ親類の那越（なごし）邸、通称「真珠邸」を工月に紹介し、2人でそこへ赴くことになった。車で真珠邸にたどり着いた2人は、館をひとり管理するメイドの知里紫織（ともさと しおり）に迎えられ、案内された書庫で資料を探し始める。<br>館の住人は紫織の他に3人。そのうちの2人である双子の少女、斎（いつき）と伊美（いみ）は、外部の人間を警戒してか工月たちに近付こうとせず、もう1人である館の主人にいたっては姿さえ現さない。<br>館に着いた夜、工月は夢の中で真珠邸の奥に囚われたアルビノの少女に出会う。そして、2人を館に閉じ込めるように降りしきる雨。工月は、この不可解な館に知らず足を踏み入れてゆくのだった。</p>
-</blockquote>
-<h2 id="主要人物"><a href="#主要人物" class="headerlink" title="主要人物"></a>主要人物</h2><p><strong>工月秋成（くげつ あきなり）</strong>：主人公。大学生であり卒業論文を書いている。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/62/f7/89831_crt_O42aS.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>四ツ谷麻子（よつたに あさこ）</strong>：主人公と同じ大学に通う学生。主人公とは友達以上、恋人未満の関係。いわゆる世話焼きヒロインタイプで、処女。しっかりしているように見られやすいが、意外ともろい部分があり、実は寂しがり屋。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/15/87/89832_crt_2Ee63.jpg" alt="img" style="zoom: 67%;">
-
-<p><strong>知里紫織（ともさと しおり）</strong>：館の一切を取り仕切っているメイド。穏やかで優しい性格。書物全般に対して造詣が深い。昼は淑女、夜は娼婦、といったタイプ。性に関する技術や、男を喜ばせるテクニックに長けていて、主人公に対しては、誘惑者の役割。非処女。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/9d/a7/89833_crt_NN70S.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>斎（いつき）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/48/e6/89834_crt_CHc06.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>伊美（いみ）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/5a/bc/89835_crt_xHIG8.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>竜胆（りんどう）</strong>：謎の住人。透き通るほどに白い、アルビノの少女。屋敷の奥で生活しているらしく、普段、顔を出すことは滅多にない。「神樹の館」の守り神的存在。住人たちの間では、一種のタブーとして畏れ、敬われている。彼女の意思ひとつで、館はその姿を変貌させる。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/2b/f5/89836_crt_w3pjt.jpg" alt="img" style="zoom:67%;">
-
-<h2 id="翻译日记"><a href="#翻译日记" class="headerlink" title="翻译日记"></a>翻译日记</h2><p>Q1：日语的连体形是否可以望文生义？</p>
-<p>Q2：推量助词该怎么翻译？</p>
-<p>Q3：语气词该怎么翻译？</p>
-<h2 id="翻译生词"><a href="#翻译生词" class="headerlink" title="翻译生词"></a>翻译生词</h2><ol>
-<li><p><a href="https://www.weblio.jp/content/%E3%81%9F%E3%81%BE%E3%81%92%E3%82%8B">「たまげる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
-</li>
-<li><p><a href="https://www.weblio.jp/content/%E3%82%86%E3%81%8B%E3%82%8A">「ゆかり」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+    <title>线代</title>
+    <url>/2024/05/22/%E7%BA%BF%E4%BB%A3/</url>
+    <content><![CDATA[<h1 id="第一章-线性方程组"><a href="#第一章-线性方程组" class="headerlink" title="第一章 线性方程组"></a>第一章 线性方程组</h1><h2 id="xi1-1-线性方程组高斯消元法与矩阵"><a href="#xi1-1-线性方程组高斯消元法与矩阵" class="headerlink" title="$\xi1.1$	线性方程组	高斯消元法与矩阵"></a>$\xi1.1$	线性方程组	高斯消元法与矩阵</h2><h2 id="xi1-2-行化简和阶梯形矩阵解的存在性和唯一性"><a href="#xi1-2-行化简和阶梯形矩阵解的存在性和唯一性" class="headerlink" title="$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性"></a>$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性</h2><h2 id="xi1-3-线性方程组的应用"><a href="#xi1-3-线性方程组的应用" class="headerlink" title="$\xi1.3$	线性方程组的应用"></a>$\xi1.3$	线性方程组的应用</h2><h1 id="第二章矩阵代数"><a href="#第二章矩阵代数" class="headerlink" title="第二章	矩阵代数"></a>第二章	矩阵代数</h1><h2 id="xi2-1-矩阵和向量"><a href="#xi2-1-矩阵和向量" class="headerlink" title="$\xi2.1$	矩阵和向量"></a>$\xi2.1$	矩阵和向量</h2><h2 id="xi2-2-矩阵的代数运算"><a href="#xi2-2-矩阵的代数运算" class="headerlink" title="$\xi2.2$	矩阵的代数运算"></a>$\xi2.2$	矩阵的代数运算</h2><h2 id="xi-2-3逆矩阵与矩阵的初等变换"><a href="#xi-2-3逆矩阵与矩阵的初等变换" class="headerlink" title="$\xi$2.3	逆矩阵与矩阵的初等变换"></a>$\xi$2.3	逆矩阵与矩阵的初等变换</h2><h2 id="xi-2-4转置矩阵与一些重要的方阵"><a href="#xi-2-4转置矩阵与一些重要的方阵" class="headerlink" title="$\xi$2.4	转置矩阵与一些重要的方阵"></a>$\xi$2.4	转置矩阵与一些重要的方阵</h2><h2 id="xi-2-5分块矩阵"><a href="#xi-2-5分块矩阵" class="headerlink" title="$\xi$2.5	分块矩阵"></a>$\xi$2.5	分块矩阵</h2><h1 id="第三章行列式"><a href="#第三章行列式" class="headerlink" title="第三章	行列式"></a>第三章	行列式</h1><h2 id="xi-3-1方阵的行列式"><a href="#xi-3-1方阵的行列式" class="headerlink" title="$\xi$3.1	方阵的行列式"></a>$\xi$3.1	方阵的行列式</h2><h2 id="xi-3-2行列式的主要性质"><a href="#xi-3-2行列式的主要性质" class="headerlink" title="$\xi$3.2	行列式的主要性质"></a>$\xi$3.2	行列式的主要性质</h2><h2 id="xi-3-3行列式的应用"><a href="#xi-3-3行列式的应用" class="headerlink" title="$\xi$3.3	行列式的应用"></a>$\xi$3.3	行列式的应用</h2><h1 id="第四章向量空间"><a href="#第四章向量空间" class="headerlink" title="第四章	向量空间"></a>第四章	向量空间</h1><h2 id="xi-4-1向量的定义及其运算"><a href="#xi-4-1向量的定义及其运算" class="headerlink" title="$\xi$4.1	向量的定义及其运算"></a>$\xi$4.1	向量的定义及其运算</h2><h2 id="xi-4-2向量的线性相关性"><a href="#xi-4-2向量的线性相关性" class="headerlink" title="$\xi$4.2	向量的线性相关性"></a>$\xi$4.2	向量的线性相关性</h2><h2 id="xi-4-3向量组的极大线性无关组和秩"><a href="#xi-4-3向量组的极大线性无关组和秩" class="headerlink" title="$\xi$4.3	向量组的极大线性无关组和秩"></a>$\xi$4.3	向量组的极大线性无关组和秩</h2><h2 id="xi-4-4子空间"><a href="#xi-4-4子空间" class="headerlink" title="$\xi$4.4	子空间"></a>$\xi$4.4	子空间</h2><h2 id="xi-4-5基和维数"><a href="#xi-4-5基和维数" class="headerlink" title="$\xi$4.5	基和维数"></a>$\xi$4.5	基和维数</h2><h2 id="xi-4-6矩阵的秩"><a href="#xi-4-6矩阵的秩" class="headerlink" title="$\xi$4.6	矩阵的秩"></a>$\xi$4.6	矩阵的秩</h2><h2 id="xi-4-7线性方程组的有解条件及解的结构"><a href="#xi-4-7线性方程组的有解条件及解的结构" class="headerlink" title="$\xi$4.7	线性方程组的有解条件及解的结构"></a>$\xi$4.7	线性方程组的有解条件及解的结构</h2><h2 id="xi-4-8-R-n-到-R-m-的线性映射"><a href="#xi-4-8-R-n-到-R-m-的线性映射" class="headerlink" title="$\xi$4.8	$R^n$到$R^m$的线性映射"></a>$\xi$4.8	$R^n$到$R^m$的线性映射</h2><h1 id="第五章特征值与特征向量"><a href="#第五章特征值与特征向量" class="headerlink" title="第五章	特征值与特征向量"></a>第五章	特征值与特征向量</h1><h2 id="xi-5-1矩阵的特征值与特征向量"><a href="#xi-5-1矩阵的特征值与特征向量" class="headerlink" title="$\xi$5.1	矩阵的特征值与特征向量"></a>$\xi$5.1	矩阵的特征值与特征向量</h2><h2 id="xi-5-2矩阵的相似对角化"><a href="#xi-5-2矩阵的相似对角化" class="headerlink" title="$\xi$5.2	矩阵的相似对角化"></a>$\xi$5.2	矩阵的相似对角化</h2><h2 id="xi-5-3实对称矩阵的正交相似对角化"><a href="#xi-5-3实对称矩阵的正交相似对角化" class="headerlink" title="$\xi$5.3	实对称矩阵的正交相似对角化"></a>$\xi$5.3	实对称矩阵的正交相似对角化</h2><p>​	由定理5.2.1知，一个n阶矩阵能否对角化取决于它是否有n个线性无关的特征向量.那么什么样的矩阵一定有n个线性无关的特征向量呢?下面我们就来证明任一n阶实对称矩阵一定存在n个线性无关的特征向量,从而可以对角化.也就是说,存在可逆阵$P$，使得$P^{-1}AP&#x3D;\Lambda$为对角阵。进一步，我们还可证明存在正交矩阵$Q$,使得$Q^T AQ&#x3D;\Lambda$为对角阵.为此，我们先引人如下概念.</p>
+<p>​	定义 5.3.1	设$\alpha&#x3D;[a_1,a_2.\cdots,a_n]^T,\beta&#x3D;[b_1,b_2,\cdots,b_n]^T$称<br>$$<br>(\alpha,\beta)&#x3D;\alpha^T\cdot\beta&#x3D;\sum_{i&#x3D;i}^na_ib_i<br>$$<br>为向量$\alpha,\beta$的内积，显然，$(\alpha,\alpha)&gt;&#x3D;0$,当且仅当$\alpha&#x3D;0$时等号成立，关于向量内积，还有如下性质：<br>$$<br>(1)(\alpha,\beta)&#x3D;(\beta,\alpha),\\<br>(2)(\alpha+\beta,\gamma)&#x3D;(\alpha,\gamma)+(\alpha,\gamma),\\<br>(3)k\alpha,\beta)&#x3D;k(\alpha,\beta),k\in R.\\<br>(4)(0,\alpha)&#x3D;(\alpha,0)&#x3D;0.\\<br>(5)(\sum_{i&#x3D;1}^{n}k_i\alpha_i,\alpha)&#x3D;\sum_{i&#x3D;1}^{n}k_i(\alpha_i,\alpha),k_i\in R,i&#x3D;1,\cdots,n.\\<br>$$<br>​	定义 5.3.2 称$|\alpha|&#x3D;\sqrt{(\alpha,\alpha)}$为向量$\alpha$的长度（或范数），长度为1的向量成为单位向量（unit vector）。</p>
+<p>​	一个向量$\alpha $的长度代表了n维空间中与$\alpha $所对应的点到原点（零向量所对应的点）的“距离”。因此，对于任意两个n维向量$\alpha,\beta $所对应的n维空间的两个点之间的距离可以表示为$|\alpha-\beta|$.</p>
+<p>​	关于向量长度，有如下性质：<br>$$<br>设\alpha\in R^n,\beta \in R^n,k \in R\\<br>(1)非负性：|k\alpha|&#x3D;|k||\alpha|\\<br>(2)正齐性：|k\alpha|&#x3D;|k||\alpha|\\<br>(3)柯西—许瓦兹不等式：|(\alpha,\beta)|&lt;&#x3D;|\alpha||\beta|\\<br>(4)三角不等式|\alpha|+|\beta|&gt;&#x3D;|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>我们仅就性质(3),(4)证明\\<br>$$</p>
+<p>$$<br>证明(3)\forall t\in R,构造关于t的二次多项式\\<br>0&lt;&#x3D;(\alpha+t\beta,\alpha+t\beta)&#x3D;(\alpha,\alpha)+2(\alpha,\alpha)t+(\beta,\beta)t^2\\<br>所以\\<br>\Delta&#x3D;4(\alpha,\beta)^2-4(\alpha,\alpha)(\beta,\beta)&lt;&#x3D;0.\\<br>即\\<br>（\alpha,\beta）^2&lt;&#x3D;(\alpha,\alpha)(\beta,\beta)&#x3D;|\alpha|^2\cdot|\beta|^2,\\<br>所以\\<br>|(\alpha,\beta)|&lt;&#x3D;|\alpha|\cdot|\beta|<br>$$</p>
+<p>$$<br>(4)|\alpha-\beta|^2&#x3D;(\alpha-\beta,\alpha-\beta)&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\</p>
 <blockquote>
-<p>ゆかりの花言葉は？</p>
-<p>Conversation. ユカリさんは多分、紫草からかな……花言葉は<strong>「追憶」「あなたを忘れない」</strong>みたいな意味合いだし……紫は縁(ゆかり)の色ですからね……</p>
+<p>&#x3D;|\alpha|^2-2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;(|\alpha|-|\beta|)^2\\<br>故\\<br>|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>(|\alpha|+|\beta|)^2&#x3D;|\alpha|^2+2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\<br>&#x3D;(\alpha-\beta,\alpha-\beta)\\<br>&#x3D;|\alpha-\beta|^2.<br>$$</p>
 </blockquote>
-</li>
-<li><p><a href="https://www.weblio.jp/content/%E6%AD%AF%E5%88%87%E3%82%8C%E3%81%8C%E6%82%AA%E3%81%84#:~:text=%E8%A8%80%E3%81%84%E6%A7%98%E3%81%8C%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%97%E3%81%AA%E3%81%84%E3%81%95%E3%81%BE,%E3%81%AA%E3%81%A9%E3%82%92%E6%84%8F%E5%91%B3%E3%81%99%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">「歯切れが悪い(はぎれがわるい)」の意味や … - Weblio国語辞典</a></p>
-</li>
-<li><p><a href="https://www.weblio.jp/content/%E5%BC%95%E3%81%8D%E5%AF%84%E3%81%9B%E3%82%8B">「引き寄せる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
-</li>
-</ol>
-<h2 id="文言文"><a href="#文言文" class="headerlink" title="文言文"></a>文言文</h2><h3 id="梅圣俞诗集序"><a href="#梅圣俞诗集序" class="headerlink" title="梅圣俞诗集序"></a>梅圣俞诗集序</h3><ol>
-<li><p>予闻世谓诗人少达而多穷，夫岂然哉？盖世所传诗者，多出于古穷人之辞也。凡士之蕴其所有，而不得施于世者，多喜自放于山巅水涯之外，见虫鱼草木风云鸟兽之状类，往往探其奇怪，内有忧思感愤之<strong>郁积</strong>，其兴于怨刺，以道<strong>羁臣寡妇</strong>之所叹，而写人情之难言。盖愈穷则愈工。然则非诗之能穷人，<strong>殆</strong>穷者而后工也。</p>
-<blockquote>
-<p>我听到世人常说：诗人仕途畅达的少，困厄的多。难道真是这样吗？大概是由于世上所流传的诗歌，多出于古代困厄之士的笔下吧。大凡胸藏才智而又不能充分施展于世的士人，大都喜爱到山头水边去放浪形骸，看见虫鱼草木风云鸟兽等事物，往往探究它们的奇特怪异之处，内心有着忧愁感慨愤激的郁积，这些情感化为诗兴，即寄托在怨恨讽刺之中，道出了逐臣寡妇的慨叹，而写出了人所难于言传的感受来。大概越困厄就越能写得工巧。如此说来，并非写诗使人穷困潦倒，大概是穷困潦倒后才能写出好诗来。</p>
-</blockquote>
-</li>
-<li><p>予友梅圣俞，少以<strong>荫补</strong>为吏，累举进士，<strong>辄抑</strong>于有司，困于州县，凡十余年。年今五十，犹从辟书，为人之佐，郁其所蓄，不得奋见于事业。其家宛陵，幼习于诗，自为童子，出语已惊其长老。既长，学乎六经仁义之说，其为文章，<strong>简古纯粹</strong>，不求<strong>苟说</strong>于世。世之人徒知其诗而已。然时无贤愚，语诗者必求之圣俞；圣俞亦自以其不得志者，乐于诗而发之，故其平生所作，于诗尤多。世既知之矣，而未有荐于上者。昔王文康公尝见而叹曰：“二百年无此作矣！”虽知之深，亦不果荐也。若使其幸得用于朝廷，作为雅、颂，以歌咏大宋之功德，荐之清庙，而追商、周、鲁颂之作者，岂不伟欤！奈何使其老不得志，而为穷者之诗，乃徒发于虫鱼物类，羁愁感叹之言。世徒喜其工，不知其穷之久而将老也！可不惜哉！</p>
-<blockquote>
-<p>我的朋友梅圣俞，年轻时由于荫袭补为下级官吏，屡次考进士，总是遭到主考部门的压制，在地方上困厄了十多年。年已五十了，还要靠别人下聘书，去当人家的办事员。郁积着自己的才能智慧，不能在事业上充分地表现出来。他家乡在宛陵，幼年时就学习诗歌，从他还是个孩童时起，写出诗句来就已使得父老长辈惊异了。等到长大，学习了六经仁义的学问，他写出的文章简古纯正，不希求苟且取悦于世人，因此世人只知道他会写诗罢了。然而当时人不论贤愚，谈论诗歌必然会向圣俞请教。圣俞也把自己不得志的地方，喜欢通过诗歌来发泄，因此他平时所写的东西，其中诗歌就特别多。社会上已经知道他了，却没有人向朝廷推荐他。从前王文康公曾看到他的诗作，慨叹地说：“二百年没有这样的作品了！”虽然对他了解很深，可还是没有加以推荐。假使他有幸得到朝廷的任用，写出如《诗经》中雅、颂那样的作品，来歌颂大宋的功业恩德，献给宗庙，使他类似于商颂、周颂、鲁颂等作者，难道不是很壮伟的吗？可惜他到老也不得志，只能写困厄者的诗歌，白白地在虫鱼之类上抒发穷苦愁闷的感叹。社会上只喜爱他诗歌的工巧，却不知道他困厄已久将要老死了，这难道不值得叹息吗？</p>
-</blockquote>
-</li>
-<li><p>圣俞诗既多，不自收拾。其妻之兄子谢景初，惧其多而易失也，取其自洛阳至于吴兴以来所作，次为十卷。予尝嗜圣俞诗，而患不能尽得之，<strong>遽喜</strong>谢氏之能类次也，<strong>辄序</strong>而藏之。</p>
-<blockquote>
-<p>圣俞的诗很多，自己却不收拾整理。他的内侄谢景初担心它太多容易散失，选取他从洛阳到吴兴这段时间的作品，编为十卷。我曾经酷爱圣俞的诗作，担心不能全部得到它，十分高兴谢氏能为它分类编排，就为之作序并保存起来。</p>
-</blockquote>
-</li>
-<li><p>其后十五年，圣俞以疾卒于京师，余<strong>既</strong>哭而铭之，因索于其家，得其遗稿千余篇，并旧所藏，<strong>掇</strong>其尤者六百七十七篇，为一十五卷。呜呼！吾于圣俞诗论之详矣，故不复云。</p>
-<blockquote>
-<p>从那以后过了十五年，圣俞因病在京师去世，我已痛哭着为他写好了墓志铭，便向他家索求，得到他的遗稿一千多篇，连同先前所保存的，选取其中特别好的共六百七十七篇，分为十五卷。啊，我对圣俞的诗歌已经评论得很多了，所以不再重复。</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="中古日语"><a href="#中古日语" class="headerlink" title="中古日语"></a>中古日语</h2><table>
-<thead>
-<tr>
-<th>活用型 （活用の種類）</th>
-<th>例語</th>
-<th>語幹</th>
-<th>未然</th>
-<th>連用</th>
-<th>終止</th>
-<th>連体</th>
-<th>已然</th>
-<th>命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>四段</td>
-<td>聞く</td>
-<td>聞</td>
-<td>か</td>
-<td>き</td>
-<td>く</td>
-<td>く</td>
-<td>け</td>
-<td>け</td>
-</tr>
-<tr>
-<td>上二段</td>
-<td>起く</td>
-<td>起</td>
-<td>き</td>
-<td>き</td>
-<td>く</td>
-<td>くる</td>
-<td>くれ</td>
-<td>きょ</td>
-</tr>
-<tr>
-<td>下二段</td>
-<td>受く</td>
-<td>受</td>
-<td>け</td>
-<td>け</td>
-<td>く</td>
-<td>くる</td>
-<td>くれ</td>
-<td>けよ</td>
-</tr>
-<tr>
-<td>上一段</td>
-<td>着る</td>
-<td>着</td>
-<td>き</td>
-<td>き</td>
-<td>きる</td>
-<td>きる</td>
-<td>きれ</td>
-<td>きよ</td>
-</tr>
-<tr>
-<td>下一段</td>
-<td>蹴る</td>
-<td>蹴</td>
-<td>け</td>
-<td>け</td>
-<td>ける</td>
-<td>ける</td>
-<td>けれ</td>
-<td>けよ</td>
-</tr>
-<tr>
-<td>カ行変格</td>
-<td>来</td>
-<td>来</td>
-<td>こ</td>
-<td>き</td>
-<td>く</td>
-<td>くる</td>
-<td>くれ</td>
-<td>こ$\cdot$こよ</td>
-</tr>
-<tr>
-<td>サ行変格</td>
-<td>為</td>
-<td>為</td>
-<td>せ</td>
-<td>し</td>
-<td>す</td>
-<td>する</td>
-<td>すれ</td>
-<td>せよ</td>
-</tr>
-<tr>
-<td>ナ行変格</td>
-<td>往ぬ</td>
-<td>往</td>
-<td>な</td>
-<td>に</td>
-<td>ぬ</td>
-<td>ぬる</td>
-<td>ぬれ</td>
-<td>ぬ</td>
-</tr>
-<tr>
-<td>ラ行変格</td>
-<td>あり</td>
-<td>あ</td>
-<td>ら</td>
-<td>り</td>
-<td>り</td>
-<td>る</td>
-<td>れ</td>
-<td>れ</td>
-</tr>
-</tbody></table>
-]]></content>
+<h1 id="第六章二次型"><a href="#第六章二次型" class="headerlink" title="第六章	二次型"></a>第六章	二次型</h1><h2 id="xi-6-1二次型及其矩阵表示"><a href="#xi-6-1二次型及其矩阵表示" class="headerlink" title="$\xi$6.1	二次型及其矩阵表示"></a>$\xi$6.1	二次型及其矩阵表示</h2><h2 id="xi-6-2二次型化位标准型"><a href="#xi-6-2二次型化位标准型" class="headerlink" title="$\xi$6.2	二次型化位标准型"></a>$\xi$6.2	二次型化位标准型</h2><h2 id="xi-6-3正定二次型"><a href="#xi-6-3正定二次型" class="headerlink" title="$\xi$6.3	正定二次型"></a>$\xi$6.3	正定二次型</h2><h2 id="xi-6-4二次型的应用"><a href="#xi-6-4二次型的应用" class="headerlink" title="$\xi$6.4	二次型的应用"></a>$\xi$6.4	二次型的应用</h2><h1 id="第七章线性空间与线性变换"><a href="#第七章线性空间与线性变换" class="headerlink" title="第七章	线性空间与线性变换"></a>第七章	线性空间与线性变换</h1><h2 id="xi-7-1线性空间"><a href="#xi-7-1线性空间" class="headerlink" title="$\xi$7.1	线性空间"></a>$\xi$7.1	线性空间</h2><h2 id="xi-7-2线性变换"><a href="#xi-7-2线性变换" class="headerlink" title="$\xi$7.2	线性变换"></a>$\xi$7.2	线性变换</h2><h2 id="xi-7-3线性变换的矩阵表示"><a href="#xi-7-3线性变换的矩阵表示" class="headerlink" title="$\xi$7.3	线性变换的矩阵表示"></a>$\xi$7.3	线性变换的矩阵表示</h2><h2 id="xi-7-4线性变换的特征值与特征向量"><a href="#xi-7-4线性变换的特征值与特征向量" class="headerlink" title="$\xi$7.4	线性变换的特征值与特征向量"></a>$\xi$7.4	线性变换的特征值与特征向量</h2><h2 id="xi-7-5欧几里得空间简介"><a href="#xi-7-5欧几里得空间简介" class="headerlink" title="$\xi$7.5	欧几里得空间简介"></a>$\xi$7.5	欧几里得空间简介</h2><h1 id="MATLAB在线性代数中的作用"><a href="#MATLAB在线性代数中的作用" class="headerlink" title="MATLAB在线性代数中的作用"></a>MATLAB在线性代数中的作用</h1><h2 id="xi-8-1MATLAB简介"><a href="#xi-8-1MATLAB简介" class="headerlink" title="$\xi$8.1	MATLAB简介"></a>$\xi$8.1	MATLAB简介</h2><h2 id="xi-8-2MATLAB的基本操作"><a href="#xi-8-2MATLAB的基本操作" class="headerlink" title="$\xi$8.2	MATLAB的基本操作"></a>$\xi$8.2	MATLAB的基本操作</h2><h2 id="xi-8-3向量的生成与运算"><a href="#xi-8-3向量的生成与运算" class="headerlink" title="$\xi$8.3	向量的生成与运算"></a>$\xi$8.3	向量的生成与运算</h2><h2 id="xi-8-4矩阵的生成与运算"><a href="#xi-8-4矩阵的生成与运算" class="headerlink" title="$\xi$8.4	矩阵的生成与运算"></a>$\xi$8.4	矩阵的生成与运算</h2><h2 id="xi-8-5常用的矩阵函数"><a href="#xi-8-5常用的矩阵函数" class="headerlink" title="$\xi$8.5	常用的矩阵函数"></a>$\xi$8.5	常用的矩阵函数</h2><h2 id="xi-8-6线性方程组求解"><a href="#xi-8-6线性方程组求解" class="headerlink" title="$\xi$8.6	线性方程组求解"></a>$\xi$8.6	线性方程组求解</h2>]]></content>
   </entry>
 </search>
