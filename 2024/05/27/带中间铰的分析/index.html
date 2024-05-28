@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>洛谷P1002过河卒带来的思考 |  SHIOKOU</title>
+      <title>带中间铰的分析 |  SHIOKOU</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -58,7 +58,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-洛谷P1002过河卒带来的思考"
+  id="post-带中间铰的分析"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -69,7 +69,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  洛谷P1002过河卒带来的思考
+  带中间铰的分析
 </h1>
  
 
@@ -77,15 +77,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/" class="article-date">
-  <time datetime="2024-05-23T18:18:39.000Z" itemprop="datePublished">2024-05-24</time>
+      <a href="/2024/05/27/%E5%B8%A6%E4%B8%AD%E9%97%B4%E9%93%B0%E7%9A%84%E5%88%86%E6%9E%90/" class="article-date">
+  <time datetime="2024-05-26T17:03:39.000Z" itemprop="datePublished">2024-05-27</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">982</span>
+            <span class="post-count">131</span>
         </span>
     </span>
 
@@ -94,101 +94,33 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">4 min</span>
+            <span class="post-count">1 min</span>
         </span>
     </span>
 </div>
  
     </div>
       
-    <div class="tocbot"></div>
-
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="动态规划（Dynamic-Programing）"><a href="#动态规划（Dynamic-Programing）" class="headerlink" title="动态规划（Dynamic Programing）"></a>动态规划（Dynamic Programing）</h1><h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><p>dynamic programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems.</p>
-<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">斐波那契数列可以看作一个简易的DP问题</span><br><span class="line">F(n)=F(n-1)+F(n-2);(n&gt;=3)</span><br><span class="line">F(10)=F(9)+F(8);</span><br><span class="line">F(9)=F(8)+F(7);</span><br><span class="line">……</span><br><span class="line">F(3)=F(2)+F(1);</span><br></pre></td></tr></table></figure>
-
-<p>如果是使用递归思路，那么程序需要将每一次需要的元素都重新算一次，会导致重复的运算，如果是在DP算法里面，每一次算过的数都用一个数组或者哈希表存储起来，之后就可以复用了，这样能减少运算量。</p>
-<h2 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h2><h4 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h4><p>F(n-1)和F(n-2)称为F(n)的最优子结构</p>
-<h4 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h4><p>F(n)&#x3D;F(n-1)+F(n-2)就称为状态转移方程</p>
-<h4 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h4><p>F(1) &#x3D; 1, F(2) &#x3D; 2 就是边界啦</p>
-<h4 id="重叠子问题"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题</h4><p>比如F(10)&#x3D; F(9)+F(8),F(9) &#x3D; F(8) + F(7) ,f(8)就是重叠子问题</p>
-<h2 id="适用例题"><a href="#适用例题" class="headerlink" title="适用例题"></a>适用例题</h2><blockquote>
-<p>如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。</p>
-</blockquote>
-<p>比如一些求最值的场景，如<strong>最长递增子序列、最小编辑距离、背包问题、凑零钱问题</strong>等等，都是动态规划的经典应用场景。</p>
-<p>动态规划的核心思想就是<strong>拆分子问题，记住过往，减少重复计算。</strong> 并且动态规划一般都是自底向上的，因此到这里，基于<strong>青蛙跳阶</strong>问题，我总结了一下我做动态规划的思路：</p>
-<h4 id="穷举分析"><a href="#穷举分析" class="headerlink" title="穷举分析"></a>穷举分析</h4><h4 id="确定边界"><a href="#确定边界" class="headerlink" title="确定边界"></a>确定边界</h4><h4 id="找出规律，确定最优子结构"><a href="#找出规律，确定最优子结构" class="headerlink" title="找出规律，确定最优子结构"></a>找出规律，确定最优子结构</h4><h4 id="写出状态转移方程"><a href="#写出状态转移方程" class="headerlink" title="写出状态转移方程"></a>写出状态转移方程</h4><h4 id="leetcode案例分析"><a href="#leetcode案例分析" class="headerlink" title="leetcode案例分析"></a>leetcode案例分析</h4><blockquote>
-<p>给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [10,9,2,5,3,7,101,18]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,1,0,3,2,3]</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
-
+  <blockquote>
+<p> 加快画弯矩图速度的原理：将弯矩当成一个没有彻底旋完的螺丝</p>
 <ol>
-<li><p>穷举分析</p>
-<p>因为动态规划，核心思想包括<strong>拆分子问题，记住过往，减少重复计算。</strong> 所以我们在思考原问题：<strong>数组num[i]的最长递增子序列长度时</strong>，可以思考下<strong>相关子问题</strong>，比如原问题是否跟<strong>子问题</strong>num[i-1]的最长递增子序列长度有关呢？</p>
+<li><p>在铰连接处，如果没有集中力偶矩作用，其弯矩应<br>为零。</p>
 </li>
-<li><p>在穷举分析的时候，可以将元素写成两个数组的形式，这样便于找寻规律。</p>
+<li><p>在自由端处，如果没有集中力作用，其剪力应为零;<br>如果没有集中力偶矩作用，其弯矩应为零。</p>
 </li>
-<li><p>现在让我们分析一下</p>
-<table>
-<thead>
-<tr>
-<th>nums的元素数量</th>
-<th>最大子序列长度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>{10} 1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>{10}||{9} 1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>{10}||{9}||{2} 1</td>
-</tr>
-<tr>
-<td>4</td>
-<td>{2，5} 2</td>
-</tr>
-<tr>
-<td>5</td>
-<td>{2，3}||{2，5} 2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>{2，3，7}||{2，5，7} 3</td>
-</tr>
-<tr>
-<td>7</td>
-<td>{2，3，7，101}||{2，5，7，101} 4</td>
-</tr>
-<tr>
-<td>8</td>
-<td>{2，3，7，18}||{2，5，7，18} 4</td>
-</tr>
-</tbody></table>
-<p>可以得到，最大子序列长度</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Dp[i]=max&#123;Dp[j]&#125;+1;</span><br><span class="line">j&gt;=0&amp;&amp;j&lt;=i-1;</span><br><span class="line">nums[i]&gt;nums[j];</span><br></pre></td></tr></table></figure>
-
-<p>符合这样的状态转移方程</p>
-<p>最优子结构：max{Dp[j]}+1.</p>
-<p>状态转移方程：Dp[i]&#x3D;max{Dp[j]}+1.</p>
-<p>边界：Dp[0]&#x3D;1.</p>
-<p>出现了重叠子问题.</p>
-<p>所以给出本题的题解</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int lengthOfLIS(int[] nums) &#123;</span><br><span class="line">    if(nums.size()==0)</span><br><span class="line">    &#123;return 0;&#125;</span><br><span class="line">    //保证程序的健壮性</span><br><span class="line">    int Dp[nums.size()];</span><br><span class="line">    Dp[0]=1;</span><br><span class="line">    //声明一个数组，用来存储目标值</span><br><span class="line">    for(int i=0;i&lt;nums.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">    for(int j=0;j&lt;i-1;j++)</span><br><span class="line">    &#123;</span><br><span class="line">    if(nums[i]&gt;nums[j])</span><br><span class="line">    &#123;</span><br><span class="line">    Dp[i]=max(Dp[j])+1;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;Dp[i]=max(Dp[j]);&#125;</span><br><span class="line">    //分类：满足飞升条件的+1，不满足的占位</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //利用双重循环遍历所列举的情况，将最终值算出来</span><br><span class="line">    return Dp[nums.size()-1];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>对称结构承受对称荷载，其剪力图反对称，弯矩图<br>对称。</p>
+</li>
+<li><p>对称结构承受反对称荷载，其剪力图对称，弯矩图<br>反对称。</p>
+</li>
 </ol>
-<h1 id="几种不同的解决思路"><a href="#几种不同的解决思路" class="headerlink" title="几种不同的解决思路"></a>几种不同的解决思路</h1><p>下面是过河卒的集中不同思路。</p>
-<h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1> 
+</blockquote>
+ 
       <!-- reward -->
       
       <div id="reword-out">
@@ -258,7 +190,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/05/27/%E5%B8%A6%E4%B8%AD%E9%97%B4%E9%93%B0%E7%9A%84%E5%88%86%E6%9E%90/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,19 +201,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/05/27/%E5%B8%A6%E4%B8%AD%E9%97%B4%E9%93%B0%E7%9A%84%E5%88%86%E6%9E%90/" class="article-nav-link">
+      <a href="/2024/05/27/%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E5%8F%91%E5%B1%95%E5%8F%B2%E9%97%AE%E9%A2%98/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            带中间铰的分析
+            社会主义发展史问题
           
         </div>
       </a>
     
     
-      <a href="/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/" class="article-nav-link">
+      <a href="/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">神树之馆汉化日志</div>
+        <div class="article-nav-title">洛谷P1002过河卒带来的思考</div>
       </a>
     
   </nav>

@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>洛谷P1002过河卒带来的思考 |  SHIOKOU</title>
+      <title>社会主义发展史问题 |  SHIOKOU</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -58,7 +58,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-洛谷P1002过河卒带来的思考"
+  id="post-社会主义发展史问题"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -69,7 +69,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  洛谷P1002过河卒带来的思考
+  社会主义发展史问题
 </h1>
  
 
@@ -77,15 +77,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/" class="article-date">
-  <time datetime="2024-05-23T18:18:39.000Z" itemprop="datePublished">2024-05-24</time>
+      <a href="/2024/05/27/%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E5%8F%91%E5%B1%95%E5%8F%B2%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2024-05-26T17:18:48.000Z" itemprop="datePublished">2024-05-27</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">982</span>
+            <span class="post-count">1.6k</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">4 min</span>
+            <span class="post-count">5 min</span>
         </span>
     </span>
 </div>
@@ -109,86 +109,33 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="动态规划（Dynamic-Programing）"><a href="#动态规划（Dynamic-Programing）" class="headerlink" title="动态规划（Dynamic Programing）"></a>动态规划（Dynamic Programing）</h1><h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><p>dynamic programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems.</p>
-<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">斐波那契数列可以看作一个简易的DP问题</span><br><span class="line">F(n)=F(n-1)+F(n-2);(n&gt;=3)</span><br><span class="line">F(10)=F(9)+F(8);</span><br><span class="line">F(9)=F(8)+F(7);</span><br><span class="line">……</span><br><span class="line">F(3)=F(2)+F(1);</span><br></pre></td></tr></table></figure>
-
-<p>如果是使用递归思路，那么程序需要将每一次需要的元素都重新算一次，会导致重复的运算，如果是在DP算法里面，每一次算过的数都用一个数组或者哈希表存储起来，之后就可以复用了，这样能减少运算量。</p>
-<h2 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h2><h4 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h4><p>F(n-1)和F(n-2)称为F(n)的最优子结构</p>
-<h4 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h4><p>F(n)&#x3D;F(n-1)+F(n-2)就称为状态转移方程</p>
-<h4 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h4><p>F(1) &#x3D; 1, F(2) &#x3D; 2 就是边界啦</p>
-<h4 id="重叠子问题"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题</h4><p>比如F(10)&#x3D; F(9)+F(8),F(9) &#x3D; F(8) + F(7) ,f(8)就是重叠子问题</p>
-<h2 id="适用例题"><a href="#适用例题" class="headerlink" title="适用例题"></a>适用例题</h2><blockquote>
-<p>如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。</p>
+  <h2 id="托马斯-cdot-莫尔的《乌托邦》为什么会是乌托邦？"><a href="#托马斯-cdot-莫尔的《乌托邦》为什么会是乌托邦？" class="headerlink" title="托马斯$\cdot$莫尔的《乌托邦》为什么会是乌托邦？"></a>托马斯$\cdot$莫尔的《乌托邦》为什么会是乌托邦？</h2><p>​	乌托邦，本意是“没有的地方”或者“好地方“。<strong>延伸拓展为还有理想，不可能完成的好事情</strong>，其中文翻译可以理解为”物“是没有，”托“是寄托，”邦“是国家，”乌托邦“三个字合起来的意思即是”空想的国家“。</p>
+<p>​	《乌托邦》一书是<strong>欧洲第一本空想社会主义</strong>著作，它第一次完整地描述了空想社会主义的图景。在社会主义思想史上，首次批判了<strong>资本原始积累的罪恶</strong>，提出了<strong>以组织生产，普遍劳动为基础的公有制和平等的原则</strong>，奠定了空想社会主义的根基，为以后<strong>社会主义的发展</strong>提供了可贵的<strong>思想资料</strong>。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%B9%AF%E7%91%AA%E6%96%AF%C2%B7%E6%91%A9%E7%88%BE">摩尔</a>的《乌托邦》一书与<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9F%8F%E6%8B%89%E5%9B%BE">柏拉图</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%90%86%E6%83%B3%E5%9B%BD">理想国</a>有很大联系[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E4%B9%8C%E6%89%98%E9%82%A6#cite_note-2">2]</a>。这是一个理想、完美的共和国（<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E7%A4%BE%E4%BC%9A%E5%B9%B3%E7%AD%89%E4%B8%BB%E4%B9%89%E8%80%85&action=edit&redlink=1">社会平等主义者</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%92%8C%E5%B9%B3%E4%B8%BB%E4%B9%89%E8%80%85">和平主义者</a>的观点），虽然他的子民们也要为此而工作而奋斗。但是社会上的一切丑恶现象，如贫穷、歧视、不公和苦难，都远离这个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90">世外桃源</a>。这里只有几条<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%B3%95%E5%BE%8B">法律</a>规定，没有<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BE%8B%E5%B8%88">律师</a>。并且没有<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E5%9F%8E%E6%B0%91&action=edit&redlink=1">城民</a>愿意发动<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%88%98%E4%BA%89">战争</a>。但是他们从周边的好战国家雇来雇<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%82%AD%E5%85%B5">佣兵</a>（他们让这些雇佣兵面对威胁，是因为他们希望所有好战的人都在战争中灭亡，最终只留下爱好和平的人）。这样的社会也以包容的心态迎接各种<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AE%97%E6%95%99">宗教</a>流派。一些<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AF%BB%E8%80%85">读者</a>认为摩尔想以此来作为国家建设的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E8%93%9D%E6%9C%AC&action=edit&redlink=1">蓝本</a>，而其他一些人认为摩尔其实没有这样的打算。一些人立场坚定地认为，摩尔的《乌托邦》的作用其实是用一个理想的社会来讽刺摩尔身处时代的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E8%8B%B1%E6%A0%BC%E5%85%B0%E7%A4%BE%E4%BC%9A&action=edit&redlink=1">英格兰社会</a>。这种看法也顺理成章的解释了这本书和这个国家名字的意义。乌托邦在希腊语中的读音在“没有的地方”和“好地方”间含糊不清：乌托邦是由音节ou-（意为“不”）和topos（意为“地方”）而组成的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%8D%E5%90%88%E8%AF%8D">复合词</a>，但是他又与由同音前缀eu-（意为“好”）组成的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E8%AF%8D%E5%90%8C%E9%9F%B3&action=edit&redlink=1">词同音</a>。这样其实也是在暗示：“没有地方”是真正“完美的地方”。</p>
+<p>乌托邦概念的另一个版本来自于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%8A%B9%E5%B8%8C%E8%BF%88%E7%BD%97%E6%96%AF">犹希迈罗斯</a>公元前3世纪所著的《<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E5%9C%A3%E7%A5%9E%E7%9A%84%E5%8E%86%E5%8F%B2&action=edit&redlink=1">圣神的历史</a>》（Sacred History）中记载的Panchaea岛。</p>
 </blockquote>
-<p>比如一些求最值的场景，如<strong>最长递增子序列、最小编辑距离、背包问题、凑零钱问题</strong>等等，都是动态规划的经典应用场景。</p>
-<p>动态规划的核心思想就是<strong>拆分子问题，记住过往，减少重复计算。</strong> 并且动态规划一般都是自底向上的，因此到这里，基于<strong>青蛙跳阶</strong>问题，我总结了一下我做动态规划的思路：</p>
-<h4 id="穷举分析"><a href="#穷举分析" class="headerlink" title="穷举分析"></a>穷举分析</h4><h4 id="确定边界"><a href="#确定边界" class="headerlink" title="确定边界"></a>确定边界</h4><h4 id="找出规律，确定最优子结构"><a href="#找出规律，确定最优子结构" class="headerlink" title="找出规律，确定最优子结构"></a>找出规律，确定最优子结构</h4><h4 id="写出状态转移方程"><a href="#写出状态转移方程" class="headerlink" title="写出状态转移方程"></a>写出状态转移方程</h4><h4 id="leetcode案例分析"><a href="#leetcode案例分析" class="headerlink" title="leetcode案例分析"></a>leetcode案例分析</h4><blockquote>
-<p>给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。</p>
+<h2 id="托马斯-cdot-康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？"><a href="#托马斯-cdot-康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？" class="headerlink" title="托马斯$\cdot $康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？"></a>托马斯$\cdot $康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？</h2><p>​	康帕内拉在《太阳城》中首次提出了劳动光荣以及脑力劳动和体力劳动相结合的思想，对脑体对立的思想进行了扬弃。他主张的教育与生产劳动相结合的思想影响深远。教育与生产劳动相结合的实际是劳动教育与生产劳动之间相互影响，相互作用和相互促进的关系。它有很多形式，劳动教育也是它的形式之一。</p>
+<blockquote>
+<p>康帕内拉虚拟了一名<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%83%AD%E9%82%A3%E4%BA%9A">热那亚</a>的航海家和朝圣招待所管理的对话，描绘了一个不为世人所知、按照根本不同于当时意大利和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%AC%A7">西欧</a>各国社会制度的原则建立起来的新型理想社会。太阳城位于赤道的一座小山上，面积和一座城市相仿，这里没有私有财产，没有剥削，人人劳动，生产和消费由被称为“形而上学者”“威力”“智慧”和“爱”的四位领导人所管理，有机构统一组织安排，产品按公民需要分配，儿童由国家抚养和教育，教育与生产相联系[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E5%A4%AA%E9%98%B3%E5%9F%8E_(%E8%91%97%E4%BD%9C)#cite_note-%E5%A4%AA%E9%98%B3%E5%9F%8E-1">1]</a>。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [10,9,2,5,3,7,101,18]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,1,0,3,2,3]</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>穷举分析</p>
-<p>因为动态规划，核心思想包括<strong>拆分子问题，记住过往，减少重复计算。</strong> 所以我们在思考原问题：<strong>数组num[i]的最长递增子序列长度时</strong>，可以思考下<strong>相关子问题</strong>，比如原问题是否跟<strong>子问题</strong>num[i-1]的最长递增子序列长度有关呢？</p>
-</li>
-<li><p>在穷举分析的时候，可以将元素写成两个数组的形式，这样便于找寻规律。</p>
-</li>
-<li><p>现在让我们分析一下</p>
-<table>
-<thead>
-<tr>
-<th>nums的元素数量</th>
-<th>最大子序列长度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>{10} 1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>{10}||{9} 1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>{10}||{9}||{2} 1</td>
-</tr>
-<tr>
-<td>4</td>
-<td>{2，5} 2</td>
-</tr>
-<tr>
-<td>5</td>
-<td>{2，3}||{2，5} 2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>{2，3，7}||{2，5，7} 3</td>
-</tr>
-<tr>
-<td>7</td>
-<td>{2，3，7，101}||{2，5，7，101} 4</td>
-</tr>
-<tr>
-<td>8</td>
-<td>{2，3，7，18}||{2，5，7，18} 4</td>
-</tr>
-</tbody></table>
-<p>可以得到，最大子序列长度</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Dp[i]=max&#123;Dp[j]&#125;+1;</span><br><span class="line">j&gt;=0&amp;&amp;j&lt;=i-1;</span><br><span class="line">nums[i]&gt;nums[j];</span><br></pre></td></tr></table></figure>
-
-<p>符合这样的状态转移方程</p>
-<p>最优子结构：max{Dp[j]}+1.</p>
-<p>状态转移方程：Dp[i]&#x3D;max{Dp[j]}+1.</p>
-<p>边界：Dp[0]&#x3D;1.</p>
-<p>出现了重叠子问题.</p>
-<p>所以给出本题的题解</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int lengthOfLIS(int[] nums) &#123;</span><br><span class="line">    if(nums.size()==0)</span><br><span class="line">    &#123;return 0;&#125;</span><br><span class="line">    //保证程序的健壮性</span><br><span class="line">    int Dp[nums.size()];</span><br><span class="line">    Dp[0]=1;</span><br><span class="line">    //声明一个数组，用来存储目标值</span><br><span class="line">    for(int i=0;i&lt;nums.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">    for(int j=0;j&lt;i-1;j++)</span><br><span class="line">    &#123;</span><br><span class="line">    if(nums[i]&gt;nums[j])</span><br><span class="line">    &#123;</span><br><span class="line">    Dp[i]=max(Dp[j])+1;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;Dp[i]=max(Dp[j]);&#125;</span><br><span class="line">    //分类：满足飞升条件的+1，不满足的占位</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //利用双重循环遍历所列举的情况，将最终值算出来</span><br><span class="line">    return Dp[nums.size()-1];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<h2 id="”欧洲三大空想社会主义者“是谁？"><a href="#”欧洲三大空想社会主义者“是谁？" class="headerlink" title="”欧洲三大空想社会主义者“是谁？"></a>”欧洲三大空想社会主义者“是谁？</h2><p>​	欧文（1771~1858年）：英国空想社会主义者。生于威尔士蒙特利尔的一个手工业家庭。10岁辍学当学徒，19岁成为曼彻斯特一家纱厂的经理。</p>
+<p>​	圣西门（1760~1825年）：法国哲学家，经济学家，空想社会主义者。1960年10月17日生于巴黎一个贵族家庭。早年受启蒙运动影响，曾参加过北美人民反对英国殖民统治的斗争。</p>
+<p>​	傅里叶（1772~1837年）：法国哲学家，经济学家，空想社会主义者。1772年4月7日生于贝桑松一个富商家庭。自学成才。1793年参加里昂联邦派起义，一度背部。1809年后再里昂，巴黎等地任职。</p>
+<p><img src="https://liberal-arts-guide.com/wp-content/uploads/2020/06/utopian-socialism.jpg" alt="空想的社会主義とは】マルクス主義との違い・各思想家の議論をわかりやすく解説｜リベラルアーツガイド"></p>
+<h2 id="空想社会主义为什么会诞生？"><a href="#空想社会主义为什么会诞生？" class="headerlink" title="空想社会主义为什么会诞生？"></a>空想社会主义为什么会诞生？</h2><ol>
+<li>19世纪中叶，西欧的一些资本主义发展非常迅速。随着资本主义的发展，线代无产阶级形成并开展了广泛的斗争，而资本主义固有的矛盾也日益暴露了出来。</li>
+<li>周期性的生产过剩危机不断发生，工人们的失业和普遍贫困话现象严重。</li>
+<li>生产的无政府状态，生产资料的私人占有和生产的社会化之间的深刻矛盾，造成生产秩序和社会秩序的混乱。</li>
+<li>贫富差距越来越大，民众的社会道德沦丧，价值观念恶化。</li>
+<li>19世纪初法国的圣$\cdot $西门，傅里叶及英国的罗伯特$\cdot $欧文灯空想社会主义者的努力。</li>
 </ol>
-<h1 id="几种不同的解决思路"><a href="#几种不同的解决思路" class="headerlink" title="几种不同的解决思路"></a>几种不同的解决思路</h1><p>下面是过河卒的集中不同思路。</p>
-<h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1> 
+<h2 id="空想社会主义为什么只能是空想"><a href="#空想社会主义为什么只能是空想" class="headerlink" title="空想社会主义为什么只能是空想"></a>空想社会主义为什么只能是空想</h2><ol>
+<li>空想社会主义者没有看到资产阶级的基本矛盾，同时他们所设想的社会主义也是建立在资产阶级统治的基础之上，这种理论与实际的矛盾使得他们的设想只能是一种空想。</li>
+<li>空想者没有找到改造资本主义社会的正确途径，他们把希望寄托再统治阶级的开明人物身上，幻想通过和平道路来改造社会，这并不符合当时的社会发展，所以无法实现。</li>
+<li>空想社会主义是在资本主义生产方式以及无产阶级和资产阶级之间的对立还很不发达的情况下产生的，这就决定了它只能是一个不能实现的幻想。</li>
+</ol>
+ 
       <!-- reward -->
       
       <div id="reword-out">
@@ -258,7 +205,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/05/27/%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E5%8F%91%E5%B1%95%E5%8F%B2%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,19 +216,10 @@
    
   <nav class="article-nav">
     
+    
       <a href="/2024/05/27/%E5%B8%A6%E4%B8%AD%E9%97%B4%E9%93%B0%E7%9A%84%E5%88%86%E6%9E%90/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            带中间铰的分析
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">神树之馆汉化日志</div>
+        <div class="article-nav-title">带中间铰的分析</div>
       </a>
     
   </nav>
