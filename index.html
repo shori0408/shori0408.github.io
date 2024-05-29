@@ -159,6 +159,297 @@
     
     
     <article
+  id="post-数组,指针与字符串"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/05/29/%E6%95%B0%E7%BB%84,%E6%8C%87%E9%92%88%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/"
+    >数组</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/05/29/%E6%95%B0%E7%BB%84,%E6%8C%87%E9%92%88%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="article-date">
+  <time datetime="2024-05-29T05:01:45.000Z" itemprop="datePublished">2024-05-29</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="数组的定义与使用"><a href="#数组的定义与使用" class="headerlink" title="数组的定义与使用"></a>数组的定义与使用</h2><h3 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类型说明符 数组名[常量表达式][常量表达式]</span><br></pre></td></tr></table></figure>
+
+<p>数组名的构成方法一般与变量名相同。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.例如：int a[10];</span><br><span class="line">表示a为整型数组，有10个元素：a[0]……a[9]</span><br><span class="line">2.例如：int a[5][3];</span><br><span class="line">表示a为整型二维数组，其中第一维有5个下标（0~4），第二维有三个下标（0~2），数组的元素个数为15，可以用于存放5行3列的整型数据表格。</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组元素的使用"><a href="#数组元素的使用" class="headerlink" title="数组元素的使用"></a>数组元素的使用</h3><blockquote>
+<p>数组必须先定义，后使用</p>
+<p>可以逐个引用数组元素</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[0]=a[5]+a[7]-a[2*3];</span><br><span class="line">b[1][2]=a[2][3]/2;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">int a[10],b[10];</span><br><span class="line">for(int i=0;i&lt;10;i++)</span><br><span class="line">&#123;</span><br><span class="line">a[i]=i*2-1;</span><br><span class="line">b[10-i-1]=a[i];</span><br><span class="line">&#125;</span><br><span class="line">for(int i=0;i&lt;10;i++)</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;a[&quot;&lt;&lt;i&lt;&lt;&quot;]=&quot;&lt;&lt;a[i]&lt;&lt;&quot; &quot;;</span><br><span class="line">cout&lt;&lt;&quot;b[&quot;&lt;&lt;i&lt;&lt;&quot;]=&quot;&lt;&lt;b[i]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
+  id="post-数据的共享和保护"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/"
+    >（5）数据的共享和保护</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/" class="article-date">
+  <time datetime="2024-05-29T01:06:14.000Z" itemprop="datePublished">2024-05-29</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
+<p>其作用域始于“(”,终于”)”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">double area(double radius);</span><br><span class="line">//radius的作用域仅在此处，不能用于程序正文其他地方</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部作用域（块作用域）"><a href="#局部作用域（块作用域）" class="headerlink" title="局部作用域（块作用域）"></a>局部作用域（块作用域）</h3><ul>
+<li>函数的形参，在块中声明的标识符</li>
+<li>作用域自声明处起，限于块中</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void fun(int a)</span><br><span class="line">&#123;int b=a;</span><br><span class="line">cin&gt;&gt;b;</span><br><span class="line">if(b&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">int c;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类作用域"><a href="#类作用域" class="headerlink" title="类作用域"></a>类作用域</h3><ul>
+<li>类的对象具有类作用域</li>
+</ul>
+<p>其范围包括类体和成员函数体。</p>
+<ul>
+<li>在类作用域以外访问类的成员：<ol>
+<li>静态成员：通过类名，或者该类的对象名，对象引用访问。</li>
+<li>非静态成员：通过类名，或者该类的对象名，对象引用，对象指针访问。</li>
+</ol>
+</li>
+</ul>
+<h3 id="文件作用域"><a href="#文件作用域" class="headerlink" title="文件作用域"></a>文件作用域</h3><ul>
+<li>不在前述各个作用域中出现的声明，就具有文件作用域。</li>
+<li>其作用域开始于声明点，结束于文件尾。</li>
+</ul>
+<blockquote>
+<p>可见性：</p>
+<ul>
+<li>可见性是从对标识符的引用的角度来谈的概念</li>
+<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
+<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
+<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
+<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
+</ul>
+</blockquote>
+<h3 id="命名空间作用域"><a href="#命名空间作用域" class="headerlink" title="命名空间作用域"></a>命名空间作用域</h3><blockquote>
+<p>可见性：</p>
+<ul>
+<li>可见性是从对标识符的引用的角度来谈的概念</li>
+<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
+<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
+<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
+<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
+</ul>
+</blockquote>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int i;//全局变量，文件作用域</span><br><span class="line">int main()</span><br><span class="line">i=5;//为全局变量赋值</span><br><span class="line">&#123;</span><br><span class="line">int i;</span><br><span class="line">i=7;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出7，内层会屏蔽外层作用变量</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出5</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象的生存期"><a href="#对象的生存期" class="headerlink" title="对象的生存期"></a>对象的生存期</h2><h3 id="静态生存区"><a href="#静态生存区" class="headerlink" title="静态生存区"></a>静态生存区</h3><ul>
+<li>这种生存期与程序的运行期相同。</li>
+<li>在文件作用域中声明的对象具有这种生存期。</li>
+<li>在函数内部声明静态生存期对象，要冠以关键字static。</li>
+</ul>
+<h3 id="非静态生存区"><a href="#非静态生存区" class="headerlink" title="非静态生存区"></a>非静态生存区</h3><ul>
+<li>开始于程序执行到声明点时，结束于该标识符的作用域结束处。</li>
+<li>块作用域中声明的，没有用static修饰的对象，是动态生存区的对象（习惯称我为局部生存期对象）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std</span><br><span class="line">int i=1;//i为全局变量</span><br><span class="line">void other()</span><br><span class="line">&#123;</span><br><span class="line">static int a=2;</span><br><span class="line">static int b;</span><br><span class="line">//a，b为静态局部变量，具有全局寿命，局部可见。</span><br><span class="line">//只第一次进入函数时被初始化。</span><br><span class="line">int c=10;</span><br><span class="line">//c为局部变量，具有动态生存期</span><br><span class="line">//每次进入函数时都被初始化</span><br><span class="line">a+=2;i+=32;c+=5;</span><br><span class="line">cout&lt;&lt;&quot;--OTHER--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot;i:&quot;&lt;&lt;i&lt;&lt;&quot;a:&quot;&lt;&lt;a&lt;&lt;&quot;b:&quot;&lt;&lt;b&lt;&lt;&quot;c:&quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">b=a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">static int a;</span><br><span class="line">//a静态局部变量，有全局寿命，局部可见</span><br><span class="line">int b=-10;</span><br><span class="line">int c=0;</span><br><span class="line">//b，c为局部变量，具有动态生存期</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">c+=8;other();</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">i+=10;</span><br><span class="line">other();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">--MAIN--</span><br><span class="line">i:1 a:0 b:-10 c:0</span><br><span class="line">--OTHER--</span><br><span class="line">i:33 a:4 b:0 c:15</span><br><span class="line">--MAIN--</span><br><span class="line">i:33 a:0 b:-10 c:8</span><br><span class="line">--OTHER--</span><br><span class="line">i:75 a:6 b:4 c:15</span><br></pre></td></tr></table></figure>
+
+<h2 id="类的静态数据成员"><a href="#类的静态数据成员" class="headerlink" title="类的静态数据成员"></a>类的静态数据成员</h2><ul>
+<li>用关键词static声明</li>
+<li>为该类所有对象共享，静态数据成员具有静态生存期。</li>
+<li>必须在类外定义和初始化，用（::）来指明所属的类。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point a(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">a.showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">b.showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="静态函数成员"><a href="#静态函数成员" class="headerlink" title="静态函数成员"></a>静态函数成员</h2><p>静态函数处理静态数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point::showCount();//输出对象个数</span><br><span class="line">Point a(4,5);//声明对象a，其构造函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);//声明对象b，其复制函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类的友元"><a href="#类的友元" class="headerlink" title="类的友元"></a>类的友元</h2><h3 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h3><ul>
+<li>友元时c++提供的一种破坏数据封装和数据隐藏的机制。</li>
+<li>提供将一个模板声明为另一个模板的友元，一个模板能够引用到另一个模板中本是被隐藏的信息。</li>
+<li>可以声明友元函数和友元类</li>
+<li>为了确保数据的完整性，及数据封装于隐藏的原则，建议慎重使用友元。</li>
+</ul>
+<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><ul>
+<li>友元函数是在类声明中由关键字friend修饰的说明的非成员函数，在它的函数体中能够通过对象名访问private和protected成员。</li>
+<li>作用：增加灵活性，使程序员可以在封装和快速性方面做合理选择</li>
+<li>访问对象中的成员必须通过对象名。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x,int y):x(x),y(y)</span><br><span class="line">&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">Point(Point&amp; p)</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(Point &amp;a,Point &amp;b);</span><br><span class="line">static int showCOUNT()&#123;return count;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">static int count;</span><br><span class="line">&#125;;</span><br><span class="line">float dist(Point&amp; a,Point&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">double x=a.x-b.x;</span><br><span class="line">double y=a.y-b.y;</span><br><span class="line">//有修改原本数据的隐患</span><br><span class="line">//避免每次用对象的x，y都要调用一次函数</span><br><span class="line">return </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><ul>
+<li><p>若一个类为另一个类的友元，则此类的所有成员，都能访问对方类的私有成员。</p>
+</li>
+<li><p>声明语法：将友元类名放在另一个类中使用friend修饰说明。</p>
+</li>
+<li><p>友元关系是单向的，数据成员的开放也就是单向的。</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">friend class B;</span><br><span class="line">public:</span><br><span class="line">void display()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;x&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">void set(int i);</span><br><span class="line">void display();</span><br><span class="line">private:</span><br><span class="line">A a;</span><br><span class="line">&#125;</span><br><span class="line">void B::set(int i)</span><br><span class="line">&#123;</span><br><span class="line">a.x=i;</span><br><span class="line">&#125;</span><br><span class="line">void B::display()</span><br><span class="line">&#123;</span><br><span class="line">a.display();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="共享数据的保护"><a href="#共享数据的保护" class="headerlink" title="共享数据的保护"></a>共享数据的保护</h2><h3 id="常类型"><a href="#常类型" class="headerlink" title="常类型"></a>常类型</h3><h4 id="常对象：必须进行初始化，不能被更新。const-类名-对象名；"><a href="#常对象：必须进行初始化，不能被更新。const-类名-对象名；" class="headerlink" title="常对象：必须进行初始化，不能被更新。const 类名 对象名；"></a>常对象：必须进行初始化，不能被更新。const 类名 对象名；</h4><ul>
+<li>用const修饰的对象</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i,int j):x(i),y(j)&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">A const a(3,4);//a是常对象，不能被更新</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"><a href="#常成员：用const进行修饰的类成员：常数据成员和常函数成员。" class="headerlink" title="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"></a>常成员：用const进行修饰的类成员：常数据成员和常函数成员。</h4><ul>
+<li>常成员函数</li>
+<li>使用const关键字说明的函数</li>
+<li>常成员函数不更新对象的数据成员</li>
+<li>常成员函数说明格式：</li>
+</ul>
+<blockquote>
+<p>类型说明符 函数名（参数表) const；这里，const是函数类型的一个组成部分，因此在实现部分也要带const关键字。</p>
+</blockquote>
+<ul>
+<li>const关键字可以被用于参与对重载函数的区分</li>
+<li>通过常对象只能调用它的常成员函数</li>
+<li>常数据成员：使用const说明的数据成员</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class R</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">R(int r1,int r2):r1(r1),r2(r2)&#123;&#125;</span><br><span class="line">void print();</span><br><span class="line">void print() const;</span><br><span class="line">private:</span><br><span class="line">int r1,r2;</span><br><span class="line">&#125;;</span><br><span class="line">void R::print()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">void R::print()const</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">R a(5,4);</span><br><span class="line">a.print();</span><br><span class="line">const R b(20,53);</span><br><span class="line">b.print();//调用void print const()</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i):</span><br><span class="line">void print();</span><br><span class="line">private:</span><br><span class="line">const int a;</span><br><span class="line">static const int b;//静态常数据对象</span><br><span class="line">&#125;;</span><br><span class="line">const int A::b=10;</span><br><span class="line">A::A(int i):a(i)&#123;&#125;</span><br><span class="line">void A::print()&#123;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;&quot;:&quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">A a1(100),a2(0);</span><br><span class="line">a1.print();</span><br><span class="line">a2.print();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="常引用：被引用的对象不能被更新。const-类型说明符号-引用名"><a href="#常引用：被引用的对象不能被更新。const-类型说明符号-引用名" class="headerlink" title="常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名"></a>常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(const Point &amp;p1,const Point &amp;p2);</span><br><span class="line">private x,y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在友元函数中用常引用做参数，既能获得较高的执行效率，又能保证实参的安全性。</p>
+</blockquote>
+<h4 id="常数组：数组元素不能被更新。类型说明符-const-数组名-大小"><a href="#常数组：数组元素不能被更新。类型说明符-const-数组名-大小" class="headerlink" title="常数组：数组元素不能被更新。类型说明符 const 数组名[大小]"></a>常数组：数组元素不能被更新。类型说明符 const 数组名[大小]</h4><h4 id="常指针：指向常量的指针。"><a href="#常指针：指向常量的指针。" class="headerlink" title="常指针：指向常量的指针。"></a>常指针：指向常量的指针。</h4><h2 id="多文件结构"><a href="#多文件结构" class="headerlink" title="多文件结构"></a>多文件结构</h2><h3 id="C-的一般组织结构"><a href="#C-的一般组织结构" class="headerlink" title="C++的一般组织结构"></a>C++的一般组织结构</h3><h4 id="一个工程可以分为多个源文件，例如："><a href="#一个工程可以分为多个源文件，例如：" class="headerlink" title="一个工程可以分为多个源文件，例如："></a>一个工程可以分为多个源文件，例如：</h4><ul>
+<li>类声明文件（.h文件）</li>
+<li>类实现文件（.cpp文件）</li>
+<li>类的使用文件（main()所在的.cpp文件)</li>
+</ul>
+<h4 id="利用多个工程来组合各个文件"><a href="#利用多个工程来组合各个文件" class="headerlink" title="利用多个工程来组合各个文件"></a>利用多个工程来组合各个文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">//文件1，类的定义，Point.h</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//文件2，point.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int Point::count=0;</span><br><span class="line">Point::Point(const Point &amp;p):x(p.x),y(p.y)</span><br><span class="line">&#123;count++;&#125;</span><br><span class="line">void Point::showCount()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count=&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//文件3，主函数 5_10.cpp</span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="外部变量"><a href="#外部变量" class="headerlink" title="外部变量"></a>外部变量</h3><ul>
+<li>除了在定义它的源文件中可以使用外，还能被其他文件使用。</li>
+<li>文件作用域中定义的变量，默认情况下都是外部变量。</li>
+<li>在其他文件中如果需要使用的化，需要用extern关键字声明。</li>
+<li>在所有类的之外声明的函数（也就是非成员函数），都具有文件作用域的。</li>
+<li>这样的函数都可以在不同的编译单元中被调用</li>
+<li>只要在调用之前进行，引用性声明（即声明函数原型）即可。</li>
+</ul>
+<blockquote>
+<p>将变量和函数限制在编译单元内</p>
+<ul>
+<li>将匿名命名空间中定义的变量和函数，都不会暴露给其他的编译单元</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">namespace</span><br><span class="line">&#123;</span><br><span class="line">//匿名的命名空间</span><br><span class="line">int n;</span><br><span class="line">void f()</span><br><span class="line">&#123;</span><br><span class="line">n++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="标准c-库"><a href="#标准c-库" class="headerlink" title="标准c++库"></a>标准c++库</h2><blockquote>
+<p>标准c++类库是一个及其灵活且可拓展的可重用软件模块的集合。</p>
+</blockquote>
+<h3 id="输入-输出类"><a href="#输入-输出类" class="headerlink" title="输入&#x2F;输出类"></a>输入&#x2F;输出类</h3><h3 id="容器类和抽象数据类型"><a href="#容器类和抽象数据类型" class="headerlink" title="容器类和抽象数据类型"></a>容器类和抽象数据类型</h3><h3 id="存储管理类"><a href="#存储管理类" class="headerlink" title="存储管理类"></a>存储管理类</h3><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h3 id="运行环境支持"><a href="#运行环境支持" class="headerlink" title="运行环境支持"></a>运行环境支持</h3><h2 id="编译预处理"><a href="#编译预处理" class="headerlink" title="编译预处理"></a>编译预处理</h2><h3 id="include包含指令"><a href="#include包含指令" class="headerlink" title="#include包含指令"></a>#include包含指令</h3><ul>
+<li>将一个源文件嵌入到当前源文件中该点处。<ol>
+<li>#include&lt;文件名&gt;：按标准模式搜索，文件位于c++系统目录的include子目录下</li>
+<li>#include“文件名”：首先在当前目录中搜索，若没有，在按标准方式搜索。</li>
+</ol>
+</li>
+</ul>
+<h3 id="define-宏定义指令"><a href="#define-宏定义指令" class="headerlink" title="#define 宏定义指令"></a>#define 宏定义指令</h3><ul>
+<li>定义符号常量，很多情况已经被const定义语句取代。</li>
+<li>定义带参数宏，已经被内联函数取代。</li>
+</ul>
+<h3 id="undif"><a href="#undif" class="headerlink" title="#undif"></a>#undif</h3><ul>
+<li>删除由#define定义的宏，使之不再起作用</li>
+</ul>
+<h3 id="条件编译指令——-if和-endif"><a href="#条件编译指令——-if和-endif" class="headerlink" title="条件编译指令——#if和#endif"></a>条件编译指令——#if和#endif</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令——-else"><a href="#条件编译指令——-else" class="headerlink" title="条件编译指令——#else"></a>条件编译指令——#else</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文1</span><br><span class="line">#else</span><br><span class="line">//当“常量表达式”为零时编译</span><br><span class="line">程序正文2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令——-elif"><a href="#条件编译指令——-elif" class="headerlink" title="条件编译指令——#elif"></a>条件编译指令——#elif</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if 常量表达式1</span><br><span class="line">程序正文1//当“常量表达式1”非零时编译</span><br><span class="line">#elif 常量表达式2</span><br><span class="line">程序正文2//当“常量表达式2”非零时编译</span><br><span class="line">#else</span><br><span class="line">程序正文3//其他情况下编译</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令"><a href="#条件编译指令" class="headerlink" title="条件编译指令"></a>条件编译指令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#ifdef 标识符</span><br><span class="line">程序段1</span><br><span class="line">#else</span><br><span class="line">程序段2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果“标识符”经#define定义过，且未经undef删除，则编译程序段1；否则编译程序段2.</p>
+</blockquote>
+<h2 id="第五章小结"><a href="#第五章小结" class="headerlink" title="第五章小结"></a>第五章小结</h2><ul>
+<li>对象的生存期，作用域与可见性。</li>
+<li>类的静态成员。</li>
+<li>数据的共享和保护。</li>
+<li>友元</li>
+<li>编译预处理指令</li>
+<li>多文件结构与工程</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
   id="post-社会主义发展史问题"
   class="article article-type-post"
   itemscope
@@ -201,17 +492,26 @@
 <p>​	傅里叶（1772~1837年）：法国哲学家，经济学家，空想社会主义者。1772年4月7日生于贝桑松一个富商家庭。自学成才。1793年参加里昂联邦派起义，一度背部。1809年后再里昂，巴黎等地任职。</p>
 <p><img src="https://liberal-arts-guide.com/wp-content/uploads/2020/06/utopian-socialism.jpg" alt="空想的社会主義とは】マルクス主義との違い・各思想家の議論をわかりやすく解説｜リベラルアーツガイド"></p>
 <h2 id="空想社会主义为什么会诞生？"><a href="#空想社会主义为什么会诞生？" class="headerlink" title="空想社会主义为什么会诞生？"></a>空想社会主义为什么会诞生？</h2><ol>
-<li>19世纪中叶，西欧的一些资本主义发展非常迅速。随着资本主义的发展，线代无产阶级形成并开展了广泛的斗争，而资本主义固有的矛盾也日益暴露了出来。</li>
-<li>周期性的生产过剩危机不断发生，工人们的失业和普遍贫困话现象严重。</li>
-<li>生产的无政府状态，生产资料的私人占有和生产的社会化之间的深刻矛盾，造成生产秩序和社会秩序的混乱。</li>
-<li>贫富差距越来越大，民众的社会道德沦丧，价值观念恶化。</li>
+<li>19世纪中叶，西欧的一些资本主义发展非常迅速。随着资本主义的发展，<strong>现代无产阶级形成</strong>并开展了广泛的斗争，而<strong>资本主义固有的矛盾</strong>也日益暴露了出来。</li>
+<li><strong>周期性的生产过剩危机</strong>不断发生，<strong>工人们的失业和普遍贫困</strong>话现象严重。</li>
+<li><strong>生产的无政府状态，生产资料的私人占有和生产的社会化之间的深刻矛盾</strong>，造成生产秩序和社会秩序的混乱。</li>
+<li>贫富差距越来越大，<strong>民众的社会道德沦丧，价值观念恶化</strong>。</li>
 <li>19世纪初法国的圣$\cdot $西门，傅里叶及英国的罗伯特$\cdot $欧文灯空想社会主义者的努力。</li>
 </ol>
 <h2 id="空想社会主义为什么只能是空想"><a href="#空想社会主义为什么只能是空想" class="headerlink" title="空想社会主义为什么只能是空想"></a>空想社会主义为什么只能是空想</h2><ol>
-<li>空想社会主义者没有看到资产阶级的基本矛盾，同时他们所设想的社会主义也是建立在资产阶级统治的基础之上，这种理论与实际的矛盾使得他们的设想只能是一种空想。</li>
-<li>空想者没有找到改造资本主义社会的正确途径，他们把希望寄托再统治阶级的开明人物身上，幻想通过和平道路来改造社会，这并不符合当时的社会发展，所以无法实现。</li>
-<li>空想社会主义是在资本主义生产方式以及无产阶级和资产阶级之间的对立还很不发达的情况下产生的，这就决定了它只能是一个不能实现的幻想。</li>
+<li>空想社会主义者没有看到<strong>资产阶级的基本矛盾</strong>，同时他们所设想的社会主义也是建立在资产阶级统治的基础之上，这种理论与实际的矛盾使得他们的设想只能是一种空想。</li>
+<li>空想者没有找到改造资本主义社会的正确途径，他们把希望寄托再统治阶级的开明人物身上，<strong>幻想通过和平道路来改造社会</strong>，这并不符合当时的社会发展，所以无法实现。</li>
+<li>空想社会主义是在资本主义生产方式以及<strong>无产阶级和资产阶级之间的对立还很不发达</strong>的情况下产生的，这就决定了它只能是一个不能实现的幻想。</li>
 </ol>
+<h2 id="“欧洲三大工人运动”的标志性意义是什么？"><a href="#“欧洲三大工人运动”的标志性意义是什么？" class="headerlink" title="“欧洲三大工人运动”的标志性意义是什么？"></a>“欧洲三大工人运动”的标志性意义是什么？</h2><p>​	三大欧洲工人运动，即法国里昂工人起义，英国宪章运动，德国西里西亚纺织工人起义。</p>
+<p>​	意义：（1）表明无产阶级登上了历史舞台，为<strong>马克思主义的诞生</strong>奠定了阶级基础。</p>
+<p>​	（2）标志着现代<strong>无产阶级已经成为一支独立的政治力量</strong>登上了历史舞台，无产阶级的力量的壮大。</p>
+<p>​	（3）使无产阶级加深对资本主义制度的认识，同时为<strong>无产阶级革命理论的制定、马克思主义的创立</strong>提供了丰富的实践经验。</p>
+<h2 id="“马克思主义”的创立人是谁？"><a href="#“马克思主义”的创立人是谁？" class="headerlink" title="“马克思主义”的创立人是谁？"></a>“马克思主义”的创立人是谁？</h2><p>马克思和恩格斯</p>
+<h2 id="《共产党宣言》的公开发表标志着什么？"><a href="#《共产党宣言》的公开发表标志着什么？" class="headerlink" title="《共产党宣言》的公开发表标志着什么？"></a>《共产党宣言》的公开发表标志着什么？</h2><p>1848年《共产党宣言》的发表标志着<strong>马克思主义的诞生</strong>。</p>
+<h2 id="“两个必然”是什么？"><a href="#“两个必然”是什么？" class="headerlink" title="“两个必然”是什么？"></a>“两个必然”是什么？</h2><p>“两个必然”即<strong>资本主义必然灭亡</strong>和<strong>社会主义必然胜利</strong>，也成为“两个不可避免”</p>
+<h2 id="“第一国际”与“第二国际”的异同何在？"><a href="#“第一国际”与“第二国际”的异同何在？" class="headerlink" title="“第一国际”与“第二国际”的异同何在？"></a>“第一国际”与“第二国际”的异同何在？</h2><p>相同点：①它们都是<strong>国际性的工人组织</strong>②它们的建立都处于<strong>工人运动</strong>从低潮走向高潮的阶段③<strong>马克思和恩格斯</strong>都积极参与了对<strong>两个国际的领导</strong>。</p>
+<p>不同点：①第一国际由<strong>各国工人团体</strong>组成，而第二国际主要由<strong>社会主义政党</strong>组成；②参加第一国际的主要是少数欧洲国家的工人组织，第二国际参加的<strong>工人范围扩大到欧洲和北美</strong>③第一国际产生于<strong>资本主义社会矛盾激化</strong>，工人运动，民族解放运动高涨并走向联合之中，第二国际产生于<strong>资本主义相对稳定的环境</strong>中，④在组织上，第二国际不是<strong>各国党的上级组织</strong>，它通过历代代表大会的决议给各国党指明方向，第二国际<strong>内部派别斗争</strong>激烈。</p>
  
       <!-- reward -->
       
@@ -560,6 +860,28 @@
 <li><p>其后十五年，圣俞以疾卒于京师，余<strong>既</strong>哭而铭之，因索于其家，得其遗稿千余篇，并旧所藏，<strong>掇</strong>其尤者六百七十七篇，为一十五卷。呜呼！吾于圣俞诗论之详矣，故不复云。</p>
 <blockquote>
 <p>从那以后过了十五年，圣俞因病在京师去世，我已痛哭着为他写好了墓志铭，便向他家索求，得到他的遗稿一千多篇，连同先前所保存的，选取其中特别好的共六百七十七篇，分为十五卷。啊，我对圣俞的诗歌已经评论得很多了，所以不再重复。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="五代史宦者传论"><a href="#五代史宦者传论" class="headerlink" title="五代史宦者传论"></a>五代史宦者传论</h3><ol>
+<li><p>自古宦者乱人之国，其源深于女祸。女，色而已，宦者之害，非<strong>一端</strong>也。</p>
+<blockquote>
+<p>自古以来，宦官扰乱国家，比女人造成的祸患还要严重。女人，只不过是使君主沉溺于美色罢了，而宦官的危害可不止一条。</p>
+</blockquote>
+</li>
+<li><p>盖其<strong>用事</strong>也近而习，其为心也专而<strong>忍</strong>。能以小善中人之意，小信固人之心，使人主必信而亲之。待其已信，然后惧以祸福而把持之。虽有忠臣硕士列于朝廷，而人主以为去己疏远，不若起居饮食、前后左右之亲<strong>可恃</strong>也。故前后左右者日益亲，而忠臣硕士日益疏，而人主之势日益孤。势孤，则惧祸之心日益切，而把持者日益<strong>牢。安危出其喜怒，祸患伏于</strong>帷闼<strong>，则向之所谓</strong>可恃**者，乃所以为患也。</p>
+<blockquote>
+<p>宦官所担当的职责就是侍奉在君主身边，容易与君主形成亲密关系，他们的用心专一并且毒辣，他们能用微小的好处来迎合别人的心意，能用小忠小信获得君主的信任，使人君必然信任、亲近他们。等到获得了君主的完全信任，然后就用祸福来恐吓他、挟制他。这时候虽然有忠臣贤士在朝中，但君主认为他们和自己关系疏远，不如侍奉他起居饮食、成天在自己左右侍奉自己的亲随那样可靠。所以君主与成天在左右侍奉自己的人日益亲密，而对忠臣贤士们则日益疏远，君主便会日益变得势单力孤。势单力孤，则惧怕发生祸患的心理就更加严重。而挟持自己的人的地位就会更加牢固。君主的安危，决定于这些人的喜怒；而祸患就潜伏在他的内廷之中。于是过去认为可以依靠的人，正是现在为患的根源。</p>
+</blockquote>
+</li>
+<li><p>患已深而觉之，欲与疏远之臣<strong>图</strong>左右之亲近，缓之则养祸而益深，急之则挟人主以为质。虽有圣智，不能与谋。谋之而不可为，为之而不可成，至其甚，则俱伤而两败。故其大者亡国，其次亡身，而使奸豪得借以为资而起，至抉其种类，尽杀以快天下之心而后已。此前史所载宦者之祸常如此者，非一世也。</p>
+<blockquote>
+<p>当发觉祸患已深的时候，想要和平日里疏远的大臣们一起除掉左右的亲随，行动慢了就会使祸患日益严重；操之过急，又会使那些亲随挟持自己作为人质。这时候即使是智慧再高的人，也不能与他共商对策了。就算是能够商议对策，也很难实际着手去做。即使做了，也有可能不成功，到了最严重的时候，很可能产生两败俱伤的后果。祸患大的可以亡国，次一点的会让自己丧命，并且会使世上的奸雄们以此为借口乘机而起，把宦官与其同党尽皆除掉，大快天下人之心后才算完。过去历史上记载的宦官之祸往往如此，而且不止一代。</p>
+</blockquote>
+</li>
+<li><p>夫为人主者，非欲养祸于内，而疏忠臣硕士于外，盖其渐积而势使之然也。夫女色之惑，不幸而不悟，而祸斯及矣。使其一悟，捽而去之可也。宦者之为祸，虽欲悔悟，而势有不得而去也，唐昭宗之事是已。故曰“深于女祸者”，谓此也。可不戒哉？</p>
+<blockquote>
+<p>作为君主，并不是故意要在宫中养虎成患，在朝堂之上疏远忠臣贤士，这是日积月累逐步发展而成的，是形势发展使他自然而然地走入此途的。所以沉迷于女色，如果不幸一直执迷不悟，那么祸患就要随之降临了；但是一旦醒悟，把她们撵出去就行了。而宦者造成的祸患，虽然有所悔悟，但已经形成的形势使得自己没有办法把他们除掉；唐昭宗的事就是这样。所以说“比女人造成的祸患还要严重”，就是指这些，怎能不有所戒惧呢？</p>
 </blockquote>
 </li>
 </ol>
@@ -1071,412 +1393,6 @@
 <p>​	由于起重机可移动，因此梁中的弯矩将随着起重机的移动而发生连续的变化。针对这种情况，可引入一个表示起重机位置的参量，并将弯矩峰值表达为该参量的函数。假定起重机左轮C处与梁左端铰的距离为x，如图6.30(a)所示。对B取矩，便可得左端铰处的支反力<br>Ã &#x3D;-[6.25x(5-x)+18.75x(5-x-1.6)]<br>R,&#x3D;19-5x(kN)<br>良萨<br>由此可得C、D两个截面处的弯矩<br>Mc&#x3D;Rx&#x3D;19x-5x(kN.m)<br>M,&#x3D;R(x+1.6)-1.6P<br>&#x3D;20.4+11x-5x(kN.m)<br>R<br>800<br>800<br>5 m<br>图 6.29<br>起重机简图<br>P<br>P<br>1.6 m<br>5 m<br>(a)<br>Ms<br>M<br>(b)<br>图6.30 梁中的弯矩使C截面弯矩取极值的x应满足<br>dM&#x3D;19-10x&#x3D;0，即x&#x3D;19m<br>dx<br>Mc&#x3D;19x1.9-5x1.9’&#x3D;18.05 kN.m<br>使D截面弯矩取极值的x应满足<br>dM2&#x3D;11-10x&#x3D;0，即x&#x3D;11m<br>dr<br>M&#x3D;20.4+11x1.1-5x1.1&#x3D;26.45 kN·m<br>由此可知，当起重机左轮C与简支梁左端铰的距离为1.1m时，起重机右轮D处截面的弯矩值<br>26.45kN·m是起重机移动过程中梁中产生的最大弯矩。<br>故有<br>故有<br>下面将上面的问题做一个更加一般性的讨论。如图6.31所示,简支梁承受一组集中移动荷载(E,F,…<br>F)的作用，这些力的间距不变。求这个梁的绝对值最大的弯矩。<br>F<br>F<br>a&#x2F;2a&#x2F;2<br>L&#x2F;2<br>L12<br>图6.31 移动荷载作用<br>在(F，尸，…，F)作用下，无论荷载在梁上的任何位置，弯矩图的峰值点总是发生在集中荷载的作<br>用点，由此可以认为绝对最大弯矩一定发生在某一荷载作用截面。下面先任选某一个集中荷载，来讨论移动<br>荷载处于什么位置时，该荷载的作用截面的弯矩达到最大值。由于移动荷载个数是有限的，就可求出各荷载<br>作用截面的最大弯矩，从而确定绝对最大弯矩。设F与A点的距离为x，梁上荷载的合力F与F 的作用线<br>之间的距离为 a。<br>由M。&#x3D;0得<br>F &#x3D;F l-x-a<br>L<br>当F位于F的左侧时，则F作用截面的弯矩为<br>M&#x3D;F x-M &#x3D;£(-x-@)x-M<br>式中，M，表示F，以左梁上的所有荷载对F、作用点的力矩总和，它是一个与x无关的常数。根据极<br>值条件，有<br>由式①可得绝对最大弯矩的位置，即<br>dMF(L-2x-a)<br>&#x3D;0<br>Ax<br>a<br>N<br>4<br>巴</p>
 <p>同理，当只 位于后的右侧时，可求得x&#x3D;-+”为发生绝对最大弯矩的位置。故简支梁发生绝对最大<br>弯矩所在截面由下式确定<br>x之巧<br>式 ③ 表明，当F 与荷载合力尸 对称于跨中截面时，F,作用点的截面上弯矩为最大值，其值为<br>M.–(LFa)-M<br>4</p>
 <p>在应用式③和式④计算荷载作用处截面最大弯矩时，应该注意的是:<br>①F在F右方时，a取正值:F在F左方时，a取负值。<br>②F 是实际荷载的合力。在F 和F对称于跨中截面时，可能有的荷载不再位于梁上，或有新的荷载<br>进入梁上，这时应重新计算合力和作用位置。<br>按上述方法可算出每一个荷载作用处截面的最大弯矩，并加以比较，其中最大者就是绝对最大弯矩</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-   
-  
-</article>
-
-    
-    <article
-  id="post-大学物理"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/"
-    >大学物理</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/" class="article-date">
-  <time datetime="2024-05-20T06:57:51.000Z" itemprop="datePublished">2024-05-20</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-   
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-   
-  
-</article>
-
-    
-    <article
-  id="post-Engeering Mechanics"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/05/20/Engeering%20Mechanics/"
-    >Engineering Mechanics</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/05/20/Engeering%20Mechanics/" class="article-date">
-  <time datetime="2024-05-19T18:52:18.000Z" itemprop="datePublished">2024-05-20</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h3><ol>
-<li><p>1工程与力学的关系</p>
-</li>
-<li><p>2工程力学的主要内容</p>
-</li>
-<li><p>3刚体、变形固体及其基本假定</p>
-</li>
-<li><p>4杆件及其基本变形方式</p>
-</li>
-<li><p>5荷载的分类</p>
-</li>
-<li><p>6工程力学的研究方式</p>
-</li>
-</ol>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h3 id="刚体静力学的基本概念"><a href="#刚体静力学的基本概念" class="headerlink" title="刚体静力学的基本概念"></a>刚体静力学的基本概念</h3><ol start="2">
-<li><p>1    矢量知识回顾</p>
-<ol start="2">
-<li><p>1.1    矢量的概念</p>
-</li>
-<li><p>1.2    矢量的运算</p>
-</li>
-</ol>
-</li>
-<li><p>2    静力学基本概念</p>
-<ol start="2">
-<li><p>2.1    刚体、平衡和力的概念</p>
-</li>
-<li><p>2.2    力系的概念</p>
-</li>
-<li><p>2.3    静力学公理</p>
-</li>
-</ol>
-</li>
-<li><p>3    约束和约束力</p>
-<ol start="2">
-<li><p>3.1    约束和约束力的基本概念</p>
-</li>
-<li><p>3.2    约束的一些基本类型</p>
-</li>
-</ol>
-</li>
-<li><p>4    受力图</p>
-</li>
-</ol>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><h3 id="汇交力系"><a href="#汇交力系" class="headerlink" title="汇交力系"></a>汇交力系</h3><ol start="3">
-<li><p>1    汇交力系的简化与合成</p>
-<ol start="3">
-<li><p>1.1    汇交力系合成的几何法</p>
-</li>
-<li><p>1.2    汇交力系合成的解析法</p>
-</li>
-</ol>
-</li>
-<li><p>2    汇交力系的平衡条件</p>
-</li>
-</ol>
-<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><h3 id="力偶系"><a href="#力偶系" class="headerlink" title="力偶系"></a>力偶系</h3><ol start="4">
-<li><p>1    力对点值矩</p>
-<ol start="4">
-<li><p>1.1   平面问题中力对点的矩</p>
-</li>
-<li><p>1.2    空间问题中力对点的矩</p>
-</li>
-</ol>
-</li>
-<li><p>2    力对轴之矩</p>
-<ol start="4">
-<li><p>2.1    力对轴之矩的概念</p>
-</li>
-<li><p>2.2    力对点之矩与力对轴之矩的关系</p>
-</li>
-</ol>
-</li>
-<li><p>3    力系的主矩和主矢</p>
-<ol start="4">
-<li><p>3.1    力系的主矢和主矩的概念</p>
-</li>
-<li><p>3.2    力系等效定理</p>
-</li>
-</ol>
-</li>
-<li><p>4    力偶及其性质</p>
-</li>
-<li><p>5    力偶系的合成与平衡</p>
-</li>
-</ol>
-<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><h3 id="任意力系"><a href="#任意力系" class="headerlink" title="任意力系"></a>任意力系</h3><ol start="5">
-<li><p>1    力系的简化</p>
-<ol start="5">
-<li><p>1.1    力线平移定理</p>
-</li>
-<li><p>1.2    空间中任意力系向一点的简化</p>
-</li>
-<li><p>1.3    空间任意力系的简化结果</p>
-</li>
-<li><p>1.4    平面任意力系的简化结果</p>
-</li>
-<li><p>1.5    平行力系及物体的形心</p>
-</li>
-</ol>
-</li>
-<li><p>2    任意力系的平衡条件</p>
-<ol start="5">
-<li><p>2.1    平衡条件和平衡方程</p>
-</li>
-<li><p>2.2    平衡方程的应用</p>
-</li>
-</ol>
-</li>
-<li><p>3    物系平衡</p>
-<ol start="5">
-<li><p>3.1    物体系统平衡问题</p>
-</li>
-<li><p>3.2    静定和超静定问题的概念</p>
-</li>
-<li><p>3.3    平衡行架</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><h3 id="杆件的内力"><a href="#杆件的内力" class="headerlink" title="杆件的内力"></a>杆件的内力</h3><ol start="6">
-<li><p>1    内力的定义及其符号规定</p>
-</li>
-<li><p>2    内力方程与内力图</p>
-</li>
-<li><p>3    梁的平衡微分方程及其应用</p>
-<ol start="6">
-<li><p>3.1    梁的平衡微分方程</p>
-</li>
-<li><p>3.2    梁承受集中荷载的情况</p>
-</li>
-<li><p>3.3    根据外荷载画剪力弯矩图</p>
-</li>
-<li><p>3.4    弯矩的峰值</p>
-</li>
-</ol>
-</li>
-<li><p>4    简单钢架的内力图</p>
-</li>
-</ol>
-<h2 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a>第七章</h2><h3 id="变形固体的基本概念"><a href="#变形固体的基本概念" class="headerlink" title="变形固体的基本概念"></a>变形固体的基本概念</h3><ol start="7">
-<li><p>1    应力的基本概念</p>
-<ol start="7">
-<li><p>1.1    应力矢量的一般概念</p>
-</li>
-<li><p>1.2    切应力互等原理</p>
-</li>
-</ol>
-</li>
-<li><p>2    应变的基本概念</p>
-</li>
-<li><p>3    材料的力学性能    </p>
-<ol start="7">
-<li><p>3.1    材料力学性能的方向性</p>
-</li>
-<li><p>3.2    材料的变形能力</p>
-</li>
-<li><p>3.3    材料力学性能中的时间效应</p>
-</li>
-</ol>
-</li>
-<li><p>4    材料的简单本构模型</p>
-<ol start="7">
-<li><p>4.1    线弹性体</p>
-</li>
-<li><p>4.2    弹塑性体</p>
-</li>
-<li><p>4.3    黏弹性体</p>
-</li>
-</ol>
-</li>
-<li><p>5    材料的破坏及构件的失效</p>
-<ol start="7">
-<li><p>5.1    构件的强度、刚度和稳定性条件</p>
-</li>
-<li><p>5.2    构件的疲劳简介</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="第八章"><a href="#第八章" class="headerlink" title="第八章"></a>第八章</h2><h3 id="杆件的拉伸与压缩"><a href="#杆件的拉伸与压缩" class="headerlink" title="杆件的拉伸与压缩"></a>杆件的拉伸与压缩</h3><ol start="8">
-<li><p>1    杆件拉伸和压缩的应力</p>
-</li>
-<li><p>2    拉伸和收缩的变形</p>
-<ol start="8">
-<li><p>2.1    拉压杆的变形</p>
-</li>
-<li><p>2.2    简单术件的结点位移</p>
-</li>
-</ol>
-</li>
-<li><p>3    拉压超静定问题</p>
-<ol start="8">
-<li><p>3.1    拉压超静定问题及其解决方法</p>
-</li>
-<li><p>3.2    装配应力</p>
-</li>
-<li><p>3.3    热应力</p>
-</li>
-</ol>
-</li>
-<li><p>4    连接件中应力的实用计算</p>
-</li>
-</ol>
-<h2 id="第九章"><a href="#第九章" class="headerlink" title="第九章"></a>第九章</h2><h3 id="轴的扭转"><a href="#轴的扭转" class="headerlink" title="轴的扭转"></a>轴的扭转</h3><ol start="9">
-<li><p>1    圆轴扭转的应力 </p>
-</li>
-<li><p>2    圆轴扭转的变形</p>
-</li>
-<li><p>3    扭转超静定问题</p>
-</li>
-<li><p>4    矩形截面轴的扭转</p>
-</li>
-</ol>
-<h2 id="第十章"><a href="#第十章" class="headerlink" title="第十章"></a>第十章</h2><h3 id="梁的弯曲应力"><a href="#梁的弯曲应力" class="headerlink" title="梁的弯曲应力"></a>梁的弯曲应力</h3><ol start="10">
-<li><p>1    梁的弯曲正应力</p>
-<ol start="10">
-<li><p>1.1    梁横截面上的正应力公式</p>
-</li>
-<li><p>1.2    梁的最大弯曲正应力</p>
-</li>
-</ol>
-</li>
-<li><p>2    梁的弯曲切应力</p>
-</li>
-<li><p>3    梁的强度设定</p>
-</li>
-</ol>
-<h2 id="第十一章"><a href="#第十一章" class="headerlink" title="第十一章"></a>第十一章</h2><h3 id="梁的弯曲变形"><a href="#梁的弯曲变形" class="headerlink" title="梁的弯曲变形"></a>梁的弯曲变形</h3><ol start="11">
-<li><p>1   挠度曲线微分方程</p>
-</li>
-<li><p>2    积分法求梁的变形</p>
-</li>
-<li><p>3    叠加法求梁的挠度和转角</p>
-<ol start="11">
-<li><p>3.1    荷载的分解与重组</p>
-</li>
-<li><p>3.2    逐段刚化法</p>
-</li>
-<li><p>3.3    利用机构的对称性</p>
-</li>
-</ol>
-</li>
-<li><p>4    简单超静定问题</p>
-</li>
-<li><p>5    梁的刚度设计</p>
-</li>
-</ol>
-<h2 id="第十二章"><a href="#第十二章" class="headerlink" title="第十二章"></a>第十二章</h2><h3 id="复杂应力状态分析及其应用"><a href="#复杂应力状态分析及其应用" class="headerlink" title="复杂应力状态分析及其应用"></a>复杂应力状态分析及其应用</h3><ol start="12">
-<li><p>1    应力状态分析</p>
-<ol start="12">
-<li><p>1.1    单元体和应力状态矩阵</p>
-</li>
-<li><p>1.2    应力状态分析</p>
-</li>
-<li><p>1.3    应力状态的理论分析</p>
-</li>
-<li><p>1.4    三向应力的状态简介</p>
-</li>
-</ol>
-</li>
-<li><p>2    应变状态分析</p>
-<ol start="12">
-<li><p>2.1    应变状态</p>
-</li>
-<li><p>2.2    应变的测量</p>
-</li>
-<li><p>2.3    三向应变简介</p>
-</li>
-<li><p>2.4    斜方向上应变公式的证明</p>
-</li>
-</ol>
-</li>
-<li><p>3    广义胡克定律</p>
-</li>
-<li><p>4    强度准则</p>
-</li>
-<li><p>5    组合变形应力分析</p>
-<ol start="12">
-<li><p>5.1    拉（压）弯组合</p>
-</li>
-<li><p>5.2    斜弯曲</p>
-</li>
-<li><p>5.3    截面核心的概念</p>
-</li>
-<li><p>5.4   弯扭组合</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="第十三章"><a href="#第十三章" class="headerlink" title="第十三章"></a>第十三章</h2><h3 id="弹性压杆稳定"><a href="#弹性压杆稳定" class="headerlink" title="弹性压杆稳定"></a>弹性压杆稳定</h3><ol start="13">
-<li><p>1    压杆稳定的一般性概念</p>
-<ol start="13">
-<li><p>1.1    失稳与临界载荷</p>
-</li>
-<li><p>1.2    刚性杆的稳定</p>
-</li>
-</ol>
-</li>
-<li><p>2    理想压杆</p>
-<ol start="13">
-<li><p>2.1    理想压杆的临界载荷</p>
-</li>
-<li><p>2.2    理想压感的临界应力</p>
-</li>
-<li><p>2.3    压杆的稳定性设计</p>
-</li>
-</ol>
-</li>
-</ol>
  
       <!-- reward -->
       
