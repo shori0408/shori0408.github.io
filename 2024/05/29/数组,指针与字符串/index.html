@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">3.8k</span>
+            <span class="post-count">5.6k</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">16 min</span>
+            <span class="post-count">25 min</span>
         </span>
     </span>
 </div>
@@ -391,7 +391,7 @@
 
 <h3 id="通过指针访问对象成员"><a href="#通过指针访问对象成员" class="headerlink" title="通过指针访问对象成员"></a>通过指针访问对象成员</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象-&gt;成员名</span><br><span class="line">ptr-&gt;getx();</span><br><span class="line">//(*ptr).getx();</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point&#123;int x=0;int y=0&#125;:x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()const&#123;return x;&#125;</span><br><span class="line">int getY()const&#123;return y;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point a(4,5);</span><br><span class="line">Point* p1=&amp;a;</span><br><span class="line">cout&lt;&lt;p1-&gt;getX()&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;a.getX()&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point&#123;int x=0;int y=0&#125;:x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()const&#123;return x;&#125;</span><br><span class="line">int getY()const&#123;return y;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;0</span><br><span class="line">Point a(4,5);</span><br><span class="line">Point* p1=&amp;a;</span><br><span class="line">cout&lt;&lt;p1-&gt;getX()&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;a.getX()&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="this指针"><a href="#this指针" class="headerlink" title="this指针"></a>this指针</h2><ul>
 <li><p>隐含与类的每一个非静态成员函数中。</p>
@@ -399,10 +399,120 @@
 <li><p>指出成员函数所操作的对象。</p>
 <p>当通过一个对象调用成员函数时，系统先将该对象的地址赋给this指针，任何调用成员函数，成员函数对对象的数据成员进行操作时，就隐含了this指针。</p>
 </li>
-<li><p>Point</p>
-</li>
 </ul>
-<p>return x；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Point类中的getX函数中的语句</span><br><span class="line">return x;</span><br><span class="line">相当于：</span><br><span class="line">return this-&gt;x;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Fred;</span><br><span class="line">class Barney</span><br><span class="line">&#123;</span><br><span class="line">Fred x;//类Barnety的声明不够明确</span><br><span class="line">&#125;;</span><br><span class="line">class Fred</span><br><span class="line">&#123;</span><br><span class="line">Barney;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Fred;</span><br><span class="line">class Barney</span><br><span class="line">&#123;</span><br><span class="line">Fred* x;</span><br><span class="line">&#125;;</span><br><span class="line">class Fred</span><br><span class="line">&#123;</span><br><span class="line">Barney y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h2><h3 id="动态申请内存的操作符-new"><a href="#动态申请内存的操作符-new" class="headerlink" title="动态申请内存的操作符 new"></a>动态申请内存的操作符 new</h3><p>new 类型名T(初始化参数列表)</p>
+<ul>
+<li>功能：在程序执行期间，申请用于存放T类型对象的内存空间，并依初值列表赋以初值。</li>
+<li>结果值：成功：T类型的指针，指向新分配的内存；失败：抛出异常。</li>
+</ul>
+<h3 id="释放内存操作符delete"><a href="#释放内存操作符delete" class="headerlink" title="释放内存操作符delete"></a>释放内存操作符delete</h3><p>delete指针p</p>
+<ul>
+<li>功能：释放指针p所指向的内存，p必须时new操作符的返回值。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std:</span><br><span class="line">class Point &#123;</span><br><span class="line">public:</span><br><span class="line">Point():x(0),y(0)&#123;</span><br><span class="line">cout&lt;&lt;&quot;Default Constructor called.&quot;&lt;&lt;endl;</span><br><span class="line">Point(int x, int y) : x(x),y(y)&#123;</span><br><span class="line">cout&lt;&lt;&quot;Constructor called.&quot;&lt;&lt;endl;</span><br><span class="line">~Point()&#123; cout&lt;&lt;&quot;Destructor called.&quot;&lt;&lt;endl; &#125;</span><br><span class="line">int getX() const &#123; return x;&#125;</span><br><span class="line">int getY() const &#123; return y; &#125;</span><br><span class="line">void move(int newX, int newY)&#123;</span><br><span class="line">x = newX;</span><br><span class="line">y = newY:</span><br><span class="line">private:</span><br><span class="line">int x, y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int main()&#123;</span><br><span class="line">cout &lt;&lt;&quot;Step one:&quot;&lt;&lt; endl:</span><br><span class="line">Point*ptr1 = new Point; //调用默认构造函数</span><br><span class="line">delete ptr1;//删除对象，自动调用析构函数</span><br><span class="line">cout&lt;&lt;&quot;Step two:&quot;&lt;&lt; endl:</span><br><span class="line">ptr1=new Point(1,2);</span><br><span class="line">delete ptr1;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="申请和释放动态数组"><a href="#申请和释放动态数组" class="headerlink" title="申请和释放动态数组"></a>申请和释放动态数组</h2><h3 id="分配和释放动态数组"><a href="#分配和释放动态数组" class="headerlink" title="分配和释放动态数组"></a>分配和释放动态数组</h3><ul>
+<li>分配：new 类型名T[数组长度]：数组长度可以时任何整数型的表达式，在进行时运算。</li>
+<li>释放：delete[] 数组名p：释放指针p所指向的数组，p必须时用new分配得到的数组首地址。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point&#123; //类的声明同例6-16,略&#125;;</span><br><span class="line">int main()&#123;</span><br><span class="line">Point*ptr=new Point[2]: //创建对象数组</span><br><span class="line">ptr[0].move(5,10);//通过指针访问数组元素的成员</span><br><span class="line">ptr[1].move(15,20); //通过指针访问数组元素的成员</span><br><span class="line">cout &lt;&lt;&quot;Deleting...&quot; &lt;&lt; endl;</span><br><span class="line">//删除整个对象数组</span><br><span class="line">delete[] ptr;</span><br><span class="line">return O;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态创建多维数组"><a href="#动态创建多维数组" class="headerlink" title="动态创建多维数组"></a>动态创建多维数组</h3><p>new 类型名[第一维长度] [第二维长度]……;</p>
+<ul>
+<li>如果内存申请成功，new运算返回一个指向新分配内存首地址的指针。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">char(*fp)[3];</span><br></pre></td></tr></table></figure>
+
+
+
+<table>
+<thead>
+<tr>
+<th>fp</th>
+<th>fp+1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fp[0] [0]</td>
+<td>fp[1] [0]</td>
+</tr>
+<tr>
+<td>fp[0] [1]</td>
+<td>fp[1] [1]</td>
+</tr>
+<tr>
+<td>fp[0] [2]</td>
+<td>fp[1] [2]</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">int (*cp)[9][8] = new int[7][9][8];</span><br><span class="line">for (int i= 0; i&lt; 7; i++)</span><br><span class="line">for (intj = 0; j&lt; 9; j+ +)</span><br><span class="line">for (int k = 0; k &lt; 8; k++)</span><br><span class="line">*(*(*(cp +i) +j)+k)=(i*100 +j*10 + k); </span><br><span class="line">for (inti = 0; i &lt; 7; i++)&#123;</span><br><span class="line">for (intj = 0;j&lt; 9; j+ +)&#123;</span><br><span class="line">for (int k = 0; k &lt; 8; k++)</span><br><span class="line">cout &lt;&lt; cp[i][j][k]&lt;&lt;&quot; &quot;;</span><br><span class="line">cout &lt;&lt; endl;&#125;</span><br><span class="line">cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">delete[lcp;它返回首地址的这个变量</span><br><span class="line">retiirn 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="申请和释放动态"><a href="#申请和释放动态" class="headerlink" title="申请和释放动态"></a>申请和释放动态</h2><h3 id="将动态内组封装为类"><a href="#将动态内组封装为类" class="headerlink" title="将动态内组封装为类"></a>将动态内组封装为类</h3><ul>
+<li>更加简介，便于管理</li>
+<li>可以在访问数组元素前检查下标是否越界。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cassert&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point&#123; //类的声明同例6-16.. &#125;;</span><br><span class="line">class ArrayOfPoints &#123;</span><br><span class="line">//动志数组类</span><br><span class="line">public:</span><br><span class="line">ArrayOfPoints(int size) :size(size) &#123;</span><br><span class="line">points = new Point[size];</span><br><span class="line">~ArrayOfPoints() &#123;</span><br><span class="line">cout &lt;&lt; &quot;Deleting..&quot; &lt;&lt; endl;</span><br><span class="line">delete[] points;</span><br><span class="line">Point&amp; element(int index) &#123;</span><br><span class="line">assert(index &gt;= 0 &amp;&amp; index &lt; size);</span><br><span class="line">return points[index];</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">Point*points; //指向动态数组首地址</span><br><span class="line">int size;</span><br><span class="line">//数组大小</span><br><span class="line">&#125;;</span><br><span class="line">这个点类 cass point</span><br><span class="line">int main()&#123;</span><br><span class="line">int count;</span><br><span class="line">cout &lt;&lt; &quot;Please enter the count of points: &quot;</span><br><span class="line">cin &gt;&gt;count;</span><br><span class="line">ArrayOfPoints points(count);//创建数组对象</span><br><span class="line">points.element(0).move(5,0);//访问数组元素的成员</span><br><span class="line">points.element(1).move(15,20);//访问数组元素的成员</span><br><span class="line">return 0;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h2 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h2><h3 id="c-11的智能指针"><a href="#c-11的智能指针" class="headerlink" title="c++11的智能指针"></a>c++11的智能指针</h3><ul>
+<li>unique_ptr:不允许多个指针共享资源，可以用标准库中的move函数转移指针。</li>
+<li>shared_ptr：多个指针共享资源。</li>
+<li>weak_ptr：可以赋值shared_ptr，但其构造或者释放对资源不产生影响。</li>
+</ul>
+<h2 id="vector对象"><a href="#vector对象" class="headerlink" title="vector对象"></a>vector对象</h2><h3 id="为什么需要vector？"><a href="#为什么需要vector？" class="headerlink" title="为什么需要vector？"></a>为什么需要vector？</h3><ul>
+<li>封装任何类型的动态数组，自动创建和删除</li>
+<li>数组下标越界检查</li>
+</ul>
+<h3 id="vector对象的定义"><a href="#vector对象的定义" class="headerlink" title="vector对象的定义"></a>vector对象的定义</h3><p>vector&lt;元素类型&gt; 数组对象名(数组长度)；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; arr(5);</span><br></pre></td></tr></table></figure>
+
+<h3 id="vector对象的使用"><a href="#vector对象的使用" class="headerlink" title="vector对象的使用"></a>vector对象的使用</h3><ul>
+<li>对数组元素的引用</li>
+</ul>
+<p>与普通数组具有相同形式：</p>
+<p>vector对象名[下标表达式]</p>
+<p>vector数组对象名不表示数组首地址</p>
+<ul>
+<li>获得数组长度</li>
+</ul>
+<p>使用size函数</p>
+<p>vector对象名.size()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">int main() &#123;</span><br><span class="line">unsigned n;</span><br><span class="line">cout &lt;&lt; &quot;n =&quot;;</span><br><span class="line">cin &gt;&gt; n;</span><br><span class="line">vector&lt;double&gt; arr(n)</span><br><span class="line">//创建数组对象</span><br><span class="line">cout &lt;&lt; &quot;Please input &quot; &lt;&lt; n &lt;&lt;&quot; real numbers:&quot; &lt;&lt; endl;</span><br><span class="line">for (unsigned i= 0; i&lt;n; i+ +)</span><br><span class="line">cin &gt;&gt; arr[i];</span><br><span class="line">cout &lt;&lt;&quot;Average = &quot;&lt;&lt; average(arr)&lt;&lt; endl;</span><br><span class="line">return O;</span><br><span class="line">&#125;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//计算数组arr中元素的平均值</span><br><span class="line">double average(const vector&lt;double&gt; &amp;arr)</span><br><span class="line">double sum = 0:</span><br><span class="line">for (unsignedi= 0; i&lt;arr.size(); i+ +)</span><br><span class="line">sum += arri],</span><br><span class="line">return sum / arr.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">int main()</span><br><span class="line">std::vector&lt;int&gt;v=&#123;1,2,3&#125;;</span><br><span class="line">for(autoi=v.begin();i!= vend(); ++i)</span><br><span class="line">std:.cout &lt;&lt;*i&lt;&lt; std::endl;</span><br><span class="line">for(auto e:v)</span><br><span class="line">std::cout&lt;&lt;e&lt;&lt;std:.endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="深层复制和浅层复制"><a href="#深层复制和浅层复制" class="headerlink" title="深层复制和浅层复制"></a>深层复制和浅层复制</h2><h3 id="浅层复制"><a href="#浅层复制" class="headerlink" title="浅层复制"></a>浅层复制</h3><ul>
+<li>实现对象间数据元素的一一对应复制</li>
+</ul>
+<h3 id="深层复制"><a href="#深层复制" class="headerlink" title="深层复制"></a>深层复制</h3><ul>
+<li>当被复制的对象数据成员时指针类型时，不是复制该指针成员本身，而是将指针所指对象进行复制。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cassert&gt;</span><br><span class="line">using namespace std,</span><br><span class="line">class Point &#123;</span><br><span class="line">//类的声明同例6-16</span><br><span class="line">//</span><br><span class="line">class ArrayOfPoints &#123;</span><br><span class="line">//类的声明同例6-18</span><br><span class="line">//.</span><br><span class="line">int main(&#123;</span><br><span class="line">int count;</span><br><span class="line">cout &lt;&lt; &quot;Please enter the count of points: &quot;,</span><br><span class="line">Cin &gt;&gt;count;</span><br><span class="line">ArrayOfPoints pointsArrayl(count); //创建对象数组</span><br><span class="line">pointsArrayl.element(0).move(5,10);</span><br><span class="line">pointsArray1.element(1).move(15,20);</span><br><span class="line">ArrayOfPoints pointsArray2(pointsArray1); //创建副本</span><br><span class="line">cout &lt;&lt; &quot;Copy of pointsArrayl:&quot; &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; &quot;Point_0 of array2: &quot;&lt;&lt; pointsArray2.element(0).getX( &lt;&lt;&quot;,&quot;</span><br><span class="line">&lt;&lt; pointsArray2.element(0).getY() &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; &quot;Point_l of array2: &quot; &lt;&lt; pointsArray2.element(l).getX()&lt;&lt;&quot;,&quot;</span><br><span class="line">&lt;&lt; pointsArray2.element(1).getY() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cassert&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point&#123;//类的声明同例6-16</span><br><span class="line">class ArrayOfPoints &#123;</span><br><span class="line">public:</span><br><span class="line">ArrayOfPoints(const ArrayOfPoints&amp; pointsArray);</span><br><span class="line">//其他成员同例6-18</span><br><span class="line">&#125;;</span><br><span class="line">ArrayOfPoints::ArrayOfPoints(const ArrayOfPoints&amp; v) &#123;</span><br><span class="line">size = v.size;</span><br><span class="line">points = new Point[size];</span><br><span class="line">for (int i= 0;i&lt; size; i++)</span><br><span class="line">points[i] = v.points[i];</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">//同例6-20</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="移动构造"><a href="#移动构造" class="headerlink" title="移动构造"></a>移动构造</h2><h3 id="移动构造-1"><a href="#移动构造-1" class="headerlink" title="移动构造"></a>移动构造</h3><ul>
+<li>c++11标准中提供了一种新的构造方式——移动构造</li>
+<li>c++11之前，如果要将源对象的状态转移到目标对象只能通过复制，在某些情况下，我们没有必要复制对象，只需要移动它们。</li>
+</ul>
+<h3 id="移动构造函数："><a href="#移动构造函数：" class="headerlink" title="移动构造函数："></a>移动构造函数：</h3><p>class_name(class_name&amp;&amp;);</p>
+<ul>
+<li>版本1：使用深层复制构造函数</li>
+</ul>
+<p>返回时构造临时对象，动态分配将临时对象返回到主调函数，然后删除临时对象。</p>
+<ul>
+<li>版本2：使用移动构造函数</li>
+</ul>
+<p>将要返回的局部对象转移到主调函数中去，省去了构造和删除临时对象的过程。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class IntNum &#123;</span><br><span class="line">public:</span><br><span class="line">IntNum(intx=0):xptr(new int(x))&#123;//构造函数</span><br><span class="line">cout&lt;&lt;&quot;Calling constructor...&quot;&lt;&lt; endl;</span><br><span class="line">intNum(const IntNum &amp; n):xptr(new int(*n.xptr))&#123;//复制构造函数</span><br><span class="line">cout &lt;&lt; “Calling copy constructor...</span><br><span class="line">&lt;&lt; endl.</span><br><span class="line">~IntNum()&#123;//析构函数</span><br><span class="line">delete xptr;</span><br><span class="line">cout &lt;&lt; &quot;Destructing...&quot; &lt;&lt; endl;</span><br><span class="line">int getIntO&#123; return *xptr;&#125;</span><br><span class="line">private:</span><br><span class="line">int *xptr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
  
       <!-- reward -->
       
@@ -483,6 +593,15 @@
 
    
   <nav class="article-nav">
+    
+      <a href="/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            死月妖花
+          
+        </div>
+      </a>
     
     
       <a href="/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/" class="article-nav-link">
