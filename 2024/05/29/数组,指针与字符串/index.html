@@ -43,7 +43,8 @@
           font-size: 1.6rem;
         }
       </style>
-    </head>
+    <link rel="alternate" href="/atom.xml" title="SHIOKOU" type="application/atom+xml">
+</head>
   </html>
 </html>
 
@@ -85,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">5.6k</span>
+            <span class="post-count">6.9k</span>
         </span>
     </span>
 
@@ -94,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">25 min</span>
+            <span class="post-count">31 min</span>
         </span>
     </span>
 </div>
@@ -511,8 +512,64 @@
 <li>版本2：使用移动构造函数</li>
 </ul>
 <p>将要返回的局部对象转移到主调函数中去，省去了构造和删除临时对象的过程。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class IntNum &#123;</span><br><span class="line">public:</span><br><span class="line">IntNum(intx=0):xptr(new int(x))&#123;//构造函数</span><br><span class="line">cout&lt;&lt;&quot;Calling constructor...&quot;&lt;&lt; endl;</span><br><span class="line">intNum(const IntNum &amp; n):xptr(new int(*n.xptr))&#123;//复制构造函数</span><br><span class="line">cout &lt;&lt; “Calling copy constructor...</span><br><span class="line">&lt;&lt; endl.</span><br><span class="line">~IntNum()&#123;//析构函数</span><br><span class="line">delete xptr;</span><br><span class="line">cout &lt;&lt; &quot;Destructing...&quot; &lt;&lt; endl;</span><br><span class="line">int getIntO&#123; return *xptr;&#125;</span><br><span class="line">private:</span><br><span class="line">int *xptr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class IntNum &#123;</span><br><span class="line">public:</span><br><span class="line">IntNum(int x=0):xptr(new int(x))&#123;//构造函数</span><br><span class="line">cout&lt;&lt;&quot;Calling constructor...&quot;&lt;&lt; endl;</span><br><span class="line">IntNum(const IntNum &amp; n):xptr(new int(*n.xptr))&#123;//复制构造函数</span><br><span class="line">cout &lt;&lt; “Calling copy constructor...“</span><br><span class="line">&lt;&lt; endl.</span><br><span class="line">~IntNum()&#123;//析构函数</span><br><span class="line">delete xptr;</span><br><span class="line">cout &lt;&lt; &quot;Destructing...&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">int getInt()&#123; return *xptr;&#125;</span><br><span class="line">private:</span><br><span class="line">int *xptr;</span><br><span class="line">&#125;;</span><br><span class="line">//获取一个对象</span><br><span class="line">IntNum::getNum()</span><br><span class="line">&#123;</span><br><span class="line">IntNum a;</span><br><span class="line">return a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;getNum().getInt()&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">Callint constructor……</span><br><span class="line">//进入getNum函数，启动构造函数，创建对象a</span><br><span class="line">Calling copy constructor...</span><br><span class="line">//对象a离开函数getNum，启动复制构造函数，创建一个a的副本</span><br><span class="line">Destructing...</span><br><span class="line">//对象a离开函数，本身被析构，清除内存</span><br><span class="line">0</span><br><span class="line">//调出a的副本对应的getInt()函数，输出0</span><br><span class="line">Destructing...</span><br><span class="line">//程序结束，析构副本指针</span><br></pre></td></tr></table></figure>
 
+<table>
+<thead>
+<tr>
+<th>复制构造</th>
+<th>移动构造</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>堆内存a&lt;-临时对象-复制构造-&gt;a-&gt;堆内存b</td>
+<td>堆内存a&lt;-临时对象-复制构造-&gt;a-&gt;堆内存a</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>当临时对象在被复制之后，就不再被利用了，我们完全可以把临时对象的资源直接移动，这样就避免了多余的复制操作。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class IntNum &#123;</span><br><span class="line">public:</span><br><span class="line">IntNum(int x=0):xptr(new int(x))&#123;//构造函数</span><br><span class="line">cout&lt;&lt;&quot;Calling constructor...&quot;&lt;&lt; endl;</span><br><span class="line">IntNum(const IntNum &amp; n):xptr(new int(*n.xptr))&#123;//复制构造函数</span><br><span class="line">cout &lt;&lt; “Calling copy constructor...“</span><br><span class="line">&lt;&lt; endl.</span><br><span class="line">InNum(IntNum &amp;&amp; n):xptr(n.xptr)</span><br><span class="line">&#123;n.xptr=nullptr;</span><br><span class="line">//及时将对象的指针置为0指针，防止发生多次析构</span><br><span class="line">cout&lt;&lt;&quot;Caling move constructor……&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//&amp;&amp;是右值引用，即将消亡的值就是右值</span><br><span class="line">//函数返回的临时变量是右值</span><br><span class="line">~IntNum()&#123;//析构函数</span><br><span class="line">delete xptr;</span><br><span class="line">cout &lt;&lt; &quot;Destructing...&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">int getInt()&#123; return *xptr;&#125;</span><br><span class="line">private:</span><br><span class="line">int *xptr;</span><br><span class="line">&#125;;</span><br><span class="line">//获取一个对象</span><br><span class="line">IntNum::getNum()</span><br><span class="line">&#123;</span><br><span class="line">IntNum a;</span><br><span class="line">return a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;getNum().getInt()&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">Callint constructor……</span><br><span class="line">//进入getNum函数，启动构造函数，创建对象a</span><br><span class="line">Calling move constructor...</span><br><span class="line">//对象a离开函数getNum，启动移动构造函数，将目标a的指针直接转移</span><br><span class="line">Destructing...</span><br><span class="line">//对象a离开函数，本身被析构，清除内存</span><br><span class="line">0</span><br><span class="line">//调出a的副本对应的getInt()函数，输出0</span><br><span class="line">Destructing...</span><br><span class="line">//程序结束，析构副本指针</span><br></pre></td></tr></table></figure>
+
+<h2 id="c风格字符串"><a href="#c风格字符串" class="headerlink" title="c风格字符串"></a>c风格字符串</h2><h3 id="字符串常量"><a href="#字符串常量" class="headerlink" title="字符串常量"></a>字符串常量</h3><ul>
+<li>例：”program”</li>
+<li>各字符连续，顺序存放，每一个字符占一个字节，以’\0’结尾，相当于一个隐含创建的字符常量数组。</li>
+<li>“progarm”出现在表达式中，表示这一char数组的首地址</li>
+<li>首地址可以赋给char常量指针</li>
+<li>const char* STRING1&#x3D;”program”;</li>
+</ul>
+<h3 id="用字符数组表示字符串的缺点"><a href="#用字符数组表示字符串的缺点" class="headerlink" title="用字符数组表示字符串的缺点"></a>用字符数组表示字符串的缺点</h3><ul>
+<li>执行链接、拷贝、比较等操作，都需要显式调用库函数，很麻烦</li>
+<li>当字符串长度很不确定时，需要用new动态创建字符数组，最后要用delete释放，很繁琐</li>
+<li>字符串实际长度大于为它分配的空间时，会产生数组下标越界的错误。</li>
+</ul>
+<h2 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h2><h3 id="string类常用的构造函数"><a href="#string类常用的构造函数" class="headerlink" title="string类常用的构造函数"></a>string类常用的构造函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string(); //默认构造函数，建立一个长度为0的串</span><br><span class="line">例:</span><br><span class="line">string sl;</span><br><span class="line">string(const char *s); //用指针s指向的的字符串常量初始化string对象</span><br><span class="line">例:</span><br><span class="line">string s2 = &quot;abc&quot;;</span><br><span class="line">string(const string&amp; rhs); //复制构造函数</span><br><span class="line">例:</span><br><span class="line">string s3 = s2;</span><br></pre></td></tr></table></figure>
+
+<h3 id="string类常用操作"><a href="#string类常用操作" class="headerlink" title="string类常用操作"></a>string类常用操作</h3><p>将串s和t连接成一个新串 s+t<br>用t更新s s&#x3D;t</p>
+<p>判断s与t是否相等s&#x3D;&#x3D;t<br>判断s与t是否不等s!&#x3D;t<br>判断s是否小于t(按字典顺序比较)<br>S &lt;t<br>判断s是否小于或等于t<br>按字典顺序比较 )<br>S &lt;&#x3D;t七较)<br>趄顺序比较 )<br>判断s是否大于 s&gt;t<br>判断s是否大于或等s&gt;&#x3D;t<br>访问串中下标为i的字s[i]<br>例:<br>string sl &#x3D; “abc”,s2 &#x3D; “def”.<br>string s3&#x3D;s1+s2; &#x2F;&#x2F;结果是”abcdef”<br>bools4&#x3D;(s1&lt;s2); &#x2F;&#x2F;结果是true<br>char s5 &#x3D; s2[1];&#x2F;&#x2F;结果实际上这个加法操作呢</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">//根据value的值输出true或false</span><br><span class="line">//title为提示文字</span><br><span class="line">inline void test(const char *title. bool</span><br><span class="line">value)</span><br><span class="line">cout &lt;&lt; title &lt;&lt;&quot;returns &quot;</span><br><span class="line">&lt;&lt;(value? &quot;true&quot; : false&quot;)&lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">string s1 = &quot;DEF&quot;:</span><br><span class="line">cout &lt;&lt; “sl is &quot; &lt;&lt; sl &lt;&lt; endl;</span><br><span class="line">string s2:</span><br><span class="line">cout &lt;&lt;&quot;Please enter s2: &quot;;</span><br><span class="line">cin &gt;&gt;s2:</span><br><span class="line">cout &lt;&lt;&quot;length of s2:&quot;&lt;&lt;s2.length() &lt;&lt; endl;</span><br><span class="line">//比较运算符的测试</span><br><span class="line">test(&#x27;s1 &lt;= \&#x27;ABC\&quot;&quot;, s1 &lt;= &quot;ABC&quot;);</span><br><span class="line">test(“\&quot;DEF\&#x27;&lt;= s1°,&quot;DEF&quot; &lt;= s1);</span><br><span class="line">//连接运算符的测试</span><br><span class="line">S2 += s1:</span><br><span class="line">cout &lt;&lt;“s2 = s2 + s1: &quot;&lt;&lt; s2 &lt;&lt; endl:</span><br><span class="line">cout &lt;&lt; &quot;length of s2: &quot;&lt;&lt; s2.length() &lt;&lt; endl;</span><br><span class="line">return 0:</span><br></pre></td></tr></table></figure>
+
+<h3 id="输入整行字符串"><a href="#输入整行字符串" class="headerlink" title="输入整行字符串"></a>输入整行字符串</h3><ul>
+<li>getline可以输入整行字符串（要包string头文件）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getline(cin,s2);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输入字符串时，可以使用其他分隔符作为字符串结束的标志将分隔符作为getline的第三个参数即可</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getline(cin,s2,&#x27;,&#x27;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">for (int i = 0; i&lt; 2; i++)&#123;</span><br><span class="line">string city, state;</span><br><span class="line">getline(cin, city, &#x27;,&#x27;);</span><br><span class="line">getline(cin, state);</span><br><span class="line">cout &lt;&lt; &quot;City:&quot; &lt;&lt; city &lt;&lt; &quot;</span><br><span class="line">State:&quot;&lt;&lt; state &lt;&lt; endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="第六章小结"><a href="#第六章小结" class="headerlink" title="第六章小结"></a>第六章小结</h2><ul>
+<li>数组</li>
+<li>指针</li>
+<li>动态存储分配</li>
+<li>指针与数组</li>
+<li>指针与函数</li>
+<li>对象的复制与移动</li>
+<li>字符串</li>
+</ul>
  
       <!-- reward -->
       
@@ -679,7 +736,7 @@
     <ul>
       <li>
         Copyrights &copy;
-        2015-2024
+        2021-2024
         <i class="ri-heart-fill heart_icon"></i> SHIOKOU
       </li>
     </ul>
