@@ -160,6 +160,493 @@
     
     
     <article
+  id="post-带中间铰的分析"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/05/27/%E5%B8%A6%E4%B8%AD%E9%97%B4%E9%93%B0%E7%9A%84%E5%88%86%E6%9E%90/"
+    >带中间铰的分析</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/05/27/%E5%B8%A6%E4%B8%AD%E9%97%B4%E9%93%B0%E7%9A%84%E5%88%86%E6%9E%90/" class="article-date">
+  <time datetime="2024-05-26T17:03:39.000Z" itemprop="datePublished">2024-05-27</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p> 加快画弯矩图速度的原理：将弯矩当成一个没有彻底旋完的螺丝</p>
+<ol>
+<li><p>在铰连接处，如果没有集中力偶矩作用，其弯矩应<br>为零。</p>
+</li>
+<li><p>在自由端处，如果没有集中力作用，其剪力应为零;<br>如果没有集中力偶矩作用，其弯矩应为零。</p>
+</li>
+<li><p>对称结构承受对称荷载，其剪力图反对称，弯矩图<br>对称。</p>
+</li>
+<li><p>对称结构承受反对称荷载，其剪力图对称，弯矩图<br>反对称。</p>
+</li>
+</ol>
+</blockquote>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
+  id="post-洛谷P1002过河卒带来的思考"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/"
+    >洛谷P1002过河卒带来的思考</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/" class="article-date">
+  <time datetime="2024-05-23T18:18:39.000Z" itemprop="datePublished">2024-05-24</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="动态规划（Dynamic-Programing）"><a href="#动态规划（Dynamic-Programing）" class="headerlink" title="动态规划（Dynamic Programing）"></a>动态规划（Dynamic Programing）</h1><h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><p>dynamic programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems.</p>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">斐波那契数列可以看作一个简易的DP问题</span><br><span class="line">F(n)=F(n-1)+F(n-2);(n&gt;=3)</span><br><span class="line">F(10)=F(9)+F(8);</span><br><span class="line">F(9)=F(8)+F(7);</span><br><span class="line">……</span><br><span class="line">F(3)=F(2)+F(1);</span><br></pre></td></tr></table></figure>
+
+<p>如果是使用递归思路，那么程序需要将每一次需要的元素都重新算一次，会导致重复的运算，如果是在DP算法里面，每一次算过的数都用一个数组或者哈希表存储起来，之后就可以复用了，这样能减少运算量。</p>
+<h2 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h2><h4 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h4><p>F(n-1)和F(n-2)称为F(n)的最优子结构</p>
+<h4 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h4><p>F(n)&#x3D;F(n-1)+F(n-2)就称为状态转移方程</p>
+<h4 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h4><p>F(1) &#x3D; 1, F(2) &#x3D; 2 就是边界啦</p>
+<h4 id="重叠子问题"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题</h4><p>比如F(10)&#x3D; F(9)+F(8),F(9) &#x3D; F(8) + F(7) ,f(8)就是重叠子问题</p>
+<h2 id="适用例题"><a href="#适用例题" class="headerlink" title="适用例题"></a>适用例题</h2><blockquote>
+<p>如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。</p>
+</blockquote>
+<p>比如一些求最值的场景，如<strong>最长递增子序列、最小编辑距离、背包问题、凑零钱问题</strong>等等，都是动态规划的经典应用场景。</p>
+<p>动态规划的核心思想就是<strong>拆分子问题，记住过往，减少重复计算。</strong> 并且动态规划一般都是自底向上的，因此到这里，基于<strong>青蛙跳阶</strong>问题，我总结了一下我做动态规划的思路：</p>
+<h4 id="穷举分析"><a href="#穷举分析" class="headerlink" title="穷举分析"></a>穷举分析</h4><h4 id="确定边界"><a href="#确定边界" class="headerlink" title="确定边界"></a>确定边界</h4><h4 id="找出规律，确定最优子结构"><a href="#找出规律，确定最优子结构" class="headerlink" title="找出规律，确定最优子结构"></a>找出规律，确定最优子结构</h4><h4 id="写出状态转移方程"><a href="#写出状态转移方程" class="headerlink" title="写出状态转移方程"></a>写出状态转移方程</h4><h4 id="leetcode案例分析"><a href="#leetcode案例分析" class="headerlink" title="leetcode案例分析"></a>leetcode案例分析</h4><blockquote>
+<p>给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [10,9,2,5,3,7,101,18]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,1,0,3,2,3]</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>穷举分析</p>
+<p>因为动态规划，核心思想包括<strong>拆分子问题，记住过往，减少重复计算。</strong> 所以我们在思考原问题：<strong>数组num[i]的最长递增子序列长度时</strong>，可以思考下<strong>相关子问题</strong>，比如原问题是否跟<strong>子问题</strong>num[i-1]的最长递增子序列长度有关呢？</p>
+</li>
+<li><p>在穷举分析的时候，可以将元素写成两个数组的形式，这样便于找寻规律。</p>
+</li>
+<li><p>现在让我们分析一下</p>
+<table>
+<thead>
+<tr>
+<th>nums的元素数量</th>
+<th>最大子序列长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>{10} 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>{10}||{9} 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>{10}||{9}||{2} 1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>{2，5} 2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>{2，3}||{2，5} 2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>{2，3，7}||{2，5，7} 3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>{2，3，7，101}||{2，5，7，101} 4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>{2，3，7，18}||{2，5，7，18} 4</td>
+</tr>
+</tbody></table>
+<p>可以得到，最大子序列长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Dp[i]=max&#123;Dp[j]&#125;+1;</span><br><span class="line">j&gt;=0&amp;&amp;j&lt;=i-1;</span><br><span class="line">nums[i]&gt;nums[j];</span><br></pre></td></tr></table></figure>
+
+<p>符合这样的状态转移方程</p>
+<p>最优子结构：max{Dp[j]}+1.</p>
+<p>状态转移方程：Dp[i]&#x3D;max{Dp[j]}+1.</p>
+<p>边界：Dp[0]&#x3D;1.</p>
+<p>出现了重叠子问题.</p>
+<p>所以给出本题的题解</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int lengthOfLIS(int[] nums) &#123;</span><br><span class="line">    if(nums.size()==0)</span><br><span class="line">    &#123;return 0;&#125;</span><br><span class="line">    //保证程序的健壮性</span><br><span class="line">    int Dp[nums.size()];</span><br><span class="line">    Dp[0]=1;</span><br><span class="line">    //声明一个数组，用来存储目标值</span><br><span class="line">    for(int i=0;i&lt;nums.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">    for(int j=0;j&lt;i-1;j++)</span><br><span class="line">    &#123;</span><br><span class="line">    if(nums[i]&gt;nums[j])</span><br><span class="line">    &#123;</span><br><span class="line">    Dp[i]=max(Dp[j])+1;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;Dp[i]=max(Dp[j]);&#125;</span><br><span class="line">    //分类：满足飞升条件的+1，不满足的占位</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //利用双重循环遍历所列举的情况，将最终值算出来</span><br><span class="line">    return Dp[nums.size()-1];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="几种不同的解决思路"><a href="#几种不同的解决思路" class="headerlink" title="几种不同的解决思路"></a>几种不同的解决思路</h1><p>下面是过河卒的集中不同思路。</p>
+<h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
+  id="post-神树之馆汉化日志"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/"
+    >神树之馆汉化日志</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/" class="article-date">
+  <time datetime="2024-05-23T11:13:07.000Z" itemprop="datePublished">2024-05-23</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>神树之馆简要介绍</p>
+<p>民俗学を専攻する大学生の主人公、工月秋成（くげつ あきなり）は、卒業論文に必要な資料を探していた。大学の友人である四ツ谷麻子（よつたに あさこ）は、四国の山中にそびえ立つ親類の那越（なごし）邸、通称「真珠邸」を工月に紹介し、2人でそこへ赴くことになった。車で真珠邸にたどり着いた2人は、館をひとり管理するメイドの知里紫織（ともさと しおり）に迎えられ、案内された書庫で資料を探し始める。<br>館の住人は紫織の他に3人。そのうちの2人である双子の少女、斎（いつき）と伊美（いみ）は、外部の人間を警戒してか工月たちに近付こうとせず、もう1人である館の主人にいたっては姿さえ現さない。<br>館に着いた夜、工月は夢の中で真珠邸の奥に囚われたアルビノの少女に出会う。そして、2人を館に閉じ込めるように降りしきる雨。工月は、この不可解な館に知らず足を踏み入れてゆくのだった。</p>
+</blockquote>
+<h2 id="主要人物"><a href="#主要人物" class="headerlink" title="主要人物"></a>主要人物</h2><p><strong>工月秋成（くげつ あきなり）</strong>：主人公。大学生であり卒業論文を書いている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/62/f7/89831_crt_O42aS.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>四ツ谷麻子（よつたに あさこ）</strong>：主人公と同じ大学に通う学生。主人公とは友達以上、恋人未満の関係。いわゆる世話焼きヒロインタイプで、処女。しっかりしているように見られやすいが、意外ともろい部分があり、実は寂しがり屋。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/15/87/89832_crt_2Ee63.jpg" alt="img" style="zoom: 67%;">
+
+<p><strong>知里紫織（ともさと しおり）</strong>：館の一切を取り仕切っているメイド。穏やかで優しい性格。書物全般に対して造詣が深い。昼は淑女、夜は娼婦、といったタイプ。性に関する技術や、男を喜ばせるテクニックに長けていて、主人公に対しては、誘惑者の役割。非処女。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/9d/a7/89833_crt_NN70S.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>斎（いつき）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/48/e6/89834_crt_CHc06.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>伊美（いみ）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/5a/bc/89835_crt_xHIG8.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>竜胆（りんどう）</strong>：謎の住人。透き通るほどに白い、アルビノの少女。屋敷の奥で生活しているらしく、普段、顔を出すことは滅多にない。「神樹の館」の守り神的存在。住人たちの間では、一種のタブーとして畏れ、敬われている。彼女の意思ひとつで、館はその姿を変貌させる。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/2b/f5/89836_crt_w3pjt.jpg" alt="img" style="zoom:67%;">
+
+<h2 id="翻译日记"><a href="#翻译日记" class="headerlink" title="翻译日记"></a>翻译日记</h2><p>Q1：日语的连体形是否可以望文生义？</p>
+<p>Q2：推量助词该怎么翻译？</p>
+<p>Q3：语气词该怎么翻译？</p>
+<h2 id="翻译生词"><a href="#翻译生词" class="headerlink" title="翻译生词"></a>翻译生词</h2><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E3%81%9F%E3%81%BE%E3%81%92%E3%82%8B">「たまげる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E3%82%86%E3%81%8B%E3%82%8A">「ゆかり」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+<blockquote>
+<p>ゆかりの花言葉は？</p>
+<p>Conversation. ユカリさんは多分、紫草からかな……花言葉は<strong>「追憶」「あなたを忘れない」</strong>みたいな意味合いだし……紫は縁(ゆかり)の色ですからね……</p>
+</blockquote>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E6%AD%AF%E5%88%87%E3%82%8C%E3%81%8C%E6%82%AA%E3%81%84#:~:text=%E8%A8%80%E3%81%84%E6%A7%98%E3%81%8C%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%97%E3%81%AA%E3%81%84%E3%81%95%E3%81%BE,%E3%81%AA%E3%81%A9%E3%82%92%E6%84%8F%E5%91%B3%E3%81%99%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">「歯切れが悪い(はぎれがわるい)」の意味や … - Weblio国語辞典</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E5%BC%95%E3%81%8D%E5%AF%84%E3%81%9B%E3%82%8B">「引き寄せる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E3%81%BC%E3%81%86%E3%81%A3%E3%81%A8">「ぼうっと」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E5%83%85%E3%81%8B%E3%81%AA">「僅かな(はつかな、わずかな)」の意味や使い方 わかり …</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://dictionary.goo.ne.jp/word/%E8%A1%A3%E6%93%A6%E3%82%8C/">衣擦れ／衣摺れ（きぬずれ） とは？ 意味・読み方・使い方</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.weblio.jp/content/%E8%B8%B5%E3%82%92%E8%BF%94%E3%81%99">踵を返すの意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p>「おや、と思わせた」：日文中「おや」表示惊讶或疑惑的感觉，可以翻译为「让他产生疑惑」</p>
+</li>
+<li><p><strong>ほどなくして</strong>：这个词意为「不久之后，没过多久」。</p>
+</li>
+<li><p>「くるぶし」在日语中指的是「脚踝」。中文翻译为「脚踝」或「踝骨」</p>
+</li>
+<li><p>「据（す）わり」这个词在日语中通常有「坐」或「固定」的意思。根据具体语境可以有不同的翻译方式。</p>
+</li>
+<li><p>「{据:す}わりの悪さ」：此处的「すわりの悪さ」指的是一种不适感或不自然的感觉</p>
+</li>
+<li><p>「{釣瓶:つ　る　べ}落とし」：表示迅速下降，这个词源自一种汲水用的工具桶（釣瓶），被放入井里时会迅速下落。这里用来形容天色很快变黑。</p>
+</li>
+<li><p>「疲れをほぐしていて下さいな」：放松疲劳，休息一下</p>
+</li>
+<li><p>「なんの」：没关系，不用在意</p>
+</li>
+<li><p>まだお夕食まで間がある：离晚饭时间还早</p>
+</li>
+<li><p>「のですよ」：带有委婉语气，表示解释或提醒</p>
+</li>
+<li><p>「とおっしゃいましたが」：您这么说了，不过</p>
+</li>
+<li><p>「案内する」：引导、带路，引导的动作</p>
+</li>
+<li><p>「{艶:なまめ}かしい」：妩媚，富有魅力</p>
+</li>
+<li><p>「かえって」：反而</p>
+</li>
+<li><p>「膨らみ」：曲线，隆起</p>
+</li>
+<li><p>「地味な造り」：朴素的设计</p>
+</li>
+<li><p>「色合い」：色调</p>
+</li>
+<li><p><strong>際立つ</strong>：凸显，显得更加明显</p>
+</li>
+<li><p>「エプロン」：围裙</p>
+</li>
+<li><p>「ふっくらした」：丰满的，柔和的</p>
+</li>
+<li><p>「図星」：要害，弱点</p>
+</li>
+<li><p>「をさされ」：被戳中，被指出</p>
+</li>
+<li><p>「狼狽える（うろたえる）」：惊慌失措，狼狈</p>
+</li>
+</ol>
+<h2 id="文言文"><a href="#文言文" class="headerlink" title="文言文"></a>文言文</h2><h3 id="梅圣俞诗集序"><a href="#梅圣俞诗集序" class="headerlink" title="梅圣俞诗集序"></a>梅圣俞诗集序</h3><ol>
+<li><p>予闻世谓诗人少达而多穷，夫岂然哉？盖世所传诗者，多出于古穷人之辞也。凡士之蕴其所有，而不得施于世者，多喜自放于山巅水涯之外，见虫鱼草木风云鸟兽之状类，往往探其奇怪，内有忧思感愤之<strong>郁积</strong>，其兴于怨刺，以道<strong>羁臣寡妇</strong>之所叹，而写人情之难言。盖愈穷则愈工。然则非诗之能穷人，<strong>殆</strong>穷者而后工也。</p>
+<blockquote>
+<p>我听到世人常说：诗人仕途畅达的少，困厄的多。难道真是这样吗？大概是由于世上所流传的诗歌，多出于古代困厄之士的笔下吧。大凡胸藏才智而又不能充分施展于世的士人，大都喜爱到山头水边去放浪形骸，看见虫鱼草木风云鸟兽等事物，往往探究它们的奇特怪异之处，内心有着忧愁感慨愤激的郁积，这些情感化为诗兴，即寄托在怨恨讽刺之中，道出了逐臣寡妇的慨叹，而写出了人所难于言传的感受来。大概越困厄就越能写得工巧。如此说来，并非写诗使人穷困潦倒，大概是穷困潦倒后才能写出好诗来。</p>
+</blockquote>
+</li>
+<li><p>予友梅圣俞，少以<strong>荫补</strong>为吏，累举进士，<strong>辄抑</strong>于有司，困于州县，凡十余年。年今五十，犹从辟书，为人之佐，郁其所蓄，不得奋见于事业。其家宛陵，幼习于诗，自为童子，出语已惊其长老。既长，学乎六经仁义之说，其为文章，<strong>简古纯粹</strong>，不求<strong>苟说</strong>于世。世之人徒知其诗而已。然时无贤愚，语诗者必求之圣俞；圣俞亦自以其不得志者，乐于诗而发之，故其平生所作，于诗尤多。世既知之矣，而未有荐于上者。昔王文康公尝见而叹曰：“二百年无此作矣！”虽知之深，亦不果荐也。若使其幸得用于朝廷，作为雅、颂，以歌咏大宋之功德，荐之清庙，而追商、周、鲁颂之作者，岂不伟欤！奈何使其老不得志，而为穷者之诗，乃徒发于虫鱼物类，羁愁感叹之言。世徒喜其工，不知其穷之久而将老也！可不惜哉！</p>
+<blockquote>
+<p>我的朋友梅圣俞，年轻时由于荫袭补为下级官吏，屡次考进士，总是遭到主考部门的压制，在地方上困厄了十多年。年已五十了，还要靠别人下聘书，去当人家的办事员。郁积着自己的才能智慧，不能在事业上充分地表现出来。他家乡在宛陵，幼年时就学习诗歌，从他还是个孩童时起，写出诗句来就已使得父老长辈惊异了。等到长大，学习了六经仁义的学问，他写出的文章简古纯正，不希求苟且取悦于世人，因此世人只知道他会写诗罢了。然而当时人不论贤愚，谈论诗歌必然会向圣俞请教。圣俞也把自己不得志的地方，喜欢通过诗歌来发泄，因此他平时所写的东西，其中诗歌就特别多。社会上已经知道他了，却没有人向朝廷推荐他。从前王文康公曾看到他的诗作，慨叹地说：“二百年没有这样的作品了！”虽然对他了解很深，可还是没有加以推荐。假使他有幸得到朝廷的任用，写出如《诗经》中雅、颂那样的作品，来歌颂大宋的功业恩德，献给宗庙，使他类似于商颂、周颂、鲁颂等作者，难道不是很壮伟的吗？可惜他到老也不得志，只能写困厄者的诗歌，白白地在虫鱼之类上抒发穷苦愁闷的感叹。社会上只喜爱他诗歌的工巧，却不知道他困厄已久将要老死了，这难道不值得叹息吗？</p>
+</blockquote>
+</li>
+<li><p>圣俞诗既多，不自收拾。其妻之兄子谢景初，惧其多而易失也，取其自洛阳至于吴兴以来所作，次为十卷。予尝嗜圣俞诗，而患不能尽得之，<strong>遽喜</strong>谢氏之能类次也，<strong>辄序</strong>而藏之。</p>
+<blockquote>
+<p>圣俞的诗很多，自己却不收拾整理。他的内侄谢景初担心它太多容易散失，选取他从洛阳到吴兴这段时间的作品，编为十卷。我曾经酷爱圣俞的诗作，担心不能全部得到它，十分高兴谢氏能为它分类编排，就为之作序并保存起来。</p>
+</blockquote>
+</li>
+<li><p>其后十五年，圣俞以疾卒于京师，余<strong>既</strong>哭而铭之，因索于其家，得其遗稿千余篇，并旧所藏，<strong>掇</strong>其尤者六百七十七篇，为一十五卷。呜呼！吾于圣俞诗论之详矣，故不复云。</p>
+<blockquote>
+<p>从那以后过了十五年，圣俞因病在京师去世，我已痛哭着为他写好了墓志铭，便向他家索求，得到他的遗稿一千多篇，连同先前所保存的，选取其中特别好的共六百七十七篇，分为十五卷。啊，我对圣俞的诗歌已经评论得很多了，所以不再重复。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="五代史宦者传论"><a href="#五代史宦者传论" class="headerlink" title="五代史宦者传论"></a>五代史宦者传论</h3><ol>
+<li><p>自古宦者乱人之国，其源深于女祸。女，色而已，宦者之害，非<strong>一端</strong>也。</p>
+<blockquote>
+<p>自古以来，宦官扰乱国家，比女人造成的祸患还要严重。女人，只不过是使君主沉溺于美色罢了，而宦官的危害可不止一条。</p>
+</blockquote>
+</li>
+<li><p>盖其<strong>用事</strong>也近而习，其为心也专而<strong>忍</strong>。能以小善中人之意，小信固人之心，使人主必信而亲之。待其已信，然后惧以祸福而把持之。虽有忠臣硕士列于朝廷，而人主以为去己疏远，不若起居饮食、前后左右之亲<strong>可恃</strong>也。故前后左右者日益亲，而忠臣硕士日益疏，而人主之势日益孤。势孤，则惧祸之心日益切，而把持者日益<strong>牢。安危出其喜怒，祸患伏于</strong>帷闼<strong>，则向之所谓</strong>可恃**者，乃所以为患也。</p>
+<blockquote>
+<p>宦官所担当的职责就是侍奉在君主身边，容易与君主形成亲密关系，他们的用心专一并且毒辣，他们能用微小的好处来迎合别人的心意，能用小忠小信获得君主的信任，使人君必然信任、亲近他们。等到获得了君主的完全信任，然后就用祸福来恐吓他、挟制他。这时候虽然有忠臣贤士在朝中，但君主认为他们和自己关系疏远，不如侍奉他起居饮食、成天在自己左右侍奉自己的亲随那样可靠。所以君主与成天在左右侍奉自己的人日益亲密，而对忠臣贤士们则日益疏远，君主便会日益变得势单力孤。势单力孤，则惧怕发生祸患的心理就更加严重。而挟持自己的人的地位就会更加牢固。君主的安危，决定于这些人的喜怒；而祸患就潜伏在他的内廷之中。于是过去认为可以依靠的人，正是现在为患的根源。</p>
+</blockquote>
+</li>
+<li><p>患已深而觉之，欲与疏远之臣<strong>图</strong>左右之亲近，缓之则养祸而益深，急之则挟人主以为质。虽有圣智，不能与谋。谋之而不可为，为之而不可成，至其甚，则俱伤而两败。故其大者亡国，其次亡身，而使奸豪得借以为资而起，至抉其种类，尽杀以快天下之心而后已。此前史所载宦者之祸常如此者，非一世也。</p>
+<blockquote>
+<p>当发觉祸患已深的时候，想要和平日里疏远的大臣们一起除掉左右的亲随，行动慢了就会使祸患日益严重；操之过急，又会使那些亲随挟持自己作为人质。这时候即使是智慧再高的人，也不能与他共商对策了。就算是能够商议对策，也很难实际着手去做。即使做了，也有可能不成功，到了最严重的时候，很可能产生两败俱伤的后果。祸患大的可以亡国，次一点的会让自己丧命，并且会使世上的奸雄们以此为借口乘机而起，把宦官与其同党尽皆除掉，大快天下人之心后才算完。过去历史上记载的宦官之祸往往如此，而且不止一代。</p>
+</blockquote>
+</li>
+<li><p>夫为人主者，非欲养祸于内，而疏忠臣硕士于外，盖其渐积而势使之然也。夫女色之惑，不幸而不悟，而祸斯及矣。使其一悟，捽而去之可也。宦者之为祸，虽欲悔悟，而势有不得而去也，唐昭宗之事是已。故曰“深于女祸者”，谓此也。可不戒哉？</p>
+<blockquote>
+<p>作为君主，并不是故意要在宫中养虎成患，在朝堂之上疏远忠臣贤士，这是日积月累逐步发展而成的，是形势发展使他自然而然地走入此途的。所以沉迷于女色，如果不幸一直执迷不悟，那么祸患就要随之降临了；但是一旦醒悟，把她们撵出去就行了。而宦者造成的祸患，虽然有所悔悟，但已经形成的形势使得自己没有办法把他们除掉；唐昭宗的事就是这样。所以说“比女人造成的祸患还要严重”，就是指这些，怎能不有所戒惧呢？</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="中古日语"><a href="#中古日语" class="headerlink" title="中古日语"></a>中古日语</h2><table>
+<thead>
+<tr>
+<th>活用型 （活用の種類）</th>
+<th>例語</th>
+<th>語幹</th>
+<th>未然</th>
+<th>連用</th>
+<th>終止</th>
+<th>連体</th>
+<th>已然</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>四段</td>
+<td>聞く</td>
+<td>聞</td>
+<td>か</td>
+<td>き</td>
+<td>く</td>
+<td>く</td>
+<td>け</td>
+<td>け</td>
+</tr>
+<tr>
+<td>上二段</td>
+<td>起く</td>
+<td>起</td>
+<td>き</td>
+<td>き</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>きょ</td>
+</tr>
+<tr>
+<td>下二段</td>
+<td>受く</td>
+<td>受</td>
+<td>け</td>
+<td>け</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>けよ</td>
+</tr>
+<tr>
+<td>上一段</td>
+<td>着る</td>
+<td>着</td>
+<td>き</td>
+<td>き</td>
+<td>きる</td>
+<td>きる</td>
+<td>きれ</td>
+<td>きよ</td>
+</tr>
+<tr>
+<td>下一段</td>
+<td>蹴る</td>
+<td>蹴</td>
+<td>け</td>
+<td>け</td>
+<td>ける</td>
+<td>ける</td>
+<td>けれ</td>
+<td>けよ</td>
+</tr>
+<tr>
+<td>カ行変格</td>
+<td>来</td>
+<td>来</td>
+<td>こ</td>
+<td>き</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>こ$\cdot$こよ</td>
+</tr>
+<tr>
+<td>サ行変格</td>
+<td>為</td>
+<td>為</td>
+<td>せ</td>
+<td>し</td>
+<td>す</td>
+<td>する</td>
+<td>すれ</td>
+<td>せよ</td>
+</tr>
+<tr>
+<td>ナ行変格</td>
+<td>往ぬ</td>
+<td>往</td>
+<td>な</td>
+<td>に</td>
+<td>ぬ</td>
+<td>ぬる</td>
+<td>ぬれ</td>
+<td>ぬ</td>
+</tr>
+<tr>
+<td>ラ行変格</td>
+<td>あり</td>
+<td>あ</td>
+<td>ら</td>
+<td>り</td>
+<td>り</td>
+<td>る</td>
+<td>れ</td>
+<td>れ</td>
+</tr>
+</tbody></table>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
   id="post-线代"
   class="article article-type-post"
   itemscope
@@ -1033,1714 +1520,6 @@
 <li><strong>～（よ）うが～（よ）うが／（よ）うと～（よ）うと</strong></li>
 </ol>
 <p>$$<br>\begin{aligned}<br>\left.<br>\begin{aligned}<br>動意向形\\<br>イ形ーかろう\\<br>名／ナ形ーだろう．であろう<br>\end{aligned}<br>\right}<br>\qquad\text{＋が／と}<br>\end{aligned}<br>$$</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-   
-  
-</article>
-
-    
-    <article
-  id="post-文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/"
-    >文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/" class="article-date">
-  <time datetime="2024-05-19T04:43:45.000Z" itemprop="datePublished">2024-05-19</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
-<blockquote>
-<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
-</blockquote>
-<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>名称</th>
-<th>性质</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>differance</td>
-<td>延异</td>
-<td>共时性</td>
-</tr>
-<tr>
-<td>difference</td>
-<td>差异</td>
-<td>历时性</td>
-</tr>
-</tbody></table>
-<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-   
-  
-</article>
-
-    
-    <article
-  id="post-Markdown语法"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/05/18/Markdown%E8%AF%AD%E6%B3%95/"
-    >markdown语法</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/05/18/Markdown%E8%AF%AD%E6%B3%95/" class="article-date">
-  <time datetime="2024-05-18T06:07:36.000Z" itemprop="datePublished">2024-05-18</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="常用公式"><a href="#常用公式" class="headerlink" title="常用公式"></a>常用公式</h2><blockquote>
-<p>一般公式分为两种形式，行内公式和行间公式。行内公式是在公布代码的前后均添加一个$；</p>
-</blockquote>
-<blockquote>
-<p>行间公式则是在公式代码块的前后均添加两个$。</p>
-</blockquote>
-<h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><ol>
-<li><p>行内公式：$ \Gamma(z) &#x3D; \int_0^\infty t^{z-1} e^{-t}dt,. $</p>
-</li>
-<li><p>行间公式：$$\Gamma(z) &#x3D; \int_0^\infty t^{z-1} e^{-t}dt,.$$</p>
-</li>
-</ol>
-<blockquote>
-<p>公式排列：一般使用\binom{a}{b}或者{a\choose b}来实现a，b两个公式的排列。</p>
-</blockquote>
-<h4 id="数学算式"><a href="#数学算式" class="headerlink" title="数学算式"></a>数学算式</h4><p>$\binom{n+1}{2k} $​</p>
-<h4 id="向量公式"><a href="#向量公式" class="headerlink" title="向量公式"></a>向量公式</h4><p>向量表示：使用\mathbf{x}来表示向量x</p>
-<p>数学算式：</p>
-<p>$f(\mathbf{x})&#x3D;\mathbf{w}^T\mathbf{x}$</p>
-<h4 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h4><p>定义函数的时候经常需要分情况给出表达式，使用{。其中：</p>
-<ul>
-<li>使用\来分隔分组；</li>
-<li>使用&amp;来指示需要对齐的位置；</li>
-<li>使用\空格表示空格；</li>
-<li>如果要使分类之间的垂直间隔变大，可以使用[nex]代替\来分隔不同的情况。</li>
-</ul>
-<p>数学算式：</p>
-<ol>
-<li><p>分段函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">y=</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">-x,\quad x&lt;=0\\</span><br><span class="line">x, \quad x&gt;0</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">\tag&#123;1&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>y&#x3D;<br>\begin{cases}<br>-x,\quad x&lt;&#x3D;0\<br>x, \quad x&gt;0<br>\end{cases}<br>\tag{1}<br>$$</p>
-<ol start="2">
-<li><p>方程组</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;array&#125;&#123;&#125;</span><br><span class="line">	a_1x+b_1y+c_1z=d_1 \\</span><br><span class="line">	a_2x+b_2y+c_2z=d_2 \\</span><br><span class="line">	a_3x+b_3y+c_3z=d_3</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right.</span><br><span class="line">\tag&#123;2&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>\left{<br>\begin{array}{}<br>    a_1x+b_1y+c_1z&#x3D;d_1 \<br>    a_2x+b_2y+c_2z&#x3D;d_2 \<br>    a_3x+b_3y+c_3z&#x3D;d_3<br>\end{array}<br>\right.<br>\tag{2}<br>$$</p>
-<ol start="3">
-<li><p>均方误差</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\theta)=\frac&#123;1&#125;&#123;2m&#125;\sum_&#123;i=1&#125;^m(y^i-h_\theta(x^i))^2</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>J(\theta)&#x3D;\frac{1}{2m}\sum_{i&#x3D;1}^m(y^i-h_\theta(x^i))^2<br>$$</p>
-<ol start="4">
-<li><p>批量梯度下降</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\frac&#123;\partial J(\theta)&#125;&#123;\partial \theta_j&#125;=-\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))x^i</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>\frac{\partial J(\theta)}{\partial \theta_j}&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))x^i<br>$$</p>
-<p>推导过程</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\frac &#123;\partial J(\theta)&#125;&#123;\partial \theta_j&#125;=\\</span><br><span class="line">-\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))\frac&#123;\partial&#125;&#123;\partial \theta_j&#125;(y^i-h_\theta(x^i))</span><br><span class="line">=-\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))\frac&#123;\partial&#125;&#123;\partial\theta_j&#125;(\sum_&#123;j=0&#125;^&#123;n&#125;\theta_jx_j^i-y^i&#125;\\</span><br><span class="line">=\frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=0&#125;^&#123;m&#125;(y^i-h_\theta(x^i))x^i_j</span><br></pre></td></tr></table></figure>
-
-
-<p>$$<br>\frac {\partial J(\theta)}{\partial \theta_j}&#x3D;\\-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial \theta_j}(y^i-h_\theta(x^i))\<br>$$</p>
-<p>$$<br>&#x3D;-\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))\frac{\partial}{\partial\theta_j}(\sum_{j&#x3D;0}^{n}\theta_jx_j^i-y^i)\\&#x3D;\frac{1}{m}\sum_{i&#x3D;0}^{m}(y^i-h_\theta(x^i))x^i_j<br>$$</p>
-<ol start="5">
-<li>case环境的使用</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">\int x\,\mathrm&#123;d&#125; x\\</span><br><span class="line">b^2</span><br><span class="line">\end&#123;cases&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>$$<br>a&#x3D;<br>\begin{cases}<br>\int x,\mathrm{d} x\<br>b^2<br>\end{cases}<br>$$</p>
-<ol start="6">
-<li><p>带方框的等式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">\boxed&#123;x^2+y^2=z^2&#125;</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>\begin{aligned}<br>\boxed{x^2+y^2&#x3D;z^2}<br>\end{aligned}<br>$$</p>
-<ol start="7">
-<li><p>最大（最小）操作符</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;gathered&#125;</span><br><span class="line">\operatorname&#123;arg\,max&#125;_a f(a)=\operatorname*&#123;arg\,max&#125;_b f(b)\\</span><br><span class="line">\operatorname&#123;arg\min&#125;_c f(c)=\operatorname*&#123;arg\,min&#125;_d f(d)\\</span><br><span class="line">\end&#123;gathered&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>\begin{gathered}<br>\operatorname{arg,max}_a f(a)&#x3D;\operatorname*{arg,max}_b f(b)\<br>\operatorname{arg\min}_c f(c)&#x3D;\operatorname*{arg,min}_d f(d)\<br>\end{gathered}<br>$$</p>
-<ol start="8">
-<li><p>求极限</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">\lim_&#123;a\to\infty&#125; \tfrac&#123;1&#125;&#123;a&#125;</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>lim_{a\to\infty}\tfrac{1}{a}<br>$$</p>
-<p>$$<br>\begin{aligned}<br>\lim_{a\to\infty} \tfrac{1}{a}<br>\end{aligned}<br>$$</p>
-<ol start="9">
-<li><p>求积分</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1:\begin&#123;aligned&#125;</span><br><span class="line">\int_a^b x^2 \mathrm&#123;d&#125; x</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">2:\begin&#123;aligned&#125;</span><br><span class="line">\int\limits_a^b x^2 \mathrm&#123;d&#125; x</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>\begin{aligned}<br>\int_a^b x^2 \mathrm{d} x<br>\end{aligned}<br>\tag{1}<br>$$</p>
-<p>$$<br>\begin{aligned}<br>\int\limits_a^b x^2 \mathrm{d} x<br>\end{aligned}<br>\tag{2}<br>$$</p>
-<blockquote>
-<p>使用、[2ex]代替\使分组的垂直间隔增大</p>
-</blockquote>
-<ol start="10">
-<li><p>数学算式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;cases&#125;</span><br><span class="line">-x,\quad x\leq 0 \\[3ex]</span><br><span class="line">x,\quad x&gt;0</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">\tag&#123;1&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>y&#x3D;<br>\begin{cases}<br>-x,\quad x\leq 0 \\[3ex]<br>x,\quad x&gt;0<br>\end{cases}<br>\tag{1}<br>$$</p>
-<p><strong>3.多行表达公式</strong></p>
-<p>有时候需要将一行公式分多行进行显示，其中\begin{aligned}表示开始方程，\end{equation}表示方程结束；使用\表示公式换行。\begin{gather}表示环境设置，&amp;表示对齐的位置。</p>
-<ol>
-<li><p>数学算式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">J(\mathbf&#123;x&#125;)=\frac&#123;1&#125;&#123;2m&#125;\sum_&#123;i=1&#125;^&#123;m&#125;(f(x_i)-y_i)^2\\=\frac&#123;1&#125;&#123;2m&#125;\sum_&#123;i-1&#125;^&#123;m&#125;[f(x_i)]^2-2f(x_i)y_i+y_i^2\\</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>J(\mathbf{x})&#x3D;\frac{1}{2m}\sum_{i&#x3D;1}^{m}(f(x_i)-y_i)^2\\&#x3D;\frac{1}{2m}\sum_{i-1}^{m}[f(x_i)]^2-2f(x_i)y_i+y_i^2<br>$$</p>
-<p>常见公式环境</p>
-<table>
-<thead>
-<tr>
-<th>环境名称</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>align</td>
-<td>最基本的对齐环境</td>
-</tr>
-<tr>
-<td>multline</td>
-<td>非对齐环境</td>
-</tr>
-<tr>
-<td>gather</td>
-<td>无对齐的连续方程</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>gathered 允许多行（多组）方程式在彼此之下设置并分配单个方程式编号<br>split 与align *类似，但在另一个显示的数学环境中使用<br>aligned 与align类似，可以在其他数学环境中使用。<br>alignedat 与alignat类似，同样需要一个额外的参数来指定要设置的方程列数。</p>
-</blockquote>
-<p>备注：如果各个方程需要在某个字符处对齐（如等号对齐），只需在所有要对齐的字符前加上&amp;符号。</p>
-<p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">\left.\begin&#123;aligned&#125;</span><br><span class="line">B&#x27;&amp;=-\partial \times E \\</span><br><span class="line">E&#x27;&amp;=\partial\times B-4paij</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">\right\&#125;</span><br><span class="line">\quad \text&#123;Maxwell&#x27;s equations&#125;</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>$$<br>\begin{aligned}<br>\left.\begin{aligned}<br>B’&amp;&#x3D;-\partial \times E \<br>E’&amp;&#x3D;\partial\times B-4paij<br>\end{aligned}<br>\right}<br>\quad \text{Maxwell’s equations}<br>\end{aligned}<br>$$</p>
-<p>$$<br>\begin{aligned}<br>\sigma_1&amp;&#x3D;x+y\quad&amp;\\ \sigma_2&amp;&#x3D;\frac{x}{y}\\<br>\sigma_1&amp;’&#x3D;\frac{\partial x+y}{\partial x}\quad&amp; \\ \sigma_2&amp;&#x3D;\frac{\partial \frac{x}{y}}{\partial x}<br>\end{aligned}\\<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">\sigma_1&amp;=x+y\quad&amp;\sigma_2&amp;=\frac&#123;x&#125;&#123;y&#125;\\</span><br><span class="line">\sigma_1&amp;&#x27;=\frac&#123;\partial x+y&#125;&#123;\partial x&#125;\quad&amp;\sigma_2&amp;=\frac&#123;\partial \frac&#123;x&#125;&#123;y&#125;&#125;&#123;\partial x&#125;</span><br><span class="line">\end&#123;aligned&#125;\\[5ex]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">a_n=\frac&#123;1&#125;&#123;pai&#125;&amp;\int_&#123;-pai&#125;^&#123;pai&#125;f(x)\cos nx\mathrm&#123;d&#125;x\\</span><br><span class="line">=\frac&#123;1&#125;&#123;pai&#125;&amp;\int_&#123;-pai&#125;^&#123;pai&#125;x^2\cos nx\mathrm&#123;d&#125;x\\</span><br><span class="line">J(\theta)=-frac&#123;1&#125;&#123;m&#125;\sum_&#123;i=1&#125;^&#123;m&#125;y_ilogh_\theta(x_i)+(1-y_i)log(1-h_\theta(x_i))</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{aligned}<br>a_n&#x3D;&amp;\frac{1}{\pi}&amp;\int_{-\pi}^{\pi}&amp;f(x)\cos nx&amp;\mathrm{d}x&amp;\<br>&#x3D;&amp;\frac{1}{\pi}&amp;\int_{-\pi}^{\pi}&amp;x^2\cos nx&amp;\mathrm{d}x&amp;\<br>J(\theta)&#x3D;&amp;-\frac{1}{m}&amp;\sum_{i&#x3D;1}^{m}&amp;y_ilogh_\theta(x_i)&amp;+(1-y_i)&amp;log(1-h_\theta(x_i))&amp;<br>\end{aligned}<br>$$</p>
-<p><strong>公式编辑的编号设置</strong></p>
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\tag{标号}</td>
-<td>公式宏包序号设置命令，可以用于带星号公式环境中的公式行</td>
-</tr>
-<tr>
-<td>\tag*{标号}</td>
-<td>作用与\tag相同，知识标号两侧没有圆括号</td>
-</tr>
-</tbody></table>
-<p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x^2+y^2=z^2\tag&#123;1$&#x27;$&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>$$<br>\begin{aligned}<br>x^2+y^2&#x3D;z^2<br>\end{aligned}<br>\tag{1}<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x^4+y^4=z^4\tag&#123;*&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{aligned}<br>x^4+y^4&#x3D;z^4<br>\end{aligned}<br>\tag{*}<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x^5+y^5=z^5\tag*&#123;*&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>x^5+y^5&#x3D;z^5\tag*{*}<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x^6+y^6=z^6\tag&#123;1-1&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>x^6+y^6&#x3D;z^6\tag{1-1}<br>$$</p>
-<h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;pmatrix&#125;1 &amp; 2 \\ 3 &amp; 4\\ \end&#123;pmatrix&#125;\\</span><br><span class="line">\begin&#123;bmatrix&#125;1&amp;2\\3&amp;4\\ \end&#123;bmatrix&#125;\\</span><br><span class="line">\begin&#123;Bmatrix&#125;1&amp;2\\3&amp;4\\ \end&#123;Bmatrix&#125;\\</span><br><span class="line">\begin&#123;Vmatrix&#125;1&amp;2\\3&amp;4\\ \end&#123;Vmatrix&#125;\\</span><br><span class="line">\begin&#123;pmatrix&#125;1&amp;a_1&amp;a_1^2&amp;\cdots&amp;a_1^n\\</span><br><span class="line">1&amp;a_2&amp;a_2^2&amp;\cdots&amp;a_2^n&amp;\\</span><br><span class="line">\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\</span><br><span class="line">1&amp;a_m&amp;a_m^2&amp;\cdots&amp;a_n^n</span><br><span class="line">\end&#123;pmatrix&#125;</span><br><span class="line">\tag&#123;n&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{pmatrix}1 &amp; 2 \\ 3 &amp; 4\ \end{pmatrix}\<br>$$</p>
-<p>$$<br>\begin{bmatrix}1&amp;2\\3&amp;4\ \end{bmatrix}\<br>$$</p>
-<p>$$<br>\begin{Bmatrix}1&amp;2\\3&amp;4\ \end{Bmatrix}\<br>$$</p>
-<p>$$<br>\begin{Vmatrix}1&amp;2\\3&amp;4\ \end{Vmatrix}\<br>$$</p>
-<p>$$<br>\begin{pmatrix}1&amp;a_1&amp;a_1^2&amp;\cdots&amp;a_1^n\\<br>1&amp;a_2&amp;a_2^2&amp;\cdots&amp;a_2^n&amp;\\<br>\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\<br>1&amp;a_m&amp;a_m^2&amp;\cdots&amp;a_n^n<br>\end{pmatrix}<br>\tag{n}<br>$$</p>
-<ol>
-<li><p>不带括号的矩阵</p>
-<p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\tag&#123;1&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>\begin{matrix}<br>   1&amp;2&amp;3\\<br>   4&amp;5&amp;6\\<br>   7&amp;8&amp;9<br>   \end{matrix}<br>   \tag{1}<br>$$</p>
-<ol start="2">
-<li><p>带小括号的矩阵</p>
-<p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left(</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right)</span><br><span class="line">\tag&#123;2&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\left(<br>\begin{matrix}<br>1&amp;2&amp;3\\<br>4&amp;5&amp;6\\<br>7&amp;8&amp;9<br>\end{matrix}<br>\right)<br>\tag{2}<br>$$</p>
-</li>
-<li><p>带中括号的矩阵</p>
-<p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left\&#123;</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right\&#125;</span><br><span class="line">\tag&#123;3&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\left[<br>\begin{matrix}<br>1&amp;2&amp;3\\<br>4&amp;5&amp;6\\<br>7&amp;8&amp;9<br>\end{matrix}<br>\right]<br>\tag{3}<br>$$</p>
-</li>
-<li><p>带大括号的矩阵</p>
-<p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left&#123;</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">1&amp;2&amp;3\\</span><br><span class="line">4&amp;5&amp;6\\</span><br><span class="line">7&amp;8&amp;9</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right&#125;</span><br><span class="line">\tag&#123;4&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\left{<br>\begin{matrix}<br>1&amp;2&amp;3\\<br>4&amp;5&amp;6\\<br>7&amp;8&amp;9<br>\end{matrix}<br>\right}<br>\tag{4}<br>$$</p>
-</li>
-<li><p>带省略号的矩阵</p>
-<p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\left[</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">a&amp;b&amp;\cdots&amp;a\\</span><br><span class="line">b&amp;b&amp;\cdots&amp;b\\</span><br><span class="line">\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\</span><br><span class="line">c&amp;c&amp;\cdots&amp;c&amp;</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">\right]</span><br><span class="line">\tag&#123;5&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\left[<br>\begin{matrix}<br>a&amp;b&amp;\cdots&amp;a\\<br>b&amp;b&amp;\cdots&amp;b\\<br>\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\<br>c&amp;c&amp;\cdots&amp;c&amp;<br>\end{matrix}<br>\right]<br>\tag{5}<br>$$</p>
-</li>
-<li><p>带横线&#x2F;竖线分割的矩阵：</p>
-<p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\left[</span><br><span class="line">\begin&#123;array&#125;&#123;c|cc&#125;</span><br><span class="line">1&amp;2&amp;3&amp;\\</span><br><span class="line">4&amp;5&amp;6&amp;\\</span><br><span class="line">7&amp;8&amp;9&amp;</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right]</span><br><span class="line">\tag&#123;6&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\left[<br>\begin{array}{c|cc}<br>1&amp;2&amp;3&amp;\\<br>4&amp;5&amp;6&amp;\\<br>7&amp;8&amp;9&amp;<br>\end{array}<br>\right]<br>\tag{6}<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\left[</span><br><span class="line">\begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">1&amp;2&amp;3&amp;\\ \hline</span><br><span class="line">4&amp;5&amp;6&amp;\\</span><br><span class="line">7&amp;8&amp;9&amp;</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right]</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\left[<br>\begin{array}{ccc}<br>1&amp;2&amp;3&amp;\\ \hline<br>4&amp;5&amp;6&amp;\\<br>7&amp;8&amp;9&amp;<br>\end{array}<br>\right]<br>$$</p>
-</li>
-</ol>
-<h2 id="上下标符号"><a href="#上下标符号" class="headerlink" title="上下标符号"></a>上下标符号</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$a_i$,$a_{pre}$</td>
-<td>a_i,a_{pre}</td>
-<td>下标使用_</td>
-</tr>
-<tr>
-<td>$a^i$,$a^{pre}$</td>
-<td>a^i,a^{pre}</td>
-<td>上标使用^</td>
-</tr>
-<tr>
-<td>$\bar{a}$</td>
-<td>\bar{a}</td>
-<td></td>
-</tr>
-<tr>
-<td>${a}$</td>
-<td>\cute{a}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\breve{a}$</td>
-<td>\breve{a}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\grave{a}$</td>
-<td>\grave{a}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\dot{a}$</td>
-<td>\dot{a}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\ddot{a}$</td>
-<td>\ddot{a}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\dot{\dot x}$</td>
-<td>\dot{\dot x}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\hat{a}$</td>
-<td>\hat{a}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\widehat{xy}$</td>
-<td>\widehat{xy}</td>
-<td>多字符可用</td>
-</tr>
-<tr>
-<td>$\check{a}$</td>
-<td>\check{a}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\tilde{a}$</td>
-<td>\tilde{a}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\vec{a}$</td>
-<td>\vec{a}</td>
-<td>矢量使用vec{}</td>
-</tr>
-<tr>
-<td>$\overrightarrow{xy}$</td>
-<td>\overrightarow{xy}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\overline{a+b+c+d}$</td>
-<td>\overline{a+b+c+d}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\underline{a+b+c+d}$</td>
-<td>\underline{a+b+c+d}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\overbrace{a+b+c+d}$</td>
-<td>\overbrace{a+b+c+d}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\underbrace{a+b+c+d}$</td>
-<td>\underbrace{a+b+c+d}</td>
-<td></td>
-</tr>
-<tr>
-<td>$\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}$</td>
-<td>\overbrace{a+underbrace{b+c}_1.0}+d}^{2.0}</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h2><p>小括号与方括号</p>
-<ol>
-<li><p>使用原始的()，[]得到的括号大小是固定的，如(2+3)[3+4]:</p>
-</li>
-<li><p>使用\left(或者\right)可以使括号大小与邻近的公式相适应（改语句适用于所有括号类型），如</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\left(</span><br><span class="line">\frac&#123;x&#125;&#123;y&#125;</span><br><span class="line">\right)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>$$<br>\left(<br>\frac{x}{y}<br>\right)<br>$$</p>
-<table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$(,)$</td>
-<td>(,)</td>
-<td></td>
-</tr>
-<tr>
-<td>$[,]$</td>
-<td>[,]</td>
-<td></td>
-</tr>
-<tr>
-<td>$&lt;,&gt;$</td>
-<td>\lang,\lang</td>
-<td></td>
-</tr>
-<tr>
-<td>$</td>
-<td>,</td>
-<td>$</td>
-</tr>
-<tr>
-<td>$\lvert,\rvert$</td>
-<td>\lvert,\rvert</td>
-<td></td>
-</tr>
-<tr>
-<td>$\lbrace,\rbrace$</td>
-<td>\lbrace,\rbiace</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>增大括号的方法：</p>
-<table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$(x)$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\big(x\big)$</td>
-<td>\big(x\big)</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Big(x\Big)$</td>
-<td>\Big(x\Big)</td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigg(x\bigg)$</td>
-<td>\bigg(x\bigg)</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Bigg(x\Bigg)$</td>
-<td>\Bigg(x\Bigg)</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Bigg(\bigg(\Big(\big(x\big)\Big)\bigg)\Bigg)$</td>
-<td>\Bigg(\bigg(\Big(\big(x\big)\Big)\bigg)\Bigg)</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Bigg[\bigg[\Big[\big[x\big]\Big]\bigg]\Bigg]$</td>
-<td>\Bigg[\bigg[\Big[\big[x\big]\Big]\bigg]\Bigg]</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="分式与根式"><a href="#分式与根式" class="headerlink" title="分式与根式"></a>分式与根式</h2><p>分式的表示方法：</p>
-<ol>
-<li>使用\frac{a}{b}表示分式，比如$\frac{a+c+1}{b+c+2}$;</li>
-<li>使用\over来分割一个组的前后两部分，如$\over{b+1}{a+1}$</li>
-</ol>
-<p>\frac 表示连分式：</p>
-<p>数学算式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x=a_0+\frac&#123;1^2&#125;&#123;a_1+\frac&#123;2^2&#125;&#123;a_2+\frac&#123;3^2&#125;&#123;a_3+\frac&#123;4^2&#125;&#123;a_4+\cdots&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>x&#x3D;a_0+\frac{1^2}{a_1+\frac{2^2}{a_2+\frac{3^2}{a_3+\frac{4^2}{a_4+\cdots}}}}<br>$$</p>
-<p>\cfrac表示连分式：</p>
-<table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\frac{a}{b}$</td>
-<td>\frac{a}{b}</td>
-<td>分数使用\frac{分子}{分母}</td>
-</tr>
-<tr>
-<td>$a^i,a^{pre}$</td>
-<td>a^i , a^pre</td>
-<td>上标使用^</td>
-</tr>
-</tbody></table>
-<h2 id="开方"><a href="#开方" class="headerlink" title="开方"></a>开方</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\sqrt{a+b}$</td>
-<td>\sqrt{a+b}</td>
-<td>开方使用\sqrt{}</td>
-</tr>
-<tr>
-<td>$\sqrt[n]{a+b}$</td>
-<td>\sqrt[n]{a+b}</td>
-<td>开n次方使用\sqrt[n]{}</td>
-</tr>
-</tbody></table>
-<h2 id="累加-累乘"><a href="#累加-累乘" class="headerlink" title="累加&#x2F;累乘"></a>累加&#x2F;累乘</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\sum_{i&#x3D;0}^{n}x^2$</td>
-<td>\sum_{i&#x3D;0}^{n} x^2</td>
-<td>累加使用语法\sum_{下标}^{上标}</td>
-</tr>
-<tr>
-<td>$\prod_{i&#x3D;0}^{n}x^2$</td>
-<td>\prod_{i&#x3D;0}^{n} x^2</td>
-<td>累乘使用\prod_{下标}^{上标}</td>
-</tr>
-</tbody></table>
-<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\sin$</td>
-<td>\sin</td>
-<td>正弦</td>
-</tr>
-<tr>
-<td>$\cos$</td>
-<td>\cos</td>
-<td>余弦</td>
-</tr>
-<tr>
-<td>$\tan$</td>
-<td>\tan</td>
-<td>正切</td>
-</tr>
-<tr>
-<td>$\cot$</td>
-<td>\cot</td>
-<td>余切</td>
-</tr>
-<tr>
-<td>$\sec $</td>
-<td>\sec</td>
-<td>反正弦</td>
-</tr>
-<tr>
-<td>$\csc$</td>
-<td>\csc</td>
-<td>反余弦</td>
-</tr>
-<tr>
-<td>$\bot$</td>
-<td>\dot</td>
-<td>垂直</td>
-</tr>
-<tr>
-<td>$\angle$</td>
-<td>\angle</td>
-<td>夹角</td>
-</tr>
-<tr>
-<td>$40^\circ$</td>
-<td>40^\circ</td>
-<td>度数</td>
-</tr>
-</tbody></table>
-<h2 id="对数函数"><a href="#对数函数" class="headerlink" title="对数函数"></a>对数函数</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\ln{(a+b)}$</td>
-<td>\ln{(a+b)}</td>
-<td>以e为底</td>
-</tr>
-<tr>
-<td>$\log_{a}^{b}$</td>
-<td>\log_{a}^{b}</td>
-<td>对数函数</td>
-</tr>
-<tr>
-<td>$\lg{(a+b)}$</td>
-<td>\lg{a+b}</td>
-<td>以10为底</td>
-</tr>
-</tbody></table>
-<h2 id="二元运算符"><a href="#二元运算符" class="headerlink" title="二元运算符"></a>二元运算符</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\pm$</td>
-<td>\pm</td>
-<td></td>
-</tr>
-<tr>
-<td>$\mp$</td>
-<td>\mp</td>
-<td></td>
-</tr>
-<tr>
-<td>$\times$</td>
-<td>\times</td>
-<td></td>
-</tr>
-<tr>
-<td>$\div$</td>
-<td>\div</td>
-<td></td>
-</tr>
-<tr>
-<td>$\ast$</td>
-<td>\ast</td>
-<td></td>
-</tr>
-<tr>
-<td>$\star$</td>
-<td>\star</td>
-<td></td>
-</tr>
-<tr>
-<td>$\mid$</td>
-<td>\mid</td>
-<td></td>
-</tr>
-<tr>
-<td>$\nmid$</td>
-<td>\nmid</td>
-<td></td>
-</tr>
-<tr>
-<td>$\circ$</td>
-<td>\circ</td>
-<td></td>
-</tr>
-<tr>
-<td>$\bullet$</td>
-<td>\bullet</td>
-<td></td>
-</tr>
-<tr>
-<td>$\cdot$</td>
-<td>\cdot</td>
-<td></td>
-</tr>
-<tr>
-<td>$\wr$</td>
-<td>\wr</td>
-<td></td>
-</tr>
-<tr>
-<td>$\diamond$</td>
-<td>\dianmond</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Diamond$</td>
-<td>\Diamond</td>
-<td></td>
-</tr>
-<tr>
-<td>$\triangle$</td>
-<td>\triangle</td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigtriangleup$</td>
-<td>\bigtriangleup</td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigtriangledown$</td>
-<td>\bigtriangledown</td>
-<td></td>
-</tr>
-<tr>
-<td>$\triangleleft$</td>
-<td>\triangleleft</td>
-<td></td>
-</tr>
-<tr>
-<td>$\triangleright$</td>
-<td>\triangleright</td>
-<td></td>
-</tr>
-<tr>
-<td>$\lhd$</td>
-<td>\lhd</td>
-<td></td>
-</tr>
-<tr>
-<td>$\rhd$</td>
-<td>\rhd</td>
-<td></td>
-</tr>
-<tr>
-<td>$\unlhd$</td>
-<td>\unlhd</td>
-<td></td>
-</tr>
-<tr>
-<td>$\unrhd$</td>
-<td>\unrhd</td>
-<td></td>
-</tr>
-<tr>
-<td>$\circ $</td>
-<td>\circ</td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigcirc$</td>
-<td>\bigcirc</td>
-<td></td>
-</tr>
-<tr>
-<td>$\odot$</td>
-<td>\odot</td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigodot$</td>
-<td>\bigodot</td>
-<td></td>
-</tr>
-<tr>
-<td>$\oslash$</td>
-<td>\oslash</td>
-<td></td>
-</tr>
-<tr>
-<td>$\ominus$</td>
-<td>\ominus</td>
-<td></td>
-</tr>
-<tr>
-<td>$\otimes$</td>
-<td>\otimes</td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigotimes$</td>
-<td>\bigotimes</td>
-<td></td>
-</tr>
-<tr>
-<td>$\oplus$</td>
-<td>\oplus</td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigoplus$</td>
-<td>\bigoplus</td>
-<td></td>
-</tr>
-<tr>
-<td>$\dagger$</td>
-<td>\dagger</td>
-<td></td>
-</tr>
-<tr>
-<td>$\ddagger$</td>
-<td>\ddagger</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="关系符号"><a href="#关系符号" class="headerlink" title="关系符号"></a>关系符号</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\leq$</td>
-<td>\leq</td>
-<td></td>
-</tr>
-<tr>
-<td>$\geq$</td>
-<td>\geq</td>
-<td></td>
-</tr>
-<tr>
-<td>$\equiv$</td>
-<td>\equiv</td>
-<td></td>
-</tr>
-<tr>
-<td>$\models$</td>
-<td>\models</td>
-<td></td>
-</tr>
-<tr>
-<td>$\prec$</td>
-<td>\prec</td>
-<td></td>
-</tr>
-<tr>
-<td>$\succ$</td>
-<td>\succ</td>
-<td></td>
-</tr>
-<tr>
-<td>$\sim$</td>
-<td>\sim</td>
-<td></td>
-</tr>
-<tr>
-<td>$\perp$</td>
-<td>\perp</td>
-<td></td>
-</tr>
-<tr>
-<td>$\preceq$</td>
-<td>\preceq</td>
-<td></td>
-</tr>
-<tr>
-<td>$\succeq$</td>
-<td>\succeq</td>
-<td></td>
-</tr>
-<tr>
-<td>$\simeq$</td>
-<td>\simeq</td>
-<td></td>
-</tr>
-<tr>
-<td>$</td>
-<td>\mid</td>
-<td></td>
-</tr>
-<tr>
-<td>$\gg$</td>
-<td>\gg</td>
-<td></td>
-</tr>
-<tr>
-<td>$\asymp$</td>
-<td>\asymp</td>
-<td></td>
-</tr>
-<tr>
-<td>$\parallel$</td>
-<td>\parallel</td>
-<td></td>
-</tr>
-<tr>
-<td>$\approx$</td>
-<td>\approx</td>
-<td></td>
-</tr>
-<tr>
-<td>$\cong$</td>
-<td>\cong</td>
-<td></td>
-</tr>
-<tr>
-<td>$\neq$</td>
-<td>\neq</td>
-<td></td>
-</tr>
-<tr>
-<td>$\doteq$</td>
-<td>\doteq</td>
-<td></td>
-</tr>
-<tr>
-<td>$\propto$</td>
-<td>\propto</td>
-<td></td>
-</tr>
-<tr>
-<td>$\bowtie$</td>
-<td>\bowite</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Join$</td>
-<td>\Join</td>
-<td></td>
-</tr>
-<tr>
-<td>$\smile$</td>
-<td>\smile</td>
-<td></td>
-</tr>
-<tr>
-<td>$\frown$</td>
-<td>\frown</td>
-<td></td>
-</tr>
-<tr>
-<td>$\vdash$</td>
-<td>\vdash</td>
-<td></td>
-</tr>
-<tr>
-<td>$\dashv$</td>
-<td>\dashv</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\lim$</td>
-<td>\ilm</td>
-<td></td>
-</tr>
-<tr>
-<td>$\rightarrow$</td>
-<td>\rightarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\infty$</td>
-<td>\infty</td>
-<td></td>
-</tr>
-<tr>
-<td>$\lim_{n\rightarrow\infty}n$</td>
-<td>\lim_{n\rightarrow+\infty}n</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\vec {a}$</td>
-<td>\vec a</td>
-<td></td>
-</tr>
-<tr>
-<td>$J(\mathbf{w})$</td>
-<td>J{\mathbf{w}}</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a\equiv b \pmod n</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>a\equiv b \pmod n<br>$$</p>
-<h2 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\uparrow$</td>
-<td>\uparrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\downarrow$</td>
-<td>\downarrrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\updownarrow$</td>
-<td>\updownarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Uparrow$</td>
-<td>\Uparrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Downarrow$</td>
-<td>\Downarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Updownarrow$</td>
-<td>\Updownarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\rightarrow$</td>
-<td>\rightarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\leftarrow$</td>
-<td>\leftarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\leftrightarrow$</td>
-<td>\leftrightarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Rightarrow$</td>
-<td>\Rightarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Leftarrow$</td>
-<td>\Leftarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Leftrightarrow$</td>
-<td>\Rightleftarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\longrightarrow$</td>
-<td>\longrightarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\longleftarrow$</td>
-<td>\longleftarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\longleftrightarrow$</td>
-<td>\longrightleftarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Longrightarrow$</td>
-<td>\Longrightarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Longleftarrow$</td>
-<td>\Longleftarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Longleftrightarrow$</td>
-<td>\Longleftrightarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\mapsto$</td>
-<td>\mapsto</td>
-<td></td>
-</tr>
-<tr>
-<td>$\longmapsto$</td>
-<td>\longmapsto</td>
-<td></td>
-</tr>
-<tr>
-<td>$\hookleftarrow$</td>
-<td>\hookleftarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\hookrightarrow$</td>
-<td>\hookrightarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\rightharpoondown$</td>
-<td>\righthaipoonup</td>
-<td></td>
-</tr>
-<tr>
-<td>$\leftharpoondown$</td>
-<td>\leftharpoondown</td>
-<td></td>
-</tr>
-<tr>
-<td>$\rightleftharpoons$</td>
-<td>\rightleftharpoons</td>
-<td></td>
-</tr>
-<tr>
-<td>$\leftharpoonup$</td>
-<td>\leftharpoonup</td>
-<td></td>
-</tr>
-<tr>
-<td>$\rightharpoondown $</td>
-<td>\rightharpoondown</td>
-<td></td>
-</tr>
-<tr>
-<td>$\leadsto$</td>
-<td>\leadsto</td>
-<td></td>
-</tr>
-<tr>
-<td>$\nearrow$</td>
-<td>\nearrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\searrow$</td>
-<td>\searrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\swarrow$</td>
-<td>\swarrow</td>
-<td></td>
-</tr>
-<tr>
-<td>$\nwarrow$</td>
-<td>\nwarrow</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\emptyset$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\varnothing$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\in$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\ni$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\notin$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\subset$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\supset$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\not\subset$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\subseteq$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\subsetneq$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\supseteq$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\cup$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigcup$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\cap$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigcap$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\uplus$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\sqsubset$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\sqsupset$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\sqcup$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\sqcap$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\sqsubseteq$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\sqsupseteq$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\vee$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\wedge$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\setminus$</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="微积分"><a href="#微积分" class="headerlink" title="微积分"></a>微积分</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\prime$</td>
-<td></td>
-<td>一阶导数</td>
-</tr>
-<tr>
-<td>$\int$</td>
-<td></td>
-<td>一重积分</td>
-</tr>
-<tr>
-<td>$\iint$</td>
-<td></td>
-<td>二重积分</td>
-</tr>
-<tr>
-<td>$\iiint$</td>
-<td></td>
-<td>三重积分</td>
-</tr>
-<tr>
-<td>$\oint$</td>
-<td></td>
-<td>曲线积分</td>
-</tr>
-<tr>
-<td>$\nabla$</td>
-<td></td>
-<td>梯度</td>
-</tr>
-</tbody></table>
-<h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><table>
-<thead>
-<tr>
-<th>数学算式</th>
-<th>Markdown公式</th>
-<th>核心语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\because$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\therefore$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\forall$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\exist$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\vee $</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\wedge $</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigvee$</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$\bigwedge$</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><table>
-<thead>
-<tr>
-<th>大写</th>
-<th>Markdown公式</th>
-<th>小写</th>
-<th>Markdown公式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\Alpha$</td>
-<td></td>
-<td>$\alpha$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Beta$</td>
-<td></td>
-<td>$\beta$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Gamma$</td>
-<td></td>
-<td>$\gamma$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Delta$</td>
-<td></td>
-<td>$\delta$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Epsilon$</td>
-<td></td>
-<td>$\epsilon$$\varepsilon$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Zeta$</td>
-<td></td>
-<td>$\zeta $</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Eta$</td>
-<td></td>
-<td>$\Eta$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Theta$</td>
-<td></td>
-<td>$\theta$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Iota$</td>
-<td></td>
-<td>$\iota$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Kappa$</td>
-<td></td>
-<td>$\kappa$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Lambda$</td>
-<td></td>
-<td>$\lambda$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Mu$</td>
-<td></td>
-<td>$\mu$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Nu$</td>
-<td></td>
-<td>$\nu$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Xi$</td>
-<td></td>
-<td>$\xi$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Omicron$</td>
-<td></td>
-<td>$\omicron$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Pi$</td>
-<td></td>
-<td>$\pi$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Rho$</td>
-<td></td>
-<td>$\rho$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Sigma$</td>
-<td></td>
-<td>$\sigma$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Tau$</td>
-<td></td>
-<td>$\tau$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Upsilon$</td>
-<td></td>
-<td>$\upsilon$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Phi$</td>
-<td></td>
-<td>$\phi$$\varphi$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Chi$</td>
-<td></td>
-<td>$\chi$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Psi$</td>
-<td></td>
-<td>$\phi$</td>
-<td></td>
-</tr>
-<tr>
-<td>$\Omega$</td>
-<td></td>
-<td>$\omega$</td>
-<td></td>
-</tr>
-<tr>
-<td>$$</td>
-<td></td>
-<td>$$</td>
-<td></td>
-</tr>
-<tr>
-<td>$$</td>
-<td></td>
-<td>$$</td>
-<td></td>
-</tr>
-<tr>
-<td>$$</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>$$</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><ul>
-<li>实线，箭头，文字</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(汐汐)--&gt;B[汐幸]</span><br><span class="line">B[汐幸]--&gt;C&#123;是不是汐汐人&#125;</span><br><span class="line">C&#123;是不是汐汐人&#125;--&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">graph TB</span><br><span class="line">A(接口请求) --&gt; B[参数校验]</span><br><span class="line">B[参数校验] --&gt; C&#123;校验通过?&#125;</span><br><span class="line">C&#123;校验通过?&#125; -- 通过 --&gt; d[处理业务逻辑]</span><br><span class="line">C&#123;校验不通过&#125; -- 不通过 --&gt; e[结束]</span><br><span class="line">d[处理业务逻辑] --&gt; e(结束)</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">A(接口请求) --&gt; B[参数校验]</span><br><span class="line">B[参数校验] --&gt; C&#123;校验通过?&#125;</span><br><span class="line">C&#123;校验通过?&#125; -- 通过 --&gt; d[处理业务逻辑]</span><br><span class="line">C&#123;校验不通过&#125; -- 不通过 --&gt; e[结束]</span><br><span class="line">d[处理业务逻辑] --&gt; e(结束)</span><br></pre></td></tr></table></figure>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-   
-  
-</article>
-
-    
-    <article
-  id="post-二重积分的运用"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/05/18/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%94%A8/"
-    >二重积分的运用</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/05/18/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%94%A8/" class="article-date">
-  <time datetime="2024-05-17T17:41:59.000Z" itemprop="datePublished">2024-05-18</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="曲面的面积"><a href="#曲面的面积" class="headerlink" title="曲面的面积"></a>曲面的面积</h1><p>​	先讨论空间平面Ⅱ中的有界闭区域的面积和它在Oxy面上投影面的面积的关系。设平面Ⅱ与xOy平面的夹角为$\theta$(0&lt;&#x3D;$\theta$&lt;&#x3D;$\frac{\pi}{2}$),就是说平面Ⅱ方向上的法向量$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角为$\theta$.任意取平面Ⅱ上一片矩形区域A，其边界与x轴或者y轴平行（如图8.43所示），则矩形区域A的面积为A&#x3D;ab，其在xOy平面上的投影的面积</p>
-<p>$\sigma&#x3D;A$$\cos \theta$.</p>
-<p>由相似性，上式对平面Ⅱ上任意的区域A也成立。</p>
-<p>​	下面讨论空间曲面的情形，设曲面$\sum$由一阶连续可导函数z&#x3D;f(x,y)确定，在xOy面上的投影区域为$D_{xy}$,求曲面的面积$\sum$.</p>
-<p>​	如图8.44所示，在曲面$\sum$上任取一点M(x,y,z).过其投影P(x,y)点任取$D_{xy}$内的一小片区域$\mathrm{d}\sigma$,并作以$\mathrm{d}\sigma$的边界曲线为准线而母线平行于z轴的细柱面。在这细柱面内包含的那一小片区域$\mathrm{d}S$&#x3D;$\mathrm{d}A$.通常我们取曲面$\sum$在点M处方向上的法向量为$\mathbf{n}$&#x3D;($-f_x$,$-f_y$,$-1$),</p>
-<p>则$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角的余弦值为：<br>$$<br>\cos \theta&#x3D;\frac{\mathbf{n}\mathbf{k}}{|\mathbf{n}||\mathbf{k}|}&#x3D;\frac{1}{\sqrt{1+f_x^2(x,y)+f_y^2(x,y)}}\tag{1}<br>$$<br>式中，$f_x$表示$f(x,y)$对$x$的偏导数，$f_y$同理。</p>
-<p>​	所以，曲面$\sum$的面积为<br>$$<br>S&#x3D;\iint_{D}\sqrt{1+f_x^2(x,y)+f_x^2(x,y)}\mathrm{d}\sigma\tag{2}<br>$$<br>x、y、z三者之间的关系可以相互交换。</p>
-<p><strong>例题</strong></p>
-<h3 id="例1"><a href="#例1" class="headerlink" title="例1"></a>例1</h3><p>​	求半径为R的半球体的表面积。<br>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\\<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>&#x3D;2\int_{-R}^{R}\mathrm{d}x\int_{0}^{\sqrt{R^2-x^2}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}y\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^R&#x3D;2\pi R<br>$$<br>答案为2$\pi$R.</p>
-<h3 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h3><p>​	设由一颗地球同步轨道通信卫星，距地面的高度为h&#x3D;36.000km，运行的角速度与地球自转的角速度相同，试计算该通信卫星的覆盖面积与地球表面积的比值(地球半径R&#x3D;6400km)。</p>
-<p>由分析可知，卫星信号的半顶角可以设为$\alpha$,则覆盖面积的投影为$D_{xy}$&#x3D;{$(x,y)$|$x^2+y^2&lt;&#x3D;R^2\sin^2\alpha$},</p>
-<p>而原本的方程为$z&#x3D;\sqrt{R^2-x^2-y^2}$,那么我们可以写出对应的面积公式。</p>
-<p>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\ \<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R\sin\alpha}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^{R\sin\alpha}&#x3D;2\pi R(1-\cos\alpha)\\<br>而地球的表面积S_1&#x3D;4\pi R\\<br>故比值\mu&#x3D;\frac{S}{S_1}\times100%\\<br>\mu&#x3D;\frac{1+\cos\alpha}{2}\\<br>\cos \alpha&#x3D;\frac{H}{H+h}\\<br>得\mu&#x3D;42.5%<br>$$</p>
-<h2 id="质心"><a href="#质心" class="headerlink" title="质心"></a>质心</h2><p>​	设有一平面薄片，占有xOy平面上的闭区域D，在点$(x,y)$处的面密度为$\rho(x,y)$,假定$\mu(x,y)$在D上连续。现在求该薄片的质心坐标。</p>
-<p>在闭区域D上任取一点$P(x,y)$及包含点P的直径很小的闭区域$\mathrm{d}{\sigma}$，则平面薄片对x轴和y轴的静力矩元素分别为<br>$$<br>\mathrm{d}M_x&#x3D;y\mu(x,y)\mathrm{d}{\sigma}\\<br>M_x&#x3D;\iint_{D}y\mu(x,y)\mathrm{d}{\sigma}\\<br>\mathrm{d}M_y&#x3D;x\mu(x,y)\mathrm{d}{\sigma}\\<br>M_y&#x3D;\iint_{D}xy(x,y)\mathrm{d}{\sigma}\\<br>M&#x3D;\iint_{D}\mu(x,y)\mathrm{d}{\sigma}<br>$$<br>设平面薄片的质心坐标为$(\bar x,\bar y)$，由于$\bar x M&#x3D;M_y,\bar y M&#x3D;M_x$，于是：<br>$$<br>\bar x&#x3D;\frac{M_y}{M}&#x3D;\frac{\iint_{D}x\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>\bar y&#x3D;\frac{M_x}{M}&#x3D;\frac{\iint_{D}y\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>$$<br>若平面薄片的面密度是常数，面积为$\sigma$​，则平面薄片的质心（成为形心）的公式为<br>$$<br>\bar x&#x3D;\frac{1}{\sigma}\iint_{D}x{d}{\sigma}\\<br>\bar y&#x3D;\frac{1}{\sigma}\iint_{D}y{d}{\sigma}\\<br>$$</p>
-<h3 id="例3"><a href="#例3" class="headerlink" title="例3"></a>例3</h3><p>​	求位于两圆$\rho&#x3D;2\sin\theta$和$\rho&#x3D;4\sin\theta$之间的均匀薄片的质心</p>
-<p>分析可知，图形关于y轴对称，最后质心一定在y轴上，且面密度为常数。<br>$$<br>\bar y&#x3D;\frac{\iint_{D}y{d}{\sigma}}{S_总}\\<br>\iint_{D}y{d}{\sigma}&#x3D;\int_{0}^{\pi}{d}{\theta}\int_{2\sin {\theta}}^{4\sin\theta}\rho\sin\theta\rho{d}{\rho}{}\\<br>&#x3D;\int_{0}^{\pi}\sin\theta[\frac{1}{3}\rho^3]<em>{2\sin\theta}^{4sin\theta}{d}{\theta}\\<br>&#x3D;\frac{56}{3}\int</em>{0}^{\pi}\sin^4\theta{d}{\theta}\\<br>&#x3D;\frac{112}{3}\frac{3}{4}\frac{1}{2}\frac{\pi}{2}\\<br>&#x3D;7\pi<br>$$</p>
-<h3 id="例4"><a href="#例4" class="headerlink" title="例4"></a>例4</h3><p>​	求均匀半球体的质心<br>$$<br>x^2+y^2+z^2&#x3D;R^2\\<br>可以得知，质心在z轴上\\<br>\bar z&#x3D;\frac{1}{V_总}\iiint_{V_1}z{d}{V}\\<br>\iiint_{V_1}z{d}{V}&#x3D;\\<br>&#x3D;\int_{0}^{\frac{\pi}{2}}{d}{\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho\cos\phi\rho^2\sin\phi{d}{\rho}\\<br>&#x3D;\frac{1}{4}\int_{0}^{\frac{\pi}{2}}\sin2\phi{d}{2\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho^3{d}{\rho}\\<br>&#x3D;\frac{\pi}{4}R^4\\<br>所以\bar z&#x3D;\\<br>\frac{\frac{\pi}{4}R^4}{\frac{2\pi R^3}{3}}\\<br>&#x3D;\frac{3a}{8}\\<br>故最后坐标为\left(0,0,\frac{3a}{8}\right)<br>$$</p>
-<h2 id="转动惯量"><a href="#转动惯量" class="headerlink" title="转动惯量"></a>转动惯量</h2><p>​	设由一平面薄片，占有xOy面上的闭区域D，在点$P(x,y)$处的面密度为$\mu(x,y)$,假定$\rho(x,y)$在 D上连续.现在求该薄片对于x轴的转动惯量和y轴的转动惯量.</p>
-<p>​	在闭区域 D上任取一点 P(x，y)，及包含点 P 的一直径很小的闭区域 $\mathrm{d}{ \sigma}$，则平面薄片对于x轴的转动惯量和y轴的转动惯量的元素分别为<br>$$<br>dI_x&#x3D;y^2\mu(x,y)d{\sigma}\\<br>dI_y&#x3D;x^2\mu(x,y)d{\sigma}\\<br>$$<br>整片平面薄片对于z轴的转动惯量和y轴的转动惯量分别为<br>$$<br>I_x&#x3D;\iint_{D}y^2\mu(x,y)d{\sigma}\\<br>I_y&#x3D;\iint_{D}x^2\mu(x,y)d{\sigma}<br>$$</p>
-<h3 id="例5"><a href="#例5" class="headerlink" title="例5"></a>例5</h3><p>求半径为a的均匀半圆薄片(面密度为常量μ)对其直径边的转动惯量.</p>
-<p>解 建立坐标系,如图 8.47 所示，则薄片所占闭区域 D可表示为<br>$$<br>D&#x3D;{(x,y)|x^2+y^2&lt;&#x3D;a^2.y&gt;&#x3D;0}\<br>则半圆薄片对于x轴的转动惯量为\\<br>I_x&#x3D;\iint_{D}\mu y^2d{\sigma}\\<br>&#x3D;\mu\int_{0}^{\pi}\sin^2d{\theta}\int_{0}^{a}\rho^3d{\rho}\\<br>&#x3D;\frac{1}{4}\mu a^4\frac{\pi}{2}\\<br>&#x3D;\frac{1}{4}Ma^2\\<br>M&#x3D;\frac{1}{2}\pi a^2\mu为半圆薄片的质量<br>$$</p>
-<h3 id="例6"><a href="#例6" class="headerlink" title="例6"></a>例6</h3><p>​	求密度为$\mu$的均匀球体对于过球心的一条轴l的转动惯量.<br>解 取球心为坐标原点，z轴与轴l重合,又设球的半径为a,则球体所占空间闭区域为：<br>$$<br>V&#x3D;(x,y,z)|x^2+y^2+z^2&lt;&#x3D;a^2\\<br>所求转动惯量即对于z轴的转动惯量I_z为\\<br>I_z&#x3D;\iiint_{V}(x^2+y^2){\rho}d{v}\\<br>&#x3D;\rho\iiint_{D}(r^2\sin^2\varphi\cos\theta+r^2sin^2\varphi \sin^2\theta)r^2\sin\varphi drd\varphi d\theta\\<br>&#x3D;{\rho}\iiint_{D}r^4\sin^3\varphi drd\varphi d\theta\\<br>&#x3D;{\rho}\int_{0}^{2\pi}d\theta\int_0^\pi \sin^3\varphi d\varphi\int_{0}^{a}r^4dr\\<br>&#x3D;\frac{8}{15}\pi a^5{\rho}<br>$$</p>
-<h2 id="引力"><a href="#引力" class="headerlink" title="引力"></a>引力</h2><p>考虑空间一物体对于物体外一点 P(īo,yo,zo)处的单位质量的质点的引力问题.设<br>物体占有空间有界闭区域 $Ω$，它在点$(x,y,z)$处的密度为$\rho(x，y，z)$,并假定<br>${\rho(x,y,z)}$在$Ω$上连续.<br>在物体内任取一点 $M(x,y,z)$及包含该点的一直径很小的闭区域 $d{v}$.把这小闭区域<br>看作一个质点,其质量元素为 $\rho dv$，它对位于$P_0$处的单位质量的质点的引力元素为<br>$$<br>dF&#x3D;(dF_x,dF_y,dF_z)\\<br>&#x3D;(\frac{x-x_0}{r^2}G\rho dv,\frac{y-y_0}{r^2}G\rho dv,\frac{z-z_0}{r^2}G\rho dv)<br>$$<br>式中，G 为引力常数,$\rho &#x3D;\rho(x，y,z),r&#x3D;\sqrt{(x-x_0)2+(y-y_0)2+(z-z_0)2}，dF_x,<br>dF_y,dF_z$.为引力元素 $dF$ 在三个坐标轴上的分量.将$dF_x,,dF_y,,dF_z$.在Ω上分别作三重积分，即可得$F_x，F_y，F_z$.</p>
-<h3 id="例7"><a href="#例7" class="headerlink" title="例7"></a>例7</h3><p>设半径为 R 的匀质球占有空间闭区域$Ω&#x3D;(x,y,z)|x^2+y^2+z^2≤R^2$.求它对于位于点$M_0(0,0,a)(a&gt;R)$处的单位质量的质点的引力,<br>解 设球的密度为$\rho_0$，由题意知$F_x&#x3D;F_y&#x3D;0$,所求引力沿z轴的分量为<br>$$<br>F_z&#x3D;\iiint_{o}G\rho_0 \frac{z-a}{[x^2+y^2+(z-a)^2]^{\frac{3}{2}}}dv\\<br>&#x3D;G\rho_0{}\int_{-R}^{R}(z-a)dz\int_{0}^{2\pi}d\theta\int_{0}^{\sqrt{R^2-z^2}}\frac{\rho d\rho}{[\rho^2+(z-a)^2]^{\frac{3}{2}}}\\<br>&#x3D;-G\frac{4\pi R^3}{3}\frac{1}{a^2}\rho_0\\<br>&#x3D;-G\frac{M}{a^2}\\<br>式中，M&#x3D;\frac{4\pi R^3}{3}\rho_0\\<br>由上述结果可知，匀质球体对求外一指点的引力如同球体的质量集中在球心，两质点间的引力。<br>$$</p>
-<p>上述结果表明，勾质球体对球外一质点的引力如同球体的质量集中于球心时两质点间的<br>引力.</p>
  
       <!-- reward -->
       
