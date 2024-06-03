@@ -160,6 +160,73 @@
     
     
     <article
+  id="post-Leetcode Problems"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/06/03/Leetcode%20Problems/"
+    >Leetcode Problems</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/06/03/Leetcode%20Problems/" class="article-date">
+  <time datetime="2024-06-02T18:27:54.000Z" itemprop="datePublished">2024-06-03</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
+<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
+<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
+<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
+<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
+<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= candies &lt;= 10^9</code></li>
+<li><code>1 &lt;= num_people &lt;= 1000</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">    int people[]</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
   id="post-日语学习"
   class="article article-type-post"
   itemscope
@@ -542,7 +609,158 @@
 <p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603001654543.png" alt="image-20240603001654543"></p>
 <p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603001704388.png" alt="image-20240603001704388"></p>
 <p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603001711726.png" alt="image-20240603001711726"></p>
+<blockquote>
+<p>结果不对，第一根杆和第二根杆不能同时达到承载极限</p>
+</blockquote>
 <p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603001828048.png" alt="image-20240603001828048"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>拉压杆的强度条件：杆件内的最大正应力要小于等于材料的许用应力。 </p>
+<h2 id="拉压杆的变形"><a href="#拉压杆的变形" class="headerlink" title="拉压杆的变形"></a>拉压杆的变形</h2><h3 id="拉压杆的变形-1"><a href="#拉压杆的变形-1" class="headerlink" title="拉压杆的变形"></a>拉压杆的变形</h3><ol>
+<li>变形：$\Delta l&#x3D;l_1-l$</li>
+</ol>
+<p>轴向线应变：单位长度的变形量<br>$$<br>\varepsilon^*&#x3D;\frac{\Delta l}{l} \varepsilon&#x3D;\lim{\Delta x-&gt;0}\frac{\delta x}{\Delta x}<br>$$<br><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603090722298.png" alt="image-20240603090722298"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603090731495.png" alt="image-20240603090731495"></p>
+<h3 id="胡克定律"><a href="#胡克定律" class="headerlink" title="胡克定律"></a>胡克定律</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603090820954.png" alt="image-20240603090820954"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603090912112.png" alt="image-20240603090912112"></p>
+<h3 id="纵向的变形量"><a href="#纵向的变形量" class="headerlink" title="纵向的变形量"></a>纵向的变形量</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091010022.png" alt="image-20240603091010022"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091019120.png" alt="image-20240603091019120"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091041366.png" alt="image-20240603091041366"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091047667.png" alt="image-20240603091047667"></p>
+<h3 id="横向的变形量"><a href="#横向的变形量" class="headerlink" title="横向的变形量"></a>横向的变形量</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091207054.png" alt="image-20240603091207054"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091425733.png" alt="image-20240603091425733"></p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091438440.png" alt="image-20240603091438440"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091730627.png" alt="image-20240603091730627"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091848370.png" alt="image-20240603091848370"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603091913598.png" alt="image-20240603091913598"></p>
+<h2 id="杆系节点位移计算"><a href="#杆系节点位移计算" class="headerlink" title="杆系节点位移计算"></a>杆系节点位移计算</h2><h3 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603093425397.png" alt="image-20240603093425397"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603093448236.png" alt="image-20240603093448236"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603093550073.png" alt="image-20240603093550073"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603093628588.png" alt="image-20240603093628588"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603093711209.png" alt="image-20240603093711209"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603093749803.png" alt="image-20240603093749803"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603093815972.png" alt="image-20240603093815972"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603093906724.png" alt="image-20240603093906724"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603093913839.png" alt="image-20240603093913839"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603094029883.png" alt="image-20240603094029883"></p>
+<h2 id="拉压应变能"><a href="#拉压应变能" class="headerlink" title="拉压应变能"></a>拉压应变能</h2><h3 id="拉压应变能-1"><a href="#拉压应变能-1" class="headerlink" title="拉压应变能"></a>拉压应变能</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603094713554.png" alt="image-20240603094713554"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603094724370.png" alt="image-20240603094724370"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603094752977.png" alt="image-20240603094752977"></p>
+<h3 id="拉件应变能的计算"><a href="#拉件应变能的计算" class="headerlink" title="拉件应变能的计算"></a>拉件应变能的计算</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603094824653.png" alt="image-20240603094824653"></p>
+<h3 id="应变能密度"><a href="#应变能密度" class="headerlink" title="应变能密度"></a>应变能密度</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603094915414.png" alt="image-20240603094915414"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603095111739.png" alt="image-20240603095111739"></p>
+<h3 id="例题-2"><a href="#例题-2" class="headerlink" title="例题"></a>例题</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603095250859.png" alt="image-20240603095250859"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603095722400.png" alt="image-20240603095722400"></p>
+<blockquote>
+<p>为什么这里能量是这样写的</p>
+</blockquote>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603100047543.png" alt="image-20240603100047543"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603100120680.png" alt="image-20240603100120680"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603100159273.png" alt="image-20240603100159273"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603100427759.png" alt="image-20240603100427759"></p>
+<blockquote>
+<p>这里计算c点的位移的时候，其实是通过计算那个杆的竖直位移得到的</p>
+</blockquote>
+<h3 id="计算行架节点位移-能量法"><a href="#计算行架节点位移-能量法" class="headerlink" title="计算行架节点位移-能量法"></a>计算行架节点位移-能量法</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603100636524.png" alt="image-20240603100636524"></p>
+<h2 id="低碳钢拉伸的力学性能"><a href="#低碳钢拉伸的力学性能" class="headerlink" title="低碳钢拉伸的力学性能"></a>低碳钢拉伸的力学性能</h2><h3 id="拉压实验简介"><a href="#拉压实验简介" class="headerlink" title="拉压实验简介"></a>拉压实验简介</h3><ul>
+<li>万能拉伸机</li>
+</ul>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603100856304.png" alt="image-20240603100856304"></p>
+<ul>
+<li>压缩试验机</li>
+</ul>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603100909746.png" alt="image-20240603100909746"></p>
+<ul>
+<li>电阻应变仪</li>
+</ul>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603100920567.png" alt="image-20240603100920567"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603100840225.png" alt="image-20240603100840225"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101008995.png" alt="image-20240603101008995"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101018470.png" alt="image-20240603101018470"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101024363.png" alt="image-20240603101024363"></p>
+<h3 id="低碳钢的拉伸图"><a href="#低碳钢的拉伸图" class="headerlink" title="低碳钢的拉伸图"></a>低碳钢的拉伸图</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101032568.png" alt="image-20240603101032568"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101100253.png" alt="image-20240603101100253"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101111952.png" alt="image-20240603101111952"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101127754.png" alt="image-20240603101127754"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101156504.png" alt="image-20240603101156504"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101217715.png" alt="image-20240603101217715"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101306684.png" alt="image-20240603101306684"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101338224.png" alt="image-20240603101338224"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101409977.png" alt="image-20240603101409977"></p>
+<h3 id="低碳钢压缩力学性能"><a href="#低碳钢压缩力学性能" class="headerlink" title="低碳钢压缩力学性能"></a>低碳钢压缩力学性能</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101503555.png" alt="image-20240603101503555"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101513690.png" alt="image-20240603101513690"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101521587.png" alt="image-20240603101521587"></p>
+<h2 id="材料塑性性能指标"><a href="#材料塑性性能指标" class="headerlink" title="材料塑性性能指标"></a>材料塑性性能指标</h2><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101636715.png" alt="image-20240603101636715"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101644616.png" alt="image-20240603101644616"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101701954.png" alt="image-20240603101701954"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101709611.png" alt="image-20240603101709611"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101718532.png" alt="image-20240603101718532"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603101950409.png" alt="image-20240603101950409"></p>
+<h3 id="卸载再加载规律"><a href="#卸载再加载规律" class="headerlink" title="卸载再加载规律"></a>卸载再加载规律</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603102020162.png" alt="image-20240603102020162"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104132528.png" alt="image-20240603104132528"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104146426.png" alt="image-20240603104146426"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104200173.png" alt="image-20240603104200173"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104409101.png" alt="image-20240603104409101"></p>
+<h3 id="冷拉时效"><a href="#冷拉时效" class="headerlink" title="冷拉时效"></a>冷拉时效</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104439496.png" alt="image-20240603104439496"></p>
+<h2 id="脆性材料及非金属材料力学性能"><a href="#脆性材料及非金属材料力学性能" class="headerlink" title="脆性材料及非金属材料力学性能"></a>脆性材料及非金属材料力学性能</h2><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104542636.png" alt="image-20240603104542636"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104550983.png" alt="image-20240603104550983"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104612017.png" alt="image-20240603104612017"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104710827.png" alt="image-20240603104710827"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104805562.png" alt="image-20240603104805562"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104821611.png" alt="image-20240603104821611"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104835153.png" alt="image-20240603104835153"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104856235.png" alt="image-20240603104856235"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104915279.png" alt="image-20240603104915279"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603104932406.png" alt="image-20240603104932406"></p>
+<h2 id="应力集中"><a href="#应力集中" class="headerlink" title="应力集中"></a>应力集中</h2><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105030735.png" alt="image-20240603105030735"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105053610.png" alt="image-20240603105053610"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105059764.png" alt="image-20240603105059764"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105108990.png" alt="image-20240603105108990"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105135345.png" alt="image-20240603105135345"></p>
+<h3 id="应力集中系数"><a href="#应力集中系数" class="headerlink" title="应力集中系数"></a>应力集中系数</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105155485.png" alt="image-20240603105155485"></p>
+<h2 id="轴向拉压超静定问题"><a href="#轴向拉压超静定问题" class="headerlink" title="轴向拉压超静定问题"></a>轴向拉压超静定问题</h2><blockquote>
+<p>只用力求不出来</p>
+</blockquote>
+<p>在<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9D%9C%E5%8A%9B%E5%AD%B8">静力学</a>里，当一个静态系统中能写出的所有<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9D%9C%E5%8A%9B%E5%B9%B3%E8%A1%A1">静力平衡</a>方程的数量少于系统所有的未知变量（应力或力矩等）时，则称此系统为<strong>超静定</strong>的。此时由于静力平衡方程不足以求得系统中所有的未知变量，系统处于静态却并不确定，故名为<strong>静不定</strong>；但实际上系统未知变量数与约束条件数相等，可以认为多出的这些条件使得原本静定的系统处于超稳定的状态，故也可称为<strong>超静定</strong>；称整个系统为<strong>超静定系统</strong>；无法求得的变量为超静定量。</p>
+<p>根据<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%89%9B%E9%A0%93%E9%81%8B%E5%8B%95%E5%AE%9A%E5%BE%8B">牛顿运动定律</a>，在一个二维空间问题中，静力平衡方程为</p>
+<ul>
+<li><p>∑𝐹→&#x3D;0<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7c6b643a753d4c8cc7ac81e12349faa56df0d0a1" alt="{\displaystyle \sum {\vec {F}}=0\,\!}"> ：作用在物体上的力的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%90%91%E9%87%8F">向量</a>总和等于零；也就是说</p>
+</li>
+<li><p>∑𝑀→&#x3D;0<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8ae928ecb51dfe7e4cde4f0b910a80bc92163a11" alt="{\displaystyle \sum {\vec {M}}=0\,\!}"> ：对任意一点的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8A%9B%E7%9F%A9">力矩</a>总和等于零。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/File:Statically_Indeterminate_Beam.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Statically_Indeterminate_Beam.svg/350px-Statically_Indeterminate_Beam.svg.png" alt="img"></a>图 1 ，一个超静定的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A8%91">梁</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E9%AB%94%E5%8F%97%E5%8A%9B%E5%9C%96">自由体受力图</a></p>
+<p>举例而言，如图右，作用在梁上的力 𝐹→<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2203e0218203366a3a46e11429b9d8505649f767" alt="{\displaystyle {\vec {F}}\,\!}"> ，造成了四只反应力为 𝑉𝐴, 𝑉𝐵, 𝑉𝐶, 𝐻𝐴<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c0324dce75814eb026dfc4c09822c90798f5e45b" alt="{\displaystyle V_{A},\ V_{B},\ V_{C},\ H_{A}\,\!}"> 。静力平衡方程为</p>
+<p>这问题有四只力是未知数（变数） (𝑉𝐴, 𝑉𝐵, 𝑉𝐶, 𝐻𝐴<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c0324dce75814eb026dfc4c09822c90798f5e45b" alt="{\displaystyle V_{A},\ V_{B},\ V_{C},\ H_{A}\,\!}">) 。但是，只有三个静力平衡方程，所以目前我们无法求解这个超静定系统。为了确定系统中所有的变量，我们必须加入物体<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%9D%90%E6%96%99%E7%A7%91%E5%AD%A6">材料</a>与<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BD%A2%E8%AE%8A">形变</a>的考量。</p>
+<h3 id="静不定问题的解法-力法"><a href="#静不定问题的解法-力法" class="headerlink" title="静不定问题的解法-力法"></a>静不定问题的解法-力法</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105515757.png" alt="image-20240603105515757"></p>
+<h3 id="例题-3"><a href="#例题-3" class="headerlink" title="例题"></a>例题</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105539966.png" alt="image-20240603105539966"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105558223.png" alt="image-20240603105558223"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105636065.png" alt="image-20240603105636065"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105644524.png" alt="image-20240603105644524"></p>
+<h3 id="例题-4"><a href="#例题-4" class="headerlink" title="例题"></a>例题</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105823588.png" alt="image-20240603105823588"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105840576.png" alt="image-20240603105840576"></p>
+<h3 id="例题-5"><a href="#例题-5" class="headerlink" title="例题"></a>例题</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105927711.png" alt="image-20240603105927711"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603105940884.png" alt="image-20240603105940884"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603110009438.png" alt="image-20240603110009438"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603110043648.png" alt="image-20240603110043648"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603110053466.png" alt="image-20240603110053466"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603110101582.png" alt="image-20240603110101582"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603110109349.png" alt="image-20240603110109349"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603110115939.png" alt="image-20240603110115939"></p>
+<h3 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603110147055.png" alt="image-20240603110147055"></p>
+<h2 id="轴向拉压超静定问题2"><a href="#轴向拉压超静定问题2" class="headerlink" title="轴向拉压超静定问题2"></a>轴向拉压超静定问题2</h2><h3 id="装配应力"><a href="#装配应力" class="headerlink" title="装配应力"></a>装配应力</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111123324.png" alt="image-20240603111123324"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111152377.png" alt="image-20240603111152377"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111159204.png" alt="image-20240603111159204"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111717275.png" alt="image-20240603111717275"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111728788.png" alt="image-20240603111728788"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111744030.png" alt="image-20240603111744030"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111754751.png" alt="image-20240603111754751"></p>
+<h3 id="温度应力"><a href="#温度应力" class="headerlink" title="温度应力"></a>温度应力</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111848501.png" alt="image-20240603111848501"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111858226.png" alt="image-20240603111858226"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111912317.png" alt="image-20240603111912317"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603111927399.png" alt="image-20240603111927399"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603112205969.png" alt="image-20240603112205969"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603112212651.png" alt="image-20240603112212651"></p>
+<p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603112225352.png" alt="image-20240603112225352"></p>
+<h3 id="例题-6"><a href="#例题-6" class="headerlink" title="例题"></a>例题</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603112251253.png" alt="image-20240603112251253"></p>
  
       <!-- reward -->
       
@@ -738,11 +956,11 @@
 <p>百分之十 心疼指数</p>
 <p>展示脆弱的一面 示弱</p>
 <div style="width: 80%;margin: 0 auto">
-    <canvas id="chart5531" style="height: 300px"></canvas>
+    <canvas id="chart769" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart5531').getContext('2d');
+    var ctx = document.getElementById('chart769').getContext('2d');
     var options = {
     type: 'line',
     data: {
@@ -1444,236 +1662,6 @@
 <li>指针与函数</li>
 <li>对象的复制与移动</li>
 <li>字符串</li>
-</ul>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-   
-  
-</article>
-
-    
-    <article
-  id="post-数据的共享和保护"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/"
-    >（5）数据的共享和保护</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/" class="article-date">
-  <time datetime="2024-05-29T01:06:14.000Z" itemprop="datePublished">2024-05-29</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
-<p>其作用域始于“(”,终于”)”</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">double area(double radius);</span><br><span class="line">//radius的作用域仅在此处，不能用于程序正文其他地方</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部作用域（块作用域）"><a href="#局部作用域（块作用域）" class="headerlink" title="局部作用域（块作用域）"></a>局部作用域（块作用域）</h3><ul>
-<li>函数的形参，在块中声明的标识符</li>
-<li>作用域自声明处起，限于块中</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void fun(int a)</span><br><span class="line">&#123;int b=a;</span><br><span class="line">cin&gt;&gt;b;</span><br><span class="line">if(b&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">int c;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="类作用域"><a href="#类作用域" class="headerlink" title="类作用域"></a>类作用域</h3><ul>
-<li>类的对象具有类作用域</li>
-</ul>
-<p>其范围包括类体和成员函数体。</p>
-<ul>
-<li>在类作用域以外访问类的成员：<ol>
-<li>静态成员：通过类名，或者该类的对象名，对象引用访问。</li>
-<li>非静态成员：通过类名，或者该类的对象名，对象引用，对象指针访问。</li>
-</ol>
-</li>
-</ul>
-<h3 id="文件作用域"><a href="#文件作用域" class="headerlink" title="文件作用域"></a>文件作用域</h3><ul>
-<li>不在前述各个作用域中出现的声明，就具有文件作用域。</li>
-<li>其作用域开始于声明点，结束于文件尾。</li>
-</ul>
-<blockquote>
-<p>可见性：</p>
-<ul>
-<li>可见性是从对标识符的引用的角度来谈的概念</li>
-<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
-<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
-<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
-<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
-</ul>
-</blockquote>
-<h3 id="命名空间作用域"><a href="#命名空间作用域" class="headerlink" title="命名空间作用域"></a>命名空间作用域</h3><blockquote>
-<p>可见性：</p>
-<ul>
-<li>可见性是从对标识符的引用的角度来谈的概念</li>
-<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
-<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
-<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
-<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
-</ul>
-</blockquote>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int i;//全局变量，文件作用域</span><br><span class="line">int main()</span><br><span class="line">i=5;//为全局变量赋值</span><br><span class="line">&#123;</span><br><span class="line">int i;</span><br><span class="line">i=7;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出7，内层会屏蔽外层作用变量</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出5</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="对象的生存期"><a href="#对象的生存期" class="headerlink" title="对象的生存期"></a>对象的生存期</h2><h3 id="静态生存区"><a href="#静态生存区" class="headerlink" title="静态生存区"></a>静态生存区</h3><ul>
-<li>这种生存期与程序的运行期相同。</li>
-<li>在文件作用域中声明的对象具有这种生存期。</li>
-<li>在函数内部声明静态生存期对象，要冠以关键字static。</li>
-</ul>
-<h3 id="非静态生存区"><a href="#非静态生存区" class="headerlink" title="非静态生存区"></a>非静态生存区</h3><ul>
-<li>开始于程序执行到声明点时，结束于该标识符的作用域结束处。</li>
-<li>块作用域中声明的，没有用static修饰的对象，是动态生存区的对象（习惯称我为局部生存期对象）</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std</span><br><span class="line">int i=1;//i为全局变量</span><br><span class="line">void other()</span><br><span class="line">&#123;</span><br><span class="line">static int a=2;</span><br><span class="line">static int b;</span><br><span class="line">//a，b为静态局部变量，具有全局寿命，局部可见。</span><br><span class="line">//只第一次进入函数时被初始化。</span><br><span class="line">int c=10;</span><br><span class="line">//c为局部变量，具有动态生存期</span><br><span class="line">//每次进入函数时都被初始化</span><br><span class="line">a+=2;i+=32;c+=5;</span><br><span class="line">cout&lt;&lt;&quot;--OTHER--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot;i:&quot;&lt;&lt;i&lt;&lt;&quot;a:&quot;&lt;&lt;a&lt;&lt;&quot;b:&quot;&lt;&lt;b&lt;&lt;&quot;c:&quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">b=a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">static int a;</span><br><span class="line">//a静态局部变量，有全局寿命，局部可见</span><br><span class="line">int b=-10;</span><br><span class="line">int c=0;</span><br><span class="line">//b，c为局部变量，具有动态生存期</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">c+=8;other();</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">i+=10;</span><br><span class="line">other();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">--MAIN--</span><br><span class="line">i:1 a:0 b:-10 c:0</span><br><span class="line">--OTHER--</span><br><span class="line">i:33 a:4 b:0 c:15</span><br><span class="line">--MAIN--</span><br><span class="line">i:33 a:0 b:-10 c:8</span><br><span class="line">--OTHER--</span><br><span class="line">i:75 a:6 b:4 c:15</span><br></pre></td></tr></table></figure>
-
-<h2 id="类的静态数据成员"><a href="#类的静态数据成员" class="headerlink" title="类的静态数据成员"></a>类的静态数据成员</h2><ul>
-<li>用关键词static声明</li>
-<li>为该类所有对象共享，静态数据成员具有静态生存期。</li>
-<li>必须在类外定义和初始化，用（::）来指明所属的类。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point a(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">a.showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">b.showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="静态函数成员"><a href="#静态函数成员" class="headerlink" title="静态函数成员"></a>静态函数成员</h2><p>静态函数处理静态数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point::showCount();//输出对象个数</span><br><span class="line">Point a(4,5);//声明对象a，其构造函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);//声明对象b，其复制函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="类的友元"><a href="#类的友元" class="headerlink" title="类的友元"></a>类的友元</h2><h3 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h3><ul>
-<li>友元时c++提供的一种破坏数据封装和数据隐藏的机制。</li>
-<li>提供将一个模板声明为另一个模板的友元，一个模板能够引用到另一个模板中本是被隐藏的信息。</li>
-<li>可以声明友元函数和友元类</li>
-<li>为了确保数据的完整性，及数据封装于隐藏的原则，建议慎重使用友元。</li>
-</ul>
-<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><ul>
-<li>友元函数是在类声明中由关键字friend修饰的说明的非成员函数，在它的函数体中能够通过对象名访问private和protected成员。</li>
-<li>作用：增加灵活性，使程序员可以在封装和快速性方面做合理选择</li>
-<li>访问对象中的成员必须通过对象名。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x,int y):x(x),y(y)</span><br><span class="line">&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">Point(Point&amp; p)</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(Point &amp;a,Point &amp;b);</span><br><span class="line">static int showCOUNT()&#123;return count;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">static int count;</span><br><span class="line">&#125;;</span><br><span class="line">float dist(Point&amp; a,Point&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">double x=a.x-b.x;</span><br><span class="line">double y=a.y-b.y;</span><br><span class="line">//有修改原本数据的隐患</span><br><span class="line">//避免每次用对象的x，y都要调用一次函数</span><br><span class="line">return </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><ul>
-<li><p>若一个类为另一个类的友元，则此类的所有成员，都能访问对方类的私有成员。</p>
-</li>
-<li><p>声明语法：将友元类名放在另一个类中使用friend修饰说明。</p>
-</li>
-<li><p>友元关系是单向的，数据成员的开放也就是单向的。</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">friend class B;</span><br><span class="line">public:</span><br><span class="line">void display()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;x&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">void set(int i);</span><br><span class="line">void display();</span><br><span class="line">private:</span><br><span class="line">A a;</span><br><span class="line">&#125;</span><br><span class="line">void B::set(int i)</span><br><span class="line">&#123;</span><br><span class="line">a.x=i;</span><br><span class="line">&#125;</span><br><span class="line">void B::display()</span><br><span class="line">&#123;</span><br><span class="line">a.display();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="共享数据的保护"><a href="#共享数据的保护" class="headerlink" title="共享数据的保护"></a>共享数据的保护</h2><h3 id="常类型"><a href="#常类型" class="headerlink" title="常类型"></a>常类型</h3><h4 id="常对象：必须进行初始化，不能被更新。const-类名-对象名；"><a href="#常对象：必须进行初始化，不能被更新。const-类名-对象名；" class="headerlink" title="常对象：必须进行初始化，不能被更新。const 类名 对象名；"></a>常对象：必须进行初始化，不能被更新。const 类名 对象名；</h4><ul>
-<li>用const修饰的对象</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i,int j):x(i),y(j)&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">A const a(3,4);//a是常对象，不能被更新</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"><a href="#常成员：用const进行修饰的类成员：常数据成员和常函数成员。" class="headerlink" title="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"></a>常成员：用const进行修饰的类成员：常数据成员和常函数成员。</h4><ul>
-<li>常成员函数</li>
-<li>使用const关键字说明的函数</li>
-<li>常成员函数不更新对象的数据成员</li>
-<li>常成员函数说明格式：</li>
-</ul>
-<blockquote>
-<p>类型说明符 函数名（参数表) const；这里，const是函数类型的一个组成部分，因此在实现部分也要带const关键字。</p>
-</blockquote>
-<ul>
-<li>const关键字可以被用于参与对重载函数的区分</li>
-<li>通过常对象只能调用它的常成员函数</li>
-<li>常数据成员：使用const说明的数据成员</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class R</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">R(int r1,int r2):r1(r1),r2(r2)&#123;&#125;</span><br><span class="line">void print();</span><br><span class="line">void print() const;</span><br><span class="line">private:</span><br><span class="line">int r1,r2;</span><br><span class="line">&#125;;</span><br><span class="line">void R::print()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">void R::print()const</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">R a(5,4);</span><br><span class="line">a.print();</span><br><span class="line">const R b(20,53);</span><br><span class="line">b.print();//调用void print const()</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i):</span><br><span class="line">void print();</span><br><span class="line">private:</span><br><span class="line">const int a;</span><br><span class="line">static const int b;//静态常数据对象</span><br><span class="line">&#125;;</span><br><span class="line">const int A::b=10;</span><br><span class="line">A::A(int i):a(i)&#123;&#125;</span><br><span class="line">void A::print()&#123;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;&quot;:&quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">A a1(100),a2(0);</span><br><span class="line">a1.print();</span><br><span class="line">a2.print();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="常引用：被引用的对象不能被更新。const-类型说明符号-引用名"><a href="#常引用：被引用的对象不能被更新。const-类型说明符号-引用名" class="headerlink" title="常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名"></a>常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(const Point &amp;p1,const Point &amp;p2);</span><br><span class="line">private x,y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在友元函数中用常引用做参数，既能获得较高的执行效率，又能保证实参的安全性。</p>
-</blockquote>
-<h4 id="常数组：数组元素不能被更新。类型说明符-const-数组名-大小"><a href="#常数组：数组元素不能被更新。类型说明符-const-数组名-大小" class="headerlink" title="常数组：数组元素不能被更新。类型说明符 const 数组名[大小]"></a>常数组：数组元素不能被更新。类型说明符 const 数组名[大小]</h4><h4 id="常指针：指向常量的指针。"><a href="#常指针：指向常量的指针。" class="headerlink" title="常指针：指向常量的指针。"></a>常指针：指向常量的指针。</h4><h2 id="多文件结构"><a href="#多文件结构" class="headerlink" title="多文件结构"></a>多文件结构</h2><h3 id="C-的一般组织结构"><a href="#C-的一般组织结构" class="headerlink" title="C++的一般组织结构"></a>C++的一般组织结构</h3><h4 id="一个工程可以分为多个源文件，例如："><a href="#一个工程可以分为多个源文件，例如：" class="headerlink" title="一个工程可以分为多个源文件，例如："></a>一个工程可以分为多个源文件，例如：</h4><ul>
-<li>类声明文件（.h文件）</li>
-<li>类实现文件（.cpp文件）</li>
-<li>类的使用文件（main()所在的.cpp文件)</li>
-</ul>
-<h4 id="利用多个工程来组合各个文件"><a href="#利用多个工程来组合各个文件" class="headerlink" title="利用多个工程来组合各个文件"></a>利用多个工程来组合各个文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">//文件1，类的定义，Point.h</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//文件2，point.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int Point::count=0;</span><br><span class="line">Point::Point(const Point &amp;p):x(p.x),y(p.y)</span><br><span class="line">&#123;count++;&#125;</span><br><span class="line">void Point::showCount()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count=&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//文件3，主函数 5_10.cpp</span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="外部变量"><a href="#外部变量" class="headerlink" title="外部变量"></a>外部变量</h3><ul>
-<li>除了在定义它的源文件中可以使用外，还能被其他文件使用。</li>
-<li>文件作用域中定义的变量，默认情况下都是外部变量。</li>
-<li>在其他文件中如果需要使用的化，需要用extern关键字声明。</li>
-<li>在所有类的之外声明的函数（也就是非成员函数），都具有文件作用域的。</li>
-<li>这样的函数都可以在不同的编译单元中被调用</li>
-<li>只要在调用之前进行，引用性声明（即声明函数原型）即可。</li>
-</ul>
-<blockquote>
-<p>将变量和函数限制在编译单元内</p>
-<ul>
-<li>将匿名命名空间中定义的变量和函数，都不会暴露给其他的编译单元</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">namespace</span><br><span class="line">&#123;</span><br><span class="line">//匿名的命名空间</span><br><span class="line">int n;</span><br><span class="line">void f()</span><br><span class="line">&#123;</span><br><span class="line">n++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="标准c-库"><a href="#标准c-库" class="headerlink" title="标准c++库"></a>标准c++库</h2><blockquote>
-<p>标准c++类库是一个及其灵活且可拓展的可重用软件模块的集合。</p>
-</blockquote>
-<h3 id="输入-输出类"><a href="#输入-输出类" class="headerlink" title="输入&#x2F;输出类"></a>输入&#x2F;输出类</h3><h3 id="容器类和抽象数据类型"><a href="#容器类和抽象数据类型" class="headerlink" title="容器类和抽象数据类型"></a>容器类和抽象数据类型</h3><h3 id="存储管理类"><a href="#存储管理类" class="headerlink" title="存储管理类"></a>存储管理类</h3><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h3 id="运行环境支持"><a href="#运行环境支持" class="headerlink" title="运行环境支持"></a>运行环境支持</h3><h2 id="编译预处理"><a href="#编译预处理" class="headerlink" title="编译预处理"></a>编译预处理</h2><h3 id="include包含指令"><a href="#include包含指令" class="headerlink" title="#include包含指令"></a>#include包含指令</h3><ul>
-<li>将一个源文件嵌入到当前源文件中该点处。<ol>
-<li>#include&lt;文件名&gt;：按标准模式搜索，文件位于c++系统目录的include子目录下</li>
-<li>#include“文件名”：首先在当前目录中搜索，若没有，在按标准方式搜索。</li>
-</ol>
-</li>
-</ul>
-<h3 id="define-宏定义指令"><a href="#define-宏定义指令" class="headerlink" title="#define 宏定义指令"></a>#define 宏定义指令</h3><ul>
-<li>定义符号常量，很多情况已经被const定义语句取代。</li>
-<li>定义带参数宏，已经被内联函数取代。</li>
-</ul>
-<h3 id="undif"><a href="#undif" class="headerlink" title="#undif"></a>#undif</h3><ul>
-<li>删除由#define定义的宏，使之不再起作用</li>
-</ul>
-<h3 id="条件编译指令——-if和-endif"><a href="#条件编译指令——-if和-endif" class="headerlink" title="条件编译指令——#if和#endif"></a>条件编译指令——#if和#endif</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令——-else"><a href="#条件编译指令——-else" class="headerlink" title="条件编译指令——#else"></a>条件编译指令——#else</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文1</span><br><span class="line">#else</span><br><span class="line">//当“常量表达式”为零时编译</span><br><span class="line">程序正文2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令——-elif"><a href="#条件编译指令——-elif" class="headerlink" title="条件编译指令——#elif"></a>条件编译指令——#elif</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if 常量表达式1</span><br><span class="line">程序正文1//当“常量表达式1”非零时编译</span><br><span class="line">#elif 常量表达式2</span><br><span class="line">程序正文2//当“常量表达式2”非零时编译</span><br><span class="line">#else</span><br><span class="line">程序正文3//其他情况下编译</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令"><a href="#条件编译指令" class="headerlink" title="条件编译指令"></a>条件编译指令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#ifdef 标识符</span><br><span class="line">程序段1</span><br><span class="line">#else</span><br><span class="line">程序段2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果“标识符”经#define定义过，且未经undef删除，则编译程序段1；否则编译程序段2.</p>
-</blockquote>
-<h2 id="第五章小结"><a href="#第五章小结" class="headerlink" title="第五章小结"></a>第五章小结</h2><ul>
-<li>对象的生存期，作用域与可见性。</li>
-<li>类的静态成员。</li>
-<li>数据的共享和保护。</li>
-<li>友元</li>
-<li>编译预处理指令</li>
-<li>多文件结构与工程</li>
 </ul>
  
       <!-- reward -->
