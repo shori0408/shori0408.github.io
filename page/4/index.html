@@ -160,6 +160,223 @@
     
     
     <article
+  id="post-二重积分的运用"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/05/18/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%94%A8/"
+    >二重积分的运用</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/05/18/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%94%A8/" class="article-date">
+  <time datetime="2024-05-17T17:41:59.000Z" itemprop="datePublished">2024-05-18</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="曲面的面积"><a href="#曲面的面积" class="headerlink" title="曲面的面积"></a>曲面的面积</h1><p>​	先讨论空间平面Ⅱ中的有界闭区域的面积和它在Oxy面上投影面的面积的关系。设平面Ⅱ与xOy平面的夹角为$\theta$(0&lt;&#x3D;$\theta$&lt;&#x3D;$\frac{\pi}{2}$),就是说平面Ⅱ方向上的法向量$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角为$\theta$.任意取平面Ⅱ上一片矩形区域A，其边界与x轴或者y轴平行（如图8.43所示），则矩形区域A的面积为A&#x3D;ab，其在xOy平面上的投影的面积</p>
+<p>$\sigma&#x3D;A$$\cos \theta$.</p>
+<p>由相似性，上式对平面Ⅱ上任意的区域A也成立。</p>
+<p>​	下面讨论空间曲面的情形，设曲面$\sum$由一阶连续可导函数z&#x3D;f(x,y)确定，在xOy面上的投影区域为$D_{xy}$,求曲面的面积$\sum$.</p>
+<p>​	如图8.44所示，在曲面$\sum$上任取一点M(x,y,z).过其投影P(x,y)点任取$D_{xy}$内的一小片区域$\mathrm{d}\sigma$,并作以$\mathrm{d}\sigma$的边界曲线为准线而母线平行于z轴的细柱面。在这细柱面内包含的那一小片区域$\mathrm{d}S$&#x3D;$\mathrm{d}A$.通常我们取曲面$\sum$在点M处方向上的法向量为$\mathbf{n}$&#x3D;($-f_x$,$-f_y$,$-1$),</p>
+<p>则$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角的余弦值为：<br>$$<br>\cos \theta&#x3D;\frac{\mathbf{n}\mathbf{k}}{|\mathbf{n}||\mathbf{k}|}&#x3D;\frac{1}{\sqrt{1+f_x^2(x,y)+f_y^2(x,y)}}\tag{1}<br>$$<br>式中，$f_x$表示$f(x,y)$对$x$的偏导数，$f_y$同理。</p>
+<p>​	所以，曲面$\sum$的面积为<br>$$<br>S&#x3D;\iint_{D}\sqrt{1+f_x^2(x,y)+f_x^2(x,y)}\mathrm{d}\sigma\tag{2}<br>$$<br>x、y、z三者之间的关系可以相互交换。</p>
+<p><strong>例题</strong></p>
+<h3 id="例1"><a href="#例1" class="headerlink" title="例1"></a>例1</h3><p>​	求半径为R的半球体的表面积。<br>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\\<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>&#x3D;2\int_{-R}^{R}\mathrm{d}x\int_{0}^{\sqrt{R^2-x^2}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}y\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^R&#x3D;2\pi R<br>$$<br>答案为2$\pi$R.</p>
+<h3 id="例题2"><a href="#例题2" class="headerlink" title="例题2"></a>例题2</h3><p>​	设由一颗地球同步轨道通信卫星，距地面的高度为h&#x3D;36.000km，运行的角速度与地球自转的角速度相同，试计算该通信卫星的覆盖面积与地球表面积的比值(地球半径R&#x3D;6400km)。</p>
+<p>由分析可知，卫星信号的半顶角可以设为$\alpha$,则覆盖面积的投影为$D_{xy}$&#x3D;{$(x,y)$|$x^2+y^2&lt;&#x3D;R^2\sin^2\alpha$},</p>
+<p>而原本的方程为$z&#x3D;\sqrt{R^2-x^2-y^2}$,那么我们可以写出对应的面积公式。</p>
+<p>$$<br>x^2+y^2+z^2&#x3D;R^2(z&gt;&#x3D;0)\ \<br>z&#x3D;\sqrt{R^2-x^2-y^2}\\<br>S&#x3D;\iint_{D_{xy}}\sqrt{1+z_x^2+z_y^2}\mathrm{d}\sigma\\<br>z_x&#x3D;\frac{x}{\sqrt{R^2-x^2-y^2}}\\<br>z_y&#x3D;\frac{y}{\sqrt{R^2-x^2-y^2}}\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-x^2-y^2}}\mathrm{d}\sigma\\<br>令\rho&#x3D;\sqrt{x^2+y^2},则\mathrm{d}\sigma&#x3D;\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\iint_{D_{xy}}\frac{R}{\sqrt{R^2-\rho^2}}\rho\mathrm{d}\rho\mathrm{d}\theta\\<br>S&#x3D;\frac{-1}{2}\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R\sin\alpha}\frac{R}{\sqrt{R^2-\rho^2}}\mathrm{d}{(R^2-\rho^2)}\\<br>S&#x3D;-2\pi[\sqrt{R^2-{\rho^2}}]|_0^{R\sin\alpha}&#x3D;2\pi R(1-\cos\alpha)\\<br>而地球的表面积S_1&#x3D;4\pi R\\<br>故比值\mu&#x3D;\frac{S}{S_1}\times100%\\<br>\mu&#x3D;\frac{1+\cos\alpha}{2}\\<br>\cos \alpha&#x3D;\frac{H}{H+h}\\<br>得\mu&#x3D;42.5%<br>$$</p>
+<h2 id="质心"><a href="#质心" class="headerlink" title="质心"></a>质心</h2><p>​	设有一平面薄片，占有xOy平面上的闭区域D，在点$(x,y)$处的面密度为$\rho(x,y)$,假定$\mu(x,y)$在D上连续。现在求该薄片的质心坐标。</p>
+<p>在闭区域D上任取一点$P(x,y)$及包含点P的直径很小的闭区域$\mathrm{d}{\sigma}$，则平面薄片对x轴和y轴的静力矩元素分别为<br>$$<br>\mathrm{d}M_x&#x3D;y\mu(x,y)\mathrm{d}{\sigma}\\<br>M_x&#x3D;\iint_{D}y\mu(x,y)\mathrm{d}{\sigma}\\<br>\mathrm{d}M_y&#x3D;x\mu(x,y)\mathrm{d}{\sigma}\\<br>M_y&#x3D;\iint_{D}xy(x,y)\mathrm{d}{\sigma}\\<br>M&#x3D;\iint_{D}\mu(x,y)\mathrm{d}{\sigma}<br>$$<br>设平面薄片的质心坐标为$(\bar x,\bar y)$，由于$\bar x M&#x3D;M_y,\bar y M&#x3D;M_x$，于是：<br>$$<br>\bar x&#x3D;\frac{M_y}{M}&#x3D;\frac{\iint_{D}x\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>\bar y&#x3D;\frac{M_x}{M}&#x3D;\frac{\iint_{D}y\mu(x,y){d}{\sigma}}{\iint_{D}\mu(x,y){d}{\sigma}}\\<br>$$<br>若平面薄片的面密度是常数，面积为$\sigma$​，则平面薄片的质心（成为形心）的公式为<br>$$<br>\bar x&#x3D;\frac{1}{\sigma}\iint_{D}x{d}{\sigma}\\<br>\bar y&#x3D;\frac{1}{\sigma}\iint_{D}y{d}{\sigma}\\<br>$$</p>
+<h3 id="例3"><a href="#例3" class="headerlink" title="例3"></a>例3</h3><p>​	求位于两圆$\rho&#x3D;2\sin\theta$和$\rho&#x3D;4\sin\theta$之间的均匀薄片的质心</p>
+<p>分析可知，图形关于y轴对称，最后质心一定在y轴上，且面密度为常数。<br>$$<br>\bar y&#x3D;\frac{\iint_{D}y{d}{\sigma}}{S_总}\\<br>\iint_{D}y{d}{\sigma}&#x3D;\int_{0}^{\pi}{d}{\theta}\int_{2\sin {\theta}}^{4\sin\theta}\rho\sin\theta\rho{d}{\rho}{}\\<br>&#x3D;\int_{0}^{\pi}\sin\theta[\frac{1}{3}\rho^3]<em>{2\sin\theta}^{4sin\theta}{d}{\theta}\\<br>&#x3D;\frac{56}{3}\int</em>{0}^{\pi}\sin^4\theta{d}{\theta}\\<br>&#x3D;\frac{112}{3}\frac{3}{4}\frac{1}{2}\frac{\pi}{2}\\<br>&#x3D;7\pi<br>$$</p>
+<h3 id="例4"><a href="#例4" class="headerlink" title="例4"></a>例4</h3><p>​	求均匀半球体的质心<br>$$<br>x^2+y^2+z^2&#x3D;R^2\\<br>可以得知，质心在z轴上\\<br>\bar z&#x3D;\frac{1}{V_总}\iiint_{V_1}z{d}{V}\\<br>\iiint_{V_1}z{d}{V}&#x3D;\\<br>&#x3D;\int_{0}^{\frac{\pi}{2}}{d}{\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho\cos\phi\rho^2\sin\phi{d}{\rho}\\<br>&#x3D;\frac{1}{4}\int_{0}^{\frac{\pi}{2}}\sin2\phi{d}{2\phi}\int_{0}^{2\pi}{d}{\theta}\int_{0}^{R}\rho^3{d}{\rho}\\<br>&#x3D;\frac{\pi}{4}R^4\\<br>所以\bar z&#x3D;\\<br>\frac{\frac{\pi}{4}R^4}{\frac{2\pi R^3}{3}}\\<br>&#x3D;\frac{3a}{8}\\<br>故最后坐标为\left(0,0,\frac{3a}{8}\right)<br>$$</p>
+<h2 id="转动惯量"><a href="#转动惯量" class="headerlink" title="转动惯量"></a>转动惯量</h2><p>​	设由一平面薄片，占有xOy面上的闭区域D，在点$P(x,y)$处的面密度为$\mu(x,y)$,假定$\rho(x,y)$在 D上连续.现在求该薄片对于x轴的转动惯量和y轴的转动惯量.</p>
+<p>​	在闭区域 D上任取一点 P(x，y)，及包含点 P 的一直径很小的闭区域 $\mathrm{d}{ \sigma}$，则平面薄片对于x轴的转动惯量和y轴的转动惯量的元素分别为<br>$$<br>dI_x&#x3D;y^2\mu(x,y)d{\sigma}\\<br>dI_y&#x3D;x^2\mu(x,y)d{\sigma}\\<br>$$<br>整片平面薄片对于z轴的转动惯量和y轴的转动惯量分别为<br>$$<br>I_x&#x3D;\iint_{D}y^2\mu(x,y)d{\sigma}\\<br>I_y&#x3D;\iint_{D}x^2\mu(x,y)d{\sigma}<br>$$</p>
+<h3 id="例5"><a href="#例5" class="headerlink" title="例5"></a>例5</h3><p>求半径为a的均匀半圆薄片(面密度为常量μ)对其直径边的转动惯量.</p>
+<p>解 建立坐标系,如图 8.47 所示，则薄片所占闭区域 D可表示为<br>$$<br>D&#x3D;{(x,y)|x^2+y^2&lt;&#x3D;a^2.y&gt;&#x3D;0}\<br>则半圆薄片对于x轴的转动惯量为\\<br>I_x&#x3D;\iint_{D}\mu y^2d{\sigma}\\<br>&#x3D;\mu\int_{0}^{\pi}\sin^2d{\theta}\int_{0}^{a}\rho^3d{\rho}\\<br>&#x3D;\frac{1}{4}\mu a^4\frac{\pi}{2}\\<br>&#x3D;\frac{1}{4}Ma^2\\<br>M&#x3D;\frac{1}{2}\pi a^2\mu为半圆薄片的质量<br>$$</p>
+<h3 id="例6"><a href="#例6" class="headerlink" title="例6"></a>例6</h3><p>​	求密度为$\mu$的均匀球体对于过球心的一条轴l的转动惯量.<br>解 取球心为坐标原点，z轴与轴l重合,又设球的半径为a,则球体所占空间闭区域为：<br>$$<br>V&#x3D;(x,y,z)|x^2+y^2+z^2&lt;&#x3D;a^2\\<br>所求转动惯量即对于z轴的转动惯量I_z为\\<br>I_z&#x3D;\iiint_{V}(x^2+y^2){\rho}d{v}\\<br>&#x3D;\rho\iiint_{D}(r^2\sin^2\varphi\cos\theta+r^2sin^2\varphi \sin^2\theta)r^2\sin\varphi drd\varphi d\theta\\<br>&#x3D;{\rho}\iiint_{D}r^4\sin^3\varphi drd\varphi d\theta\\<br>&#x3D;{\rho}\int_{0}^{2\pi}d\theta\int_0^\pi \sin^3\varphi d\varphi\int_{0}^{a}r^4dr\\<br>&#x3D;\frac{8}{15}\pi a^5{\rho}<br>$$</p>
+<h2 id="引力"><a href="#引力" class="headerlink" title="引力"></a>引力</h2><p>考虑空间一物体对于物体外一点 P(īo,yo,zo)处的单位质量的质点的引力问题.设<br>物体占有空间有界闭区域 $Ω$，它在点$(x,y,z)$处的密度为$\rho(x，y，z)$,并假定<br>${\rho(x,y,z)}$在$Ω$上连续.<br>在物体内任取一点 $M(x,y,z)$及包含该点的一直径很小的闭区域 $d{v}$.把这小闭区域<br>看作一个质点,其质量元素为 $\rho dv$，它对位于$P_0$处的单位质量的质点的引力元素为<br>$$<br>dF&#x3D;(dF_x,dF_y,dF_z)\\<br>&#x3D;(\frac{x-x_0}{r^2}G\rho dv,\frac{y-y_0}{r^2}G\rho dv,\frac{z-z_0}{r^2}G\rho dv)<br>$$<br>式中，G 为引力常数,$\rho &#x3D;\rho(x，y,z),r&#x3D;\sqrt{(x-x_0)2+(y-y_0)2+(z-z_0)2}，dF_x,<br>dF_y,dF_z$.为引力元素 $dF$ 在三个坐标轴上的分量.将$dF_x,,dF_y,,dF_z$.在Ω上分别作三重积分，即可得$F_x，F_y，F_z$.</p>
+<h3 id="例7"><a href="#例7" class="headerlink" title="例7"></a>例7</h3><p>设半径为 R 的匀质球占有空间闭区域$Ω&#x3D;(x,y,z)|x^2+y^2+z^2≤R^2$.求它对于位于点$M_0(0,0,a)(a&gt;R)$处的单位质量的质点的引力,<br>解 设球的密度为$\rho_0$，由题意知$F_x&#x3D;F_y&#x3D;0$,所求引力沿z轴的分量为<br>$$<br>F_z&#x3D;\iiint_{o}G\rho_0 \frac{z-a}{[x^2+y^2+(z-a)^2]^{\frac{3}{2}}}dv\\<br>&#x3D;G\rho_0{}\int_{-R}^{R}(z-a)dz\int_{0}^{2\pi}d\theta\int_{0}^{\sqrt{R^2-z^2}}\frac{\rho d\rho}{[\rho^2+(z-a)^2]^{\frac{3}{2}}}\\<br>&#x3D;-G\frac{4\pi R^3}{3}\frac{1}{a^2}\rho_0\\<br>&#x3D;-G\frac{M}{a^2}\\<br>式中，M&#x3D;\frac{4\pi R^3}{3}\rho_0\\<br>由上述结果可知，匀质球体对求外一指点的引力如同球体的质量集中在球心，两质点间的引力。<br>$$</p>
+<p>上述结果表明，勾质球体对球外一质点的引力如同球体的质量集中于球心时两质点间的<br>引力.</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
+  id="post-函数"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/05/17/%E5%87%BD%E6%95%B0/"
+    >函数</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/05/17/%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2024-05-17T15:26:47.000Z" itemprop="datePublished">2024-05-17</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="函数定义："><a href="#函数定义：" class="headerlink" title="函数定义："></a>函数定义：</h2><p>将我们设计好的算法，单独封装出来。<br>函数的参数，计算所需要的参数或者条件。<br>函数的返回值、可有可无。<br>功能性函数和数值形函数。</p>
+<h3 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h3><h4 id="定义函数名"><a href="#定义函数名" class="headerlink" title="定义函数名"></a>定义函数名</h4><p>类型标识符 函数名（形式参数表）<br>｛语句序列<br>｝<br>形式参数定义模式：<type1> num1.</type1></p>
+<p>形参只在函数中具有效果。</p>
+<p>返回值就是函数的计算结果。<br>类型标识符（函数返回值的类型） 函数名（形式参数表）<br>｛语句序列<br>return xx；<br>｝<br>无返回值的函数用void作为类型标识符，也不用写return语句。</p>
+<h4 id="函数调用："><a href="#函数调用：" class="headerlink" title="函数调用："></a>函数调用：</h4><p>对于定义好的函数，以及c++库里面的函数，我们直接调用就可以了。<br>调用函数的规则：</p>
+<ul>
+<li><p>调用函数之前需要事前声明<br>函数的定义和调用不在一个程序之中。<br>调用函数之前，我们需要进行一个函数的原型声明。<br>调用形式：<br>函数名（实参列表）</p>
+</li>
+<li><p>嵌套调用：<br>函数之间互相调用。</p>
+</li>
+<li><p>递归调用：<br>函数自己调用自己。</p>
+</li>
+</ul>
+<h5 id="例题1：指数函数"><a href="#例题1：指数函数" class="headerlink" title="例题1：指数函数"></a>例题1：指数函数</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int pow(int a,int b)</span><br><span class="line">&#123;for(int i=1;i&lt;=b;i++)</span><br><span class="line">a*=a;</span><br><span class="line">return a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;int i,j;</span><br><span class="line">int c;</span><br><span class="line">cout&lt;&lt;&quot;Please enter the numbers&quot;</span><br><span class="line">cin&gt;&gt;i;</span><br><span class="line">cin&gt;&gt;j;</span><br><span class="line">c=pow(i,j);</span><br><span class="line">cout&lt;&lt;c&lt;&lt;end;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="例题2：将二进制数转化为十进制数"><a href="#例题2：将二进制数转化为十进制数" class="headerlink" title="例题2：将二进制数转化为十进制数"></a>例题2：将二进制数转化为十进制数</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int pow(int a,int b)</span><br><span class="line">&#123;for(int i=1;i&lt;=b;i++)</span><br><span class="line">a*=a;</span><br><span class="line">return a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;int value=9;</span><br><span class="line">cout&lt;&lt;&quot;Enter an 8bit binary number&quot;;</span><br><span class="line">for(int i=7;i&gt;=0;i--)</span><br><span class="line">&#123;char ch;</span><br><span class="line">cin&gt;&gt;ch;</span><br><span class="line">if(ch==‘1’)</span><br><span class="line">&#123;velus+=static_cast&lt;int&gt;(power(2,i);&#125;</span><br><span class="line">cout&lt;&lt;&quot;Decimal value is&quot;&lt;&lt;value&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">double power (double x,int n)</span><br><span class="line">&#123;</span><br><span class="line">double val=1.0;</span><br><span class="line">while(n--)</span><br><span class="line">val*=x;</span><br><span class="line">return val;&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="例题三：计算π的值"><a href="#例题三：计算π的值" class="headerlink" title="例题三：计算π的值"></a>例题三：计算π的值</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">double arctanx(int x)</span><br><span class="line">&#123;double sqr=x*x;</span><br><span class="line">double e=x;</span><br><span class="line">double r=0;</span><br><span class="line">int i=1;</span><br><span class="line">while(e/i&gt;1e-15)</span><br><span class="line">&#123;double f=e/i;</span><br><span class="line">r=(i%4==1)?r+f:r-f;</span><br><span class="line">e*=sqr;</span><br><span class="line">1+=2;&#125;</span><br><span class="line">return r;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">double a=16.0*arctan(1/5.0);</span><br><span class="line">double b=4.0*arctan(1/239.0);</span><br><span class="line">cout&lt;&lt;&quot;PI=&quot;&lt;&lt;a-b&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="例题4：寻找回文数字"><a href="#例题4：寻找回文数字" class="headerlink" title="例题4：寻找回文数字"></a>例题4：寻找回文数字</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">bool symm(unsigned n)</span><br><span class="line">&#123;unsigned i=n;</span><br><span class="line">unsigned m=0;</span><br><span class="line">while(i&gt;0)</span><br><span class="line">&#123;m=m*10+i%10;</span><br><span class="line">i/=10;&#125;</span><br><span class="line">return m==n;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;for(int i=11;i&lt;=999;i++)</span><br><span class="line">&#123;if(symm(m)&amp;&amp;symm(m*m)&amp;&amp;summ(m*m*m))&#125;</span><br><span class="line">cout&lt;&lt;m&lt;&lt;m*m&lt;&lt;m*m*m&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="例题5：分段函数"><a href="#例题5：分段函数" class="headerlink" title="例题5：分段函数"></a>例题5：分段函数</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">double sin(double a)</span><br><span class="line">&#123;</span><br><span class="line">double g=0;</span><br><span class="line">double t=x;</span><br><span class="line">int n=1;</span><br><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line">g+=t;</span><br><span class="line">n++;</span><br><span class="line">t=-t*x*x/(2*n-1)/(2*n-2);</span><br><span class="line">&#125;while(fabs(t)&gt;=1e-10);</span><br><span class="line">return g;</span><br><span class="line">｝</span><br><span class="line">int main()</span><br><span class="line">&#123;double k,r,s;</span><br><span class="line">cout&lt;&lt;&quot;r=&quot;;</span><br><span class="line">cin&gt;&gt;r;</span><br><span class="line">cout&lt;&lt;&quot;s=&quot;;</span><br><span class="line">cin&gt;&gt;s;</span><br><span class="line">if(r*r&lt;=s*s)</span><br><span class="line">k=sqrt(sin(r)*sin(r)+sin(s)*sin(s));</span><br><span class="line">else k=sin(r*s)/2;</span><br><span class="line">cout&lt;&lt;k&lt;&lt;endl;</span><br><span class="line">return 0;&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="例题六：投骰子"><a href="#例题六：投骰子" class="headerlink" title="例题六：投骰子"></a>例题六：投骰子</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">/*srand函数</span><br><span class="line">原型：void srand（unsigned int seed）</span><br><span class="line">参数：seed产生随机数的种子</span><br><span class="line">需要头文件：&lt;cstdlib&gt;</span><br><span class="line">功能：为使rand（）产生一系列伪随机整数而设置起始点。使用1作为seed参数，可以重新初始化rand（）</span><br><span class="line">*/</span><br><span class="line">enum GameStatus&#123;WIN,LOSE,PLAYING&#125;;</span><br><span class="line">int main()&#123;</span><br><span class="line">int sum,myPoint;</span><br><span class="line">GameStaus staus;</span><br><span class="line">unsigned seed;</span><br><span class="line">int rollDice();</span><br><span class="line">cout&lt;&lt;&quot;Please enter an unsigned integer&quot;;</span><br><span class="line">cin&gt;&gt;seed;</span><br><span class="line">srand(seed);</span><br><span class="line">sum=rollDice();</span><br><span class="line">switch(sun)&#123;</span><br><span class="line">case 7:</span><br><span class="line">case 11:</span><br><span class="line">staus=WIN;</span><br><span class="line">break;</span><br><span class="line">case 2:</span><br><span class="line">case 3:</span><br><span class="line">case 12;</span><br><span class="line">staus =LOSE;</span><br><span class="line">break;</span><br><span class="line">default;</span><br><span class="line">staus=PLAYING;</span><br><span class="line">myPoint=sum;</span><br><span class="line">cout&lt;&lt;&quot;point is&quot;&lt;&lt;myPoint&lt;&lt;endl;</span><br><span class="line">break;&#125;</span><br><span class="line">while(staus==PLAYING)</span><br><span class="line">&#123;sum=doolDice();</span><br><span class="line">if(sum==myPoint()</span><br><span class="line">staus=WIN;</span><br><span class="line">else if(sum==)&#125;</span><br><span class="line">int rollDice()</span><br><span class="line">&#123;int die1=1+rand()%6;</span><br><span class="line">int die2=1+rand()%6;</span><br><span class="line">int sum=die1+die2;</span><br><span class="line">cout&lt;&lt;&quot;player rolled&quot;&lt;&lt;die1&lt;&lt;&quot;+&quot;&lt;&lt;</span><br><span class="line">die2&lt;&lt;&quot;=&quot;&lt;&lt;sum&lt;&lt;endl;</span><br><span class="line">return sum;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数的嵌套调用"><a href="#函数的嵌套调用" class="headerlink" title="函数的嵌套调用"></a>函数的嵌套调用</h4><p>主函数调用a函数，a函数调用b函数。<br>就是在一个流程中，不断嵌套新函数。<br>为什么能够精准地返回第一时间的位置呢？<br>因为有栈的存在。<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int fun2（int m）</span><br><span class="line">｛return m*m｝</span><br><span class="line">int fun1（int a，int b）</span><br><span class="line">&#123;return fun2(a)+fun2(b)&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="函数的递归调用"><a href="#函数的递归调用" class="headerlink" title="函数的递归调用"></a>函数的递归调用</h4><p>函数自己调用自己。<br>函数可以直接或者间接地调用自身。</p>
+<h5 id="例题1：计算n！"><a href="#例题1：计算n！" class="headerlink" title="例题1：计算n！"></a>例题1：计算n！</h5><p>公式n！&#x3D;n*（n-1）！&#x2F;&#x2F;递归就是可以转化为数列前后两项的关系。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int fun（int a）</span><br><span class="line">&#123;if(a=0) fun(a)=1;</span><br><span class="line">return afun(a-1);&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h5 id="例题2：从n个人里面选择k个人作为委员会。"><a href="#例题2：从n个人里面选择k个人作为委员会。" class="headerlink" title="例题2：从n个人里面选择k个人作为委员会。"></a>例题2：从n个人里面选择k个人作为委员会。</h5><p>C（n，k）&#x3D;n！&#x2F;k!*n-k）！<br>C(n,k)&#x3D;C(n-1,k)+C(n-1,k-1)<br>终止条件在递归里面很重要。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int comm（int n，int k）</span><br><span class="line">｛if（k&gt;n）return 0;</span><br><span class="line">else if(n==k||k==0) return 1;</span><br><span class="line">else return comm(n-1,k)+comm(n-1,k-1);｝</span><br></pre></td></tr></table></figure>
+
+<p>tip:找出递归边界的方法：<br>数列本身的限制，公式计算的极限。</p>
+<h5 id="例题3：汉诺塔问题"><a href="#例题3：汉诺塔问题" class="headerlink" title="例题3：汉诺塔问题"></a>例题3：汉诺塔问题</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">void move（char src,char dest）</span><br><span class="line">&#123;cout&lt;&lt;src&lt;&lt;&quot;--&gt;&quot;&lt;&lt;dest&lt;&lt;endl;&#125;</span><br><span class="line">void hanoi(int n,char scr,char medium,char dest)&#123;</span><br><span class="line">if(n==1) move(src,dest);</span><br><span class="line">else &#123;hanoi(n-1,src,dest,medium);</span><br><span class="line">move(src,dest);</span><br><span class="line">hanoi(n-1,medium,scr,dest);&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;int m;</span><br><span class="line">hanoi(m,a,b,c);</span><br><span class="line">return 0; </span><br><span class="line">&#125;</span><br><span class="line">//追踪递归过程：</span><br><span class="line">//进入，n！=1.调用自身</span><br><span class="line">//每一次数据规模都在缩小</span><br><span class="line">//第一次3 A B C</span><br><span class="line">//第二次（调用自身）2 A C B</span><br><span class="line">//第三次（调用自身）1 A B C</span><br><span class="line">//第四次（调用move（））A-&gt;C</span><br><span class="line">//第五次（退回n=2的状态，调用move（））A-&gt;B</span><br><span class="line">//第六次（调用自身）1 B A C </span><br><span class="line">//第七次（调用move（））B-&gt;C</span><br><span class="line">//第八次（退回n=2的状态）</span><br></pre></td></tr></table></figure>
+
+
+<p>执行完之后，退回入栈的状态，深入递归点进入后，形成流程。</p>
+<h4 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h4><p>形式参数是不占内存的，当调用函数的时候，才会给形参分配内存空间。<br>实参可以是常量，变量和表达式。<br>转化（隐含）：将实参转化为形参。<br>单向传值的作用，被调用函数只会处理形参，形参得到形参的值的时候，就切割了。<br>return语句只能返回一个值。<br>现在需要一个双向传值的事物，方法是传引用&amp;。传引用作参数可以保障实参数据的安全。</p>
+<h4 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h4><p>值传递：单向传递。<br>引用传递：双向传递。<br>引用类型、<br>引用（&amp;）是标识符的别名<br>定义一个引用的时候，必须同时对它进行初始化，使它指向一个已存在的对象。<br>例如：<br>int i，j;<br>int &amp;ri&#x3D;i;&#x2F;&#x2F;定义int引用ri，并初始化为变量i的引用。<br>j&#x3D;10;<br>ri&#x3D;j;&#x2F;&#x2F;相当于把j赋值给i<br>一旦一个引用被初始化后，就不能改为指向其他对象<br>引用可以作为形参</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">void swap(int a,int b)&#123;</span><br><span class="line">int t=a;a=b;b=t;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">int x=5,y=10;</span><br><span class="line">cout&lt;&lt;&quot;x=&quot;&lt;&lt;x&lt;&lt;&quot;y=&quot;&lt;&lt;u&lt;&lt;endl;</span><br><span class="line">swap(x,y);</span><br><span class="line">cout&lt;&lt;&quot;x=&quot;&lt;&lt;x&lt;&lt;&quot;y=&quot;&lt;&lt;u&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//不会发生变化</span><br><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">void swap(int&amp; a,int&amp; b)&#123;</span><br><span class="line">int t=a;a=b;b=t;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">int x=5,y=10;</span><br><span class="line">cout&lt;&lt;&quot;x=&quot;&lt;&lt;x&lt;&lt;&quot;y=&quot;&lt;&lt;u&lt;&lt;endl;</span><br><span class="line">swap(x,y);</span><br><span class="line">cout&lt;&lt;&quot;x=&quot;&lt;&lt;x&lt;&lt;&quot;y=&quot;&lt;&lt;u&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="含有可以变化的参数的函数"><a href="#含有可以变化的参数的函数" class="headerlink" title="含有可以变化的参数的函数"></a>含有可以变化的参数的函数</h4><p>可以变化长度的参数表：<br>如果所有的实参类型相同，可以传递一个initializer_list的标准库类型<br>如果实参的类型不同，我们可以编写可变参数的模板<br>initializer_list<br>initializer_list是一种标准库类型，用于表示某种特定类型的值的数组，该类型定义在同名的头文件中。<br>具体操作：<br>initializer_list<T>lst;&#x2F;&#x2F;默认初始化，T类型元素的空列表<br>nitializer_list<T>lst{a,b,c};&#x2F;&#x2F;lst的元素数量和初始值一样多，lst的元素是对应初始值的副本；列表中的元素是const<br>lst2(lst)&#x2F;&#x2F;拷贝或者赋值一个initializer_list对象但不拷贝列表中的元素；拷贝后原始列表和副本共享元素。<br>lst2&#x3D;lst<br>lst.size(）&#x2F;&#x2F;列表中的元素数量<br>lst.begin（）&#x2F;&#x2F;返回指向lst首元素的指针<br>lst.end()&#x2F;&#x2F;返回指向lst尾元素下一位置的指针<br>在编写代码输出程序所产生的错误信息时，最好统一用一个函数实现该功能，使得对所有错误的处理都能够整齐划一，<br>然而错误信息的种类不同，<br>调用错误星系时输出函数时传递的参数也会各不相同<br>使用initializer_list编写一个错误信息输出函数，使其可以作用于可变数量的形参。</T></T></p>
+<h4 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h4><p>简单地说，就是在调用简单函数提高效率的工具。<br>减少调用函数的麻烦。<br>内联函数声明时的关键字 inline<br>编译时在调用处用函数体进行替换<br>节省了参数传递<br>控制转移等开销<br>注意：<br>内联函数中不能有循环语句和switch语句<br>内联函数的定义必须出现在内联函数在第一次被调用之前<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++&gt;</span><br><span class="line">using namesapce std;</span><br><span class="line">const double PI=3.14159265358979;</span><br><span class="line">inline double calArea(double radius)&#123;</span><br><span class="line">return PI*radius*radius;</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">double r=3.0;</span><br><span class="line">double area=calArea(r);</span><br><span class="line">cout&lt;&lt;area&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Constexpr函数（常量表达式函数）"><a href="#Constexpr函数（常量表达式函数）" class="headerlink" title="Constexpr函数（常量表达式函数）"></a>Constexpr函数（常量表达式函数）</h4><p>他修饰的函数中，当所有参数都是constexpr时，一定返回constexpr。<br>只要给的是常量，那么返回的也是一个常量。<br>constexpr int get_size（）｛return 20；｝<br>constexpr int foo&#x3D;get_size();<br>&#x2F;&#x2F;正确：foo是一个常量表达式。</p>
+<h4 id="带默认参数值的函数"><a href="#带默认参数值的函数" class="headerlink" title="带默认参数值的函数"></a>带默认参数值的函数</h4><p>可以在调用的时候，不给予参数也可以有一个默认形参可以使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int add（int x=5，int y=6）｛</span><br><span class="line">return x+y;｝</span><br><span class="line">int main()</span><br><span class="line">&#123;add(10,20);//10+20</span><br><span class="line">add(10);//10+6</span><br><span class="line">add();//5+6</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F;所有有默认参数的形参都必须列在形参列表的最右，即默认参数值的右边不能有无默认值的参数；<br>调用时，实参和形参的结合次序是从左向右</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int add（int x，int y=5，int z=6）;//正确</span><br><span class="line">int add（int x=1，int y=5，int z）；//错误</span><br><span class="line">int add（int x=1，int y，int z=6）；//错误</span><br></pre></td></tr></table></figure>
+
+<h5 id="默认参数值与函数的调用位置"><a href="#默认参数值与函数的调用位置" class="headerlink" title="默认参数值与函数的调用位置"></a>默认参数值与函数的调用位置</h5><p>如果一个函数有原型声明，且原型声明在定义之前，则默认参数值应该在函数原型声明中给出；<br>如果只有函数的定义，或函数定义在前，<br>则默认参数值可以在函数定义中给出。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int add（int x=5，int y=6）；</span><br><span class="line">int main（）</span><br><span class="line">｛add（）；｝</span><br><span class="line">int add（int x，int y）｛</span><br><span class="line">return x+y；｝</span><br><span class="line"></span><br><span class="line">int add（int x=5，int y=6）｛</span><br><span class="line">return x+y；｝</span><br><span class="line">int main（）</span><br><span class="line">｛add（）；｝</span><br></pre></td></tr></table></figure>
+
+<h5 id="例题1："><a href="#例题1：" class="headerlink" title="例题1："></a>例题1：</h5><p>函数getVolume计算体积<br>有三个形参：length、width、height<br>其中width和height带有默认值2和3<br>主函数中以不同形式调用getVolume</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int getVloume（int length，int width，int height=3）；</span><br><span class="line">int main（）</span><br><span class="line">&#123;const int X=10,Y=12,Z=15;</span><br><span class="line">cout&lt;&lt;&quot;Some box data is&quot;;</span><br><span class="line">cout&lt;&lt;getVolume(X,Y,Z)&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;&quot;Some box data is&quot;;</span><br><span class="line">cout&lt;&lt;getVolume(X,Y)&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;&quot;Some box data is&quot;;</span><br><span class="line">cout&lt;&lt;getVolume(X,&lt;&lt;endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int getVolume(int length,int width,int height)&#123;</span><br><span class="line">cout&lt;&lt;setw(5)&lt;&lt;length&lt;&lt;setw(5)&lt;&lt;width&lt;&lt;setw(5)&lt;&lt;height&lt;&lt;&#x27;\t&#x27;</span><br><span class="line">return length*width*height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h4><p>函数多态性的体现，C++中允许功能相近的函数在相同的作用域内以相同函数名声明，从而形成重载。方便使用，便于记忆。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int add(int x,int y);</span><br><span class="line">float add(float x,float y);</span><br><span class="line">int add(int x,int y,int z);</span><br></pre></td></tr></table></figure>
+
+<p>注意事项，重载函数的形参必须不同：个数不同或者类型不同。<br>编译程序将根据实参和形参的类型及个数的最佳匹配来选择调用哪一个函数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int add(int x,int y);</span><br><span class="line">int add(int x,int y);</span><br></pre></td></tr></table></figure>
+
+<p>编译器不以形参名来区分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int add(int x,int y);</span><br><span class="line">void add(int x,int y);</span><br></pre></td></tr></table></figure>
+
+<p>编译器不以返回值来区分<br>不要将不同功能的函数声明为重载函数，以免出现调用结果的误解，混淆，这样不好。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int add(int x,int y)</span><br><span class="line">&#123;return x+y;&#125;</span><br><span class="line">float add(float x,float y)</span><br><span class="line">&#123;return x-y;&#125;</span><br><span class="line">int sumOfSquare(int a,int b)&#123;</span><br><span class="line">return a*a+b*b;</span><br><span class="line">&#125;</span><br><span class="line">Double sumOfSquare(double a,double b)&#123;</span><br><span class="line">return a*a+b*b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="C-系统函数"><a href="#C-系统函数" class="headerlink" title="C++系统函数"></a>C++系统函数</h4><p>C++的系统库提供了几百个函数可以供程序员使用，例如：<br>求平方根函数（sqrt）<br>求绝对值函数（abs）<br>使用系统函数时要包含相应的头文件，例如；<br>cmath<br>例题一：从键盘中输出一个角度值，求出该角度的正弦值，余弦值和正切值。<br>分析：系统函数中提供了求正弦值，余弦值和正切值的函数：sin（），cos（），tan（），函数的声明在头文件cmath中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">int main()&#123;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三章总结"><a href="#第三章总结" class="headerlink" title="第三章总结"></a>第三章总结</h3><p>函数的定义与调用，参数传递<br>内联函数，带默认值的函数，函数重载<br>C++系统函数</p>
+<p>   ▪   实验三（上）<br>本部分的主要实验任务是通过实验练习来进一步理解以下内容：</p>
+<ul>
+<li><p>掌握函数的定义和调用方法。</p>
+</li>
+<li><p>学习debug的step into 功能追踪到函数内部。</p>
+</li>
+<li><p>递归算法<br>例题一、编写函数float Convert(float TempFer)<br>参数和返回值都是float类型<br>实现算法C&#x3D;（F-32）</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">*5/9;</span><br><span class="line">float Convert(float F)&#123;</span><br><span class="line">return (F-32)*5/9;</span><br><span class="line">&#125;</span><br><span class="line">例题二、编写斐波那契数列</span><br><span class="line">a（n）=a（n-1）+a（n-2）；</span><br><span class="line">int a（int n）&#123;</span><br><span class="line">if(n&lt;3) return 1;</span><br><span class="line">else if(n&lt;=0) break; </span><br><span class="line">return a(n-1)+a(n-2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
   id="post-镜像阶段：关系即伪，无中生伪有"
   class="article article-type-post"
   itemscope
