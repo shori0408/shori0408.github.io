@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>社群教程 |  SHIOKOU</title>
+      <title>滑动窗口 |  SHIOKOU</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -59,7 +59,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-社群教程"
+  id="post-滑动窗口"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -70,7 +70,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  社群教程
+  滑动窗口
 </h1>
  
 
@@ -78,15 +78,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/" class="article-date">
-  <time datetime="2024-05-31T17:19:12.000Z" itemprop="datePublished">2024-06-01</time>
+      <a href="/2024/06/10/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="article-date">
+  <time datetime="2024-06-10T13:29:24.000Z" itemprop="datePublished">2024-06-10</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">475</span>
+            <span class="post-count">1.5k</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">6 min</span>
         </span>
     </span>
 </div>
@@ -110,81 +110,71 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="第一节：长期vs短期"><a href="#第一节：长期vs短期" class="headerlink" title="第一节：长期vs短期"></a>第一节：长期vs短期</h2><h3 id="方向："><a href="#方向：" class="headerlink" title="方向："></a>方向：</h3><h4 id="女性的择偶策略"><a href="#女性的择偶策略" class="headerlink" title="女性的择偶策略"></a>女性的择偶策略</h4><ul>
-<li>情人属性 基因提供者（缺点，很难长期）</li>
+  <h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><h3 id="滑动窗口是什么"><a href="#滑动窗口是什么" class="headerlink" title="滑动窗口是什么"></a>滑动窗口是什么</h3><p>滑动窗口可以用来解决数组&#x2F;字符串的子元素问题，它可以将嵌套的循环问题，转换为单循环问题，降低时间复杂度。</p>
+<h4 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h4><p>给定一个整数数组，计算长度为 ‘k’ 的连续子数组的最大总和。</p>
+<p>输入：arr [] &#x3D; {100,200,300,400}</p>
+<p>​			k &#x3D; 2</p>
+<p>输出：700</p>
+<p>解释：300 + 400 &#x3D; 700</p>
+<h5 id="暴力解法"><a href="#暴力解法" class="headerlink" title="暴力解法"></a>暴力解法</h5><p>争对这个问题，我可以采用信息利用率最低的一种方式，就是将所有元素遍历一次。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">solution</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">fun</span><span class="params">(&amp;arr,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;arr.<span class="built_in">size</span>()-k+<span class="number">1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> cut=<span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;k;j++)</span><br><span class="line">            &#123;</span><br><span class="line">             cut=cut+arr[i+j];   </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> maxsum=<span class="built_in">max</span>(cut,mansum);</span><br><span class="line">     &#125;</span><br><span class="line">        <span class="keyword">return</span> maxsum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如代码里所写的那样，这里的解题思路很简单，就是用i指针进行引导，j在i指针后，k区间内进行滑动，这里滑动完之后，会留下一个信息，怎么记录这一个信息呢？因为这道题让我输出的是单信息，不用考虑信息丢失，我们就有两种方法来解决它，第一个方法是开多余的空间来记录他，就是说启动一个动态数组来存储产生的k区间和值信息，第二个方式就是采用迭代更新的方式，因为我们需要的单数据只需要占用一个位置，我们只要每次把这个位置更新了就好了，要做到这一点其实也不难，只需要我们使用两个值来记录，一个是current值，一个是max值，max值在current值和之前的max值之间进行更新。</p>
+<h5 id="滑动窗口解法"><a href="#滑动窗口解法" class="headerlink" title="滑动窗口解法"></a>滑动窗口解法</h5><p>滑动窗口法只用了很小的一点变化就让窗口得到累加，我们可以寻找到不同窗口之间的关系，我们可以发现，其实窗口之间的信息差距只有1,数据的相似性高达$\frac{k-1}{k}\times100%$，这样我们其实在没算出一次的窗口时，都为下一次做了k-1次的运算，如果我们每次都把这个k-1次运算利用上，那我们的时间复杂度可以大大降低，下面时时间复杂度优化的计算过程。<br>$$<br>原本的时间复杂度（暴力法）：\\<br>窗口的个数:n&#x3D;arr.size()-k\\<br>而我们每个窗口都要进行k次运算，实际上我们运算的次数就是\\<br>n_1&#x3D;n\times\ k&#x3D;(arr.size()-k)\times k\\<br>而当我们采用滑动窗口的解法，每个窗口的运算变化是，减去一个无效数字，增加一个有效数字，所以运算的次数变为\\<br>n_2&#x3D;n\times 2&#x3D;(arr.size()-k)\times 2\\<br>$$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">solution</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span>:<span class="built_in">fun</span>(&amp;arr,<span class="type">int</span> k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cut=<span class="number">0</span>,max_1=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            max_1+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        cut =max_1;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cut+=arr[i]-arr[i-k];</span><br><span class="line">            max_1=<span class="built_in">max</span>(max_1,cut);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max_1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="为什么要用滑动窗口"><a href="#为什么要用滑动窗口" class="headerlink" title="为什么要用滑动窗口"></a>为什么要用滑动窗口</h3><p>使用滑动窗口可以帮助我们公用已有的计算量，减少计算机运算的次数，提高程序运行效率。</p>
+<h3 id="怎么使用滑动窗口"><a href="#怎么使用滑动窗口" class="headerlink" title="怎么使用滑动窗口"></a>怎么使用滑动窗口</h3><ul>
+<li>判断是否存在大区间里套小区间</li>
+<li>小区间之间是否具有共有的运算量</li>
 </ul>
-<p>特点：</p>
-<p>1.外形条件不错，器大活好（生理结构）</p>
-<p>2.会大半夜聊天 不纠结 不正面回复 比较敷衍 洒脱 喜欢大半夜邀约</p>
-<p>3.能给女性短期属性的感觉 一定不缺女生喜欢</p>
-<ul>
-<li>投资供养者（很慢 ？被人吊着 延续）</li>
-</ul>
-<p>特点：</p>
-<p>1.对女生好 不太注意形象 宅 社交圈窄 理性逻辑 </p>
-<p>相对来说气场比较弱，没有声明情调 比较包容 老好人</p>
-<blockquote>
-<p>李小璐,贾乃亮</p>
-<p>李孝利</p>
-</blockquote>
-<p>思考一个问题：帅和有钱是不是决定性因素？</p>
-<p>第二个问题：哪一个属性更好？</p>
-<p>一段感情去得也快，来得慢，去得也慢</p>
-<p>两种都要有 我是一个安全的人，解决问题的能力</p>
-<p>重点就是一句正经，一句逗逼。</p>
-<p>把握好其中的比例问题。</p>
-<p>查漏补缺，找到自身特点，以及缺失的东西。</p>
-<h2 id="男性吸引力解析"><a href="#男性吸引力解析" class="headerlink" title="男性吸引力解析"></a>男性吸引力解析</h2><h3 id="吸引力的详细解析"><a href="#吸引力的详细解析" class="headerlink" title="吸引力的详细解析"></a>吸引力的详细解析</h3><ul>
-<li><p>公式：男吸引力&#x3D;90%的心动指数加上10%的心疼指数。</p>
-</li>
-<li><p>从何而来？</p>
-</li>
-</ul>
+<p>需要注意的部分在于</p>
 <ol>
-<li>硬价值（外在）：生存价值</li>
+<li>k区间在滑动窗口下的更新方法</li>
+<li>算数列首项的思想。</li>
 </ol>
-<p>钱 车 房 圈子 地位</p>
-<ol start="2">
-<li>软价值（内在）：繁衍价值</li>
-</ol>
-<p>颜值 身材 性征 西装 嗓音低沉  拍照风格 我给人一种什么样的感觉 格调 调性</p>
-<p>孙红雷 黄渤</p>
-<p>聊天的方式</p>
+<h2 id="209-长度最小的子数组"><a href="#209-长度最小的子数组" class="headerlink" title="209. 长度最小的子数组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/">209. 长度最小的子数组</a></h2><p>中等</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> <strong>。</strong></p>
+<p>找出该数组中满足其总和大于等于 <code>target</code> 的长度最小的 </p>
+<p><strong>子数组</strong></p>
+<p><code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度<strong>。</strong>如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
+<blockquote>
+<p>注意：子数组意思是直接从数组里面取一个序列的元素，不是单个取值。</p>
+</blockquote>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：target = 7, nums = [2,3,1,2,4,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：子数组 [4,3] 是该条件下的长度最小的子数组。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：target = 4, nums = [1,4,4]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：target = 11, nums = [1,1,1,1,1,1,1,1]</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
-<li>能量</li>
+<li><code>1 &lt;= target &lt;= 109</code></li>
+<li><code>1 &lt;= nums.length &lt;= 105</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 105</code></li>
 </ul>
-<p>正能量。状态不好，我就先缓缓不聊天</p>
-<p>安全感 顾家</p>
-<p>百分之九十</p>
-<p>百分之十 心疼指数</p>
-<p>展示脆弱的一面 示弱</p>
-<div style="width: 80%;margin: 0 auto">
-    <canvas id="chart5133" style="height: 300px"></canvas>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<script type="text/javascript">
-    var ctx = document.getElementById('chart5133').getContext('2d');
-    var options = {
-    type: 'line',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-    options: {
-        responsive: true,
-        title: {
-            display: true,
-            text: 'Chart.js Line Chart'
-        }
-    }
-};;
-    new Chart(ctx, options);
-</script>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>如果你已经实现 <code>O(n)</code> 时间复杂度的解法, 请尝试设计一个 <code>O(n log(n))</code> 时间复杂度的解法。</li>
+</ul>
+<h3 id="暴力解法-1"><a href="#暴力解法-1" class="headerlink" title="暴力解法"></a>暴力解法</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> maxsum=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> flag=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> cut=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;nums.<span class="built_in">size</span>();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i+j&lt;nums.<span class="built_in">size</span>())</span><br><span class="line">                &#123;</span><br><span class="line">                    cut+=nums[i+j];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">if</span>(cut&gt;=target)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag=<span class="built_in">min</span>(j+<span class="number">1</span>,flag);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag==nums.<span class="built_in">size</span>()+<span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="滑动窗口-1"><a href="#滑动窗口-1" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> maxsum=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> flag=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> cut=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;nums.<span class="built_in">size</span>();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                cut+=nums[j];</span><br><span class="line">                <span class="keyword">while</span>(cut&gt;=target)</span><br><span class="line">                &#123;</span><br><span class="line">                    cut-=nums[i++];</span><br><span class="line">                    flag=<span class="built_in">min</span>(j-i+<span class="number">2</span>,flag);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag==nums.<span class="built_in">size</span>()+<span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在这里用到的滑动窗口其实就是不断调整子序列的起始位置和终止位置，从而得到我们想要的结果。</p>
+<p><img src="https://pic.leetcode-cn.com/1659059220-jxMpDA-209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.gif" alt="209.长度最小的子数组.gif"></p>
+<p>滑动窗口的精髓在于移动k区间的起始位置，关键代码在于</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(cut&gt;=target)</span><br><span class="line">&#123;</span><br><span class="line">    cut-=nums[i++];</span><br><span class="line">    flag=<span class="built_in">min</span>(flag,j+<span class="number">2</span>-i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以分析得知，要知道一个事实，能够取到目标值的k区间，其终点带来的效果不是超出这个target值，就是刚刚好。如果是超出这个值的话，我们只需要在前面减去多余的数字就可以了。</p>
+<p>在这个更新起始位置的代码中，我们用到的更新手段是，调节起始位置的索引，从而改变我们字串的索引值。</p>
  
       <!-- reward -->
       
@@ -255,7 +245,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/06/10/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -266,19 +256,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/06/01/%E6%B8%85%E5%8D%95/" class="article-nav-link">
+      <a href="/2024/06/10/cpp%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            清单
+            cpp常见报错信息
           
         </div>
       </a>
     
     
-      <a href="/2024/05/31/%E6%97%A5%E7%A8%8B%E8%A7%84%E5%88%92/" class="article-nav-link">
+      <a href="/2024/06/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">日程规划</div>
+        <div class="article-nav-title">深度学习</div>
       </a>
     
   </nav>
