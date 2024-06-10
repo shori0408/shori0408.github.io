@@ -316,77 +316,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Leetcode Problems</title>
-    <url>/2024/06/03/Leetcode%20Problems/</url>
-    <content><![CDATA[<h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
-<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
-<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
-<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
-<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
-<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= candies &lt;= 10^9</code></li>
-<li><code>1 &lt;= num_people &lt;= 1000</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">        int n = num_people;</span><br><span class="line">        vector&lt;int&gt; ans(n);</span><br><span class="line">        for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">            if (candies &gt;= i + 1) &#123;</span><br><span class="line">                candies -= i + 1;</span><br><span class="line">                ans[i % n] += i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ans[i % n] += candies;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="575-分糖果"><a href="#575-分糖果" class="headerlink" title="575. 分糖果"></a><a href="https://leetcode.cn/problems/distribute-candies/">575. 分糖果</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>Alice 有 <code>n</code> 枚糖，其中第 <code>i</code> 枚糖的类型为 <code>candyType[i]</code> 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。</p>
-<p>医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 <code>n / 2</code> 即可（<code>n</code> 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。</p>
-<p>给你一个长度为 <code>n</code> 的整数数组 <code>candyType</code> ，返回： Alice <em>在仅吃掉 <code>n / 2</code> 枚糖的情况下，可以吃到糖的 <strong>最多</strong> 种类数</em>。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,2,3,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [6,6,6,6]</span><br><span class="line">输出：1</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，尽管她能吃 2 枚，但只能吃到 1 种糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>n == candyType.length</code></li>
-<li><code>2 &lt;= n &lt;= 104</code></li>
-<li><code>n</code> 是一个偶数</li>
-<li><code>-105 &lt;= candyType[i] &lt;= 105</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(vector&lt;int&gt;&amp; candyType) &#123;</span><br><span class="line">        unordered_set&lt;int&gt; candyset(candyType.begin(), candyType.end());</span><br><span class="line">        return min(candyType.size() &gt;&gt; 1, candyset.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2928-给小朋友们分糖果-I"><a href="#2928-给小朋友们分糖果-I" class="headerlink" title="2928. 给小朋友们分糖果 I"></a><a href="https://leetcode.cn/problems/distribute-candies-among-children-i/">2928. 给小朋友们分糖果 I</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>给你两个正整数 <code>n</code> 和 <code>limit</code> 。</p>
-<p>请你将 <code>n</code> 颗糖果分给 <code>3</code> 位小朋友，确保没有任何小朋友得到超过 <code>limit</code> 颗糖果，请你返回满足此条件下的 <strong>总方案数</strong> 。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, limit = 2</span><br><span class="line">输出：3</span><br><span class="line">解释：总共有 3 种方法分配 5 颗糖果，且每位小朋友的糖果数不超过 2 ：(1, 2, 2) ，(2, 1, 2) 和 (2, 2, 1) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3, limit = 3</span><br><span class="line">输出：10</span><br><span class="line">解释：总共有 10 种方法分配 3 颗糖果，且每位小朋友的糖果数不超过 3 ：(0, 0, 3) ，(0, 1, 2) ，(0, 2, 1) ，(0, 3, 0) ，(1, 0, 2) ，(1, 1, 1) ，(1, 2, 0) ，(2, 0, 1) ，(2, 1, 0) 和 (3, 0, 0) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= n &lt;= 50</code></li>
-<li><code>1 &lt;= limit &lt;= 50</code></li>
-</ul>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
     <title>vocabulary</title>
     <url>/2024/06/03/Intergrated%20course%204%20vocabulary/</url>
     <content><![CDATA[<h1 id="Unit-1"><a href="#Unit-1" class="headerlink" title="Unit 1"></a>Unit 1</h1><ul>
@@ -567,33 +496,73 @@
 ]]></content>
   </entry>
   <entry>
-    <title>c++模板</title>
-    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
-<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Leetcode Problems</title>
+    <url>/2024/06/03/Leetcode%20Problems/</url>
+    <content><![CDATA[<h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
+<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
+<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
+<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
+<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
+<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
 
-<p>当你使用这个食谱时，你可以指定不同的材料：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
 
-<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= candies &lt;= 10^9</code></li>
+<li><code>1 &lt;= num_people &lt;= 1000</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">        int n = num_people;</span><br><span class="line">        vector&lt;int&gt; ans(n);</span><br><span class="line">        for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">            if (candies &gt;= i + 1) &#123;</span><br><span class="line">                candies -= i + 1;</span><br><span class="line">                ans[i % n] += i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ans[i % n] += candies;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>使用这个三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="575-分糖果"><a href="#575-分糖果" class="headerlink" title="575. 分糖果"></a><a href="https://leetcode.cn/problems/distribute-candies/">575. 分糖果</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>提示</p>
+<p>Alice 有 <code>n</code> 枚糖，其中第 <code>i</code> 枚糖的类型为 <code>candyType[i]</code> 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。</p>
+<p>医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 <code>n / 2</code> 即可（<code>n</code> 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。</p>
+<p>给你一个长度为 <code>n</code> 的整数数组 <code>candyType</code> ，返回： Alice <em>在仅吃掉 <code>n / 2</code> 枚糖的情况下，可以吃到糖的 <strong>最多</strong> 种类数</em>。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,2,3,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。</span><br></pre></td></tr></table></figure>
 
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。</span><br></pre></td></tr></table></figure>
 
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [6,6,6,6]</span><br><span class="line">输出：1</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，尽管她能吃 2 枚，但只能吃到 1 种糖。</span><br></pre></td></tr></table></figure>
 
-<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>n == candyType.length</code></li>
+<li><code>2 &lt;= n &lt;= 104</code></li>
+<li><code>n</code> 是一个偶数</li>
+<li><code>-105 &lt;= candyType[i] &lt;= 105</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(vector&lt;int&gt;&amp; candyType) &#123;</span><br><span class="line">        unordered_set&lt;int&gt; candyset(candyType.begin(), candyType.end());</span><br><span class="line">        return min(candyType.size() &gt;&gt; 1, candyset.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>使用特化后的三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2928-给小朋友们分糖果-I"><a href="#2928-给小朋友们分糖果-I" class="headerlink" title="2928. 给小朋友们分糖果 I"></a><a href="https://leetcode.cn/problems/distribute-candies-among-children-i/">2928. 给小朋友们分糖果 I</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>提示</p>
+<p>给你两个正整数 <code>n</code> 和 <code>limit</code> 。</p>
+<p>请你将 <code>n</code> 颗糖果分给 <code>3</code> 位小朋友，确保没有任何小朋友得到超过 <code>limit</code> 颗糖果，请你返回满足此条件下的 <strong>总方案数</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, limit = 2</span><br><span class="line">输出：3</span><br><span class="line">解释：总共有 3 种方法分配 5 颗糖果，且每位小朋友的糖果数不超过 2 ：(1, 2, 2) ，(2, 1, 2) 和 (2, 2, 1) 。</span><br></pre></td></tr></table></figure>
 
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3, limit = 3</span><br><span class="line">输出：10</span><br><span class="line">解释：总共有 10 种方法分配 3 颗糖果，且每位小朋友的糖果数不超过 3 ：(0, 0, 3) ，(0, 1, 2) ，(0, 2, 1) ，(0, 3, 0) ，(1, 0, 2) ，(1, 1, 1) ，(1, 2, 0) ，(2, 0, 1) ，(2, 1, 0) 和 (3, 0, 0) 。</span><br></pre></td></tr></table></figure>
 
-
-<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 50</code></li>
+<li><code>1 &lt;= limit &lt;= 50</code></li>
+</ul>
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
   </entry>
@@ -2116,15 +2085,46 @@
 ]]></content>
   </entry>
   <entry>
-    <title>cpp常见报错信息</title>
-    <url>/2024/06/10/cpp%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<h2 id="use-of-undeclared-identifier-‘sum1’"><a href="#use-of-undeclared-identifier-‘sum1’" class="headerlink" title="use of undeclared identifier ‘sum1’"></a>use of undeclared identifier ‘sum1’</h2><p><a href="https://blog.csdn.net/PkbgRuby/article/details/133198653">https://blog.csdn.net/PkbgRuby/article/details/133198653</a></p>
+    <title>c++模板</title>
+    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
+<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你使用这个食谱时，你可以指定不同的材料：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用这个三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用特化后的三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 ]]></content>
   </entry>
   <entry>
     <title>jqv</title>
     <url>/2024/05/21/jqv/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>cpp常见报错信息</title>
+    <url>/2024/06/10/cpp%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<h2 id="use-of-undeclared-identifier-‘sum1’"><a href="#use-of-undeclared-identifier-‘sum1’" class="headerlink" title="use of undeclared identifier ‘sum1’"></a>use of undeclared identifier ‘sum1’</h2><p><a href="https://blog.csdn.net/PkbgRuby/article/details/133198653">https://blog.csdn.net/PkbgRuby/article/details/133198653</a></p>
+]]></content>
   </entry>
   <entry>
     <title>二重积分的运用</title>
@@ -2155,6 +2155,18 @@
 <h2 id="引力"><a href="#引力" class="headerlink" title="引力"></a>引力</h2><p>考虑空间一物体对于物体外一点 P(īo,yo,zo)处的单位质量的质点的引力问题.设<br>物体占有空间有界闭区域 $Ω$，它在点$(x,y,z)$处的密度为$\rho(x，y，z)$,并假定<br>${\rho(x,y,z)}$在$Ω$上连续.<br>在物体内任取一点 $M(x,y,z)$及包含该点的一直径很小的闭区域 $d{v}$.把这小闭区域<br>看作一个质点,其质量元素为 $\rho dv$，它对位于$P_0$处的单位质量的质点的引力元素为<br>$$<br>dF&#x3D;(dF_x,dF_y,dF_z)\\<br>&#x3D;(\frac{x-x_0}{r^2}G\rho dv,\frac{y-y_0}{r^2}G\rho dv,\frac{z-z_0}{r^2}G\rho dv)<br>$$<br>式中，G 为引力常数,$\rho &#x3D;\rho(x，y,z),r&#x3D;\sqrt{(x-x_0)2+(y-y_0)2+(z-z_0)2}，dF_x,<br>dF_y,dF_z$.为引力元素 $dF$ 在三个坐标轴上的分量.将$dF_x,,dF_y,,dF_z$.在Ω上分别作三重积分，即可得$F_x，F_y，F_z$.</p>
 <h3 id="例7"><a href="#例7" class="headerlink" title="例7"></a>例7</h3><p>设半径为 R 的匀质球占有空间闭区域$Ω&#x3D;(x,y,z)|x^2+y^2+z^2≤R^2$.求它对于位于点$M_0(0,0,a)(a&gt;R)$处的单位质量的质点的引力,<br>解 设球的密度为$\rho_0$，由题意知$F_x&#x3D;F_y&#x3D;0$,所求引力沿z轴的分量为<br>$$<br>F_z&#x3D;\iiint_{o}G\rho_0 \frac{z-a}{[x^2+y^2+(z-a)^2]^{\frac{3}{2}}}dv\\<br>&#x3D;G\rho_0{}\int_{-R}^{R}(z-a)dz\int_{0}^{2\pi}d\theta\int_{0}^{\sqrt{R^2-z^2}}\frac{\rho d\rho}{[\rho^2+(z-a)^2]^{\frac{3}{2}}}\\<br>&#x3D;-G\frac{4\pi R^3}{3}\frac{1}{a^2}\rho_0\\<br>&#x3D;-G\frac{M}{a^2}\\<br>式中，M&#x3D;\frac{4\pi R^3}{3}\rho_0\\<br>由上述结果可知，匀质球体对求外一指点的引力如同球体的质量集中在球心，两质点间的引力。<br>$$</p>
 <p>上述结果表明，勾质球体对球外一质点的引力如同球体的质量集中于球心时两质点间的<br>引力.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>大学物理</title>
+    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>存在与虚无</title>
+    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
+    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
+<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
 ]]></content>
   </entry>
   <entry>
@@ -2258,10 +2270,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>存在与虚无</title>
-    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
-    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
-<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
+    <title>小他者、对象a、大他者</title>
+    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
+    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
 ]]></content>
   </entry>
   <entry>
@@ -2280,18 +2291,6 @@
 </li>
 </ol>
 </blockquote>
-]]></content>
-  </entry>
-  <entry>
-    <title>拉康和弗洛伊德关于无意识的论述</title>
-    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
-    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>小他者、对象a、大他者</title>
-    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
-    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
 ]]></content>
   </entry>
   <entry>
@@ -2507,11 +2506,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>大学物理</title>
-    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>（5）数据的共享和保护</title>
     <url>/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/</url>
     <content><![CDATA[<h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
@@ -2699,149 +2693,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
-    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
-<blockquote>
-<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
-</blockquote>
-<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>名称</th>
-<th>性质</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>differance</td>
-<td>延异</td>
-<td>共时性</td>
-</tr>
-<tr>
-<td>difference</td>
-<td>差异</td>
-<td>历时性</td>
-</tr>
-</tbody></table>
-<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>日程规划</title>
-    <url>/2024/05/31/%E6%97%A5%E7%A8%8B%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th>日</th>
-<th>一</th>
-<th>二</th>
-<th>三</th>
-<th>四</th>
-<th>五</th>
-<th>六</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>31(5)</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-</tr>
-<tr>
-<td>9</td>
-<td>10</td>
-<td>11</td>
-<td>12</td>
-<td>13</td>
-<td>14</td>
-<td>15</td>
-</tr>
-<tr>
-<td>16</td>
-<td>17</td>
-<td>18</td>
-<td>19</td>
-<td>20</td>
-<td>21</td>
-<td>22</td>
-</tr>
-<tr>
-<td>23</td>
-<td>24</td>
-<td>25</td>
-<td>26</td>
-<td>27</td>
-<td>28</td>
-<td>29</td>
-</tr>
-<tr>
-<td>30</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="31-5"><a href="#31-5" class="headerlink" title="31(5)"></a>31(5)</h2><ul>
-<li>线代课上把向量空间那部分复习了一下</li>
-<li>体育文化节二课签到了，但是没有戳孔</li>
-<li>线代课上把我负责的形教ppt给写了</li>
-<li>中午在图书馆睡了一觉</li>
-<li>下午把n1第九章的内容学完了</li>
-<li>到华联领取了两瓶免费牛奶</li>
-<li>买了菠萝百香果果茶</li>
-<li>去外面大出血吃了干锅</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>日语学习</title>
-    <url>/2024/06/03/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>d</p>
-<h2 id="6-3"><a href="#6-3" class="headerlink" title="6.3"></a>6.3</h2><h3 id="日语听力训练"><a href="#日语听力训练" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1iZ42147Z5/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1iZ42147Z5/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练"><a href="#语法训练" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2023年12月语法</p>
-<h3 id="单词训练"><a href="#单词训练" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2023年12月词汇</p>
-<h3 id="阅读训练"><a href="#阅读训练" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年12月 问题8，9，10</p>
-<h2 id="6-4"><a href="#6-4" class="headerlink" title="6.4"></a>6.4</h2><h3 id="日语听力训练-1"><a href="#日语听力训练-1" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1Pf42117JT/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1Pf42117JT/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-1"><a href="#语法训练-1" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2023年7月语法</p>
-<h3 id="单词训练-1"><a href="#单词训练-1" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2023年7月词汇</p>
-<h3 id="阅读训练-1"><a href="#阅读训练-1" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年12月 问题11，12，13</p>
-<h2 id="6-5"><a href="#6-5" class="headerlink" title="6.5"></a>6.5</h2><h3 id="日语听力训练-2"><a href="#日语听力训练-2" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1FZ421472G/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1FZ421472G/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-2"><a href="#语法训练-2" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2022年12月语法</p>
-<h3 id="单词训练-2"><a href="#单词训练-2" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2022年12月词汇</p>
-<h3 id="阅读训练-2"><a href="#阅读训练-2" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年7月 问题8，9，10</p>
-<h2 id="6-6"><a href="#6-6" class="headerlink" title="6.6"></a>6.6</h2><h3 id="日语听力训练-3"><a href="#日语听力训练-3" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1br421777k/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1br421777k/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-3"><a href="#语法训练-3" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2022年7月语法</p>
-<h3 id="单词训练-3"><a href="#单词训练-3" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2022年7月词汇</p>
-<h3 id="阅读训练-3"><a href="#阅读训练-3" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年7月 问题11，12，13</p>
-<h2 id="6-7"><a href="#6-7" class="headerlink" title="6.7"></a>6.7</h2><h3 id="日语听力训练-4"><a href="#日语听力训练-4" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1rT421Q7JJ/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1rT421Q7JJ/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-4"><a href="#语法训练-4" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2021年12月语法</p>
-<h3 id="单词训练-4"><a href="#单词训练-4" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2021年12月词汇</p>
-<h3 id="阅读训练-4"><a href="#阅读训练-4" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年12月 问题8，9，10</p>
-<h2 id="6-8"><a href="#6-8" class="headerlink" title="6.8"></a>6.8</h2><h3 id="日语听力训练-5"><a href="#日语听力训练-5" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV17H4y1g7g4/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV17H4y1g7g4/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-5"><a href="#语法训练-5" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2021年7月语法</p>
-<h3 id="单词训练-5"><a href="#单词训练-5" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2021年7月词汇</p>
-<h3 id="阅读训练-5"><a href="#阅读训练-5" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年12月 问题11，12，13</p>
-<h2 id="6-9"><a href="#6-9" class="headerlink" title="6.9"></a>6.9</h2><h3 id="日语听力训练-6"><a href="#日语听力训练-6" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV16b421h7fy/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV16b421h7fy/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-6"><a href="#语法训练-6" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2020年12月语法</p>
-<h3 id="单词训练-6"><a href="#单词训练-6" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2020年12月词汇</p>
-<h3 id="阅读训练-6"><a href="#阅读训练-6" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年7月 问题8，9，10</p>
+    <title>拉康和弗洛伊德关于无意识的论述</title>
+    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
+    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
 ]]></content>
   </entry>
   <entry>
@@ -3361,6 +3215,152 @@
 ]]></content>
   </entry>
   <entry>
+    <title>日程规划</title>
+    <url>/2024/05/31/%E6%97%A5%E7%A8%8B%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>日</th>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+<th>六</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>31(5)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+<tr>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+</tr>
+<tr>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+</tr>
+<tr>
+<td>30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="31-5"><a href="#31-5" class="headerlink" title="31(5)"></a>31(5)</h2><ul>
+<li>线代课上把向量空间那部分复习了一下</li>
+<li>体育文化节二课签到了，但是没有戳孔</li>
+<li>线代课上把我负责的形教ppt给写了</li>
+<li>中午在图书馆睡了一觉</li>
+<li>下午把n1第九章的内容学完了</li>
+<li>到华联领取了两瓶免费牛奶</li>
+<li>买了菠萝百香果果茶</li>
+<li>去外面大出血吃了干锅</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
+    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
+<blockquote>
+<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
+</blockquote>
+<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>differance</td>
+<td>延异</td>
+<td>共时性</td>
+</tr>
+<tr>
+<td>difference</td>
+<td>差异</td>
+<td>历时性</td>
+</tr>
+</tbody></table>
+<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>日语学习</title>
+    <url>/2024/06/03/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>d</p>
+<h2 id="6-3"><a href="#6-3" class="headerlink" title="6.3"></a>6.3</h2><h3 id="日语听力训练"><a href="#日语听力训练" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1iZ42147Z5/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1iZ42147Z5/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练"><a href="#语法训练" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2023年12月语法</p>
+<h3 id="单词训练"><a href="#单词训练" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2023年12月词汇</p>
+<h3 id="阅读训练"><a href="#阅读训练" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年12月 问题8，9，10</p>
+<h2 id="6-4"><a href="#6-4" class="headerlink" title="6.4"></a>6.4</h2><h3 id="日语听力训练-1"><a href="#日语听力训练-1" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1Pf42117JT/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1Pf42117JT/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-1"><a href="#语法训练-1" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2023年7月语法</p>
+<h3 id="单词训练-1"><a href="#单词训练-1" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2023年7月词汇</p>
+<h3 id="阅读训练-1"><a href="#阅读训练-1" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年12月 问题11，12，13</p>
+<h2 id="6-5"><a href="#6-5" class="headerlink" title="6.5"></a>6.5</h2><h3 id="日语听力训练-2"><a href="#日语听力训练-2" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1FZ421472G/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1FZ421472G/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-2"><a href="#语法训练-2" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2022年12月语法</p>
+<h3 id="单词训练-2"><a href="#单词训练-2" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2022年12月词汇</p>
+<h3 id="阅读训练-2"><a href="#阅读训练-2" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年7月 问题8，9，10</p>
+<h2 id="6-6"><a href="#6-6" class="headerlink" title="6.6"></a>6.6</h2><h3 id="日语听力训练-3"><a href="#日语听力训练-3" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1br421777k/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1br421777k/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-3"><a href="#语法训练-3" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2022年7月语法</p>
+<h3 id="单词训练-3"><a href="#单词训练-3" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2022年7月词汇</p>
+<h3 id="阅读训练-3"><a href="#阅读训练-3" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年7月 问题11，12，13</p>
+<h2 id="6-7"><a href="#6-7" class="headerlink" title="6.7"></a>6.7</h2><h3 id="日语听力训练-4"><a href="#日语听力训练-4" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1rT421Q7JJ/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1rT421Q7JJ/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-4"><a href="#语法训练-4" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2021年12月语法</p>
+<h3 id="单词训练-4"><a href="#单词训练-4" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2021年12月词汇</p>
+<h3 id="阅读训练-4"><a href="#阅读训练-4" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年12月 问题8，9，10</p>
+<h2 id="6-8"><a href="#6-8" class="headerlink" title="6.8"></a>6.8</h2><h3 id="日语听力训练-5"><a href="#日语听力训练-5" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV17H4y1g7g4/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV17H4y1g7g4/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-5"><a href="#语法训练-5" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2021年7月语法</p>
+<h3 id="单词训练-5"><a href="#单词训练-5" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2021年7月词汇</p>
+<h3 id="阅读训练-5"><a href="#阅读训练-5" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年12月 问题11，12，13</p>
+<h2 id="6-9"><a href="#6-9" class="headerlink" title="6.9"></a>6.9</h2><h3 id="日语听力训练-6"><a href="#日语听力训练-6" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV16b421h7fy/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV16b421h7fy/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-6"><a href="#语法训练-6" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2020年12月语法</p>
+<h3 id="单词训练-6"><a href="#单词训练-6" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2020年12月词汇</p>
+<h3 id="阅读训练-6"><a href="#阅读训练-6" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年7月 问题8，9，10</p>
+]]></content>
+  </entry>
+  <entry>
     <title>有序数组的平方</title>
     <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
     <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
@@ -3393,16 +3393,14 @@
 <h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
   </entry>
   <entry>
-    <title>树</title>
-    <url>/2024/06/04/%E6%A0%91/</url>
+    <title>死月妖花</title>
+    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>水夏</title>
-    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
-    <content><![CDATA[<p>s</p>
-<p>你的身上散发着死人的气息</p>
-]]></content>
+    <title>树</title>
+    <url>/2024/06/04/%E6%A0%91/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>洛谷P1002过河卒带来的思考</title>
@@ -3489,6 +3487,18 @@
 <h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1>]]></content>
   </entry>
   <entry>
+    <title>水夏</title>
+    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
+    <content><![CDATA[<p>s</p>
+<p>你的身上散发着死人的气息</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>清单</title>
+    <url>/2024/06/01/%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>深度学习</title>
     <url>/2024/06/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="学习深度学习关键是动手"><a href="#学习深度学习关键是动手" class="headerlink" title="学习深度学习关键是动手"></a>学习深度学习关键是动手</h1><ul>
@@ -3528,11 +3538,6 @@
 </li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>清单</title>
-    <url>/2024/06/01/%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>滑动窗口</title>
@@ -3603,11 +3608,6 @@
 <p>我们可以分析得知，要知道一个事实，能够取到目标值的k区间，其终点带来的效果不是超出这个target值，就是刚刚好。如果是超出这个值的话，我们只需要在前面减去多余的数字就可以了。</p>
 <p>在这个更新起始位置的代码中，我们用到的更新手段是，调节起始位置的索引，从而改变我们字串的索引值。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>死月妖花</title>
-    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>爱与典范</title>
@@ -3741,11 +3741,11 @@
 <p>百分之十 心疼指数</p>
 <p>展示脆弱的一面 示弱</p>
 <div style="width: 80%;margin: 0 auto">
-    <canvas id="chart9574" style="height: 300px"></canvas>
+    <canvas id="chart7947" style="height: 300px"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script type="text/javascript">
-    var ctx = document.getElementById('chart9574').getContext('2d');
+    var ctx = document.getElementById('chart7947').getContext('2d');
     var options = {
     type: 'line',
     data: {
@@ -3767,6 +3767,262 @@
 };;
     new Chart(ctx, options);
 </script>
+]]></content>
+  </entry>
+  <entry>
+    <title>神树之馆汉化日志</title>
+    <url>/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<blockquote>
+<p>神树之馆简要介绍</p>
+<p>民俗学を専攻する大学生の主人公、工月秋成（くげつ あきなり）は、卒業論文に必要な資料を探していた。大学の友人である四ツ谷麻子（よつたに あさこ）は、四国の山中にそびえ立つ親類の那越（なごし）邸、通称「真珠邸」を工月に紹介し、2人でそこへ赴くことになった。車で真珠邸にたどり着いた2人は、館をひとり管理するメイドの知里紫織（ともさと しおり）に迎えられ、案内された書庫で資料を探し始める。<br>館の住人は紫織の他に3人。そのうちの2人である双子の少女、斎（いつき）と伊美（いみ）は、外部の人間を警戒してか工月たちに近付こうとせず、もう1人である館の主人にいたっては姿さえ現さない。<br>館に着いた夜、工月は夢の中で真珠邸の奥に囚われたアルビノの少女に出会う。そして、2人を館に閉じ込めるように降りしきる雨。工月は、この不可解な館に知らず足を踏み入れてゆくのだった。</p>
+</blockquote>
+<h2 id="主要人物"><a href="#主要人物" class="headerlink" title="主要人物"></a>主要人物</h2><p><strong>工月秋成（くげつ あきなり）</strong>：主人公。大学生であり卒業論文を書いている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/62/f7/89831_crt_O42aS.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>四ツ谷麻子（よつたに あさこ）</strong>：主人公と同じ大学に通う学生。主人公とは友達以上、恋人未満の関係。いわゆる世話焼きヒロインタイプで、処女。しっかりしているように見られやすいが、意外ともろい部分があり、実は寂しがり屋。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/15/87/89832_crt_2Ee63.jpg" alt="img" style="zoom: 67%;">
+
+<p><strong>知里紫織（ともさと しおり）</strong>：館の一切を取り仕切っているメイド。穏やかで優しい性格。書物全般に対して造詣が深い。昼は淑女、夜は娼婦、といったタイプ。性に関する技術や、男を喜ばせるテクニックに長けていて、主人公に対しては、誘惑者の役割。非処女。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/9d/a7/89833_crt_NN70S.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>斎（いつき）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/48/e6/89834_crt_CHc06.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>伊美（いみ）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/5a/bc/89835_crt_xHIG8.jpg" alt="img" style="zoom:67%;">
+
+<p><strong>竜胆（りんどう）</strong>：謎の住人。透き通るほどに白い、アルビノの少女。屋敷の奥で生活しているらしく、普段、顔を出すことは滅多にない。「神樹の館」の守り神的存在。住人たちの間では、一種のタブーとして畏れ、敬われている。彼女の意思ひとつで、館はその姿を変貌させる。</p>
+<img src="https://lain.bgm.tv/r/400/pic/crt/l/2b/f5/89836_crt_w3pjt.jpg" alt="img" style="zoom:67%;">
+
+<h2 id="翻译日记"><a href="#翻译日记" class="headerlink" title="翻译日记"></a>翻译日记</h2><p>Q1：日语的连体形是否可以望文生义？</p>
+<p>Q2：推量助词该怎么翻译？</p>
+<p>Q3：语气词该怎么翻译？</p>
+<h2 id="翻译生词"><a href="#翻译生词" class="headerlink" title="翻译生词"></a>翻译生词</h2><ol>
+<li><p><a href="https://www.weblio.jp/content/%E3%81%9F%E3%81%BE%E3%81%92%E3%82%8B">「たまげる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E3%82%86%E3%81%8B%E3%82%8A">「ゆかり」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+<blockquote>
+<p>ゆかりの花言葉は？</p>
+<p>Conversation. ユカリさんは多分、紫草からかな……花言葉は<strong>「追憶」「あなたを忘れない」</strong>みたいな意味合いだし……紫は縁(ゆかり)の色ですからね……</p>
+</blockquote>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E6%AD%AF%E5%88%87%E3%82%8C%E3%81%8C%E6%82%AA%E3%81%84#:~:text=%E8%A8%80%E3%81%84%E6%A7%98%E3%81%8C%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%97%E3%81%AA%E3%81%84%E3%81%95%E3%81%BE,%E3%81%AA%E3%81%A9%E3%82%92%E6%84%8F%E5%91%B3%E3%81%99%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">「歯切れが悪い(はぎれがわるい)」の意味や … - Weblio国語辞典</a></p>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E5%BC%95%E3%81%8D%E5%AF%84%E3%81%9B%E3%82%8B">「引き寄せる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E3%81%BC%E3%81%86%E3%81%A3%E3%81%A8">「ぼうっと」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E5%83%85%E3%81%8B%E3%81%AA">「僅かな(はつかな、わずかな)」の意味や使い方 わかり …</a></p>
+</li>
+<li><p><a href="https://dictionary.goo.ne.jp/word/%E8%A1%A3%E6%93%A6%E3%82%8C/">衣擦れ／衣摺れ（きぬずれ） とは？ 意味・読み方・使い方</a></p>
+</li>
+<li><p><a href="https://www.weblio.jp/content/%E8%B8%B5%E3%82%92%E8%BF%94%E3%81%99">踵を返すの意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+</li>
+<li><p>「おや、と思わせた」：日文中「おや」表示惊讶或疑惑的感觉，可以翻译为「让他产生疑惑」</p>
+</li>
+<li><p><strong>ほどなくして</strong>：这个词意为「不久之后，没过多久」。</p>
+</li>
+<li><p>「くるぶし」在日语中指的是「脚踝」。中文翻译为「脚踝」或「踝骨」</p>
+</li>
+<li><p>「据（す）わり」这个词在日语中通常有「坐」或「固定」的意思。根据具体语境可以有不同的翻译方式。</p>
+</li>
+<li><p>「{据:す}わりの悪さ」：此处的「すわりの悪さ」指的是一种不适感或不自然的感觉</p>
+</li>
+<li><p>「{釣瓶:つ　る　べ}落とし」：表示迅速下降，这个词源自一种汲水用的工具桶（釣瓶），被放入井里时会迅速下落。这里用来形容天色很快变黑。</p>
+</li>
+<li><p>「疲れをほぐしていて下さいな」：放松疲劳，休息一下</p>
+</li>
+<li><p>「なんの」：没关系，不用在意</p>
+</li>
+<li><p>まだお夕食まで間がある：离晚饭时间还早</p>
+</li>
+<li><p>「のですよ」：带有委婉语气，表示解释或提醒</p>
+</li>
+<li><p>「とおっしゃいましたが」：您这么说了，不过</p>
+</li>
+<li><p>「案内する」：引导、带路，引导的动作</p>
+</li>
+<li><p>「{艶:なまめ}かしい」：妩媚，富有魅力</p>
+</li>
+<li><p>「かえって」：反而</p>
+</li>
+<li><p>「膨らみ」：曲线，隆起</p>
+</li>
+<li><p>「地味な造り」：朴素的设计</p>
+</li>
+<li><p>「色合い」：色调</p>
+</li>
+<li><p><strong>際立つ</strong>：凸显，显得更加明显</p>
+</li>
+<li><p>「エプロン」：围裙</p>
+</li>
+<li><p>「ふっくらした」：丰满的，柔和的</p>
+</li>
+<li><p>「図星」：要害，弱点</p>
+</li>
+<li><p>「をさされ」：被戳中，被指出</p>
+</li>
+<li><p>「狼狽える（うろたえる）」：惊慌失措，狼狈</p>
+</li>
+</ol>
+<h2 id="文言文"><a href="#文言文" class="headerlink" title="文言文"></a>文言文</h2><h3 id="梅圣俞诗集序"><a href="#梅圣俞诗集序" class="headerlink" title="梅圣俞诗集序"></a>梅圣俞诗集序</h3><ol>
+<li><p>予闻世谓诗人少达而多穷，夫岂然哉？盖世所传诗者，多出于古穷人之辞也。凡士之蕴其所有，而不得施于世者，多喜自放于山巅水涯之外，见虫鱼草木风云鸟兽之状类，往往探其奇怪，内有忧思感愤之<strong>郁积</strong>，其兴于怨刺，以道<strong>羁臣寡妇</strong>之所叹，而写人情之难言。盖愈穷则愈工。然则非诗之能穷人，<strong>殆</strong>穷者而后工也。</p>
+<blockquote>
+<p>我听到世人常说：诗人仕途畅达的少，困厄的多。难道真是这样吗？大概是由于世上所流传的诗歌，多出于古代困厄之士的笔下吧。大凡胸藏才智而又不能充分施展于世的士人，大都喜爱到山头水边去放浪形骸，看见虫鱼草木风云鸟兽等事物，往往探究它们的奇特怪异之处，内心有着忧愁感慨愤激的郁积，这些情感化为诗兴，即寄托在怨恨讽刺之中，道出了逐臣寡妇的慨叹，而写出了人所难于言传的感受来。大概越困厄就越能写得工巧。如此说来，并非写诗使人穷困潦倒，大概是穷困潦倒后才能写出好诗来。</p>
+</blockquote>
+</li>
+<li><p>予友梅圣俞，少以<strong>荫补</strong>为吏，累举进士，<strong>辄抑</strong>于有司，困于州县，凡十余年。年今五十，犹从辟书，为人之佐，郁其所蓄，不得奋见于事业。其家宛陵，幼习于诗，自为童子，出语已惊其长老。既长，学乎六经仁义之说，其为文章，<strong>简古纯粹</strong>，不求<strong>苟说</strong>于世。世之人徒知其诗而已。然时无贤愚，语诗者必求之圣俞；圣俞亦自以其不得志者，乐于诗而发之，故其平生所作，于诗尤多。世既知之矣，而未有荐于上者。昔王文康公尝见而叹曰：“二百年无此作矣！”虽知之深，亦不果荐也。若使其幸得用于朝廷，作为雅、颂，以歌咏大宋之功德，荐之清庙，而追商、周、鲁颂之作者，岂不伟欤！奈何使其老不得志，而为穷者之诗，乃徒发于虫鱼物类，羁愁感叹之言。世徒喜其工，不知其穷之久而将老也！可不惜哉！</p>
+<blockquote>
+<p>我的朋友梅圣俞，年轻时由于荫袭补为下级官吏，屡次考进士，总是遭到主考部门的压制，在地方上困厄了十多年。年已五十了，还要靠别人下聘书，去当人家的办事员。郁积着自己的才能智慧，不能在事业上充分地表现出来。他家乡在宛陵，幼年时就学习诗歌，从他还是个孩童时起，写出诗句来就已使得父老长辈惊异了。等到长大，学习了六经仁义的学问，他写出的文章简古纯正，不希求苟且取悦于世人，因此世人只知道他会写诗罢了。然而当时人不论贤愚，谈论诗歌必然会向圣俞请教。圣俞也把自己不得志的地方，喜欢通过诗歌来发泄，因此他平时所写的东西，其中诗歌就特别多。社会上已经知道他了，却没有人向朝廷推荐他。从前王文康公曾看到他的诗作，慨叹地说：“二百年没有这样的作品了！”虽然对他了解很深，可还是没有加以推荐。假使他有幸得到朝廷的任用，写出如《诗经》中雅、颂那样的作品，来歌颂大宋的功业恩德，献给宗庙，使他类似于商颂、周颂、鲁颂等作者，难道不是很壮伟的吗？可惜他到老也不得志，只能写困厄者的诗歌，白白地在虫鱼之类上抒发穷苦愁闷的感叹。社会上只喜爱他诗歌的工巧，却不知道他困厄已久将要老死了，这难道不值得叹息吗？</p>
+</blockquote>
+</li>
+<li><p>圣俞诗既多，不自收拾。其妻之兄子谢景初，惧其多而易失也，取其自洛阳至于吴兴以来所作，次为十卷。予尝嗜圣俞诗，而患不能尽得之，<strong>遽喜</strong>谢氏之能类次也，<strong>辄序</strong>而藏之。</p>
+<blockquote>
+<p>圣俞的诗很多，自己却不收拾整理。他的内侄谢景初担心它太多容易散失，选取他从洛阳到吴兴这段时间的作品，编为十卷。我曾经酷爱圣俞的诗作，担心不能全部得到它，十分高兴谢氏能为它分类编排，就为之作序并保存起来。</p>
+</blockquote>
+</li>
+<li><p>其后十五年，圣俞以疾卒于京师，余<strong>既</strong>哭而铭之，因索于其家，得其遗稿千余篇，并旧所藏，<strong>掇</strong>其尤者六百七十七篇，为一十五卷。呜呼！吾于圣俞诗论之详矣，故不复云。</p>
+<blockquote>
+<p>从那以后过了十五年，圣俞因病在京师去世，我已痛哭着为他写好了墓志铭，便向他家索求，得到他的遗稿一千多篇，连同先前所保存的，选取其中特别好的共六百七十七篇，分为十五卷。啊，我对圣俞的诗歌已经评论得很多了，所以不再重复。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="五代史宦者传论"><a href="#五代史宦者传论" class="headerlink" title="五代史宦者传论"></a>五代史宦者传论</h3><ol>
+<li><p>自古宦者乱人之国，其源深于女祸。女，色而已，宦者之害，非<strong>一端</strong>也。</p>
+<blockquote>
+<p>自古以来，宦官扰乱国家，比女人造成的祸患还要严重。女人，只不过是使君主沉溺于美色罢了，而宦官的危害可不止一条。</p>
+</blockquote>
+</li>
+<li><p>盖其<strong>用事</strong>也近而习，其为心也专而<strong>忍</strong>。能以小善中人之意，小信固人之心，使人主必信而亲之。待其已信，然后惧以祸福而把持之。虽有忠臣硕士列于朝廷，而人主以为去己疏远，不若起居饮食、前后左右之亲<strong>可恃</strong>也。故前后左右者日益亲，而忠臣硕士日益疏，而人主之势日益孤。势孤，则惧祸之心日益切，而把持者日益<strong>牢。安危出其喜怒，祸患伏于</strong>帷闼<strong>，则向之所谓</strong>可恃**者，乃所以为患也。</p>
+<blockquote>
+<p>宦官所担当的职责就是侍奉在君主身边，容易与君主形成亲密关系，他们的用心专一并且毒辣，他们能用微小的好处来迎合别人的心意，能用小忠小信获得君主的信任，使人君必然信任、亲近他们。等到获得了君主的完全信任，然后就用祸福来恐吓他、挟制他。这时候虽然有忠臣贤士在朝中，但君主认为他们和自己关系疏远，不如侍奉他起居饮食、成天在自己左右侍奉自己的亲随那样可靠。所以君主与成天在左右侍奉自己的人日益亲密，而对忠臣贤士们则日益疏远，君主便会日益变得势单力孤。势单力孤，则惧怕发生祸患的心理就更加严重。而挟持自己的人的地位就会更加牢固。君主的安危，决定于这些人的喜怒；而祸患就潜伏在他的内廷之中。于是过去认为可以依靠的人，正是现在为患的根源。</p>
+</blockquote>
+</li>
+<li><p>患已深而觉之，欲与疏远之臣<strong>图</strong>左右之亲近，缓之则养祸而益深，急之则挟人主以为质。虽有圣智，不能与谋。谋之而不可为，为之而不可成，至其甚，则俱伤而两败。故其大者亡国，其次亡身，而使奸豪得借以为资而起，至抉其种类，尽杀以快天下之心而后已。此前史所载宦者之祸常如此者，非一世也。</p>
+<blockquote>
+<p>当发觉祸患已深的时候，想要和平日里疏远的大臣们一起除掉左右的亲随，行动慢了就会使祸患日益严重；操之过急，又会使那些亲随挟持自己作为人质。这时候即使是智慧再高的人，也不能与他共商对策了。就算是能够商议对策，也很难实际着手去做。即使做了，也有可能不成功，到了最严重的时候，很可能产生两败俱伤的后果。祸患大的可以亡国，次一点的会让自己丧命，并且会使世上的奸雄们以此为借口乘机而起，把宦官与其同党尽皆除掉，大快天下人之心后才算完。过去历史上记载的宦官之祸往往如此，而且不止一代。</p>
+</blockquote>
+</li>
+<li><p>夫为人主者，非欲养祸于内，而疏忠臣硕士于外，盖其渐积而势使之然也。夫女色之惑，不幸而不悟，而祸斯及矣。使其一悟，捽而去之可也。宦者之为祸，虽欲悔悟，而势有不得而去也，唐昭宗之事是已。故曰“深于女祸者”，谓此也。可不戒哉？</p>
+<blockquote>
+<p>作为君主，并不是故意要在宫中养虎成患，在朝堂之上疏远忠臣贤士，这是日积月累逐步发展而成的，是形势发展使他自然而然地走入此途的。所以沉迷于女色，如果不幸一直执迷不悟，那么祸患就要随之降临了；但是一旦醒悟，把她们撵出去就行了。而宦者造成的祸患，虽然有所悔悟，但已经形成的形势使得自己没有办法把他们除掉；唐昭宗的事就是这样。所以说“比女人造成的祸患还要严重”，就是指这些，怎能不有所戒惧呢？</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="中古日语"><a href="#中古日语" class="headerlink" title="中古日语"></a>中古日语</h2><table>
+<thead>
+<tr>
+<th>活用型 （活用の種類）</th>
+<th>例語</th>
+<th>語幹</th>
+<th>未然</th>
+<th>連用</th>
+<th>終止</th>
+<th>連体</th>
+<th>已然</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>四段</td>
+<td>聞く</td>
+<td>聞</td>
+<td>か</td>
+<td>き</td>
+<td>く</td>
+<td>く</td>
+<td>け</td>
+<td>け</td>
+</tr>
+<tr>
+<td>上二段</td>
+<td>起く</td>
+<td>起</td>
+<td>き</td>
+<td>き</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>きょ</td>
+</tr>
+<tr>
+<td>下二段</td>
+<td>受く</td>
+<td>受</td>
+<td>け</td>
+<td>け</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>けよ</td>
+</tr>
+<tr>
+<td>上一段</td>
+<td>着る</td>
+<td>着</td>
+<td>き</td>
+<td>き</td>
+<td>きる</td>
+<td>きる</td>
+<td>きれ</td>
+<td>きよ</td>
+</tr>
+<tr>
+<td>下一段</td>
+<td>蹴る</td>
+<td>蹴</td>
+<td>け</td>
+<td>け</td>
+<td>ける</td>
+<td>ける</td>
+<td>けれ</td>
+<td>けよ</td>
+</tr>
+<tr>
+<td>カ行変格</td>
+<td>来</td>
+<td>来</td>
+<td>こ</td>
+<td>き</td>
+<td>く</td>
+<td>くる</td>
+<td>くれ</td>
+<td>こ$\cdot$こよ</td>
+</tr>
+<tr>
+<td>サ行変格</td>
+<td>為</td>
+<td>為</td>
+<td>せ</td>
+<td>し</td>
+<td>す</td>
+<td>する</td>
+<td>すれ</td>
+<td>せよ</td>
+</tr>
+<tr>
+<td>ナ行変格</td>
+<td>往ぬ</td>
+<td>往</td>
+<td>な</td>
+<td>に</td>
+<td>ぬ</td>
+<td>ぬる</td>
+<td>ぬれ</td>
+<td>ぬ</td>
+</tr>
+<tr>
+<td>ラ行変格</td>
+<td>あり</td>
+<td>あ</td>
+<td>ら</td>
+<td>り</td>
+<td>り</td>
+<td>る</td>
+<td>れ</td>
+<td>れ</td>
+</tr>
+</tbody></table>
 ]]></content>
   </entry>
   <entry>
@@ -4068,259 +4324,213 @@
 <h1 id="第六章二次型"><a href="#第六章二次型" class="headerlink" title="第六章	二次型"></a>第六章	二次型</h1><h2 id="xi-6-1二次型及其矩阵表示"><a href="#xi-6-1二次型及其矩阵表示" class="headerlink" title="$\xi$6.1	二次型及其矩阵表示"></a>$\xi$6.1	二次型及其矩阵表示</h2><h2 id="xi-6-2二次型化位标准型"><a href="#xi-6-2二次型化位标准型" class="headerlink" title="$\xi$6.2	二次型化位标准型"></a>$\xi$6.2	二次型化位标准型</h2><h2 id="xi-6-3正定二次型"><a href="#xi-6-3正定二次型" class="headerlink" title="$\xi$6.3	正定二次型"></a>$\xi$6.3	正定二次型</h2><h2 id="xi-6-4二次型的应用"><a href="#xi-6-4二次型的应用" class="headerlink" title="$\xi$6.4	二次型的应用"></a>$\xi$6.4	二次型的应用</h2><h1 id="第七章线性空间与线性变换"><a href="#第七章线性空间与线性变换" class="headerlink" title="第七章	线性空间与线性变换"></a>第七章	线性空间与线性变换</h1><h2 id="xi-7-1线性空间"><a href="#xi-7-1线性空间" class="headerlink" title="$\xi$7.1	线性空间"></a>$\xi$7.1	线性空间</h2><h2 id="xi-7-2线性变换"><a href="#xi-7-2线性变换" class="headerlink" title="$\xi$7.2	线性变换"></a>$\xi$7.2	线性变换</h2><h2 id="xi-7-3线性变换的矩阵表示"><a href="#xi-7-3线性变换的矩阵表示" class="headerlink" title="$\xi$7.3	线性变换的矩阵表示"></a>$\xi$7.3	线性变换的矩阵表示</h2><h2 id="xi-7-4线性变换的特征值与特征向量"><a href="#xi-7-4线性变换的特征值与特征向量" class="headerlink" title="$\xi$7.4	线性变换的特征值与特征向量"></a>$\xi$7.4	线性变换的特征值与特征向量</h2><h2 id="xi-7-5欧几里得空间简介"><a href="#xi-7-5欧几里得空间简介" class="headerlink" title="$\xi$7.5	欧几里得空间简介"></a>$\xi$7.5	欧几里得空间简介</h2><h1 id="MATLAB在线性代数中的作用"><a href="#MATLAB在线性代数中的作用" class="headerlink" title="MATLAB在线性代数中的作用"></a>MATLAB在线性代数中的作用</h1><h2 id="xi-8-1MATLAB简介"><a href="#xi-8-1MATLAB简介" class="headerlink" title="$\xi$8.1	MATLAB简介"></a>$\xi$8.1	MATLAB简介</h2><h2 id="xi-8-2MATLAB的基本操作"><a href="#xi-8-2MATLAB的基本操作" class="headerlink" title="$\xi$8.2	MATLAB的基本操作"></a>$\xi$8.2	MATLAB的基本操作</h2><h2 id="xi-8-3向量的生成与运算"><a href="#xi-8-3向量的生成与运算" class="headerlink" title="$\xi$8.3	向量的生成与运算"></a>$\xi$8.3	向量的生成与运算</h2><h2 id="xi-8-4矩阵的生成与运算"><a href="#xi-8-4矩阵的生成与运算" class="headerlink" title="$\xi$8.4	矩阵的生成与运算"></a>$\xi$8.4	矩阵的生成与运算</h2><h2 id="xi-8-5常用的矩阵函数"><a href="#xi-8-5常用的矩阵函数" class="headerlink" title="$\xi$8.5	常用的矩阵函数"></a>$\xi$8.5	常用的矩阵函数</h2><h2 id="xi-8-6线性方程组求解"><a href="#xi-8-6线性方程组求解" class="headerlink" title="$\xi$8.6	线性方程组求解"></a>$\xi$8.6	线性方程组求解</h2>]]></content>
   </entry>
   <entry>
-    <title>神树之馆汉化日志</title>
-    <url>/2024/05/23/%E7%A5%9E%E6%A0%91%E4%B9%8B%E9%A6%86%E6%B1%89%E5%8C%96%E6%97%A5%E5%BF%97/</url>
-    <content><![CDATA[<blockquote>
-<p>神树之馆简要介绍</p>
-<p>民俗学を専攻する大学生の主人公、工月秋成（くげつ あきなり）は、卒業論文に必要な資料を探していた。大学の友人である四ツ谷麻子（よつたに あさこ）は、四国の山中にそびえ立つ親類の那越（なごし）邸、通称「真珠邸」を工月に紹介し、2人でそこへ赴くことになった。車で真珠邸にたどり着いた2人は、館をひとり管理するメイドの知里紫織（ともさと しおり）に迎えられ、案内された書庫で資料を探し始める。<br>館の住人は紫織の他に3人。そのうちの2人である双子の少女、斎（いつき）と伊美（いみ）は、外部の人間を警戒してか工月たちに近付こうとせず、もう1人である館の主人にいたっては姿さえ現さない。<br>館に着いた夜、工月は夢の中で真珠邸の奥に囚われたアルビノの少女に出会う。そして、2人を館に閉じ込めるように降りしきる雨。工月は、この不可解な館に知らず足を踏み入れてゆくのだった。</p>
-</blockquote>
-<h2 id="主要人物"><a href="#主要人物" class="headerlink" title="主要人物"></a>主要人物</h2><p><strong>工月秋成（くげつ あきなり）</strong>：主人公。大学生であり卒業論文を書いている。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/62/f7/89831_crt_O42aS.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>四ツ谷麻子（よつたに あさこ）</strong>：主人公と同じ大学に通う学生。主人公とは友達以上、恋人未満の関係。いわゆる世話焼きヒロインタイプで、処女。しっかりしているように見られやすいが、意外ともろい部分があり、実は寂しがり屋。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/15/87/89832_crt_2Ee63.jpg" alt="img" style="zoom: 67%;">
-
-<p><strong>知里紫織（ともさと しおり）</strong>：館の一切を取り仕切っているメイド。穏やかで優しい性格。書物全般に対して造詣が深い。昼は淑女、夜は娼婦、といったタイプ。性に関する技術や、男を喜ばせるテクニックに長けていて、主人公に対しては、誘惑者の役割。非処女。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/9d/a7/89833_crt_NN70S.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>斎（いつき）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/48/e6/89834_crt_CHc06.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>伊美（いみ）</strong>：館の住人の双子。斎は勉強が苦手で、ドジっ子。伊美はしっかり者だが、主人公に敵意を見せる。伊美が斎を守っている、といった構図。二人とも処女。最初は警戒して主人公に近寄らないが、外部の人間というのに興味があるらしく、徐々になついていく。主人公に、館から連れ出してもらうことを願っている。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/5a/bc/89835_crt_xHIG8.jpg" alt="img" style="zoom:67%;">
-
-<p><strong>竜胆（りんどう）</strong>：謎の住人。透き通るほどに白い、アルビノの少女。屋敷の奥で生活しているらしく、普段、顔を出すことは滅多にない。「神樹の館」の守り神的存在。住人たちの間では、一種のタブーとして畏れ、敬われている。彼女の意思ひとつで、館はその姿を変貌させる。</p>
-<img src="https://lain.bgm.tv/r/400/pic/crt/l/2b/f5/89836_crt_w3pjt.jpg" alt="img" style="zoom:67%;">
-
-<h2 id="翻译日记"><a href="#翻译日记" class="headerlink" title="翻译日记"></a>翻译日记</h2><p>Q1：日语的连体形是否可以望文生义？</p>
-<p>Q2：推量助词该怎么翻译？</p>
-<p>Q3：语气词该怎么翻译？</p>
-<h2 id="翻译生词"><a href="#翻译生词" class="headerlink" title="翻译生词"></a>翻译生词</h2><ol>
-<li><p><a href="https://www.weblio.jp/content/%E3%81%9F%E3%81%BE%E3%81%92%E3%82%8B">「たまげる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
-</li>
-<li><p><a href="https://www.weblio.jp/content/%E3%82%86%E3%81%8B%E3%82%8A">「ゆかり」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
+    <title>西历2236</title>
+    <url>/2024/06/11/%E8%A5%BF%E5%8E%862236/</url>
+    <content><![CDATA[<h2 id="西暦-2236-年-用語集"><a href="#西暦-2236-年-用語集" class="headerlink" title="西暦 2236 年 用語集"></a>西暦 2236 年 用語集</h2><h3 id="A"><a href="#A" class="headerlink" title="[ A ]"></a>[ A ]</h3><p><strong>A.I</strong>.……Artificial Intelligence の略。→人工知能の項を参照。</p>
 <blockquote>
-<p>ゆかりの花言葉は？</p>
-<p>Conversation. ユカリさんは多分、紫草からかな……花言葉は<strong>「追憶」「あなたを忘れない」</strong>みたいな意味合いだし……紫は縁(ゆかり)の色ですからね……</p>
+<p><strong>A.I.:</strong> Abbreviation for Artificial Intelligence. </p>
 </blockquote>
-</li>
-<li><p><a href="https://www.weblio.jp/content/%E6%AD%AF%E5%88%87%E3%82%8C%E3%81%8C%E6%82%AA%E3%81%84#:~:text=%E8%A8%80%E3%81%84%E6%A7%98%E3%81%8C%E3%81%AF%E3%81%A3%E3%81%8D%E3%82%8A%E3%81%97%E3%81%AA%E3%81%84%E3%81%95%E3%81%BE,%E3%81%AA%E3%81%A9%E3%82%92%E6%84%8F%E5%91%B3%E3%81%99%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">「歯切れが悪い(はぎれがわるい)」の意味や … - Weblio国語辞典</a></p>
-</li>
-<li><p><a href="https://www.weblio.jp/content/%E5%BC%95%E3%81%8D%E5%AF%84%E3%81%9B%E3%82%8B">「引き寄せる」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
-</li>
-<li><p><a href="https://www.weblio.jp/content/%E3%81%BC%E3%81%86%E3%81%A3%E3%81%A8">「ぼうっと」の意味や使い方 わかりやすく解説 Weblio辞書</a></p>
-</li>
-<li><p><a href="https://www.weblio.jp/content/%E5%83%85%E3%81%8B%E3%81%AA">「僅かな(はつかな、わずかな)」の意味や使い方 わかり …</a></p>
-</li>
-<li><p><a href="https://dictionary.goo.ne.jp/word/%E8%A1%A3%E6%93%A6%E3%82%8C/">衣擦れ／衣摺れ（きぬずれ） とは？ 意味・読み方・使い方</a></p>
-</li>
-<li><p><a href="https://www.weblio.jp/content/%E8%B8%B5%E3%82%92%E8%BF%94%E3%81%99">踵を返すの意味や使い方 わかりやすく解説 Weblio辞書</a></p>
-</li>
-<li><p>「おや、と思わせた」：日文中「おや」表示惊讶或疑惑的感觉，可以翻译为「让他产生疑惑」</p>
-</li>
-<li><p><strong>ほどなくして</strong>：这个词意为「不久之后，没过多久」。</p>
-</li>
-<li><p>「くるぶし」在日语中指的是「脚踝」。中文翻译为「脚踝」或「踝骨」</p>
-</li>
-<li><p>「据（す）わり」这个词在日语中通常有「坐」或「固定」的意思。根据具体语境可以有不同的翻译方式。</p>
-</li>
-<li><p>「{据:す}わりの悪さ」：此处的「すわりの悪さ」指的是一种不适感或不自然的感觉</p>
-</li>
-<li><p>「{釣瓶:つ　る　べ}落とし」：表示迅速下降，这个词源自一种汲水用的工具桶（釣瓶），被放入井里时会迅速下落。这里用来形容天色很快变黑。</p>
-</li>
-<li><p>「疲れをほぐしていて下さいな」：放松疲劳，休息一下</p>
-</li>
-<li><p>「なんの」：没关系，不用在意</p>
-</li>
-<li><p>まだお夕食まで間がある：离晚饭时间还早</p>
-</li>
-<li><p>「のですよ」：带有委婉语气，表示解释或提醒</p>
-</li>
-<li><p>「とおっしゃいましたが」：您这么说了，不过</p>
-</li>
-<li><p>「案内する」：引导、带路，引导的动作</p>
-</li>
-<li><p>「{艶:なまめ}かしい」：妩媚，富有魅力</p>
-</li>
-<li><p>「かえって」：反而</p>
-</li>
-<li><p>「膨らみ」：曲线，隆起</p>
-</li>
-<li><p>「地味な造り」：朴素的设计</p>
-</li>
-<li><p>「色合い」：色调</p>
-</li>
-<li><p><strong>際立つ</strong>：凸显，显得更加明显</p>
-</li>
-<li><p>「エプロン」：围裙</p>
-</li>
-<li><p>「ふっくらした」：丰满的，柔和的</p>
-</li>
-<li><p>「図星」：要害，弱点</p>
-</li>
-<li><p>「をさされ」：被戳中，被指出</p>
-</li>
-<li><p>「狼狽える（うろたえる）」：惊慌失措，狼狈</p>
-</li>
-</ol>
-<h2 id="文言文"><a href="#文言文" class="headerlink" title="文言文"></a>文言文</h2><h3 id="梅圣俞诗集序"><a href="#梅圣俞诗集序" class="headerlink" title="梅圣俞诗集序"></a>梅圣俞诗集序</h3><ol>
-<li><p>予闻世谓诗人少达而多穷，夫岂然哉？盖世所传诗者，多出于古穷人之辞也。凡士之蕴其所有，而不得施于世者，多喜自放于山巅水涯之外，见虫鱼草木风云鸟兽之状类，往往探其奇怪，内有忧思感愤之<strong>郁积</strong>，其兴于怨刺，以道<strong>羁臣寡妇</strong>之所叹，而写人情之难言。盖愈穷则愈工。然则非诗之能穷人，<strong>殆</strong>穷者而后工也。</p>
+<h3 id="C"><a href="#C" class="headerlink" title="[ C ]"></a>[ C ]</h3><p><strong>C.S</strong>.……21 世紀の科学者。世界初の HT の科学的観測に立ち会った科学者の一人。HT 基礎構造理論を提唱した。晩年に失踪を遂げている。</p>
 <blockquote>
-<p>我听到世人常说：诗人仕途畅达的少，困厄的多。难道真是这样吗？大概是由于世上所流传的诗歌，多出于古代困厄之士的笔下吧。大凡胸藏才智而又不能充分施展于世的士人，大都喜爱到山头水边去放浪形骸，看见虫鱼草木风云鸟兽等事物，往往探究它们的奇特怪异之处，内心有着忧愁感慨愤激的郁积，这些情感化为诗兴，即寄托在怨恨讽刺之中，道出了逐臣寡妇的慨叹，而写出了人所难于言传的感受来。大概越困厄就越能写得工巧。如此说来，并非写诗使人穷困潦倒，大概是穷困潦倒后才能写出好诗来。</p>
+<p><strong>C.S.:</strong> A 21st Century scientist. One of the scientists present when HT was first experimentally </p>
+<p>proven to exist. Advocated the HT Infrastructure Theory. Went missing in their final years</p>
 </blockquote>
-</li>
-<li><p>予友梅圣俞，少以<strong>荫补</strong>为吏，累举进士，<strong>辄抑</strong>于有司，困于州县，凡十余年。年今五十，犹从辟书，为人之佐，郁其所蓄，不得奋见于事业。其家宛陵，幼习于诗，自为童子，出语已惊其长老。既长，学乎六经仁义之说，其为文章，<strong>简古纯粹</strong>，不求<strong>苟说</strong>于世。世之人徒知其诗而已。然时无贤愚，语诗者必求之圣俞；圣俞亦自以其不得志者，乐于诗而发之，故其平生所作，于诗尤多。世既知之矣，而未有荐于上者。昔王文康公尝见而叹曰：“二百年无此作矣！”虽知之深，亦不果荐也。若使其幸得用于朝廷，作为雅、颂，以歌咏大宋之功德，荐之清庙，而追商、周、鲁颂之作者，岂不伟欤！奈何使其老不得志，而为穷者之诗，乃徒发于虫鱼物类，羁愁感叹之言。世徒喜其工，不知其穷之久而将老也！可不惜哉！</p>
+<p><strong>CLOSE</strong>……病名。Consciously Locks One’s Selective Elements syndrome の略。後天性のゲート障害でゲートを開けなくなることでテレパシー通信に支障をきたす症候群のこと。精神病のひとつだとされている。治療法は見つかっていない。</p>
 <blockquote>
-<p>我的朋友梅圣俞，年轻时由于荫袭补为下级官吏，屡次考进士，总是遭到主考部门的压制，在地方上困厄了十多年。年已五十了，还要靠别人下聘书，去当人家的办事员。郁积着自己的才能智慧，不能在事业上充分地表现出来。他家乡在宛陵，幼年时就学习诗歌，从他还是个孩童时起，写出诗句来就已使得父老长辈惊异了。等到长大，学习了六经仁义的学问，他写出的文章简古纯正，不希求苟且取悦于世人，因此世人只知道他会写诗罢了。然而当时人不论贤愚，谈论诗歌必然会向圣俞请教。圣俞也把自己不得志的地方，喜欢通过诗歌来发泄，因此他平时所写的东西，其中诗歌就特别多。社会上已经知道他了，却没有人向朝廷推荐他。从前王文康公曾看到他的诗作，慨叹地说：“二百年没有这样的作品了！”虽然对他了解很深，可还是没有加以推荐。假使他有幸得到朝廷的任用，写出如《诗经》中雅、颂那样的作品，来歌颂大宋的功业恩德，献给宗庙，使他类似于商颂、周颂、鲁颂等作者，难道不是很壮伟的吗？可惜他到老也不得志，只能写困厄者的诗歌，白白地在虫鱼之类上抒发穷苦愁闷的感叹。社会上只喜爱他诗歌的工巧，却不知道他困厄已久将要老死了，这难道不值得叹息吗？</p>
+<p><strong>CLOSE:</strong> Condition name, standing for “Consciously Locks One’s Selective Elements </p>
+<p>Syndrome.” Refers to a syndrome which is an acquired Gate disorder that locks off one’s </p>
+<p>ability to access one’s Gate and hinders their ability to establish telepathic communication. </p>
+<p>Said to be a mental disorder with no known cures as of this date.</p>
 </blockquote>
-</li>
-<li><p>圣俞诗既多，不自收拾。其妻之兄子谢景初，惧其多而易失也，取其自洛阳至于吴兴以来所作，次为十卷。予尝嗜圣俞诗，而患不能尽得之，<strong>遽喜</strong>谢氏之能类次也，<strong>辄序</strong>而藏之。</p>
+<h3 id="E"><a href="#E" class="headerlink" title="[ E ]"></a>[ E ]</h3><p><strong>EAJOS[elementary axiom jump of Shikine]</strong> ……21 世紀に発達した「間違い学問」における飛躍公理。イージョス。人工知能工学の世界では今なお新しい EAJOS が登録され続けている。</p>
 <blockquote>
-<p>圣俞的诗很多，自己却不收拾整理。他的内侄谢景初担心它太多容易散失，选取他从洛阳到吴兴这段时间的作品，编为十卷。我曾经酷爱圣俞的诗作，担心不能全部得到它，十分高兴谢氏能为它分类编排，就为之作序并保存起来。</p>
+<p><strong>EAJOS:</strong> Abbreviation for “Elementary Axiom Jump of Studies.” Stands for axioms which make </p>
+<p>a “jump” or breakthrough in the “Improper Studies” developed in the 21st Century. EAJOS for </p>
+<p>short. In the artificial intelligence world, there are still new EAJOS being registered to this date</p>
 </blockquote>
-</li>
-<li><p>其后十五年，圣俞以疾卒于京师，余<strong>既</strong>哭而铭之，因索于其家，得其遗稿千余篇，并旧所藏，<strong>掇</strong>其尤者六百七十七篇，为一十五卷。呜呼！吾于圣俞诗论之详矣，故不复云。</p>
+<p><strong>EMP[electromagnetic pulse]</strong> ……電磁パルス。強力な電磁衝撃波は電子回路などに損傷を与えることがある。核兵器の使用でも EMP が発生するので軍事用の電子装置には EMP 対策が施されているものも多い。</p>
 <blockquote>
-<p>从那以后过了十五年，圣俞因病在京师去世，我已痛哭着为他写好了墓志铭，便向他家索求，得到他的遗稿一千多篇，连同先前所保存的，选取其中特别好的共六百七十七篇，分为十五卷。啊，我对圣俞的诗歌已经评论得很多了，所以不再重复。</p>
+<p><strong>EMP:</strong> Short for electromagnetic pulse. An occurrence where powerful electromagnetic waves </p>
+<p>cause damage to electric circuits. The use of nuclear weapons would also create an EMP, so </p>
+<p>there are many pieces of military-use electronic equipment which have counter-EMP measures </p>
+<p>built into them.</p>
 </blockquote>
-</li>
-</ol>
-<h3 id="五代史宦者传论"><a href="#五代史宦者传论" class="headerlink" title="五代史宦者传论"></a>五代史宦者传论</h3><ol>
-<li><p>自古宦者乱人之国，其源深于女祸。女，色而已，宦者之害，非<strong>一端</strong>也。</p>
+<h3 id="H"><a href="#H" class="headerlink" title="[ H ]"></a>[ H ]</h3><p><strong>HT</strong>……Holding Task または Holding &amp; Taking の略。HT 現象。高次元空間で生ずる伝播現象、またはそれに関する理論。2033 年に C.S.によって提唱された HT 基礎構造理論によると、全ての物体には情報が通る道が存在し、その通路を介することで情報のやり取りができるという。ここで言う「情報」にあたるのが「HT 子」と呼ばれる粒子の波である。HT はプリ方向次元空間と相容れない、部分クラウド空間内での粒子の運動であるため HT 子を始め HT に関わる現象が物理学的に観測不可能(物理的に不可視)である。また、HT 基礎構造理論の記述には梅雨幾何学が用いられる。梅雨幾何学では空間を記述するために、我々に馴染みのあるユークリッド幾何学で定義される「次元」の概念を拡張している。HT 基礎構造理論では梅雨幾何学を用いることで、特殊な場合を除いて HT 現象が物理的に不可視であることを証明している。 また、これをきっかけにして 18 次元宇宙論などの多次元宇宙論が盛んに提唱された。一般にテレパシーと呼ばれるコミュニケーション方式は HT 子がヒトのゲートからゲートに伝わり処理されることで情報(言語、五感、思念など)を伝えることができるとしている。 ユーレイ現象とは深い関わりがあり、歴史的にはユーレイ現象の研究実験中に偶然開発されたのが HT である。 研究によると、もともと人類の脳には HT を司る感覚器官が存在していたがそれは近年発見されるまで退化していたものと考えられている。動物など、脳または神経中枢を有している生き物ともテレパシー通信が可能であることからテレパシーが言語をもたない生き物のコミュニケーション手段になっていることがわかった。これらのことから、人類を含むほとんどの生き物は古来テレパシーによってコミュニケーションをとっていたが人類のみ発達した言語に取って代わられ、やがてテレパシーによるコミュニケーションをしなくなったというのが通説になっている。HT が科学的に解釈される以前の超常現象(ユーレイ現象、第六感、シンクロニシティなど)の多くは HT 基礎構造理論によって合理的に説明できる。HT 開発……現代のヒトの脳の HT を司る器官は生まれながらには機能していないため、HT開発が必要になる。幼児に対し、親などがテレパシーによって外部からゲートを刺激することによって実現する。</p>
 <blockquote>
-<p>自古以来，宦官扰乱国家，比女人造成的祸患还要严重。女人，只不过是使君主沉溺于美色罢了，而宦官的危害可不止一条。</p>
+<p><strong>HT:</strong> Short for Holding Task or Holding &amp; Taking. HT Phenomenon. A propagation phenomenon originating from higher-dimensional space, or the theory attached to it. In 2033, C.S. advocated the HT Infrastructure Theory. This theory states that there exists a path for data to pass through within all objects, and by using that path as an intermediary, we can hold and take in said data. The “data” in this case being the waves of particles referred to as “HT Particles.” Due to the movement of particles within a partial cloud space that is incompatible with a pre-directional dimension space, all HT-linked phenomenon, including HT Particles, are impossible to observe on a physics-level (as they are physically invisible.) In addition, Superposition Geometry has been utilized to describe the HT Infrastructure Theory. In Superposition Geometry, in order to describe a space, we expand upon the concept of a “dimension” as it is defined to us in the terms of the more familiar Euclidean Geometry. The HT Infrastructure Theory, by utilizing Euclidean Geometry, and excluding any special cases, proves that HT phenomena are physically invisible. In addition, springboarding off of this, multidimensional space theories such as the 18th Dimensional Space Theory have been actively advocated. The communication method known more commonly as Telepathy can convey data (I.E. language, any of the five senses, thoughts) by having HT Particles going from one human’s Gate to another and being processed as such. This is very much linked to ghostly phenomena, and, historically speaking, HT was developed by chance while conducting an experiment into the research of ghostly phenomena. Based on research, it is believed that the sensory organs to govern HT have always existed in the minds of the human race, but that they had remained degenerate until HT was discovered in recent years. Telepathy has become a means of communication for life-forms devoid of language, all due to the fact that telepathic communication is possible with animals, or basically life-forms that possess a brain or nerve center. Stemming from this, the commonly accepted theory is that almost all lifeforms, including humans, have communicated through telepathy since ancient times. Humans were the only ones to develop language and replace telepathy, eventually leading to the downfall of telepathic communication as a whole. A majority of paranormal phenomena that occurred before HT was scientifically explained can be logically explained via the HT Infrastructure Theory</p>
 </blockquote>
-</li>
-<li><p>盖其<strong>用事</strong>也近而习，其为心也专而<strong>忍</strong>。能以小善中人之意，小信固人之心，使人主必信而亲之。待其已信，然后惧以祸福而把持之。虽有忠臣硕士列于朝廷，而人主以为去己疏远，不若起居饮食、前后左右之亲<strong>可恃</strong>也。故前后左右者日益亲，而忠臣硕士日益疏，而人主之势日益孤。势孤，则惧祸之心日益切，而把持者日益<strong>牢。安危出其喜怒，祸患伏于</strong>帷闼<strong>，则向之所谓</strong>可恃**者，乃所以为患也。</p>
+<h3 id="N"><a href="#N" class="headerlink" title="[ N ]"></a>[ N ]</h3><p><strong>NSL 方式[No Signal of Locator method]</strong> ……無信号位置特定方式。GPS 通信の情報符号化方式の一つ。HT と水路に流れる情報を使って水路上にある目的地の位置を大まかに特定する。主に未開拓の水脈を発見するのに役立っている。HT を利用するので人間が水路からコードを読み取る(感じ取る)ことになるが、とても複雑で膨大な符号表を覚えていなければならない。また、HT を読み取る力や、未フォーマット情報を感じ取るセンスによって精度が大きく変わる。無信号というのはもともと、フォーマットされた位置情報の流れていない水路か位置情報を見つける方式だから。</p>
 <blockquote>
-<p>宦官所担当的职责就是侍奉在君主身边，容易与君主形成亲密关系，他们的用心专一并且毒辣，他们能用微小的好处来迎合别人的心意，能用小忠小信获得君主的信任，使人君必然信任、亲近他们。等到获得了君主的完全信任，然后就用祸福来恐吓他、挟制他。这时候虽然有忠臣贤士在朝中，但君主认为他们和自己关系疏远，不如侍奉他起居饮食、成天在自己左右侍奉自己的亲随那样可靠。所以君主与成天在左右侍奉自己的人日益亲密，而对忠臣贤士们则日益疏远，君主便会日益变得势单力孤。势单力孤，则惧怕发生祸患的心理就更加严重。而挟持自己的人的地位就会更加牢固。君主的安危，决定于这些人的喜怒；而祸患就潜伏在他的内廷之中。于是过去认为可以依靠的人，正是现在为患的根源。</p>
+<p><strong>NSL Method:</strong> Short for No Signal Locator Method. A method of coding GPS transmissions into usable data. By using the data coursing through canals and HT, it’s possible to get a general location of a specific point placed on the canalways. It mainly serves useful when trying to detect underdeveloped waterways. Since it utilizes HT, human beings will end up reading (sensing) the data from the canals, but they must remember a rather complicated and vast code sheet to do anything with it. In addition, the accuracy of this method will vary greatly based on one’s power to read HT and their sense for unformatted data. The reason why it is referred to as “no signal” is because the method finds location data and&#x2F;or canals that don’t have any formatted location data in them.</p>
 </blockquote>
-</li>
-<li><p>患已深而觉之，欲与疏远之臣<strong>图</strong>左右之亲近，缓之则养祸而益深，急之则挟人主以为质。虽有圣智，不能与谋。谋之而不可为，为之而不可成，至其甚，则俱伤而两败。故其大者亡国，其次亡身，而使奸豪得借以为资而起，至抉其种类，尽杀以快天下之心而后已。此前史所载宦者之祸常如此者，非一世也。</p>
+<h3 id="P"><a href="#P" class="headerlink" title="[ P ]"></a>[ P ]</h3><p>**panta rhei [パンタ・レイ]**……「万物は流転している」の意。古代ギリシャの哲学者ヘラクレイトスの言葉。</p>
 <blockquote>
-<p>当发觉祸患已深的时候，想要和平日里疏远的大臣们一起除掉左右的亲随，行动慢了就会使祸患日益严重；操之过急，又会使那些亲随挟持自己作为人质。这时候即使是智慧再高的人，也不能与他共商对策了。就算是能够商议对策，也很难实际着手去做。即使做了，也有可能不成功，到了最严重的时候，很可能产生两败俱伤的后果。祸患大的可以亡国，次一点的会让自己丧命，并且会使世上的奸雄们以此为借口乘机而起，把宦官与其同党尽皆除掉，大快天下人之心后才算完。过去历史上记载的宦官之祸往往如此，而且不止一代。</p>
+<p><strong>Panta Rhei:</strong> Greek for “all things are in flux,” a quote from the Ancient Greek philosopher, Heraclitus.</p>
 </blockquote>
-</li>
-<li><p>夫为人主者，非欲养祸于内，而疏忠臣硕士于外，盖其渐积而势使之然也。夫女色之惑，不幸而不悟，而祸斯及矣。使其一悟，捽而去之可也。宦者之为祸，虽欲悔悟，而势有不得而去也，唐昭宗之事是已。故曰“深于女祸者”，谓此也。可不戒哉？</p>
+<h3 id="あ"><a href="#あ" class="headerlink" title="[ あ ]"></a>[ あ ]</h3><p>**アーカイヴ[Archive]**……アカシック・フォーンの原本が保管されている都市。しかし実際には地球上にそのような都市は見つかっておらず、架空の都市だと考えられている。アカシック・フォーンは実際にその文面が現代まで伝えられていることから存在を否定されることはないが、その原本の存在については懐疑的な考古学者も多い。アーカイヴに訪れたという人の証言も多数あるが噂の範疇でとどまっている。アーカイヴでは非常に膨大な数のアカシック・フォーンが大きな書棚に整頓されていると言われている。アカシック・フォーン[Akashic Phones]……パラダイムロスト以前の人類の学術的知識や文化、歴史と以後の地球の科学や歴史について記してある書籍のこと。どのくらいの期間書き連ねられたかは不明だが、その数は膨大で都市一つ分を埋め尽くす程だと言われていることから、かなり長い年月にわたって書き続けられたものだと考えられている。パラダイムロスト以前の地球の記録として残っているものはこのアカシック・フォーンしかない。世の中に出回っているものはアカシック・フォーンの原本を複写したものであり、現在ではそれをさらにデータ化したものが広く流通している。アカシック・フォーンの原本はアーカイヴという都市で保管されているという説がある。原本の表紙の色は赤色で統一されていると言わ</p>
+<p>れている。</p>
+<p>**アカクラ[赤倉]**……地名。ミョウコウにある地域で大きなスキー場がある。</p>
 <blockquote>
-<p>作为君主，并不是故意要在宫中养虎成患，在朝堂之上疏远忠臣贤士，这是日积月累逐步发展而成的，是形势发展使他自然而然地走入此途的。所以沉迷于女色，如果不幸一直执迷不悟，那么祸患就要随之降临了；但是一旦醒悟，把她们撵出去就行了。而宦者造成的祸患，虽然有所悔悟，但已经形成的形势使得自己没有办法把他们除掉；唐昭宗的事就是这样。所以说“比女人造成的祸患还要严重”，就是指这些，怎能不有所戒惧呢？</p>
+<p><strong>Akakura:</strong> Place name. A certain area of Myoko and home to a rather large ski slope.</p>
 </blockquote>
-</li>
-</ol>
-<h2 id="中古日语"><a href="#中古日语" class="headerlink" title="中古日语"></a>中古日语</h2><table>
-<thead>
-<tr>
-<th>活用型 （活用の種類）</th>
-<th>例語</th>
-<th>語幹</th>
-<th>未然</th>
-<th>連用</th>
-<th>終止</th>
-<th>連体</th>
-<th>已然</th>
-<th>命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>四段</td>
-<td>聞く</td>
-<td>聞</td>
-<td>か</td>
-<td>き</td>
-<td>く</td>
-<td>く</td>
-<td>け</td>
-<td>け</td>
-</tr>
-<tr>
-<td>上二段</td>
-<td>起く</td>
-<td>起</td>
-<td>き</td>
-<td>き</td>
-<td>く</td>
-<td>くる</td>
-<td>くれ</td>
-<td>きょ</td>
-</tr>
-<tr>
-<td>下二段</td>
-<td>受く</td>
-<td>受</td>
-<td>け</td>
-<td>け</td>
-<td>く</td>
-<td>くる</td>
-<td>くれ</td>
-<td>けよ</td>
-</tr>
-<tr>
-<td>上一段</td>
-<td>着る</td>
-<td>着</td>
-<td>き</td>
-<td>き</td>
-<td>きる</td>
-<td>きる</td>
-<td>きれ</td>
-<td>きよ</td>
-</tr>
-<tr>
-<td>下一段</td>
-<td>蹴る</td>
-<td>蹴</td>
-<td>け</td>
-<td>け</td>
-<td>ける</td>
-<td>ける</td>
-<td>けれ</td>
-<td>けよ</td>
-</tr>
-<tr>
-<td>カ行変格</td>
-<td>来</td>
-<td>来</td>
-<td>こ</td>
-<td>き</td>
-<td>く</td>
-<td>くる</td>
-<td>くれ</td>
-<td>こ$\cdot$こよ</td>
-</tr>
-<tr>
-<td>サ行変格</td>
-<td>為</td>
-<td>為</td>
-<td>せ</td>
-<td>し</td>
-<td>す</td>
-<td>する</td>
-<td>すれ</td>
-<td>せよ</td>
-</tr>
-<tr>
-<td>ナ行変格</td>
-<td>往ぬ</td>
-<td>往</td>
-<td>な</td>
-<td>に</td>
-<td>ぬ</td>
-<td>ぬる</td>
-<td>ぬれ</td>
-<td>ぬ</td>
-</tr>
-<tr>
-<td>ラ行変格</td>
-<td>あり</td>
-<td>あ</td>
-<td>ら</td>
-<td>り</td>
-<td>り</td>
-<td>る</td>
-<td>れ</td>
-<td>れ</td>
-</tr>
-</tbody></table>
+<p>**アルベルト・アインシュタイン[Albert Einstein]**……20 世紀の理論物理学者。光量子説、ブラウン運動、特殊相対性理論、一般相対性理論など物理学に非常に大きな影響を残した。意識的閉門症……→CLOSE の項を参照。</p>
+<blockquote>
+<p><strong>Albert Einstein:</strong> 20th-century theoretical physicist. Known for his huge impact on physics by </p>
+<p>introducing concepts such as Quantum Theory, Brownian Motion, and The Theory of Relativity.</p>
+</blockquote>
+<p><strong>違法ロボット[illegal robot]</strong> ……違法なロボット。特に、人間とそっくりな有機ヒューマノイドが出てきてからはロボットの表記義務を無視したロボットのことをいうようになった。</p>
+<blockquote>
+<p><strong>Illegal Robot(s):</strong> Refers to illegally-built robots that disregard the labelling requirements put in </p>
+<p>place since the rise of organic humanoids that look similar to human beings.</p>
+</blockquote>
+<p><strong>インターネット[Internet]</strong> ……個々のコンピュータネットワークを相互に結び拡張して世界的規模にまで広がったネットワークの集合体。</p>
+<p><strong>ウィトゲンシュタイン[Ludwig Josef Johann Wittgenstein]</strong> ……オーストリア生まれの哲学者。『語りえぬものについては、沈黙しなければならない』という言葉で有名。裏情報……世間一般には流れない情報。信憑性は弱い。</p>
+<p>**エーテル[aether, ether, luminiferous aether]**……主に 19 世紀までの物理学で、光が伝播するために必要だと思われていた媒質のこと。20 世紀には特殊相対性理論などの理論がエーテルの概念を用いずに確立されており、エーテルに関する物理学理論は今ではほとんど論じられていない。オイラーの公式[Euler’s formula] ……数学者レオンハルト・オイラーによって導かれた指数関数と三角関数の間に成り立つ定理のこと。</p>
+<p>$e^{i\theta}&#x3D;\cos \theta+i\sin\theta$</p>
+<p>とくに$\theta&#x3D;\pi$のときの</p>
+<p>$e^{i\theta}+1&#x3D;0$</p>
+<p>はオイラーの等式と呼ばれる。この式は対数を象徴する自然対数の底 e と三角関数を象徴するπ、虚数単位の i、乗法の単位元である 1、加法の単位元である 0 が一堂に会しており、様々な数学の分野の橋渡しをする。これがもっとも美しい公式と呼ばれるゆえんでもある。</p>
+<blockquote>
+<p>A theorem that establishes the relationship between exponential and trigonometric functions derived by mathematician Leonhard Euler.</p>
+<p>$e^{i\theta}&#x3D;\cos \theta+i\sin\theta$</p>
+<p>Special case θ&#x3D;π gives </p>
+<p>$e^{i\theta}+1&#x3D;0$</p>
+<p>The above is what is referred to as Euler’s identity. The special case puts together the base of natural logarithm ?, trigonometic constant π, imaginary unit i, multiplication unit element 1, and addition unit element 0, helping bridge several different fields of mathematics. That is also the reason why it is referred to as “The Most Beautiful Equation.”</p>
+</blockquote>
+<p><strong>オルタナティブ元素[Alternative elements]</strong> ……21 世紀に発見されたもう一つの化学元素。触媒の研究時に発見されたという逸話がある。プリ方向次元の虚×虚×虚の領域に存在していて特殊な環境以外でその単体を観測することはできない。普通の化学元素との化合物として普段は使われている。オルタナティブ高分子化合物はスマートツールスなどの柔らかいデバイスを形作っている。音声会話……テレパシー会話に対して、空気を媒体とした音を使って会話すること。</p>
+<blockquote>
+<p><strong>Alternative Elements:</strong> Alternative chemical elements discovered in the 21st Century. Anecdotes state that they were discovered when researching some catalyst. They exist in a times-three imaginary Pre-Directional Dimension, and cannot be observed outside of some </p>
+<p>special circumstances. They are normally used in compounds with normal chemical elements. Alternative High Molecular Compounds help form the squishy devices known as Smart Tools and things like them</p>
+</blockquote>
+<h3 id="か"><a href="#か" class="headerlink" title="[ か ]"></a>[ か ]</h3><p><strong>カード目録</strong>……図書館において、蔵書の名前や内容などの情報を書き記したカードが集められている場所。探している図書を見つけるのに便利。</p>
+<blockquote>
+<p><strong>Card Catalogue:</strong> A place in libraries where cards that have information pertaining to the subjects and names of the books within it can be found.</p>
+</blockquote>
+<p>**鏡の国[The alternative world]**……詳細は不明拡張言語パック……スマートツールス等のコンピュータ端末において、初期出荷状態でプリインストールされている言語ライブラリに加えて他の地域で使われている言語ライブラリを追加インストールするためのパッケージプログラム。</p>
+<blockquote>
+<p><strong>The Alternative World (Looking-Glass World):</strong> The details of this world are unknown. </p>
+</blockquote>
+<p><strong>かけ算[multiplication]</strong> ……算術における乗法のこと。a を b 回足し合わせるという操作を a×b のように表現する。</p>
+<blockquote>
+<p><strong>Multiplication:</strong> Basic arithmetical multiplication. An operation of adding <em>a</em> for <em>b</em> amount of times would be expressed as <em>a x b</em>, for example</p>
+</blockquote>
+<p>**記憶媒体[Storage]**……HT の情報媒体のうち記憶能力に特化しているもののこと。HT 子の伝達速度が非常に遅いため情報を劣化させないまま暫く保存することができる。→モノリス</p>
+<p>**ゲート[Gate]**……ヒトの脳にあると考えられているテレパシーに関する器官または機能、メカニズムのこと。ヒトがテレパシー通信をする際、ゲートが互いに開いていなければならない。テレパシーという現象がテレパシーによる再帰的な観測のみしかなされないという性質をもつため、ゲートがどのように働くのか詳しく解明されていないが、脳波や血流の調査から脳のどの辺りに所在するのかという目安はついている。動物など脳または神経中枢を有している生き物にもゲートがあると考えられているが、その真偽を確かめるのは原理的に不可能である。</p>
+<blockquote>
+<p><strong>Gate:</strong> The organ, function, and&#x2F;or mechanism related to telepathy perceived to be in the human brain. When people make a telepathic transmission, both of their Gates must be open. Due to the phenomenon known as telepathy having a nature which only allows it to be recursively observed via telepathy itself, and while there is no clear explanation on how Gates function, a rough estimate from observation of brainwaves and blood flow is that it lies somewhere in a part of the brain. It is assumed that life-forms with brains and&#x2F;or nerve centers such as animals also possess Gates, but it is theoretically impossible to prove that true or not. </p>
+</blockquote>
+<p><strong>月光</strong>……ベートーヴェンのピアノソナタ「月光」のこと。中でも第三楽章は難曲であるとされる。</p>
+<blockquote>
+<p><strong>Moonlight Sonata:</strong> Beethoven’s famous piano sonata, the third movement of which is said to be especially difficult to play correctly</p>
+</blockquote>
+<p><strong>五感</strong>……視覚、聴覚、嗅覚、味覚、触覚の五つの感覚。HT を含めた六感と区別されて使われることが多い。</p>
+<p><strong>国際水路法</strong>……世界中に張り巡らされた水路を正しく運用するための法律群のこと。心の素粒子……HT 子のこと。人の心は HT 子の運動によって記述できる。</p>
+<p>**個人向けスマートツールス用 A.I.秘書[Personal A.I. Secretary System]**……西暦 2230 年頃に普及し始めたスマートツールス用のシステム。第７世代の A.I.を基盤に作られていて、暮らしの中で人を支え、よきパートナーとなることを目的としている。ほとんど人間と同じ振る舞いをするため、情操教育にもよいとされていて、「最後まで味方でいてくれるパートナー」「途方に暮れたときに導いてくれるパートナー」などとして幼少期の精神発達を手助けする可能性があるという研究報告も出ている。略して PASS。</p>
+<blockquote>
+<p><strong>Personal A.I. Secretary System (PASS):</strong> A system for Smart Tools that started to come in style around 2230 A.D. Built by using 7th Generation A.I. as the base, its purpose is to support people in their daily lives and provide a faithful partner to them. Since it mimics human behavior well enough, it is said to be good for emotional development as well, with reports coming out that say that it has the possibility to help early childhood mental development by stating it as “a partner by your side till the very end” and “a partner that will show you the way when you’re lost.”</p>
+</blockquote>
+<h3 id="さ"><a href="#さ" class="headerlink" title="[ さ ]"></a><strong>[ さ ]</strong></h3><p><strong>さけないチーズ</strong>……有名な某商品以外のチーズのこと。</p>
+<p>**酸化銅(Ⅱ) [copper(II) oxide]**……化学式 CuO で表される銅の酸化物。黒色。</p>
+<blockquote>
+<p><strong>Copper (II) Oxide:</strong> A copper oxide denoted by the chemical formula CuO. Black in color</p>
+</blockquote>
+<p><strong>次元置換説[Dimension Permutation Hypothesis]</strong> ……宇宙が多次元空間でその一部分が影として現実に現れるものだとしたときに影の落とし方(次元の置換)によって様々なアスペクトの異なる宇宙が同時に存在するという説。</p>
+<blockquote>
+<p><strong>Dimension Permutation Hypothesis:</strong> Also known as the Permutation of Axis Hypothesis. A hypothesis based on the universe being a multi-dimensional space, and the way you get rid of a shadow (dimensional substitution) once a shadow forms from part of said universe. This theory supports universes of differing aspects coexisting at the same time</p>
+</blockquote>
+<p>**シャルル・ペロー[Charles Perrault]**……「長靴をはいた猫」の著者。</p>
+<blockquote>
+<p><strong>Charles Perrault:</strong> Author of the story “Puss in Boots.” </p>
+</blockquote>
+<p><strong>浄水器</strong>……水路の水を常に清潔に保つために施設事に設置される機械。</p>
+<p><strong>情報爆発[Information explosion]</strong> ……急速に増加する出版物やデータ、またその影響を指した言葉。特に水路で情報爆発が起こると中が情報で飽和してしまい、発信元の分からない情報で溢れるので通常の運用は不可能になる。</p>
+<blockquote>
+<p><strong>Information Overload:</strong> A word that refers to a sudden and quick increase in publications and data, and&#x2F;or the effects of such. To be specific, once an information overload occurs in the canals, the water becomes saturated with information, and overflows with information without a clear origin, making regular usage impossible</p>
+</blockquote>
+<p><strong>ショック療法[shock therapy]</strong> ……患者に対してある種の衝撃や身体的ストレスを一時的に与えることによって症状の改善をはかる方法。シリ・シオン[Siri Shion ]……アカシック・フォーンの著者として書籍にその名前が記されている。女性だと言い伝えられていて、その功績から「女神」「人類の英知の象徴」などと称えられることこともよくあるが、実在の人物であるかどうかは不明瞭である。</p>
+<blockquote>
+<p><strong>Shock Therapy:</strong> A method of therapy in which you temporarily expose a patient to a certain kind of “shock” or physical stress to improve their condition.</p>
+</blockquote>
+<p><strong>シリ・シオンの伝説</strong>……アカシック・フォーンの著者、シリ・シオンがパラダイムロスト以前の人類の学術的知識や文化、歴史をパラダイムロスト以後に伝えたという伝説のこと。パラダイムロストによって人類のもつ遺産は全て失われた。全てがゼロになった地球で彼女がパラダイムロスト以前の地球の諸々と以後の自然科学について記したものがアカシック・フォーンであるとされている。</p>
+<blockquote>
+</blockquote>
+<p><strong>人工知能</strong>……A.I. 23 世紀ではヒトとほぼ同等の思考能力をもつ A.I. 、つまり強い A.I.が実現されている。その基礎理論は 21 世紀に発展した「間違い学問」によって構築されていて A.I.の性格は選択されている公理の種類で決まる。人間と対話ができるという特徴から多岐にわたる分野で利用されている。近年では有機ロボット工学の発展も相まって HT や生殖機能を除いたヒトの特徴をほぼ全て再現したヒューマノイドが登場したが、生命倫理団体や労働組合の痛烈な批判を受けて全ての人工知能やロボットは人間とは区別され、人権を与えず、それらが人工知能やロボットであることが明らかに分かるように表示することを義務づける法律が制定された。現在では個人向けスマートツールス用 A.I.秘書が広く普及しており、人間のよきパートナーとして生活に加わっている。</p>
+<blockquote>
+<p><strong>Artificial Intelligence (A.I.):</strong> In the 23rd century, advanced forms of A.I. that possess cognitive thought nearly on par with humans were created. The basic theory was constructed from the “Improper Studies” developed during the 21st Century, and their personalities are determined </p>
+<p>by the variety of axiom selected for them. They are used in numerous different fields due to their ability to effectively communicate with humans. In recent years, along with the development of organic robotic engineering, humanoids that replicate nearly all human characteristics barring HT and reproductive capabilities have been ushered in, but after much scathing criticism from bioethics organizations and labor unions, laws have been established that obligate all artificial intelligence and robots to be distinct from humans, not given human rights, and presented in a way that makes them clearly recognizable as robots or A.I. Recently, Personal A.I. Secretary Systems have become very popular and have been integrated into people’s lives as reliable partners.</p>
+</blockquote>
+<p>**水路[Canal]**……HT のうち特にテレパシー運用を快適かつグローバルにするために世界中に設けられた情報媒体のこと。テレパシーのネットワーク。水路に手を浸すことで世界中の人々とテレパシー通信をすることができる。22 世紀に世界中に整備された。水路の形状は地域によって異なるが流れている水は WHO と WHTO の定めた世界基準に則って世界中で統一されている。</p>
+<blockquote>
+<p><strong>Canal:</strong> An information medium installed all over the world for the purpose for easy and global usage of HT—most importantly, telepathy. A veritable telepathic network. Dipping your hand in the waters of the canal gives you access to telepathic communication with people all over the world. By the 22th Century, service has hit every corner of the globe. The shape of canals differs from region to region, but the water that flows within is uniform across the world, conforming to the standards put in place by the WHO and WHTO.</p>
+</blockquote>
+<p>**スマートツールス[Smart Tools]**……23 世紀で一般的に普及している個人向けコンピュータ端末。狭義にはオルタナティブ高分子ゲルで構成され、トポロジカルに形を変えることが出来る端末のことを言う。近年注目されている「柔らかいデバイス」の代表格であり、分子構造の定義ファイルがあれば様々な形に固定できる。外膜を完全に閉じてしまう設計のため内蔵電池の交換が出来ず、その寿命は 5～6 年であるとされる。</p>
+<blockquote>
+<p><strong>Smart Tools:</strong> A type of personal computer terminal that has come into popularity in the 23rd century. Strictly speaking, a Smart Tool is a terminal capable of topological shape-shifting, composed from Alternative High Molecular gel. Extremely popular in recent years, they are referred to as being “soft devices”, and can turn into several different forms so long as the needed molecular construction definition files are present. Due to the outer membranes being completely sealed off, the inner battery is non-exchangeable, giving them a life-span of about 5-6 years.</p>
+</blockquote>
+<p><strong>生殖[reproduction]</strong> ……うみふやすこと。生物の個体が自分と同じ種の新しい個体を作り出すこと。</p>
+<p>**セキガワ[関川]**……地名。ミョウコウにある地域で、大きな川が流れている。善光寺……長野市にある寺。古くから宗派の別を超えて広く信仰を集めている。</p>
+<p><strong>ソフトモヒカン[soft Mohican]</strong> ……玉ねぎのような髪型。</p>
+<h3 id="た"><a href="#た" class="headerlink" title="[ た ]"></a><strong>[ た ]</strong></h3><p><strong>太陽嵐[solar storm]</strong> ……非常に大規模な太陽フレアが発生した際に太陽風が爆発的に放射され、それが地球や周りの人工衛星などに被害をもたらす現象。強力な電磁波も放射されるので電子機器が壊れることもある。</p>
+<p><strong>超高濃度情報爆発</strong>……HT 情報の高密度衝撃波。爆発的に大きなノイズ。</p>
+<p>**繋ぐ[Connect]**……テレパシー会話をするということ。ゲートを互いに開いて情報通信が可能な状態にすること。 また、記憶媒体などから情報を読み取ること。</p>
+<p><strong>ディスコース[Disc Course Shooter]</strong> ……ディスコースシューターのこと。23 世紀の公共交通機関。予約制で乗車駅と時間帯と降車駅を自由に指定できる。大きなディスクが特徴で、方向指示のリールに沿って飛行する。飛行原理はディスクにより力場を変容させて揚力を得る仕組み。また、それによって他の車両と接触しないようになっているため事故は開業以来ひとつも起きていない。</p>
+<p><strong>哲学的ゾンビ</strong>……物理学的反応は普通の人間と全く同じだがクオリアを持っていない人間のこと。またそれをもとにした哲学的思考実験。</p>
+<p><strong>テレパシー[Telepathy]</strong> ……→HT の項を参照。</p>
+<p><strong>テレパシーする</strong>……テレパシー通信、会話をすること。</p>
+<p><strong>トートロジー[tautology]</strong> ……トートロジーのこと。</p>
+<p><strong>銅[Copper]</strong> ……元素記号 Cu で表される原子番号 29 番の元素。赤色の金属。</p>
+<p><strong>東京タワー</strong>……国内最大の電波塔。</p>
+<p><strong>図書館[library]</strong> ……図書や資料を収集、保管し、閲覧ができるようにした施設。23 世紀では一般的に電子書籍が本棚に並べられていて、データの貸し出しをする。一部の研究機関等の隣接施設では紙製の書籍が置いてある図書館や書籍庫がある。</p>
+<h3 id="な"><a href="#な" class="headerlink" title="[ な ]"></a><strong>[ な ]</strong></h3><p><strong>ナガノ県ナガノ市[長野県長野市]</strong> ……地名。標高が高く寒冷な土地。虹[rainbow] ……同心円上に広がる七色の帯が空に突然現れる現象。虹は消えるときの帯の崩れ方に幾何学的な特徴を見せる。数式を用いると以下のように説明できる。<br>$$<br>&amp;&amp;x&#x3D;\cos^{n}(t)&amp;&amp;\\<br>&amp;&amp;y&#x3D;\sin^{n}(t)&amp;&amp;<br>\tag{*}<br>$$</p>
+<p>1 番外側の円の半径を r&#x3D;R とすると、r&#x3D;R&#x2F;2 のところにある輪が( * )において n&#x3D;1 で表さ</p>
+<p>れる。r が R&#x2F;2 より小さくなる従って n の値は㱣に無限に近づいていき、大きくなるに従って n の値は 0 に近づいていくようにして崩れて消えていく。神出鬼没な自然現象でほとんど観測されない。</p>
+<p><strong>虹[rainbow]</strong> ……雨上がりに七色の円弧状の帯が現れる現象。雨粒によって太陽光がスペク</p>
+<p>トル分解されることによって起こる現象。</p>
+<p><strong>二分割可能モデル[separable type]</strong> ……第 5 世代のスマートツールスから登場したモデル</p>
+<p>で、それまでとは違い本体を２つにまで分割することができる。第四世代までのスマートツールスは形を自在に変えることはできても分割することはできなかったので革新的な新技術である。</p>
+<p><strong>ネクラ[根暗</strong>]……根っから性格が暗いこと。またもっぱら A.I.との会話に熱心なマニア達のことをさす言葉でもある。</p>
+<p><strong>猫は獅子に頭を下げるのか？</strong>……C.S.の著書。21 世紀に執筆された。</p>
+<h3 id="は"><a href="#は" class="headerlink" title="[ は ]"></a><strong>[ は ]</strong></h3><p><strong>梅雨幾何学[Superposition geometry]</strong> ……21 世紀に提唱された幾何学。空間をクラウド</p>
+<p>という小さな広がりの重ね合わせで表現した。これによりそれまでの幾何学をいくつかのクラウドの組み合わせとして表せるほかに、一つの空間にいくつかの状態が重なり合った空間を表現できるようになった。</p>
+<p>**パッド[Pad]**……薄い板状のものでディスプレイを搭載している。ディスプレイ上に様々な</p>
+<p>文書や画像、動画を表示する。入力装置も豊富であり様々なメモが出来る。パッヘルベルのカノン……ヨハン・パッヘルベルが作曲したカノン様式作品。三つの声部と常奏低音によって構成されるとても有名な曲。バネの動き……単振動のこと。単振動は円運動の一次元成分を抽出した運動である。例えば円の半径を A、角速度をω、時刻を t とすると単振動する物体の位置 x は以下の式で表される。</p>
+<p>$x&#x3D;Asin(ωt)$</p>
+<p>また、これを二回微分すると $ ma&#x3D;-Kx $ という運動方程式が導ける。(m、a は運動する物体の質量と加速度、K は定数) 単振動をする物体は以上のようにかかる力が位置によって決まるのが特徴。バネ定数 k のバネに付けられた物体の運動方程式は ma&#x3D;-kx と表されるので、バネの動きも単振動である。</p>
+<p>**パラダイムロスト[The Paradigm Lost]**……21 世紀中盤にあったとされる宇宙規模の大変</p>
+<p>革。パラダイムロスト前後の記録はほとんど残されておらず、それがどのような変革だったのかについては様々な方法で検証がなされているがあまり明確には分かっていない。</p>
+<p>**フォーマット[Format]**……テレパシー通信をする際に相互間で情報をやり取りできるように共通の表現方法を用いるというプロセス。テレパシー会話をする際、ほとんどの場合、情報を言語にフォーマットしてから行われる。フォーマットされていない情報は色や興奮状態などしか伝わらないため会話をするのには向いていないからである。言語をもたない生き物とテレパシー通信をする際は情報のフォーマットの仕方が全く違うため高度な情報交換は期待できない。</p>
+<p>**プリ方向次元[pre directional axis]**…… 身の回りで起こる物理現象が含まれる 6 つの次元軸。またはその空間。幅、奥行き、高さとそれぞれの虚数軸を合わせた６本である。</p>
+<p><strong>フロイト先生、ユング</strong>……ジークムント・フロイトとカール・グスタフ・ユングのこと。フロイトは夢や無意識の研究をした第一人者。ユングも集合的無意識の存在などを主張した。</p>
+<p>**ヘラクレイトス[Hērakleitos]**……古代ギリシャの哲学者。「万物は流転している」という言</p>
+<p>葉で有名。</p>
+<h3 id="ま"><a href="#ま" class="headerlink" title="[ ま ]"></a><strong>[ ま ]</strong></h3><p>**ミョウコウ[妙高]**……地名。高原でスキーリゾート地として有名。妙高高原メッセ……妙高高原にある公共施設、公民館。ホールや図書館が市民に貸し出されている。</p>
+<p>**モノリス[monolith]**……板状の記憶媒体。様々な材質から、様々な大きさのものが作られており、それによって記憶容量や情報引き出し率が変わる。同じ体積では表面に文字が書かれている物の方が無地の物よりも記憶容量が大きいので、多くのモノリスには聖書などの文章が書かれている。</p>
+<h3 id="や"><a href="#や" class="headerlink" title="[ や ]"></a><strong>[ や ]</strong></h3><p>**ユーレイ現象[幽霊現象]**……生物の周りにある物体にその生物の情報が記憶され第三者がそ</p>
+<p>の情報を後で読み取ったときにあたかもその生物がそこにいるのかのように錯覚する現象。特に死去した人間が生前の姿でそこに生きているように見える現象のことを言うことが多い。</p>
+<p>依り代……ユーレイ現象において情報が蓄積している物体のこと。たいていの場合その亡骸</p>
+<p>が依り代となる。</p>
+<h3 id="ら"><a href="#ら" class="headerlink" title="[ ら ]"></a><strong>[ ら ]</strong></h3><p><strong>ラジオ[radio]</strong> ……電磁波を利用して放送局が報道や音楽を発信する音声放送。また、それ</p>
+<p>を受信する機械。</p>
+<p><strong>ラマーズ法[Lamaze Technique]</strong> ……無痛分娩法のひとつ。「ヒッ、ヒッ、フー」の呼吸法</p>
+<p>でよく知られている。</p>
+<p><strong>乱数放送[Numbers Station]</strong> ……数字、文字、あるいは単語などの羅列が流れる発信源不詳</p>
+<p>のラジオ放送。特定の相手に対して情報を伝達する暗号放送だとされる。→ワンタイムパッドルイス・キャロル[Lewis Carroll]……イギリスの作家、数学者。「不思議の国のアリス」の著者</p>
+<h3 id="わ"><a href="#わ" class="headerlink" title="[ わ ]"></a><strong>[ わ ]</strong></h3><p><strong>ワンタイムパッド[one time pad]</strong> ……乱数伴を一回だけ使う暗号の運用法。</p>
+<p>[ 数字 ]</p>
+<p><strong>18 次元宇宙論</strong>……宇宙が梅雨期科学で言う 18 次元空間であるとする理論。HT 基礎構造理</p>
+<p>論が成立するためには宇宙は 18 次元空間でなければならなかったため C.S.が提唱した。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>输出流输入流</title>
+    <url>/2024/06/05/%E8%BE%93%E5%87%BA%E6%B5%81%E8%BE%93%E5%85%A5%E6%B5%81/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>連濁</title>
+    <url>/2024/05/17/%E9%80%A3%E6%BF%81/</url>
+    <content><![CDATA[<p>連濁（れんだく）：連濁とは、ある語と語が組み合わさって、熟語（じゅくご）や複合語（ふくごうご）になったとき、後ろの語の先頭の音が、清音から濁音に変化する現象のことです、連濁は例外も多いのですが、それでも一般的なルールがありますので、次のようにまとめてみました。<br>連濁が起こりやすいグループと、連濁が起こりにくいグループに分けました。<br>連濁が起こりやすい：OO＋和語<br>和語とは、日本で古くから使われていた言葉で、基本的に訓読みします。<br>連濁が起こりにくい：OO＋外来語　OO＋かんご<br>それにたいして漢語とは、中国から伝わった言葉で、基本的に音読みします。<br>和語＋和語の組み合わせのとき、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>貝殻（かいがら）、長靴（ながぐつ）、夜空（よぞら）、巻き寿司（まきずし）、<br>鼻血（はなじ）、時々（ときどき）、前歯（まえば）、生け花（いけばな）<br>漢語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>気軽（きがる）、仕事（しごと）、豚汁（とんじる）、人数（にんずう）、<br>団子（だんご）、台所（だいどころ）、茶畑（ちゃばたけ）、煎餅(せんべい)。<br>変温現象：発音安くするの変化<br>舌を上顎につけてから「お」というと、自然に「の」になりますね。<br>外来語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>スナック菓子（がし）、サラダ皿（ざら）、スイーツ処（どころ）、キャベツ畑（ばたけ）<br>即ち、熟語や複合語の後ろの語側語、かつ後ろの語の先頭のかなが清音の場合、連濁することが多いです。<br>はな＋たば：はなだば（ｘ）はなたば<br>前にご紹介した基本のルールの通り、熟語や複合語の後ろの語が和語の場合、後ろの語の先頭のかなは濁音化すべきですが、もしその先頭のかなに濁音がある場合、連濁ないことがあります。<br>無傷（むきず）、座敷（ざしき）、絵筆（えふで）、ベイト先（さき）<br>次に、先後が並列構造になっている場合は、あまり連濁しません、<br>例えば、「すき嫌い」という複合語は、基本のルールならば「すきぎらい」となりますよね、<br>ですが「すき」と「嫌い」には並列構造がありますので連濁しません。<br>山川（やまかわ）、押し引き（おしひき）、嬉し悲しい（うれしかなしい）<br>まずは、熟語や複合語の後ろの語に漢語がくるときです<br>和語＋漢語の組み合わせのとき、ほとんど連濁しません<br>株券（かぶけん）、寒気（さむけ）、畑仕事（はたけしごと）、場所（ばしょ）、<br>家賃（やちん）、手帳（てちょう）、手本（てほん）、見本（みほん）<br>漢語＋漢語の組み合わせのとき、ほとんど連濁しません<br>価格（かかく）、旅行（ようこう）、完成（かんせい）、基礎（きそ）<br>携帯（けいたい）、位置（いち）、後輩（こはい）、警報（けいほう）<br>外来語＋漢語の組み合わせのとき、ほとんど連濁しません<br>グローバル化（か）、ヒット作、サービス単価（たんか）、リサイクル品（ひん）<br>例外１：<br>湯気（ゆげ）、足し算（たしざん）、登山（とざん）<br>例外２：長音<br>三本（さんぼん）、中国（ちゅごく）、定規（じょうぎ）、漫才（まんざい）、単行本（たんこんぼん）<br>和語＋外来語の組み合わせのとき、ほとんど連濁しません<br>一コース、一人カラオケ、負けチーム<br>漢語＋外来語の組み合わせのとき、ほとんど連濁しません<br>健康（けんこう）チェック、筋肉（きんにく）トレーニング、薬用（やくよう）ファンデション<br>外来語＋外来語<br>アフターサービス、レイトショー、ヘルスチェック、ワーキングホリデー。<br>連濁の一般的な規則をまとめますと、まずは熟語や複合語の後ろの語が何語なのかを確認します、<br>そして、和語なら連濁が起こりやすく、漢語や外来語が起こりにくいと考えてください。<br>転音：転音とは、熟語や複合語の前の語の最後の母音が変わることです。<br>例えば、「酒」＋「屋」の組み合わせの場合、前の語「酒」の最後の母音「え」が「あ」に変化します<br>さけ＋や＝さかや<br>「白」＋「玉」の組み合わせの場合、前の語「白」の最後の母音「お」が「あ」に変化します、<br>しろ＋たま＝しらたま<br>「船」＋「便」の組む合わせの場合、前の語「船」の最後の母音「え」が「あ」に変化します<br>ふね＋びん＝ふなびん<br>「🌴」＋「陰」の組む合わせの場合、前の語「木」の最後の母音「い」が「お」に変化します<br>き＋かげ＝こかげ<br>促音化：促音化とは、熟語や複合語の前の語の最後のかなと後ろの語の先頭のかながの子音が無声子音の場合、<br>前の語の最後のかなが促音になる変化です。<br>無声子音は「か、さ、た、は、ぱ」行の子音のことです<br>かつ＋て＝かって（勝＋手＝勝手）、けつ＋てい＝けってい(決＋定＝決定)、せつ＋てい＝せってい(説＋定＝設定)<br>いち＋てい＝いってい（一定）、せき＋けん＝せっけん（石鹸）、あつ＋かん＝あっかん（圧巻）<br>半濁音化：半濁音化とは、熟語や複合語の後ろの語のセントうのかなが「はぎょう」から「パ行」に変わることです。<br>例えば、「審判」の場合、後ろの語の先頭のかな「は」が「ぱ」にかわり、「しんぱん」と読みます<br>出発（しゅっぱつ）、鉛筆「えんぴつ」、扇風機「せんぷうき」、漢方（かんぽう）<br>ちなみに、半濁音化と促音化は同時に起こることも多いです、<br>いち＋ほん＝いっぽん<br>特に、前の語の最後のかなが「く、ち、つ」で、後ろに「は」行のかなが来るときです<br>六本木（ろっぽんぎ）、一本（いっぽん）、割烹（かっぽん）<br>音韻添加：音韻添加とは、熟語や複合語の後ろの語の先頭に、新しい音素がはいることをいいます。<br>例えば、「こさめ」の場合、そのまま読むと「こあめ」ですが「あめ」のまえにしい・ｓ・のおとが入って、「こさめ」とよみます。<br>春雨（はるさめ）<br>「真っ白」のように、「しろ」のまえに子音が・ｓ・のおとが入って、しいん・ｓ・が２つ連続することによって促音になることもあります<br>真っ青（まっさお）、真っ直ぐ（まっすぐ）<br>また、「真ん中」のように、「なか」のまえに発音「ｎ」の音が入ることもあります。<br>音韻脱落：<br>音韻脱落とは、音の一部がなくなることです、例えば、「河原」の場合、そのまま読むと「かわはら」ですが、「は」がなくなって、「かわら」と読みます。<br>なんで<br>音韻融合：<br>音韻融合とは、熟語や複合語の前の語の終わりと後ろの語の先頭が、混ざってような音になることです。<br>例えば、「狩人」の場合、そのまま読むと「かりひと」ですが、「り」と「ひと」が混ざって「りょうど」になり、「かりょうど」とみます。<br>素人（しろうと）、仲人（なこうど）<br>連声：<br>連声とは、熟語や複合語のまえの語のおわりが「ん」や「つ」で、後ろの語の先頭が、母音「あいうえお」「や行」「わ行」であるとき、<br>後ろの先頭が「た行」「な行」「ま行」に変わることです、漢語でよく見られます。<br>例えば、「反応」の場合、前の語のおわりが「ん」で、後ろの語の先頭が母音「お」なので、「お」が「な」行の「の」にへんかして「はんのう」と読みます。<br>因縁（いんねん）、銀杏（ぎんなん）、陰陽（おんみょう）</p>
+<p>まとめ：<br>変音現象は、発音しやすくするためのへんかです、変音現象には沢山の種類があり、また一度に複数の変温現象が起こることもあります、何故変音すると、発音しやすくなるでしょうか、もう一度「反応」を見てみましょう、もし変化しないまま「はんおん」とははっきり発音しょうとすると、「ん」から「お」に舌の形を変えるときに、息が途切れて発音がしにくいですね、では「ん」で舌を上顎につけてから「お」というどうしようか？息が繋がって、発音しやすいと思います、舌を上顎につけてから「お」というと、自然に「の」になりますね</p>
 ]]></content>
   </entry>
   <entry>
@@ -4384,181 +4594,6 @@
 <p>其区别在于，<strong>前者要改变⺠族遭压迫、⼈⺠受剥削的地位和状况</strong>，是要从根本上<strong>解决⽣产关系问题</strong>；后者是要改变<strong>近代中国经济、⽂化和社会落后的地位和状况</strong>，解决⽣产⼒问题。其联系在于，只有完成第⼀⼤任务，才能为第⼆⼤任务<strong>的完成创造条件</strong>。</p>
 <p>8、简述反侵略⽃争失败及其原因？</p>
 <p>⼀是<strong>社会制度的腐败</strong>；⼆是<strong>经济技术的落后</strong>，前者是根本原因。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>输出流输入流</title>
-    <url>/2024/06/05/%E8%BE%93%E5%87%BA%E6%B5%81%E8%BE%93%E5%85%A5%E6%B5%81/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>西历2236</title>
-    <url>/2024/06/11/%E8%A5%BF%E5%8E%862236/</url>
-    <content><![CDATA[<h2 id="西暦-2236-年-用語集"><a href="#西暦-2236-年-用語集" class="headerlink" title="西暦 2236 年 用語集"></a>西暦 2236 年 用語集</h2><h3 id="A"><a href="#A" class="headerlink" title="[ A ]"></a>[ A ]</h3><p><strong>A.I</strong>.……Artificial Intelligence の略。→人工知能の項を参照。</p>
-<blockquote>
-<p><strong>A.I.:</strong> Abbreviation for Artificial Intelligence. </p>
-</blockquote>
-<h3 id="C"><a href="#C" class="headerlink" title="[ C ]"></a>[ C ]</h3><p><strong>C.S</strong>.……21 世紀の科学者。世界初の HT の科学的観測に立ち会った科学者の一人。HT 基礎構造理論を提唱した。晩年に失踪を遂げている。</p>
-<blockquote>
-<p><strong>C.S.:</strong> A 21st Century scientist. One of the scientists present when HT was first experimentally </p>
-<p>proven to exist. Advocated the HT Infrastructure Theory. Went missing in their final years</p>
-</blockquote>
-<p><strong>CLOSE</strong>……病名。Consciously Locks One’s Selective Elements syndrome の略。後天性のゲート障害でゲートを開けなくなることでテレパシー通信に支障をきたす症候群のこと。精神病のひとつだとされている。治療法は見つかっていない。</p>
-<blockquote>
-<p><strong>CLOSE:</strong> Condition name, standing for “Consciously Locks One’s Selective Elements </p>
-<p>Syndrome.” Refers to a syndrome which is an acquired Gate disorder that locks off one’s </p>
-<p>ability to access one’s Gate and hinders their ability to establish telepathic communication. </p>
-<p>Said to be a mental disorder with no known cures as of this date.</p>
-</blockquote>
-<h3 id="E"><a href="#E" class="headerlink" title="[ E ]"></a>[ E ]</h3><p><strong>EAJOS[elementary axiom jump of Shikine]</strong> ……21 世紀に発達した「間違い学問」における飛躍公理。イージョス。人工知能工学の世界では今なお新しい EAJOS が登録され続けている。</p>
-<blockquote>
-<p><strong>EAJOS:</strong> Abbreviation for “Elementary Axiom Jump of Studies.” Stands for axioms which make </p>
-<p>a “jump” or breakthrough in the “Improper Studies” developed in the 21st Century. EAJOS for </p>
-<p>short. In the artificial intelligence world, there are still new EAJOS being registered to this date</p>
-</blockquote>
-<p><strong>EMP[electromagnetic pulse]</strong> ……電磁パルス。強力な電磁衝撃波は電子回路などに損傷を与えることがある。核兵器の使用でも EMP が発生するので軍事用の電子装置には EMP 対策が施されているものも多い。</p>
-<blockquote>
-<p><strong>EMP:</strong> Short for electromagnetic pulse. An occurrence where powerful electromagnetic waves </p>
-<p>cause damage to electric circuits. The use of nuclear weapons would also create an EMP, so </p>
-<p>there are many pieces of military-use electronic equipment which have counter-EMP measures </p>
-<p>built into them.</p>
-</blockquote>
-<h3 id="H"><a href="#H" class="headerlink" title="[ H ]"></a>[ H ]</h3><p><strong>HT</strong>……Holding Task または Holding &amp; Taking の略。HT 現象。高次元空間で生ずる伝播現象、またはそれに関する理論。2033 年に C.S.によって提唱された HT 基礎構造理論によると、全ての物体には情報が通る道が存在し、その通路を介することで情報のやり取りができるという。ここで言う「情報」にあたるのが「HT 子」と呼ばれる粒子の波である。HT はプリ方向次元空間と相容れない、部分クラウド空間内での粒子の運動であるため HT 子を始め HT に関わる現象が物理学的に観測不可能(物理的に不可視)である。また、HT 基礎構造理論の記述には梅雨幾何学が用いられる。梅雨幾何学では空間を記述するために、我々に馴染みのあるユークリッド幾何学で定義される「次元」の概念を拡張している。HT 基礎構造理論では梅雨幾何学を用いることで、特殊な場合を除いて HT 現象が物理的に不可視であることを証明している。 また、これをきっかけにして 18 次元宇宙論などの多次元宇宙論が盛んに提唱された。一般にテレパシーと呼ばれるコミュニケーション方式は HT 子がヒトのゲートからゲートに伝わり処理されることで情報(言語、五感、思念など)を伝えることができるとしている。 ユーレイ現象とは深い関わりがあり、歴史的にはユーレイ現象の研究実験中に偶然開発されたのが HT である。 研究によると、もともと人類の脳には HT を司る感覚器官が存在していたがそれは近年発見されるまで退化していたものと考えられている。動物など、脳または神経中枢を有している生き物ともテレパシー通信が可能であることからテレパシーが言語をもたない生き物のコミュニケーション手段になっていることがわかった。これらのことから、人類を含むほとんどの生き物は古来テレパシーによってコミュニケーションをとっていたが人類のみ発達した言語に取って代わられ、やがてテレパシーによるコミュニケーションをしなくなったというのが通説になっている。HT が科学的に解釈される以前の超常現象(ユーレイ現象、第六感、シンクロニシティなど)の多くは HT 基礎構造理論によって合理的に説明できる。HT 開発……現代のヒトの脳の HT を司る器官は生まれながらには機能していないため、HT開発が必要になる。幼児に対し、親などがテレパシーによって外部からゲートを刺激することによって実現する。</p>
-<blockquote>
-<p><strong>HT:</strong> Short for Holding Task or Holding &amp; Taking. HT Phenomenon. A propagation phenomenon </p>
-<p>originating from higher-dimensional space, or the theory attached to it. In 2033, C.S. </p>
-<p>advocated the HT Infrastructure Theory. This theory states that there exists a path for data to </p>
-<p>pass through within all objects, and by using that path as an intermediary, we can hold and </p>
-<p>take in said data. The “data” in this case being the waves of particles referred to as “HT </p>
-<p>Particles.” Due to the movement of particles within a partial cloud space that is incompatible </p>
-<p>with a pre-directional dimension space, all HT-linked phenomenon, including HT Particles, are </p>
-<p>impossible to observe on a physics-level (as they are physically invisible.) In addition, </p>
-<p>Superposition Geometry has been utilized to describe the HT Infrastructure Theory. In </p>
-<p>Superposition Geometry, in order to describe a space, we expand upon the concept of a </p>
-<p>“dimension” as it is defined to us in the terms of the more familiar Euclidean Geometry. The HT </p>
-<p>Infrastructure Theory, by utilizing Euclidean Geometry, and excluding any special cases, </p>
-<p>proves that HT phenomena are physically invisible. In addition, springboarding off of this, multi</p>
-<p>dimensional space theories such as the 18th Dimensional Space Theory have been actively </p>
-<p>advocated. The communication method known more commonly as Telepathy can convey data </p>
-<p>(I.E. language, any of the five senses, thoughts) by having HT Particles going from one human’s </p>
-<p>Gate to another and being processed as such. This is very much linked to ghostly phenomena, </p>
-<p>and, historically speaking, HT was developed by chance while conducting an experiment into </p>
-<p>the research of ghostly phenomena. Based on research, it is believed that the sensory organs </p>
-<p>to govern HT have always existed in the minds of the human race, but that they had remained </p>
-<p>degenerate until HT was discovered in recent years. Telepathy has become a means of </p>
-<p>communication for life-forms devoid of language, all due to the fact that telepathic </p>
-<p>communication is possible with animals, or basically life-forms that possess a brain or nerve </p>
-<p>center. Stemming from this, the commonly accepted theory is that almost all lifeforms, </p>
-<p>including humans, have communicated through telepathy since ancient times. Humans were the only ones to develop language and replace telepathy, eventually leading to the downfall of </p>
-<p>telepathic communication as a whole. A majority of paranormal phenomena that occurred </p>
-<p>before HT was scientifically explained can be logically explained via the HT Infrastructure </p>
-<p>Theory</p>
-</blockquote>
-<h3 id="N"><a href="#N" class="headerlink" title="[ N ]"></a>[ N ]</h3><p><strong>NSL 方式[No Signal of Locator method]</strong> ……無信号位置特定方式。GPS 通信の情報符号化方式の一つ。HT と水路に流れる情報を使って水路上にある目的地の位置を大まかに特定する。主に未開拓の水脈を発見するのに役立っている。HT を利用するので人間が水路からコードを読み取る(感じ取る)ことになるが、とても複雑で膨大な符号表を覚えていなければならない。また、HT を読み取る力や、未フォーマット情報を感じ取るセンスによって精度が大きく変わる。無信号というのはもともと、フォーマットされた位置情報の流れていない水路か位置情報を見つける方式だから。</p>
-<h3 id="P"><a href="#P" class="headerlink" title="[ P ]"></a>[ P ]</h3><p>**panta rhei [パンタ・レイ]**……「万物は流転している」の意。古代ギリシャの哲学者ヘラク</p>
-<p>レイトスの言葉。</p>
-<h3 id="あ"><a href="#あ" class="headerlink" title="[ あ ]"></a>[ あ ]</h3><p>**アーカイヴ[Archive]**……アカシック・フォーンの原本が保管されている都市。しかし実際には地球上にそのような都市は見つかっておらず、架空の都市だと考えられている。アカシック・フォーンは実際にその文面が現代まで伝えられていることから存在を否定されることはないが、その原本の存在については懐疑的な考古学者も多い。アーカイヴに訪れたという人の証言も多数あるが噂の範疇でとどまっている。アーカイヴでは非常に膨大な数のアカシック・フォーンが大きな書棚に整頓されていると言われている。アカシック・フォーン[Akashic Phones]……パラダイムロスト以前の人類の学術的知識や文化、歴史と以後の地球の科学や歴史について記してある書籍のこと。どのくらいの期間書き連ねられたかは不明だが、その数は膨大で都市一つ分を埋め尽くす程だと言われていることから、かなり長い年月にわたって書き続けられたものだと考えられている。パラダイムロスト以前の地球の記録として残っているものはこのアカシック・フォーンしかない。世の中に出回っているものはアカシック・フォーンの原本を複写したものであり、現在ではそれをさらにデータ化したものが広く流通している。アカシック・フォーンの原本はアーカイヴという都市で保管されているという説がある。原本の表紙の色は赤色で統一されていると言わ</p>
-<p>れている。</p>
-<p>**アカクラ[赤倉]**……地名。ミョウコウにある地域で大きなスキー場がある。アルベルト・アインシュタイン[Albert Einstein]……20 世紀の理論物理学者。光量子説、ブラウン運動、特殊相対性理論、一般相対性理論など物理学に非常に大きな影響を残した。意識的閉門症……→CLOSE の項を参照。</p>
-<p><strong>違法ロボット[illegal robot]</strong> ……違法なロボット。特に、人間とそっくりな有機ヒューマノイドが出てきてからはロボットの表記義務を無視したロボットのことをいうようになった。</p>
-<p><strong>インターネット[Internet]</strong> ……個々のコンピュータネットワークを相互に結び拡張して世界的規模にまで広がったネットワークの集合体。</p>
-<p><strong>ウィトゲンシュタイン[Ludwig Josef Johann Wittgenstein]</strong> ……オーストリア生まれの哲学者。『語りえぬものについては、沈黙しなければならない』という言葉で有名。裏情報……世間一般には流れない情報。信憑性は弱い。</p>
-<p>**エーテル[aether, ether, luminiferous aether]**……主に 19 世紀までの物理学で、光が伝播するために必要だと思われていた媒質のこと。20 世紀には特殊相対性理論などの理論がエーテルの概念を用いずに確立されており、エーテルに関する物理学理論は今ではほとんど論じられていない。オイラーの公式[Euler’s formula] ……数学者レオンハルト・オイラーによって導かれた指数関数と三角関数の間に成り立つ定理のこと。</p>
-<p>$e^{i\theta}&#x3D;\cos \theta+i\sin\theta$</p>
-<p>とくに$\theta&#x3D;\pi$のときの</p>
-<p>$e^{i\theta}+1&#x3D;0$</p>
-<p>はオイラーの等式と呼ばれる。この式は対数を象徴する自然対数の底 e と三角関数を象徴するπ、虚数単位の i、乗法の単位元である 1、加法の単位元である 0 が一堂に会しており、様々な数学の分野の橋渡しをする。これがもっとも美しい公式と呼ばれるゆえんでもある。</p>
-<blockquote>
-<p>A theorem that establishes the relationship between exponential and </p>
-<p>trigonometric functions derived by mathematician Leonhard Euler.</p>
-<p>$e^{i\theta}&#x3D;\cos \theta+i\sin\theta$</p>
-<p>Special case θ&#x3D;π gives </p>
-<p>$e^{i\theta}+1&#x3D;0$</p>
-<p>The above is what is referred to as Euler’s identity. The special case puts together the base of </p>
-<p>natural logarithm ?, trigonometic constant π, imaginary unit i, multiplication unit element 1, and </p>
-<p>addition unit element 0, helping bridge several different fields of mathematics. That is also the </p>
-<p>reason why it is referred to as “The Most Beautiful Equation.”</p>
-</blockquote>
-<p><strong>オルタナティブ元素[Alternative elements]</strong> ……21 世紀に発見されたもう一つの化学元素。触媒の研究時に発見されたという逸話がある。プリ方向次元の虚×虚×虚の領域に存在していて特殊な環境以外でその単体を観測することはできない。普通の化学元素との化合物として普段は使われている。オルタナティブ高分子化合物はスマートツールスなどの柔らかいデバイスを形作っている。音声会話……テレパシー会話に対して、空気を媒体とした音を使って会話すること。</p>
-<h3 id="か"><a href="#か" class="headerlink" title="[ か ]"></a>[ か ]</h3><p><strong>カード目録</strong>……図書館において、蔵書の名前や内容などの情報を書き記したカードが集められている場所。探している図書を見つけるのに便利。</p>
-<p>**鏡の国[The alternative world]**……詳細は不明拡張言語パック……スマートツールス等のコンピュータ端末において、初期出荷状態でプリインストールされている言語ライブラリに加えて他の地域で使われている言語ライブラリを追加インストールするためのパッケージプログラム。</p>
-<p><strong>かけ算[multiplication]</strong> ……算術における乗法のこと。a を b 回足し合わせるという操作を a×b のように表現する。</p>
-<p>**記憶媒体[Storage]**……HT の情報媒体のうち記憶能力に特化しているもののこと。HT 子の伝達速度が非常に遅いため情報を劣化させないまま暫く保存することができる。→モノリス</p>
-<p>**ゲート[Gate]**……ヒトの脳にあると考えられているテレパシーに関する器官または機能、メカニズムのこと。ヒトがテレパシー通信をする際、ゲートが互いに開いていなければならない。テレパシーという現象がテレパシーによる再帰的な観測のみしかなされないという性質をもつため、ゲートがどのように働くのか詳しく解明されていないが、脳波や血流の調査から脳のどの辺りに所在するのかという目安はついている。動物など脳または神経中枢を有している生き物にもゲートがあると考えられているが、その真偽を確かめるのは原理的に不可能である。</p>
-<p><strong>月光</strong>……ベートーヴェンのピアノソナタ「月光」のこと。中でも第三楽章は難曲であるとされる。</p>
-<p><strong>五感</strong>……視覚、聴覚、嗅覚、味覚、触覚の五つの感覚。HT を含めた六感と区別されて使われることが多い。</p>
-<p><strong>国際水路法</strong>……世界中に張り巡らされた水路を正しく運用するための法律群のこと。心の素粒子……HT 子のこと。人の心は HT 子の運動によって記述できる。</p>
-<p>**個人向けスマートツールス用 A.I.秘書[Personal A.I. Secretary System]**……西暦 2230 年頃に普及し始めたスマートツールス用のシステム。第７世代の A.I.を基盤に作られていて、暮らしの中で人を支え、よきパートナーとなることを目的としている。ほとんど人間と同じ振る舞いをするため、情操教育にもよいとされていて、「最後まで味方でいてくれるパートナー」「途方に暮れたときに導いてくれるパートナー」などとして幼少期の精神発達を手助けする可能性があるという研究報告も出ている。略して PASS。</p>
-<h3 id="さ"><a href="#さ" class="headerlink" title="[ さ ]"></a><strong>[ さ ]</strong></h3><p><strong>さけないチーズ</strong>……有名な某商品以外のチーズのこと。</p>
-<p>**酸化銅(Ⅱ) [copper(II) oxide]**……化学式 CuO で表される銅の酸化物。黒色。</p>
-<p><strong>次元置換説[Dimension Permutation Hypothesis]</strong> ……宇宙が多次元空間でその一部分が影として現実に現れるものだとしたときに影の落とし方(次元の置換)によって様々なアスペクトの異なる宇宙が同時に存在するという説。</p>
-<p>**シャルル・ペロー[Charles Perrault]**……「長靴をはいた猫」の著者。</p>
-<p><strong>浄水器</strong>……水路の水を常に清潔に保つために施設事に設置される機械。</p>
-<p><strong>情報爆発[Information explosion]</strong> ……急速に増加する出版物やデータ、またその影響を指した言葉。特に水路で情報爆発が起こると中が情報で飽和してしまい、発信元の分からない情報で溢れるので通常の運用は不可能になる。</p>
-<p><strong>ショック療法[shock therapy]</strong> ……患者に対してある種の衝撃や身体的ストレスを一時的に与えることによって症状の改善をはかる方法。シリ・シオン[Siri Shion ]……アカシック・フォーンの著者として書籍にその名前が記されている。女性だと言い伝えられていて、その功績から「女神」「人類の英知の象徴」などと称えられることこともよくあるが、実在の人物であるかどうかは不明瞭である。</p>
-<p><strong>シリ・シオンの伝説</strong>……アカシック・フォーンの著者、シリ・シオンがパラダイムロスト以前の人類の学術的知識や文化、歴史をパラダイムロスト以後に伝えたという伝説のこと。パラダイムロストによって人類のもつ遺産は全て失われた。全てがゼロになった地球で彼女がパラダイムロスト以前の地球の諸々と以後の自然科学について記したものがアカシック・フォーンであるとされている。</p>
-<p><strong>人工知能</strong>……A.I. 23 世紀ではヒトとほぼ同等の思考能力をもつ A.I. 、つまり強い A.I.が実現されている。その基礎理論は 21 世紀に発展した「間違い学問」によって構築されていて A.I.の性格は選択されている公理の種類で決まる。人間と対話ができるという特徴から多岐にわたる分野で利用されている。近年では有機ロボット工学の発展も相まって HT や生殖機能を除いたヒトの特徴をほぼ全て再現したヒューマノイドが登場したが、生命倫理団体や労働組合の痛烈な批判を受けて全ての人工知能やロボットは人間とは区別され、人権を与えず、それらが人工知能やロボットであることが明らかに分かるように表示することを義務づける法律が制定された。現在では個人向けスマートツールス用 A.I.秘書が広く普及しており、人間のよきパートナーとして生活に加わっている。</p>
-<p>**水路[Canal]**……HT のうち特にテレパシー運用を快適かつグローバルにするために世界中に設けられた情報媒体のこと。テレパシーのネットワーク。水路に手を浸すことで世界中の人々とテレパシー通信をすることができる。22 世紀に世界中に整備された。水路の形状は地域によって異なるが流れている水は WHO と WHTO の定めた世界基準に則って世界中で統一されている。</p>
-<p>**スマートツールス[Smart Tools]**……23 世紀で一般的に普及している個人向けコンピュータ端末。狭義にはオルタナティブ高分子ゲルで構成され、トポロジカルに形を変えることが出来る端末のことを言う。近年注目されている「柔らかいデバイス」の代表格であり、分子構造の定義ファイルがあれば様々な形に固定できる。外膜を完全に閉じてしまう設計のため内蔵電池の交換が出来ず、その寿命は 5～6 年であるとされる。</p>
-<p><strong>生殖[reproduction]</strong> ……うみふやすこと。生物の個体が自分と同じ種の新しい個体を作り出すこと。</p>
-<p>**セキガワ[関川]**……地名。ミョウコウにある地域で、大きな川が流れている。善光寺……長野市にある寺。古くから宗派の別を超えて広く信仰を集めている。</p>
-<p><strong>ソフトモヒカン[soft Mohican]</strong> ……玉ねぎのような髪型。</p>
-<h3 id="た"><a href="#た" class="headerlink" title="[ た ]"></a><strong>[ た ]</strong></h3><p><strong>太陽嵐[solar storm]</strong> ……非常に大規模な太陽フレアが発生した際に太陽風が爆発的に放射され、それが地球や周りの人工衛星などに被害をもたらす現象。強力な電磁波も放射されるので電子機器が壊れることもある。</p>
-<p><strong>超高濃度情報爆発</strong>……HT 情報の高密度衝撃波。爆発的に大きなノイズ。</p>
-<p>**繋ぐ[Connect]**……テレパシー会話をするということ。ゲートを互いに開いて情報通信が可能な状態にすること。 また、記憶媒体などから情報を読み取ること。</p>
-<p><strong>ディスコース[Disc Course Shooter]</strong> ……ディスコースシューターのこと。23 世紀の公共交通機関。予約制で乗車駅と時間帯と降車駅を自由に指定できる。大きなディスクが特徴で、方向指示のリールに沿って飛行する。飛行原理はディスクにより力場を変容させて揚力を得る仕組み。また、それによって他の車両と接触しないようになっているため事故は開業以来ひとつも起きていない。</p>
-<p><strong>哲学的ゾンビ</strong>……物理学的反応は普通の人間と全く同じだがクオリアを持っていない人間のこと。またそれをもとにした哲学的思考実験。</p>
-<p><strong>テレパシー[Telepathy]</strong> ……→HT の項を参照。</p>
-<p><strong>テレパシーする</strong>……テレパシー通信、会話をすること。</p>
-<p><strong>トートロジー[tautology]</strong> ……トートロジーのこと。</p>
-<p><strong>銅[Copper]</strong> ……元素記号 Cu で表される原子番号 29 番の元素。赤色の金属。</p>
-<p><strong>東京タワー</strong>……国内最大の電波塔。</p>
-<p><strong>図書館[library]</strong> ……図書や資料を収集、保管し、閲覧ができるようにした施設。23 世紀では一般的に電子書籍が本棚に並べられていて、データの貸し出しをする。一部の研究機関等の隣接施設では紙製の書籍が置いてある図書館や書籍庫がある。</p>
-<h3 id="な"><a href="#な" class="headerlink" title="[ な ]"></a><strong>[ な ]</strong></h3><p><strong>ナガノ県ナガノ市[長野県長野市]</strong> ……地名。標高が高く寒冷な土地。虹[rainbow] ……同心円上に広がる七色の帯が空に突然現れる現象。虹は消えるときの帯の崩れ方に幾何学的な特徴を見せる。数式を用いると以下のように説明できる。<br>$$<br>&amp;&amp;x&#x3D;\cos^{n}(t)&amp;&amp;\\<br>&amp;&amp;y&#x3D;\sin^{n}(t)&amp;&amp;<br>\tag{*}<br>$$</p>
-<p>1 番外側の円の半径を r&#x3D;R とすると、r&#x3D;R&#x2F;2 のところにある輪が( * )において n&#x3D;1 で表さ</p>
-<p>れる。r が R&#x2F;2 より小さくなる従って n の値は㱣に無限に近づいていき、大きくなるに従って n の値は 0 に近づいていくようにして崩れて消えていく。神出鬼没な自然現象でほとんど観測されない。</p>
-<p><strong>虹[rainbow]</strong> ……雨上がりに七色の円弧状の帯が現れる現象。雨粒によって太陽光がスペク</p>
-<p>トル分解されることによって起こる現象。</p>
-<p><strong>二分割可能モデル[separable type]</strong> ……第 5 世代のスマートツールスから登場したモデル</p>
-<p>で、それまでとは違い本体を２つにまで分割することができる。第四世代までのスマートツールスは形を自在に変えることはできても分割することはできなかったので革新的な新技術である。</p>
-<p><strong>ネクラ[根暗</strong>]……根っから性格が暗いこと。またもっぱら A.I.との会話に熱心なマニア達のことをさす言葉でもある。</p>
-<p><strong>猫は獅子に頭を下げるのか？</strong>……C.S.の著書。21 世紀に執筆された。</p>
-<h3 id="は"><a href="#は" class="headerlink" title="[ は ]"></a><strong>[ は ]</strong></h3><p><strong>梅雨幾何学[Superposition geometry]</strong> ……21 世紀に提唱された幾何学。空間をクラウド</p>
-<p>という小さな広がりの重ね合わせで表現した。これによりそれまでの幾何学をいくつかのクラウドの組み合わせとして表せるほかに、一つの空間にいくつかの状態が重なり合った空間を表現できるようになった。</p>
-<p>**パッド[Pad]**……薄い板状のものでディスプレイを搭載している。ディスプレイ上に様々な</p>
-<p>文書や画像、動画を表示する。入力装置も豊富であり様々なメモが出来る。パッヘルベルのカノン……ヨハン・パッヘルベルが作曲したカノン様式作品。三つの声部と常奏低音によって構成されるとても有名な曲。バネの動き……単振動のこと。単振動は円運動の一次元成分を抽出した運動である。例えば円の半径を A、角速度をω、時刻を t とすると単振動する物体の位置 x は以下の式で表される。</p>
-<p>$x&#x3D;Asin(ωt)$</p>
-<p>また、これを二回微分すると $ ma&#x3D;-Kx $ という運動方程式が導ける。(m、a は運動する物体の質量と加速度、K は定数) 単振動をする物体は以上のようにかかる力が位置によって決まるのが特徴。バネ定数 k のバネに付けられた物体の運動方程式は ma&#x3D;-kx と表されるので、バネの動きも単振動である。</p>
-<p>**パラダイムロスト[The Paradigm Lost]**……21 世紀中盤にあったとされる宇宙規模の大変</p>
-<p>革。パラダイムロスト前後の記録はほとんど残されておらず、それがどのような変革だったのかについては様々な方法で検証がなされているがあまり明確には分かっていない。</p>
-<p>**フォーマット[Format]**……テレパシー通信をする際に相互間で情報をやり取りできるように共通の表現方法を用いるというプロセス。テレパシー会話をする際、ほとんどの場合、情報を言語にフォーマットしてから行われる。フォーマットされていない情報は色や興奮状態などしか伝わらないため会話をするのには向いていないからである。言語をもたない生き物とテレパシー通信をする際は情報のフォーマットの仕方が全く違うため高度な情報交換は期待できない。</p>
-<p>**プリ方向次元[pre directional axis]**…… 身の回りで起こる物理現象が含まれる 6 つの次元軸。またはその空間。幅、奥行き、高さとそれぞれの虚数軸を合わせた６本である。</p>
-<p><strong>フロイト先生、ユング</strong>……ジークムント・フロイトとカール・グスタフ・ユングのこと。フロイトは夢や無意識の研究をした第一人者。ユングも集合的無意識の存在などを主張した。</p>
-<p>**ヘラクレイトス[Hērakleitos]**……古代ギリシャの哲学者。「万物は流転している」という言</p>
-<p>葉で有名。</p>
-<h3 id="ま"><a href="#ま" class="headerlink" title="[ ま ]"></a><strong>[ ま ]</strong></h3><p>**ミョウコウ[妙高]**……地名。高原でスキーリゾート地として有名。妙高高原メッセ……妙高高原にある公共施設、公民館。ホールや図書館が市民に貸し出されている。</p>
-<p>**モノリス[monolith]**……板状の記憶媒体。様々な材質から、様々な大きさのものが作られており、それによって記憶容量や情報引き出し率が変わる。同じ体積では表面に文字が書かれている物の方が無地の物よりも記憶容量が大きいので、多くのモノリスには聖書などの文章が書かれている。</p>
-<h3 id="や"><a href="#や" class="headerlink" title="[ や ]"></a><strong>[ や ]</strong></h3><p>**ユーレイ現象[幽霊現象]**……生物の周りにある物体にその生物の情報が記憶され第三者がそ</p>
-<p>の情報を後で読み取ったときにあたかもその生物がそこにいるのかのように錯覚する現象。特に死去した人間が生前の姿でそこに生きているように見える現象のことを言うことが多い。</p>
-<p>依り代……ユーレイ現象において情報が蓄積している物体のこと。たいていの場合その亡骸</p>
-<p>が依り代となる。</p>
-<h3 id="ら"><a href="#ら" class="headerlink" title="[ ら ]"></a><strong>[ ら ]</strong></h3><p><strong>ラジオ[radio]</strong> ……電磁波を利用して放送局が報道や音楽を発信する音声放送。また、それ</p>
-<p>を受信する機械。</p>
-<p><strong>ラマーズ法[Lamaze Technique]</strong> ……無痛分娩法のひとつ。「ヒッ、ヒッ、フー」の呼吸法</p>
-<p>でよく知られている。</p>
-<p><strong>乱数放送[Numbers Station]</strong> ……数字、文字、あるいは単語などの羅列が流れる発信源不詳</p>
-<p>のラジオ放送。特定の相手に対して情報を伝達する暗号放送だとされる。→ワンタイムパッドルイス・キャロル[Lewis Carroll]……イギリスの作家、数学者。「不思議の国のアリス」の著者</p>
-<h3 id="わ"><a href="#わ" class="headerlink" title="[ わ ]"></a><strong>[ わ ]</strong></h3><p><strong>ワンタイムパッド[one time pad]</strong> ……乱数伴を一回だけ使う暗号の運用法。</p>
-<p>[ 数字 ]</p>
-<p><strong>18 次元宇宙論</strong>……宇宙が梅雨期科学で言う 18 次元空間であるとする理論。HT 基礎構造理</p>
-<p>論が成立するためには宇宙は 18 次元空間でなければならなかったため C.S.が提唱した。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>連濁</title>
-    <url>/2024/05/17/%E9%80%A3%E6%BF%81/</url>
-    <content><![CDATA[<p>連濁（れんだく）：連濁とは、ある語と語が組み合わさって、熟語（じゅくご）や複合語（ふくごうご）になったとき、後ろの語の先頭の音が、清音から濁音に変化する現象のことです、連濁は例外も多いのですが、それでも一般的なルールがありますので、次のようにまとめてみました。<br>連濁が起こりやすいグループと、連濁が起こりにくいグループに分けました。<br>連濁が起こりやすい：OO＋和語<br>和語とは、日本で古くから使われていた言葉で、基本的に訓読みします。<br>連濁が起こりにくい：OO＋外来語　OO＋かんご<br>それにたいして漢語とは、中国から伝わった言葉で、基本的に音読みします。<br>和語＋和語の組み合わせのとき、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>貝殻（かいがら）、長靴（ながぐつ）、夜空（よぞら）、巻き寿司（まきずし）、<br>鼻血（はなじ）、時々（ときどき）、前歯（まえば）、生け花（いけばな）<br>漢語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>気軽（きがる）、仕事（しごと）、豚汁（とんじる）、人数（にんずう）、<br>団子（だんご）、台所（だいどころ）、茶畑（ちゃばたけ）、煎餅(せんべい)。<br>変温現象：発音安くするの変化<br>舌を上顎につけてから「お」というと、自然に「の」になりますね。<br>外来語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>スナック菓子（がし）、サラダ皿（ざら）、スイーツ処（どころ）、キャベツ畑（ばたけ）<br>即ち、熟語や複合語の後ろの語側語、かつ後ろの語の先頭のかなが清音の場合、連濁することが多いです。<br>はな＋たば：はなだば（ｘ）はなたば<br>前にご紹介した基本のルールの通り、熟語や複合語の後ろの語が和語の場合、後ろの語の先頭のかなは濁音化すべきですが、もしその先頭のかなに濁音がある場合、連濁ないことがあります。<br>無傷（むきず）、座敷（ざしき）、絵筆（えふで）、ベイト先（さき）<br>次に、先後が並列構造になっている場合は、あまり連濁しません、<br>例えば、「すき嫌い」という複合語は、基本のルールならば「すきぎらい」となりますよね、<br>ですが「すき」と「嫌い」には並列構造がありますので連濁しません。<br>山川（やまかわ）、押し引き（おしひき）、嬉し悲しい（うれしかなしい）<br>まずは、熟語や複合語の後ろの語に漢語がくるときです<br>和語＋漢語の組み合わせのとき、ほとんど連濁しません<br>株券（かぶけん）、寒気（さむけ）、畑仕事（はたけしごと）、場所（ばしょ）、<br>家賃（やちん）、手帳（てちょう）、手本（てほん）、見本（みほん）<br>漢語＋漢語の組み合わせのとき、ほとんど連濁しません<br>価格（かかく）、旅行（ようこう）、完成（かんせい）、基礎（きそ）<br>携帯（けいたい）、位置（いち）、後輩（こはい）、警報（けいほう）<br>外来語＋漢語の組み合わせのとき、ほとんど連濁しません<br>グローバル化（か）、ヒット作、サービス単価（たんか）、リサイクル品（ひん）<br>例外１：<br>湯気（ゆげ）、足し算（たしざん）、登山（とざん）<br>例外２：長音<br>三本（さんぼん）、中国（ちゅごく）、定規（じょうぎ）、漫才（まんざい）、単行本（たんこんぼん）<br>和語＋外来語の組み合わせのとき、ほとんど連濁しません<br>一コース、一人カラオケ、負けチーム<br>漢語＋外来語の組み合わせのとき、ほとんど連濁しません<br>健康（けんこう）チェック、筋肉（きんにく）トレーニング、薬用（やくよう）ファンデション<br>外来語＋外来語<br>アフターサービス、レイトショー、ヘルスチェック、ワーキングホリデー。<br>連濁の一般的な規則をまとめますと、まずは熟語や複合語の後ろの語が何語なのかを確認します、<br>そして、和語なら連濁が起こりやすく、漢語や外来語が起こりにくいと考えてください。<br>転音：転音とは、熟語や複合語の前の語の最後の母音が変わることです。<br>例えば、「酒」＋「屋」の組み合わせの場合、前の語「酒」の最後の母音「え」が「あ」に変化します<br>さけ＋や＝さかや<br>「白」＋「玉」の組み合わせの場合、前の語「白」の最後の母音「お」が「あ」に変化します、<br>しろ＋たま＝しらたま<br>「船」＋「便」の組む合わせの場合、前の語「船」の最後の母音「え」が「あ」に変化します<br>ふね＋びん＝ふなびん<br>「🌴」＋「陰」の組む合わせの場合、前の語「木」の最後の母音「い」が「お」に変化します<br>き＋かげ＝こかげ<br>促音化：促音化とは、熟語や複合語の前の語の最後のかなと後ろの語の先頭のかながの子音が無声子音の場合、<br>前の語の最後のかなが促音になる変化です。<br>無声子音は「か、さ、た、は、ぱ」行の子音のことです<br>かつ＋て＝かって（勝＋手＝勝手）、けつ＋てい＝けってい(決＋定＝決定)、せつ＋てい＝せってい(説＋定＝設定)<br>いち＋てい＝いってい（一定）、せき＋けん＝せっけん（石鹸）、あつ＋かん＝あっかん（圧巻）<br>半濁音化：半濁音化とは、熟語や複合語の後ろの語のセントうのかなが「はぎょう」から「パ行」に変わることです。<br>例えば、「審判」の場合、後ろの語の先頭のかな「は」が「ぱ」にかわり、「しんぱん」と読みます<br>出発（しゅっぱつ）、鉛筆「えんぴつ」、扇風機「せんぷうき」、漢方（かんぽう）<br>ちなみに、半濁音化と促音化は同時に起こることも多いです、<br>いち＋ほん＝いっぽん<br>特に、前の語の最後のかなが「く、ち、つ」で、後ろに「は」行のかなが来るときです<br>六本木（ろっぽんぎ）、一本（いっぽん）、割烹（かっぽん）<br>音韻添加：音韻添加とは、熟語や複合語の後ろの語の先頭に、新しい音素がはいることをいいます。<br>例えば、「こさめ」の場合、そのまま読むと「こあめ」ですが「あめ」のまえにしい・ｓ・のおとが入って、「こさめ」とよみます。<br>春雨（はるさめ）<br>「真っ白」のように、「しろ」のまえに子音が・ｓ・のおとが入って、しいん・ｓ・が２つ連続することによって促音になることもあります<br>真っ青（まっさお）、真っ直ぐ（まっすぐ）<br>また、「真ん中」のように、「なか」のまえに発音「ｎ」の音が入ることもあります。<br>音韻脱落：<br>音韻脱落とは、音の一部がなくなることです、例えば、「河原」の場合、そのまま読むと「かわはら」ですが、「は」がなくなって、「かわら」と読みます。<br>なんで<br>音韻融合：<br>音韻融合とは、熟語や複合語の前の語の終わりと後ろの語の先頭が、混ざってような音になることです。<br>例えば、「狩人」の場合、そのまま読むと「かりひと」ですが、「り」と「ひと」が混ざって「りょうど」になり、「かりょうど」とみます。<br>素人（しろうと）、仲人（なこうど）<br>連声：<br>連声とは、熟語や複合語のまえの語のおわりが「ん」や「つ」で、後ろの語の先頭が、母音「あいうえお」「や行」「わ行」であるとき、<br>後ろの先頭が「た行」「な行」「ま行」に変わることです、漢語でよく見られます。<br>例えば、「反応」の場合、前の語のおわりが「ん」で、後ろの語の先頭が母音「お」なので、「お」が「な」行の「の」にへんかして「はんのう」と読みます。<br>因縁（いんねん）、銀杏（ぎんなん）、陰陽（おんみょう）</p>
-<p>まとめ：<br>変音現象は、発音しやすくするためのへんかです、変音現象には沢山の種類があり、また一度に複数の変温現象が起こることもあります、何故変音すると、発音しやすくなるでしょうか、もう一度「反応」を見てみましょう、もし変化しないまま「はんおん」とははっきり発音しょうとすると、「ん」から「お」に舌の形を変えるときに、息が途切れて発音がしにくいですね、では「ん」で舌を上顎につけてから「お」というどうしようか？息が繋がって、発音しやすいと思います、舌を上顎につけてから「お」というと、自然に「の」になりますね</p>
 ]]></content>
   </entry>
   <entry>
