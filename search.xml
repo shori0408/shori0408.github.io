@@ -567,6 +567,12 @@
 ]]></content>
   </entry>
   <entry>
+    <title>cpp常见报错信息</title>
+    <url>/2024/06/10/cpp%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<h2 id="use-of-undeclared-identifier-‘sum1’"><a href="#use-of-undeclared-identifier-‘sum1’" class="headerlink" title="use of undeclared identifier ‘sum1’"></a>use of undeclared identifier ‘sum1’</h2><p><a href="https://blog.csdn.net/PkbgRuby/article/details/133198653">https://blog.csdn.net/PkbgRuby/article/details/133198653</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>c++模板</title>
     <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<p>s</p>
@@ -595,12 +601,6 @@
 <h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-]]></content>
-  </entry>
-  <entry>
-    <title>cpp常见报错信息</title>
-    <url>/2024/06/10/cpp%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<h2 id="use-of-undeclared-identifier-‘sum1’"><a href="#use-of-undeclared-identifier-‘sum1’" class="headerlink" title="use of undeclared identifier ‘sum1’"></a>use of undeclared identifier ‘sum1’</h2><p><a href="https://blog.csdn.net/PkbgRuby/article/details/133198653">https://blog.csdn.net/PkbgRuby/article/details/133198653</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -2122,6 +2122,11 @@
 ]]></content>
   </entry>
   <entry>
+    <title>jqv</title>
+    <url>/2024/05/21/jqv/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>二重积分的运用</title>
     <url>/2024/05/18/%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E7%9A%84%E8%BF%90%E7%94%A8/</url>
     <content><![CDATA[<h1 id="曲面的面积"><a href="#曲面的面积" class="headerlink" title="曲面的面积"></a>曲面的面积</h1><p>​	先讨论空间平面Ⅱ中的有界闭区域的面积和它在Oxy面上投影面的面积的关系。设平面Ⅱ与xOy平面的夹角为$\theta$(0&lt;&#x3D;$\theta$&lt;&#x3D;$\frac{\pi}{2}$),就是说平面Ⅱ方向上的法向量$\mathbf{n}$与z轴单位向量$\mathbf{k}$的夹角为$\theta$.任意取平面Ⅱ上一片矩形区域A，其边界与x轴或者y轴平行（如图8.43所示），则矩形区域A的面积为A&#x3D;ab，其在xOy平面上的投影的面积</p>
@@ -2151,11 +2156,6 @@
 <h3 id="例7"><a href="#例7" class="headerlink" title="例7"></a>例7</h3><p>设半径为 R 的匀质球占有空间闭区域$Ω&#x3D;(x,y,z)|x^2+y^2+z^2≤R^2$.求它对于位于点$M_0(0,0,a)(a&gt;R)$处的单位质量的质点的引力,<br>解 设球的密度为$\rho_0$，由题意知$F_x&#x3D;F_y&#x3D;0$,所求引力沿z轴的分量为<br>$$<br>F_z&#x3D;\iiint_{o}G\rho_0 \frac{z-a}{[x^2+y^2+(z-a)^2]^{\frac{3}{2}}}dv\\<br>&#x3D;G\rho_0{}\int_{-R}^{R}(z-a)dz\int_{0}^{2\pi}d\theta\int_{0}^{\sqrt{R^2-z^2}}\frac{\rho d\rho}{[\rho^2+(z-a)^2]^{\frac{3}{2}}}\\<br>&#x3D;-G\frac{4\pi R^3}{3}\frac{1}{a^2}\rho_0\\<br>&#x3D;-G\frac{M}{a^2}\\<br>式中，M&#x3D;\frac{4\pi R^3}{3}\rho_0\\<br>由上述结果可知，匀质球体对求外一指点的引力如同球体的质量集中在球心，两质点间的引力。<br>$$</p>
 <p>上述结果表明，勾质球体对球外一质点的引力如同球体的质量集中于球心时两质点间的<br>引力.</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>jqv</title>
-    <url>/2024/05/21/jqv/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>函数</title>
@@ -2265,193 +2265,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>（5）数据的共享和保护</title>
-    <url>/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/</url>
-    <content><![CDATA[<h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
-<p>其作用域始于“(”,终于”)”</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">double area(double radius);</span><br><span class="line">//radius的作用域仅在此处，不能用于程序正文其他地方</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部作用域（块作用域）"><a href="#局部作用域（块作用域）" class="headerlink" title="局部作用域（块作用域）"></a>局部作用域（块作用域）</h3><ul>
-<li>函数的形参，在块中声明的标识符</li>
-<li>作用域自声明处起，限于块中</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void fun(int a)</span><br><span class="line">&#123;int b=a;</span><br><span class="line">cin&gt;&gt;b;</span><br><span class="line">if(b&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">int c;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="类作用域"><a href="#类作用域" class="headerlink" title="类作用域"></a>类作用域</h3><ul>
-<li>类的对象具有类作用域</li>
-</ul>
-<p>其范围包括类体和成员函数体。</p>
-<ul>
-<li>在类作用域以外访问类的成员：<ol>
-<li>静态成员：通过类名，或者该类的对象名，对象引用访问。</li>
-<li>非静态成员：通过类名，或者该类的对象名，对象引用，对象指针访问。</li>
-</ol>
-</li>
-</ul>
-<h3 id="文件作用域"><a href="#文件作用域" class="headerlink" title="文件作用域"></a>文件作用域</h3><ul>
-<li>不在前述各个作用域中出现的声明，就具有文件作用域。</li>
-<li>其作用域开始于声明点，结束于文件尾。</li>
-</ul>
-<blockquote>
-<p>可见性：</p>
-<ul>
-<li>可见性是从对标识符的引用的角度来谈的概念</li>
-<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
-<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
-<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
-<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
-</ul>
-</blockquote>
-<h3 id="命名空间作用域"><a href="#命名空间作用域" class="headerlink" title="命名空间作用域"></a>命名空间作用域</h3><blockquote>
-<p>可见性：</p>
-<ul>
-<li>可见性是从对标识符的引用的角度来谈的概念</li>
-<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
-<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
-<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
-<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
-</ul>
-</blockquote>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int i;//全局变量，文件作用域</span><br><span class="line">int main()</span><br><span class="line">i=5;//为全局变量赋值</span><br><span class="line">&#123;</span><br><span class="line">int i;</span><br><span class="line">i=7;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出7，内层会屏蔽外层作用变量</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出5</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="对象的生存期"><a href="#对象的生存期" class="headerlink" title="对象的生存期"></a>对象的生存期</h2><h3 id="静态生存区"><a href="#静态生存区" class="headerlink" title="静态生存区"></a>静态生存区</h3><ul>
-<li>这种生存期与程序的运行期相同。</li>
-<li>在文件作用域中声明的对象具有这种生存期。</li>
-<li>在函数内部声明静态生存期对象，要冠以关键字static。</li>
-</ul>
-<h3 id="非静态生存区"><a href="#非静态生存区" class="headerlink" title="非静态生存区"></a>非静态生存区</h3><ul>
-<li>开始于程序执行到声明点时，结束于该标识符的作用域结束处。</li>
-<li>块作用域中声明的，没有用static修饰的对象，是动态生存区的对象（习惯称我为局部生存期对象）</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std</span><br><span class="line">int i=1;//i为全局变量</span><br><span class="line">void other()</span><br><span class="line">&#123;</span><br><span class="line">static int a=2;</span><br><span class="line">static int b;</span><br><span class="line">//a，b为静态局部变量，具有全局寿命，局部可见。</span><br><span class="line">//只第一次进入函数时被初始化。</span><br><span class="line">int c=10;</span><br><span class="line">//c为局部变量，具有动态生存期</span><br><span class="line">//每次进入函数时都被初始化</span><br><span class="line">a+=2;i+=32;c+=5;</span><br><span class="line">cout&lt;&lt;&quot;--OTHER--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot;i:&quot;&lt;&lt;i&lt;&lt;&quot;a:&quot;&lt;&lt;a&lt;&lt;&quot;b:&quot;&lt;&lt;b&lt;&lt;&quot;c:&quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">b=a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">static int a;</span><br><span class="line">//a静态局部变量，有全局寿命，局部可见</span><br><span class="line">int b=-10;</span><br><span class="line">int c=0;</span><br><span class="line">//b，c为局部变量，具有动态生存期</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">c+=8;other();</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">i+=10;</span><br><span class="line">other();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">--MAIN--</span><br><span class="line">i:1 a:0 b:-10 c:0</span><br><span class="line">--OTHER--</span><br><span class="line">i:33 a:4 b:0 c:15</span><br><span class="line">--MAIN--</span><br><span class="line">i:33 a:0 b:-10 c:8</span><br><span class="line">--OTHER--</span><br><span class="line">i:75 a:6 b:4 c:15</span><br></pre></td></tr></table></figure>
-
-<h2 id="类的静态数据成员"><a href="#类的静态数据成员" class="headerlink" title="类的静态数据成员"></a>类的静态数据成员</h2><ul>
-<li>用关键词static声明</li>
-<li>为该类所有对象共享，静态数据成员具有静态生存期。</li>
-<li>必须在类外定义和初始化，用（::）来指明所属的类。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point a(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">a.showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">b.showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="静态函数成员"><a href="#静态函数成员" class="headerlink" title="静态函数成员"></a>静态函数成员</h2><p>静态函数处理静态数据</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point::showCount();//输出对象个数</span><br><span class="line">Point a(4,5);//声明对象a，其构造函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);//声明对象b，其复制函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="类的友元"><a href="#类的友元" class="headerlink" title="类的友元"></a>类的友元</h2><h3 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h3><ul>
-<li>友元时c++提供的一种破坏数据封装和数据隐藏的机制。</li>
-<li>提供将一个模板声明为另一个模板的友元，一个模板能够引用到另一个模板中本是被隐藏的信息。</li>
-<li>可以声明友元函数和友元类</li>
-<li>为了确保数据的完整性，及数据封装于隐藏的原则，建议慎重使用友元。</li>
-</ul>
-<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><ul>
-<li>友元函数是在类声明中由关键字friend修饰的说明的非成员函数，在它的函数体中能够通过对象名访问private和protected成员。</li>
-<li>作用：增加灵活性，使程序员可以在封装和快速性方面做合理选择</li>
-<li>访问对象中的成员必须通过对象名。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x,int y):x(x),y(y)</span><br><span class="line">&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">Point(Point&amp; p)</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(Point &amp;a,Point &amp;b);</span><br><span class="line">static int showCOUNT()&#123;return count;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">static int count;</span><br><span class="line">&#125;;</span><br><span class="line">float dist(Point&amp; a,Point&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">double x=a.x-b.x;</span><br><span class="line">double y=a.y-b.y;</span><br><span class="line">//有修改原本数据的隐患</span><br><span class="line">//避免每次用对象的x，y都要调用一次函数</span><br><span class="line">return </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><ul>
-<li><p>若一个类为另一个类的友元，则此类的所有成员，都能访问对方类的私有成员。</p>
-</li>
-<li><p>声明语法：将友元类名放在另一个类中使用friend修饰说明。</p>
-</li>
-<li><p>友元关系是单向的，数据成员的开放也就是单向的。</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">friend class B;</span><br><span class="line">public:</span><br><span class="line">void display()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;x&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">void set(int i);</span><br><span class="line">void display();</span><br><span class="line">private:</span><br><span class="line">A a;</span><br><span class="line">&#125;</span><br><span class="line">void B::set(int i)</span><br><span class="line">&#123;</span><br><span class="line">a.x=i;</span><br><span class="line">&#125;</span><br><span class="line">void B::display()</span><br><span class="line">&#123;</span><br><span class="line">a.display();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="共享数据的保护"><a href="#共享数据的保护" class="headerlink" title="共享数据的保护"></a>共享数据的保护</h2><h3 id="常类型"><a href="#常类型" class="headerlink" title="常类型"></a>常类型</h3><h4 id="常对象：必须进行初始化，不能被更新。const-类名-对象名；"><a href="#常对象：必须进行初始化，不能被更新。const-类名-对象名；" class="headerlink" title="常对象：必须进行初始化，不能被更新。const 类名 对象名；"></a>常对象：必须进行初始化，不能被更新。const 类名 对象名；</h4><ul>
-<li>用const修饰的对象</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i,int j):x(i),y(j)&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">A const a(3,4);//a是常对象，不能被更新</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"><a href="#常成员：用const进行修饰的类成员：常数据成员和常函数成员。" class="headerlink" title="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"></a>常成员：用const进行修饰的类成员：常数据成员和常函数成员。</h4><ul>
-<li>常成员函数</li>
-<li>使用const关键字说明的函数</li>
-<li>常成员函数不更新对象的数据成员</li>
-<li>常成员函数说明格式：</li>
-</ul>
-<blockquote>
-<p>类型说明符 函数名（参数表) const；这里，const是函数类型的一个组成部分，因此在实现部分也要带const关键字。</p>
-</blockquote>
-<ul>
-<li>const关键字可以被用于参与对重载函数的区分</li>
-<li>通过常对象只能调用它的常成员函数</li>
-<li>常数据成员：使用const说明的数据成员</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class R</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">R(int r1,int r2):r1(r1),r2(r2)&#123;&#125;</span><br><span class="line">void print();</span><br><span class="line">void print() const;</span><br><span class="line">private:</span><br><span class="line">int r1,r2;</span><br><span class="line">&#125;;</span><br><span class="line">void R::print()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">void R::print()const</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">R a(5,4);</span><br><span class="line">a.print();</span><br><span class="line">const R b(20,53);</span><br><span class="line">b.print();//调用void print const()</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i):</span><br><span class="line">void print();</span><br><span class="line">private:</span><br><span class="line">const int a;</span><br><span class="line">static const int b;//静态常数据对象</span><br><span class="line">&#125;;</span><br><span class="line">const int A::b=10;</span><br><span class="line">A::A(int i):a(i)&#123;&#125;</span><br><span class="line">void A::print()&#123;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;&quot;:&quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">A a1(100),a2(0);</span><br><span class="line">a1.print();</span><br><span class="line">a2.print();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="常引用：被引用的对象不能被更新。const-类型说明符号-引用名"><a href="#常引用：被引用的对象不能被更新。const-类型说明符号-引用名" class="headerlink" title="常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名"></a>常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(const Point &amp;p1,const Point &amp;p2);</span><br><span class="line">private x,y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在友元函数中用常引用做参数，既能获得较高的执行效率，又能保证实参的安全性。</p>
-</blockquote>
-<h4 id="常数组：数组元素不能被更新。类型说明符-const-数组名-大小"><a href="#常数组：数组元素不能被更新。类型说明符-const-数组名-大小" class="headerlink" title="常数组：数组元素不能被更新。类型说明符 const 数组名[大小]"></a>常数组：数组元素不能被更新。类型说明符 const 数组名[大小]</h4><h4 id="常指针：指向常量的指针。"><a href="#常指针：指向常量的指针。" class="headerlink" title="常指针：指向常量的指针。"></a>常指针：指向常量的指针。</h4><h2 id="多文件结构"><a href="#多文件结构" class="headerlink" title="多文件结构"></a>多文件结构</h2><h3 id="C-的一般组织结构"><a href="#C-的一般组织结构" class="headerlink" title="C++的一般组织结构"></a>C++的一般组织结构</h3><h4 id="一个工程可以分为多个源文件，例如："><a href="#一个工程可以分为多个源文件，例如：" class="headerlink" title="一个工程可以分为多个源文件，例如："></a>一个工程可以分为多个源文件，例如：</h4><ul>
-<li>类声明文件（.h文件）</li>
-<li>类实现文件（.cpp文件）</li>
-<li>类的使用文件（main()所在的.cpp文件)</li>
-</ul>
-<h4 id="利用多个工程来组合各个文件"><a href="#利用多个工程来组合各个文件" class="headerlink" title="利用多个工程来组合各个文件"></a>利用多个工程来组合各个文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//文件1，类的定义，Point.h</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//文件2，point.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int Point::count=0;</span><br><span class="line">Point::Point(const Point &amp;p):x(p.x),y(p.y)</span><br><span class="line">&#123;count++;&#125;</span><br><span class="line">void Point::showCount()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count=&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//文件3，主函数 5_10.cpp</span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="外部变量"><a href="#外部变量" class="headerlink" title="外部变量"></a>外部变量</h3><ul>
-<li>除了在定义它的源文件中可以使用外，还能被其他文件使用。</li>
-<li>文件作用域中定义的变量，默认情况下都是外部变量。</li>
-<li>在其他文件中如果需要使用的化，需要用extern关键字声明。</li>
-<li>在所有类的之外声明的函数（也就是非成员函数），都具有文件作用域的。</li>
-<li>这样的函数都可以在不同的编译单元中被调用</li>
-<li>只要在调用之前进行，引用性声明（即声明函数原型）即可。</li>
-</ul>
-<blockquote>
-<p>将变量和函数限制在编译单元内</p>
-<ul>
-<li>将匿名命名空间中定义的变量和函数，都不会暴露给其他的编译单元</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">namespace</span><br><span class="line">&#123;</span><br><span class="line">//匿名的命名空间</span><br><span class="line">int n;</span><br><span class="line">void f()</span><br><span class="line">&#123;</span><br><span class="line">n++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="标准c-库"><a href="#标准c-库" class="headerlink" title="标准c++库"></a>标准c++库</h2><blockquote>
-<p>标准c++类库是一个及其灵活且可拓展的可重用软件模块的集合。</p>
-</blockquote>
-<h3 id="输入-输出类"><a href="#输入-输出类" class="headerlink" title="输入&#x2F;输出类"></a>输入&#x2F;输出类</h3><h3 id="容器类和抽象数据类型"><a href="#容器类和抽象数据类型" class="headerlink" title="容器类和抽象数据类型"></a>容器类和抽象数据类型</h3><h3 id="存储管理类"><a href="#存储管理类" class="headerlink" title="存储管理类"></a>存储管理类</h3><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h3 id="运行环境支持"><a href="#运行环境支持" class="headerlink" title="运行环境支持"></a>运行环境支持</h3><h2 id="编译预处理"><a href="#编译预处理" class="headerlink" title="编译预处理"></a>编译预处理</h2><h3 id="include包含指令"><a href="#include包含指令" class="headerlink" title="#include包含指令"></a>#include包含指令</h3><ul>
-<li>将一个源文件嵌入到当前源文件中该点处。<ol>
-<li>#include&lt;文件名&gt;：按标准模式搜索，文件位于c++系统目录的include子目录下</li>
-<li>#include“文件名”：首先在当前目录中搜索，若没有，在按标准方式搜索。</li>
-</ol>
-</li>
-</ul>
-<h3 id="define-宏定义指令"><a href="#define-宏定义指令" class="headerlink" title="#define 宏定义指令"></a>#define 宏定义指令</h3><ul>
-<li>定义符号常量，很多情况已经被const定义语句取代。</li>
-<li>定义带参数宏，已经被内联函数取代。</li>
-</ul>
-<h3 id="undif"><a href="#undif" class="headerlink" title="#undif"></a>#undif</h3><ul>
-<li>删除由#define定义的宏，使之不再起作用</li>
-</ul>
-<h3 id="条件编译指令——-if和-endif"><a href="#条件编译指令——-if和-endif" class="headerlink" title="条件编译指令——#if和#endif"></a>条件编译指令——#if和#endif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令——-else"><a href="#条件编译指令——-else" class="headerlink" title="条件编译指令——#else"></a>条件编译指令——#else</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文1</span><br><span class="line">#else</span><br><span class="line">//当“常量表达式”为零时编译</span><br><span class="line">程序正文2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令——-elif"><a href="#条件编译指令——-elif" class="headerlink" title="条件编译指令——#elif"></a>条件编译指令——#elif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式1</span><br><span class="line">程序正文1//当“常量表达式1”非零时编译</span><br><span class="line">#elif 常量表达式2</span><br><span class="line">程序正文2//当“常量表达式2”非零时编译</span><br><span class="line">#else</span><br><span class="line">程序正文3//其他情况下编译</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令"><a href="#条件编译指令" class="headerlink" title="条件编译指令"></a>条件编译指令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#ifdef 标识符</span><br><span class="line">程序段1</span><br><span class="line">#else</span><br><span class="line">程序段2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果“标识符”经#define定义过，且未经undef删除，则编译程序段1；否则编译程序段2.</p>
-</blockquote>
-<h2 id="第五章小结"><a href="#第五章小结" class="headerlink" title="第五章小结"></a>第五章小结</h2><ul>
-<li>对象的生存期，作用域与可见性。</li>
-<li>类的静态成员。</li>
-<li>数据的共享和保护。</li>
-<li>友元</li>
-<li>编译预处理指令</li>
-<li>多文件结构与工程</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>小他者、对象a、大他者</title>
     <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
     <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
@@ -2479,6 +2292,12 @@
     <title>大学物理</title>
     <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>拉康和弗洛伊德关于无意识的论述</title>
+    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
+    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
+]]></content>
   </entry>
   <entry>
     <title>应力</title>
@@ -2690,124 +2509,6 @@
 <p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603112212651.png" alt="image-20240603112212651"></p>
 <p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603112225352.png" alt="image-20240603112225352"></p>
 <h3 id="例题-6"><a href="#例题-6" class="headerlink" title="例题"></a>例题</h3><p><img src="/2024/06/02/%E5%BA%94%E5%8A%9B/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240603112251253.png" alt="image-20240603112251253"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>拉康和弗洛伊德关于无意识的论述</title>
-    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
-    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
-    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
-<blockquote>
-<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
-</blockquote>
-<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>名称</th>
-<th>性质</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>differance</td>
-<td>延异</td>
-<td>共时性</td>
-</tr>
-<tr>
-<td>difference</td>
-<td>差异</td>
-<td>历时性</td>
-</tr>
-</tbody></table>
-<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>日程规划</title>
-    <url>/2024/05/31/%E6%97%A5%E7%A8%8B%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th>日</th>
-<th>一</th>
-<th>二</th>
-<th>三</th>
-<th>四</th>
-<th>五</th>
-<th>六</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>31(5)</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-</tr>
-<tr>
-<td>9</td>
-<td>10</td>
-<td>11</td>
-<td>12</td>
-<td>13</td>
-<td>14</td>
-<td>15</td>
-</tr>
-<tr>
-<td>16</td>
-<td>17</td>
-<td>18</td>
-<td>19</td>
-<td>20</td>
-<td>21</td>
-<td>22</td>
-</tr>
-<tr>
-<td>23</td>
-<td>24</td>
-<td>25</td>
-<td>26</td>
-<td>27</td>
-<td>28</td>
-<td>29</td>
-</tr>
-<tr>
-<td>30</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="31-5"><a href="#31-5" class="headerlink" title="31(5)"></a>31(5)</h2><ul>
-<li>线代课上把向量空间那部分复习了一下</li>
-<li>体育文化节二课签到了，但是没有戳孔</li>
-<li>线代课上把我负责的形教ppt给写了</li>
-<li>中午在图书馆睡了一觉</li>
-<li>下午把n1第九章的内容学完了</li>
-<li>到华联领取了两瓶免费牛奶</li>
-<li>买了菠萝百香果果茶</li>
-<li>去外面大出血吃了干锅</li>
-</ul>
 ]]></content>
   </entry>
   <entry>
@@ -3276,6 +2977,223 @@
 ]]></content>
   </entry>
   <entry>
+    <title>（5）数据的共享和保护</title>
+    <url>/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/</url>
+    <content><![CDATA[<h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
+<p>其作用域始于“(”,终于”)”</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">double area(double radius);</span><br><span class="line">//radius的作用域仅在此处，不能用于程序正文其他地方</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部作用域（块作用域）"><a href="#局部作用域（块作用域）" class="headerlink" title="局部作用域（块作用域）"></a>局部作用域（块作用域）</h3><ul>
+<li>函数的形参，在块中声明的标识符</li>
+<li>作用域自声明处起，限于块中</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void fun(int a)</span><br><span class="line">&#123;int b=a;</span><br><span class="line">cin&gt;&gt;b;</span><br><span class="line">if(b&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">int c;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类作用域"><a href="#类作用域" class="headerlink" title="类作用域"></a>类作用域</h3><ul>
+<li>类的对象具有类作用域</li>
+</ul>
+<p>其范围包括类体和成员函数体。</p>
+<ul>
+<li>在类作用域以外访问类的成员：<ol>
+<li>静态成员：通过类名，或者该类的对象名，对象引用访问。</li>
+<li>非静态成员：通过类名，或者该类的对象名，对象引用，对象指针访问。</li>
+</ol>
+</li>
+</ul>
+<h3 id="文件作用域"><a href="#文件作用域" class="headerlink" title="文件作用域"></a>文件作用域</h3><ul>
+<li>不在前述各个作用域中出现的声明，就具有文件作用域。</li>
+<li>其作用域开始于声明点，结束于文件尾。</li>
+</ul>
+<blockquote>
+<p>可见性：</p>
+<ul>
+<li>可见性是从对标识符的引用的角度来谈的概念</li>
+<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
+<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
+<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
+<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
+</ul>
+</blockquote>
+<h3 id="命名空间作用域"><a href="#命名空间作用域" class="headerlink" title="命名空间作用域"></a>命名空间作用域</h3><blockquote>
+<p>可见性：</p>
+<ul>
+<li>可见性是从对标识符的引用的角度来谈的概念</li>
+<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
+<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
+<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
+<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
+</ul>
+</blockquote>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int i;//全局变量，文件作用域</span><br><span class="line">int main()</span><br><span class="line">i=5;//为全局变量赋值</span><br><span class="line">&#123;</span><br><span class="line">int i;</span><br><span class="line">i=7;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出7，内层会屏蔽外层作用变量</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出5</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象的生存期"><a href="#对象的生存期" class="headerlink" title="对象的生存期"></a>对象的生存期</h2><h3 id="静态生存区"><a href="#静态生存区" class="headerlink" title="静态生存区"></a>静态生存区</h3><ul>
+<li>这种生存期与程序的运行期相同。</li>
+<li>在文件作用域中声明的对象具有这种生存期。</li>
+<li>在函数内部声明静态生存期对象，要冠以关键字static。</li>
+</ul>
+<h3 id="非静态生存区"><a href="#非静态生存区" class="headerlink" title="非静态生存区"></a>非静态生存区</h3><ul>
+<li>开始于程序执行到声明点时，结束于该标识符的作用域结束处。</li>
+<li>块作用域中声明的，没有用static修饰的对象，是动态生存区的对象（习惯称我为局部生存期对象）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std</span><br><span class="line">int i=1;//i为全局变量</span><br><span class="line">void other()</span><br><span class="line">&#123;</span><br><span class="line">static int a=2;</span><br><span class="line">static int b;</span><br><span class="line">//a，b为静态局部变量，具有全局寿命，局部可见。</span><br><span class="line">//只第一次进入函数时被初始化。</span><br><span class="line">int c=10;</span><br><span class="line">//c为局部变量，具有动态生存期</span><br><span class="line">//每次进入函数时都被初始化</span><br><span class="line">a+=2;i+=32;c+=5;</span><br><span class="line">cout&lt;&lt;&quot;--OTHER--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot;i:&quot;&lt;&lt;i&lt;&lt;&quot;a:&quot;&lt;&lt;a&lt;&lt;&quot;b:&quot;&lt;&lt;b&lt;&lt;&quot;c:&quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">b=a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">static int a;</span><br><span class="line">//a静态局部变量，有全局寿命，局部可见</span><br><span class="line">int b=-10;</span><br><span class="line">int c=0;</span><br><span class="line">//b，c为局部变量，具有动态生存期</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">c+=8;other();</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">i+=10;</span><br><span class="line">other();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">--MAIN--</span><br><span class="line">i:1 a:0 b:-10 c:0</span><br><span class="line">--OTHER--</span><br><span class="line">i:33 a:4 b:0 c:15</span><br><span class="line">--MAIN--</span><br><span class="line">i:33 a:0 b:-10 c:8</span><br><span class="line">--OTHER--</span><br><span class="line">i:75 a:6 b:4 c:15</span><br></pre></td></tr></table></figure>
+
+<h2 id="类的静态数据成员"><a href="#类的静态数据成员" class="headerlink" title="类的静态数据成员"></a>类的静态数据成员</h2><ul>
+<li>用关键词static声明</li>
+<li>为该类所有对象共享，静态数据成员具有静态生存期。</li>
+<li>必须在类外定义和初始化，用（::）来指明所属的类。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point a(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">a.showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">b.showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="静态函数成员"><a href="#静态函数成员" class="headerlink" title="静态函数成员"></a>静态函数成员</h2><p>静态函数处理静态数据</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point::showCount();//输出对象个数</span><br><span class="line">Point a(4,5);//声明对象a，其构造函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);//声明对象b，其复制函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类的友元"><a href="#类的友元" class="headerlink" title="类的友元"></a>类的友元</h2><h3 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h3><ul>
+<li>友元时c++提供的一种破坏数据封装和数据隐藏的机制。</li>
+<li>提供将一个模板声明为另一个模板的友元，一个模板能够引用到另一个模板中本是被隐藏的信息。</li>
+<li>可以声明友元函数和友元类</li>
+<li>为了确保数据的完整性，及数据封装于隐藏的原则，建议慎重使用友元。</li>
+</ul>
+<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><ul>
+<li>友元函数是在类声明中由关键字friend修饰的说明的非成员函数，在它的函数体中能够通过对象名访问private和protected成员。</li>
+<li>作用：增加灵活性，使程序员可以在封装和快速性方面做合理选择</li>
+<li>访问对象中的成员必须通过对象名。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x,int y):x(x),y(y)</span><br><span class="line">&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">Point(Point&amp; p)</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(Point &amp;a,Point &amp;b);</span><br><span class="line">static int showCOUNT()&#123;return count;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">static int count;</span><br><span class="line">&#125;;</span><br><span class="line">float dist(Point&amp; a,Point&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">double x=a.x-b.x;</span><br><span class="line">double y=a.y-b.y;</span><br><span class="line">//有修改原本数据的隐患</span><br><span class="line">//避免每次用对象的x，y都要调用一次函数</span><br><span class="line">return </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><ul>
+<li><p>若一个类为另一个类的友元，则此类的所有成员，都能访问对方类的私有成员。</p>
+</li>
+<li><p>声明语法：将友元类名放在另一个类中使用friend修饰说明。</p>
+</li>
+<li><p>友元关系是单向的，数据成员的开放也就是单向的。</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">friend class B;</span><br><span class="line">public:</span><br><span class="line">void display()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;x&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">void set(int i);</span><br><span class="line">void display();</span><br><span class="line">private:</span><br><span class="line">A a;</span><br><span class="line">&#125;</span><br><span class="line">void B::set(int i)</span><br><span class="line">&#123;</span><br><span class="line">a.x=i;</span><br><span class="line">&#125;</span><br><span class="line">void B::display()</span><br><span class="line">&#123;</span><br><span class="line">a.display();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="共享数据的保护"><a href="#共享数据的保护" class="headerlink" title="共享数据的保护"></a>共享数据的保护</h2><h3 id="常类型"><a href="#常类型" class="headerlink" title="常类型"></a>常类型</h3><h4 id="常对象：必须进行初始化，不能被更新。const-类名-对象名；"><a href="#常对象：必须进行初始化，不能被更新。const-类名-对象名；" class="headerlink" title="常对象：必须进行初始化，不能被更新。const 类名 对象名；"></a>常对象：必须进行初始化，不能被更新。const 类名 对象名；</h4><ul>
+<li>用const修饰的对象</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i,int j):x(i),y(j)&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">A const a(3,4);//a是常对象，不能被更新</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"><a href="#常成员：用const进行修饰的类成员：常数据成员和常函数成员。" class="headerlink" title="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"></a>常成员：用const进行修饰的类成员：常数据成员和常函数成员。</h4><ul>
+<li>常成员函数</li>
+<li>使用const关键字说明的函数</li>
+<li>常成员函数不更新对象的数据成员</li>
+<li>常成员函数说明格式：</li>
+</ul>
+<blockquote>
+<p>类型说明符 函数名（参数表) const；这里，const是函数类型的一个组成部分，因此在实现部分也要带const关键字。</p>
+</blockquote>
+<ul>
+<li>const关键字可以被用于参与对重载函数的区分</li>
+<li>通过常对象只能调用它的常成员函数</li>
+<li>常数据成员：使用const说明的数据成员</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class R</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">R(int r1,int r2):r1(r1),r2(r2)&#123;&#125;</span><br><span class="line">void print();</span><br><span class="line">void print() const;</span><br><span class="line">private:</span><br><span class="line">int r1,r2;</span><br><span class="line">&#125;;</span><br><span class="line">void R::print()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">void R::print()const</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">R a(5,4);</span><br><span class="line">a.print();</span><br><span class="line">const R b(20,53);</span><br><span class="line">b.print();//调用void print const()</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i):</span><br><span class="line">void print();</span><br><span class="line">private:</span><br><span class="line">const int a;</span><br><span class="line">static const int b;//静态常数据对象</span><br><span class="line">&#125;;</span><br><span class="line">const int A::b=10;</span><br><span class="line">A::A(int i):a(i)&#123;&#125;</span><br><span class="line">void A::print()&#123;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;&quot;:&quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">A a1(100),a2(0);</span><br><span class="line">a1.print();</span><br><span class="line">a2.print();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="常引用：被引用的对象不能被更新。const-类型说明符号-引用名"><a href="#常引用：被引用的对象不能被更新。const-类型说明符号-引用名" class="headerlink" title="常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名"></a>常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(const Point &amp;p1,const Point &amp;p2);</span><br><span class="line">private x,y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在友元函数中用常引用做参数，既能获得较高的执行效率，又能保证实参的安全性。</p>
+</blockquote>
+<h4 id="常数组：数组元素不能被更新。类型说明符-const-数组名-大小"><a href="#常数组：数组元素不能被更新。类型说明符-const-数组名-大小" class="headerlink" title="常数组：数组元素不能被更新。类型说明符 const 数组名[大小]"></a>常数组：数组元素不能被更新。类型说明符 const 数组名[大小]</h4><h4 id="常指针：指向常量的指针。"><a href="#常指针：指向常量的指针。" class="headerlink" title="常指针：指向常量的指针。"></a>常指针：指向常量的指针。</h4><h2 id="多文件结构"><a href="#多文件结构" class="headerlink" title="多文件结构"></a>多文件结构</h2><h3 id="C-的一般组织结构"><a href="#C-的一般组织结构" class="headerlink" title="C++的一般组织结构"></a>C++的一般组织结构</h3><h4 id="一个工程可以分为多个源文件，例如："><a href="#一个工程可以分为多个源文件，例如：" class="headerlink" title="一个工程可以分为多个源文件，例如："></a>一个工程可以分为多个源文件，例如：</h4><ul>
+<li>类声明文件（.h文件）</li>
+<li>类实现文件（.cpp文件）</li>
+<li>类的使用文件（main()所在的.cpp文件)</li>
+</ul>
+<h4 id="利用多个工程来组合各个文件"><a href="#利用多个工程来组合各个文件" class="headerlink" title="利用多个工程来组合各个文件"></a>利用多个工程来组合各个文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//文件1，类的定义，Point.h</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//文件2，point.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int Point::count=0;</span><br><span class="line">Point::Point(const Point &amp;p):x(p.x),y(p.y)</span><br><span class="line">&#123;count++;&#125;</span><br><span class="line">void Point::showCount()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count=&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//文件3，主函数 5_10.cpp</span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="外部变量"><a href="#外部变量" class="headerlink" title="外部变量"></a>外部变量</h3><ul>
+<li>除了在定义它的源文件中可以使用外，还能被其他文件使用。</li>
+<li>文件作用域中定义的变量，默认情况下都是外部变量。</li>
+<li>在其他文件中如果需要使用的化，需要用extern关键字声明。</li>
+<li>在所有类的之外声明的函数（也就是非成员函数），都具有文件作用域的。</li>
+<li>这样的函数都可以在不同的编译单元中被调用</li>
+<li>只要在调用之前进行，引用性声明（即声明函数原型）即可。</li>
+</ul>
+<blockquote>
+<p>将变量和函数限制在编译单元内</p>
+<ul>
+<li>将匿名命名空间中定义的变量和函数，都不会暴露给其他的编译单元</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">namespace</span><br><span class="line">&#123;</span><br><span class="line">//匿名的命名空间</span><br><span class="line">int n;</span><br><span class="line">void f()</span><br><span class="line">&#123;</span><br><span class="line">n++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="标准c-库"><a href="#标准c-库" class="headerlink" title="标准c++库"></a>标准c++库</h2><blockquote>
+<p>标准c++类库是一个及其灵活且可拓展的可重用软件模块的集合。</p>
+</blockquote>
+<h3 id="输入-输出类"><a href="#输入-输出类" class="headerlink" title="输入&#x2F;输出类"></a>输入&#x2F;输出类</h3><h3 id="容器类和抽象数据类型"><a href="#容器类和抽象数据类型" class="headerlink" title="容器类和抽象数据类型"></a>容器类和抽象数据类型</h3><h3 id="存储管理类"><a href="#存储管理类" class="headerlink" title="存储管理类"></a>存储管理类</h3><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h3 id="运行环境支持"><a href="#运行环境支持" class="headerlink" title="运行环境支持"></a>运行环境支持</h3><h2 id="编译预处理"><a href="#编译预处理" class="headerlink" title="编译预处理"></a>编译预处理</h2><h3 id="include包含指令"><a href="#include包含指令" class="headerlink" title="#include包含指令"></a>#include包含指令</h3><ul>
+<li>将一个源文件嵌入到当前源文件中该点处。<ol>
+<li>#include&lt;文件名&gt;：按标准模式搜索，文件位于c++系统目录的include子目录下</li>
+<li>#include“文件名”：首先在当前目录中搜索，若没有，在按标准方式搜索。</li>
+</ol>
+</li>
+</ul>
+<h3 id="define-宏定义指令"><a href="#define-宏定义指令" class="headerlink" title="#define 宏定义指令"></a>#define 宏定义指令</h3><ul>
+<li>定义符号常量，很多情况已经被const定义语句取代。</li>
+<li>定义带参数宏，已经被内联函数取代。</li>
+</ul>
+<h3 id="undif"><a href="#undif" class="headerlink" title="#undif"></a>#undif</h3><ul>
+<li>删除由#define定义的宏，使之不再起作用</li>
+</ul>
+<h3 id="条件编译指令——-if和-endif"><a href="#条件编译指令——-if和-endif" class="headerlink" title="条件编译指令——#if和#endif"></a>条件编译指令——#if和#endif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令——-else"><a href="#条件编译指令——-else" class="headerlink" title="条件编译指令——#else"></a>条件编译指令——#else</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文1</span><br><span class="line">#else</span><br><span class="line">//当“常量表达式”为零时编译</span><br><span class="line">程序正文2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令——-elif"><a href="#条件编译指令——-elif" class="headerlink" title="条件编译指令——#elif"></a>条件编译指令——#elif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式1</span><br><span class="line">程序正文1//当“常量表达式1”非零时编译</span><br><span class="line">#elif 常量表达式2</span><br><span class="line">程序正文2//当“常量表达式2”非零时编译</span><br><span class="line">#else</span><br><span class="line">程序正文3//其他情况下编译</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令"><a href="#条件编译指令" class="headerlink" title="条件编译指令"></a>条件编译指令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#ifdef 标识符</span><br><span class="line">程序段1</span><br><span class="line">#else</span><br><span class="line">程序段2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果“标识符”经#define定义过，且未经undef删除，则编译程序段1；否则编译程序段2.</p>
+</blockquote>
+<h2 id="第五章小结"><a href="#第五章小结" class="headerlink" title="第五章小结"></a>第五章小结</h2><ul>
+<li>对象的生存期，作用域与可见性。</li>
+<li>类的静态成员。</li>
+<li>数据的共享和保护。</li>
+<li>友元</li>
+<li>编译预处理指令</li>
+<li>多文件结构与工程</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
+    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
+<blockquote>
+<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
+</blockquote>
+<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>differance</td>
+<td>延异</td>
+<td>共时性</td>
+</tr>
+<tr>
+<td>difference</td>
+<td>差异</td>
+<td>历时性</td>
+</tr>
+</tbody></table>
+<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>日语n1文法</title>
     <url>/2024/05/19/%E6%97%A5%E8%AF%ADn1%E6%96%87%E6%B3%95/</url>
     <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><ol>
@@ -3327,6 +3245,125 @@
 ]]></content>
   </entry>
   <entry>
+    <title>日程规划</title>
+    <url>/2024/05/31/%E6%97%A5%E7%A8%8B%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>日</th>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+<th>六</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>31(5)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+<tr>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+</tr>
+<tr>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+</tr>
+<tr>
+<td>30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="31-5"><a href="#31-5" class="headerlink" title="31(5)"></a>31(5)</h2><ul>
+<li>线代课上把向量空间那部分复习了一下</li>
+<li>体育文化节二课签到了，但是没有戳孔</li>
+<li>线代课上把我负责的形教ppt给写了</li>
+<li>中午在图书馆睡了一觉</li>
+<li>下午把n1第九章的内容学完了</li>
+<li>到华联领取了两瓶免费牛奶</li>
+<li>买了菠萝百香果果茶</li>
+<li>去外面大出血吃了干锅</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>有序数组的平方</title>
+    <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
+    <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
+</ul>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
+</ul>
+<h3 id="题解1（暴力运算，平方加排序）"><a href="#题解1（暴力运算，平方加排序）" class="headerlink" title="题解1（暴力运算，平方加排序）"></a>题解1（暴力运算，平方加排序）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            nums[i++] = nums[i] * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="题解2（开新数组-左右指针）"><a href="#题解2（开新数组-左右指针）" class="headerlink" title="题解2（开新数组+左右指针）"></a>题解2（开新数组+左右指针）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b=a.<span class="built_in">size</span>()<span class="number">-1</span>,r=a.<span class="built_in">size</span>(),l=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">c</span><span class="params">(a.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[l])&lt;<span class="built_in">fabs</span>(a[r]))</span><br><span class="line">            &#123;</span><br><span class="line">                c[b]=a[r]*a[r];</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c[b--]=a[l]*a[l];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.leetcode-cn.com/1631932242-BViXlX-977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" alt="977.有序数组的平方.gif"></p>
+<p>这个算法的思路是，新开一个数组用来记录信息，首位两个指针互相交换信息，有一个特点，其实就是，生成的新数组的值，其实应该从小到大，依次是从中间，左右之一取得的。</p>
+<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+  </entry>
+  <entry>
+    <title>树</title>
+    <url>/2024/06/04/%E6%A0%91/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>日语学习</title>
     <url>/2024/06/03/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<p>d</p>
@@ -3358,18 +3395,6 @@
 <h3 id="语法训练-6"><a href="#语法训练-6" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2020年12月语法</p>
 <h3 id="单词训练-6"><a href="#单词训练-6" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2020年12月词汇</p>
 <h3 id="阅读训练-6"><a href="#阅读训练-6" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年7月 问题8，9，10</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>死月妖花</title>
-    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>水夏</title>
-    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
-    <content><![CDATA[<p>s</p>
-<p>你的身上散发着死人的气息</p>
 ]]></content>
   </entry>
   <entry>
@@ -3412,48 +3437,6 @@
 </li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>有序数组的平方</title>
-    <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
-    <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 104</code></li>
-<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
-<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
-</ul>
-<p><strong>进阶：</strong></p>
-<ul>
-<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
-</ul>
-<h3 id="题解1（暴力运算，平方加排序）"><a href="#题解1（暴力运算，平方加排序）" class="headerlink" title="题解1（暴力运算，平方加排序）"></a>题解1（暴力运算，平方加排序）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            nums[i++] = nums[i] * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="题解2（开新数组-左右指针）"><a href="#题解2（开新数组-左右指针）" class="headerlink" title="题解2（开新数组+左右指针）"></a>题解2（开新数组+左右指针）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b=a.<span class="built_in">size</span>()<span class="number">-1</span>,r=a.<span class="built_in">size</span>(),l=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">c</span><span class="params">(a.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[l])&lt;<span class="built_in">fabs</span>(a[r]))</span><br><span class="line">            &#123;</span><br><span class="line">                c[b]=a[r]*a[r];</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c[b--]=a[l]*a[l];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://pic.leetcode-cn.com/1631932242-BViXlX-977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" alt="977.有序数组的平方.gif"></p>
-<p>这个算法的思路是，新开一个数组用来记录信息，首位两个指针互相交换信息，有一个特点，其实就是，生成的新数组的值，其实应该从小到大，依次是从中间，左右之一取得的。</p>
-<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
-  </entry>
-  <entry>
-    <title>清单</title>
-    <url>/2024/06/01/%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>树</title>
-    <url>/2024/06/04/%E6%A0%91/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>洛谷P1002过河卒带来的思考</title>
@@ -3540,6 +3523,23 @@
 <h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1>]]></content>
   </entry>
   <entry>
+    <title>清单</title>
+    <url>/2024/06/01/%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>死月妖花</title>
+    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>水夏</title>
+    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
+    <content><![CDATA[<p>s</p>
+<p>你的身上散发着死人的气息</p>
+]]></content>
+  </entry>
+  <entry>
     <title>滑动窗口</title>
     <url>/2024/06/10/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</url>
     <content><![CDATA[<h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><h3 id="滑动窗口是什么"><a href="#滑动窗口是什么" class="headerlink" title="滑动窗口是什么"></a>滑动窗口是什么</h3><p>滑动窗口可以用来解决数组&#x2F;字符串的子元素问题，它可以将嵌套的循环问题，转换为单循环问题，降低时间复杂度。</p>
@@ -3616,6 +3616,86 @@
 ]]></content>
   </entry>
   <entry>
+    <title>社群教程</title>
+    <url>/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="第一节：长期vs短期"><a href="#第一节：长期vs短期" class="headerlink" title="第一节：长期vs短期"></a>第一节：长期vs短期</h2><h3 id="方向："><a href="#方向：" class="headerlink" title="方向："></a>方向：</h3><h4 id="女性的择偶策略"><a href="#女性的择偶策略" class="headerlink" title="女性的择偶策略"></a>女性的择偶策略</h4><ul>
+<li>情人属性 基因提供者（缺点，很难长期）</li>
+</ul>
+<p>特点：</p>
+<p>1.外形条件不错，器大活好（生理结构）</p>
+<p>2.会大半夜聊天 不纠结 不正面回复 比较敷衍 洒脱 喜欢大半夜邀约</p>
+<p>3.能给女性短期属性的感觉 一定不缺女生喜欢</p>
+<ul>
+<li>投资供养者（很慢 ？被人吊着 延续）</li>
+</ul>
+<p>特点：</p>
+<p>1.对女生好 不太注意形象 宅 社交圈窄 理性逻辑 </p>
+<p>相对来说气场比较弱，没有声明情调 比较包容 老好人</p>
+<blockquote>
+<p>李小璐,贾乃亮</p>
+<p>李孝利</p>
+</blockquote>
+<p>思考一个问题：帅和有钱是不是决定性因素？</p>
+<p>第二个问题：哪一个属性更好？</p>
+<p>一段感情去得也快，来得慢，去得也慢</p>
+<p>两种都要有 我是一个安全的人，解决问题的能力</p>
+<p>重点就是一句正经，一句逗逼。</p>
+<p>把握好其中的比例问题。</p>
+<p>查漏补缺，找到自身特点，以及缺失的东西。</p>
+<h2 id="男性吸引力解析"><a href="#男性吸引力解析" class="headerlink" title="男性吸引力解析"></a>男性吸引力解析</h2><h3 id="吸引力的详细解析"><a href="#吸引力的详细解析" class="headerlink" title="吸引力的详细解析"></a>吸引力的详细解析</h3><ul>
+<li><p>公式：男吸引力&#x3D;90%的心动指数加上10%的心疼指数。</p>
+</li>
+<li><p>从何而来？</p>
+</li>
+</ul>
+<ol>
+<li>硬价值（外在）：生存价值</li>
+</ol>
+<p>钱 车 房 圈子 地位</p>
+<ol start="2">
+<li>软价值（内在）：繁衍价值</li>
+</ol>
+<p>颜值 身材 性征 西装 嗓音低沉  拍照风格 我给人一种什么样的感觉 格调 调性</p>
+<p>孙红雷 黄渤</p>
+<p>聊天的方式</p>
+<ul>
+<li>能量</li>
+</ul>
+<p>正能量。状态不好，我就先缓缓不聊天</p>
+<p>安全感 顾家</p>
+<p>百分之九十</p>
+<p>百分之十 心疼指数</p>
+<p>展示脆弱的一面 示弱</p>
+<div style="width: 80%;margin: 0 auto">
+    <canvas id="chart9850" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart9850').getContext('2d');
+    var options = {
+    type: 'line',
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+    options: {
+        responsive: true,
+        title: {
+            display: true,
+            text: 'Chart.js Line Chart'
+        }
+    }
+};;
+    new Chart(ctx, options);
+</script>
+]]></content>
+  </entry>
+  <entry>
     <title>社会主义发展史问题</title>
     <url>/2024/05/27/%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E5%8F%91%E5%B1%95%E5%8F%B2%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="托马斯-cdot-莫尔的《乌托邦》为什么会是乌托邦？"><a href="#托马斯-cdot-莫尔的《乌托邦》为什么会是乌托邦？" class="headerlink" title="托马斯$\cdot$莫尔的《乌托邦》为什么会是乌托邦？"></a>托马斯$\cdot$莫尔的《乌托邦》为什么会是乌托邦？</h2><p>​	乌托邦，本意是“没有的地方”或者“好地方“。<strong>延伸拓展为还有理想，不可能完成的好事情</strong>，其中文翻译可以理解为”物“是没有，”托“是寄托，”邦“是国家，”乌托邦“三个字合起来的意思即是”空想的国家“。</p>
@@ -3687,86 +3767,6 @@
 <h2 id="“斯大林模式”和“苏联模式”是同一回事吗"><a href="#“斯大林模式”和“苏联模式”是同一回事吗" class="headerlink" title="“斯大林模式”和“苏联模式”是同一回事吗?"></a>“斯大林模式”和“苏联模式”是同一回事吗?</h2><p>苏联模式包含斯大林模式，而斯大林模式并不完全等于苏联模式。<strong>“斯大林模式”只是“苏联模式”中的一个发展阶段</strong>；从内涵上看，“斯大林模式”尽管反映有斯大林执政的个人特点，二者有区别，但在本质上与“苏联模式”是一致的，<strong>因此，“苏联模式”与“斯大林模式”虽有区别，但相同大于区别</strong>。</p>
 <h2 id="一国建成论”指什么"><a href="#一国建成论”指什么" class="headerlink" title="一国建成论”指什么?"></a>一国建成论”指什么?</h2><p>一国建成社会主义论，有时也称“一国社会主义论”，是<a href="https://baike.baidu.com/item/%E7%BA%A6%E7%91%9F%E5%A4%AB%C2%B7%E7%BB%B4%E8%90%A8%E9%87%8C%E5%A5%A5%E8%AF%BA%E7%BB%B4%E5%A5%87%C2%B7%E6%96%AF%E5%A4%A7%E6%9E%97/8676088?fromModule=lemma_inlink">斯大林</a>于1924年<a href="https://baike.baidu.com/item/%E5%BC%97%E6%8B%89%E5%9F%BA%E7%B1%B3%E5%B0%94%C2%B7%E4%BC%8A%E9%87%8C%E5%A5%87%C2%B7%E5%88%97%E5%AE%81/8676059?fromModule=lemma_inlink">列宁</a>逝世后提出的特殊理论，<strong>认为社会主义可以首先在一国内建成</strong>，这是对经典马克思主义理论的重大修正。</p>
 <h2 id="苏联从农业国快速转变为工业国是如何实现的"><a href="#苏联从农业国快速转变为工业国是如何实现的" class="headerlink" title="苏联从农业国快速转变为工业国是如何实现的?"></a>苏联从农业国快速转变为工业国是如何实现的?</h2><p>（1）苏共确立了从重工业开始，即<strong>机器制造业开始实现社会主义工业化</strong>的正确战略<br>（2）实行五年计划,<strong>五年计划保证了在全国范围内调动了有限的资源支持工业</strong><br>（3）高度集中的<strong>政治经济体制保证计划</strong>实施<br>（4）在计划中<strong>牺牲农业完成工业的原始积累</strong>,实行农业集体化运动,压低农业生产要素的价格,<strong>农民成为向国家缴纳“超额贡赋”的“农奴</strong>”。<br>（5）新生的苏联<strong>调动了工人阶级的积极性</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>社群教程</title>
-    <url>/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="第一节：长期vs短期"><a href="#第一节：长期vs短期" class="headerlink" title="第一节：长期vs短期"></a>第一节：长期vs短期</h2><h3 id="方向："><a href="#方向：" class="headerlink" title="方向："></a>方向：</h3><h4 id="女性的择偶策略"><a href="#女性的择偶策略" class="headerlink" title="女性的择偶策略"></a>女性的择偶策略</h4><ul>
-<li>情人属性 基因提供者（缺点，很难长期）</li>
-</ul>
-<p>特点：</p>
-<p>1.外形条件不错，器大活好（生理结构）</p>
-<p>2.会大半夜聊天 不纠结 不正面回复 比较敷衍 洒脱 喜欢大半夜邀约</p>
-<p>3.能给女性短期属性的感觉 一定不缺女生喜欢</p>
-<ul>
-<li>投资供养者（很慢 ？被人吊着 延续）</li>
-</ul>
-<p>特点：</p>
-<p>1.对女生好 不太注意形象 宅 社交圈窄 理性逻辑 </p>
-<p>相对来说气场比较弱，没有声明情调 比较包容 老好人</p>
-<blockquote>
-<p>李小璐,贾乃亮</p>
-<p>李孝利</p>
-</blockquote>
-<p>思考一个问题：帅和有钱是不是决定性因素？</p>
-<p>第二个问题：哪一个属性更好？</p>
-<p>一段感情去得也快，来得慢，去得也慢</p>
-<p>两种都要有 我是一个安全的人，解决问题的能力</p>
-<p>重点就是一句正经，一句逗逼。</p>
-<p>把握好其中的比例问题。</p>
-<p>查漏补缺，找到自身特点，以及缺失的东西。</p>
-<h2 id="男性吸引力解析"><a href="#男性吸引力解析" class="headerlink" title="男性吸引力解析"></a>男性吸引力解析</h2><h3 id="吸引力的详细解析"><a href="#吸引力的详细解析" class="headerlink" title="吸引力的详细解析"></a>吸引力的详细解析</h3><ul>
-<li><p>公式：男吸引力&#x3D;90%的心动指数加上10%的心疼指数。</p>
-</li>
-<li><p>从何而来？</p>
-</li>
-</ul>
-<ol>
-<li>硬价值（外在）：生存价值</li>
-</ol>
-<p>钱 车 房 圈子 地位</p>
-<ol start="2">
-<li>软价值（内在）：繁衍价值</li>
-</ol>
-<p>颜值 身材 性征 西装 嗓音低沉  拍照风格 我给人一种什么样的感觉 格调 调性</p>
-<p>孙红雷 黄渤</p>
-<p>聊天的方式</p>
-<ul>
-<li>能量</li>
-</ul>
-<p>正能量。状态不好，我就先缓缓不聊天</p>
-<p>安全感 顾家</p>
-<p>百分之九十</p>
-<p>百分之十 心疼指数</p>
-<p>展示脆弱的一面 示弱</p>
-<div style="width: 80%;margin: 0 auto">
-    <canvas id="chart3329" style="height: 300px"></canvas>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<script type="text/javascript">
-    var ctx = document.getElementById('chart3329').getContext('2d');
-    var options = {
-    type: 'line',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-    options: {
-        responsive: true,
-        title: {
-            display: true,
-            text: 'Chart.js Line Chart'
-        }
-    }
-};;
-    new Chart(ctx, options);
-</script>
 ]]></content>
   </entry>
   <entry>
@@ -4138,6 +4138,20 @@
 ]]></content>
   </entry>
   <entry>
+    <title>线代</title>
+    <url>/2024/05/22/%E7%BA%BF%E4%BB%A3/</url>
+    <content><![CDATA[<h1 id="第一章-线性方程组"><a href="#第一章-线性方程组" class="headerlink" title="第一章 线性方程组"></a>第一章 线性方程组</h1><h2 id="xi1-1-线性方程组高斯消元法与矩阵"><a href="#xi1-1-线性方程组高斯消元法与矩阵" class="headerlink" title="$\xi1.1$	线性方程组	高斯消元法与矩阵"></a>$\xi1.1$	线性方程组	高斯消元法与矩阵</h2><h2 id="xi1-2-行化简和阶梯形矩阵解的存在性和唯一性"><a href="#xi1-2-行化简和阶梯形矩阵解的存在性和唯一性" class="headerlink" title="$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性"></a>$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性</h2><h2 id="xi1-3-线性方程组的应用"><a href="#xi1-3-线性方程组的应用" class="headerlink" title="$\xi1.3$	线性方程组的应用"></a>$\xi1.3$	线性方程组的应用</h2><h1 id="第二章矩阵代数"><a href="#第二章矩阵代数" class="headerlink" title="第二章	矩阵代数"></a>第二章	矩阵代数</h1><h2 id="xi2-1-矩阵和向量"><a href="#xi2-1-矩阵和向量" class="headerlink" title="$\xi2.1$	矩阵和向量"></a>$\xi2.1$	矩阵和向量</h2><h2 id="xi2-2-矩阵的代数运算"><a href="#xi2-2-矩阵的代数运算" class="headerlink" title="$\xi2.2$	矩阵的代数运算"></a>$\xi2.2$	矩阵的代数运算</h2><h2 id="xi-2-3逆矩阵与矩阵的初等变换"><a href="#xi-2-3逆矩阵与矩阵的初等变换" class="headerlink" title="$\xi$2.3	逆矩阵与矩阵的初等变换"></a>$\xi$2.3	逆矩阵与矩阵的初等变换</h2><h2 id="xi-2-4转置矩阵与一些重要的方阵"><a href="#xi-2-4转置矩阵与一些重要的方阵" class="headerlink" title="$\xi$2.4	转置矩阵与一些重要的方阵"></a>$\xi$2.4	转置矩阵与一些重要的方阵</h2><h2 id="xi-2-5分块矩阵"><a href="#xi-2-5分块矩阵" class="headerlink" title="$\xi$2.5	分块矩阵"></a>$\xi$2.5	分块矩阵</h2><h1 id="第三章行列式"><a href="#第三章行列式" class="headerlink" title="第三章	行列式"></a>第三章	行列式</h1><h2 id="xi-3-1方阵的行列式"><a href="#xi-3-1方阵的行列式" class="headerlink" title="$\xi$3.1	方阵的行列式"></a>$\xi$3.1	方阵的行列式</h2><h2 id="xi-3-2行列式的主要性质"><a href="#xi-3-2行列式的主要性质" class="headerlink" title="$\xi$3.2	行列式的主要性质"></a>$\xi$3.2	行列式的主要性质</h2><h2 id="xi-3-3行列式的应用"><a href="#xi-3-3行列式的应用" class="headerlink" title="$\xi$3.3	行列式的应用"></a>$\xi$3.3	行列式的应用</h2><h1 id="第四章向量空间"><a href="#第四章向量空间" class="headerlink" title="第四章	向量空间"></a>第四章	向量空间</h1><h2 id="xi-4-1向量的定义及其运算"><a href="#xi-4-1向量的定义及其运算" class="headerlink" title="$\xi$4.1	向量的定义及其运算"></a>$\xi$4.1	向量的定义及其运算</h2><h2 id="xi-4-2向量的线性相关性"><a href="#xi-4-2向量的线性相关性" class="headerlink" title="$\xi$4.2	向量的线性相关性"></a>$\xi$4.2	向量的线性相关性</h2><h2 id="xi-4-3向量组的极大线性无关组和秩"><a href="#xi-4-3向量组的极大线性无关组和秩" class="headerlink" title="$\xi$4.3	向量组的极大线性无关组和秩"></a>$\xi$4.3	向量组的极大线性无关组和秩</h2><h2 id="xi-4-4子空间"><a href="#xi-4-4子空间" class="headerlink" title="$\xi$4.4	子空间"></a>$\xi$4.4	子空间</h2><h2 id="xi-4-5基和维数"><a href="#xi-4-5基和维数" class="headerlink" title="$\xi$4.5	基和维数"></a>$\xi$4.5	基和维数</h2><h2 id="xi-4-6矩阵的秩"><a href="#xi-4-6矩阵的秩" class="headerlink" title="$\xi$4.6	矩阵的秩"></a>$\xi$4.6	矩阵的秩</h2><h2 id="xi-4-7线性方程组的有解条件及解的结构"><a href="#xi-4-7线性方程组的有解条件及解的结构" class="headerlink" title="$\xi$4.7	线性方程组的有解条件及解的结构"></a>$\xi$4.7	线性方程组的有解条件及解的结构</h2><h2 id="xi-4-8-R-n-到-R-m-的线性映射"><a href="#xi-4-8-R-n-到-R-m-的线性映射" class="headerlink" title="$\xi$4.8	$R^n$到$R^m$的线性映射"></a>$\xi$4.8	$R^n$到$R^m$的线性映射</h2><h1 id="第五章特征值与特征向量"><a href="#第五章特征值与特征向量" class="headerlink" title="第五章	特征值与特征向量"></a>第五章	特征值与特征向量</h1><h2 id="xi-5-1矩阵的特征值与特征向量"><a href="#xi-5-1矩阵的特征值与特征向量" class="headerlink" title="$\xi$5.1	矩阵的特征值与特征向量"></a>$\xi$5.1	矩阵的特征值与特征向量</h2><h2 id="xi-5-2矩阵的相似对角化"><a href="#xi-5-2矩阵的相似对角化" class="headerlink" title="$\xi$5.2	矩阵的相似对角化"></a>$\xi$5.2	矩阵的相似对角化</h2><h2 id="xi-5-3实对称矩阵的正交相似对角化"><a href="#xi-5-3实对称矩阵的正交相似对角化" class="headerlink" title="$\xi$5.3	实对称矩阵的正交相似对角化"></a>$\xi$5.3	实对称矩阵的正交相似对角化</h2><p>​	由定理5.2.1知，一个n阶矩阵能否对角化取决于它是否有n个线性无关的特征向量.那么什么样的矩阵一定有n个线性无关的特征向量呢?下面我们就来证明任一n阶实对称矩阵一定存在n个线性无关的特征向量,从而可以对角化.也就是说,存在可逆阵$P$，使得$P^{-1}AP&#x3D;\Lambda$为对角阵。进一步，我们还可证明存在正交矩阵$Q$,使得$Q^T AQ&#x3D;\Lambda$为对角阵.为此，我们先引人如下概念.</p>
+<p>​	定义 5.3.1	设$\alpha&#x3D;[a_1,a_2.\cdots,a_n]^T,\beta&#x3D;[b_1,b_2,\cdots,b_n]^T$称<br>$$<br>(\alpha,\beta)&#x3D;\alpha^T\cdot\beta&#x3D;\sum_{i&#x3D;i}^na_ib_i<br>$$<br>为向量$\alpha,\beta$的内积，显然，$(\alpha,\alpha)&gt;&#x3D;0$,当且仅当$\alpha&#x3D;0$时等号成立，关于向量内积，还有如下性质：<br>$$<br>(1)(\alpha,\beta)&#x3D;(\beta,\alpha),\\<br>(2)(\alpha+\beta,\gamma)&#x3D;(\alpha,\gamma)+(\alpha,\gamma),\\<br>(3)k\alpha,\beta)&#x3D;k(\alpha,\beta),k\in R.\\<br>(4)(0,\alpha)&#x3D;(\alpha,0)&#x3D;0.\\<br>(5)(\sum_{i&#x3D;1}^{n}k_i\alpha_i,\alpha)&#x3D;\sum_{i&#x3D;1}^{n}k_i(\alpha_i,\alpha),k_i\in R,i&#x3D;1,\cdots,n.\\<br>$$<br>​	定义 5.3.2 称$|\alpha|&#x3D;\sqrt{(\alpha,\alpha)}$为向量$\alpha$的长度（或范数），长度为1的向量成为单位向量（unit vector）。</p>
+<p>​	一个向量$\alpha $的长度代表了n维空间中与$\alpha $所对应的点到原点（零向量所对应的点）的“距离”。因此，对于任意两个n维向量$\alpha,\beta $所对应的n维空间的两个点之间的距离可以表示为$|\alpha-\beta|$.</p>
+<p>​	关于向量长度，有如下性质：<br>$$<br>设\alpha\in R^n,\beta \in R^n,k \in R\\<br>(1)非负性：|k\alpha|&#x3D;|k||\alpha|\\<br>(2)正齐性：|k\alpha|&#x3D;|k||\alpha|\\<br>(3)柯西—许瓦兹不等式：|(\alpha,\beta)|&lt;&#x3D;|\alpha||\beta|\\<br>(4)三角不等式|\alpha|+|\beta|&gt;&#x3D;|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>我们仅就性质(3),(4)证明\\<br>$$</p>
+<p>$$<br>证明(3)\forall t\in R,构造关于t的二次多项式\\<br>0&lt;&#x3D;(\alpha+t\beta,\alpha+t\beta)&#x3D;(\alpha,\alpha)+2(\alpha,\alpha)t+(\beta,\beta)t^2\\<br>所以\\<br>\Delta&#x3D;4(\alpha,\beta)^2-4(\alpha,\alpha)(\beta,\beta)&lt;&#x3D;0.\\<br>即\\<br>（\alpha,\beta）^2&lt;&#x3D;(\alpha,\alpha)(\beta,\beta)&#x3D;|\alpha|^2\cdot|\beta|^2,\\<br>所以\\<br>|(\alpha,\beta)|&lt;&#x3D;|\alpha|\cdot|\beta|<br>$$</p>
+<p>$$<br>(4)|\alpha-\beta|^2&#x3D;(\alpha-\beta,\alpha-\beta)&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\</p>
+<blockquote>
+<p>&#x3D;|\alpha|^2-2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;(|\alpha|-|\beta|)^2\\<br>故\\<br>|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>(|\alpha|+|\beta|)^2&#x3D;|\alpha|^2+2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\<br>&#x3D;(\alpha-\beta,\alpha-\beta)\\<br>&#x3D;|\alpha-\beta|^2.<br>$$</p>
+</blockquote>
+<h1 id="第六章二次型"><a href="#第六章二次型" class="headerlink" title="第六章	二次型"></a>第六章	二次型</h1><h2 id="xi-6-1二次型及其矩阵表示"><a href="#xi-6-1二次型及其矩阵表示" class="headerlink" title="$\xi$6.1	二次型及其矩阵表示"></a>$\xi$6.1	二次型及其矩阵表示</h2><h2 id="xi-6-2二次型化位标准型"><a href="#xi-6-2二次型化位标准型" class="headerlink" title="$\xi$6.2	二次型化位标准型"></a>$\xi$6.2	二次型化位标准型</h2><h2 id="xi-6-3正定二次型"><a href="#xi-6-3正定二次型" class="headerlink" title="$\xi$6.3	正定二次型"></a>$\xi$6.3	正定二次型</h2><h2 id="xi-6-4二次型的应用"><a href="#xi-6-4二次型的应用" class="headerlink" title="$\xi$6.4	二次型的应用"></a>$\xi$6.4	二次型的应用</h2><h1 id="第七章线性空间与线性变换"><a href="#第七章线性空间与线性变换" class="headerlink" title="第七章	线性空间与线性变换"></a>第七章	线性空间与线性变换</h1><h2 id="xi-7-1线性空间"><a href="#xi-7-1线性空间" class="headerlink" title="$\xi$7.1	线性空间"></a>$\xi$7.1	线性空间</h2><h2 id="xi-7-2线性变换"><a href="#xi-7-2线性变换" class="headerlink" title="$\xi$7.2	线性变换"></a>$\xi$7.2	线性变换</h2><h2 id="xi-7-3线性变换的矩阵表示"><a href="#xi-7-3线性变换的矩阵表示" class="headerlink" title="$\xi$7.3	线性变换的矩阵表示"></a>$\xi$7.3	线性变换的矩阵表示</h2><h2 id="xi-7-4线性变换的特征值与特征向量"><a href="#xi-7-4线性变换的特征值与特征向量" class="headerlink" title="$\xi$7.4	线性变换的特征值与特征向量"></a>$\xi$7.4	线性变换的特征值与特征向量</h2><h2 id="xi-7-5欧几里得空间简介"><a href="#xi-7-5欧几里得空间简介" class="headerlink" title="$\xi$7.5	欧几里得空间简介"></a>$\xi$7.5	欧几里得空间简介</h2><h1 id="MATLAB在线性代数中的作用"><a href="#MATLAB在线性代数中的作用" class="headerlink" title="MATLAB在线性代数中的作用"></a>MATLAB在线性代数中的作用</h1><h2 id="xi-8-1MATLAB简介"><a href="#xi-8-1MATLAB简介" class="headerlink" title="$\xi$8.1	MATLAB简介"></a>$\xi$8.1	MATLAB简介</h2><h2 id="xi-8-2MATLAB的基本操作"><a href="#xi-8-2MATLAB的基本操作" class="headerlink" title="$\xi$8.2	MATLAB的基本操作"></a>$\xi$8.2	MATLAB的基本操作</h2><h2 id="xi-8-3向量的生成与运算"><a href="#xi-8-3向量的生成与运算" class="headerlink" title="$\xi$8.3	向量的生成与运算"></a>$\xi$8.3	向量的生成与运算</h2><h2 id="xi-8-4矩阵的生成与运算"><a href="#xi-8-4矩阵的生成与运算" class="headerlink" title="$\xi$8.4	矩阵的生成与运算"></a>$\xi$8.4	矩阵的生成与运算</h2><h2 id="xi-8-5常用的矩阵函数"><a href="#xi-8-5常用的矩阵函数" class="headerlink" title="$\xi$8.5	常用的矩阵函数"></a>$\xi$8.5	常用的矩阵函数</h2><h2 id="xi-8-6线性方程组求解"><a href="#xi-8-6线性方程组求解" class="headerlink" title="$\xi$8.6	线性方程组求解"></a>$\xi$8.6	线性方程组求解</h2>]]></content>
+  </entry>
+  <entry>
     <title>第六章杆件的内力</title>
     <url>/2024/05/20/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E6%9D%86%E4%BB%B6%E7%9A%84%E5%86%85%E5%8A%9B/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -4310,93 +4324,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>线代</title>
-    <url>/2024/05/22/%E7%BA%BF%E4%BB%A3/</url>
-    <content><![CDATA[<h1 id="第一章-线性方程组"><a href="#第一章-线性方程组" class="headerlink" title="第一章 线性方程组"></a>第一章 线性方程组</h1><h2 id="xi1-1-线性方程组高斯消元法与矩阵"><a href="#xi1-1-线性方程组高斯消元法与矩阵" class="headerlink" title="$\xi1.1$	线性方程组	高斯消元法与矩阵"></a>$\xi1.1$	线性方程组	高斯消元法与矩阵</h2><h2 id="xi1-2-行化简和阶梯形矩阵解的存在性和唯一性"><a href="#xi1-2-行化简和阶梯形矩阵解的存在性和唯一性" class="headerlink" title="$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性"></a>$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性</h2><h2 id="xi1-3-线性方程组的应用"><a href="#xi1-3-线性方程组的应用" class="headerlink" title="$\xi1.3$	线性方程组的应用"></a>$\xi1.3$	线性方程组的应用</h2><h1 id="第二章矩阵代数"><a href="#第二章矩阵代数" class="headerlink" title="第二章	矩阵代数"></a>第二章	矩阵代数</h1><h2 id="xi2-1-矩阵和向量"><a href="#xi2-1-矩阵和向量" class="headerlink" title="$\xi2.1$	矩阵和向量"></a>$\xi2.1$	矩阵和向量</h2><h2 id="xi2-2-矩阵的代数运算"><a href="#xi2-2-矩阵的代数运算" class="headerlink" title="$\xi2.2$	矩阵的代数运算"></a>$\xi2.2$	矩阵的代数运算</h2><h2 id="xi-2-3逆矩阵与矩阵的初等变换"><a href="#xi-2-3逆矩阵与矩阵的初等变换" class="headerlink" title="$\xi$2.3	逆矩阵与矩阵的初等变换"></a>$\xi$2.3	逆矩阵与矩阵的初等变换</h2><h2 id="xi-2-4转置矩阵与一些重要的方阵"><a href="#xi-2-4转置矩阵与一些重要的方阵" class="headerlink" title="$\xi$2.4	转置矩阵与一些重要的方阵"></a>$\xi$2.4	转置矩阵与一些重要的方阵</h2><h2 id="xi-2-5分块矩阵"><a href="#xi-2-5分块矩阵" class="headerlink" title="$\xi$2.5	分块矩阵"></a>$\xi$2.5	分块矩阵</h2><h1 id="第三章行列式"><a href="#第三章行列式" class="headerlink" title="第三章	行列式"></a>第三章	行列式</h1><h2 id="xi-3-1方阵的行列式"><a href="#xi-3-1方阵的行列式" class="headerlink" title="$\xi$3.1	方阵的行列式"></a>$\xi$3.1	方阵的行列式</h2><h2 id="xi-3-2行列式的主要性质"><a href="#xi-3-2行列式的主要性质" class="headerlink" title="$\xi$3.2	行列式的主要性质"></a>$\xi$3.2	行列式的主要性质</h2><h2 id="xi-3-3行列式的应用"><a href="#xi-3-3行列式的应用" class="headerlink" title="$\xi$3.3	行列式的应用"></a>$\xi$3.3	行列式的应用</h2><h1 id="第四章向量空间"><a href="#第四章向量空间" class="headerlink" title="第四章	向量空间"></a>第四章	向量空间</h1><h2 id="xi-4-1向量的定义及其运算"><a href="#xi-4-1向量的定义及其运算" class="headerlink" title="$\xi$4.1	向量的定义及其运算"></a>$\xi$4.1	向量的定义及其运算</h2><h2 id="xi-4-2向量的线性相关性"><a href="#xi-4-2向量的线性相关性" class="headerlink" title="$\xi$4.2	向量的线性相关性"></a>$\xi$4.2	向量的线性相关性</h2><h2 id="xi-4-3向量组的极大线性无关组和秩"><a href="#xi-4-3向量组的极大线性无关组和秩" class="headerlink" title="$\xi$4.3	向量组的极大线性无关组和秩"></a>$\xi$4.3	向量组的极大线性无关组和秩</h2><h2 id="xi-4-4子空间"><a href="#xi-4-4子空间" class="headerlink" title="$\xi$4.4	子空间"></a>$\xi$4.4	子空间</h2><h2 id="xi-4-5基和维数"><a href="#xi-4-5基和维数" class="headerlink" title="$\xi$4.5	基和维数"></a>$\xi$4.5	基和维数</h2><h2 id="xi-4-6矩阵的秩"><a href="#xi-4-6矩阵的秩" class="headerlink" title="$\xi$4.6	矩阵的秩"></a>$\xi$4.6	矩阵的秩</h2><h2 id="xi-4-7线性方程组的有解条件及解的结构"><a href="#xi-4-7线性方程组的有解条件及解的结构" class="headerlink" title="$\xi$4.7	线性方程组的有解条件及解的结构"></a>$\xi$4.7	线性方程组的有解条件及解的结构</h2><h2 id="xi-4-8-R-n-到-R-m-的线性映射"><a href="#xi-4-8-R-n-到-R-m-的线性映射" class="headerlink" title="$\xi$4.8	$R^n$到$R^m$的线性映射"></a>$\xi$4.8	$R^n$到$R^m$的线性映射</h2><h1 id="第五章特征值与特征向量"><a href="#第五章特征值与特征向量" class="headerlink" title="第五章	特征值与特征向量"></a>第五章	特征值与特征向量</h1><h2 id="xi-5-1矩阵的特征值与特征向量"><a href="#xi-5-1矩阵的特征值与特征向量" class="headerlink" title="$\xi$5.1	矩阵的特征值与特征向量"></a>$\xi$5.1	矩阵的特征值与特征向量</h2><h2 id="xi-5-2矩阵的相似对角化"><a href="#xi-5-2矩阵的相似对角化" class="headerlink" title="$\xi$5.2	矩阵的相似对角化"></a>$\xi$5.2	矩阵的相似对角化</h2><h2 id="xi-5-3实对称矩阵的正交相似对角化"><a href="#xi-5-3实对称矩阵的正交相似对角化" class="headerlink" title="$\xi$5.3	实对称矩阵的正交相似对角化"></a>$\xi$5.3	实对称矩阵的正交相似对角化</h2><p>​	由定理5.2.1知，一个n阶矩阵能否对角化取决于它是否有n个线性无关的特征向量.那么什么样的矩阵一定有n个线性无关的特征向量呢?下面我们就来证明任一n阶实对称矩阵一定存在n个线性无关的特征向量,从而可以对角化.也就是说,存在可逆阵$P$，使得$P^{-1}AP&#x3D;\Lambda$为对角阵。进一步，我们还可证明存在正交矩阵$Q$,使得$Q^T AQ&#x3D;\Lambda$为对角阵.为此，我们先引人如下概念.</p>
-<p>​	定义 5.3.1	设$\alpha&#x3D;[a_1,a_2.\cdots,a_n]^T,\beta&#x3D;[b_1,b_2,\cdots,b_n]^T$称<br>$$<br>(\alpha,\beta)&#x3D;\alpha^T\cdot\beta&#x3D;\sum_{i&#x3D;i}^na_ib_i<br>$$<br>为向量$\alpha,\beta$的内积，显然，$(\alpha,\alpha)&gt;&#x3D;0$,当且仅当$\alpha&#x3D;0$时等号成立，关于向量内积，还有如下性质：<br>$$<br>(1)(\alpha,\beta)&#x3D;(\beta,\alpha),\\<br>(2)(\alpha+\beta,\gamma)&#x3D;(\alpha,\gamma)+(\alpha,\gamma),\\<br>(3)k\alpha,\beta)&#x3D;k(\alpha,\beta),k\in R.\\<br>(4)(0,\alpha)&#x3D;(\alpha,0)&#x3D;0.\\<br>(5)(\sum_{i&#x3D;1}^{n}k_i\alpha_i,\alpha)&#x3D;\sum_{i&#x3D;1}^{n}k_i(\alpha_i,\alpha),k_i\in R,i&#x3D;1,\cdots,n.\\<br>$$<br>​	定义 5.3.2 称$|\alpha|&#x3D;\sqrt{(\alpha,\alpha)}$为向量$\alpha$的长度（或范数），长度为1的向量成为单位向量（unit vector）。</p>
-<p>​	一个向量$\alpha $的长度代表了n维空间中与$\alpha $所对应的点到原点（零向量所对应的点）的“距离”。因此，对于任意两个n维向量$\alpha,\beta $所对应的n维空间的两个点之间的距离可以表示为$|\alpha-\beta|$.</p>
-<p>​	关于向量长度，有如下性质：<br>$$<br>设\alpha\in R^n,\beta \in R^n,k \in R\\<br>(1)非负性：|k\alpha|&#x3D;|k||\alpha|\\<br>(2)正齐性：|k\alpha|&#x3D;|k||\alpha|\\<br>(3)柯西—许瓦兹不等式：|(\alpha,\beta)|&lt;&#x3D;|\alpha||\beta|\\<br>(4)三角不等式|\alpha|+|\beta|&gt;&#x3D;|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>我们仅就性质(3),(4)证明\\<br>$$</p>
-<p>$$<br>证明(3)\forall t\in R,构造关于t的二次多项式\\<br>0&lt;&#x3D;(\alpha+t\beta,\alpha+t\beta)&#x3D;(\alpha,\alpha)+2(\alpha,\alpha)t+(\beta,\beta)t^2\\<br>所以\\<br>\Delta&#x3D;4(\alpha,\beta)^2-4(\alpha,\alpha)(\beta,\beta)&lt;&#x3D;0.\\<br>即\\<br>（\alpha,\beta）^2&lt;&#x3D;(\alpha,\alpha)(\beta,\beta)&#x3D;|\alpha|^2\cdot|\beta|^2,\\<br>所以\\<br>|(\alpha,\beta)|&lt;&#x3D;|\alpha|\cdot|\beta|<br>$$</p>
-<p>$$<br>(4)|\alpha-\beta|^2&#x3D;(\alpha-\beta,\alpha-\beta)&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\</p>
-<blockquote>
-<p>&#x3D;|\alpha|^2-2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;(|\alpha|-|\beta|)^2\\<br>故\\<br>|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>(|\alpha|+|\beta|)^2&#x3D;|\alpha|^2+2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\<br>&#x3D;(\alpha-\beta,\alpha-\beta)\\<br>&#x3D;|\alpha-\beta|^2.<br>$$</p>
-</blockquote>
-<h1 id="第六章二次型"><a href="#第六章二次型" class="headerlink" title="第六章	二次型"></a>第六章	二次型</h1><h2 id="xi-6-1二次型及其矩阵表示"><a href="#xi-6-1二次型及其矩阵表示" class="headerlink" title="$\xi$6.1	二次型及其矩阵表示"></a>$\xi$6.1	二次型及其矩阵表示</h2><h2 id="xi-6-2二次型化位标准型"><a href="#xi-6-2二次型化位标准型" class="headerlink" title="$\xi$6.2	二次型化位标准型"></a>$\xi$6.2	二次型化位标准型</h2><h2 id="xi-6-3正定二次型"><a href="#xi-6-3正定二次型" class="headerlink" title="$\xi$6.3	正定二次型"></a>$\xi$6.3	正定二次型</h2><h2 id="xi-6-4二次型的应用"><a href="#xi-6-4二次型的应用" class="headerlink" title="$\xi$6.4	二次型的应用"></a>$\xi$6.4	二次型的应用</h2><h1 id="第七章线性空间与线性变换"><a href="#第七章线性空间与线性变换" class="headerlink" title="第七章	线性空间与线性变换"></a>第七章	线性空间与线性变换</h1><h2 id="xi-7-1线性空间"><a href="#xi-7-1线性空间" class="headerlink" title="$\xi$7.1	线性空间"></a>$\xi$7.1	线性空间</h2><h2 id="xi-7-2线性变换"><a href="#xi-7-2线性变换" class="headerlink" title="$\xi$7.2	线性变换"></a>$\xi$7.2	线性变换</h2><h2 id="xi-7-3线性变换的矩阵表示"><a href="#xi-7-3线性变换的矩阵表示" class="headerlink" title="$\xi$7.3	线性变换的矩阵表示"></a>$\xi$7.3	线性变换的矩阵表示</h2><h2 id="xi-7-4线性变换的特征值与特征向量"><a href="#xi-7-4线性变换的特征值与特征向量" class="headerlink" title="$\xi$7.4	线性变换的特征值与特征向量"></a>$\xi$7.4	线性变换的特征值与特征向量</h2><h2 id="xi-7-5欧几里得空间简介"><a href="#xi-7-5欧几里得空间简介" class="headerlink" title="$\xi$7.5	欧几里得空间简介"></a>$\xi$7.5	欧几里得空间简介</h2><h1 id="MATLAB在线性代数中的作用"><a href="#MATLAB在线性代数中的作用" class="headerlink" title="MATLAB在线性代数中的作用"></a>MATLAB在线性代数中的作用</h1><h2 id="xi-8-1MATLAB简介"><a href="#xi-8-1MATLAB简介" class="headerlink" title="$\xi$8.1	MATLAB简介"></a>$\xi$8.1	MATLAB简介</h2><h2 id="xi-8-2MATLAB的基本操作"><a href="#xi-8-2MATLAB的基本操作" class="headerlink" title="$\xi$8.2	MATLAB的基本操作"></a>$\xi$8.2	MATLAB的基本操作</h2><h2 id="xi-8-3向量的生成与运算"><a href="#xi-8-3向量的生成与运算" class="headerlink" title="$\xi$8.3	向量的生成与运算"></a>$\xi$8.3	向量的生成与运算</h2><h2 id="xi-8-4矩阵的生成与运算"><a href="#xi-8-4矩阵的生成与运算" class="headerlink" title="$\xi$8.4	矩阵的生成与运算"></a>$\xi$8.4	矩阵的生成与运算</h2><h2 id="xi-8-5常用的矩阵函数"><a href="#xi-8-5常用的矩阵函数" class="headerlink" title="$\xi$8.5	常用的矩阵函数"></a>$\xi$8.5	常用的矩阵函数</h2><h2 id="xi-8-6线性方程组求解"><a href="#xi-8-6线性方程组求解" class="headerlink" title="$\xi$8.6	线性方程组求解"></a>$\xi$8.6	线性方程组求解</h2>]]></content>
-  </entry>
-  <entry>
     <title>输出流输入流</title>
     <url>/2024/06/05/%E8%BE%93%E5%87%BA%E6%B5%81%E8%BE%93%E5%85%A5%E6%B5%81/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>近代史纲要</title>
-    <url>/2024/06/03/%E8%BF%91%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81/</url>
-    <content><![CDATA[<h2 id="第⼀章-反对外国侵略的⽃争"><a href="#第⼀章-反对外国侵略的⽃争" class="headerlink" title="第⼀章 反对外国侵略的⽃争"></a><strong>第⼀章 反对外国侵略的⽃争</strong></h2><h3 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a><strong>选择题</strong>：</h3><ol>
-<li><p>清朝唯⼀盛世时期是<strong>康乾盛世</strong>。</p>
-</li>
-<li><p><strong>1640</strong> 年<strong>英国</strong>资产阶级⾰命爆发，资本主义的发展突出表现在<strong>⼯业⾰命的爆发</strong>上。</p>
-</li>
-<li><p>所谓的殖⺠地是指<strong>商品倾销市场</strong>、<strong>廉价劳动⼒</strong>、<strong>廉价原料的供应地</strong>和<strong>⾃由投资市场</strong>。</p>
-</li>
-<li><p>列强对中国的侵略主要有<strong>军事侵略</strong>、<strong>政治控制</strong>、<strong>经济掠夺</strong>、<strong>⽂化渗透</strong>。</p>
-</li>
-<li><p><strong>1840</strong> 年，英国发动第⼀次鸦⽚战争，中国战败。<strong>1856</strong> 年，英法国发动第⼆次鸦⽚战争，发动了著名的“⽕烧圆明园”；<strong>1900 年</strong>，⼋国联军发动侵华战争并签订《⾟丑条约》</p>
-</li>
-<li><p>中国割让⾹港岛给英国是在中英<strong>《南京条约》</strong>中规定的。</p>
-</li>
-<li><p>割占中国最多的帝国是<strong>俄国</strong>，赔款最多的是<strong>《⾟丑条约》</strong>。</p>
-</li>
-<li><p>1894 年⽇本发动甲午战争后签订的《⻢关条约》允许<strong>⽇本在中国设⼚</strong>，各国开始⼤规模的<strong>对华进⾏资本输出</strong>。</p>
-</li>
-<li><p>中国⾰命的主⼒军是<strong>农⺠阶级</strong>。中国⺠族资产的特性是<strong>⾰命性、软弱性或妥协性</strong>。****</p>
-</li>
-<li><p>中国第⼀次⼤规模的反侵略武装⽃争是<strong>⼴州三元⾥⼈⺠⽃争</strong>。</p>
-</li>
-<li><p>鸦⽚战争战死⻁⻔的将领是<strong>关天培</strong>，镇南关⼤捷的指挥⼤将是<strong>冯⼦材</strong>，甲午中⽇战争中战死的爱国将领有<strong>邓世昌、林永升、丁汝昌、刘步蟾</strong>。</p>
-</li>
-<li><p>要求中国实⾏⻔户开放政策的是美国，列强不能灭亡和⽠分中国的根本原因是<strong>中国⼈⺠进⾏了不屈的反侵略⽃争</strong>。</p>
-</li>
-<li><p>近代中国睁眼看世界的第⼀⼈是林则徐，他编写了《四洲志》，魏源的《海国图志》是在综合了世界各国历史，地理及对外政策后提出了<strong>“师夷⻓技以制夷</strong>”的思想，严复翻译了《天演论》。</p>
-</li>
-</ol>
-<h3 id="简述题："><a href="#简述题：" class="headerlink" title="简述题："></a><strong>简述题：</strong></h3><ol>
-<li>简述中国封建社会的基本特点？</li>
-</ol>
-<p>在经济上，<strong>封建⼟地所有制</strong>占主导地位；在政治上，实⾏<strong>⾼度中央集权的封建君主专制制度</strong>；在⽂化上，<strong>以儒家思想为核⼼</strong>；在社会结构上，<strong>是族权和政权相结合的封建宗法等级制度</strong>；中国封建社会的主要⽭盾是<strong>地主阶级和农⺠阶级</strong>的⽭盾。</p>
-<ol start="2">
-<li>为什么说 1840 年第⼀次鸦⽚战争是中国近代史的开端？</li>
-</ol>
-<p>第⼀次鸦⽚战争以中国失败⽽告终，<strong>主权ᇿ ⽴受到侵犯</strong>，<strong>领⼟完整遭到破坏</strong>，中国逐渐沦⼊国家主权受制于外国列强的半殖⺠地社会；鸦⽚战争后，随着五⼝通商和⻄⽅商品在中国的倾销，促使中国传统的封建的<strong>⾃给⾃⾜的⾃然经济开始解体</strong>。</p>
-<ol start="3">
-<li>简述近代中国半殖⺠地半封建社会的特点是什么？</li>
-</ol>
-<p>资本帝国主义成为⽀配中国的决定性⼒量；<strong>中国封建势⼒</strong>成为外国列强压迫、奴役中国⼈⺠的<strong>社会基础和统治⽀柱</strong>；<strong>封建剥削制度封建地主的徒弟所有制</strong>在⼴⼤地区保持着；<strong>中国资本主义</strong>没有成为中国社会经济的主体；近代中<strong>国各地区经济、政治和⽂化和发展是及不平衡</strong>的；⼈⺠毫<strong>⽆政治权利</strong>和⽣<strong>活的极端贫困化</strong>。</p>
-<ol start="4">
-<li>简述社会阶级关系的变动？</li>
-</ol>
-<p>旧的封建统治阶级——地<strong>主阶级继续拥有⼤量的⼟地</strong>；旧的被统治阶级——<strong>农⺠阶级仍是近代中国社会⼈数最多的被剥削阶级</strong>；中国资产阶级分为<strong>官僚买办资产阶级和⺠族资产阶级两部分。</strong></p>
-<ol start="5">
-<li>简述中国⼯⼈阶级为何具有⽆产阶级的特点?</li>
-</ol>
-<p><strong>深受帝国主义，封建势⼒和资产阶级</strong>三重压迫和剥削，⾰命性最强；⼈数虽少，但相对集中，便于形成<strong>⾰命的⼒量和传播先进的思想</strong>；同农⺠天然的联系，便于结成⼯农联盟；因此中国⼯⼈阶级是近代<strong>中国社会中最先进、最⾰命、最有⼒量的阶级</strong>。</p>
-<ol start="6">
-<li>简述近代中国的两对主要⽭盾及其关系？</li>
-</ol>
-<p>①在半殖⺠地半封建的中国，<strong>帝国主义与中华⺠族的⽭盾</strong>、<strong>封建主义与⼈⺠⼤众</strong>的⽭盾是两对主要⽭盾，⽽帝国主义与中华⺠族的⽭盾是各种⽭盾中最主要的⽭盾；</p>
-<p>②两对主要⽭盾之间的关系，⼀是当外国列强向中国发动侵略战争时，<strong>⺠族⽭盾上升到主要地位</strong>；⼆是当外国侵略者同中国封建政权相勾结共同镇压中国⾰命时，<strong>阶级⽭盾就上升为主要⽭盾</strong>；三是国内战争发展到直接威胁帝国主义在华利益及中国封建地主阶级统治时，<strong>帝国主义和国内封建主义</strong>完全公开站在⼀条线上。</p>
-<p>7、简述中国两⼤历史任务及其关系？</p>
-<p>①近代中国社会的性质和主要⽭盾决定了近代以来中华名族始终⾯临两⼤历史任务：⼀是球的<strong>⺠族独⽴和⼈⺠解放</strong>；⼆是实现<strong>国家繁荣富强和⼈⺠共同富裕</strong>。②两⼤历史任务既<strong>相互区别，⼜相互联系</strong>。</p>
-<p>其区别在于，<strong>前者要改变⺠族遭压迫、⼈⺠受剥削的地位和状况</strong>，是要从根本上<strong>解决⽣产关系问题</strong>；后者是要改变<strong>近代中国经济、⽂化和社会落后的地位和状况</strong>，解决⽣产⼒问题。其联系在于，只有完成第⼀⼤任务，才能为第⼆⼤任务<strong>的完成创造条件</strong>。</p>
-<p>8、简述反侵略⽃争失败及其原因？</p>
-<p>⼀是<strong>社会制度的腐败</strong>；⼆是<strong>经济技术的落后</strong>，前者是根本原因。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>連濁</title>
-    <url>/2024/05/17/%E9%80%A3%E6%BF%81/</url>
-    <content><![CDATA[<p>連濁（れんだく）：連濁とは、ある語と語が組み合わさって、熟語（じゅくご）や複合語（ふくごうご）になったとき、後ろの語の先頭の音が、清音から濁音に変化する現象のことです、連濁は例外も多いのですが、それでも一般的なルールがありますので、次のようにまとめてみました。<br>連濁が起こりやすいグループと、連濁が起こりにくいグループに分けました。<br>連濁が起こりやすい：OO＋和語<br>和語とは、日本で古くから使われていた言葉で、基本的に訓読みします。<br>連濁が起こりにくい：OO＋外来語　OO＋かんご<br>それにたいして漢語とは、中国から伝わった言葉で、基本的に音読みします。<br>和語＋和語の組み合わせのとき、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>貝殻（かいがら）、長靴（ながぐつ）、夜空（よぞら）、巻き寿司（まきずし）、<br>鼻血（はなじ）、時々（ときどき）、前歯（まえば）、生け花（いけばな）<br>漢語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>気軽（きがる）、仕事（しごと）、豚汁（とんじる）、人数（にんずう）、<br>団子（だんご）、台所（だいどころ）、茶畑（ちゃばたけ）、煎餅(せんべい)。<br>変温現象：発音安くするの変化<br>舌を上顎につけてから「お」というと、自然に「の」になりますね。<br>外来語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>スナック菓子（がし）、サラダ皿（ざら）、スイーツ処（どころ）、キャベツ畑（ばたけ）<br>即ち、熟語や複合語の後ろの語側語、かつ後ろの語の先頭のかなが清音の場合、連濁することが多いです。<br>はな＋たば：はなだば（ｘ）はなたば<br>前にご紹介した基本のルールの通り、熟語や複合語の後ろの語が和語の場合、後ろの語の先頭のかなは濁音化すべきですが、もしその先頭のかなに濁音がある場合、連濁ないことがあります。<br>無傷（むきず）、座敷（ざしき）、絵筆（えふで）、ベイト先（さき）<br>次に、先後が並列構造になっている場合は、あまり連濁しません、<br>例えば、「すき嫌い」という複合語は、基本のルールならば「すきぎらい」となりますよね、<br>ですが「すき」と「嫌い」には並列構造がありますので連濁しません。<br>山川（やまかわ）、押し引き（おしひき）、嬉し悲しい（うれしかなしい）<br>まずは、熟語や複合語の後ろの語に漢語がくるときです<br>和語＋漢語の組み合わせのとき、ほとんど連濁しません<br>株券（かぶけん）、寒気（さむけ）、畑仕事（はたけしごと）、場所（ばしょ）、<br>家賃（やちん）、手帳（てちょう）、手本（てほん）、見本（みほん）<br>漢語＋漢語の組み合わせのとき、ほとんど連濁しません<br>価格（かかく）、旅行（ようこう）、完成（かんせい）、基礎（きそ）<br>携帯（けいたい）、位置（いち）、後輩（こはい）、警報（けいほう）<br>外来語＋漢語の組み合わせのとき、ほとんど連濁しません<br>グローバル化（か）、ヒット作、サービス単価（たんか）、リサイクル品（ひん）<br>例外１：<br>湯気（ゆげ）、足し算（たしざん）、登山（とざん）<br>例外２：長音<br>三本（さんぼん）、中国（ちゅごく）、定規（じょうぎ）、漫才（まんざい）、単行本（たんこんぼん）<br>和語＋外来語の組み合わせのとき、ほとんど連濁しません<br>一コース、一人カラオケ、負けチーム<br>漢語＋外来語の組み合わせのとき、ほとんど連濁しません<br>健康（けんこう）チェック、筋肉（きんにく）トレーニング、薬用（やくよう）ファンデション<br>外来語＋外来語<br>アフターサービス、レイトショー、ヘルスチェック、ワーキングホリデー。<br>連濁の一般的な規則をまとめますと、まずは熟語や複合語の後ろの語が何語なのかを確認します、<br>そして、和語なら連濁が起こりやすく、漢語や外来語が起こりにくいと考えてください。<br>転音：転音とは、熟語や複合語の前の語の最後の母音が変わることです。<br>例えば、「酒」＋「屋」の組み合わせの場合、前の語「酒」の最後の母音「え」が「あ」に変化します<br>さけ＋や＝さかや<br>「白」＋「玉」の組み合わせの場合、前の語「白」の最後の母音「お」が「あ」に変化します、<br>しろ＋たま＝しらたま<br>「船」＋「便」の組む合わせの場合、前の語「船」の最後の母音「え」が「あ」に変化します<br>ふね＋びん＝ふなびん<br>「🌴」＋「陰」の組む合わせの場合、前の語「木」の最後の母音「い」が「お」に変化します<br>き＋かげ＝こかげ<br>促音化：促音化とは、熟語や複合語の前の語の最後のかなと後ろの語の先頭のかながの子音が無声子音の場合、<br>前の語の最後のかなが促音になる変化です。<br>無声子音は「か、さ、た、は、ぱ」行の子音のことです<br>かつ＋て＝かって（勝＋手＝勝手）、けつ＋てい＝けってい(決＋定＝決定)、せつ＋てい＝せってい(説＋定＝設定)<br>いち＋てい＝いってい（一定）、せき＋けん＝せっけん（石鹸）、あつ＋かん＝あっかん（圧巻）<br>半濁音化：半濁音化とは、熟語や複合語の後ろの語のセントうのかなが「はぎょう」から「パ行」に変わることです。<br>例えば、「審判」の場合、後ろの語の先頭のかな「は」が「ぱ」にかわり、「しんぱん」と読みます<br>出発（しゅっぱつ）、鉛筆「えんぴつ」、扇風機「せんぷうき」、漢方（かんぽう）<br>ちなみに、半濁音化と促音化は同時に起こることも多いです、<br>いち＋ほん＝いっぽん<br>特に、前の語の最後のかなが「く、ち、つ」で、後ろに「は」行のかなが来るときです<br>六本木（ろっぽんぎ）、一本（いっぽん）、割烹（かっぽん）<br>音韻添加：音韻添加とは、熟語や複合語の後ろの語の先頭に、新しい音素がはいることをいいます。<br>例えば、「こさめ」の場合、そのまま読むと「こあめ」ですが「あめ」のまえにしい・ｓ・のおとが入って、「こさめ」とよみます。<br>春雨（はるさめ）<br>「真っ白」のように、「しろ」のまえに子音が・ｓ・のおとが入って、しいん・ｓ・が２つ連続することによって促音になることもあります<br>真っ青（まっさお）、真っ直ぐ（まっすぐ）<br>また、「真ん中」のように、「なか」のまえに発音「ｎ」の音が入ることもあります。<br>音韻脱落：<br>音韻脱落とは、音の一部がなくなることです、例えば、「河原」の場合、そのまま読むと「かわはら」ですが、「は」がなくなって、「かわら」と読みます。<br>なんで<br>音韻融合：<br>音韻融合とは、熟語や複合語の前の語の終わりと後ろの語の先頭が、混ざってような音になることです。<br>例えば、「狩人」の場合、そのまま読むと「かりひと」ですが、「り」と「ひと」が混ざって「りょうど」になり、「かりょうど」とみます。<br>素人（しろうと）、仲人（なこうど）<br>連声：<br>連声とは、熟語や複合語のまえの語のおわりが「ん」や「つ」で、後ろの語の先頭が、母音「あいうえお」「や行」「わ行」であるとき、<br>後ろの先頭が「た行」「な行」「ま行」に変わることです、漢語でよく見られます。<br>例えば、「反応」の場合、前の語のおわりが「ん」で、後ろの語の先頭が母音「お」なので、「お」が「な」行の「の」にへんかして「はんのう」と読みます。<br>因縁（いんねん）、銀杏（ぎんなん）、陰陽（おんみょう）</p>
-<p>まとめ：<br>変音現象は、発音しやすくするためのへんかです、変音現象には沢山の種類があり、また一度に複数の変温現象が起こることもあります、何故変音すると、発音しやすくなるでしょうか、もう一度「反応」を見てみましょう、もし変化しないまま「はんおん」とははっきり発音しょうとすると、「ん」から「お」に舌の形を変えるときに、息が途切れて発音がしにくいですね、では「ん」で舌を上顎につけてから「お」というどうしようか？息が繋がって、発音しやすいと思います、舌を上顎につけてから「お」というと、自然に「の」になりますね</p>
-]]></content>
   </entry>
   <entry>
     <title>西历2236</title>
@@ -4407,28 +4337,19 @@
 </blockquote>
 <h3 id="C"><a href="#C" class="headerlink" title="[ C ]"></a>[ C ]</h3><p><strong>C.S</strong>.……21 世紀の科学者。世界初の HT の科学的観測に立ち会った科学者の一人。HT 基礎構造理論を提唱した。晩年に失踪を遂げている。</p>
 <blockquote>
-<p><strong>C.S.:</strong> A 21st Century scientist. One of the scientists present when HT was first experimentally </p>
-<p>proven to exist. Advocated the HT Infrastructure Theory. Went missing in their final years</p>
+<p><strong>C.S.:</strong> A 21st Century scientist. One of the scientists present when HT was first experimentally proven to exist. Advocated the HT Infrastructure Theory. Went missing in their final years</p>
 </blockquote>
 <p><strong>CLOSE</strong>……病名。Consciously Locks One’s Selective Elements syndrome の略。後天性のゲート障害でゲートを開けなくなることでテレパシー通信に支障をきたす症候群のこと。精神病のひとつだとされている。治療法は見つかっていない。</p>
 <blockquote>
-<p><strong>CLOSE:</strong> Condition name, standing for “Consciously Locks One’s Selective Elements </p>
-<p>Syndrome.” Refers to a syndrome which is an acquired Gate disorder that locks off one’s </p>
-<p>ability to access one’s Gate and hinders their ability to establish telepathic communication. </p>
-<p>Said to be a mental disorder with no known cures as of this date.</p>
+<p><strong>CLOSE:</strong> Condition name, standing for “Consciously Locks One’s Selective Elements Syndrome.” Refers to a syndrome which is an acquired Gate disorder that locks off one’s ability to access one’s Gate and hinders their ability to establish telepathic communication. Said to be a mental disorder with no known cures as of this date.</p>
 </blockquote>
 <h3 id="E"><a href="#E" class="headerlink" title="[ E ]"></a>[ E ]</h3><p><strong>EAJOS[elementary axiom jump of Shikine]</strong> ……21 世紀に発達した「間違い学問」における飛躍公理。イージョス。人工知能工学の世界では今なお新しい EAJOS が登録され続けている。</p>
 <blockquote>
-<p><strong>EAJOS:</strong> Abbreviation for “Elementary Axiom Jump of Studies.” Stands for axioms which make </p>
-<p>a “jump” or breakthrough in the “Improper Studies” developed in the 21st Century. EAJOS for </p>
-<p>short. In the artificial intelligence world, there are still new EAJOS being registered to this date</p>
+<p><strong>EAJOS:</strong> Abbreviation for “Elementary Axiom Jump of Studies.” Stands for axioms which make a “jump” or breakthrough in the “Improper Studies” developed in the 21st Century. EAJOS for short. In the artificial intelligence world, there are still new EAJOS being registered to this date</p>
 </blockquote>
 <p><strong>EMP[electromagnetic pulse]</strong> ……電磁パルス。強力な電磁衝撃波は電子回路などに損傷を与えることがある。核兵器の使用でも EMP が発生するので軍事用の電子装置には EMP 対策が施されているものも多い。</p>
 <blockquote>
-<p><strong>EMP:</strong> Short for electromagnetic pulse. An occurrence where powerful electromagnetic waves </p>
-<p>cause damage to electric circuits. The use of nuclear weapons would also create an EMP, so </p>
-<p>there are many pieces of military-use electronic equipment which have counter-EMP measures </p>
-<p>built into them.</p>
+<p><strong>EMP:</strong> Short for electromagnetic pulse. An occurrence where powerful electromagnetic waves cause damage to electric circuits. The use of nuclear weapons would also create an EMP, so there are many pieces of military-use electronic equipment which have counter-EMP measures built into them.</p>
 </blockquote>
 <h3 id="H"><a href="#H" class="headerlink" title="[ H ]"></a>[ H ]</h3><p><strong>HT</strong>……Holding Task または Holding &amp; Taking の略。HT 現象。高次元空間で生ずる伝播現象、またはそれに関する理論。2033 年に C.S.によって提唱された HT 基礎構造理論によると、全ての物体には情報が通る道が存在し、その通路を介することで情報のやり取りができるという。ここで言う「情報」にあたるのが「HT 子」と呼ばれる粒子の波である。HT はプリ方向次元空間と相容れない、部分クラウド空間内での粒子の運動であるため HT 子を始め HT に関わる現象が物理学的に観測不可能(物理的に不可視)である。また、HT 基礎構造理論の記述には梅雨幾何学が用いられる。梅雨幾何学では空間を記述するために、我々に馴染みのあるユークリッド幾何学で定義される「次元」の概念を拡張している。HT 基礎構造理論では梅雨幾何学を用いることで、特殊な場合を除いて HT 現象が物理的に不可視であることを証明している。 また、これをきっかけにして 18 次元宇宙論などの多次元宇宙論が盛んに提唱された。一般にテレパシーと呼ばれるコミュニケーション方式は HT 子がヒトのゲートからゲートに伝わり処理されることで情報(言語、五感、思念など)を伝えることができるとしている。 ユーレイ現象とは深い関わりがあり、歴史的にはユーレイ現象の研究実験中に偶然開発されたのが HT である。 研究によると、もともと人類の脳には HT を司る感覚器官が存在していたがそれは近年発見されるまで退化していたものと考えられている。動物など、脳または神経中枢を有している生き物ともテレパシー通信が可能であることからテレパシーが言語をもたない生き物のコミュニケーション手段になっていることがわかった。これらのことから、人類を含むほとんどの生き物は古来テレパシーによってコミュニケーションをとっていたが人類のみ発達した言語に取って代わられ、やがてテレパシーによるコミュニケーションをしなくなったというのが通説になっている。HT が科学的に解釈される以前の超常現象(ユーレイ現象、第六感、シンクロニシティなど)の多くは HT 基礎構造理論によって合理的に説明できる。HT 開発……現代のヒトの脳の HT を司る器官は生まれながらには機能していないため、HT開発が必要になる。幼児に対し、親などがテレパシーによって外部からゲートを刺激することによって実現する。</p>
 <blockquote>
@@ -4450,13 +4371,11 @@
 </blockquote>
 <p>**アルベルト・アインシュタイン[Albert Einstein]**……20 世紀の理論物理学者。光量子説、ブラウン運動、特殊相対性理論、一般相対性理論など物理学に非常に大きな影響を残した。意識的閉門症……→CLOSE の項を参照。</p>
 <blockquote>
-<p><strong>Albert Einstein:</strong> 20th-century theoretical physicist. Known for his huge impact on physics by </p>
-<p>introducing concepts such as Quantum Theory, Brownian Motion, and The Theory of Relativity.</p>
+<p><strong>Albert Einstein:</strong> 20th-century theoretical physicist. Known for his huge impact on physics by introducing concepts such as Quantum Theory, Brownian Motion, and The Theory of Relativity.</p>
 </blockquote>
 <p><strong>違法ロボット[illegal robot]</strong> ……違法なロボット。特に、人間とそっくりな有機ヒューマノイドが出てきてからはロボットの表記義務を無視したロボットのことをいうようになった。</p>
 <blockquote>
-<p><strong>Illegal Robot(s):</strong> Refers to illegally-built robots that disregard the labelling requirements put in </p>
-<p>place since the rise of organic humanoids that look similar to human beings.</p>
+<p><strong>Illegal Robot(s):</strong> Refers to illegally-built robots that disregard the labelling requirements put in place since the rise of organic humanoids that look similar to human beings.</p>
 </blockquote>
 <p><strong>インターネット[Internet]</strong> ……個々のコンピュータネットワークを相互に結び拡張して世界的規模にまで広がったネットワークの集合体。</p>
 <p><strong>ウィトゲンシュタイン[Ludwig Josef Johann Wittgenstein]</strong> ……オーストリア生まれの哲学者。『語りえぬものについては、沈黙しなければならない』という言葉で有名。裏情報……世間一般には流れない情報。信憑性は弱い。</p>
@@ -4594,6 +4513,76 @@
 <p>[ 数字 ]</p>
 <p><strong>18 次元宇宙論</strong>……宇宙が梅雨期科学で言う 18 次元空間であるとする理論。HT 基礎構造理</p>
 <p>論が成立するためには宇宙は 18 次元空間でなければならなかったため C.S.が提唱した。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>近代史纲要</title>
+    <url>/2024/06/03/%E8%BF%91%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81/</url>
+    <content><![CDATA[<h2 id="第⼀章-反对外国侵略的⽃争"><a href="#第⼀章-反对外国侵略的⽃争" class="headerlink" title="第⼀章 反对外国侵略的⽃争"></a><strong>第⼀章 反对外国侵略的⽃争</strong></h2><h3 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a><strong>选择题</strong>：</h3><ol>
+<li><p>清朝唯⼀盛世时期是<strong>康乾盛世</strong>。</p>
+</li>
+<li><p><strong>1640</strong> 年<strong>英国</strong>资产阶级⾰命爆发，资本主义的发展突出表现在<strong>⼯业⾰命的爆发</strong>上。</p>
+</li>
+<li><p>所谓的殖⺠地是指<strong>商品倾销市场</strong>、<strong>廉价劳动⼒</strong>、<strong>廉价原料的供应地</strong>和<strong>⾃由投资市场</strong>。</p>
+</li>
+<li><p>列强对中国的侵略主要有<strong>军事侵略</strong>、<strong>政治控制</strong>、<strong>经济掠夺</strong>、<strong>⽂化渗透</strong>。</p>
+</li>
+<li><p><strong>1840</strong> 年，英国发动第⼀次鸦⽚战争，中国战败。<strong>1856</strong> 年，英法国发动第⼆次鸦⽚战争，发动了著名的“⽕烧圆明园”；<strong>1900 年</strong>，⼋国联军发动侵华战争并签订《⾟丑条约》</p>
+</li>
+<li><p>中国割让⾹港岛给英国是在中英<strong>《南京条约》</strong>中规定的。</p>
+</li>
+<li><p>割占中国最多的帝国是<strong>俄国</strong>，赔款最多的是<strong>《⾟丑条约》</strong>。</p>
+</li>
+<li><p>1894 年⽇本发动甲午战争后签订的《⻢关条约》允许<strong>⽇本在中国设⼚</strong>，各国开始⼤规模的<strong>对华进⾏资本输出</strong>。</p>
+</li>
+<li><p>中国⾰命的主⼒军是<strong>农⺠阶级</strong>。中国⺠族资产的特性是<strong>⾰命性、软弱性或妥协性</strong>。****</p>
+</li>
+<li><p>中国第⼀次⼤规模的反侵略武装⽃争是<strong>⼴州三元⾥⼈⺠⽃争</strong>。</p>
+</li>
+<li><p>鸦⽚战争战死⻁⻔的将领是<strong>关天培</strong>，镇南关⼤捷的指挥⼤将是<strong>冯⼦材</strong>，甲午中⽇战争中战死的爱国将领有<strong>邓世昌、林永升、丁汝昌、刘步蟾</strong>。</p>
+</li>
+<li><p>要求中国实⾏⻔户开放政策的是美国，列强不能灭亡和⽠分中国的根本原因是<strong>中国⼈⺠进⾏了不屈的反侵略⽃争</strong>。</p>
+</li>
+<li><p>近代中国睁眼看世界的第⼀⼈是林则徐，他编写了《四洲志》，魏源的《海国图志》是在综合了世界各国历史，地理及对外政策后提出了<strong>“师夷⻓技以制夷</strong>”的思想，严复翻译了《天演论》。</p>
+</li>
+</ol>
+<h3 id="简述题："><a href="#简述题：" class="headerlink" title="简述题："></a><strong>简述题：</strong></h3><ol>
+<li>简述中国封建社会的基本特点？</li>
+</ol>
+<p>在经济上，<strong>封建⼟地所有制</strong>占主导地位；在政治上，实⾏<strong>⾼度中央集权的封建君主专制制度</strong>；在⽂化上，<strong>以儒家思想为核⼼</strong>；在社会结构上，<strong>是族权和政权相结合的封建宗法等级制度</strong>；中国封建社会的主要⽭盾是<strong>地主阶级和农⺠阶级</strong>的⽭盾。</p>
+<ol start="2">
+<li>为什么说 1840 年第⼀次鸦⽚战争是中国近代史的开端？</li>
+</ol>
+<p>第⼀次鸦⽚战争以中国失败⽽告终，<strong>主权ᇿ ⽴受到侵犯</strong>，<strong>领⼟完整遭到破坏</strong>，中国逐渐沦⼊国家主权受制于外国列强的半殖⺠地社会；鸦⽚战争后，随着五⼝通商和⻄⽅商品在中国的倾销，促使中国传统的封建的<strong>⾃给⾃⾜的⾃然经济开始解体</strong>。</p>
+<ol start="3">
+<li>简述近代中国半殖⺠地半封建社会的特点是什么？</li>
+</ol>
+<p>资本帝国主义成为⽀配中国的决定性⼒量；<strong>中国封建势⼒</strong>成为外国列强压迫、奴役中国⼈⺠的<strong>社会基础和统治⽀柱</strong>；<strong>封建剥削制度封建地主的徒弟所有制</strong>在⼴⼤地区保持着；<strong>中国资本主义</strong>没有成为中国社会经济的主体；近代中<strong>国各地区经济、政治和⽂化和发展是及不平衡</strong>的；⼈⺠毫<strong>⽆政治权利</strong>和⽣<strong>活的极端贫困化</strong>。</p>
+<ol start="4">
+<li>简述社会阶级关系的变动？</li>
+</ol>
+<p>旧的封建统治阶级——地<strong>主阶级继续拥有⼤量的⼟地</strong>；旧的被统治阶级——<strong>农⺠阶级仍是近代中国社会⼈数最多的被剥削阶级</strong>；中国资产阶级分为<strong>官僚买办资产阶级和⺠族资产阶级两部分。</strong></p>
+<ol start="5">
+<li>简述中国⼯⼈阶级为何具有⽆产阶级的特点?</li>
+</ol>
+<p><strong>深受帝国主义，封建势⼒和资产阶级</strong>三重压迫和剥削，⾰命性最强；⼈数虽少，但相对集中，便于形成<strong>⾰命的⼒量和传播先进的思想</strong>；同农⺠天然的联系，便于结成⼯农联盟；因此中国⼯⼈阶级是近代<strong>中国社会中最先进、最⾰命、最有⼒量的阶级</strong>。</p>
+<ol start="6">
+<li>简述近代中国的两对主要⽭盾及其关系？</li>
+</ol>
+<p>①在半殖⺠地半封建的中国，<strong>帝国主义与中华⺠族的⽭盾</strong>、<strong>封建主义与⼈⺠⼤众</strong>的⽭盾是两对主要⽭盾，⽽帝国主义与中华⺠族的⽭盾是各种⽭盾中最主要的⽭盾；</p>
+<p>②两对主要⽭盾之间的关系，⼀是当外国列强向中国发动侵略战争时，<strong>⺠族⽭盾上升到主要地位</strong>；⼆是当外国侵略者同中国封建政权相勾结共同镇压中国⾰命时，<strong>阶级⽭盾就上升为主要⽭盾</strong>；三是国内战争发展到直接威胁帝国主义在华利益及中国封建地主阶级统治时，<strong>帝国主义和国内封建主义</strong>完全公开站在⼀条线上。</p>
+<p>7、简述中国两⼤历史任务及其关系？</p>
+<p>①近代中国社会的性质和主要⽭盾决定了近代以来中华名族始终⾯临两⼤历史任务：⼀是球的<strong>⺠族独⽴和⼈⺠解放</strong>；⼆是实现<strong>国家繁荣富强和⼈⺠共同富裕</strong>。②两⼤历史任务既<strong>相互区别，⼜相互联系</strong>。</p>
+<p>其区别在于，<strong>前者要改变⺠族遭压迫、⼈⺠受剥削的地位和状况</strong>，是要从根本上<strong>解决⽣产关系问题</strong>；后者是要改变<strong>近代中国经济、⽂化和社会落后的地位和状况</strong>，解决⽣产⼒问题。其联系在于，只有完成第⼀⼤任务，才能为第⼆⼤任务<strong>的完成创造条件</strong>。</p>
+<p>8、简述反侵略⽃争失败及其原因？</p>
+<p>⼀是<strong>社会制度的腐败</strong>；⼆是<strong>经济技术的落后</strong>，前者是根本原因。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>連濁</title>
+    <url>/2024/05/17/%E9%80%A3%E6%BF%81/</url>
+    <content><![CDATA[<p>連濁（れんだく）：連濁とは、ある語と語が組み合わさって、熟語（じゅくご）や複合語（ふくごうご）になったとき、後ろの語の先頭の音が、清音から濁音に変化する現象のことです、連濁は例外も多いのですが、それでも一般的なルールがありますので、次のようにまとめてみました。<br>連濁が起こりやすいグループと、連濁が起こりにくいグループに分けました。<br>連濁が起こりやすい：OO＋和語<br>和語とは、日本で古くから使われていた言葉で、基本的に訓読みします。<br>連濁が起こりにくい：OO＋外来語　OO＋かんご<br>それにたいして漢語とは、中国から伝わった言葉で、基本的に音読みします。<br>和語＋和語の組み合わせのとき、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>貝殻（かいがら）、長靴（ながぐつ）、夜空（よぞら）、巻き寿司（まきずし）、<br>鼻血（はなじ）、時々（ときどき）、前歯（まえば）、生け花（いけばな）<br>漢語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>気軽（きがる）、仕事（しごと）、豚汁（とんじる）、人数（にんずう）、<br>団子（だんご）、台所（だいどころ）、茶畑（ちゃばたけ）、煎餅(せんべい)。<br>変温現象：発音安くするの変化<br>舌を上顎につけてから「お」というと、自然に「の」になりますね。<br>外来語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>スナック菓子（がし）、サラダ皿（ざら）、スイーツ処（どころ）、キャベツ畑（ばたけ）<br>即ち、熟語や複合語の後ろの語側語、かつ後ろの語の先頭のかなが清音の場合、連濁することが多いです。<br>はな＋たば：はなだば（ｘ）はなたば<br>前にご紹介した基本のルールの通り、熟語や複合語の後ろの語が和語の場合、後ろの語の先頭のかなは濁音化すべきですが、もしその先頭のかなに濁音がある場合、連濁ないことがあります。<br>無傷（むきず）、座敷（ざしき）、絵筆（えふで）、ベイト先（さき）<br>次に、先後が並列構造になっている場合は、あまり連濁しません、<br>例えば、「すき嫌い」という複合語は、基本のルールならば「すきぎらい」となりますよね、<br>ですが「すき」と「嫌い」には並列構造がありますので連濁しません。<br>山川（やまかわ）、押し引き（おしひき）、嬉し悲しい（うれしかなしい）<br>まずは、熟語や複合語の後ろの語に漢語がくるときです<br>和語＋漢語の組み合わせのとき、ほとんど連濁しません<br>株券（かぶけん）、寒気（さむけ）、畑仕事（はたけしごと）、場所（ばしょ）、<br>家賃（やちん）、手帳（てちょう）、手本（てほん）、見本（みほん）<br>漢語＋漢語の組み合わせのとき、ほとんど連濁しません<br>価格（かかく）、旅行（ようこう）、完成（かんせい）、基礎（きそ）<br>携帯（けいたい）、位置（いち）、後輩（こはい）、警報（けいほう）<br>外来語＋漢語の組み合わせのとき、ほとんど連濁しません<br>グローバル化（か）、ヒット作、サービス単価（たんか）、リサイクル品（ひん）<br>例外１：<br>湯気（ゆげ）、足し算（たしざん）、登山（とざん）<br>例外２：長音<br>三本（さんぼん）、中国（ちゅごく）、定規（じょうぎ）、漫才（まんざい）、単行本（たんこんぼん）<br>和語＋外来語の組み合わせのとき、ほとんど連濁しません<br>一コース、一人カラオケ、負けチーム<br>漢語＋外来語の組み合わせのとき、ほとんど連濁しません<br>健康（けんこう）チェック、筋肉（きんにく）トレーニング、薬用（やくよう）ファンデション<br>外来語＋外来語<br>アフターサービス、レイトショー、ヘルスチェック、ワーキングホリデー。<br>連濁の一般的な規則をまとめますと、まずは熟語や複合語の後ろの語が何語なのかを確認します、<br>そして、和語なら連濁が起こりやすく、漢語や外来語が起こりにくいと考えてください。<br>転音：転音とは、熟語や複合語の前の語の最後の母音が変わることです。<br>例えば、「酒」＋「屋」の組み合わせの場合、前の語「酒」の最後の母音「え」が「あ」に変化します<br>さけ＋や＝さかや<br>「白」＋「玉」の組み合わせの場合、前の語「白」の最後の母音「お」が「あ」に変化します、<br>しろ＋たま＝しらたま<br>「船」＋「便」の組む合わせの場合、前の語「船」の最後の母音「え」が「あ」に変化します<br>ふね＋びん＝ふなびん<br>「🌴」＋「陰」の組む合わせの場合、前の語「木」の最後の母音「い」が「お」に変化します<br>き＋かげ＝こかげ<br>促音化：促音化とは、熟語や複合語の前の語の最後のかなと後ろの語の先頭のかながの子音が無声子音の場合、<br>前の語の最後のかなが促音になる変化です。<br>無声子音は「か、さ、た、は、ぱ」行の子音のことです<br>かつ＋て＝かって（勝＋手＝勝手）、けつ＋てい＝けってい(決＋定＝決定)、せつ＋てい＝せってい(説＋定＝設定)<br>いち＋てい＝いってい（一定）、せき＋けん＝せっけん（石鹸）、あつ＋かん＝あっかん（圧巻）<br>半濁音化：半濁音化とは、熟語や複合語の後ろの語のセントうのかなが「はぎょう」から「パ行」に変わることです。<br>例えば、「審判」の場合、後ろの語の先頭のかな「は」が「ぱ」にかわり、「しんぱん」と読みます<br>出発（しゅっぱつ）、鉛筆「えんぴつ」、扇風機「せんぷうき」、漢方（かんぽう）<br>ちなみに、半濁音化と促音化は同時に起こることも多いです、<br>いち＋ほん＝いっぽん<br>特に、前の語の最後のかなが「く、ち、つ」で、後ろに「は」行のかなが来るときです<br>六本木（ろっぽんぎ）、一本（いっぽん）、割烹（かっぽん）<br>音韻添加：音韻添加とは、熟語や複合語の後ろの語の先頭に、新しい音素がはいることをいいます。<br>例えば、「こさめ」の場合、そのまま読むと「こあめ」ですが「あめ」のまえにしい・ｓ・のおとが入って、「こさめ」とよみます。<br>春雨（はるさめ）<br>「真っ白」のように、「しろ」のまえに子音が・ｓ・のおとが入って、しいん・ｓ・が２つ連続することによって促音になることもあります<br>真っ青（まっさお）、真っ直ぐ（まっすぐ）<br>また、「真ん中」のように、「なか」のまえに発音「ｎ」の音が入ることもあります。<br>音韻脱落：<br>音韻脱落とは、音の一部がなくなることです、例えば、「河原」の場合、そのまま読むと「かわはら」ですが、「は」がなくなって、「かわら」と読みます。<br>なんで<br>音韻融合：<br>音韻融合とは、熟語や複合語の前の語の終わりと後ろの語の先頭が、混ざってような音になることです。<br>例えば、「狩人」の場合、そのまま読むと「かりひと」ですが、「り」と「ひと」が混ざって「りょうど」になり、「かりょうど」とみます。<br>素人（しろうと）、仲人（なこうど）<br>連声：<br>連声とは、熟語や複合語のまえの語のおわりが「ん」や「つ」で、後ろの語の先頭が、母音「あいうえお」「や行」「わ行」であるとき、<br>後ろの先頭が「た行」「な行」「ま行」に変わることです、漢語でよく見られます。<br>例えば、「反応」の場合、前の語のおわりが「ん」で、後ろの語の先頭が母音「お」なので、「お」が「な」行の「の」にへんかして「はんのう」と読みます。<br>因縁（いんねん）、銀杏（ぎんなん）、陰陽（おんみょう）</p>
+<p>まとめ：<br>変音現象は、発音しやすくするためのへんかです、変音現象には沢山の種類があり、また一度に複数の変温現象が起こることもあります、何故変音すると、発音しやすくなるでしょうか、もう一度「反応」を見てみましょう、もし変化しないまま「はんおん」とははっきり発音しょうとすると、「ん」から「お」に舌の形を変えるときに、息が途切れて発音がしにくいですね、では「ん」で舌を上顎につけてから「お」というどうしようか？息が繋がって、発音しやすいと思います、舌を上顎につけてから「お」というと、自然に「の」になりますね</p>
 ]]></content>
   </entry>
   <entry>
