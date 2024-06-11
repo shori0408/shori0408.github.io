@@ -160,6 +160,137 @@
     
     
     <article
+  id="post-螺旋矩阵"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/"
+    >螺旋矩阵</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" class="article-date">
+  <time datetime="2024-06-11T14:43:37.000Z" itemprop="datePublished">2024-06-11</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="什么是螺旋矩阵"><a href="#什么是螺旋矩阵" class="headerlink" title="什么是螺旋矩阵"></a>什么是螺旋矩阵</h2><p>螺旋矩阵就是从四周向中心遍历矩阵的所有元素，没有实质上的算法内容，更多的是做一个模拟，所以螺旋矩阵可以归类为模拟题。</p>
+<h2 id="螺旋矩阵的难点在哪里"><a href="#螺旋矩阵的难点在哪里" class="headerlink" title="螺旋矩阵的难点在哪里"></a>螺旋矩阵的难点在哪里</h2><p>螺旋矩阵作为一个模拟题，具有相当多的边界条件，在编写代码的时候，要把握好所有的边界，同时需要特判输入样例中的特殊情况。</p>
+<p>在模拟螺旋居正的过程中，我们的一个基本思路是：</p>
+<ol>
+<li>输出矩阵的基本信息：rows&amp;cols</li>
+<li>向右遍历</li>
+<li>向下遍历</li>
+<li>直到遍历完所有的元素</li>
+</ol>
+<p><img src="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ%E6%88%AA%E5%9B%BE20240611225505.png" alt="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ截图20240611225505.png"></p>
+<h2 id="59-螺旋矩阵-II"><a href="#59-螺旋矩阵-II" class="headerlink" title="59. 螺旋矩阵 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/spiral-matrix-ii/">59. 螺旋矩阵 II</a></h2><p>中等</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：[[1]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 20</code></li>
+</ul>
+<p><img src="https://pic.leetcode-cn.com/1ad0fe88d15dc87643435eb7a17b368191725a44da4596722977e5798ace5b62-Picture2.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/193444cbca5529fcd1bafec33ef576fe1309690be2c0110de05868f4415a8723-Picture3.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/bca38a428306cb2aacc00513821e74150947ba241d9b7199bcad6c7e843a0105-Picture4.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/e5de1e07957417f13d9fae22e6fb18dd5331b50258f0297f00ba57d25651df4a-Picture5.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/2fde8dcd1481e390532995c02d3575ec9675a27390513c1540f40431dad7997a-Picture6.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/1950d4c8ab6b09b62b7d5900ece4d8d4be882abebd2417a3030d172aedbc304e-Picture7.png" alt="img"></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> rows = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cols = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter the size of your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; rows &gt;&gt; cols;</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">matrix_1</span>(rows, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(cols)); <span class="comment">// Init with size</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; matrix_2; <span class="comment">// This should be a 1D vector</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; cols; j++) &#123;</span><br><span class="line">            cin &gt;&gt; matrix_1[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (matrix_1.<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = rows - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> c = cols - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> d = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = d; i &lt;= c; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[a][i]);</span><br><span class="line">        <span class="keyword">if</span> (++a &gt; b) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = a; i &lt;= b; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][c]);</span><br><span class="line">        <span class="keyword">if</span> (--c &lt; d) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = c; i &gt;= d; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[b][i]);</span><br><span class="line">        <span class="keyword">if</span> (--b &lt; a) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= a; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][d]);</span><br><span class="line">        <span class="keyword">if</span> (++d &gt; c) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix_2.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; matrix_2[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.<span class="built_in">empty</span>()) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = matrix[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>, t = <span class="number">0</span>, b = matrix.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = l; i &lt;= r; i++) res.<span class="built_in">push_back</span>(matrix[t][i]); <span class="comment">// left to right</span></span><br><span class="line">            <span class="keyword">if</span> (++t &gt; b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = t; i &lt;= b; i++) res.<span class="built_in">push_back</span>(matrix[i][r]); <span class="comment">// top to bottom</span></span><br><span class="line">            <span class="keyword">if</span> (l &gt; --r) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = r; i &gt;= l; i--) res.<span class="built_in">push_back</span>(matrix[b][i]); <span class="comment">// right to left</span></span><br><span class="line">            <span class="keyword">if</span> (t &gt; --b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= t; i--) res.<span class="built_in">push_back</span>(matrix[i][l]); <span class="comment">// bottom to top</span></span><br><span class="line">            <span class="keyword">if</span> (++l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
+  id="post-线性代数复习总结"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/06/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/"
+    >线性代数复习总结</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/06/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/" class="article-date">
+  <time datetime="2024-06-11T14:34:43.000Z" itemprop="datePublished">2024-06-11</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="学习内容（6-11）"><a href="#学习内容（6-11）" class="headerlink" title="学习内容（6.11）"></a>学习内容（6.11）</h2><h3 id="向量与向量空间的定义"><a href="#向量与向量空间的定义" class="headerlink" title="向量与向量空间的定义"></a>向量与向量空间的定义</h3><h3 id="向量的运算方法"><a href="#向量的运算方法" class="headerlink" title="向量的运算方法"></a>向量的运算方法</h3><h3 id="向量的线性相关问题"><a href="#向量的线性相关问题" class="headerlink" title="向量的线性相关问题"></a>向量的线性相关问题</h3><h3 id="向量的子空间"><a href="#向量的子空间" class="headerlink" title="向量的子空间"></a>向量的子空间</h3><h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><h3 id="向量的秩"><a href="#向量的秩" class="headerlink" title="向量的秩"></a>向量的秩</h3><h3 id="H形子空间以及维度"><a href="#H形子空间以及维度" class="headerlink" title="H形子空间以及维度"></a>H形子空间以及维度</h3><h3 id="列空间、行空间、零空间"><a href="#列空间、行空间、零空间" class="headerlink" title="列空间、行空间、零空间"></a>列空间、行空间、零空间</h3><h3 id="基底转换的过渡矩阵"><a href="#基底转换的过渡矩阵" class="headerlink" title="基底转换的过渡矩阵"></a>基底转换的过渡矩阵</h3> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+   
+  
+</article>
+
+    
+    <article
   id="post-期末考试统筹规划"
   class="article article-type-post"
   itemscope
@@ -592,7 +723,13 @@
 <ul>
 <li>从第二周周六开始复习n2语法</li>
 </ul>
- 
+<h2 id="学习内容"><a href="#学习内容" class="headerlink" title="学习内容"></a>学习内容</h2><h3 id="工程力学-1"><a href="#工程力学-1" class="headerlink" title="工程力学"></a>工程力学</h3><p><img src="/2024/06/11/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E7%BB%9F%E7%AD%B9%E8%A7%84%E5%88%92/" alt="https://p.sda1.dev/18/7dd5ac750701b540003d5d92846266bb/QQ截图20240611201651.png"></p>
+<h3 id="线性代数-1"><a href="#线性代数-1" class="headerlink" title="线性代数"></a>线性代数</h3><p><img src="/2024/06/11/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E7%BB%9F%E7%AD%B9%E8%A7%84%E5%88%92/" alt="https://p.sda1.dev/18/c07384122038b2dd52205aadf452f4b4/QQ截图20240611204342.png"></p>
+<h3 id="微积分-1"><a href="#微积分-1" class="headerlink" title="微积分"></a>微积分</h3><p><img src="/2024/06/11/%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E7%BB%9F%E7%AD%B9%E8%A7%84%E5%88%92/" alt="https://p.sda1.dev/18/121c22efd8c1e29ec9c95adc09ba17a4/QQ截图20240611204619.png"></p>
+<h3 id="大学物理-1"><a href="#大学物理-1" class="headerlink" title="大学物理"></a>大学物理</h3><h3 id="工程制图-1"><a href="#工程制图-1" class="headerlink" title="工程制图"></a>工程制图</h3><p>清华大学习题集+考纲</p>
+<h3 id="通用英语"><a href="#通用英语" class="headerlink" title="通用英语"></a>通用英语</h3><p>真题伴侣，六级真题</p>
+<h3 id="大学日语-1"><a href="#大学日语-1" class="headerlink" title="大学日语"></a>大学日语</h3><p>小黄本语法+单词</p>
+<h3 id="N1日本语能力考试-1"><a href="#N1日本语能力考试-1" class="headerlink" title="N1日本语能力考试"></a>N1日本语能力考试</h3> 
       <!-- reward -->
       
     </div>
@@ -1357,102 +1494,6 @@
 
 <p><img src="https://p.sda1.dev/18/0310a04d7db7eb8d955b8c89eca22e95/0DEE598ED87C4D5522F12F9FD0F44B2C.png"></p>
  
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-   
-  
-</article>
-
-    
-    <article
-  id="post-输出流输入流"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/06/05/%E8%BE%93%E5%87%BA%E6%B5%81%E8%BE%93%E5%85%A5%E6%B5%81/"
-    >输出流输入流</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/06/05/%E8%BE%93%E5%87%BA%E6%B5%81%E8%BE%93%E5%85%A5%E6%B5%81/" class="article-date">
-  <time datetime="2024-06-05T05:59:02.000Z" itemprop="datePublished">2024-06-05</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-   
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-   
-  
-</article>
-
-    
-    <article
-  id="post-树"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/06/04/%E6%A0%91/"
-    >树</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/06/04/%E6%A0%91/" class="article-date">
-  <time datetime="2024-06-04T12:19:28.000Z" itemprop="datePublished">2024-06-04</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-   
       <!-- reward -->
       
     </div>

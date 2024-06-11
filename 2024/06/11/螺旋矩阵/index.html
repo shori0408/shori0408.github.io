@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>社群教程 |  SHIOKOU</title>
+      <title>螺旋矩阵 |  SHIOKOU</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -59,7 +59,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-社群教程"
+  id="post-螺旋矩阵"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -70,7 +70,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  社群教程
+  螺旋矩阵
 </h1>
  
 
@@ -78,15 +78,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/" class="article-date">
-  <time datetime="2024-05-31T17:19:12.000Z" itemprop="datePublished">2024-06-01</time>
+      <a href="/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" class="article-date">
+  <time datetime="2024-06-11T14:43:37.000Z" itemprop="datePublished">2024-06-11</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">475</span>
+            <span class="post-count">636</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">3 min</span>
         </span>
     </span>
 </div>
@@ -110,81 +110,41 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="第一节：长期vs短期"><a href="#第一节：长期vs短期" class="headerlink" title="第一节：长期vs短期"></a>第一节：长期vs短期</h2><h3 id="方向："><a href="#方向：" class="headerlink" title="方向："></a>方向：</h3><h4 id="女性的择偶策略"><a href="#女性的择偶策略" class="headerlink" title="女性的择偶策略"></a>女性的择偶策略</h4><ul>
-<li>情人属性 基因提供者（缺点，很难长期）</li>
-</ul>
-<p>特点：</p>
-<p>1.外形条件不错，器大活好（生理结构）</p>
-<p>2.会大半夜聊天 不纠结 不正面回复 比较敷衍 洒脱 喜欢大半夜邀约</p>
-<p>3.能给女性短期属性的感觉 一定不缺女生喜欢</p>
-<ul>
-<li>投资供养者（很慢 ？被人吊着 延续）</li>
-</ul>
-<p>特点：</p>
-<p>1.对女生好 不太注意形象 宅 社交圈窄 理性逻辑 </p>
-<p>相对来说气场比较弱，没有声明情调 比较包容 老好人</p>
-<blockquote>
-<p>李小璐,贾乃亮</p>
-<p>李孝利</p>
-</blockquote>
-<p>思考一个问题：帅和有钱是不是决定性因素？</p>
-<p>第二个问题：哪一个属性更好？</p>
-<p>一段感情去得也快，来得慢，去得也慢</p>
-<p>两种都要有 我是一个安全的人，解决问题的能力</p>
-<p>重点就是一句正经，一句逗逼。</p>
-<p>把握好其中的比例问题。</p>
-<p>查漏补缺，找到自身特点，以及缺失的东西。</p>
-<h2 id="男性吸引力解析"><a href="#男性吸引力解析" class="headerlink" title="男性吸引力解析"></a>男性吸引力解析</h2><h3 id="吸引力的详细解析"><a href="#吸引力的详细解析" class="headerlink" title="吸引力的详细解析"></a>吸引力的详细解析</h3><ul>
-<li><p>公式：男吸引力&#x3D;90%的心动指数加上10%的心疼指数。</p>
-</li>
-<li><p>从何而来？</p>
-</li>
-</ul>
+  <h2 id="什么是螺旋矩阵"><a href="#什么是螺旋矩阵" class="headerlink" title="什么是螺旋矩阵"></a>什么是螺旋矩阵</h2><p>螺旋矩阵就是从四周向中心遍历矩阵的所有元素，没有实质上的算法内容，更多的是做一个模拟，所以螺旋矩阵可以归类为模拟题。</p>
+<h2 id="螺旋矩阵的难点在哪里"><a href="#螺旋矩阵的难点在哪里" class="headerlink" title="螺旋矩阵的难点在哪里"></a>螺旋矩阵的难点在哪里</h2><p>螺旋矩阵作为一个模拟题，具有相当多的边界条件，在编写代码的时候，要把握好所有的边界，同时需要特判输入样例中的特殊情况。</p>
+<p>在模拟螺旋居正的过程中，我们的一个基本思路是：</p>
 <ol>
-<li>硬价值（外在）：生存价值</li>
+<li>输出矩阵的基本信息：rows&amp;cols</li>
+<li>向右遍历</li>
+<li>向下遍历</li>
+<li>直到遍历完所有的元素</li>
 </ol>
-<p>钱 车 房 圈子 地位</p>
-<ol start="2">
-<li>软价值（内在）：繁衍价值</li>
-</ol>
-<p>颜值 身材 性征 西装 嗓音低沉  拍照风格 我给人一种什么样的感觉 格调 调性</p>
-<p>孙红雷 黄渤</p>
-<p>聊天的方式</p>
+<p><img src="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ%E6%88%AA%E5%9B%BE20240611225505.png" alt="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ截图20240611225505.png"></p>
+<h2 id="59-螺旋矩阵-II"><a href="#59-螺旋矩阵-II" class="headerlink" title="59. 螺旋矩阵 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/spiral-matrix-ii/">59. 螺旋矩阵 II</a></h2><p>中等</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：[[1]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
-<li>能量</li>
+<li><code>1 &lt;= n &lt;= 20</code></li>
 </ul>
-<p>正能量。状态不好，我就先缓缓不聊天</p>
-<p>安全感 顾家</p>
-<p>百分之九十</p>
-<p>百分之十 心疼指数</p>
-<p>展示脆弱的一面 示弱</p>
-<div style="width: 80%;margin: 0 auto">
-    <canvas id="chart4347" style="height: 300px"></canvas>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<script type="text/javascript">
-    var ctx = document.getElementById('chart4347').getContext('2d');
-    var options = {
-    type: 'line',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-    options: {
-        responsive: true,
-        title: {
-            display: true,
-            text: 'Chart.js Line Chart'
-        }
-    }
-};;
-    new Chart(ctx, options);
-</script>
+<p><img src="https://pic.leetcode-cn.com/1ad0fe88d15dc87643435eb7a17b368191725a44da4596722977e5798ace5b62-Picture2.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/193444cbca5529fcd1bafec33ef576fe1309690be2c0110de05868f4415a8723-Picture3.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/bca38a428306cb2aacc00513821e74150947ba241d9b7199bcad6c7e843a0105-Picture4.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/e5de1e07957417f13d9fae22e6fb18dd5331b50258f0297f00ba57d25651df4a-Picture5.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/2fde8dcd1481e390532995c02d3575ec9675a27390513c1540f40431dad7997a-Picture6.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/1950d4c8ab6b09b62b7d5900ece4d8d4be882abebd2417a3030d172aedbc304e-Picture7.png" alt="img"></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> rows = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cols = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter the size of your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; rows &gt;&gt; cols;</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">matrix_1</span>(rows, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(cols)); <span class="comment">// Init with size</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; matrix_2; <span class="comment">// This should be a 1D vector</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; cols; j++) &#123;</span><br><span class="line">            cin &gt;&gt; matrix_1[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (matrix_1.<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = rows - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> c = cols - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> d = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = d; i &lt;= c; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[a][i]);</span><br><span class="line">        <span class="keyword">if</span> (++a &gt; b) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = a; i &lt;= b; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][c]);</span><br><span class="line">        <span class="keyword">if</span> (--c &lt; d) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = c; i &gt;= d; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[b][i]);</span><br><span class="line">        <span class="keyword">if</span> (--b &lt; a) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= a; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][d]);</span><br><span class="line">        <span class="keyword">if</span> (++d &gt; c) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix_2.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; matrix_2[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.<span class="built_in">empty</span>()) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = matrix[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>, t = <span class="number">0</span>, b = matrix.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = l; i &lt;= r; i++) res.<span class="built_in">push_back</span>(matrix[t][i]); <span class="comment">// left to right</span></span><br><span class="line">            <span class="keyword">if</span> (++t &gt; b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = t; i &lt;= b; i++) res.<span class="built_in">push_back</span>(matrix[i][r]); <span class="comment">// top to bottom</span></span><br><span class="line">            <span class="keyword">if</span> (l &gt; --r) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = r; i &gt;= l; i--) res.<span class="built_in">push_back</span>(matrix[b][i]); <span class="comment">// right to left</span></span><br><span class="line">            <span class="keyword">if</span> (t &gt; --b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= t; i--) res.<span class="built_in">push_back</span>(matrix[i][l]); <span class="comment">// bottom to top</span></span><br><span class="line">            <span class="keyword">if</span> (++l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
  
       <!-- reward -->
       
@@ -255,7 +215,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -266,19 +226,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/06/01/%E6%B8%85%E5%8D%95/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            清单
-          
-        </div>
-      </a>
     
-    
-      <a href="/2024/05/31/%E6%97%A5%E7%A8%8B%E8%A7%84%E5%88%92/" class="article-nav-link">
+      <a href="/2024/06/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">日程规划</div>
+        <div class="article-nav-title">线性代数复习总结</div>
       </a>
     
   </nav>
