@@ -316,6 +316,108 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Leetcode Problems</title>
+    <url>/2024/06/03/Leetcode%20Problems/</url>
+    <content><![CDATA[<h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
+<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
+<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
+<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
+<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
+<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= candies &lt;= 10^9</code></li>
+<li><code>1 &lt;= num_people &lt;= 1000</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">        int n = num_people;</span><br><span class="line">        vector&lt;int&gt; ans(n);</span><br><span class="line">        for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">            if (candies &gt;= i + 1) &#123;</span><br><span class="line">                candies -= i + 1;</span><br><span class="line">                ans[i % n] += i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ans[i % n] += candies;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="575-分糖果"><a href="#575-分糖果" class="headerlink" title="575. 分糖果"></a><a href="https://leetcode.cn/problems/distribute-candies/">575. 分糖果</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>提示</p>
+<p>Alice 有 <code>n</code> 枚糖，其中第 <code>i</code> 枚糖的类型为 <code>candyType[i]</code> 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。</p>
+<p>医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 <code>n / 2</code> 即可（<code>n</code> 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。</p>
+<p>给你一个长度为 <code>n</code> 的整数数组 <code>candyType</code> ，返回： Alice <em>在仅吃掉 <code>n / 2</code> 枚糖的情况下，可以吃到糖的 <strong>最多</strong> 种类数</em>。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,2,3,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [6,6,6,6]</span><br><span class="line">输出：1</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，尽管她能吃 2 枚，但只能吃到 1 种糖。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>n == candyType.length</code></li>
+<li><code>2 &lt;= n &lt;= 104</code></li>
+<li><code>n</code> 是一个偶数</li>
+<li><code>-105 &lt;= candyType[i] &lt;= 105</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(vector&lt;int&gt;&amp; candyType) &#123;</span><br><span class="line">        unordered_set&lt;int&gt; candyset(candyType.begin(), candyType.end());</span><br><span class="line">        return min(candyType.size() &gt;&gt; 1, candyset.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2928-给小朋友们分糖果-I"><a href="#2928-给小朋友们分糖果-I" class="headerlink" title="2928. 给小朋友们分糖果 I"></a><a href="https://leetcode.cn/problems/distribute-candies-among-children-i/">2928. 给小朋友们分糖果 I</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>提示</p>
+<p>给你两个正整数 <code>n</code> 和 <code>limit</code> 。</p>
+<p>请你将 <code>n</code> 颗糖果分给 <code>3</code> 位小朋友，确保没有任何小朋友得到超过 <code>limit</code> 颗糖果，请你返回满足此条件下的 <strong>总方案数</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, limit = 2</span><br><span class="line">输出：3</span><br><span class="line">解释：总共有 3 种方法分配 5 颗糖果，且每位小朋友的糖果数不超过 2 ：(1, 2, 2) ，(2, 1, 2) 和 (2, 2, 1) 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3, limit = 3</span><br><span class="line">输出：10</span><br><span class="line">解释：总共有 10 种方法分配 3 颗糖果，且每位小朋友的糖果数不超过 3 ：(0, 0, 3) ，(0, 1, 2) ，(0, 2, 1) ，(0, 3, 0) ，(1, 0, 2) ，(1, 1, 1) ，(1, 2, 0) ，(2, 0, 1) ，(2, 1, 0) 和 (3, 0, 0) 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 50</code></li>
+<li><code>1 &lt;= limit &lt;= 50</code></li>
+</ul>
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>c++模板</title>
+    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
+<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你使用这个食谱时，你可以指定不同的材料：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用这个三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用特化后的三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>vocabulary</title>
     <url>/2024/06/03/Intergrated%20course%204%20vocabulary/</url>
     <content><![CDATA[<h1 id="Unit-1"><a href="#Unit-1" class="headerlink" title="Unit 1"></a>Unit 1</h1><ul>
@@ -493,108 +595,6 @@
 <li>exhortation</li>
 <li>reluctance</li>
 </ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Leetcode Problems</title>
-    <url>/2024/06/03/Leetcode%20Problems/</url>
-    <content><![CDATA[<h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
-<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
-<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
-<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
-<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
-<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= candies &lt;= 10^9</code></li>
-<li><code>1 &lt;= num_people &lt;= 1000</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">        int n = num_people;</span><br><span class="line">        vector&lt;int&gt; ans(n);</span><br><span class="line">        for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">            if (candies &gt;= i + 1) &#123;</span><br><span class="line">                candies -= i + 1;</span><br><span class="line">                ans[i % n] += i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ans[i % n] += candies;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="575-分糖果"><a href="#575-分糖果" class="headerlink" title="575. 分糖果"></a><a href="https://leetcode.cn/problems/distribute-candies/">575. 分糖果</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>Alice 有 <code>n</code> 枚糖，其中第 <code>i</code> 枚糖的类型为 <code>candyType[i]</code> 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。</p>
-<p>医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 <code>n / 2</code> 即可（<code>n</code> 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。</p>
-<p>给你一个长度为 <code>n</code> 的整数数组 <code>candyType</code> ，返回： Alice <em>在仅吃掉 <code>n / 2</code> 枚糖的情况下，可以吃到糖的 <strong>最多</strong> 种类数</em>。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,2,3,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [6,6,6,6]</span><br><span class="line">输出：1</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，尽管她能吃 2 枚，但只能吃到 1 种糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>n == candyType.length</code></li>
-<li><code>2 &lt;= n &lt;= 104</code></li>
-<li><code>n</code> 是一个偶数</li>
-<li><code>-105 &lt;= candyType[i] &lt;= 105</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(vector&lt;int&gt;&amp; candyType) &#123;</span><br><span class="line">        unordered_set&lt;int&gt; candyset(candyType.begin(), candyType.end());</span><br><span class="line">        return min(candyType.size() &gt;&gt; 1, candyset.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2928-给小朋友们分糖果-I"><a href="#2928-给小朋友们分糖果-I" class="headerlink" title="2928. 给小朋友们分糖果 I"></a><a href="https://leetcode.cn/problems/distribute-candies-among-children-i/">2928. 给小朋友们分糖果 I</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>给你两个正整数 <code>n</code> 和 <code>limit</code> 。</p>
-<p>请你将 <code>n</code> 颗糖果分给 <code>3</code> 位小朋友，确保没有任何小朋友得到超过 <code>limit</code> 颗糖果，请你返回满足此条件下的 <strong>总方案数</strong> 。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, limit = 2</span><br><span class="line">输出：3</span><br><span class="line">解释：总共有 3 种方法分配 5 颗糖果，且每位小朋友的糖果数不超过 2 ：(1, 2, 2) ，(2, 1, 2) 和 (2, 2, 1) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3, limit = 3</span><br><span class="line">输出：10</span><br><span class="line">解释：总共有 10 种方法分配 3 颗糖果，且每位小朋友的糖果数不超过 3 ：(0, 0, 3) ，(0, 1, 2) ，(0, 2, 1) ，(0, 3, 0) ，(1, 0, 2) ，(1, 1, 1) ，(1, 2, 0) ，(2, 0, 1) ，(2, 1, 0) 和 (3, 0, 0) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= n &lt;= 50</code></li>
-<li><code>1 &lt;= limit &lt;= 50</code></li>
-</ul>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>c++模板</title>
-    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
-<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你使用这个食谱时，你可以指定不同的材料：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用这个三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用特化后的三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 ]]></content>
   </entry>
   <entry>
@@ -2158,11 +2158,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>大学物理</title>
-    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>函数</title>
     <url>/2024/05/17/%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h2 id="函数定义："><a href="#函数定义：" class="headerlink" title="函数定义："></a>函数定义：</h2><p>将我们设计好的算法，单独封装出来。<br>函数的参数，计算所需要的参数或者条件。<br>函数的返回值、可有可无。<br>功能性函数和数值形函数。</p>
@@ -2270,6 +2265,17 @@
 ]]></content>
   </entry>
   <entry>
+    <title>大学物理</title>
+    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>小他者、对象a、大他者</title>
+    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
+    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+]]></content>
+  </entry>
+  <entry>
     <title>带中间铰的分析</title>
     <url>/2024/05/27/%E5%B8%A6%E4%B8%AD%E9%97%B4%E9%93%B0%E7%9A%84%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<blockquote>
@@ -2288,9 +2294,18 @@
 ]]></content>
   </entry>
   <entry>
-    <title>小他者、对象a、大他者</title>
-    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
-    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+    <title>对弗洛伊德的简介</title>
+    <url>/2024/06/11/%E5%AF%B9%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%9A%84%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h2 id="尼采：什么是真理？"><a href="#尼采：什么是真理？" class="headerlink" title="尼采：什么是真理？"></a>尼采：什么是真理？</h2><p>一群活动的转喻，隐喻和拟人法。</p>
+<p>不能将尼采理解为反语言的人物，尼采其实预设了一种吐真剂的事物。</p>
+<p>转喻和隐喻是诗学的东西。</p>
+<p>这两个事物被雅各布森和研究Freud的Lacan给发扬光大了。</p>
+<p>转喻要有前后相连的因果性。</p>
+<p>千帆过境，隐喻要形成某种统一，转喻则不需要。</p>
+<h2 id="Lacan的看法"><a href="#Lacan的看法" class="headerlink" title="Lacan的看法"></a>Lacan的看法</h2><h3 id="Freud的《梦的解析》"><a href="#Freud的《梦的解析》" class="headerlink" title="Freud的《梦的解析》"></a>Freud的《梦的解析》</h3><p>梦有它伪装的形式。</p>
+<blockquote>
+<p>梦是无意识，Freud和Lacan共享一个事实</p>
+</blockquote>
 ]]></content>
   </entry>
   <entry>
@@ -2506,6 +2521,12 @@
 ]]></content>
   </entry>
   <entry>
+    <title>拉康和弗洛伊德关于无意识的论述</title>
+    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
+    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
+]]></content>
+  </entry>
+  <entry>
     <title>（5）数据的共享和保护</title>
     <url>/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/</url>
     <content><![CDATA[<h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
@@ -2690,139 +2711,6 @@
 <li>编译预处理指令</li>
 <li>多文件结构与工程</li>
 </ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
-    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
-<blockquote>
-<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
-</blockquote>
-<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>名称</th>
-<th>性质</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>differance</td>
-<td>延异</td>
-<td>共时性</td>
-</tr>
-<tr>
-<td>difference</td>
-<td>差异</td>
-<td>历时性</td>
-</tr>
-</tbody></table>
-<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>拉康和弗洛伊德关于无意识的论述</title>
-    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
-    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>日程规划</title>
-    <url>/2024/05/31/%E6%97%A5%E7%A8%8B%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th>日</th>
-<th>一</th>
-<th>二</th>
-<th>三</th>
-<th>四</th>
-<th>五</th>
-<th>六</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>31(5)</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-</tr>
-<tr>
-<td>9</td>
-<td>10</td>
-<td>11</td>
-<td>12</td>
-<td>13</td>
-<td>14</td>
-<td>15</td>
-</tr>
-<tr>
-<td>16</td>
-<td>17</td>
-<td>18</td>
-<td>19</td>
-<td>20</td>
-<td>21</td>
-<td>22</td>
-</tr>
-<tr>
-<td>23</td>
-<td>24</td>
-<td>25</td>
-<td>26</td>
-<td>27</td>
-<td>28</td>
-<td>29</td>
-</tr>
-<tr>
-<td>30</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="31-5"><a href="#31-5" class="headerlink" title="31(5)"></a>31(5)</h2><ul>
-<li>线代课上把向量空间那部分复习了一下</li>
-<li>体育文化节二课签到了，但是没有戳孔</li>
-<li>线代课上把我负责的形教ppt给写了</li>
-<li>中午在图书馆睡了一觉</li>
-<li>下午把n1第九章的内容学完了</li>
-<li>到华联领取了两瓶免费牛奶</li>
-<li>买了菠萝百香果果茶</li>
-<li>去外面大出血吃了干锅</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>对弗洛伊德的简介</title>
-    <url>/2024/06/11/%E5%AF%B9%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%9A%84%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<h2 id="尼采：什么是真理？"><a href="#尼采：什么是真理？" class="headerlink" title="尼采：什么是真理？"></a>尼采：什么是真理？</h2><p>一群活动的转喻，隐喻和拟人法。</p>
-<p>不能将尼采理解为反语言的人物，尼采其实预设了一种吐真剂的事物。</p>
-<p>转喻和隐喻是诗学的东西。</p>
-<p>这两个事物被雅各布森和研究Freud的Lacan给发扬光大了。</p>
-<p>转喻要有前后相连的因果性。</p>
-<p>千帆过境，隐喻要形成某种统一，转喻则不需要。</p>
-<h2 id="Lacan的看法"><a href="#Lacan的看法" class="headerlink" title="Lacan的看法"></a>Lacan的看法</h2><h3 id="Freud的《梦的解析》"><a href="#Freud的《梦的解析》" class="headerlink" title="Freud的《梦的解析》"></a>Freud的《梦的解析》</h3><p>梦有它伪装的形式。</p>
-<blockquote>
-<p>梦是无意识，Freud和Lacan共享一个事实</p>
-</blockquote>
 ]]></content>
   </entry>
   <entry>
@@ -3291,36 +3179,116 @@
 ]]></content>
   </entry>
   <entry>
-    <title>有序数组的平方</title>
-    <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
-    <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 104</code></li>
-<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
-<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
+    <title>日程规划</title>
+    <url>/2024/05/31/%E6%97%A5%E7%A8%8B%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>日</th>
+<th>一</th>
+<th>二</th>
+<th>三</th>
+<th>四</th>
+<th>五</th>
+<th>六</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>31(5)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+</tr>
+<tr>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+<td>22</td>
+</tr>
+<tr>
+<td>23</td>
+<td>24</td>
+<td>25</td>
+<td>26</td>
+<td>27</td>
+<td>28</td>
+<td>29</td>
+</tr>
+<tr>
+<td>30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="31-5"><a href="#31-5" class="headerlink" title="31(5)"></a>31(5)</h2><ul>
+<li>线代课上把向量空间那部分复习了一下</li>
+<li>体育文化节二课签到了，但是没有戳孔</li>
+<li>线代课上把我负责的形教ppt给写了</li>
+<li>中午在图书馆睡了一觉</li>
+<li>下午把n1第九章的内容学完了</li>
+<li>到华联领取了两瓶免费牛奶</li>
+<li>买了菠萝百香果果茶</li>
+<li>去外面大出血吃了干锅</li>
 </ul>
-<p><strong>进阶：</strong></p>
-<ul>
-<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
-</ul>
-<h3 id="题解1（暴力运算，平方加排序）"><a href="#题解1（暴力运算，平方加排序）" class="headerlink" title="题解1（暴力运算，平方加排序）"></a>题解1（暴力运算，平方加排序）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            nums[i++] = nums[i] * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="题解2（开新数组-左右指针）"><a href="#题解2（开新数组-左右指针）" class="headerlink" title="题解2（开新数组+左右指针）"></a>题解2（开新数组+左右指针）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b=a.<span class="built_in">size</span>()<span class="number">-1</span>,r=a.<span class="built_in">size</span>(),l=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">c</span><span class="params">(a.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[l])&lt;<span class="built_in">fabs</span>(a[r]))</span><br><span class="line">            &#123;</span><br><span class="line">                c[b]=a[r]*a[r];</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c[b--]=a[l]*a[l];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://pic.leetcode-cn.com/1631932242-BViXlX-977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" alt="977.有序数组的平方.gif"></p>
-<p>这个算法的思路是，新开一个数组用来记录信息，首位两个指针互相交换信息，有一个特点，其实就是，生成的新数组的值，其实应该从小到大，依次是从中间，左右之一取得的。</p>
-<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+]]></content>
+  </entry>
+  <entry>
+    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
+    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
+<blockquote>
+<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
+</blockquote>
+<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>differance</td>
+<td>延异</td>
+<td>共时性</td>
+</tr>
+<tr>
+<td>difference</td>
+<td>差异</td>
+<td>历时性</td>
+</tr>
+</tbody></table>
+<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
+]]></content>
   </entry>
   <entry>
     <title>日语n1文法</title>
@@ -3372,6 +3340,72 @@
 </ol>
 <p>$$<br>\begin{aligned}<br>\left.<br>\begin{aligned}<br>動意向形\\<br>イ形ーかろう\\<br>名／ナ形ーだろう．であろう<br>\end{aligned}<br>\right}<br>\qquad\text{＋が／と}<br>\end{aligned}<br>$$</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>日语学习</title>
+    <url>/2024/06/03/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<p>d</p>
+<h2 id="6-3"><a href="#6-3" class="headerlink" title="6.3"></a>6.3</h2><h3 id="日语听力训练"><a href="#日语听力训练" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1iZ42147Z5/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1iZ42147Z5/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练"><a href="#语法训练" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2023年12月语法</p>
+<h3 id="单词训练"><a href="#单词训练" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2023年12月词汇</p>
+<h3 id="阅读训练"><a href="#阅读训练" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年12月 问题8，9，10</p>
+<h2 id="6-4"><a href="#6-4" class="headerlink" title="6.4"></a>6.4</h2><h3 id="日语听力训练-1"><a href="#日语听力训练-1" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1Pf42117JT/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1Pf42117JT/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-1"><a href="#语法训练-1" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2023年7月语法</p>
+<h3 id="单词训练-1"><a href="#单词训练-1" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2023年7月词汇</p>
+<h3 id="阅读训练-1"><a href="#阅读训练-1" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年12月 问题11，12，13</p>
+<h2 id="6-5"><a href="#6-5" class="headerlink" title="6.5"></a>6.5</h2><h3 id="日语听力训练-2"><a href="#日语听力训练-2" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1FZ421472G/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1FZ421472G/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-2"><a href="#语法训练-2" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2022年12月语法</p>
+<h3 id="单词训练-2"><a href="#单词训练-2" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2022年12月词汇</p>
+<h3 id="阅读训练-2"><a href="#阅读训练-2" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年7月 问题8，9，10</p>
+<h2 id="6-6"><a href="#6-6" class="headerlink" title="6.6"></a>6.6</h2><h3 id="日语听力训练-3"><a href="#日语听力训练-3" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1br421777k/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1br421777k/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-3"><a href="#语法训练-3" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2022年7月语法</p>
+<h3 id="单词训练-3"><a href="#单词训练-3" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2022年7月词汇</p>
+<h3 id="阅读训练-3"><a href="#阅读训练-3" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年7月 问题11，12，13</p>
+<h2 id="6-7"><a href="#6-7" class="headerlink" title="6.7"></a>6.7</h2><h3 id="日语听力训练-4"><a href="#日语听力训练-4" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1rT421Q7JJ/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1rT421Q7JJ/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-4"><a href="#语法训练-4" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2021年12月语法</p>
+<h3 id="单词训练-4"><a href="#单词训练-4" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2021年12月词汇</p>
+<h3 id="阅读训练-4"><a href="#阅读训练-4" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年12月 问题8，9，10</p>
+<h2 id="6-8"><a href="#6-8" class="headerlink" title="6.8"></a>6.8</h2><h3 id="日语听力训练-5"><a href="#日语听力训练-5" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV17H4y1g7g4/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV17H4y1g7g4/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-5"><a href="#语法训练-5" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2021年7月语法</p>
+<h3 id="单词训练-5"><a href="#单词训练-5" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2021年7月词汇</p>
+<h3 id="阅读训练-5"><a href="#阅读训练-5" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年12月 问题11，12，13</p>
+<h2 id="6-9"><a href="#6-9" class="headerlink" title="6.9"></a>6.9</h2><h3 id="日语听力训练-6"><a href="#日语听力训练-6" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV16b421h7fy/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV16b421h7fy/?spm_id_from=333.999.0.0</a></p>
+<h3 id="语法训练-6"><a href="#语法训练-6" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2020年12月语法</p>
+<h3 id="单词训练-6"><a href="#单词训练-6" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2020年12月词汇</p>
+<h3 id="阅读训练-6"><a href="#阅读训练-6" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年7月 问题8，9，10</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>有序数组的平方</title>
+    <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
+    <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
+</ul>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
+</ul>
+<h3 id="题解1（暴力运算，平方加排序）"><a href="#题解1（暴力运算，平方加排序）" class="headerlink" title="题解1（暴力运算，平方加排序）"></a>题解1（暴力运算，平方加排序）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            nums[i++] = nums[i] * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="题解2（开新数组-左右指针）"><a href="#题解2（开新数组-左右指针）" class="headerlink" title="题解2（开新数组+左右指针）"></a>题解2（开新数组+左右指针）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b=a.<span class="built_in">size</span>()<span class="number">-1</span>,r=a.<span class="built_in">size</span>(),l=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">c</span><span class="params">(a.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[l])&lt;<span class="built_in">fabs</span>(a[r]))</span><br><span class="line">            &#123;</span><br><span class="line">                c[b]=a[r]*a[r];</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c[b--]=a[l]*a[l];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.leetcode-cn.com/1631932242-BViXlX-977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" alt="977.有序数组的平方.gif"></p>
+<p>这个算法的思路是，新开一个数组用来记录信息，首位两个指针互相交换信息，有一个特点，其实就是，生成的新数组的值，其实应该从小到大，依次是从中间，左右之一取得的。</p>
+<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
   </entry>
   <entry>
     <title>树</title>
@@ -3795,37 +3829,15 @@
 <h3 id="N1日本语能力考试-1"><a href="#N1日本语能力考试-1" class="headerlink" title="N1日本语能力考试"></a>N1日本语能力考试</h3>]]></content>
   </entry>
   <entry>
-    <title>日语学习</title>
-    <url>/2024/06/03/%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>d</p>
-<h2 id="6-3"><a href="#6-3" class="headerlink" title="6.3"></a>6.3</h2><h3 id="日语听力训练"><a href="#日语听力训练" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1iZ42147Z5/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1iZ42147Z5/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练"><a href="#语法训练" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2023年12月语法</p>
-<h3 id="单词训练"><a href="#单词训练" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2023年12月词汇</p>
-<h3 id="阅读训练"><a href="#阅读训练" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年12月 问题8，9，10</p>
-<h2 id="6-4"><a href="#6-4" class="headerlink" title="6.4"></a>6.4</h2><h3 id="日语听力训练-1"><a href="#日语听力训练-1" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1Pf42117JT/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1Pf42117JT/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-1"><a href="#语法训练-1" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2023年7月语法</p>
-<h3 id="单词训练-1"><a href="#单词训练-1" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2023年7月词汇</p>
-<h3 id="阅读训练-1"><a href="#阅读训练-1" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年12月 问题11，12，13</p>
-<h2 id="6-5"><a href="#6-5" class="headerlink" title="6.5"></a>6.5</h2><h3 id="日语听力训练-2"><a href="#日语听力训练-2" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1FZ421472G/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1FZ421472G/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-2"><a href="#语法训练-2" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2022年12月语法</p>
-<h3 id="单词训练-2"><a href="#单词训练-2" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2022年12月词汇</p>
-<h3 id="阅读训练-2"><a href="#阅读训练-2" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年7月 问题8，9，10</p>
-<h2 id="6-6"><a href="#6-6" class="headerlink" title="6.6"></a>6.6</h2><h3 id="日语听力训练-3"><a href="#日语听力训练-3" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1br421777k/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1br421777k/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-3"><a href="#语法训练-3" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2022年7月语法</p>
-<h3 id="单词训练-3"><a href="#单词训练-3" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2022年7月词汇</p>
-<h3 id="阅读训练-3"><a href="#阅读训练-3" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2023年7月 问题11，12，13</p>
-<h2 id="6-7"><a href="#6-7" class="headerlink" title="6.7"></a>6.7</h2><h3 id="日语听力训练-4"><a href="#日语听力训练-4" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV1rT421Q7JJ/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1rT421Q7JJ/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-4"><a href="#语法训练-4" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2021年12月语法</p>
-<h3 id="单词训练-4"><a href="#单词训练-4" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2021年12月词汇</p>
-<h3 id="阅读训练-4"><a href="#阅读训练-4" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年12月 问题8，9，10</p>
-<h2 id="6-8"><a href="#6-8" class="headerlink" title="6.8"></a>6.8</h2><h3 id="日语听力训练-5"><a href="#日语听力训练-5" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV17H4y1g7g4/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV17H4y1g7g4/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-5"><a href="#语法训练-5" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2021年7月语法</p>
-<h3 id="单词训练-5"><a href="#单词训练-5" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2021年7月词汇</p>
-<h3 id="阅读训练-5"><a href="#阅读训练-5" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年12月 问题11，12，13</p>
-<h2 id="6-9"><a href="#6-9" class="headerlink" title="6.9"></a>6.9</h2><h3 id="日语听力训练-6"><a href="#日语听力训练-6" class="headerlink" title="日语听力训练"></a>日语听力训练</h3><p><a href="https://www.bilibili.com/video/BV16b421h7fy/?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV16b421h7fy/?spm_id_from=333.999.0.0</a></p>
-<h3 id="语法训练-6"><a href="#语法训练-6" class="headerlink" title="语法训练"></a>语法训练</h3><p>mojitest 2020年12月语法</p>
-<h3 id="单词训练-6"><a href="#单词训练-6" class="headerlink" title="单词训练"></a>单词训练</h3><p>mojitest 2020年12月词汇</p>
-<h3 id="阅读训练-6"><a href="#阅读训练-6" class="headerlink" title="阅读训练"></a>阅读训练</h3><p>mojitest 2022年7月 问题8，9，10</p>
+    <title>死月妖花</title>
+    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>水夏</title>
+    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
+    <content><![CDATA[<p>s</p>
+<p>你的身上散发着死人的气息</p>
 ]]></content>
   </entry>
   <entry>
@@ -3913,6 +3925,11 @@
 <h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1>]]></content>
   </entry>
   <entry>
+    <title>清单</title>
+    <url>/2024/06/01/%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>深度学习</title>
     <url>/2024/06/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="学习深度学习关键是动手"><a href="#学习深度学习关键是动手" class="headerlink" title="学习深度学习关键是动手"></a>学习深度学习关键是动手</h1><ul>
@@ -3951,18 +3968,6 @@
 <li><p>下载代码并执行<br>wget <a href="https://zh-v2.d2l.ai/d2l-zh.zip">https://zh-v2.d2l.ai/d2l-zh.zip</a><br>unzip d2l-zh.zip<br>jupyter notebook</p>
 </li>
 </ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>死月妖花</title>
-    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>水夏</title>
-    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
-    <content><![CDATA[<p>s</p>
-<p>你的身上散发着死人的气息</p>
 ]]></content>
   </entry>
   <entry>
@@ -4036,14 +4041,163 @@
 ]]></content>
   </entry>
   <entry>
-    <title>清单</title>
-    <url>/2024/06/01/%E6%B8%85%E5%8D%95/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>爱与典范</title>
     <url>/2024/05/17/%E7%88%B1%E4%B8%8E%E5%85%B8%E8%8C%83/</url>
     <content><![CDATA[<p>   ▪   爱的典范：<br>不是讲述对与错的问题，典雅爱情中，起作用的是一种符号爱完成生化成了一种符号，成为了一首诗歌。<br>在虐恋之中，症状代替了符号。<br>使徒的爱：圣爱是幻想父亲的爱，对自己的幻想的爱的一种回应，他正在永恒地爱着我，我也可以永恒地爱着她。这只手是一种幻影，幻想自己的手是可以伸进火堆里而幻想出的大他者的手。<br>在使徒在受鞭笞的时候，他们会处于那种极致的享乐之中，他们真的能感受到大他者拉着了他。<br>“性关系的尽头是爱，因此我不会说并不存在爱，我知识说性关系不存在”<br>一朵曼妙的花朵<br>一个新鲜的水果<br>在我双手触碰两者的时候，突然有一只手伸了出来。在触碰这只手的过程中，那只手突然着火了。我只能用作为表达失败的方式来表达爱，在爱的灰烬之处，向我伸出了一只手。<br>lacan：这灰烬之手是一种镜像的自恋结构。<br>古典的爱中，典雅爱情之中，性是不可能，自恋式的想象。<br>原作者的解释不是权威，作者已死。<br>爱处于偶然的逻辑相中，爱的相遇链接了原本两个没有关系的能指。其如其分的神迹，直接有了一朵美丽的花。她仿佛有无限的可能，在诱惑着我。<br>1、Darian Loader《拉康》：这两只手一定不是对称结构。<br>2、Bruce Fink：爱必须是一种回应（积极的解读）<br>从灰烬中伸出的那只手理解为父之名，在爱之中，我们和父之名打交道。父之名认可了你的爱，将你的爱注册在案。没有爱就没有注册在安的结婚证，爱是一种必然的创伤，爱召唤出了父之名。给了我们一种担保，让我们不至于过于哀悼我们成为灰烬的爱情。<br>   ▪   爱的表达<br>说、写、做<br>说就是言说：任何对爱的表达都是对爱的缺失，“我爱你”的意思就是你来爱我吧。苏格拉底把爱当成了背爱，而不是爱人。<br>小宝宝在刚出生的时候，所有的言爱都是对爱的请求。<br>分析师保持沉默的原因：避免向来访者索取爱。<br>说爱就等于要求被爱，说我爱你就等于在说你来爱我吧，这并不是对爱的表达，而是对爱的索取。<br>写就是一个人无法谈论爱，但是当那个人写出来的时候，就能打动你，在书写与字母不存在爱与言说的矛盾，情书比任何通过言语而表达的爱都要真实。<br>爱在停止书写的地方，是未断却无法写出之物。<br>你觉得你写的东西可能不太正确，但是你的爱却有了一个实在的参照物。可以告诉自己，我的爱就在信纸背后，在留白之处，它有一个可以寄托的场所。<br>做的维度（make love）：在完全简化为某个行为之前，就是单纯的求爱，对于男人，在做的时候，与其说他们实在做，不如说他们是在享受性，感知对方的一个部位，感受到了自己的膨胀和丰满，就意味着无所缺失，我不知道他在激动什么，不能被菲勒斯完全收编，部分认同男性（癔症式的），沦为一个普遍的像男人认同阳具一样的女性认同，女人不存在，没有所谓的女人，女人不存在。<br>如何表达爱：没有性关系，写只能在写不出的地方表达爱，说我爱你的实际意思是我缺少爱，请你来爱我。给出你所没有的，表达爱，给出你所没有的，爱的表达本身就是一种自返的结构，在说写做之中，都会遇到挫折，在说不了，写不了，做不了的地方，爱就出现在这里：请拒我所赠，盖非也。<br>给出你所没有的，你和她面对面，站在苍茫的雪地里，两个人都冻的瑟瑟发抖，但是你就是想要抱住她，你就想向她伸出手。<br>   ▪   如果试图“言说”爱<br>爱处在偶然的逻辑相中，是停止却无法写出的东西，只能以诗的形式写出。情不知所起，一往情深。相顾无言，唯有泪千行。<br>只有当语言死亡的时候，你才能活得一瞬间的真实。<br>晚期拉康是比较可怜的，是一个无法忍受自己年龄的人，说脏话，说悖论，试图将自己的平生所学一起用一遍，1975年之后拉康进入了一个强热的思辨当中，进入了一个Fichte的绝对知识，用数学的方式，将自己的理论封装起来：数理逻辑、拓扑学、波罗米结。<br>《若灵根的守灵夜》晚年的拉康奢侈无度，但是他又非常地吝啬：是爱使享乐得以屈从。到底我思是什么东西？在我思之万物之处我不在，我在我不死不在之处，即是说我等于爱。我思是一种爱与恨的战场，是Gott与魔鬼交战的战场，在诗人的角度，诗人透过自己的作品，以某种斜视，一瞥而见了作品的作者。ich&#x3D;ich（自我命名）<br>母子关系：demand-need&#x3D;desire<br>恋爱关系：desire（爱&#x2F;请求的反向投资）+need（信的内容）&#x3D;demand（情书）<br>“请拒我所赠，该非也”：否定信中的内容，不能送早餐，过分夸大的实在物，太过于压迫别人了。<br>如果没有爱的话，我们还是会在转喻链上延宕。<br>不是万物都可以计算（资本主义）：个人的价值不可以计算。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>社会主义发展史问题</title>
+    <url>/2024/05/27/%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E5%8F%91%E5%B1%95%E5%8F%B2%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="托马斯-cdot-莫尔的《乌托邦》为什么会是乌托邦？"><a href="#托马斯-cdot-莫尔的《乌托邦》为什么会是乌托邦？" class="headerlink" title="托马斯$\cdot$莫尔的《乌托邦》为什么会是乌托邦？"></a>托马斯$\cdot$莫尔的《乌托邦》为什么会是乌托邦？</h2><p>​	乌托邦，本意是“没有的地方”或者“好地方“。<strong>延伸拓展为还有理想，不可能完成的好事情</strong>，其中文翻译可以理解为”物“是没有，”托“是寄托，”邦“是国家，”乌托邦“三个字合起来的意思即是”空想的国家“。</p>
+<p>​	《乌托邦》一书是<strong>欧洲第一本空想社会主义</strong>著作，它第一次完整地描述了空想社会主义的图景。在社会主义思想史上，首次批判了<strong>资本原始积累的罪恶</strong>，提出了<strong>以组织生产，普遍劳动为基础的公有制和平等的原则</strong>，奠定了空想社会主义的根基，为以后<strong>社会主义的发展</strong>提供了可贵的<strong>思想资料</strong>。</p>
+<blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%B9%AF%E7%91%AA%E6%96%AF%C2%B7%E6%91%A9%E7%88%BE">摩尔</a>的《乌托邦》一书与<a href="https://zh.wikipedia.org/wiki/%E6%9F%8F%E6%8B%89%E5%9B%BE">柏拉图</a>的<a href="https://zh.wikipedia.org/wiki/%E7%90%86%E6%83%B3%E5%9B%BD">理想国</a>有很大联系[<a href="https://zh.wikipedia.org/zh-cn/%E4%B9%8C%E6%89%98%E9%82%A6#cite_note-2">2]</a>。这是一个理想、完美的共和国（<a href="https://zh.wikipedia.org/w/index.php?title=%E7%A4%BE%E4%BC%9A%E5%B9%B3%E7%AD%89%E4%B8%BB%E4%B9%89%E8%80%85&action=edit&redlink=1">社会平等主义者</a>和<a href="https://zh.wikipedia.org/wiki/%E5%92%8C%E5%B9%B3%E4%B8%BB%E4%B9%89%E8%80%85">和平主义者</a>的观点），虽然他的子民们也要为此而工作而奋斗。但是社会上的一切丑恶现象，如贫穷、歧视、不公和苦难，都远离这个<a href="https://zh.wikipedia.org/wiki/%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90">世外桃源</a>。这里只有几条<a href="https://zh.wikipedia.org/wiki/%E6%B3%95%E5%BE%8B">法律</a>规定，没有<a href="https://zh.wikipedia.org/wiki/%E5%BE%8B%E5%B8%88">律师</a>。并且没有<a href="https://zh.wikipedia.org/w/index.php?title=%E5%9F%8E%E6%B0%91&action=edit&redlink=1">城民</a>愿意发动<a href="https://zh.wikipedia.org/wiki/%E6%88%98%E4%BA%89">战争</a>。但是他们从周边的好战国家雇来雇<a href="https://zh.wikipedia.org/wiki/%E5%82%AD%E5%85%B5">佣兵</a>（他们让这些雇佣兵面对威胁，是因为他们希望所有好战的人都在战争中灭亡，最终只留下爱好和平的人）。这样的社会也以包容的心态迎接各种<a href="https://zh.wikipedia.org/wiki/%E5%AE%97%E6%95%99">宗教</a>流派。一些<a href="https://zh.wikipedia.org/wiki/%E8%AF%BB%E8%80%85">读者</a>认为摩尔想以此来作为国家建设的<a href="https://zh.wikipedia.org/w/index.php?title=%E8%93%9D%E6%9C%AC&action=edit&redlink=1">蓝本</a>，而其他一些人认为摩尔其实没有这样的打算。一些人立场坚定地认为，摩尔的《乌托邦》的作用其实是用一个理想的社会来讽刺摩尔身处时代的<a href="https://zh.wikipedia.org/w/index.php?title=%E8%8B%B1%E6%A0%BC%E5%85%B0%E7%A4%BE%E4%BC%9A&action=edit&redlink=1">英格兰社会</a>。这种看法也顺理成章的解释了这本书和这个国家名字的意义。乌托邦在希腊语中的读音在“没有的地方”和“好地方”间含糊不清：乌托邦是由音节ou-（意为“不”）和topos（意为“地方”）而组成的<a href="https://zh.wikipedia.org/wiki/%E5%A4%8D%E5%90%88%E8%AF%8D">复合词</a>，但是他又与由同音前缀eu-（意为“好”）组成的<a href="https://zh.wikipedia.org/w/index.php?title=%E8%AF%8D%E5%90%8C%E9%9F%B3&action=edit&redlink=1">词同音</a>。这样其实也是在暗示：“没有地方”是真正“完美的地方”。</p>
+<p>乌托邦概念的另一个版本来自于<a href="https://zh.wikipedia.org/wiki/%E7%8A%B9%E5%B8%8C%E8%BF%88%E7%BD%97%E6%96%AF">犹希迈罗斯</a>公元前3世纪所著的《<a href="https://zh.wikipedia.org/w/index.php?title=%E5%9C%A3%E7%A5%9E%E7%9A%84%E5%8E%86%E5%8F%B2&action=edit&redlink=1">圣神的历史</a>》（Sacred History）中记载的Panchaea岛。</p>
+</blockquote>
+<h2 id="托马斯-cdot-康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？"><a href="#托马斯-cdot-康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？" class="headerlink" title="托马斯$\cdot $康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？"></a>托马斯$\cdot $康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？</h2><p>​	康帕内拉在《太阳城》中首次提出了劳动光荣以及脑力劳动和体力劳动相结合的思想，对脑体对立的思想进行了扬弃。他主张的教育与生产劳动相结合的思想影响深远。教育与生产劳动相结合的实际是劳动教育与生产劳动之间相互影响，相互作用和相互促进的关系。它有很多形式，劳动教育也是它的形式之一。</p>
+<blockquote>
+<p>康帕内拉虚拟了一名<a href="https://zh.wikipedia.org/wiki/%E7%83%AD%E9%82%A3%E4%BA%9A">热那亚</a>的航海家和朝圣招待所管理的对话，描绘了一个不为世人所知、按照根本不同于当时意大利和<a href="https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%AC%A7">西欧</a>各国社会制度的原则建立起来的新型理想社会。太阳城位于赤道的一座小山上，面积和一座城市相仿，这里没有私有财产，没有剥削，人人劳动，生产和消费由被称为“形而上学者”“威力”“智慧”和“爱”的四位领导人所管理，有机构统一组织安排，产品按公民需要分配，儿童由国家抚养和教育，教育与生产相联系[<a href="https://zh.wikipedia.org/zh-cn/%E5%A4%AA%E9%98%B3%E5%9F%8E_(%E8%91%97%E4%BD%9C)#cite_note-%E5%A4%AA%E9%98%B3%E5%9F%8E-1">1]</a>。</p>
+</blockquote>
+<h2 id="”欧洲三大空想社会主义者“是谁？"><a href="#”欧洲三大空想社会主义者“是谁？" class="headerlink" title="”欧洲三大空想社会主义者“是谁？"></a>”欧洲三大空想社会主义者“是谁？</h2><p>​	欧文（1771~1858年）：英国空想社会主义者。生于威尔士蒙特利尔的一个手工业家庭。10岁辍学当学徒，19岁成为曼彻斯特一家纱厂的经理。</p>
+<p>​	圣西门（1760~1825年）：法国哲学家，经济学家，空想社会主义者。1960年10月17日生于巴黎一个贵族家庭。早年受启蒙运动影响，曾参加过北美人民反对英国殖民统治的斗争。</p>
+<p>​	傅里叶（1772~1837年）：法国哲学家，经济学家，空想社会主义者。1772年4月7日生于贝桑松一个富商家庭。自学成才。1793年参加里昂联邦派起义，一度背部。1809年后再里昂，巴黎等地任职。</p>
+<p><img src="https://liberal-arts-guide.com/wp-content/uploads/2020/06/utopian-socialism.jpg" alt="空想的社会主義とは】マルクス主義との違い・各思想家の議論をわかりやすく解説｜リベラルアーツガイド"></p>
+<h2 id="空想社会主义为什么会诞生？"><a href="#空想社会主义为什么会诞生？" class="headerlink" title="空想社会主义为什么会诞生？"></a>空想社会主义为什么会诞生？</h2><ol>
+<li>19世纪中叶，西欧的一些资本主义发展非常迅速。随着资本主义的发展，<strong>现代无产阶级形成</strong>并开展了广泛的斗争，而<strong>资本主义固有的矛盾</strong>也日益暴露了出来。</li>
+<li><strong>周期性的生产过剩危机</strong>不断发生，<strong>工人们的失业和普遍贫困</strong>话现象严重。</li>
+<li><strong>生产的无政府状态，生产资料的私人占有和生产的社会化之间的深刻矛盾</strong>，造成生产秩序和社会秩序的混乱。</li>
+<li>贫富差距越来越大，<strong>民众的社会道德沦丧，价值观念恶化</strong>。</li>
+<li>19世纪初法国的圣$\cdot $西门，傅里叶及英国的罗伯特$\cdot $欧文灯空想社会主义者的努力。</li>
+</ol>
+<h2 id="空想社会主义为什么只能是空想"><a href="#空想社会主义为什么只能是空想" class="headerlink" title="空想社会主义为什么只能是空想"></a>空想社会主义为什么只能是空想</h2><ol>
+<li>空想社会主义者没有看到<strong>资产阶级的基本矛盾</strong>，同时他们所设想的社会主义也是建立在资产阶级统治的基础之上，这种理论与实际的矛盾使得他们的设想只能是一种空想。</li>
+<li>空想者没有找到改造资本主义社会的正确途径，他们把希望寄托再统治阶级的开明人物身上，<strong>幻想通过和平道路来改造社会</strong>，这并不符合当时的社会发展，所以无法实现。</li>
+<li>空想社会主义是在资本主义生产方式以及<strong>无产阶级和资产阶级之间的对立还很不发达</strong>的情况下产生的，这就决定了它只能是一个不能实现的幻想。</li>
+</ol>
+<h2 id="“欧洲三大工人运动”的标志性意义是什么？"><a href="#“欧洲三大工人运动”的标志性意义是什么？" class="headerlink" title="“欧洲三大工人运动”的标志性意义是什么？"></a>“欧洲三大工人运动”的标志性意义是什么？</h2><p>​	三大欧洲工人运动，即法国里昂工人起义，英国宪章运动，德国西里西亚纺织工人起义。</p>
+<p>​	意义：（1）表明无产阶级登上了历史舞台，为<strong>马克思主义的诞生</strong>奠定了阶级基础。</p>
+<p>​	（2）标志着现代<strong>无产阶级已经成为一支独立的政治力量</strong>登上了历史舞台，无产阶级的力量的壮大。</p>
+<p>​	（3）使无产阶级加深对资本主义制度的认识，同时为<strong>无产阶级革命理论的制定、马克思主义的创立</strong>提供了丰富的实践经验。</p>
+<h2 id="“马克思主义”的创立人是谁？"><a href="#“马克思主义”的创立人是谁？" class="headerlink" title="“马克思主义”的创立人是谁？"></a>“马克思主义”的创立人是谁？</h2><p>马克思和恩格斯</p>
+<h2 id="《共产党宣言》的公开发表标志着什么？"><a href="#《共产党宣言》的公开发表标志着什么？" class="headerlink" title="《共产党宣言》的公开发表标志着什么？"></a>《共产党宣言》的公开发表标志着什么？</h2><p>1848年《共产党宣言》的发表标志着<strong>马克思主义的诞生</strong>。</p>
+<h2 id="“两个必然”是什么？"><a href="#“两个必然”是什么？" class="headerlink" title="“两个必然”是什么？"></a>“两个必然”是什么？</h2><p>“两个必然”即<strong>资本主义必然灭亡</strong>和<strong>社会主义必然胜利</strong>，也成为“两个不可避免”</p>
+<h2 id="“第一国际”与“第二国际”的异同何在？"><a href="#“第一国际”与“第二国际”的异同何在？" class="headerlink" title="“第一国际”与“第二国际”的异同何在？"></a>“第一国际”与“第二国际”的异同何在？</h2><p>相同点：①它们都是<strong>国际性的工人组织</strong>②它们的建立都处于<strong>工人运动</strong>从低潮走向高潮的阶段③<strong>马克思和恩格斯</strong>都积极参与了对<strong>两个国际的领导</strong>。</p>
+<p>不同点：①第一国际由<strong>各国工人团体</strong>组成，而第二国际主要由<strong>社会主义政党</strong>组成；②参加第一国际的主要是少数欧洲国家的工人组织，第二国际参加的<strong>工人范围扩大到欧洲和北美</strong>③第一国际产生于<strong>资本主义社会矛盾激化</strong>，工人运动，民族解放运动高涨并走向联合之中，第二国际产生于<strong>资本主义相对稳定的环境</strong>中，④在组织上，第二国际不是<strong>各国党的上级组织</strong>，它通过历代代表大会的决议给各国党指明方向，第二国际<strong>内部派别斗争</strong>激烈。</p>
+<h2 id="“巴黎公社革命”与“巴黎公社“的关系是什么"><a href="#“巴黎公社革命”与“巴黎公社“的关系是什么" class="headerlink" title="“巴黎公社革命”与“巴黎公社“的关系是什么"></a>“巴黎公社革命”与“巴黎公社“的关系是什么</h2><p>法国再普法战争失败后，资产阶级政府的<strong>阶级压迫和民族投降政策</strong>，激起广大群众的不满，1871年，巴黎工人举行起义，推翻了资产阶级反动统治，建立了无产阶级革命政权，即巴黎公社。</p>
+<h2 id="一个没有资本的人为一群没有资本的人写了一部什么书？"><a href="#一个没有资本的人为一群没有资本的人写了一部什么书？" class="headerlink" title="一个没有资本的人为一群没有资本的人写了一部什么书？"></a>一个没有资本的人为一群没有资本的人写了一部什么书？</h2><p>资本论</p>
+<h2 id="马克思、恩格斯与影响工人运动的错误思潮进行了哪些争斗。"><a href="#马克思、恩格斯与影响工人运动的错误思潮进行了哪些争斗。" class="headerlink" title="马克思、恩格斯与影响工人运动的错误思潮进行了哪些争斗。"></a>马克思、恩格斯与影响工人运动的错误思潮进行了哪些争斗。</h2><ol>
+<li>年轻的马克思恩格斯常常用犀利、嘲讽的语言，讽刺青年黑格尔派，进而<strong>批判黑格尔和弗尔巴哈的哲学思想</strong></li>
+<li>扬弃资产阶级<strong>古典政治经济学</strong>，不断进行严谨的政治经济学批判，从而揭露资本主义制度本质的历程。</li>
+<li>对错误的社会思潮的分析批判<strong>又始终与实际的政治</strong>，社会斗争直接结合，进行了彻底的意识形态批判。</li>
+</ol>
+<h2 id="”一国胜利论“符合马克思主义吗？"><a href="#”一国胜利论“符合马克思主义吗？" class="headerlink" title="”一国胜利论“符合马克思主义吗？"></a>”一国胜利论“符合马克思主义吗？</h2><p>符合，”一国胜利论“认为：<strong>只要一个资本主义国家力，拥有强大的无产阶级政权</strong>，再加上物产阶级政党正确的领导和革命理论的指导，便可以建立起无产阶级政权，马克思恩格斯当年对社会主义革命的指导，便可以建立起物产阶级政权。马克思恩格斯当年对社会主义革命进程的设想是以一国首先胜利为起点的同时发生和胜利论，或者可以是以同时发生和胜利为必要条件的一国首先胜利论。</p>
+<h2 id="”民主集中制“是如何成为无产阶级政党的根本性组织原则的？"><a href="#”民主集中制“是如何成为无产阶级政党的根本性组织原则的？" class="headerlink" title="”民主集中制“是如何成为无产阶级政党的根本性组织原则的？"></a>”民主集中制“是如何成为无产阶级政党的根本性组织原则的？</h2><ol>
+<li>列宁继承了马克思，恩格斯关于<strong>民主集中制</strong>的思想的思想，从俄国的具体条件出发，创造性的提出了民主集中制这一科学概念，使之成为<strong>无产阶级政党工人的建党原则</strong>，</li>
+<li>党的中央委员会就被沙皇政府破获，各地组织也被破坏。列宁重建党组织时，社会民主工党的状态不容乐观方面党处于稠密状态；另一方面，党组织完全时一盘散沙。在这种严峻形势下，列宁不得不特别强调党组织的集中制原则，认为党要发挥自己的作用，要有坚强的战斗力，必须按照高度集中的方式组织起来。</li>
+</ol>
+<h2 id="俄国的“十月革命”真的是“早产儿”吗"><a href="#俄国的“十月革命”真的是“早产儿”吗" class="headerlink" title="俄国的“十月革命”真的是“早产儿”吗"></a>俄国的“十月革命”真的是“早产儿”吗</h2><p>俄国的十月革命<strong>不是历史的早产儿</strong></p>
+<p>（1）十月革命的胜利开创了人类历史的新纪元，为世界各国<strong>无产阶级革命，殖民地和半殖民地的民族解放运动</strong>开辟了胜利前进的道路。</p>
+<p>（2）十月革命是二十世纪国际共产主义运动的序幕，触发了此后<strong>各国社会主义运动在全球范围的扩张</strong>，许多殖民地或半殖民地的解放运动也因此得到了更多支持。</p>
+<p>（3）十月革命第一次成功建立了社会主义制度的国家，也<strong>被认为是无产阶级第一次掌握政权，是人类历史上依次意义重大的变革</strong>。</p>
+<h2 id="为什么俄国能够建立起世界上第一个社会主义国家？"><a href="#为什么俄国能够建立起世界上第一个社会主义国家？" class="headerlink" title="为什么俄国能够建立起世界上第一个社会主义国家？"></a>为什么俄国能够建立起世界上第一个社会主义国家？</h2><p>（1）俄国作为一个资本主义国家，<strong>是资本主义链条中最薄弱的一个环节</strong>。沙皇俄国于19世纪进行了自上而下的一次改革，是的沙俄确定了资本主义制度，但俄国在经济上却保留下来大量的<strong>封建农奴残余</strong>。俄国的经济无法进行大规模的发展，社会矛盾严重激化，人民时刻准备着革命来推翻俄国资产阶级的统治。</p>
+<p>（2）在一战期间俄国屡战屡败，经济遭到了严重破坏，国内人民<strong>渴望和平</strong>的愿望日益增强，但是<strong>俄国政府却无视人们的要求继续进行作战，这为十月革命的爆发点燃了导火线</strong>。</p>
+<p>（3）1903年，<strong>布尔什维克党</strong>在<strong>俄国社会民主工党第二次代表大会</strong>上宣布成立，使得十月革命的爆发具有了<strong>组织政党。</strong></p>
+<h2 id="伯恩施坦为什么被称为是“修正主义的鼻祖”"><a href="#伯恩施坦为什么被称为是“修正主义的鼻祖”" class="headerlink" title="伯恩施坦为什么被称为是“修正主义的鼻祖”?"></a>伯恩施坦为什么被称为是“修正主义的鼻祖”?</h2><p>1895年恩格斯逝世后，曾经是马<strong>克思主义正统派</strong>的代表伯恩施坦在德国社会民主党的理论刊物《新时代》上，以《社会主义问题》为题发表一系列文章，开始对马克思主义进行“全面”和“系统”的修正。1899年伯恩施坦出版了他的代表作《社会主义的前提和社会民主党的任务》，使其对马克思主义的看法及观点更加系统化，<strong>并以完整的形式从哲学、政治经济学和科学社会主义方面修正和否定马克思主义</strong>。</p>
+<h2 id="卡尔·考茨基为什被列宁称为“叛徒”"><a href="#卡尔·考茨基为什被列宁称为“叛徒”" class="headerlink" title="卡尔·考茨基为什被列宁称为“叛徒”?"></a>卡尔·考茨基为什被列宁称为“叛徒”?</h2><p>卡尔·考茨基在其论著中违背了<strong>马克思关于资本主义生产关系以及固有矛盾的核心论述</strong>，受到<strong>新康德主义以及拉萨尔主义</strong>影响，使第二国际逐渐远离马克思主义的原本论述，受到列宁以及西方现代重要知识分子的指责与批判。</p>
+<h2 id="马克思、恩格斯关于“如何走向共产主义”的回答"><a href="#马克思、恩格斯关于“如何走向共产主义”的回答" class="headerlink" title="马克思、恩格斯关于“如何走向共产主义”的回答?"></a>马克思、恩格斯关于“如何走向共产主义”的回答?</h2><p>（1）“两个必然”：随着生产力的发展，资本主义的生产关系越来越成为生产力发展的障碍。资产阶级和无产阶级的斗争日益尖锐，结果导致<strong>资本主义必然灭亡</strong>，<strong>共产主义必然胜利</strong>。</p>
+<p>（2）阶级斗争和无产阶级革命：一切阶级社会的历史都是<strong>阶级斗争的历史</strong>。无产阶级作为先进生产力的代表，是真正的革命阶级，<strong>是旧社会的埋葬者和未来社会的创造者</strong>。</p>
+<p>（3）工人阶级实现解放的道路：通过无产阶级革命建立无产阶级专政，经过<strong>社会充分发展</strong>而走向共产主义。</p>
+<p>（4）建立无产阶级政党的必要性和作用：无产阶级在进行革命过程中，<strong>首先必须建立自己的政党来组织和领导革命运</strong>动。</p>
+<h2 id="直接过渡到共产主义的政策为什么没走通？"><a href="#直接过渡到共产主义的政策为什么没走通？" class="headerlink" title="直接过渡到共产主义的政策为什么没走通？"></a>直接过渡到共产主义的政策为什么没走通？</h2><p>（1）俄国<strong>资产阶级和各种反动力量</strong>的阻挠</p>
+<p>（2）帝国主义的<strong>侵略</strong></p>
+<p>（3）俄国<strong>内战爆发</strong>，实行战时共产主义政策</p>
+<h2 id="过渡到共产主义的迂回道路为什么会天折"><a href="#过渡到共产主义的迂回道路为什么会天折" class="headerlink" title="过渡到共产主义的迂回道路为什么会天折?"></a>过渡到共产主义的迂回道路为什么会天折?</h2><p>（1）从新经济政策的具体政策看，新经济政策只是开启了<strong>大工业不发达国家利用商品货币关系和资本主义的大方向</strong>，在无产阶级专政和资本主义结合的度上还有待进一步探索</p>
+<p>（2）从新经济政策的历史定位看，不能<strong>过高估计列宁迂回过渡</strong>的目的</p>
+<p>（3）迂回过渡面临巨大的潜在矛盾，<strong>资金问题突出</strong></p>
+<h2 id="“斯大林模式”和“苏联模式”是同一回事吗"><a href="#“斯大林模式”和“苏联模式”是同一回事吗" class="headerlink" title="“斯大林模式”和“苏联模式”是同一回事吗?"></a>“斯大林模式”和“苏联模式”是同一回事吗?</h2><p>苏联模式包含斯大林模式，而斯大林模式并不完全等于苏联模式。<strong>“斯大林模式”只是“苏联模式”中的一个发展阶段</strong>；从内涵上看，“斯大林模式”尽管反映有斯大林执政的个人特点，二者有区别，但在本质上与“苏联模式”是一致的，<strong>因此，“苏联模式”与“斯大林模式”虽有区别，但相同大于区别</strong>。</p>
+<h2 id="一国建成论”指什么"><a href="#一国建成论”指什么" class="headerlink" title="一国建成论”指什么?"></a>一国建成论”指什么?</h2><p>一国建成社会主义论，有时也称“一国社会主义论”，是<a href="https://baike.baidu.com/item/%E7%BA%A6%E7%91%9F%E5%A4%AB%C2%B7%E7%BB%B4%E8%90%A8%E9%87%8C%E5%A5%A5%E8%AF%BA%E7%BB%B4%E5%A5%87%C2%B7%E6%96%AF%E5%A4%A7%E6%9E%97/8676088?fromModule=lemma_inlink">斯大林</a>于1924年<a href="https://baike.baidu.com/item/%E5%BC%97%E6%8B%89%E5%9F%BA%E7%B1%B3%E5%B0%94%C2%B7%E4%BC%8A%E9%87%8C%E5%A5%87%C2%B7%E5%88%97%E5%AE%81/8676059?fromModule=lemma_inlink">列宁</a>逝世后提出的特殊理论，<strong>认为社会主义可以首先在一国内建成</strong>，这是对经典马克思主义理论的重大修正。</p>
+<h2 id="苏联从农业国快速转变为工业国是如何实现的"><a href="#苏联从农业国快速转变为工业国是如何实现的" class="headerlink" title="苏联从农业国快速转变为工业国是如何实现的?"></a>苏联从农业国快速转变为工业国是如何实现的?</h2><p>（1）苏共确立了从重工业开始，即<strong>机器制造业开始实现社会主义工业化</strong>的正确战略<br>（2）实行五年计划,<strong>五年计划保证了在全国范围内调动了有限的资源支持工业</strong><br>（3）高度集中的<strong>政治经济体制保证计划</strong>实施<br>（4）在计划中<strong>牺牲农业完成工业的原始积累</strong>,实行农业集体化运动,压低农业生产要素的价格,<strong>农民成为向国家缴纳“超额贡赋”的“农奴</strong>”。<br>（5）新生的苏联<strong>调动了工人阶级的积极性</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>社群教程</title>
+    <url>/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="第一节：长期vs短期"><a href="#第一节：长期vs短期" class="headerlink" title="第一节：长期vs短期"></a>第一节：长期vs短期</h2><h3 id="方向："><a href="#方向：" class="headerlink" title="方向："></a>方向：</h3><h4 id="女性的择偶策略"><a href="#女性的择偶策略" class="headerlink" title="女性的择偶策略"></a>女性的择偶策略</h4><ul>
+<li>情人属性 基因提供者（缺点，很难长期）</li>
+</ul>
+<p>特点：</p>
+<p>1.外形条件不错，器大活好（生理结构）</p>
+<p>2.会大半夜聊天 不纠结 不正面回复 比较敷衍 洒脱 喜欢大半夜邀约</p>
+<p>3.能给女性短期属性的感觉 一定不缺女生喜欢</p>
+<ul>
+<li>投资供养者（很慢 ？被人吊着 延续）</li>
+</ul>
+<p>特点：</p>
+<p>1.对女生好 不太注意形象 宅 社交圈窄 理性逻辑 </p>
+<p>相对来说气场比较弱，没有声明情调 比较包容 老好人</p>
+<blockquote>
+<p>李小璐,贾乃亮</p>
+<p>李孝利</p>
+</blockquote>
+<p>思考一个问题：帅和有钱是不是决定性因素？</p>
+<p>第二个问题：哪一个属性更好？</p>
+<p>一段感情去得也快，来得慢，去得也慢</p>
+<p>两种都要有 我是一个安全的人，解决问题的能力</p>
+<p>重点就是一句正经，一句逗逼。</p>
+<p>把握好其中的比例问题。</p>
+<p>查漏补缺，找到自身特点，以及缺失的东西。</p>
+<h2 id="男性吸引力解析"><a href="#男性吸引力解析" class="headerlink" title="男性吸引力解析"></a>男性吸引力解析</h2><h3 id="吸引力的详细解析"><a href="#吸引力的详细解析" class="headerlink" title="吸引力的详细解析"></a>吸引力的详细解析</h3><ul>
+<li><p>公式：男吸引力&#x3D;90%的心动指数加上10%的心疼指数。</p>
+</li>
+<li><p>从何而来？</p>
+</li>
+</ul>
+<ol>
+<li>硬价值（外在）：生存价值</li>
+</ol>
+<p>钱 车 房 圈子 地位</p>
+<ol start="2">
+<li>软价值（内在）：繁衍价值</li>
+</ol>
+<p>颜值 身材 性征 西装 嗓音低沉  拍照风格 我给人一种什么样的感觉 格调 调性</p>
+<p>孙红雷 黄渤</p>
+<p>聊天的方式</p>
+<ul>
+<li>能量</li>
+</ul>
+<p>正能量。状态不好，我就先缓缓不聊天</p>
+<p>安全感 顾家</p>
+<p>百分之九十</p>
+<p>百分之十 心疼指数</p>
+<p>展示脆弱的一面 示弱</p>
+<div style="width: 80%;margin: 0 auto">
+    <canvas id="chart6045" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart6045').getContext('2d');
+    var options = {
+    type: 'line',
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+    options: {
+        responsive: true,
+        title: {
+            display: true,
+            text: 'Chart.js Line Chart'
+        }
+    }
+};;
+    new Chart(ctx, options);
+</script>
 ]]></content>
   </entry>
   <entry>
@@ -4415,158 +4569,23 @@
 ]]></content>
   </entry>
   <entry>
-    <title>社会主义发展史问题</title>
-    <url>/2024/05/27/%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E5%8F%91%E5%B1%95%E5%8F%B2%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="托马斯-cdot-莫尔的《乌托邦》为什么会是乌托邦？"><a href="#托马斯-cdot-莫尔的《乌托邦》为什么会是乌托邦？" class="headerlink" title="托马斯$\cdot$莫尔的《乌托邦》为什么会是乌托邦？"></a>托马斯$\cdot$莫尔的《乌托邦》为什么会是乌托邦？</h2><p>​	乌托邦，本意是“没有的地方”或者“好地方“。<strong>延伸拓展为还有理想，不可能完成的好事情</strong>，其中文翻译可以理解为”物“是没有，”托“是寄托，”邦“是国家，”乌托邦“三个字合起来的意思即是”空想的国家“。</p>
-<p>​	《乌托邦》一书是<strong>欧洲第一本空想社会主义</strong>著作，它第一次完整地描述了空想社会主义的图景。在社会主义思想史上，首次批判了<strong>资本原始积累的罪恶</strong>，提出了<strong>以组织生产，普遍劳动为基础的公有制和平等的原则</strong>，奠定了空想社会主义的根基，为以后<strong>社会主义的发展</strong>提供了可贵的<strong>思想资料</strong>。</p>
+    <title>线代</title>
+    <url>/2024/05/22/%E7%BA%BF%E4%BB%A3/</url>
+    <content><![CDATA[<h1 id="第一章-线性方程组"><a href="#第一章-线性方程组" class="headerlink" title="第一章 线性方程组"></a>第一章 线性方程组</h1><h2 id="xi1-1-线性方程组高斯消元法与矩阵"><a href="#xi1-1-线性方程组高斯消元法与矩阵" class="headerlink" title="$\xi1.1$	线性方程组	高斯消元法与矩阵"></a>$\xi1.1$	线性方程组	高斯消元法与矩阵</h2><h2 id="xi1-2-行化简和阶梯形矩阵解的存在性和唯一性"><a href="#xi1-2-行化简和阶梯形矩阵解的存在性和唯一性" class="headerlink" title="$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性"></a>$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性</h2><h2 id="xi1-3-线性方程组的应用"><a href="#xi1-3-线性方程组的应用" class="headerlink" title="$\xi1.3$	线性方程组的应用"></a>$\xi1.3$	线性方程组的应用</h2><h1 id="第二章矩阵代数"><a href="#第二章矩阵代数" class="headerlink" title="第二章	矩阵代数"></a>第二章	矩阵代数</h1><h2 id="xi2-1-矩阵和向量"><a href="#xi2-1-矩阵和向量" class="headerlink" title="$\xi2.1$	矩阵和向量"></a>$\xi2.1$	矩阵和向量</h2><h2 id="xi2-2-矩阵的代数运算"><a href="#xi2-2-矩阵的代数运算" class="headerlink" title="$\xi2.2$	矩阵的代数运算"></a>$\xi2.2$	矩阵的代数运算</h2><h2 id="xi-2-3逆矩阵与矩阵的初等变换"><a href="#xi-2-3逆矩阵与矩阵的初等变换" class="headerlink" title="$\xi$2.3	逆矩阵与矩阵的初等变换"></a>$\xi$2.3	逆矩阵与矩阵的初等变换</h2><h2 id="xi-2-4转置矩阵与一些重要的方阵"><a href="#xi-2-4转置矩阵与一些重要的方阵" class="headerlink" title="$\xi$2.4	转置矩阵与一些重要的方阵"></a>$\xi$2.4	转置矩阵与一些重要的方阵</h2><h2 id="xi-2-5分块矩阵"><a href="#xi-2-5分块矩阵" class="headerlink" title="$\xi$2.5	分块矩阵"></a>$\xi$2.5	分块矩阵</h2><h1 id="第三章行列式"><a href="#第三章行列式" class="headerlink" title="第三章	行列式"></a>第三章	行列式</h1><h2 id="xi-3-1方阵的行列式"><a href="#xi-3-1方阵的行列式" class="headerlink" title="$\xi$3.1	方阵的行列式"></a>$\xi$3.1	方阵的行列式</h2><h2 id="xi-3-2行列式的主要性质"><a href="#xi-3-2行列式的主要性质" class="headerlink" title="$\xi$3.2	行列式的主要性质"></a>$\xi$3.2	行列式的主要性质</h2><h2 id="xi-3-3行列式的应用"><a href="#xi-3-3行列式的应用" class="headerlink" title="$\xi$3.3	行列式的应用"></a>$\xi$3.3	行列式的应用</h2><h1 id="第四章向量空间"><a href="#第四章向量空间" class="headerlink" title="第四章	向量空间"></a>第四章	向量空间</h1><h2 id="xi-4-1向量的定义及其运算"><a href="#xi-4-1向量的定义及其运算" class="headerlink" title="$\xi$4.1	向量的定义及其运算"></a>$\xi$4.1	向量的定义及其运算</h2><h2 id="xi-4-2向量的线性相关性"><a href="#xi-4-2向量的线性相关性" class="headerlink" title="$\xi$4.2	向量的线性相关性"></a>$\xi$4.2	向量的线性相关性</h2><h2 id="xi-4-3向量组的极大线性无关组和秩"><a href="#xi-4-3向量组的极大线性无关组和秩" class="headerlink" title="$\xi$4.3	向量组的极大线性无关组和秩"></a>$\xi$4.3	向量组的极大线性无关组和秩</h2><h2 id="xi-4-4子空间"><a href="#xi-4-4子空间" class="headerlink" title="$\xi$4.4	子空间"></a>$\xi$4.4	子空间</h2><h2 id="xi-4-5基和维数"><a href="#xi-4-5基和维数" class="headerlink" title="$\xi$4.5	基和维数"></a>$\xi$4.5	基和维数</h2><h2 id="xi-4-6矩阵的秩"><a href="#xi-4-6矩阵的秩" class="headerlink" title="$\xi$4.6	矩阵的秩"></a>$\xi$4.6	矩阵的秩</h2><h2 id="xi-4-7线性方程组的有解条件及解的结构"><a href="#xi-4-7线性方程组的有解条件及解的结构" class="headerlink" title="$\xi$4.7	线性方程组的有解条件及解的结构"></a>$\xi$4.7	线性方程组的有解条件及解的结构</h2><h2 id="xi-4-8-R-n-到-R-m-的线性映射"><a href="#xi-4-8-R-n-到-R-m-的线性映射" class="headerlink" title="$\xi$4.8	$R^n$到$R^m$的线性映射"></a>$\xi$4.8	$R^n$到$R^m$的线性映射</h2><h1 id="第五章特征值与特征向量"><a href="#第五章特征值与特征向量" class="headerlink" title="第五章	特征值与特征向量"></a>第五章	特征值与特征向量</h1><h2 id="xi-5-1矩阵的特征值与特征向量"><a href="#xi-5-1矩阵的特征值与特征向量" class="headerlink" title="$\xi$5.1	矩阵的特征值与特征向量"></a>$\xi$5.1	矩阵的特征值与特征向量</h2><h2 id="xi-5-2矩阵的相似对角化"><a href="#xi-5-2矩阵的相似对角化" class="headerlink" title="$\xi$5.2	矩阵的相似对角化"></a>$\xi$5.2	矩阵的相似对角化</h2><h2 id="xi-5-3实对称矩阵的正交相似对角化"><a href="#xi-5-3实对称矩阵的正交相似对角化" class="headerlink" title="$\xi$5.3	实对称矩阵的正交相似对角化"></a>$\xi$5.3	实对称矩阵的正交相似对角化</h2><p>​	由定理5.2.1知，一个n阶矩阵能否对角化取决于它是否有n个线性无关的特征向量.那么什么样的矩阵一定有n个线性无关的特征向量呢?下面我们就来证明任一n阶实对称矩阵一定存在n个线性无关的特征向量,从而可以对角化.也就是说,存在可逆阵$P$，使得$P^{-1}AP&#x3D;\Lambda$为对角阵。进一步，我们还可证明存在正交矩阵$Q$,使得$Q^T AQ&#x3D;\Lambda$为对角阵.为此，我们先引人如下概念.</p>
+<p>​	定义 5.3.1	设$\alpha&#x3D;[a_1,a_2.\cdots,a_n]^T,\beta&#x3D;[b_1,b_2,\cdots,b_n]^T$称<br>$$<br>(\alpha,\beta)&#x3D;\alpha^T\cdot\beta&#x3D;\sum_{i&#x3D;i}^na_ib_i<br>$$<br>为向量$\alpha,\beta$的内积，显然，$(\alpha,\alpha)&gt;&#x3D;0$,当且仅当$\alpha&#x3D;0$时等号成立，关于向量内积，还有如下性质：<br>$$<br>(1)(\alpha,\beta)&#x3D;(\beta,\alpha),\\<br>(2)(\alpha+\beta,\gamma)&#x3D;(\alpha,\gamma)+(\alpha,\gamma),\\<br>(3)k\alpha,\beta)&#x3D;k(\alpha,\beta),k\in R.\\<br>(4)(0,\alpha)&#x3D;(\alpha,0)&#x3D;0.\\<br>(5)(\sum_{i&#x3D;1}^{n}k_i\alpha_i,\alpha)&#x3D;\sum_{i&#x3D;1}^{n}k_i(\alpha_i,\alpha),k_i\in R,i&#x3D;1,\cdots,n.\\<br>$$<br>​	定义 5.3.2 称$|\alpha|&#x3D;\sqrt{(\alpha,\alpha)}$为向量$\alpha$的长度（或范数），长度为1的向量成为单位向量（unit vector）。</p>
+<p>​	一个向量$\alpha $的长度代表了n维空间中与$\alpha $所对应的点到原点（零向量所对应的点）的“距离”。因此，对于任意两个n维向量$\alpha,\beta $所对应的n维空间的两个点之间的距离可以表示为$|\alpha-\beta|$.</p>
+<p>​	关于向量长度，有如下性质：<br>$$<br>设\alpha\in R^n,\beta \in R^n,k \in R\\<br>(1)非负性：|k\alpha|&#x3D;|k||\alpha|\\<br>(2)正齐性：|k\alpha|&#x3D;|k||\alpha|\\<br>(3)柯西—许瓦兹不等式：|(\alpha,\beta)|&lt;&#x3D;|\alpha||\beta|\\<br>(4)三角不等式|\alpha|+|\beta|&gt;&#x3D;|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>我们仅就性质(3),(4)证明\\<br>$$</p>
+<p>$$<br>证明(3)\forall t\in R,构造关于t的二次多项式\\<br>0&lt;&#x3D;(\alpha+t\beta,\alpha+t\beta)&#x3D;(\alpha,\alpha)+2(\alpha,\alpha)t+(\beta,\beta)t^2\\<br>所以\\<br>\Delta&#x3D;4(\alpha,\beta)^2-4(\alpha,\alpha)(\beta,\beta)&lt;&#x3D;0.\\<br>即\\<br>（\alpha,\beta）^2&lt;&#x3D;(\alpha,\alpha)(\beta,\beta)&#x3D;|\alpha|^2\cdot|\beta|^2,\\<br>所以\\<br>|(\alpha,\beta)|&lt;&#x3D;|\alpha|\cdot|\beta|<br>$$</p>
+<p>$$<br>(4)|\alpha-\beta|^2&#x3D;(\alpha-\beta,\alpha-\beta)&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\</p>
 <blockquote>
-<p><a href="https://zh.wikipedia.org/wiki/%E6%B9%AF%E7%91%AA%E6%96%AF%C2%B7%E6%91%A9%E7%88%BE">摩尔</a>的《乌托邦》一书与<a href="https://zh.wikipedia.org/wiki/%E6%9F%8F%E6%8B%89%E5%9B%BE">柏拉图</a>的<a href="https://zh.wikipedia.org/wiki/%E7%90%86%E6%83%B3%E5%9B%BD">理想国</a>有很大联系[<a href="https://zh.wikipedia.org/zh-cn/%E4%B9%8C%E6%89%98%E9%82%A6#cite_note-2">2]</a>。这是一个理想、完美的共和国（<a href="https://zh.wikipedia.org/w/index.php?title=%E7%A4%BE%E4%BC%9A%E5%B9%B3%E7%AD%89%E4%B8%BB%E4%B9%89%E8%80%85&action=edit&redlink=1">社会平等主义者</a>和<a href="https://zh.wikipedia.org/wiki/%E5%92%8C%E5%B9%B3%E4%B8%BB%E4%B9%89%E8%80%85">和平主义者</a>的观点），虽然他的子民们也要为此而工作而奋斗。但是社会上的一切丑恶现象，如贫穷、歧视、不公和苦难，都远离这个<a href="https://zh.wikipedia.org/wiki/%E4%B8%96%E5%A4%96%E6%A1%83%E6%BA%90">世外桃源</a>。这里只有几条<a href="https://zh.wikipedia.org/wiki/%E6%B3%95%E5%BE%8B">法律</a>规定，没有<a href="https://zh.wikipedia.org/wiki/%E5%BE%8B%E5%B8%88">律师</a>。并且没有<a href="https://zh.wikipedia.org/w/index.php?title=%E5%9F%8E%E6%B0%91&action=edit&redlink=1">城民</a>愿意发动<a href="https://zh.wikipedia.org/wiki/%E6%88%98%E4%BA%89">战争</a>。但是他们从周边的好战国家雇来雇<a href="https://zh.wikipedia.org/wiki/%E5%82%AD%E5%85%B5">佣兵</a>（他们让这些雇佣兵面对威胁，是因为他们希望所有好战的人都在战争中灭亡，最终只留下爱好和平的人）。这样的社会也以包容的心态迎接各种<a href="https://zh.wikipedia.org/wiki/%E5%AE%97%E6%95%99">宗教</a>流派。一些<a href="https://zh.wikipedia.org/wiki/%E8%AF%BB%E8%80%85">读者</a>认为摩尔想以此来作为国家建设的<a href="https://zh.wikipedia.org/w/index.php?title=%E8%93%9D%E6%9C%AC&action=edit&redlink=1">蓝本</a>，而其他一些人认为摩尔其实没有这样的打算。一些人立场坚定地认为，摩尔的《乌托邦》的作用其实是用一个理想的社会来讽刺摩尔身处时代的<a href="https://zh.wikipedia.org/w/index.php?title=%E8%8B%B1%E6%A0%BC%E5%85%B0%E7%A4%BE%E4%BC%9A&action=edit&redlink=1">英格兰社会</a>。这种看法也顺理成章的解释了这本书和这个国家名字的意义。乌托邦在希腊语中的读音在“没有的地方”和“好地方”间含糊不清：乌托邦是由音节ou-（意为“不”）和topos（意为“地方”）而组成的<a href="https://zh.wikipedia.org/wiki/%E5%A4%8D%E5%90%88%E8%AF%8D">复合词</a>，但是他又与由同音前缀eu-（意为“好”）组成的<a href="https://zh.wikipedia.org/w/index.php?title=%E8%AF%8D%E5%90%8C%E9%9F%B3&action=edit&redlink=1">词同音</a>。这样其实也是在暗示：“没有地方”是真正“完美的地方”。</p>
-<p>乌托邦概念的另一个版本来自于<a href="https://zh.wikipedia.org/wiki/%E7%8A%B9%E5%B8%8C%E8%BF%88%E7%BD%97%E6%96%AF">犹希迈罗斯</a>公元前3世纪所著的《<a href="https://zh.wikipedia.org/w/index.php?title=%E5%9C%A3%E7%A5%9E%E7%9A%84%E5%8E%86%E5%8F%B2&action=edit&redlink=1">圣神的历史</a>》（Sacred History）中记载的Panchaea岛。</p>
+<p>&#x3D;|\alpha|^2-2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;(|\alpha|-|\beta|)^2\\<br>故\\<br>|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>(|\alpha|+|\beta|)^2&#x3D;|\alpha|^2+2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\<br>&#x3D;(\alpha-\beta,\alpha-\beta)\\<br>&#x3D;|\alpha-\beta|^2.<br>$$</p>
 </blockquote>
-<h2 id="托马斯-cdot-康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？"><a href="#托马斯-cdot-康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？" class="headerlink" title="托马斯$\cdot $康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？"></a>托马斯$\cdot $康帕内拉的”教育雨生产劳动相结合“是指”劳动教育“吗？</h2><p>​	康帕内拉在《太阳城》中首次提出了劳动光荣以及脑力劳动和体力劳动相结合的思想，对脑体对立的思想进行了扬弃。他主张的教育与生产劳动相结合的思想影响深远。教育与生产劳动相结合的实际是劳动教育与生产劳动之间相互影响，相互作用和相互促进的关系。它有很多形式，劳动教育也是它的形式之一。</p>
-<blockquote>
-<p>康帕内拉虚拟了一名<a href="https://zh.wikipedia.org/wiki/%E7%83%AD%E9%82%A3%E4%BA%9A">热那亚</a>的航海家和朝圣招待所管理的对话，描绘了一个不为世人所知、按照根本不同于当时意大利和<a href="https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%AC%A7">西欧</a>各国社会制度的原则建立起来的新型理想社会。太阳城位于赤道的一座小山上，面积和一座城市相仿，这里没有私有财产，没有剥削，人人劳动，生产和消费由被称为“形而上学者”“威力”“智慧”和“爱”的四位领导人所管理，有机构统一组织安排，产品按公民需要分配，儿童由国家抚养和教育，教育与生产相联系[<a href="https://zh.wikipedia.org/zh-cn/%E5%A4%AA%E9%98%B3%E5%9F%8E_(%E8%91%97%E4%BD%9C)#cite_note-%E5%A4%AA%E9%98%B3%E5%9F%8E-1">1]</a>。</p>
-</blockquote>
-<h2 id="”欧洲三大空想社会主义者“是谁？"><a href="#”欧洲三大空想社会主义者“是谁？" class="headerlink" title="”欧洲三大空想社会主义者“是谁？"></a>”欧洲三大空想社会主义者“是谁？</h2><p>​	欧文（1771~1858年）：英国空想社会主义者。生于威尔士蒙特利尔的一个手工业家庭。10岁辍学当学徒，19岁成为曼彻斯特一家纱厂的经理。</p>
-<p>​	圣西门（1760~1825年）：法国哲学家，经济学家，空想社会主义者。1960年10月17日生于巴黎一个贵族家庭。早年受启蒙运动影响，曾参加过北美人民反对英国殖民统治的斗争。</p>
-<p>​	傅里叶（1772~1837年）：法国哲学家，经济学家，空想社会主义者。1772年4月7日生于贝桑松一个富商家庭。自学成才。1793年参加里昂联邦派起义，一度背部。1809年后再里昂，巴黎等地任职。</p>
-<p><img src="https://liberal-arts-guide.com/wp-content/uploads/2020/06/utopian-socialism.jpg" alt="空想的社会主義とは】マルクス主義との違い・各思想家の議論をわかりやすく解説｜リベラルアーツガイド"></p>
-<h2 id="空想社会主义为什么会诞生？"><a href="#空想社会主义为什么会诞生？" class="headerlink" title="空想社会主义为什么会诞生？"></a>空想社会主义为什么会诞生？</h2><ol>
-<li>19世纪中叶，西欧的一些资本主义发展非常迅速。随着资本主义的发展，<strong>现代无产阶级形成</strong>并开展了广泛的斗争，而<strong>资本主义固有的矛盾</strong>也日益暴露了出来。</li>
-<li><strong>周期性的生产过剩危机</strong>不断发生，<strong>工人们的失业和普遍贫困</strong>话现象严重。</li>
-<li><strong>生产的无政府状态，生产资料的私人占有和生产的社会化之间的深刻矛盾</strong>，造成生产秩序和社会秩序的混乱。</li>
-<li>贫富差距越来越大，<strong>民众的社会道德沦丧，价值观念恶化</strong>。</li>
-<li>19世纪初法国的圣$\cdot $西门，傅里叶及英国的罗伯特$\cdot $欧文灯空想社会主义者的努力。</li>
-</ol>
-<h2 id="空想社会主义为什么只能是空想"><a href="#空想社会主义为什么只能是空想" class="headerlink" title="空想社会主义为什么只能是空想"></a>空想社会主义为什么只能是空想</h2><ol>
-<li>空想社会主义者没有看到<strong>资产阶级的基本矛盾</strong>，同时他们所设想的社会主义也是建立在资产阶级统治的基础之上，这种理论与实际的矛盾使得他们的设想只能是一种空想。</li>
-<li>空想者没有找到改造资本主义社会的正确途径，他们把希望寄托再统治阶级的开明人物身上，<strong>幻想通过和平道路来改造社会</strong>，这并不符合当时的社会发展，所以无法实现。</li>
-<li>空想社会主义是在资本主义生产方式以及<strong>无产阶级和资产阶级之间的对立还很不发达</strong>的情况下产生的，这就决定了它只能是一个不能实现的幻想。</li>
-</ol>
-<h2 id="“欧洲三大工人运动”的标志性意义是什么？"><a href="#“欧洲三大工人运动”的标志性意义是什么？" class="headerlink" title="“欧洲三大工人运动”的标志性意义是什么？"></a>“欧洲三大工人运动”的标志性意义是什么？</h2><p>​	三大欧洲工人运动，即法国里昂工人起义，英国宪章运动，德国西里西亚纺织工人起义。</p>
-<p>​	意义：（1）表明无产阶级登上了历史舞台，为<strong>马克思主义的诞生</strong>奠定了阶级基础。</p>
-<p>​	（2）标志着现代<strong>无产阶级已经成为一支独立的政治力量</strong>登上了历史舞台，无产阶级的力量的壮大。</p>
-<p>​	（3）使无产阶级加深对资本主义制度的认识，同时为<strong>无产阶级革命理论的制定、马克思主义的创立</strong>提供了丰富的实践经验。</p>
-<h2 id="“马克思主义”的创立人是谁？"><a href="#“马克思主义”的创立人是谁？" class="headerlink" title="“马克思主义”的创立人是谁？"></a>“马克思主义”的创立人是谁？</h2><p>马克思和恩格斯</p>
-<h2 id="《共产党宣言》的公开发表标志着什么？"><a href="#《共产党宣言》的公开发表标志着什么？" class="headerlink" title="《共产党宣言》的公开发表标志着什么？"></a>《共产党宣言》的公开发表标志着什么？</h2><p>1848年《共产党宣言》的发表标志着<strong>马克思主义的诞生</strong>。</p>
-<h2 id="“两个必然”是什么？"><a href="#“两个必然”是什么？" class="headerlink" title="“两个必然”是什么？"></a>“两个必然”是什么？</h2><p>“两个必然”即<strong>资本主义必然灭亡</strong>和<strong>社会主义必然胜利</strong>，也成为“两个不可避免”</p>
-<h2 id="“第一国际”与“第二国际”的异同何在？"><a href="#“第一国际”与“第二国际”的异同何在？" class="headerlink" title="“第一国际”与“第二国际”的异同何在？"></a>“第一国际”与“第二国际”的异同何在？</h2><p>相同点：①它们都是<strong>国际性的工人组织</strong>②它们的建立都处于<strong>工人运动</strong>从低潮走向高潮的阶段③<strong>马克思和恩格斯</strong>都积极参与了对<strong>两个国际的领导</strong>。</p>
-<p>不同点：①第一国际由<strong>各国工人团体</strong>组成，而第二国际主要由<strong>社会主义政党</strong>组成；②参加第一国际的主要是少数欧洲国家的工人组织，第二国际参加的<strong>工人范围扩大到欧洲和北美</strong>③第一国际产生于<strong>资本主义社会矛盾激化</strong>，工人运动，民族解放运动高涨并走向联合之中，第二国际产生于<strong>资本主义相对稳定的环境</strong>中，④在组织上，第二国际不是<strong>各国党的上级组织</strong>，它通过历代代表大会的决议给各国党指明方向，第二国际<strong>内部派别斗争</strong>激烈。</p>
-<h2 id="“巴黎公社革命”与“巴黎公社“的关系是什么"><a href="#“巴黎公社革命”与“巴黎公社“的关系是什么" class="headerlink" title="“巴黎公社革命”与“巴黎公社“的关系是什么"></a>“巴黎公社革命”与“巴黎公社“的关系是什么</h2><p>法国再普法战争失败后，资产阶级政府的<strong>阶级压迫和民族投降政策</strong>，激起广大群众的不满，1871年，巴黎工人举行起义，推翻了资产阶级反动统治，建立了无产阶级革命政权，即巴黎公社。</p>
-<h2 id="一个没有资本的人为一群没有资本的人写了一部什么书？"><a href="#一个没有资本的人为一群没有资本的人写了一部什么书？" class="headerlink" title="一个没有资本的人为一群没有资本的人写了一部什么书？"></a>一个没有资本的人为一群没有资本的人写了一部什么书？</h2><p>资本论</p>
-<h2 id="马克思、恩格斯与影响工人运动的错误思潮进行了哪些争斗。"><a href="#马克思、恩格斯与影响工人运动的错误思潮进行了哪些争斗。" class="headerlink" title="马克思、恩格斯与影响工人运动的错误思潮进行了哪些争斗。"></a>马克思、恩格斯与影响工人运动的错误思潮进行了哪些争斗。</h2><ol>
-<li>年轻的马克思恩格斯常常用犀利、嘲讽的语言，讽刺青年黑格尔派，进而<strong>批判黑格尔和弗尔巴哈的哲学思想</strong></li>
-<li>扬弃资产阶级<strong>古典政治经济学</strong>，不断进行严谨的政治经济学批判，从而揭露资本主义制度本质的历程。</li>
-<li>对错误的社会思潮的分析批判<strong>又始终与实际的政治</strong>，社会斗争直接结合，进行了彻底的意识形态批判。</li>
-</ol>
-<h2 id="”一国胜利论“符合马克思主义吗？"><a href="#”一国胜利论“符合马克思主义吗？" class="headerlink" title="”一国胜利论“符合马克思主义吗？"></a>”一国胜利论“符合马克思主义吗？</h2><p>符合，”一国胜利论“认为：<strong>只要一个资本主义国家力，拥有强大的无产阶级政权</strong>，再加上物产阶级政党正确的领导和革命理论的指导，便可以建立起无产阶级政权，马克思恩格斯当年对社会主义革命的指导，便可以建立起物产阶级政权。马克思恩格斯当年对社会主义革命进程的设想是以一国首先胜利为起点的同时发生和胜利论，或者可以是以同时发生和胜利为必要条件的一国首先胜利论。</p>
-<h2 id="”民主集中制“是如何成为无产阶级政党的根本性组织原则的？"><a href="#”民主集中制“是如何成为无产阶级政党的根本性组织原则的？" class="headerlink" title="”民主集中制“是如何成为无产阶级政党的根本性组织原则的？"></a>”民主集中制“是如何成为无产阶级政党的根本性组织原则的？</h2><ol>
-<li>列宁继承了马克思，恩格斯关于<strong>民主集中制</strong>的思想的思想，从俄国的具体条件出发，创造性的提出了民主集中制这一科学概念，使之成为<strong>无产阶级政党工人的建党原则</strong>，</li>
-<li>党的中央委员会就被沙皇政府破获，各地组织也被破坏。列宁重建党组织时，社会民主工党的状态不容乐观方面党处于稠密状态；另一方面，党组织完全时一盘散沙。在这种严峻形势下，列宁不得不特别强调党组织的集中制原则，认为党要发挥自己的作用，要有坚强的战斗力，必须按照高度集中的方式组织起来。</li>
-</ol>
-<h2 id="俄国的“十月革命”真的是“早产儿”吗"><a href="#俄国的“十月革命”真的是“早产儿”吗" class="headerlink" title="俄国的“十月革命”真的是“早产儿”吗"></a>俄国的“十月革命”真的是“早产儿”吗</h2><p>俄国的十月革命<strong>不是历史的早产儿</strong></p>
-<p>（1）十月革命的胜利开创了人类历史的新纪元，为世界各国<strong>无产阶级革命，殖民地和半殖民地的民族解放运动</strong>开辟了胜利前进的道路。</p>
-<p>（2）十月革命是二十世纪国际共产主义运动的序幕，触发了此后<strong>各国社会主义运动在全球范围的扩张</strong>，许多殖民地或半殖民地的解放运动也因此得到了更多支持。</p>
-<p>（3）十月革命第一次成功建立了社会主义制度的国家，也<strong>被认为是无产阶级第一次掌握政权，是人类历史上依次意义重大的变革</strong>。</p>
-<h2 id="为什么俄国能够建立起世界上第一个社会主义国家？"><a href="#为什么俄国能够建立起世界上第一个社会主义国家？" class="headerlink" title="为什么俄国能够建立起世界上第一个社会主义国家？"></a>为什么俄国能够建立起世界上第一个社会主义国家？</h2><p>（1）俄国作为一个资本主义国家，<strong>是资本主义链条中最薄弱的一个环节</strong>。沙皇俄国于19世纪进行了自上而下的一次改革，是的沙俄确定了资本主义制度，但俄国在经济上却保留下来大量的<strong>封建农奴残余</strong>。俄国的经济无法进行大规模的发展，社会矛盾严重激化，人民时刻准备着革命来推翻俄国资产阶级的统治。</p>
-<p>（2）在一战期间俄国屡战屡败，经济遭到了严重破坏，国内人民<strong>渴望和平</strong>的愿望日益增强，但是<strong>俄国政府却无视人们的要求继续进行作战，这为十月革命的爆发点燃了导火线</strong>。</p>
-<p>（3）1903年，<strong>布尔什维克党</strong>在<strong>俄国社会民主工党第二次代表大会</strong>上宣布成立，使得十月革命的爆发具有了<strong>组织政党。</strong></p>
-<h2 id="伯恩施坦为什么被称为是“修正主义的鼻祖”"><a href="#伯恩施坦为什么被称为是“修正主义的鼻祖”" class="headerlink" title="伯恩施坦为什么被称为是“修正主义的鼻祖”?"></a>伯恩施坦为什么被称为是“修正主义的鼻祖”?</h2><p>1895年恩格斯逝世后，曾经是马<strong>克思主义正统派</strong>的代表伯恩施坦在德国社会民主党的理论刊物《新时代》上，以《社会主义问题》为题发表一系列文章，开始对马克思主义进行“全面”和“系统”的修正。1899年伯恩施坦出版了他的代表作《社会主义的前提和社会民主党的任务》，使其对马克思主义的看法及观点更加系统化，<strong>并以完整的形式从哲学、政治经济学和科学社会主义方面修正和否定马克思主义</strong>。</p>
-<h2 id="卡尔·考茨基为什被列宁称为“叛徒”"><a href="#卡尔·考茨基为什被列宁称为“叛徒”" class="headerlink" title="卡尔·考茨基为什被列宁称为“叛徒”?"></a>卡尔·考茨基为什被列宁称为“叛徒”?</h2><p>卡尔·考茨基在其论著中违背了<strong>马克思关于资本主义生产关系以及固有矛盾的核心论述</strong>，受到<strong>新康德主义以及拉萨尔主义</strong>影响，使第二国际逐渐远离马克思主义的原本论述，受到列宁以及西方现代重要知识分子的指责与批判。</p>
-<h2 id="马克思、恩格斯关于“如何走向共产主义”的回答"><a href="#马克思、恩格斯关于“如何走向共产主义”的回答" class="headerlink" title="马克思、恩格斯关于“如何走向共产主义”的回答?"></a>马克思、恩格斯关于“如何走向共产主义”的回答?</h2><p>（1）“两个必然”：随着生产力的发展，资本主义的生产关系越来越成为生产力发展的障碍。资产阶级和无产阶级的斗争日益尖锐，结果导致<strong>资本主义必然灭亡</strong>，<strong>共产主义必然胜利</strong>。</p>
-<p>（2）阶级斗争和无产阶级革命：一切阶级社会的历史都是<strong>阶级斗争的历史</strong>。无产阶级作为先进生产力的代表，是真正的革命阶级，<strong>是旧社会的埋葬者和未来社会的创造者</strong>。</p>
-<p>（3）工人阶级实现解放的道路：通过无产阶级革命建立无产阶级专政，经过<strong>社会充分发展</strong>而走向共产主义。</p>
-<p>（4）建立无产阶级政党的必要性和作用：无产阶级在进行革命过程中，<strong>首先必须建立自己的政党来组织和领导革命运</strong>动。</p>
-<h2 id="直接过渡到共产主义的政策为什么没走通？"><a href="#直接过渡到共产主义的政策为什么没走通？" class="headerlink" title="直接过渡到共产主义的政策为什么没走通？"></a>直接过渡到共产主义的政策为什么没走通？</h2><p>（1）俄国<strong>资产阶级和各种反动力量</strong>的阻挠</p>
-<p>（2）帝国主义的<strong>侵略</strong></p>
-<p>（3）俄国<strong>内战爆发</strong>，实行战时共产主义政策</p>
-<h2 id="过渡到共产主义的迂回道路为什么会天折"><a href="#过渡到共产主义的迂回道路为什么会天折" class="headerlink" title="过渡到共产主义的迂回道路为什么会天折?"></a>过渡到共产主义的迂回道路为什么会天折?</h2><p>（1）从新经济政策的具体政策看，新经济政策只是开启了<strong>大工业不发达国家利用商品货币关系和资本主义的大方向</strong>，在无产阶级专政和资本主义结合的度上还有待进一步探索</p>
-<p>（2）从新经济政策的历史定位看，不能<strong>过高估计列宁迂回过渡</strong>的目的</p>
-<p>（3）迂回过渡面临巨大的潜在矛盾，<strong>资金问题突出</strong></p>
-<h2 id="“斯大林模式”和“苏联模式”是同一回事吗"><a href="#“斯大林模式”和“苏联模式”是同一回事吗" class="headerlink" title="“斯大林模式”和“苏联模式”是同一回事吗?"></a>“斯大林模式”和“苏联模式”是同一回事吗?</h2><p>苏联模式包含斯大林模式，而斯大林模式并不完全等于苏联模式。<strong>“斯大林模式”只是“苏联模式”中的一个发展阶段</strong>；从内涵上看，“斯大林模式”尽管反映有斯大林执政的个人特点，二者有区别，但在本质上与“苏联模式”是一致的，<strong>因此，“苏联模式”与“斯大林模式”虽有区别，但相同大于区别</strong>。</p>
-<h2 id="一国建成论”指什么"><a href="#一国建成论”指什么" class="headerlink" title="一国建成论”指什么?"></a>一国建成论”指什么?</h2><p>一国建成社会主义论，有时也称“一国社会主义论”，是<a href="https://baike.baidu.com/item/%E7%BA%A6%E7%91%9F%E5%A4%AB%C2%B7%E7%BB%B4%E8%90%A8%E9%87%8C%E5%A5%A5%E8%AF%BA%E7%BB%B4%E5%A5%87%C2%B7%E6%96%AF%E5%A4%A7%E6%9E%97/8676088?fromModule=lemma_inlink">斯大林</a>于1924年<a href="https://baike.baidu.com/item/%E5%BC%97%E6%8B%89%E5%9F%BA%E7%B1%B3%E5%B0%94%C2%B7%E4%BC%8A%E9%87%8C%E5%A5%87%C2%B7%E5%88%97%E5%AE%81/8676059?fromModule=lemma_inlink">列宁</a>逝世后提出的特殊理论，<strong>认为社会主义可以首先在一国内建成</strong>，这是对经典马克思主义理论的重大修正。</p>
-<h2 id="苏联从农业国快速转变为工业国是如何实现的"><a href="#苏联从农业国快速转变为工业国是如何实现的" class="headerlink" title="苏联从农业国快速转变为工业国是如何实现的?"></a>苏联从农业国快速转变为工业国是如何实现的?</h2><p>（1）苏共确立了从重工业开始，即<strong>机器制造业开始实现社会主义工业化</strong>的正确战略<br>（2）实行五年计划,<strong>五年计划保证了在全国范围内调动了有限的资源支持工业</strong><br>（3）高度集中的<strong>政治经济体制保证计划</strong>实施<br>（4）在计划中<strong>牺牲农业完成工业的原始积累</strong>,实行农业集体化运动,压低农业生产要素的价格,<strong>农民成为向国家缴纳“超额贡赋”的“农奴</strong>”。<br>（5）新生的苏联<strong>调动了工人阶级的积极性</strong></p>
-]]></content>
+<h1 id="第六章二次型"><a href="#第六章二次型" class="headerlink" title="第六章	二次型"></a>第六章	二次型</h1><h2 id="xi-6-1二次型及其矩阵表示"><a href="#xi-6-1二次型及其矩阵表示" class="headerlink" title="$\xi$6.1	二次型及其矩阵表示"></a>$\xi$6.1	二次型及其矩阵表示</h2><h2 id="xi-6-2二次型化位标准型"><a href="#xi-6-2二次型化位标准型" class="headerlink" title="$\xi$6.2	二次型化位标准型"></a>$\xi$6.2	二次型化位标准型</h2><h2 id="xi-6-3正定二次型"><a href="#xi-6-3正定二次型" class="headerlink" title="$\xi$6.3	正定二次型"></a>$\xi$6.3	正定二次型</h2><h2 id="xi-6-4二次型的应用"><a href="#xi-6-4二次型的应用" class="headerlink" title="$\xi$6.4	二次型的应用"></a>$\xi$6.4	二次型的应用</h2><h1 id="第七章线性空间与线性变换"><a href="#第七章线性空间与线性变换" class="headerlink" title="第七章	线性空间与线性变换"></a>第七章	线性空间与线性变换</h1><h2 id="xi-7-1线性空间"><a href="#xi-7-1线性空间" class="headerlink" title="$\xi$7.1	线性空间"></a>$\xi$7.1	线性空间</h2><h2 id="xi-7-2线性变换"><a href="#xi-7-2线性变换" class="headerlink" title="$\xi$7.2	线性变换"></a>$\xi$7.2	线性变换</h2><h2 id="xi-7-3线性变换的矩阵表示"><a href="#xi-7-3线性变换的矩阵表示" class="headerlink" title="$\xi$7.3	线性变换的矩阵表示"></a>$\xi$7.3	线性变换的矩阵表示</h2><h2 id="xi-7-4线性变换的特征值与特征向量"><a href="#xi-7-4线性变换的特征值与特征向量" class="headerlink" title="$\xi$7.4	线性变换的特征值与特征向量"></a>$\xi$7.4	线性变换的特征值与特征向量</h2><h2 id="xi-7-5欧几里得空间简介"><a href="#xi-7-5欧几里得空间简介" class="headerlink" title="$\xi$7.5	欧几里得空间简介"></a>$\xi$7.5	欧几里得空间简介</h2><h1 id="MATLAB在线性代数中的作用"><a href="#MATLAB在线性代数中的作用" class="headerlink" title="MATLAB在线性代数中的作用"></a>MATLAB在线性代数中的作用</h1><h2 id="xi-8-1MATLAB简介"><a href="#xi-8-1MATLAB简介" class="headerlink" title="$\xi$8.1	MATLAB简介"></a>$\xi$8.1	MATLAB简介</h2><h2 id="xi-8-2MATLAB的基本操作"><a href="#xi-8-2MATLAB的基本操作" class="headerlink" title="$\xi$8.2	MATLAB的基本操作"></a>$\xi$8.2	MATLAB的基本操作</h2><h2 id="xi-8-3向量的生成与运算"><a href="#xi-8-3向量的生成与运算" class="headerlink" title="$\xi$8.3	向量的生成与运算"></a>$\xi$8.3	向量的生成与运算</h2><h2 id="xi-8-4矩阵的生成与运算"><a href="#xi-8-4矩阵的生成与运算" class="headerlink" title="$\xi$8.4	矩阵的生成与运算"></a>$\xi$8.4	矩阵的生成与运算</h2><h2 id="xi-8-5常用的矩阵函数"><a href="#xi-8-5常用的矩阵函数" class="headerlink" title="$\xi$8.5	常用的矩阵函数"></a>$\xi$8.5	常用的矩阵函数</h2><h2 id="xi-8-6线性方程组求解"><a href="#xi-8-6线性方程组求解" class="headerlink" title="$\xi$8.6	线性方程组求解"></a>$\xi$8.6	线性方程组求解</h2>]]></content>
   </entry>
   <entry>
-    <title>社群教程</title>
-    <url>/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="第一节：长期vs短期"><a href="#第一节：长期vs短期" class="headerlink" title="第一节：长期vs短期"></a>第一节：长期vs短期</h2><h3 id="方向："><a href="#方向：" class="headerlink" title="方向："></a>方向：</h3><h4 id="女性的择偶策略"><a href="#女性的择偶策略" class="headerlink" title="女性的择偶策略"></a>女性的择偶策略</h4><ul>
-<li>情人属性 基因提供者（缺点，很难长期）</li>
-</ul>
-<p>特点：</p>
-<p>1.外形条件不错，器大活好（生理结构）</p>
-<p>2.会大半夜聊天 不纠结 不正面回复 比较敷衍 洒脱 喜欢大半夜邀约</p>
-<p>3.能给女性短期属性的感觉 一定不缺女生喜欢</p>
-<ul>
-<li>投资供养者（很慢 ？被人吊着 延续）</li>
-</ul>
-<p>特点：</p>
-<p>1.对女生好 不太注意形象 宅 社交圈窄 理性逻辑 </p>
-<p>相对来说气场比较弱，没有声明情调 比较包容 老好人</p>
-<blockquote>
-<p>李小璐,贾乃亮</p>
-<p>李孝利</p>
-</blockquote>
-<p>思考一个问题：帅和有钱是不是决定性因素？</p>
-<p>第二个问题：哪一个属性更好？</p>
-<p>一段感情去得也快，来得慢，去得也慢</p>
-<p>两种都要有 我是一个安全的人，解决问题的能力</p>
-<p>重点就是一句正经，一句逗逼。</p>
-<p>把握好其中的比例问题。</p>
-<p>查漏补缺，找到自身特点，以及缺失的东西。</p>
-<h2 id="男性吸引力解析"><a href="#男性吸引力解析" class="headerlink" title="男性吸引力解析"></a>男性吸引力解析</h2><h3 id="吸引力的详细解析"><a href="#吸引力的详细解析" class="headerlink" title="吸引力的详细解析"></a>吸引力的详细解析</h3><ul>
-<li><p>公式：男吸引力&#x3D;90%的心动指数加上10%的心疼指数。</p>
-</li>
-<li><p>从何而来？</p>
-</li>
-</ul>
-<ol>
-<li>硬价值（外在）：生存价值</li>
-</ol>
-<p>钱 车 房 圈子 地位</p>
-<ol start="2">
-<li>软价值（内在）：繁衍价值</li>
-</ol>
-<p>颜值 身材 性征 西装 嗓音低沉  拍照风格 我给人一种什么样的感觉 格调 调性</p>
-<p>孙红雷 黄渤</p>
-<p>聊天的方式</p>
-<ul>
-<li>能量</li>
-</ul>
-<p>正能量。状态不好，我就先缓缓不聊天</p>
-<p>安全感 顾家</p>
-<p>百分之九十</p>
-<p>百分之十 心疼指数</p>
-<p>展示脆弱的一面 示弱</p>
-<div style="width: 80%;margin: 0 auto">
-    <canvas id="chart4347" style="height: 300px"></canvas>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<script type="text/javascript">
-    var ctx = document.getElementById('chart4347').getContext('2d');
-    var options = {
-    type: 'line',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-    options: {
-        responsive: true,
-        title: {
-            display: true,
-            text: 'Chart.js Line Chart'
-        }
-    }
-};;
-    new Chart(ctx, options);
-</script>
-]]></content>
+    <title>线性代数复习总结</title>
+    <url>/2024/06/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="学习内容（6-11）"><a href="#学习内容（6-11）" class="headerlink" title="学习内容（6.11）"></a>学习内容（6.11）</h2><h3 id="向量与向量空间的定义"><a href="#向量与向量空间的定义" class="headerlink" title="向量与向量空间的定义"></a>向量与向量空间的定义</h3><h3 id="向量的运算方法"><a href="#向量的运算方法" class="headerlink" title="向量的运算方法"></a>向量的运算方法</h3><h3 id="向量的线性相关问题"><a href="#向量的线性相关问题" class="headerlink" title="向量的线性相关问题"></a>向量的线性相关问题</h3><h3 id="向量的子空间"><a href="#向量的子空间" class="headerlink" title="向量的子空间"></a>向量的子空间</h3><h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><h3 id="向量的秩"><a href="#向量的秩" class="headerlink" title="向量的秩"></a>向量的秩</h3><h3 id="H形子空间以及维度"><a href="#H形子空间以及维度" class="headerlink" title="H形子空间以及维度"></a>H形子空间以及维度</h3><h3 id="列空间、行空间、零空间"><a href="#列空间、行空间、零空间" class="headerlink" title="列空间、行空间、零空间"></a>列空间、行空间、零空间</h3><h3 id="基底转换的过渡矩阵"><a href="#基底转换的过渡矩阵" class="headerlink" title="基底转换的过渡矩阵"></a>基底转换的过渡矩阵</h3>]]></content>
   </entry>
   <entry>
     <title>第六章杆件的内力</title>
@@ -4739,25 +4758,6 @@
 <p>同理，当只 位于后的右侧时，可求得x&#x3D;-+”为发生绝对最大弯矩的位置。故简支梁发生绝对最大<br>弯矩所在截面由下式确定<br>x之巧<br>式 ③ 表明，当F 与荷载合力尸 对称于跨中截面时，F,作用点的截面上弯矩为最大值，其值为<br>M.–(LFa)-M<br>4</p>
 <p>在应用式③和式④计算荷载作用处截面最大弯矩时，应该注意的是:<br>①F在F右方时，a取正值:F在F左方时，a取负值。<br>②F 是实际荷载的合力。在F 和F对称于跨中截面时，可能有的荷载不再位于梁上，或有新的荷载<br>进入梁上，这时应重新计算合力和作用位置。<br>按上述方法可算出每一个荷载作用处截面的最大弯矩，并加以比较，其中最大者就是绝对最大弯矩</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>线代</title>
-    <url>/2024/05/22/%E7%BA%BF%E4%BB%A3/</url>
-    <content><![CDATA[<h1 id="第一章-线性方程组"><a href="#第一章-线性方程组" class="headerlink" title="第一章 线性方程组"></a>第一章 线性方程组</h1><h2 id="xi1-1-线性方程组高斯消元法与矩阵"><a href="#xi1-1-线性方程组高斯消元法与矩阵" class="headerlink" title="$\xi1.1$	线性方程组	高斯消元法与矩阵"></a>$\xi1.1$	线性方程组	高斯消元法与矩阵</h2><h2 id="xi1-2-行化简和阶梯形矩阵解的存在性和唯一性"><a href="#xi1-2-行化简和阶梯形矩阵解的存在性和唯一性" class="headerlink" title="$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性"></a>$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性</h2><h2 id="xi1-3-线性方程组的应用"><a href="#xi1-3-线性方程组的应用" class="headerlink" title="$\xi1.3$	线性方程组的应用"></a>$\xi1.3$	线性方程组的应用</h2><h1 id="第二章矩阵代数"><a href="#第二章矩阵代数" class="headerlink" title="第二章	矩阵代数"></a>第二章	矩阵代数</h1><h2 id="xi2-1-矩阵和向量"><a href="#xi2-1-矩阵和向量" class="headerlink" title="$\xi2.1$	矩阵和向量"></a>$\xi2.1$	矩阵和向量</h2><h2 id="xi2-2-矩阵的代数运算"><a href="#xi2-2-矩阵的代数运算" class="headerlink" title="$\xi2.2$	矩阵的代数运算"></a>$\xi2.2$	矩阵的代数运算</h2><h2 id="xi-2-3逆矩阵与矩阵的初等变换"><a href="#xi-2-3逆矩阵与矩阵的初等变换" class="headerlink" title="$\xi$2.3	逆矩阵与矩阵的初等变换"></a>$\xi$2.3	逆矩阵与矩阵的初等变换</h2><h2 id="xi-2-4转置矩阵与一些重要的方阵"><a href="#xi-2-4转置矩阵与一些重要的方阵" class="headerlink" title="$\xi$2.4	转置矩阵与一些重要的方阵"></a>$\xi$2.4	转置矩阵与一些重要的方阵</h2><h2 id="xi-2-5分块矩阵"><a href="#xi-2-5分块矩阵" class="headerlink" title="$\xi$2.5	分块矩阵"></a>$\xi$2.5	分块矩阵</h2><h1 id="第三章行列式"><a href="#第三章行列式" class="headerlink" title="第三章	行列式"></a>第三章	行列式</h1><h2 id="xi-3-1方阵的行列式"><a href="#xi-3-1方阵的行列式" class="headerlink" title="$\xi$3.1	方阵的行列式"></a>$\xi$3.1	方阵的行列式</h2><h2 id="xi-3-2行列式的主要性质"><a href="#xi-3-2行列式的主要性质" class="headerlink" title="$\xi$3.2	行列式的主要性质"></a>$\xi$3.2	行列式的主要性质</h2><h2 id="xi-3-3行列式的应用"><a href="#xi-3-3行列式的应用" class="headerlink" title="$\xi$3.3	行列式的应用"></a>$\xi$3.3	行列式的应用</h2><h1 id="第四章向量空间"><a href="#第四章向量空间" class="headerlink" title="第四章	向量空间"></a>第四章	向量空间</h1><h2 id="xi-4-1向量的定义及其运算"><a href="#xi-4-1向量的定义及其运算" class="headerlink" title="$\xi$4.1	向量的定义及其运算"></a>$\xi$4.1	向量的定义及其运算</h2><h2 id="xi-4-2向量的线性相关性"><a href="#xi-4-2向量的线性相关性" class="headerlink" title="$\xi$4.2	向量的线性相关性"></a>$\xi$4.2	向量的线性相关性</h2><h2 id="xi-4-3向量组的极大线性无关组和秩"><a href="#xi-4-3向量组的极大线性无关组和秩" class="headerlink" title="$\xi$4.3	向量组的极大线性无关组和秩"></a>$\xi$4.3	向量组的极大线性无关组和秩</h2><h2 id="xi-4-4子空间"><a href="#xi-4-4子空间" class="headerlink" title="$\xi$4.4	子空间"></a>$\xi$4.4	子空间</h2><h2 id="xi-4-5基和维数"><a href="#xi-4-5基和维数" class="headerlink" title="$\xi$4.5	基和维数"></a>$\xi$4.5	基和维数</h2><h2 id="xi-4-6矩阵的秩"><a href="#xi-4-6矩阵的秩" class="headerlink" title="$\xi$4.6	矩阵的秩"></a>$\xi$4.6	矩阵的秩</h2><h2 id="xi-4-7线性方程组的有解条件及解的结构"><a href="#xi-4-7线性方程组的有解条件及解的结构" class="headerlink" title="$\xi$4.7	线性方程组的有解条件及解的结构"></a>$\xi$4.7	线性方程组的有解条件及解的结构</h2><h2 id="xi-4-8-R-n-到-R-m-的线性映射"><a href="#xi-4-8-R-n-到-R-m-的线性映射" class="headerlink" title="$\xi$4.8	$R^n$到$R^m$的线性映射"></a>$\xi$4.8	$R^n$到$R^m$的线性映射</h2><h1 id="第五章特征值与特征向量"><a href="#第五章特征值与特征向量" class="headerlink" title="第五章	特征值与特征向量"></a>第五章	特征值与特征向量</h1><h2 id="xi-5-1矩阵的特征值与特征向量"><a href="#xi-5-1矩阵的特征值与特征向量" class="headerlink" title="$\xi$5.1	矩阵的特征值与特征向量"></a>$\xi$5.1	矩阵的特征值与特征向量</h2><h2 id="xi-5-2矩阵的相似对角化"><a href="#xi-5-2矩阵的相似对角化" class="headerlink" title="$\xi$5.2	矩阵的相似对角化"></a>$\xi$5.2	矩阵的相似对角化</h2><h2 id="xi-5-3实对称矩阵的正交相似对角化"><a href="#xi-5-3实对称矩阵的正交相似对角化" class="headerlink" title="$\xi$5.3	实对称矩阵的正交相似对角化"></a>$\xi$5.3	实对称矩阵的正交相似对角化</h2><p>​	由定理5.2.1知，一个n阶矩阵能否对角化取决于它是否有n个线性无关的特征向量.那么什么样的矩阵一定有n个线性无关的特征向量呢?下面我们就来证明任一n阶实对称矩阵一定存在n个线性无关的特征向量,从而可以对角化.也就是说,存在可逆阵$P$，使得$P^{-1}AP&#x3D;\Lambda$为对角阵。进一步，我们还可证明存在正交矩阵$Q$,使得$Q^T AQ&#x3D;\Lambda$为对角阵.为此，我们先引人如下概念.</p>
-<p>​	定义 5.3.1	设$\alpha&#x3D;[a_1,a_2.\cdots,a_n]^T,\beta&#x3D;[b_1,b_2,\cdots,b_n]^T$称<br>$$<br>(\alpha,\beta)&#x3D;\alpha^T\cdot\beta&#x3D;\sum_{i&#x3D;i}^na_ib_i<br>$$<br>为向量$\alpha,\beta$的内积，显然，$(\alpha,\alpha)&gt;&#x3D;0$,当且仅当$\alpha&#x3D;0$时等号成立，关于向量内积，还有如下性质：<br>$$<br>(1)(\alpha,\beta)&#x3D;(\beta,\alpha),\\<br>(2)(\alpha+\beta,\gamma)&#x3D;(\alpha,\gamma)+(\alpha,\gamma),\\<br>(3)k\alpha,\beta)&#x3D;k(\alpha,\beta),k\in R.\\<br>(4)(0,\alpha)&#x3D;(\alpha,0)&#x3D;0.\\<br>(5)(\sum_{i&#x3D;1}^{n}k_i\alpha_i,\alpha)&#x3D;\sum_{i&#x3D;1}^{n}k_i(\alpha_i,\alpha),k_i\in R,i&#x3D;1,\cdots,n.\\<br>$$<br>​	定义 5.3.2 称$|\alpha|&#x3D;\sqrt{(\alpha,\alpha)}$为向量$\alpha$的长度（或范数），长度为1的向量成为单位向量（unit vector）。</p>
-<p>​	一个向量$\alpha $的长度代表了n维空间中与$\alpha $所对应的点到原点（零向量所对应的点）的“距离”。因此，对于任意两个n维向量$\alpha,\beta $所对应的n维空间的两个点之间的距离可以表示为$|\alpha-\beta|$.</p>
-<p>​	关于向量长度，有如下性质：<br>$$<br>设\alpha\in R^n,\beta \in R^n,k \in R\\<br>(1)非负性：|k\alpha|&#x3D;|k||\alpha|\\<br>(2)正齐性：|k\alpha|&#x3D;|k||\alpha|\\<br>(3)柯西—许瓦兹不等式：|(\alpha,\beta)|&lt;&#x3D;|\alpha||\beta|\\<br>(4)三角不等式|\alpha|+|\beta|&gt;&#x3D;|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>我们仅就性质(3),(4)证明\\<br>$$</p>
-<p>$$<br>证明(3)\forall t\in R,构造关于t的二次多项式\\<br>0&lt;&#x3D;(\alpha+t\beta,\alpha+t\beta)&#x3D;(\alpha,\alpha)+2(\alpha,\alpha)t+(\beta,\beta)t^2\\<br>所以\\<br>\Delta&#x3D;4(\alpha,\beta)^2-4(\alpha,\alpha)(\beta,\beta)&lt;&#x3D;0.\\<br>即\\<br>（\alpha,\beta）^2&lt;&#x3D;(\alpha,\alpha)(\beta,\beta)&#x3D;|\alpha|^2\cdot|\beta|^2,\\<br>所以\\<br>|(\alpha,\beta)|&lt;&#x3D;|\alpha|\cdot|\beta|<br>$$</p>
-<p>$$<br>(4)|\alpha-\beta|^2&#x3D;(\alpha-\beta,\alpha-\beta)&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\</p>
-<blockquote>
-<p>&#x3D;|\alpha|^2-2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;(|\alpha|-|\beta|)^2\\<br>故\\<br>|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>(|\alpha|+|\beta|)^2&#x3D;|\alpha|^2+2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\<br>&#x3D;(\alpha-\beta,\alpha-\beta)\\<br>&#x3D;|\alpha-\beta|^2.<br>$$</p>
-</blockquote>
-<h1 id="第六章二次型"><a href="#第六章二次型" class="headerlink" title="第六章	二次型"></a>第六章	二次型</h1><h2 id="xi-6-1二次型及其矩阵表示"><a href="#xi-6-1二次型及其矩阵表示" class="headerlink" title="$\xi$6.1	二次型及其矩阵表示"></a>$\xi$6.1	二次型及其矩阵表示</h2><h2 id="xi-6-2二次型化位标准型"><a href="#xi-6-2二次型化位标准型" class="headerlink" title="$\xi$6.2	二次型化位标准型"></a>$\xi$6.2	二次型化位标准型</h2><h2 id="xi-6-3正定二次型"><a href="#xi-6-3正定二次型" class="headerlink" title="$\xi$6.3	正定二次型"></a>$\xi$6.3	正定二次型</h2><h2 id="xi-6-4二次型的应用"><a href="#xi-6-4二次型的应用" class="headerlink" title="$\xi$6.4	二次型的应用"></a>$\xi$6.4	二次型的应用</h2><h1 id="第七章线性空间与线性变换"><a href="#第七章线性空间与线性变换" class="headerlink" title="第七章	线性空间与线性变换"></a>第七章	线性空间与线性变换</h1><h2 id="xi-7-1线性空间"><a href="#xi-7-1线性空间" class="headerlink" title="$\xi$7.1	线性空间"></a>$\xi$7.1	线性空间</h2><h2 id="xi-7-2线性变换"><a href="#xi-7-2线性变换" class="headerlink" title="$\xi$7.2	线性变换"></a>$\xi$7.2	线性变换</h2><h2 id="xi-7-3线性变换的矩阵表示"><a href="#xi-7-3线性变换的矩阵表示" class="headerlink" title="$\xi$7.3	线性变换的矩阵表示"></a>$\xi$7.3	线性变换的矩阵表示</h2><h2 id="xi-7-4线性变换的特征值与特征向量"><a href="#xi-7-4线性变换的特征值与特征向量" class="headerlink" title="$\xi$7.4	线性变换的特征值与特征向量"></a>$\xi$7.4	线性变换的特征值与特征向量</h2><h2 id="xi-7-5欧几里得空间简介"><a href="#xi-7-5欧几里得空间简介" class="headerlink" title="$\xi$7.5	欧几里得空间简介"></a>$\xi$7.5	欧几里得空间简介</h2><h1 id="MATLAB在线性代数中的作用"><a href="#MATLAB在线性代数中的作用" class="headerlink" title="MATLAB在线性代数中的作用"></a>MATLAB在线性代数中的作用</h1><h2 id="xi-8-1MATLAB简介"><a href="#xi-8-1MATLAB简介" class="headerlink" title="$\xi$8.1	MATLAB简介"></a>$\xi$8.1	MATLAB简介</h2><h2 id="xi-8-2MATLAB的基本操作"><a href="#xi-8-2MATLAB的基本操作" class="headerlink" title="$\xi$8.2	MATLAB的基本操作"></a>$\xi$8.2	MATLAB的基本操作</h2><h2 id="xi-8-3向量的生成与运算"><a href="#xi-8-3向量的生成与运算" class="headerlink" title="$\xi$8.3	向量的生成与运算"></a>$\xi$8.3	向量的生成与运算</h2><h2 id="xi-8-4矩阵的生成与运算"><a href="#xi-8-4矩阵的生成与运算" class="headerlink" title="$\xi$8.4	矩阵的生成与运算"></a>$\xi$8.4	矩阵的生成与运算</h2><h2 id="xi-8-5常用的矩阵函数"><a href="#xi-8-5常用的矩阵函数" class="headerlink" title="$\xi$8.5	常用的矩阵函数"></a>$\xi$8.5	常用的矩阵函数</h2><h2 id="xi-8-6线性方程组求解"><a href="#xi-8-6线性方程组求解" class="headerlink" title="$\xi$8.6	线性方程组求解"></a>$\xi$8.6	线性方程组求解</h2>]]></content>
-  </entry>
-  <entry>
-    <title>线性代数复习总结</title>
-    <url>/2024/06/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="学习内容（6-11）"><a href="#学习内容（6-11）" class="headerlink" title="学习内容（6.11）"></a>学习内容（6.11）</h2><h3 id="向量与向量空间的定义"><a href="#向量与向量空间的定义" class="headerlink" title="向量与向量空间的定义"></a>向量与向量空间的定义</h3><h3 id="向量的运算方法"><a href="#向量的运算方法" class="headerlink" title="向量的运算方法"></a>向量的运算方法</h3><h3 id="向量的线性相关问题"><a href="#向量的线性相关问题" class="headerlink" title="向量的线性相关问题"></a>向量的线性相关问题</h3><h3 id="向量的子空间"><a href="#向量的子空间" class="headerlink" title="向量的子空间"></a>向量的子空间</h3><h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><h3 id="向量的秩"><a href="#向量的秩" class="headerlink" title="向量的秩"></a>向量的秩</h3><h3 id="H形子空间以及维度"><a href="#H形子空间以及维度" class="headerlink" title="H形子空间以及维度"></a>H形子空间以及维度</h3><h3 id="列空间、行空间、零空间"><a href="#列空间、行空间、零空间" class="headerlink" title="列空间、行空间、零空间"></a>列空间、行空间、零空间</h3><h3 id="基底转换的过渡矩阵"><a href="#基底转换的过渡矩阵" class="headerlink" title="基底转换的过渡矩阵"></a>基底转换的过渡矩阵</h3>]]></content>
   </entry>
   <entry>
     <title>螺旋矩阵</title>
@@ -5057,14 +5057,14 @@
 ]]></content>
   </entry>
   <entry>
+    <title>输出流输入流</title>
+    <url>/2024/06/05/%E8%BE%93%E5%87%BA%E6%B5%81%E8%BE%93%E5%85%A5%E6%B5%81/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>镜像阶段：关系即伪，无中生伪有</title>
     <url>/2024/05/17/%E9%95%9C%E5%83%8F%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%85%B3%E7%B3%BB%E5%8D%B3%E4%BC%AA%EF%BC%8C%E6%97%A0%E4%B8%AD%E7%94%9F%E4%BC%AA%E6%9C%89/</url>
     <content><![CDATA[<p>镜像阶段：关系即伪&#x2F;无中生伪有-&gt;拉康任务弗洛伊德的那个本我是生物性的，拉康认为人的开端就是一个无，那个永远回不去母子共同体的“无”。<br>nothingness-&gt;hegel 人是一个黑夜。<br>是一个空洞的虚无，<br>人的实在意义上的否定性。<br>主奴辩证法。<br>Max：人的生活，现实意义上是社会关系的总和。<br>镜像阶段的定义：6-18个月 Freud。<br>小朋友站在镜子面前，发现镜子里面有一个小朋友的形象。<br>这个时候会感受到镜子里面那个统一完整的形象<br>进入了想象域，一种蜜月般的欣喜，<br>人总是一个早产儿，die<br>“动力无助”-&gt;主客不分<br>“破碎的身体”，在镜子里面看到了一个完整的自己，接着破碎化，会成为主体不可弥合的创伤，梦是被压抑的愿望的实现 。<br>梦是被压抑的愿望经过伪装之后的实现。<br>主体在认定了一个影像之后的关系，内在和外在的关系，你否定了内在的关系，将自身认知为了镜子中的自己，这是第一次异化。<br>第二次异化是在象征域中被语言结构的异化，语言是一面无声之镜。这是第二次的异化。<br>镜像误认是一种反对心理学（格式塔）上面的那种积极的心理学。<br>a-（小他者一号）&gt;a‘（moi，弗洛伊德语境下的理想自我）；镜像自我，idea-ich。<br>小他者不是一个具体实在的人，镜像阶段中作为自我认同对象的非我中介。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>输出流输入流</title>
-    <url>/2024/06/05/%E8%BE%93%E5%87%BA%E6%B5%81%E8%BE%93%E5%85%A5%E6%B5%81/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
