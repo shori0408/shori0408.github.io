@@ -316,37 +316,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>c++模板</title>
-    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
-<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你使用这个食谱时，你可以指定不同的材料：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用这个三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用特化后的三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
     <title>Leetcode Problems</title>
     <url>/2024/06/03/Leetcode%20Problems/</url>
     <content><![CDATA[<h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
@@ -416,11 +385,6 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>jqv</title>
-    <url>/2024/05/21/jqv/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>markdown语法</title>
@@ -1941,6 +1905,42 @@
 ]]></content>
   </entry>
   <entry>
+    <title>jqv</title>
+    <url>/2024/05/21/jqv/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>c++模板</title>
+    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
+<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你使用这个食谱时，你可以指定不同的材料：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用这个三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用特化后的三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>vocabulary</title>
     <url>/2024/06/03/Intergrated%20course%204%20vocabulary/</url>
     <content><![CDATA[<h1 id="Unit-1"><a href="#Unit-1" class="headerlink" title="Unit 1"></a>Unit 1</h1><ul>
@@ -2158,6 +2158,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>大学物理</title>
+    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>存在与虚无</title>
+    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
+    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
+<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
+]]></content>
+  </entry>
+  <entry>
     <title>函数</title>
     <url>/2024/05/17/%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h2 id="函数定义："><a href="#函数定义：" class="headerlink" title="函数定义："></a>函数定义：</h2><p>将我们设计好的算法，单独封装出来。<br>函数的参数，计算所需要的参数或者条件。<br>函数的返回值、可有可无。<br>功能性函数和数值形函数。</p>
@@ -2256,11 +2268,6 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*5/9;</span><br><span class="line">float Convert(float F)&#123;</span><br><span class="line">return (F-32)*5/9;</span><br><span class="line">&#125;</span><br><span class="line">例题二、编写斐波那契数列</span><br><span class="line">a（n）=a（n-1）+a（n-2）；</span><br><span class="line">int a（int n）&#123;</span><br><span class="line">if(n&lt;3) return 1;</span><br><span class="line">else if(n&lt;=0) break; </span><br><span class="line">return a(n-1)+a(n-2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>大学物理</title>
-    <url>/2024/05/20/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>对弗洛伊德的简介</title>
@@ -2517,200 +2524,6 @@
     <title>拉康和弗洛伊德关于无意识的论述</title>
     <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
     <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>（5）数据的共享和保护</title>
-    <url>/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/</url>
-    <content><![CDATA[<h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
-<p>其作用域始于“(”,终于”)”</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">double area(double radius);</span><br><span class="line">//radius的作用域仅在此处，不能用于程序正文其他地方</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部作用域（块作用域）"><a href="#局部作用域（块作用域）" class="headerlink" title="局部作用域（块作用域）"></a>局部作用域（块作用域）</h3><ul>
-<li>函数的形参，在块中声明的标识符</li>
-<li>作用域自声明处起，限于块中</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void fun(int a)</span><br><span class="line">&#123;int b=a;</span><br><span class="line">cin&gt;&gt;b;</span><br><span class="line">if(b&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">int c;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="类作用域"><a href="#类作用域" class="headerlink" title="类作用域"></a>类作用域</h3><ul>
-<li>类的对象具有类作用域</li>
-</ul>
-<p>其范围包括类体和成员函数体。</p>
-<ul>
-<li>在类作用域以外访问类的成员：<ol>
-<li>静态成员：通过类名，或者该类的对象名，对象引用访问。</li>
-<li>非静态成员：通过类名，或者该类的对象名，对象引用，对象指针访问。</li>
-</ol>
-</li>
-</ul>
-<h3 id="文件作用域"><a href="#文件作用域" class="headerlink" title="文件作用域"></a>文件作用域</h3><ul>
-<li>不在前述各个作用域中出现的声明，就具有文件作用域。</li>
-<li>其作用域开始于声明点，结束于文件尾。</li>
-</ul>
-<blockquote>
-<p>可见性：</p>
-<ul>
-<li>可见性是从对标识符的引用的角度来谈的概念</li>
-<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
-<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
-<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
-<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
-</ul>
-</blockquote>
-<h3 id="命名空间作用域"><a href="#命名空间作用域" class="headerlink" title="命名空间作用域"></a>命名空间作用域</h3><blockquote>
-<p>可见性：</p>
-<ul>
-<li>可见性是从对标识符的引用的角度来谈的概念</li>
-<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
-<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
-<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
-<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
-</ul>
-</blockquote>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int i;//全局变量，文件作用域</span><br><span class="line">int main()</span><br><span class="line">i=5;//为全局变量赋值</span><br><span class="line">&#123;</span><br><span class="line">int i;</span><br><span class="line">i=7;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出7，内层会屏蔽外层作用变量</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出5</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="对象的生存期"><a href="#对象的生存期" class="headerlink" title="对象的生存期"></a>对象的生存期</h2><h3 id="静态生存区"><a href="#静态生存区" class="headerlink" title="静态生存区"></a>静态生存区</h3><ul>
-<li>这种生存期与程序的运行期相同。</li>
-<li>在文件作用域中声明的对象具有这种生存期。</li>
-<li>在函数内部声明静态生存期对象，要冠以关键字static。</li>
-</ul>
-<h3 id="非静态生存区"><a href="#非静态生存区" class="headerlink" title="非静态生存区"></a>非静态生存区</h3><ul>
-<li>开始于程序执行到声明点时，结束于该标识符的作用域结束处。</li>
-<li>块作用域中声明的，没有用static修饰的对象，是动态生存区的对象（习惯称我为局部生存期对象）</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std</span><br><span class="line">int i=1;//i为全局变量</span><br><span class="line">void other()</span><br><span class="line">&#123;</span><br><span class="line">static int a=2;</span><br><span class="line">static int b;</span><br><span class="line">//a，b为静态局部变量，具有全局寿命，局部可见。</span><br><span class="line">//只第一次进入函数时被初始化。</span><br><span class="line">int c=10;</span><br><span class="line">//c为局部变量，具有动态生存期</span><br><span class="line">//每次进入函数时都被初始化</span><br><span class="line">a+=2;i+=32;c+=5;</span><br><span class="line">cout&lt;&lt;&quot;--OTHER--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot;i:&quot;&lt;&lt;i&lt;&lt;&quot;a:&quot;&lt;&lt;a&lt;&lt;&quot;b:&quot;&lt;&lt;b&lt;&lt;&quot;c:&quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">b=a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">static int a;</span><br><span class="line">//a静态局部变量，有全局寿命，局部可见</span><br><span class="line">int b=-10;</span><br><span class="line">int c=0;</span><br><span class="line">//b，c为局部变量，具有动态生存期</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">c+=8;other();</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">i+=10;</span><br><span class="line">other();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">--MAIN--</span><br><span class="line">i:1 a:0 b:-10 c:0</span><br><span class="line">--OTHER--</span><br><span class="line">i:33 a:4 b:0 c:15</span><br><span class="line">--MAIN--</span><br><span class="line">i:33 a:0 b:-10 c:8</span><br><span class="line">--OTHER--</span><br><span class="line">i:75 a:6 b:4 c:15</span><br></pre></td></tr></table></figure>
-
-<h2 id="类的静态数据成员"><a href="#类的静态数据成员" class="headerlink" title="类的静态数据成员"></a>类的静态数据成员</h2><ul>
-<li>用关键词static声明</li>
-<li>为该类所有对象共享，静态数据成员具有静态生存期。</li>
-<li>必须在类外定义和初始化，用（::）来指明所属的类。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point a(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">a.showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">b.showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="静态函数成员"><a href="#静态函数成员" class="headerlink" title="静态函数成员"></a>静态函数成员</h2><p>静态函数处理静态数据</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point::showCount();//输出对象个数</span><br><span class="line">Point a(4,5);//声明对象a，其构造函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);//声明对象b，其复制函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="类的友元"><a href="#类的友元" class="headerlink" title="类的友元"></a>类的友元</h2><h3 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h3><ul>
-<li>友元时c++提供的一种破坏数据封装和数据隐藏的机制。</li>
-<li>提供将一个模板声明为另一个模板的友元，一个模板能够引用到另一个模板中本是被隐藏的信息。</li>
-<li>可以声明友元函数和友元类</li>
-<li>为了确保数据的完整性，及数据封装于隐藏的原则，建议慎重使用友元。</li>
-</ul>
-<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><ul>
-<li>友元函数是在类声明中由关键字friend修饰的说明的非成员函数，在它的函数体中能够通过对象名访问private和protected成员。</li>
-<li>作用：增加灵活性，使程序员可以在封装和快速性方面做合理选择</li>
-<li>访问对象中的成员必须通过对象名。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x,int y):x(x),y(y)</span><br><span class="line">&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">Point(Point&amp; p)</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(Point &amp;a,Point &amp;b);</span><br><span class="line">static int showCOUNT()&#123;return count;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">static int count;</span><br><span class="line">&#125;;</span><br><span class="line">float dist(Point&amp; a,Point&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">double x=a.x-b.x;</span><br><span class="line">double y=a.y-b.y;</span><br><span class="line">//有修改原本数据的隐患</span><br><span class="line">//避免每次用对象的x，y都要调用一次函数</span><br><span class="line">return </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><ul>
-<li><p>若一个类为另一个类的友元，则此类的所有成员，都能访问对方类的私有成员。</p>
-</li>
-<li><p>声明语法：将友元类名放在另一个类中使用friend修饰说明。</p>
-</li>
-<li><p>友元关系是单向的，数据成员的开放也就是单向的。</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">friend class B;</span><br><span class="line">public:</span><br><span class="line">void display()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;x&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">void set(int i);</span><br><span class="line">void display();</span><br><span class="line">private:</span><br><span class="line">A a;</span><br><span class="line">&#125;</span><br><span class="line">void B::set(int i)</span><br><span class="line">&#123;</span><br><span class="line">a.x=i;</span><br><span class="line">&#125;</span><br><span class="line">void B::display()</span><br><span class="line">&#123;</span><br><span class="line">a.display();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="共享数据的保护"><a href="#共享数据的保护" class="headerlink" title="共享数据的保护"></a>共享数据的保护</h2><h3 id="常类型"><a href="#常类型" class="headerlink" title="常类型"></a>常类型</h3><h4 id="常对象：必须进行初始化，不能被更新。const-类名-对象名；"><a href="#常对象：必须进行初始化，不能被更新。const-类名-对象名；" class="headerlink" title="常对象：必须进行初始化，不能被更新。const 类名 对象名；"></a>常对象：必须进行初始化，不能被更新。const 类名 对象名；</h4><ul>
-<li>用const修饰的对象</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i,int j):x(i),y(j)&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">A const a(3,4);//a是常对象，不能被更新</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"><a href="#常成员：用const进行修饰的类成员：常数据成员和常函数成员。" class="headerlink" title="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"></a>常成员：用const进行修饰的类成员：常数据成员和常函数成员。</h4><ul>
-<li>常成员函数</li>
-<li>使用const关键字说明的函数</li>
-<li>常成员函数不更新对象的数据成员</li>
-<li>常成员函数说明格式：</li>
-</ul>
-<blockquote>
-<p>类型说明符 函数名（参数表) const；这里，const是函数类型的一个组成部分，因此在实现部分也要带const关键字。</p>
-</blockquote>
-<ul>
-<li>const关键字可以被用于参与对重载函数的区分</li>
-<li>通过常对象只能调用它的常成员函数</li>
-<li>常数据成员：使用const说明的数据成员</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class R</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">R(int r1,int r2):r1(r1),r2(r2)&#123;&#125;</span><br><span class="line">void print();</span><br><span class="line">void print() const;</span><br><span class="line">private:</span><br><span class="line">int r1,r2;</span><br><span class="line">&#125;;</span><br><span class="line">void R::print()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">void R::print()const</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">R a(5,4);</span><br><span class="line">a.print();</span><br><span class="line">const R b(20,53);</span><br><span class="line">b.print();//调用void print const()</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i):</span><br><span class="line">void print();</span><br><span class="line">private:</span><br><span class="line">const int a;</span><br><span class="line">static const int b;//静态常数据对象</span><br><span class="line">&#125;;</span><br><span class="line">const int A::b=10;</span><br><span class="line">A::A(int i):a(i)&#123;&#125;</span><br><span class="line">void A::print()&#123;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;&quot;:&quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">A a1(100),a2(0);</span><br><span class="line">a1.print();</span><br><span class="line">a2.print();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="常引用：被引用的对象不能被更新。const-类型说明符号-引用名"><a href="#常引用：被引用的对象不能被更新。const-类型说明符号-引用名" class="headerlink" title="常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名"></a>常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(const Point &amp;p1,const Point &amp;p2);</span><br><span class="line">private x,y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在友元函数中用常引用做参数，既能获得较高的执行效率，又能保证实参的安全性。</p>
-</blockquote>
-<h4 id="常数组：数组元素不能被更新。类型说明符-const-数组名-大小"><a href="#常数组：数组元素不能被更新。类型说明符-const-数组名-大小" class="headerlink" title="常数组：数组元素不能被更新。类型说明符 const 数组名[大小]"></a>常数组：数组元素不能被更新。类型说明符 const 数组名[大小]</h4><h4 id="常指针：指向常量的指针。"><a href="#常指针：指向常量的指针。" class="headerlink" title="常指针：指向常量的指针。"></a>常指针：指向常量的指针。</h4><h2 id="多文件结构"><a href="#多文件结构" class="headerlink" title="多文件结构"></a>多文件结构</h2><h3 id="C-的一般组织结构"><a href="#C-的一般组织结构" class="headerlink" title="C++的一般组织结构"></a>C++的一般组织结构</h3><h4 id="一个工程可以分为多个源文件，例如："><a href="#一个工程可以分为多个源文件，例如：" class="headerlink" title="一个工程可以分为多个源文件，例如："></a>一个工程可以分为多个源文件，例如：</h4><ul>
-<li>类声明文件（.h文件）</li>
-<li>类实现文件（.cpp文件）</li>
-<li>类的使用文件（main()所在的.cpp文件)</li>
-</ul>
-<h4 id="利用多个工程来组合各个文件"><a href="#利用多个工程来组合各个文件" class="headerlink" title="利用多个工程来组合各个文件"></a>利用多个工程来组合各个文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//文件1，类的定义，Point.h</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//文件2，point.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int Point::count=0;</span><br><span class="line">Point::Point(const Point &amp;p):x(p.x),y(p.y)</span><br><span class="line">&#123;count++;&#125;</span><br><span class="line">void Point::showCount()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count=&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//文件3，主函数 5_10.cpp</span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="外部变量"><a href="#外部变量" class="headerlink" title="外部变量"></a>外部变量</h3><ul>
-<li>除了在定义它的源文件中可以使用外，还能被其他文件使用。</li>
-<li>文件作用域中定义的变量，默认情况下都是外部变量。</li>
-<li>在其他文件中如果需要使用的化，需要用extern关键字声明。</li>
-<li>在所有类的之外声明的函数（也就是非成员函数），都具有文件作用域的。</li>
-<li>这样的函数都可以在不同的编译单元中被调用</li>
-<li>只要在调用之前进行，引用性声明（即声明函数原型）即可。</li>
-</ul>
-<blockquote>
-<p>将变量和函数限制在编译单元内</p>
-<ul>
-<li>将匿名命名空间中定义的变量和函数，都不会暴露给其他的编译单元</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">namespace</span><br><span class="line">&#123;</span><br><span class="line">//匿名的命名空间</span><br><span class="line">int n;</span><br><span class="line">void f()</span><br><span class="line">&#123;</span><br><span class="line">n++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="标准c-库"><a href="#标准c-库" class="headerlink" title="标准c++库"></a>标准c++库</h2><blockquote>
-<p>标准c++类库是一个及其灵活且可拓展的可重用软件模块的集合。</p>
-</blockquote>
-<h3 id="输入-输出类"><a href="#输入-输出类" class="headerlink" title="输入&#x2F;输出类"></a>输入&#x2F;输出类</h3><h3 id="容器类和抽象数据类型"><a href="#容器类和抽象数据类型" class="headerlink" title="容器类和抽象数据类型"></a>容器类和抽象数据类型</h3><h3 id="存储管理类"><a href="#存储管理类" class="headerlink" title="存储管理类"></a>存储管理类</h3><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h3 id="运行环境支持"><a href="#运行环境支持" class="headerlink" title="运行环境支持"></a>运行环境支持</h3><h2 id="编译预处理"><a href="#编译预处理" class="headerlink" title="编译预处理"></a>编译预处理</h2><h3 id="include包含指令"><a href="#include包含指令" class="headerlink" title="#include包含指令"></a>#include包含指令</h3><ul>
-<li>将一个源文件嵌入到当前源文件中该点处。<ol>
-<li>#include&lt;文件名&gt;：按标准模式搜索，文件位于c++系统目录的include子目录下</li>
-<li>#include“文件名”：首先在当前目录中搜索，若没有，在按标准方式搜索。</li>
-</ol>
-</li>
-</ul>
-<h3 id="define-宏定义指令"><a href="#define-宏定义指令" class="headerlink" title="#define 宏定义指令"></a>#define 宏定义指令</h3><ul>
-<li>定义符号常量，很多情况已经被const定义语句取代。</li>
-<li>定义带参数宏，已经被内联函数取代。</li>
-</ul>
-<h3 id="undif"><a href="#undif" class="headerlink" title="#undif"></a>#undif</h3><ul>
-<li>删除由#define定义的宏，使之不再起作用</li>
-</ul>
-<h3 id="条件编译指令——-if和-endif"><a href="#条件编译指令——-if和-endif" class="headerlink" title="条件编译指令——#if和#endif"></a>条件编译指令——#if和#endif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令——-else"><a href="#条件编译指令——-else" class="headerlink" title="条件编译指令——#else"></a>条件编译指令——#else</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文1</span><br><span class="line">#else</span><br><span class="line">//当“常量表达式”为零时编译</span><br><span class="line">程序正文2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令——-elif"><a href="#条件编译指令——-elif" class="headerlink" title="条件编译指令——#elif"></a>条件编译指令——#elif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式1</span><br><span class="line">程序正文1//当“常量表达式1”非零时编译</span><br><span class="line">#elif 常量表达式2</span><br><span class="line">程序正文2//当“常量表达式2”非零时编译</span><br><span class="line">#else</span><br><span class="line">程序正文3//其他情况下编译</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令"><a href="#条件编译指令" class="headerlink" title="条件编译指令"></a>条件编译指令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#ifdef 标识符</span><br><span class="line">程序段1</span><br><span class="line">#else</span><br><span class="line">程序段2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果“标识符”经#define定义过，且未经undef删除，则编译程序段1；否则编译程序段2.</p>
-</blockquote>
-<h2 id="第五章小结"><a href="#第五章小结" class="headerlink" title="第五章小结"></a>第五章小结</h2><ul>
-<li>对象的生存期，作用域与可见性。</li>
-<li>类的静态成员。</li>
-<li>数据的共享和保护。</li>
-<li>友元</li>
-<li>编译预处理指令</li>
-<li>多文件结构与工程</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>存在与虚无</title>
-    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
-    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
-<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
 ]]></content>
   </entry>
   <entry>
@@ -3206,6 +3019,193 @@
 </tr>
 </tbody></table>
 <p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>（5）数据的共享和保护</title>
+    <url>/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/</url>
+    <content><![CDATA[<h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
+<p>其作用域始于“(”,终于”)”</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">double area(double radius);</span><br><span class="line">//radius的作用域仅在此处，不能用于程序正文其他地方</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部作用域（块作用域）"><a href="#局部作用域（块作用域）" class="headerlink" title="局部作用域（块作用域）"></a>局部作用域（块作用域）</h3><ul>
+<li>函数的形参，在块中声明的标识符</li>
+<li>作用域自声明处起，限于块中</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void fun(int a)</span><br><span class="line">&#123;int b=a;</span><br><span class="line">cin&gt;&gt;b;</span><br><span class="line">if(b&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">int c;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类作用域"><a href="#类作用域" class="headerlink" title="类作用域"></a>类作用域</h3><ul>
+<li>类的对象具有类作用域</li>
+</ul>
+<p>其范围包括类体和成员函数体。</p>
+<ul>
+<li>在类作用域以外访问类的成员：<ol>
+<li>静态成员：通过类名，或者该类的对象名，对象引用访问。</li>
+<li>非静态成员：通过类名，或者该类的对象名，对象引用，对象指针访问。</li>
+</ol>
+</li>
+</ul>
+<h3 id="文件作用域"><a href="#文件作用域" class="headerlink" title="文件作用域"></a>文件作用域</h3><ul>
+<li>不在前述各个作用域中出现的声明，就具有文件作用域。</li>
+<li>其作用域开始于声明点，结束于文件尾。</li>
+</ul>
+<blockquote>
+<p>可见性：</p>
+<ul>
+<li>可见性是从对标识符的引用的角度来谈的概念</li>
+<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
+<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
+<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
+<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
+</ul>
+</blockquote>
+<h3 id="命名空间作用域"><a href="#命名空间作用域" class="headerlink" title="命名空间作用域"></a>命名空间作用域</h3><blockquote>
+<p>可见性：</p>
+<ul>
+<li>可见性是从对标识符的引用的角度来谈的概念</li>
+<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
+<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
+<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
+<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
+</ul>
+</blockquote>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int i;//全局变量，文件作用域</span><br><span class="line">int main()</span><br><span class="line">i=5;//为全局变量赋值</span><br><span class="line">&#123;</span><br><span class="line">int i;</span><br><span class="line">i=7;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出7，内层会屏蔽外层作用变量</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出5</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象的生存期"><a href="#对象的生存期" class="headerlink" title="对象的生存期"></a>对象的生存期</h2><h3 id="静态生存区"><a href="#静态生存区" class="headerlink" title="静态生存区"></a>静态生存区</h3><ul>
+<li>这种生存期与程序的运行期相同。</li>
+<li>在文件作用域中声明的对象具有这种生存期。</li>
+<li>在函数内部声明静态生存期对象，要冠以关键字static。</li>
+</ul>
+<h3 id="非静态生存区"><a href="#非静态生存区" class="headerlink" title="非静态生存区"></a>非静态生存区</h3><ul>
+<li>开始于程序执行到声明点时，结束于该标识符的作用域结束处。</li>
+<li>块作用域中声明的，没有用static修饰的对象，是动态生存区的对象（习惯称我为局部生存期对象）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std</span><br><span class="line">int i=1;//i为全局变量</span><br><span class="line">void other()</span><br><span class="line">&#123;</span><br><span class="line">static int a=2;</span><br><span class="line">static int b;</span><br><span class="line">//a，b为静态局部变量，具有全局寿命，局部可见。</span><br><span class="line">//只第一次进入函数时被初始化。</span><br><span class="line">int c=10;</span><br><span class="line">//c为局部变量，具有动态生存期</span><br><span class="line">//每次进入函数时都被初始化</span><br><span class="line">a+=2;i+=32;c+=5;</span><br><span class="line">cout&lt;&lt;&quot;--OTHER--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot;i:&quot;&lt;&lt;i&lt;&lt;&quot;a:&quot;&lt;&lt;a&lt;&lt;&quot;b:&quot;&lt;&lt;b&lt;&lt;&quot;c:&quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">b=a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">static int a;</span><br><span class="line">//a静态局部变量，有全局寿命，局部可见</span><br><span class="line">int b=-10;</span><br><span class="line">int c=0;</span><br><span class="line">//b，c为局部变量，具有动态生存期</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">c+=8;other();</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">i+=10;</span><br><span class="line">other();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">--MAIN--</span><br><span class="line">i:1 a:0 b:-10 c:0</span><br><span class="line">--OTHER--</span><br><span class="line">i:33 a:4 b:0 c:15</span><br><span class="line">--MAIN--</span><br><span class="line">i:33 a:0 b:-10 c:8</span><br><span class="line">--OTHER--</span><br><span class="line">i:75 a:6 b:4 c:15</span><br></pre></td></tr></table></figure>
+
+<h2 id="类的静态数据成员"><a href="#类的静态数据成员" class="headerlink" title="类的静态数据成员"></a>类的静态数据成员</h2><ul>
+<li>用关键词static声明</li>
+<li>为该类所有对象共享，静态数据成员具有静态生存期。</li>
+<li>必须在类外定义和初始化，用（::）来指明所属的类。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point a(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">a.showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">b.showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="静态函数成员"><a href="#静态函数成员" class="headerlink" title="静态函数成员"></a>静态函数成员</h2><p>静态函数处理静态数据</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point::showCount();//输出对象个数</span><br><span class="line">Point a(4,5);//声明对象a，其构造函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);//声明对象b，其复制函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类的友元"><a href="#类的友元" class="headerlink" title="类的友元"></a>类的友元</h2><h3 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h3><ul>
+<li>友元时c++提供的一种破坏数据封装和数据隐藏的机制。</li>
+<li>提供将一个模板声明为另一个模板的友元，一个模板能够引用到另一个模板中本是被隐藏的信息。</li>
+<li>可以声明友元函数和友元类</li>
+<li>为了确保数据的完整性，及数据封装于隐藏的原则，建议慎重使用友元。</li>
+</ul>
+<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><ul>
+<li>友元函数是在类声明中由关键字friend修饰的说明的非成员函数，在它的函数体中能够通过对象名访问private和protected成员。</li>
+<li>作用：增加灵活性，使程序员可以在封装和快速性方面做合理选择</li>
+<li>访问对象中的成员必须通过对象名。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x,int y):x(x),y(y)</span><br><span class="line">&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">Point(Point&amp; p)</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(Point &amp;a,Point &amp;b);</span><br><span class="line">static int showCOUNT()&#123;return count;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">static int count;</span><br><span class="line">&#125;;</span><br><span class="line">float dist(Point&amp; a,Point&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">double x=a.x-b.x;</span><br><span class="line">double y=a.y-b.y;</span><br><span class="line">//有修改原本数据的隐患</span><br><span class="line">//避免每次用对象的x，y都要调用一次函数</span><br><span class="line">return </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><ul>
+<li><p>若一个类为另一个类的友元，则此类的所有成员，都能访问对方类的私有成员。</p>
+</li>
+<li><p>声明语法：将友元类名放在另一个类中使用friend修饰说明。</p>
+</li>
+<li><p>友元关系是单向的，数据成员的开放也就是单向的。</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">friend class B;</span><br><span class="line">public:</span><br><span class="line">void display()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;x&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">void set(int i);</span><br><span class="line">void display();</span><br><span class="line">private:</span><br><span class="line">A a;</span><br><span class="line">&#125;</span><br><span class="line">void B::set(int i)</span><br><span class="line">&#123;</span><br><span class="line">a.x=i;</span><br><span class="line">&#125;</span><br><span class="line">void B::display()</span><br><span class="line">&#123;</span><br><span class="line">a.display();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="共享数据的保护"><a href="#共享数据的保护" class="headerlink" title="共享数据的保护"></a>共享数据的保护</h2><h3 id="常类型"><a href="#常类型" class="headerlink" title="常类型"></a>常类型</h3><h4 id="常对象：必须进行初始化，不能被更新。const-类名-对象名；"><a href="#常对象：必须进行初始化，不能被更新。const-类名-对象名；" class="headerlink" title="常对象：必须进行初始化，不能被更新。const 类名 对象名；"></a>常对象：必须进行初始化，不能被更新。const 类名 对象名；</h4><ul>
+<li>用const修饰的对象</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i,int j):x(i),y(j)&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">A const a(3,4);//a是常对象，不能被更新</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"><a href="#常成员：用const进行修饰的类成员：常数据成员和常函数成员。" class="headerlink" title="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"></a>常成员：用const进行修饰的类成员：常数据成员和常函数成员。</h4><ul>
+<li>常成员函数</li>
+<li>使用const关键字说明的函数</li>
+<li>常成员函数不更新对象的数据成员</li>
+<li>常成员函数说明格式：</li>
+</ul>
+<blockquote>
+<p>类型说明符 函数名（参数表) const；这里，const是函数类型的一个组成部分，因此在实现部分也要带const关键字。</p>
+</blockquote>
+<ul>
+<li>const关键字可以被用于参与对重载函数的区分</li>
+<li>通过常对象只能调用它的常成员函数</li>
+<li>常数据成员：使用const说明的数据成员</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class R</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">R(int r1,int r2):r1(r1),r2(r2)&#123;&#125;</span><br><span class="line">void print();</span><br><span class="line">void print() const;</span><br><span class="line">private:</span><br><span class="line">int r1,r2;</span><br><span class="line">&#125;;</span><br><span class="line">void R::print()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">void R::print()const</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">R a(5,4);</span><br><span class="line">a.print();</span><br><span class="line">const R b(20,53);</span><br><span class="line">b.print();//调用void print const()</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i):</span><br><span class="line">void print();</span><br><span class="line">private:</span><br><span class="line">const int a;</span><br><span class="line">static const int b;//静态常数据对象</span><br><span class="line">&#125;;</span><br><span class="line">const int A::b=10;</span><br><span class="line">A::A(int i):a(i)&#123;&#125;</span><br><span class="line">void A::print()&#123;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;&quot;:&quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">A a1(100),a2(0);</span><br><span class="line">a1.print();</span><br><span class="line">a2.print();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="常引用：被引用的对象不能被更新。const-类型说明符号-引用名"><a href="#常引用：被引用的对象不能被更新。const-类型说明符号-引用名" class="headerlink" title="常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名"></a>常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(const Point &amp;p1,const Point &amp;p2);</span><br><span class="line">private x,y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在友元函数中用常引用做参数，既能获得较高的执行效率，又能保证实参的安全性。</p>
+</blockquote>
+<h4 id="常数组：数组元素不能被更新。类型说明符-const-数组名-大小"><a href="#常数组：数组元素不能被更新。类型说明符-const-数组名-大小" class="headerlink" title="常数组：数组元素不能被更新。类型说明符 const 数组名[大小]"></a>常数组：数组元素不能被更新。类型说明符 const 数组名[大小]</h4><h4 id="常指针：指向常量的指针。"><a href="#常指针：指向常量的指针。" class="headerlink" title="常指针：指向常量的指针。"></a>常指针：指向常量的指针。</h4><h2 id="多文件结构"><a href="#多文件结构" class="headerlink" title="多文件结构"></a>多文件结构</h2><h3 id="C-的一般组织结构"><a href="#C-的一般组织结构" class="headerlink" title="C++的一般组织结构"></a>C++的一般组织结构</h3><h4 id="一个工程可以分为多个源文件，例如："><a href="#一个工程可以分为多个源文件，例如：" class="headerlink" title="一个工程可以分为多个源文件，例如："></a>一个工程可以分为多个源文件，例如：</h4><ul>
+<li>类声明文件（.h文件）</li>
+<li>类实现文件（.cpp文件）</li>
+<li>类的使用文件（main()所在的.cpp文件)</li>
+</ul>
+<h4 id="利用多个工程来组合各个文件"><a href="#利用多个工程来组合各个文件" class="headerlink" title="利用多个工程来组合各个文件"></a>利用多个工程来组合各个文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//文件1，类的定义，Point.h</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//文件2，point.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int Point::count=0;</span><br><span class="line">Point::Point(const Point &amp;p):x(p.x),y(p.y)</span><br><span class="line">&#123;count++;&#125;</span><br><span class="line">void Point::showCount()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count=&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//文件3，主函数 5_10.cpp</span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="外部变量"><a href="#外部变量" class="headerlink" title="外部变量"></a>外部变量</h3><ul>
+<li>除了在定义它的源文件中可以使用外，还能被其他文件使用。</li>
+<li>文件作用域中定义的变量，默认情况下都是外部变量。</li>
+<li>在其他文件中如果需要使用的化，需要用extern关键字声明。</li>
+<li>在所有类的之外声明的函数（也就是非成员函数），都具有文件作用域的。</li>
+<li>这样的函数都可以在不同的编译单元中被调用</li>
+<li>只要在调用之前进行，引用性声明（即声明函数原型）即可。</li>
+</ul>
+<blockquote>
+<p>将变量和函数限制在编译单元内</p>
+<ul>
+<li>将匿名命名空间中定义的变量和函数，都不会暴露给其他的编译单元</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">namespace</span><br><span class="line">&#123;</span><br><span class="line">//匿名的命名空间</span><br><span class="line">int n;</span><br><span class="line">void f()</span><br><span class="line">&#123;</span><br><span class="line">n++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="标准c-库"><a href="#标准c-库" class="headerlink" title="标准c++库"></a>标准c++库</h2><blockquote>
+<p>标准c++类库是一个及其灵活且可拓展的可重用软件模块的集合。</p>
+</blockquote>
+<h3 id="输入-输出类"><a href="#输入-输出类" class="headerlink" title="输入&#x2F;输出类"></a>输入&#x2F;输出类</h3><h3 id="容器类和抽象数据类型"><a href="#容器类和抽象数据类型" class="headerlink" title="容器类和抽象数据类型"></a>容器类和抽象数据类型</h3><h3 id="存储管理类"><a href="#存储管理类" class="headerlink" title="存储管理类"></a>存储管理类</h3><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h3 id="运行环境支持"><a href="#运行环境支持" class="headerlink" title="运行环境支持"></a>运行环境支持</h3><h2 id="编译预处理"><a href="#编译预处理" class="headerlink" title="编译预处理"></a>编译预处理</h2><h3 id="include包含指令"><a href="#include包含指令" class="headerlink" title="#include包含指令"></a>#include包含指令</h3><ul>
+<li>将一个源文件嵌入到当前源文件中该点处。<ol>
+<li>#include&lt;文件名&gt;：按标准模式搜索，文件位于c++系统目录的include子目录下</li>
+<li>#include“文件名”：首先在当前目录中搜索，若没有，在按标准方式搜索。</li>
+</ol>
+</li>
+</ul>
+<h3 id="define-宏定义指令"><a href="#define-宏定义指令" class="headerlink" title="#define 宏定义指令"></a>#define 宏定义指令</h3><ul>
+<li>定义符号常量，很多情况已经被const定义语句取代。</li>
+<li>定义带参数宏，已经被内联函数取代。</li>
+</ul>
+<h3 id="undif"><a href="#undif" class="headerlink" title="#undif"></a>#undif</h3><ul>
+<li>删除由#define定义的宏，使之不再起作用</li>
+</ul>
+<h3 id="条件编译指令——-if和-endif"><a href="#条件编译指令——-if和-endif" class="headerlink" title="条件编译指令——#if和#endif"></a>条件编译指令——#if和#endif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令——-else"><a href="#条件编译指令——-else" class="headerlink" title="条件编译指令——#else"></a>条件编译指令——#else</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文1</span><br><span class="line">#else</span><br><span class="line">//当“常量表达式”为零时编译</span><br><span class="line">程序正文2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令——-elif"><a href="#条件编译指令——-elif" class="headerlink" title="条件编译指令——#elif"></a>条件编译指令——#elif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式1</span><br><span class="line">程序正文1//当“常量表达式1”非零时编译</span><br><span class="line">#elif 常量表达式2</span><br><span class="line">程序正文2//当“常量表达式2”非零时编译</span><br><span class="line">#else</span><br><span class="line">程序正文3//其他情况下编译</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令"><a href="#条件编译指令" class="headerlink" title="条件编译指令"></a>条件编译指令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#ifdef 标识符</span><br><span class="line">程序段1</span><br><span class="line">#else</span><br><span class="line">程序段2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果“标识符”经#define定义过，且未经undef删除，则编译程序段1；否则编译程序段2.</p>
+</blockquote>
+<h2 id="第五章小结"><a href="#第五章小结" class="headerlink" title="第五章小结"></a>第五章小结</h2><ul>
+<li>对象的生存期，作用域与可见性。</li>
+<li>类的静态成员。</li>
+<li>数据的共享和保护。</li>
+<li>友元</li>
+<li>编译预处理指令</li>
+<li>多文件结构与工程</li>
+</ul>
 ]]></content>
   </entry>
   <entry>
@@ -3762,6 +3762,11 @@
 <h3 id="N1日本语能力考试-1"><a href="#N1日本语能力考试-1" class="headerlink" title="N1日本语能力考试"></a>N1日本语能力考试</h3>]]></content>
   </entry>
   <entry>
+    <title>树</title>
+    <url>/2024/06/04/%E6%A0%91/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>死月妖花</title>
     <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
     <content><![CDATA[]]></content>
@@ -3801,9 +3806,57 @@
 ]]></content>
   </entry>
   <entry>
-    <title>树</title>
-    <url>/2024/06/04/%E6%A0%91/</url>
+    <title>水夏</title>
+    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
+    <content><![CDATA[<p>s</p>
+<p>你的身上散发着死人的气息</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>洛谷做题日记</title>
+    <url>/2024/06/20/%E6%B4%9B%E8%B0%B7%E5%81%9A%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>深度学习</title>
+    <url>/2024/06/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="学习深度学习关键是动手"><a href="#学习深度学习关键是动手" class="headerlink" title="学习深度学习关键是动手"></a>学习深度学习关键是动手</h1><ul>
+<li><p>深度学习是人工智能最热的领域<br>核心是神经网络</p>
+</li>
+<li><p>神经网络是一门语言</p>
+</li>
+<li><p>应该像学习Python&#x2F;C++一样学习<br>深度学习</p>
+</li>
+<li><p>是一本深度学习教科书<br>覆盖90年代至今的重要模型<br>每一章是一个Jupyter记事本<br>提供所有模型的完整实现<br>在真实数据上运行</p>
+</li>
+<li><p>内容免费<br><a href="https://zh.d2l.ai/">https://zh.d2l.ai/</a></p>
+</li>
+</ul>
+<h1 id="课程安排"><a href="#课程安排" class="headerlink" title="课程安排"></a>课程安排</h1><p><img src="https://p.sda1.dev/18/e1d8281a361048724981392b20f0a9d2/658e7da32893c9cb72be2a26c253b731.png"></p>
+<h1 id="深度学习介绍"><a href="#深度学习介绍" class="headerlink" title="深度学习介绍"></a>深度学习介绍</h1><p><img src="https://p.sda1.dev/18/8c98b3a6f279b67f8f31326577d581b4/d7694b35c1af508b16dcbebc2576b8aa.png"></p>
+<h3 id="深度学习在图片分类上做了一个比较大的突破"><a href="#深度学习在图片分类上做了一个比较大的突破" class="headerlink" title="深度学习在图片分类上做了一个比较大的突破"></a>深度学习在图片分类上做了一个比较大的突破</h3><p><img src="https://p.sda1.dev/18/8cbd5c4df6060e94046a03d5c25f8265/30c75ee8ea820476cc2bb547b47868c9.png"></p>
+<h3 id="样式迁移"><a href="#样式迁移" class="headerlink" title="样式迁移"></a>样式迁移</h3><p><img src="https://p.sda1.dev/18/e340d0b1567d8f1a9bcf3ac3c1f1b70e/dc9dd8d06dce943a0f909686dc613ec3.png"></p>
+<p><img src="https://p.sda1.dev/18/c2e4d086d2dec274f72276fb3ab4e4cc/d33a8b86464b087a47ed8d5d3e3f0915.png"></p>
+<h3 id="物体分割与检测"><a href="#物体分割与检测" class="headerlink" title="物体分割与检测"></a>物体分割与检测</h3><p><img src="https://p.sda1.dev/18/74af2ceff7b1fe6b477c3d03c51d01d6/60e908870ecad4092a7d52ff5dd7b053.png"></p>
+<h3 id="人脸合成"><a href="#人脸合成" class="headerlink" title="人脸合成"></a>人脸合成</h3><p><img src="https://p.sda1.dev/18/98bd587c25c781a4f90bcc7fdf465299/3d09e95877280b14076eeb8aac9f4099.png"></p>
+<h3 id="文字生成图片"><a href="#文字生成图片" class="headerlink" title="文字生成图片"></a>文字生成图片</h3><p><img src="https://p.sda1.dev/18/56d3b65e6b09caf3a6c87ef7fe3e31e3/bd845fa882b0a5d56e90fa3533cacde2.png"></p>
+<h3 id="文字生成模型"><a href="#文字生成模型" class="headerlink" title="文字生成模型"></a>文字生成模型</h3><p><img src="https://p.sda1.dev/18/a9bd75ed63ba6ad9cfc1133c01c54557/d2feabeaf3a3fec1ed774d7be84fa2b9.png"></p>
+<p><img src="https://p.sda1.dev/18/9e7881a5b8cc2161e8a3b40a4fb5fbb6/c7aeff9e81f25910a85b0a581338edef.png"></p>
+<h3 id="无人驾驶"><a href="#无人驾驶" class="headerlink" title="无人驾驶"></a>无人驾驶</h3><p><img src="https://p.sda1.dev/18/cf07ec1ce1331cf36ab8929b4085c3d7/a362f71ffdbd87e5e369257cb6c9e12c.png"></p>
+<h3 id="案例研究-广告点击"><a href="#案例研究-广告点击" class="headerlink" title="案例研究-广告点击"></a>案例研究-广告点击</h3><p><img src="https://p.sda1.dev/18/13766acd778617da84ab3b415a968453/ccd275803bc40ce1a265f998590d37e1.png"></p>
+<h4 id="预测与训练"><a href="#预测与训练" class="headerlink" title="预测与训练"></a>预测与训练</h4><p><img src="https://p.sda1.dev/18/947da527c1d602863e2d808d25fe8958/a78a1eb32f31ca0af263540cd86e7faf.png"></p>
+<h4 id="完整的故事"><a href="#完整的故事" class="headerlink" title="完整的故事"></a>完整的故事</h4><p><img src="https://p.sda1.dev/18/bdc7f6e374c9b4c666e56d98f8144527/5f9208ed4f6086665f83f243f7f5b1ed.png"></p>
+<h2 id="Q-A"><a href="#Q-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="模型的可解释性"><a href="#模型的可解释性" class="headerlink" title="模型的可解释性"></a>模型的可解释性</h3><h3 id="符号学能和机器学习融合起来吗"><a href="#符号学能和机器学习融合起来吗" class="headerlink" title="符号学能和机器学习融合起来吗"></a>符号学能和机器学习融合起来吗</h3><h3 id="数据科学家和专家的区别"><a href="#数据科学家和专家的区别" class="headerlink" title="数据科学家和专家的区别"></a>数据科学家和专家的区别</h3><p>数据科学家是把专家的问题变成一个任务，训练出还行的模型。</p>
+<p>专家训练出精度非常高的模型。</p>
+<h3 id="mac是否支持Pytorch"><a href="#mac是否支持Pytorch" class="headerlink" title="mac是否支持Pytorch"></a>mac是否支持Pytorch</h3><h3 id="自然语言处理进度"><a href="#自然语言处理进度" class="headerlink" title="自然语言处理进度"></a>自然语言处理进度</h3><h3 id="无人驾驶的误判"><a href="#无人驾驶的误判" class="headerlink" title="无人驾驶的误判"></a>无人驾驶的误判</h3><h2 id="动手安装"><a href="#动手安装" class="headerlink" title="动手安装"></a>动手安装</h2><ul>
+<li><p>[可选]使用 conda&#x2F;miniconda环境<br>conda env remove d2l-zh<br>conda create -n -y d2l-zh python&#x3D;3.8 pip<br>conda activate d2l-zh</p>
+</li>
+<li><p>安装需要的包<br>pip install -y jupyter d2l torch torchvision</p>
+</li>
+<li><p>下载代码并执行<br>wget <a href="https://zh-v2.d2l.ai/d2l-zh.zip">https://zh-v2.d2l.ai/d2l-zh.zip</a><br>unzip d2l-zh.zip<br>jupyter notebook</p>
+</li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>洛谷P1002过河卒带来的思考</title>
@@ -3890,62 +3943,15 @@
 <h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1>]]></content>
   </entry>
   <entry>
-    <title>洛谷做题日记</title>
-    <url>/2024/06/20/%E6%B4%9B%E8%B0%B7%E5%81%9A%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>水夏</title>
-    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
-    <content><![CDATA[<p>s</p>
-<p>你的身上散发着死人的气息</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>深度学习</title>
-    <url>/2024/06/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="学习深度学习关键是动手"><a href="#学习深度学习关键是动手" class="headerlink" title="学习深度学习关键是动手"></a>学习深度学习关键是动手</h1><ul>
-<li><p>深度学习是人工智能最热的领域<br>核心是神经网络</p>
-</li>
-<li><p>神经网络是一门语言</p>
-</li>
-<li><p>应该像学习Python&#x2F;C++一样学习<br>深度学习</p>
-</li>
-<li><p>是一本深度学习教科书<br>覆盖90年代至今的重要模型<br>每一章是一个Jupyter记事本<br>提供所有模型的完整实现<br>在真实数据上运行</p>
-</li>
-<li><p>内容免费<br><a href="https://zh.d2l.ai/">https://zh.d2l.ai/</a></p>
-</li>
-</ul>
-<h1 id="课程安排"><a href="#课程安排" class="headerlink" title="课程安排"></a>课程安排</h1><p><img src="https://p.sda1.dev/18/e1d8281a361048724981392b20f0a9d2/658e7da32893c9cb72be2a26c253b731.png"></p>
-<h1 id="深度学习介绍"><a href="#深度学习介绍" class="headerlink" title="深度学习介绍"></a>深度学习介绍</h1><p><img src="https://p.sda1.dev/18/8c98b3a6f279b67f8f31326577d581b4/d7694b35c1af508b16dcbebc2576b8aa.png"></p>
-<h3 id="深度学习在图片分类上做了一个比较大的突破"><a href="#深度学习在图片分类上做了一个比较大的突破" class="headerlink" title="深度学习在图片分类上做了一个比较大的突破"></a>深度学习在图片分类上做了一个比较大的突破</h3><p><img src="https://p.sda1.dev/18/8cbd5c4df6060e94046a03d5c25f8265/30c75ee8ea820476cc2bb547b47868c9.png"></p>
-<h3 id="样式迁移"><a href="#样式迁移" class="headerlink" title="样式迁移"></a>样式迁移</h3><p><img src="https://p.sda1.dev/18/e340d0b1567d8f1a9bcf3ac3c1f1b70e/dc9dd8d06dce943a0f909686dc613ec3.png"></p>
-<p><img src="https://p.sda1.dev/18/c2e4d086d2dec274f72276fb3ab4e4cc/d33a8b86464b087a47ed8d5d3e3f0915.png"></p>
-<h3 id="物体分割与检测"><a href="#物体分割与检测" class="headerlink" title="物体分割与检测"></a>物体分割与检测</h3><p><img src="https://p.sda1.dev/18/74af2ceff7b1fe6b477c3d03c51d01d6/60e908870ecad4092a7d52ff5dd7b053.png"></p>
-<h3 id="人脸合成"><a href="#人脸合成" class="headerlink" title="人脸合成"></a>人脸合成</h3><p><img src="https://p.sda1.dev/18/98bd587c25c781a4f90bcc7fdf465299/3d09e95877280b14076eeb8aac9f4099.png"></p>
-<h3 id="文字生成图片"><a href="#文字生成图片" class="headerlink" title="文字生成图片"></a>文字生成图片</h3><p><img src="https://p.sda1.dev/18/56d3b65e6b09caf3a6c87ef7fe3e31e3/bd845fa882b0a5d56e90fa3533cacde2.png"></p>
-<h3 id="文字生成模型"><a href="#文字生成模型" class="headerlink" title="文字生成模型"></a>文字生成模型</h3><p><img src="https://p.sda1.dev/18/a9bd75ed63ba6ad9cfc1133c01c54557/d2feabeaf3a3fec1ed774d7be84fa2b9.png"></p>
-<p><img src="https://p.sda1.dev/18/9e7881a5b8cc2161e8a3b40a4fb5fbb6/c7aeff9e81f25910a85b0a581338edef.png"></p>
-<h3 id="无人驾驶"><a href="#无人驾驶" class="headerlink" title="无人驾驶"></a>无人驾驶</h3><p><img src="https://p.sda1.dev/18/cf07ec1ce1331cf36ab8929b4085c3d7/a362f71ffdbd87e5e369257cb6c9e12c.png"></p>
-<h3 id="案例研究-广告点击"><a href="#案例研究-广告点击" class="headerlink" title="案例研究-广告点击"></a>案例研究-广告点击</h3><p><img src="https://p.sda1.dev/18/13766acd778617da84ab3b415a968453/ccd275803bc40ce1a265f998590d37e1.png"></p>
-<h4 id="预测与训练"><a href="#预测与训练" class="headerlink" title="预测与训练"></a>预测与训练</h4><p><img src="https://p.sda1.dev/18/947da527c1d602863e2d808d25fe8958/a78a1eb32f31ca0af263540cd86e7faf.png"></p>
-<h4 id="完整的故事"><a href="#完整的故事" class="headerlink" title="完整的故事"></a>完整的故事</h4><p><img src="https://p.sda1.dev/18/bdc7f6e374c9b4c666e56d98f8144527/5f9208ed4f6086665f83f243f7f5b1ed.png"></p>
-<h2 id="Q-A"><a href="#Q-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="模型的可解释性"><a href="#模型的可解释性" class="headerlink" title="模型的可解释性"></a>模型的可解释性</h3><h3 id="符号学能和机器学习融合起来吗"><a href="#符号学能和机器学习融合起来吗" class="headerlink" title="符号学能和机器学习融合起来吗"></a>符号学能和机器学习融合起来吗</h3><h3 id="数据科学家和专家的区别"><a href="#数据科学家和专家的区别" class="headerlink" title="数据科学家和专家的区别"></a>数据科学家和专家的区别</h3><p>数据科学家是把专家的问题变成一个任务，训练出还行的模型。</p>
-<p>专家训练出精度非常高的模型。</p>
-<h3 id="mac是否支持Pytorch"><a href="#mac是否支持Pytorch" class="headerlink" title="mac是否支持Pytorch"></a>mac是否支持Pytorch</h3><h3 id="自然语言处理进度"><a href="#自然语言处理进度" class="headerlink" title="自然语言处理进度"></a>自然语言处理进度</h3><h3 id="无人驾驶的误判"><a href="#无人驾驶的误判" class="headerlink" title="无人驾驶的误判"></a>无人驾驶的误判</h3><h2 id="动手安装"><a href="#动手安装" class="headerlink" title="动手安装"></a>动手安装</h2><ul>
-<li><p>[可选]使用 conda&#x2F;miniconda环境<br>conda env remove d2l-zh<br>conda create -n -y d2l-zh python&#x3D;3.8 pip<br>conda activate d2l-zh</p>
-</li>
-<li><p>安装需要的包<br>pip install -y jupyter d2l torch torchvision</p>
-</li>
-<li><p>下载代码并执行<br>wget <a href="https://zh-v2.d2l.ai/d2l-zh.zip">https://zh-v2.d2l.ai/d2l-zh.zip</a><br>unzip d2l-zh.zip<br>jupyter notebook</p>
-</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>清单</title>
     <url>/2024/06/01/%E6%B8%85%E5%8D%95/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>爱与典范</title>
+    <url>/2024/05/17/%E7%88%B1%E4%B8%8E%E5%85%B8%E8%8C%83/</url>
+    <content><![CDATA[<p>   ▪   爱的典范：<br>不是讲述对与错的问题，典雅爱情中，起作用的是一种符号爱完成生化成了一种符号，成为了一首诗歌。<br>在虐恋之中，症状代替了符号。<br>使徒的爱：圣爱是幻想父亲的爱，对自己的幻想的爱的一种回应，他正在永恒地爱着我，我也可以永恒地爱着她。这只手是一种幻影，幻想自己的手是可以伸进火堆里而幻想出的大他者的手。<br>在使徒在受鞭笞的时候，他们会处于那种极致的享乐之中，他们真的能感受到大他者拉着了他。<br>“性关系的尽头是爱，因此我不会说并不存在爱，我知识说性关系不存在”<br>一朵曼妙的花朵<br>一个新鲜的水果<br>在我双手触碰两者的时候，突然有一只手伸了出来。在触碰这只手的过程中，那只手突然着火了。我只能用作为表达失败的方式来表达爱，在爱的灰烬之处，向我伸出了一只手。<br>lacan：这灰烬之手是一种镜像的自恋结构。<br>古典的爱中，典雅爱情之中，性是不可能，自恋式的想象。<br>原作者的解释不是权威，作者已死。<br>爱处于偶然的逻辑相中，爱的相遇链接了原本两个没有关系的能指。其如其分的神迹，直接有了一朵美丽的花。她仿佛有无限的可能，在诱惑着我。<br>1、Darian Loader《拉康》：这两只手一定不是对称结构。<br>2、Bruce Fink：爱必须是一种回应（积极的解读）<br>从灰烬中伸出的那只手理解为父之名，在爱之中，我们和父之名打交道。父之名认可了你的爱，将你的爱注册在案。没有爱就没有注册在安的结婚证，爱是一种必然的创伤，爱召唤出了父之名。给了我们一种担保，让我们不至于过于哀悼我们成为灰烬的爱情。<br>   ▪   爱的表达<br>说、写、做<br>说就是言说：任何对爱的表达都是对爱的缺失，“我爱你”的意思就是你来爱我吧。苏格拉底把爱当成了背爱，而不是爱人。<br>小宝宝在刚出生的时候，所有的言爱都是对爱的请求。<br>分析师保持沉默的原因：避免向来访者索取爱。<br>说爱就等于要求被爱，说我爱你就等于在说你来爱我吧，这并不是对爱的表达，而是对爱的索取。<br>写就是一个人无法谈论爱，但是当那个人写出来的时候，就能打动你，在书写与字母不存在爱与言说的矛盾，情书比任何通过言语而表达的爱都要真实。<br>爱在停止书写的地方，是未断却无法写出之物。<br>你觉得你写的东西可能不太正确，但是你的爱却有了一个实在的参照物。可以告诉自己，我的爱就在信纸背后，在留白之处，它有一个可以寄托的场所。<br>做的维度（make love）：在完全简化为某个行为之前，就是单纯的求爱，对于男人，在做的时候，与其说他们实在做，不如说他们是在享受性，感知对方的一个部位，感受到了自己的膨胀和丰满，就意味着无所缺失，我不知道他在激动什么，不能被菲勒斯完全收编，部分认同男性（癔症式的），沦为一个普遍的像男人认同阳具一样的女性认同，女人不存在，没有所谓的女人，女人不存在。<br>如何表达爱：没有性关系，写只能在写不出的地方表达爱，说我爱你的实际意思是我缺少爱，请你来爱我。给出你所没有的，表达爱，给出你所没有的，爱的表达本身就是一种自返的结构，在说写做之中，都会遇到挫折，在说不了，写不了，做不了的地方，爱就出现在这里：请拒我所赠，盖非也。<br>给出你所没有的，你和她面对面，站在苍茫的雪地里，两个人都冻的瑟瑟发抖，但是你就是想要抱住她，你就想向她伸出手。<br>   ▪   如果试图“言说”爱<br>爱处在偶然的逻辑相中，是停止却无法写出的东西，只能以诗的形式写出。情不知所起，一往情深。相顾无言，唯有泪千行。<br>只有当语言死亡的时候，你才能活得一瞬间的真实。<br>晚期拉康是比较可怜的，是一个无法忍受自己年龄的人，说脏话，说悖论，试图将自己的平生所学一起用一遍，1975年之后拉康进入了一个强热的思辨当中，进入了一个Fichte的绝对知识，用数学的方式，将自己的理论封装起来：数理逻辑、拓扑学、波罗米结。<br>《若灵根的守灵夜》晚年的拉康奢侈无度，但是他又非常地吝啬：是爱使享乐得以屈从。到底我思是什么东西？在我思之万物之处我不在，我在我不死不在之处，即是说我等于爱。我思是一种爱与恨的战场，是Gott与魔鬼交战的战场，在诗人的角度，诗人透过自己的作品，以某种斜视，一瞥而见了作品的作者。ich&#x3D;ich（自我命名）<br>母子关系：demand-need&#x3D;desire<br>恋爱关系：desire（爱&#x2F;请求的反向投资）+need（信的内容）&#x3D;demand（情书）<br>“请拒我所赠，该非也”：否定信中的内容，不能送早餐，过分夸大的实在物，太过于压迫别人了。<br>如果没有爱的话，我们还是会在转喻链上延宕。<br>不是万物都可以计算（资本主义）：个人的价值不可以计算。</p>
+]]></content>
   </entry>
   <entry>
     <title>滑动窗口</title>
@@ -4015,12 +4021,6 @@
 
 <p>我们可以分析得知，要知道一个事实，能够取到目标值的k区间，其终点带来的效果不是超出这个target值，就是刚刚好。如果是超出这个值的话，我们只需要在前面减去多余的数字就可以了。</p>
 <p>在这个更新起始位置的代码中，我们用到的更新手段是，调节起始位置的索引，从而改变我们字串的索引值。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>爱与典范</title>
-    <url>/2024/05/17/%E7%88%B1%E4%B8%8E%E5%85%B8%E8%8C%83/</url>
-    <content><![CDATA[<p>   ▪   爱的典范：<br>不是讲述对与错的问题，典雅爱情中，起作用的是一种符号爱完成生化成了一种符号，成为了一首诗歌。<br>在虐恋之中，症状代替了符号。<br>使徒的爱：圣爱是幻想父亲的爱，对自己的幻想的爱的一种回应，他正在永恒地爱着我，我也可以永恒地爱着她。这只手是一种幻影，幻想自己的手是可以伸进火堆里而幻想出的大他者的手。<br>在使徒在受鞭笞的时候，他们会处于那种极致的享乐之中，他们真的能感受到大他者拉着了他。<br>“性关系的尽头是爱，因此我不会说并不存在爱，我知识说性关系不存在”<br>一朵曼妙的花朵<br>一个新鲜的水果<br>在我双手触碰两者的时候，突然有一只手伸了出来。在触碰这只手的过程中，那只手突然着火了。我只能用作为表达失败的方式来表达爱，在爱的灰烬之处，向我伸出了一只手。<br>lacan：这灰烬之手是一种镜像的自恋结构。<br>古典的爱中，典雅爱情之中，性是不可能，自恋式的想象。<br>原作者的解释不是权威，作者已死。<br>爱处于偶然的逻辑相中，爱的相遇链接了原本两个没有关系的能指。其如其分的神迹，直接有了一朵美丽的花。她仿佛有无限的可能，在诱惑着我。<br>1、Darian Loader《拉康》：这两只手一定不是对称结构。<br>2、Bruce Fink：爱必须是一种回应（积极的解读）<br>从灰烬中伸出的那只手理解为父之名，在爱之中，我们和父之名打交道。父之名认可了你的爱，将你的爱注册在案。没有爱就没有注册在安的结婚证，爱是一种必然的创伤，爱召唤出了父之名。给了我们一种担保，让我们不至于过于哀悼我们成为灰烬的爱情。<br>   ▪   爱的表达<br>说、写、做<br>说就是言说：任何对爱的表达都是对爱的缺失，“我爱你”的意思就是你来爱我吧。苏格拉底把爱当成了背爱，而不是爱人。<br>小宝宝在刚出生的时候，所有的言爱都是对爱的请求。<br>分析师保持沉默的原因：避免向来访者索取爱。<br>说爱就等于要求被爱，说我爱你就等于在说你来爱我吧，这并不是对爱的表达，而是对爱的索取。<br>写就是一个人无法谈论爱，但是当那个人写出来的时候，就能打动你，在书写与字母不存在爱与言说的矛盾，情书比任何通过言语而表达的爱都要真实。<br>爱在停止书写的地方，是未断却无法写出之物。<br>你觉得你写的东西可能不太正确，但是你的爱却有了一个实在的参照物。可以告诉自己，我的爱就在信纸背后，在留白之处，它有一个可以寄托的场所。<br>做的维度（make love）：在完全简化为某个行为之前，就是单纯的求爱，对于男人，在做的时候，与其说他们实在做，不如说他们是在享受性，感知对方的一个部位，感受到了自己的膨胀和丰满，就意味着无所缺失，我不知道他在激动什么，不能被菲勒斯完全收编，部分认同男性（癔症式的），沦为一个普遍的像男人认同阳具一样的女性认同，女人不存在，没有所谓的女人，女人不存在。<br>如何表达爱：没有性关系，写只能在写不出的地方表达爱，说我爱你的实际意思是我缺少爱，请你来爱我。给出你所没有的，表达爱，给出你所没有的，爱的表达本身就是一种自返的结构，在说写做之中，都会遇到挫折，在说不了，写不了，做不了的地方，爱就出现在这里：请拒我所赠，盖非也。<br>给出你所没有的，你和她面对面，站在苍茫的雪地里，两个人都冻的瑟瑟发抖，但是你就是想要抱住她，你就想向她伸出手。<br>   ▪   如果试图“言说”爱<br>爱处在偶然的逻辑相中，是停止却无法写出的东西，只能以诗的形式写出。情不知所起，一往情深。相顾无言，唯有泪千行。<br>只有当语言死亡的时候，你才能活得一瞬间的真实。<br>晚期拉康是比较可怜的，是一个无法忍受自己年龄的人，说脏话，说悖论，试图将自己的平生所学一起用一遍，1975年之后拉康进入了一个强热的思辨当中，进入了一个Fichte的绝对知识，用数学的方式，将自己的理论封装起来：数理逻辑、拓扑学、波罗米结。<br>《若灵根的守灵夜》晚年的拉康奢侈无度，但是他又非常地吝啬：是爱使享乐得以屈从。到底我思是什么东西？在我思之万物之处我不在，我在我不死不在之处，即是说我等于爱。我思是一种爱与恨的战场，是Gott与魔鬼交战的战场，在诗人的角度，诗人透过自己的作品，以某种斜视，一瞥而见了作品的作者。ich&#x3D;ich（自我命名）<br>母子关系：demand-need&#x3D;desire<br>恋爱关系：desire（爱&#x2F;请求的反向投资）+need（信的内容）&#x3D;demand（情书）<br>“请拒我所赠，该非也”：否定信中的内容，不能送早餐，过分夸大的实在物，太过于压迫别人了。<br>如果没有爱的话，我们还是会在转喻链上延宕。<br>不是万物都可以计算（资本主义）：个人的价值不可以计算。</p>
 ]]></content>
   </entry>
   <entry>
@@ -4119,6 +4119,86 @@
 <h2 id="为什么要“两手抓、两手都要硬”"><a href="#为什么要“两手抓、两手都要硬”" class="headerlink" title="为什么要“两手抓、两手都要硬”"></a>为什么要“两手抓、两手都要硬”</h2><p>“两手抓、两手都要硬”是邓小平建设中国特色社会主义的基本战略思想，是<strong>对唯物辩证法十分通俗和高度概括的表述</strong>，也是全面深化改革必须牢牢把握的科学方法论。改革开放以来，邓小平提出了<strong>一手抓物质文明建设、一手抓精神文明建设</strong>，一手抓坚持四项基本原则、<strong>一手抓改革开放，一手抓建设、一手抓法制等“两手抓、两手都要硬”</strong>的思想，保证了改革开放和社会主义现代化建设顺利推进。</p>
 <h2 id="“科学发展观”科学在哪里"><a href="#“科学发展观”科学在哪里" class="headerlink" title="“科学发展观”科学在哪里?"></a>“科学发展观”科学在哪里?</h2><p>坚持以人为本，<strong>树立全面、协调、可持续的发展观，</strong>促进经济社会和人的全面发展，按照“统<strong>筹城乡发展、统筹区域发展、统筹经济社会发展、统筹人与自然和谐发展、统筹国内发展和对外开放”</strong>的要求推进各项事业的改革和发展</p>
 <h2 id="“中国特色社会主义进入新时代”指什么"><a href="#“中国特色社会主义进入新时代”指什么" class="headerlink" title="“中国特色社会主义进入新时代”指什么?"></a>“中国特色社会主义进入新时代”指什么?</h2><p>我国社会主要矛盾已经转化为<strong>人民日益增长的美好生活需要</strong>和<strong>不平衡不充分的发展之间的矛盾</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>社群教程</title>
+    <url>/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="第一节：长期vs短期"><a href="#第一节：长期vs短期" class="headerlink" title="第一节：长期vs短期"></a>第一节：长期vs短期</h2><h3 id="方向："><a href="#方向：" class="headerlink" title="方向："></a>方向：</h3><h4 id="女性的择偶策略"><a href="#女性的择偶策略" class="headerlink" title="女性的择偶策略"></a>女性的择偶策略</h4><ul>
+<li>情人属性 基因提供者（缺点，很难长期）</li>
+</ul>
+<p>特点：</p>
+<p>1.外形条件不错，器大活好（生理结构）</p>
+<p>2.会大半夜聊天 不纠结 不正面回复 比较敷衍 洒脱 喜欢大半夜邀约</p>
+<p>3.能给女性短期属性的感觉 一定不缺女生喜欢</p>
+<ul>
+<li>投资供养者（很慢 ？被人吊着 延续）</li>
+</ul>
+<p>特点：</p>
+<p>1.对女生好 不太注意形象 宅 社交圈窄 理性逻辑 </p>
+<p>相对来说气场比较弱，没有声明情调 比较包容 老好人</p>
+<blockquote>
+<p>李小璐,贾乃亮</p>
+<p>李孝利</p>
+</blockquote>
+<p>思考一个问题：帅和有钱是不是决定性因素？</p>
+<p>第二个问题：哪一个属性更好？</p>
+<p>一段感情去得也快，来得慢，去得也慢</p>
+<p>两种都要有 我是一个安全的人，解决问题的能力</p>
+<p>重点就是一句正经，一句逗逼。</p>
+<p>把握好其中的比例问题。</p>
+<p>查漏补缺，找到自身特点，以及缺失的东西。</p>
+<h2 id="男性吸引力解析"><a href="#男性吸引力解析" class="headerlink" title="男性吸引力解析"></a>男性吸引力解析</h2><h3 id="吸引力的详细解析"><a href="#吸引力的详细解析" class="headerlink" title="吸引力的详细解析"></a>吸引力的详细解析</h3><ul>
+<li><p>公式：男吸引力&#x3D;90%的心动指数加上10%的心疼指数。</p>
+</li>
+<li><p>从何而来？</p>
+</li>
+</ul>
+<ol>
+<li>硬价值（外在）：生存价值</li>
+</ol>
+<p>钱 车 房 圈子 地位</p>
+<ol start="2">
+<li>软价值（内在）：繁衍价值</li>
+</ol>
+<p>颜值 身材 性征 西装 嗓音低沉  拍照风格 我给人一种什么样的感觉 格调 调性</p>
+<p>孙红雷 黄渤</p>
+<p>聊天的方式</p>
+<ul>
+<li>能量</li>
+</ul>
+<p>正能量。状态不好，我就先缓缓不聊天</p>
+<p>安全感 顾家</p>
+<p>百分之九十</p>
+<p>百分之十 心疼指数</p>
+<p>展示脆弱的一面 示弱</p>
+<div style="width: 80%;margin: 0 auto">
+    <canvas id="chart9557" style="height: 300px"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script type="text/javascript">
+    var ctx = document.getElementById('chart9557').getContext('2d');
+    var options = {
+    type: 'line',
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+    options: {
+        responsive: true,
+        title: {
+            display: true,
+            text: 'Chart.js Line Chart'
+        }
+    }
+};;
+    new Chart(ctx, options);
+</script>
 ]]></content>
   </entry>
   <entry>
@@ -4378,84 +4458,60 @@
 ]]></content>
   </entry>
   <entry>
-    <title>社群教程</title>
-    <url>/2024/06/01/%E7%A4%BE%E7%BE%A4%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="第一节：长期vs短期"><a href="#第一节：长期vs短期" class="headerlink" title="第一节：长期vs短期"></a>第一节：长期vs短期</h2><h3 id="方向："><a href="#方向：" class="headerlink" title="方向："></a>方向：</h3><h4 id="女性的择偶策略"><a href="#女性的择偶策略" class="headerlink" title="女性的择偶策略"></a>女性的择偶策略</h4><ul>
-<li>情人属性 基因提供者（缺点，很难长期）</li>
-</ul>
-<p>特点：</p>
-<p>1.外形条件不错，器大活好（生理结构）</p>
-<p>2.会大半夜聊天 不纠结 不正面回复 比较敷衍 洒脱 喜欢大半夜邀约</p>
-<p>3.能给女性短期属性的感觉 一定不缺女生喜欢</p>
+    <title>移除链表元素</title>
+    <url>/2024/06/12/%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<h2 id="1-线性表是什么"><a href="#1-线性表是什么" class="headerlink" title="1. 线性表是什么"></a>1. 线性表是什么</h2><h3 id="1-1线性表的抽象数据类型"><a href="#1-1线性表的抽象数据类型" class="headerlink" title="1.1线性表的抽象数据类型"></a>1.1线性表的抽象数据类型</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">ADT 线性表(List)</span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(*L)</span></span>;<span class="comment">//初始化链表</span></span><br><span class="line">	<span class="built_in">ListEmpty</span>(L);<span class="comment">//检查链表是否为空</span></span><br><span class="line">	<span class="built_in">clearList</span>(*L);<span class="comment">//清空链表已有元素</span></span><br><span class="line">	<span class="built_in">GetElem</span>(L,i,*e);<span class="comment">//将链表的第i个位置的元素的值赋给e，然后返回</span></span><br><span class="line">	<span class="built_in">LocateElem</span>(L,e);<span class="comment">//查找L中是否有e，Yes：元素位置，No：0</span></span><br><span class="line">	<span class="built_in">ListInsert</span>(*L,i,e);<span class="comment">//在L的第i个位置插入元素e</span></span><br><span class="line">	<span class="built_in">ListDelete</span>(*L,i,*e);<span class="comment">//删除线性表的第i个元素，并用e返回其值</span></span><br><span class="line">	<span class="built_in">ListLength</span>(L);<span class="comment">//返回线性表L的元素个数</span></span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-1合并链表"><a href="#1-1-1合并链表" class="headerlink" title="1.1.1合并链表"></a>1.1.1合并链表</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">union</span><span class="params">(List *La,List Lb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a_len,b_len;</span><br><span class="line">    ElemType e;</span><br><span class="line">    a_len=<span class="built_in">ListLength</span>(La);</span><br><span class="line">    b_len=<span class="built_in">ListLength</span>(Lb);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=Lb;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">GetElem</span>(Lb,i,e);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">LocateElem</span>(La,e,equal))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">ListInsert</span>(La,++a_len,e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//查找，然后将La中没有的元素添加到后面</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是求合集的函数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-2-线性表的顺序存储结构"><a href="#1-1-2-线性表的顺序存储结构" class="headerlink" title="1.1.2 线性表的顺序存储结构"></a>1.1.2 线性表的顺序存储结构</h4><p>用一段地址连续的内存单元，依次存储线性表的数据元素</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXSIZE 20</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></span><br><span class="line">&#123;</span><br><span class="line">	ElemType data[MAXZIZE];</span><br><span class="line">	<span class="type">int</span> length;</span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>投资供养者（很慢 ？被人吊着 延续）</li>
+<li>存储的起始位置：数组data</li>
+<li>线性表的最大存储容量</li>
+<li>线性表的当前长度</li>
 </ul>
-<p>特点：</p>
-<p>1.对女生好 不太注意形象 宅 社交圈窄 理性逻辑 </p>
-<p>相对来说气场比较弱，没有声明情调 比较包容 老好人</p>
-<blockquote>
-<p>李小璐,贾乃亮</p>
-<p>李孝利</p>
-</blockquote>
-<p>思考一个问题：帅和有钱是不是决定性因素？</p>
-<p>第二个问题：哪一个属性更好？</p>
-<p>一段感情去得也快，来得慢，去得也慢</p>
-<p>两种都要有 我是一个安全的人，解决问题的能力</p>
-<p>重点就是一句正经，一句逗逼。</p>
-<p>把握好其中的比例问题。</p>
-<p>查漏补缺，找到自身特点，以及缺失的东西。</p>
-<h2 id="男性吸引力解析"><a href="#男性吸引力解析" class="headerlink" title="男性吸引力解析"></a>男性吸引力解析</h2><h3 id="吸引力的详细解析"><a href="#吸引力的详细解析" class="headerlink" title="吸引力的详细解析"></a>吸引力的详细解析</h3><ul>
-<li><p>公式：男吸引力&#x3D;90%的心动指数加上10%的心疼指数。</p>
-</li>
-<li><p>从何而来？</p>
-</li>
+<h4 id="1-1-3-顺序存储结构的插入与删除"><a href="#1-1-3-顺序存储结构的插入与删除" class="headerlink" title="1.1.3 顺序存储结构的插入与删除"></a>1.1.3 顺序存储结构的插入与删除</h4><ul>
+<li>插入</li>
 </ul>
-<ol>
-<li>硬价值（外在）：生存价值</li>
-</ol>
-<p>钱 车 房 圈子 地位</p>
-<ol start="2">
-<li>软价值（内在）：繁衍价值</li>
-</ol>
-<p>颜值 身材 性征 西装 嗓音低沉  拍照风格 我给人一种什么样的感觉 格调 调性</p>
-<p>孙红雷 黄渤</p>
-<p>聊天的方式</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(SqList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L.length==<span class="number">0</span>||i&lt;<span class="number">1</span>||i&gt;L.length) <span class="keyword">return</span> Error;</span><br><span class="line">        *e=L.data[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> ok;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>能量</li>
+<li>插入</li>
 </ul>
-<p>正能量。状态不好，我就先缓缓不聊天</p>
-<p>安全感 顾家</p>
-<p>百分之九十</p>
-<p>百分之十 心疼指数</p>
-<p>展示脆弱的一面 示弱</p>
-<div style="width: 80%;margin: 0 auto">
-    <canvas id="chart9559" style="height: 300px"></canvas>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-<script type="text/javascript">
-    var ctx = document.getElementById('chart9559').getContext('2d');
-    var options = {
-    type: 'line',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-    options: {
-        responsive: true,
-        title: {
-            display: true,
-            text: 'Chart.js Line Chart'
-        }
-    }
-};;
-    new Chart(ctx, options);
-</script>
-]]></content>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(SqList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;length==MAXSIZE) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;L-&gt;length+<span class="number">1</span>) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;=L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(k=L-&gt;length<span class="number">-1</span>;k&gt;=i<span class="number">-1</span>;k--) L-&gt;date[k+<span class="number">1</span>]=L-&gt;data[k];</span><br><span class="line">    &#125;<span class="comment">//将目标位置和之后的元素全部向后移动一个位置</span></span><br><span class="line">    L-&gt;data[i<span class="number">-1</span>]=e;</span><br><span class="line">    L-&gt;length++;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListDelete</span><span class="params">(SqList *L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;length==<span class="number">0</span>) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;L-&gt;length) <span class="keyword">return</span> ERROR;</span><br><span class="line">    *e=L-&gt;date[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">if</span>(i&lt;L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(k=i;k&lt;L-&gt;length;k++)</span><br><span class="line">        &#123;</span><br><span class="line">            L-&gt;data[k<span class="number">-1</span>]=L-&gt;data[k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//删完之后，对应元素后面的元素全部前移一格，然后data数组大小减少一个</span></span><br><span class="line">    L-&gt;length--;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-结点（Node）"><a href="#1-2-结点（Node）" class="headerlink" title="1.2 结点（Node）"></a>1.2 结点（Node）</h3><p><img src="https://p.sda1.dev/18/aa16fe49d763d936b9ce44b1569d0159/a0880ffb4ecd93c9a7e526015bfcb84f.png"></p>
+<p>链表中的第一个结点的存储位置叫做头指针</p>
+<p><img src="https://p.sda1.dev/18/e24ef5346e902d28b84e8ce5ed398ce2/2cb8d8b89841146ec2a8266b491eacdf.png"></p>
+<h4 id="1-2-1-线性表链式存储结构代码描述"><a href="#1-2-1-线性表链式存储结构代码描述" class="headerlink" title="1.2.1 线性表链式存储结构代码描述"></a>1.2.1 线性表链式存储结构代码描述</h4><ul>
+<li>如果链表为空表，则头结点的指针域为“空”</li>
+</ul>
+<p><img src="https://p.sda1.dev/18/0ea6255eb2b334fa8b3bad7fb350cb08/43d6cb960da89e117f050254b3fe8a8e.png"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Node;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">LinkList</span>;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p.sda1.dev/18/341f9a39bb60f151f17ec60d38e9a021/506858485659b7b7837169ab906b131e.png"></p>
+<h4 id="1-2-2-单链表的读取"><a href="#1-2-2-单链表的读取" class="headerlink" title="1.2.2 单链表的读取"></a>1.2.2 单链表的读取</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p;</span><br><span class="line">    p=L-&gt;next;<span class="comment">//声明一个新结点</span></span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//用next指针将所有结点串联起来</span></span><br><span class="line">    <span class="keyword">if</span>(!p||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    *e=p-&gt;data;</span><br><span class="line">    <span class="keyword">return</span> Ok;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-3-单链表的插入和删除"><a href="#1-2-3-单链表的插入和删除" class="headerlink" title="1.2.3 单链表的插入和删除"></a>1.2.3 单链表的插入和删除</h4><ul>
+<li>插入</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p,s;</span><br><span class="line">    p=*L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//将p叠加到目标元素的位置</span></span><br><span class="line">    <span class="keyword">if</span>(!p||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    s=<span class="keyword">new</span> LinkList;</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    s-&gt;next=p-&gt;next;</span><br><span class="line">    p-&gt;next=s;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p.sda1.dev/18/327a8926e7b97bb927aa24434286e8ef/37bdeb1162591f31909725168c75dce7.png"></p>
+<ul>
+<li>删除</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p,s;</span><br><span class="line">    p=*L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//将p叠加到目标元素的位置</span></span><br><span class="line">    <span class="keyword">if</span>(!(p-next)||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    s=p-&gt;next;</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    p-&gt;next=q-&gt;next;</span><br><span class="line">    <span class="comment">//p-&gt;next=p-&gt;next-&gt;next也可以</span></span><br><span class="line">    *e=q-&gt;data;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p.sda1.dev/18/d9b13d452e51d62e01f0f62fed7a5fd9/e436c6cbece682c27c19e2bb7a5a086c.png"></p>
+<h2 id="2-线性表是"><a href="#2-线性表是" class="headerlink" title="2. 线性表是"></a>2. 线性表是</h2>]]></content>
   </entry>
   <entry>
     <title>移除元素</title>
@@ -4570,93 +4626,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>移除链表元素</title>
-    <url>/2024/06/12/%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/</url>
-    <content><![CDATA[<h2 id="1-线性表是什么"><a href="#1-线性表是什么" class="headerlink" title="1. 线性表是什么"></a>1. 线性表是什么</h2><h3 id="1-1线性表的抽象数据类型"><a href="#1-1线性表的抽象数据类型" class="headerlink" title="1.1线性表的抽象数据类型"></a>1.1线性表的抽象数据类型</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">ADT 线性表(List)</span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(*L)</span></span>;<span class="comment">//初始化链表</span></span><br><span class="line">	<span class="built_in">ListEmpty</span>(L);<span class="comment">//检查链表是否为空</span></span><br><span class="line">	<span class="built_in">clearList</span>(*L);<span class="comment">//清空链表已有元素</span></span><br><span class="line">	<span class="built_in">GetElem</span>(L,i,*e);<span class="comment">//将链表的第i个位置的元素的值赋给e，然后返回</span></span><br><span class="line">	<span class="built_in">LocateElem</span>(L,e);<span class="comment">//查找L中是否有e，Yes：元素位置，No：0</span></span><br><span class="line">	<span class="built_in">ListInsert</span>(*L,i,e);<span class="comment">//在L的第i个位置插入元素e</span></span><br><span class="line">	<span class="built_in">ListDelete</span>(*L,i,*e);<span class="comment">//删除线性表的第i个元素，并用e返回其值</span></span><br><span class="line">	<span class="built_in">ListLength</span>(L);<span class="comment">//返回线性表L的元素个数</span></span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-1-1合并链表"><a href="#1-1-1合并链表" class="headerlink" title="1.1.1合并链表"></a>1.1.1合并链表</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">union</span><span class="params">(List *La,List Lb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a_len,b_len;</span><br><span class="line">    ElemType e;</span><br><span class="line">    a_len=<span class="built_in">ListLength</span>(La);</span><br><span class="line">    b_len=<span class="built_in">ListLength</span>(Lb);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=Lb;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">GetElem</span>(Lb,i,e);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">LocateElem</span>(La,e,equal))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">ListInsert</span>(La,++a_len,e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//查找，然后将La中没有的元素添加到后面</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是求合集的函数</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="1-1-2-线性表的顺序存储结构"><a href="#1-1-2-线性表的顺序存储结构" class="headerlink" title="1.1.2 线性表的顺序存储结构"></a>1.1.2 线性表的顺序存储结构</h4><p>用一段地址连续的内存单元，依次存储线性表的数据元素</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXSIZE 20</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></span><br><span class="line">&#123;</span><br><span class="line">	ElemType data[MAXZIZE];</span><br><span class="line">	<span class="type">int</span> length;</span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>存储的起始位置：数组data</li>
-<li>线性表的最大存储容量</li>
-<li>线性表的当前长度</li>
-</ul>
-<h4 id="1-1-3-顺序存储结构的插入与删除"><a href="#1-1-3-顺序存储结构的插入与删除" class="headerlink" title="1.1.3 顺序存储结构的插入与删除"></a>1.1.3 顺序存储结构的插入与删除</h4><ul>
-<li>插入</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(SqList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L.length==<span class="number">0</span>||i&lt;<span class="number">1</span>||i&gt;L.length) <span class="keyword">return</span> Error;</span><br><span class="line">        *e=L.data[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> ok;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>插入</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(SqList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;length==MAXSIZE) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;L-&gt;length+<span class="number">1</span>) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;=L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(k=L-&gt;length<span class="number">-1</span>;k&gt;=i<span class="number">-1</span>;k--) L-&gt;date[k+<span class="number">1</span>]=L-&gt;data[k];</span><br><span class="line">    &#125;<span class="comment">//将目标位置和之后的元素全部向后移动一个位置</span></span><br><span class="line">    L-&gt;data[i<span class="number">-1</span>]=e;</span><br><span class="line">    L-&gt;length++;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListDelete</span><span class="params">(SqList *L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;length==<span class="number">0</span>) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;L-&gt;length) <span class="keyword">return</span> ERROR;</span><br><span class="line">    *e=L-&gt;date[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">if</span>(i&lt;L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(k=i;k&lt;L-&gt;length;k++)</span><br><span class="line">        &#123;</span><br><span class="line">            L-&gt;data[k<span class="number">-1</span>]=L-&gt;data[k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//删完之后，对应元素后面的元素全部前移一格，然后data数组大小减少一个</span></span><br><span class="line">    L-&gt;length--;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-结点（Node）"><a href="#1-2-结点（Node）" class="headerlink" title="1.2 结点（Node）"></a>1.2 结点（Node）</h3><p><img src="https://p.sda1.dev/18/aa16fe49d763d936b9ce44b1569d0159/a0880ffb4ecd93c9a7e526015bfcb84f.png"></p>
-<p>链表中的第一个结点的存储位置叫做头指针</p>
-<p><img src="https://p.sda1.dev/18/e24ef5346e902d28b84e8ce5ed398ce2/2cb8d8b89841146ec2a8266b491eacdf.png"></p>
-<h4 id="1-2-1-线性表链式存储结构代码描述"><a href="#1-2-1-线性表链式存储结构代码描述" class="headerlink" title="1.2.1 线性表链式存储结构代码描述"></a>1.2.1 线性表链式存储结构代码描述</h4><ul>
-<li>如果链表为空表，则头结点的指针域为“空”</li>
-</ul>
-<p><img src="https://p.sda1.dev/18/0ea6255eb2b334fa8b3bad7fb350cb08/43d6cb960da89e117f050254b3fe8a8e.png"></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Node;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">LinkList</span>;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://p.sda1.dev/18/341f9a39bb60f151f17ec60d38e9a021/506858485659b7b7837169ab906b131e.png"></p>
-<h4 id="1-2-2-单链表的读取"><a href="#1-2-2-单链表的读取" class="headerlink" title="1.2.2 单链表的读取"></a>1.2.2 单链表的读取</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p;</span><br><span class="line">    p=L-&gt;next;<span class="comment">//声明一个新结点</span></span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//用next指针将所有结点串联起来</span></span><br><span class="line">    <span class="keyword">if</span>(!p||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    *e=p-&gt;data;</span><br><span class="line">    <span class="keyword">return</span> Ok;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-3-单链表的插入和删除"><a href="#1-2-3-单链表的插入和删除" class="headerlink" title="1.2.3 单链表的插入和删除"></a>1.2.3 单链表的插入和删除</h4><ul>
-<li>插入</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p,s;</span><br><span class="line">    p=*L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//将p叠加到目标元素的位置</span></span><br><span class="line">    <span class="keyword">if</span>(!p||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    s=<span class="keyword">new</span> LinkList;</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    s-&gt;next=p-&gt;next;</span><br><span class="line">    p-&gt;next=s;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://p.sda1.dev/18/327a8926e7b97bb927aa24434286e8ef/37bdeb1162591f31909725168c75dce7.png"></p>
-<ul>
-<li>删除</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p,s;</span><br><span class="line">    p=*L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//将p叠加到目标元素的位置</span></span><br><span class="line">    <span class="keyword">if</span>(!(p-next)||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    s=p-&gt;next;</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    p-&gt;next=q-&gt;next;</span><br><span class="line">    <span class="comment">//p-&gt;next=p-&gt;next-&gt;next也可以</span></span><br><span class="line">    *e=q-&gt;data;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://p.sda1.dev/18/d9b13d452e51d62e01f0f62fed7a5fd9/e436c6cbece682c27c19e2bb7a5a086c.png"></p>
-<h2 id="2-线性表是"><a href="#2-线性表是" class="headerlink" title="2. 线性表是"></a>2. 线性表是</h2>]]></content>
-  </entry>
-  <entry>
-    <title>“刺青，以对抗自己没有生命力这件事情。”</title>
-    <url>/2024/06/12/%E7%BA%B9%E8%BA%AB%E7%9A%84%E7%88%B1%E6%AC%B2%E6%9C%BA%E5%88%B6/</url>
-    <content><![CDATA[<h2 id="1-自残的机制"><a href="#1-自残的机制" class="headerlink" title="1 自残的机制"></a>1 自残的机制</h2><h3 id="1-1-凯瑟琳·里奥特"><a href="#1-1-凯瑟琳·里奥特" class="headerlink" title="1.1  凯瑟琳·里奥特"></a>1.1  凯瑟琳·里奥特</h3><p>自残就是给自己做一个标记，不管是洞穿、划痕还是畸形处理，这些都是古来有之的。</p>
-<ul>
-<li><strong>洞穿：打耳洞、唇钉、鼻钉</strong></li>
-<li><strong>划痕：纹身、烟头，划一刀</strong></li>
-<li><strong>畸形处理：裹小脚、带很重的围脖</strong></li>
-<li><strong>割礼</strong></li>
-</ul>
-<p><strong>为什么人会对自己的身体动刀呢？</strong></p>
-<p>在石器时代，那个刀耕火种的年代，外出狩猎的男人，最开始是在忍受痛苦，有着伤疤，在后面男人发现，伤口象征着苦难、坚韧、功劳、荣耀。</p>
-<p>男人发现，如果自己完好无伤地回来，，那收到的各种待遇都不如那些受伤回来的伙伴，于是男人便发生了倒错-即自己给自己制造一些伤口，以证明自己的阳刚之气，证明自己的最英勇的人，我值得你们的拜服。</p>
-<p>伤口是一个能指，是一个象征，是进入某个关系的注册符。</p>
-<h3 id="1-2-存在被抛入世，它的第一个注册符是什么？"><a href="#1-2-存在被抛入世，它的第一个注册符是什么？" class="headerlink" title="1.2 存在被抛入世，它的第一个注册符是什么？"></a>1.2 存在被抛入世，它的第一个注册符是什么？</h3><p>就是你的肚脐眼，肚脐眼是主体与母亲分离的一个标志。</p>
-<p>分离是主题最初的，永恒的创伤。</p>
-<h4 id="1-2-1-独生子女"><a href="#1-2-1-独生子女" class="headerlink" title="1.2.1 独生子女"></a>1.2.1 独生子女</h4><p>父母难以放开他们唯一的孩子</p>
-<h4 id="1-2-2-社会原因"><a href="#1-2-2-社会原因" class="headerlink" title="1.2.2 社会原因"></a>1.2.2 社会原因</h4><p>孩子无法独立面对经济压力</p>
-<h4 id="1-2-3-年轻人找不到自己的身份"><a href="#1-2-3-年轻人找不到自己的身份" class="headerlink" title="1.2.3 年轻人找不到自己的身份"></a>1.2.3 年轻人找不到自己的身份</h4><p>这个时候，年轻人就会用某种伤痕，来证明自己的身份。</p>
-<p>闻一个人的名字，来证明自己爱ta。</p>
-<p>看到某个卡通符号，就能认同自己是某个小团体的存在。</p>
-<h3 id="1-3-凯瑟琳的一个示例"><a href="#1-3-凯瑟琳的一个示例" class="headerlink" title="1.3 凯瑟琳的一个示例"></a>1.3 凯瑟琳的一个示例</h3><h4 id="1-3-1-伤痕纹身是一个隐喻，一个症状"><a href="#1-3-1-伤痕纹身是一个隐喻，一个症状" class="headerlink" title="1.3.1 伤痕纹身是一个隐喻，一个症状"></a>1.3.1 伤痕纹身是一个隐喻，一个症状</h4><h4 id="1-3-2-案例"><a href="#1-3-2-案例" class="headerlink" title="1.3.2 案例"></a>1.3.2 案例</h4><p>三岁的时候，被养父母从孤儿院中领养，对亲生父母没有任何记忆，只知道母亲在她出生几个月的时候，就去世了。</p>
-<p>她不能说出完整的情感，长期自残，有自杀的冲动。</p>
-<p>自残行为体现着案例女主说，自己身份的疑问？</p>
-<p>案主通过在身体上打标记，试图来控制自己的身体，获取自己身体的控制权。</p>
-<p>案主会脱得越来越多，像是在展示某种战利品一样。</p>
-<p>通过展示自己的伤口，实在诉说自己的痛苦，希望捕获他人的目光，能爱我，以及爱我的痛苦。</p>
-<p>案主开始给分析师看她写的日记，分析师解读她的日记。</p>
-<p>分析师在阅读她的伤口。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>线代</title>
     <url>/2024/05/22/%E7%BA%BF%E4%BB%A3/</url>
     <content><![CDATA[<h1 id="第一章-线性方程组"><a href="#第一章-线性方程组" class="headerlink" title="第一章 线性方程组"></a>第一章 线性方程组</h1><h2 id="xi1-1-线性方程组高斯消元法与矩阵"><a href="#xi1-1-线性方程组高斯消元法与矩阵" class="headerlink" title="$\xi1.1$	线性方程组	高斯消元法与矩阵"></a>$\xi1.1$	线性方程组	高斯消元法与矩阵</h2><h2 id="xi1-2-行化简和阶梯形矩阵解的存在性和唯一性"><a href="#xi1-2-行化简和阶梯形矩阵解的存在性和唯一性" class="headerlink" title="$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性"></a>$\xi1.2$	行化简和阶梯形矩阵	解的存在性和唯一性</h2><h2 id="xi1-3-线性方程组的应用"><a href="#xi1-3-线性方程组的应用" class="headerlink" title="$\xi1.3$	线性方程组的应用"></a>$\xi1.3$	线性方程组的应用</h2><h1 id="第二章矩阵代数"><a href="#第二章矩阵代数" class="headerlink" title="第二章	矩阵代数"></a>第二章	矩阵代数</h1><h2 id="xi2-1-矩阵和向量"><a href="#xi2-1-矩阵和向量" class="headerlink" title="$\xi2.1$	矩阵和向量"></a>$\xi2.1$	矩阵和向量</h2><h2 id="xi2-2-矩阵的代数运算"><a href="#xi2-2-矩阵的代数运算" class="headerlink" title="$\xi2.2$	矩阵的代数运算"></a>$\xi2.2$	矩阵的代数运算</h2><h2 id="xi-2-3逆矩阵与矩阵的初等变换"><a href="#xi-2-3逆矩阵与矩阵的初等变换" class="headerlink" title="$\xi$2.3	逆矩阵与矩阵的初等变换"></a>$\xi$2.3	逆矩阵与矩阵的初等变换</h2><h2 id="xi-2-4转置矩阵与一些重要的方阵"><a href="#xi-2-4转置矩阵与一些重要的方阵" class="headerlink" title="$\xi$2.4	转置矩阵与一些重要的方阵"></a>$\xi$2.4	转置矩阵与一些重要的方阵</h2><h2 id="xi-2-5分块矩阵"><a href="#xi-2-5分块矩阵" class="headerlink" title="$\xi$2.5	分块矩阵"></a>$\xi$2.5	分块矩阵</h2><h1 id="第三章行列式"><a href="#第三章行列式" class="headerlink" title="第三章	行列式"></a>第三章	行列式</h1><h2 id="xi-3-1方阵的行列式"><a href="#xi-3-1方阵的行列式" class="headerlink" title="$\xi$3.1	方阵的行列式"></a>$\xi$3.1	方阵的行列式</h2><h2 id="xi-3-2行列式的主要性质"><a href="#xi-3-2行列式的主要性质" class="headerlink" title="$\xi$3.2	行列式的主要性质"></a>$\xi$3.2	行列式的主要性质</h2><h2 id="xi-3-3行列式的应用"><a href="#xi-3-3行列式的应用" class="headerlink" title="$\xi$3.3	行列式的应用"></a>$\xi$3.3	行列式的应用</h2><h1 id="第四章向量空间"><a href="#第四章向量空间" class="headerlink" title="第四章	向量空间"></a>第四章	向量空间</h1><h2 id="xi-4-1向量的定义及其运算"><a href="#xi-4-1向量的定义及其运算" class="headerlink" title="$\xi$4.1	向量的定义及其运算"></a>$\xi$4.1	向量的定义及其运算</h2><h2 id="xi-4-2向量的线性相关性"><a href="#xi-4-2向量的线性相关性" class="headerlink" title="$\xi$4.2	向量的线性相关性"></a>$\xi$4.2	向量的线性相关性</h2><h2 id="xi-4-3向量组的极大线性无关组和秩"><a href="#xi-4-3向量组的极大线性无关组和秩" class="headerlink" title="$\xi$4.3	向量组的极大线性无关组和秩"></a>$\xi$4.3	向量组的极大线性无关组和秩</h2><h2 id="xi-4-4子空间"><a href="#xi-4-4子空间" class="headerlink" title="$\xi$4.4	子空间"></a>$\xi$4.4	子空间</h2><h2 id="xi-4-5基和维数"><a href="#xi-4-5基和维数" class="headerlink" title="$\xi$4.5	基和维数"></a>$\xi$4.5	基和维数</h2><h2 id="xi-4-6矩阵的秩"><a href="#xi-4-6矩阵的秩" class="headerlink" title="$\xi$4.6	矩阵的秩"></a>$\xi$4.6	矩阵的秩</h2><h2 id="xi-4-7线性方程组的有解条件及解的结构"><a href="#xi-4-7线性方程组的有解条件及解的结构" class="headerlink" title="$\xi$4.7	线性方程组的有解条件及解的结构"></a>$\xi$4.7	线性方程组的有解条件及解的结构</h2><h2 id="xi-4-8-R-n-到-R-m-的线性映射"><a href="#xi-4-8-R-n-到-R-m-的线性映射" class="headerlink" title="$\xi$4.8	$R^n$到$R^m$的线性映射"></a>$\xi$4.8	$R^n$到$R^m$的线性映射</h2><h1 id="第五章特征值与特征向量"><a href="#第五章特征值与特征向量" class="headerlink" title="第五章	特征值与特征向量"></a>第五章	特征值与特征向量</h1><h2 id="xi-5-1矩阵的特征值与特征向量"><a href="#xi-5-1矩阵的特征值与特征向量" class="headerlink" title="$\xi$5.1	矩阵的特征值与特征向量"></a>$\xi$5.1	矩阵的特征值与特征向量</h2><h2 id="xi-5-2矩阵的相似对角化"><a href="#xi-5-2矩阵的相似对角化" class="headerlink" title="$\xi$5.2	矩阵的相似对角化"></a>$\xi$5.2	矩阵的相似对角化</h2><h2 id="xi-5-3实对称矩阵的正交相似对角化"><a href="#xi-5-3实对称矩阵的正交相似对角化" class="headerlink" title="$\xi$5.3	实对称矩阵的正交相似对角化"></a>$\xi$5.3	实对称矩阵的正交相似对角化</h2><p>​	由定理5.2.1知，一个n阶矩阵能否对角化取决于它是否有n个线性无关的特征向量.那么什么样的矩阵一定有n个线性无关的特征向量呢?下面我们就来证明任一n阶实对称矩阵一定存在n个线性无关的特征向量,从而可以对角化.也就是说,存在可逆阵$P$，使得$P^{-1}AP&#x3D;\Lambda$为对角阵。进一步，我们还可证明存在正交矩阵$Q$,使得$Q^T AQ&#x3D;\Lambda$为对角阵.为此，我们先引人如下概念.</p>
@@ -4669,11 +4638,6 @@
 <p>&#x3D;|\alpha|^2-2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;(|\alpha|-|\beta|)^2\\<br>故\\<br>|\alpha-\beta|&gt;&#x3D;||\alpha|-|\beta||\\<br>(|\alpha|+|\beta|)^2&#x3D;|\alpha|^2+2|\alpha||\beta|+|\beta|^2\\<br>&#x3D;|\alpha|^2-2(\alpha,\beta)+|\beta|^2\\<br>&#x3D;(\alpha-\beta,\alpha-\beta)\\<br>&#x3D;|\alpha-\beta|^2.<br>$$</p>
 </blockquote>
 <h1 id="第六章二次型"><a href="#第六章二次型" class="headerlink" title="第六章	二次型"></a>第六章	二次型</h1><h2 id="xi-6-1二次型及其矩阵表示"><a href="#xi-6-1二次型及其矩阵表示" class="headerlink" title="$\xi$6.1	二次型及其矩阵表示"></a>$\xi$6.1	二次型及其矩阵表示</h2><h2 id="xi-6-2二次型化位标准型"><a href="#xi-6-2二次型化位标准型" class="headerlink" title="$\xi$6.2	二次型化位标准型"></a>$\xi$6.2	二次型化位标准型</h2><h2 id="xi-6-3正定二次型"><a href="#xi-6-3正定二次型" class="headerlink" title="$\xi$6.3	正定二次型"></a>$\xi$6.3	正定二次型</h2><h2 id="xi-6-4二次型的应用"><a href="#xi-6-4二次型的应用" class="headerlink" title="$\xi$6.4	二次型的应用"></a>$\xi$6.4	二次型的应用</h2><h1 id="第七章线性空间与线性变换"><a href="#第七章线性空间与线性变换" class="headerlink" title="第七章	线性空间与线性变换"></a>第七章	线性空间与线性变换</h1><h2 id="xi-7-1线性空间"><a href="#xi-7-1线性空间" class="headerlink" title="$\xi$7.1	线性空间"></a>$\xi$7.1	线性空间</h2><h2 id="xi-7-2线性变换"><a href="#xi-7-2线性变换" class="headerlink" title="$\xi$7.2	线性变换"></a>$\xi$7.2	线性变换</h2><h2 id="xi-7-3线性变换的矩阵表示"><a href="#xi-7-3线性变换的矩阵表示" class="headerlink" title="$\xi$7.3	线性变换的矩阵表示"></a>$\xi$7.3	线性变换的矩阵表示</h2><h2 id="xi-7-4线性变换的特征值与特征向量"><a href="#xi-7-4线性变换的特征值与特征向量" class="headerlink" title="$\xi$7.4	线性变换的特征值与特征向量"></a>$\xi$7.4	线性变换的特征值与特征向量</h2><h2 id="xi-7-5欧几里得空间简介"><a href="#xi-7-5欧几里得空间简介" class="headerlink" title="$\xi$7.5	欧几里得空间简介"></a>$\xi$7.5	欧几里得空间简介</h2><h1 id="MATLAB在线性代数中的作用"><a href="#MATLAB在线性代数中的作用" class="headerlink" title="MATLAB在线性代数中的作用"></a>MATLAB在线性代数中的作用</h1><h2 id="xi-8-1MATLAB简介"><a href="#xi-8-1MATLAB简介" class="headerlink" title="$\xi$8.1	MATLAB简介"></a>$\xi$8.1	MATLAB简介</h2><h2 id="xi-8-2MATLAB的基本操作"><a href="#xi-8-2MATLAB的基本操作" class="headerlink" title="$\xi$8.2	MATLAB的基本操作"></a>$\xi$8.2	MATLAB的基本操作</h2><h2 id="xi-8-3向量的生成与运算"><a href="#xi-8-3向量的生成与运算" class="headerlink" title="$\xi$8.3	向量的生成与运算"></a>$\xi$8.3	向量的生成与运算</h2><h2 id="xi-8-4矩阵的生成与运算"><a href="#xi-8-4矩阵的生成与运算" class="headerlink" title="$\xi$8.4	矩阵的生成与运算"></a>$\xi$8.4	矩阵的生成与运算</h2><h2 id="xi-8-5常用的矩阵函数"><a href="#xi-8-5常用的矩阵函数" class="headerlink" title="$\xi$8.5	常用的矩阵函数"></a>$\xi$8.5	常用的矩阵函数</h2><h2 id="xi-8-6线性方程组求解"><a href="#xi-8-6线性方程组求解" class="headerlink" title="$\xi$8.6	线性方程组求解"></a>$\xi$8.6	线性方程组求解</h2>]]></content>
-  </entry>
-  <entry>
-    <title>线性代数复习总结</title>
-    <url>/2024/06/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="学习内容（6-11）"><a href="#学习内容（6-11）" class="headerlink" title="学习内容（6.11）"></a>学习内容（6.11）</h2><h3 id="向量与向量空间的定义"><a href="#向量与向量空间的定义" class="headerlink" title="向量与向量空间的定义"></a>向量与向量空间的定义</h3><h3 id="向量的运算方法"><a href="#向量的运算方法" class="headerlink" title="向量的运算方法"></a>向量的运算方法</h3><h3 id="向量的线性相关问题"><a href="#向量的线性相关问题" class="headerlink" title="向量的线性相关问题"></a>向量的线性相关问题</h3><h3 id="向量的子空间"><a href="#向量的子空间" class="headerlink" title="向量的子空间"></a>向量的子空间</h3><h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><h3 id="向量的秩"><a href="#向量的秩" class="headerlink" title="向量的秩"></a>向量的秩</h3><h3 id="H形子空间以及维度"><a href="#H形子空间以及维度" class="headerlink" title="H形子空间以及维度"></a>H形子空间以及维度</h3><h3 id="列空间、行空间、零空间"><a href="#列空间、行空间、零空间" class="headerlink" title="列空间、行空间、零空间"></a>列空间、行空间、零空间</h3><h3 id="基底转换的过渡矩阵"><a href="#基底转换的过渡矩阵" class="headerlink" title="基底转换的过渡矩阵"></a>基底转换的过渡矩阵</h3>]]></content>
   </entry>
   <entry>
     <title>第六章杆件的内力</title>
@@ -4848,6 +4812,47 @@
 ]]></content>
   </entry>
   <entry>
+    <title>“刺青，以对抗自己没有生命力这件事情。”</title>
+    <url>/2024/06/12/%E7%BA%B9%E8%BA%AB%E7%9A%84%E7%88%B1%E6%AC%B2%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="1-自残的机制"><a href="#1-自残的机制" class="headerlink" title="1 自残的机制"></a>1 自残的机制</h2><h3 id="1-1-凯瑟琳·里奥特"><a href="#1-1-凯瑟琳·里奥特" class="headerlink" title="1.1  凯瑟琳·里奥特"></a>1.1  凯瑟琳·里奥特</h3><p>自残就是给自己做一个标记，不管是洞穿、划痕还是畸形处理，这些都是古来有之的。</p>
+<ul>
+<li><strong>洞穿：打耳洞、唇钉、鼻钉</strong></li>
+<li><strong>划痕：纹身、烟头，划一刀</strong></li>
+<li><strong>畸形处理：裹小脚、带很重的围脖</strong></li>
+<li><strong>割礼</strong></li>
+</ul>
+<p><strong>为什么人会对自己的身体动刀呢？</strong></p>
+<p>在石器时代，那个刀耕火种的年代，外出狩猎的男人，最开始是在忍受痛苦，有着伤疤，在后面男人发现，伤口象征着苦难、坚韧、功劳、荣耀。</p>
+<p>男人发现，如果自己完好无伤地回来，，那收到的各种待遇都不如那些受伤回来的伙伴，于是男人便发生了倒错-即自己给自己制造一些伤口，以证明自己的阳刚之气，证明自己的最英勇的人，我值得你们的拜服。</p>
+<p>伤口是一个能指，是一个象征，是进入某个关系的注册符。</p>
+<h3 id="1-2-存在被抛入世，它的第一个注册符是什么？"><a href="#1-2-存在被抛入世，它的第一个注册符是什么？" class="headerlink" title="1.2 存在被抛入世，它的第一个注册符是什么？"></a>1.2 存在被抛入世，它的第一个注册符是什么？</h3><p>就是你的肚脐眼，肚脐眼是主体与母亲分离的一个标志。</p>
+<p>分离是主题最初的，永恒的创伤。</p>
+<h4 id="1-2-1-独生子女"><a href="#1-2-1-独生子女" class="headerlink" title="1.2.1 独生子女"></a>1.2.1 独生子女</h4><p>父母难以放开他们唯一的孩子</p>
+<h4 id="1-2-2-社会原因"><a href="#1-2-2-社会原因" class="headerlink" title="1.2.2 社会原因"></a>1.2.2 社会原因</h4><p>孩子无法独立面对经济压力</p>
+<h4 id="1-2-3-年轻人找不到自己的身份"><a href="#1-2-3-年轻人找不到自己的身份" class="headerlink" title="1.2.3 年轻人找不到自己的身份"></a>1.2.3 年轻人找不到自己的身份</h4><p>这个时候，年轻人就会用某种伤痕，来证明自己的身份。</p>
+<p>闻一个人的名字，来证明自己爱ta。</p>
+<p>看到某个卡通符号，就能认同自己是某个小团体的存在。</p>
+<h3 id="1-3-凯瑟琳的一个示例"><a href="#1-3-凯瑟琳的一个示例" class="headerlink" title="1.3 凯瑟琳的一个示例"></a>1.3 凯瑟琳的一个示例</h3><h4 id="1-3-1-伤痕纹身是一个隐喻，一个症状"><a href="#1-3-1-伤痕纹身是一个隐喻，一个症状" class="headerlink" title="1.3.1 伤痕纹身是一个隐喻，一个症状"></a>1.3.1 伤痕纹身是一个隐喻，一个症状</h4><h4 id="1-3-2-案例"><a href="#1-3-2-案例" class="headerlink" title="1.3.2 案例"></a>1.3.2 案例</h4><p>三岁的时候，被养父母从孤儿院中领养，对亲生父母没有任何记忆，只知道母亲在她出生几个月的时候，就去世了。</p>
+<p>她不能说出完整的情感，长期自残，有自杀的冲动。</p>
+<p>自残行为体现着案例女主说，自己身份的疑问？</p>
+<p>案主通过在身体上打标记，试图来控制自己的身体，获取自己身体的控制权。</p>
+<p>案主会脱得越来越多，像是在展示某种战利品一样。</p>
+<p>通过展示自己的伤口，实在诉说自己的痛苦，希望捕获他人的目光，能爱我，以及爱我的痛苦。</p>
+<p>案主开始给分析师看她写的日记，分析师解读她的日记。</p>
+<p>分析师在阅读她的伤口。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>线性代数复习总结</title>
+    <url>/2024/06/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="学习内容（6-11）"><a href="#学习内容（6-11）" class="headerlink" title="学习内容（6.11）"></a>学习内容（6.11）</h2><h3 id="向量与向量空间的定义"><a href="#向量与向量空间的定义" class="headerlink" title="向量与向量空间的定义"></a>向量与向量空间的定义</h3><h3 id="向量的运算方法"><a href="#向量的运算方法" class="headerlink" title="向量的运算方法"></a>向量的运算方法</h3><h3 id="向量的线性相关问题"><a href="#向量的线性相关问题" class="headerlink" title="向量的线性相关问题"></a>向量的线性相关问题</h3><h3 id="向量的子空间"><a href="#向量的子空间" class="headerlink" title="向量的子空间"></a>向量的子空间</h3><h3 id="极大线性无关组"><a href="#极大线性无关组" class="headerlink" title="极大线性无关组"></a>极大线性无关组</h3><h3 id="向量的秩"><a href="#向量的秩" class="headerlink" title="向量的秩"></a>向量的秩</h3><h3 id="H形子空间以及维度"><a href="#H形子空间以及维度" class="headerlink" title="H形子空间以及维度"></a>H形子空间以及维度</h3><h3 id="列空间、行空间、零空间"><a href="#列空间、行空间、零空间" class="headerlink" title="列空间、行空间、零空间"></a>列空间、行空间、零空间</h3><h3 id="基底转换的过渡矩阵"><a href="#基底转换的过渡矩阵" class="headerlink" title="基底转换的过渡矩阵"></a>基底转换的过渡矩阵</h3>]]></content>
+  </entry>
+  <entry>
+    <title>输出流输入流</title>
+    <url>/2024/06/05/%E8%BE%93%E5%87%BA%E6%B5%81%E8%BE%93%E5%85%A5%E6%B5%81/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>螺旋矩阵</title>
     <url>/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/</url>
     <content><![CDATA[<h2 id="什么是螺旋矩阵"><a href="#什么是螺旋矩阵" class="headerlink" title="什么是螺旋矩阵"></a>什么是螺旋矩阵</h2><p>螺旋矩阵就是从四周向中心遍历矩阵的所有元素，没有实质上的算法内容，更多的是做一个模拟，所以螺旋矩阵可以归类为模拟题。</p>
@@ -4885,6 +4890,139 @@
 
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.<span class="built_in">empty</span>()) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = matrix[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>, t = <span class="number">0</span>, b = matrix.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = l; i &lt;= r; i++) res.<span class="built_in">push_back</span>(matrix[t][i]); <span class="comment">// left to right</span></span><br><span class="line">            <span class="keyword">if</span> (++t &gt; b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = t; i &lt;= b; i++) res.<span class="built_in">push_back</span>(matrix[i][r]); <span class="comment">// top to bottom</span></span><br><span class="line">            <span class="keyword">if</span> (l &gt; --r) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = r; i &gt;= l; i--) res.<span class="built_in">push_back</span>(matrix[b][i]); <span class="comment">// right to left</span></span><br><span class="line">            <span class="keyword">if</span> (t &gt; --b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= t; i--) res.<span class="built_in">push_back</span>(matrix[i][l]); <span class="comment">// bottom to top</span></span><br><span class="line">            <span class="keyword">if</span> (++l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+]]></content>
+  </entry>
+  <entry>
+    <title>近代史纲要</title>
+    <url>/2024/06/03/%E8%BF%91%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81/</url>
+    <content><![CDATA[<h1 id="第⼀章-反对外国侵略的⽃争"><a href="#第⼀章-反对外国侵略的⽃争" class="headerlink" title="第⼀章 反对外国侵略的⽃争"></a><strong>第⼀章 反对外国侵略的⽃争</strong></h1><h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a><strong>选择题</strong>：</h2><ol>
+<li><p>清朝唯⼀盛世时期是<strong>康乾盛世</strong>。</p>
+</li>
+<li><p><strong>1640</strong> 年<strong>英国</strong>资产阶级⾰命爆发，资本主义的发展突出表现在<strong>⼯业⾰命的爆发</strong>上。</p>
+</li>
+<li><p>所谓的殖⺠地是指<strong>商品倾销市场</strong>、<strong>廉价劳动⼒</strong>、<strong>廉价原料的供应地</strong>和<strong>⾃由投资市场</strong>。</p>
+</li>
+<li><p>列强对中国的侵略主要有<strong>军事侵略</strong>、<strong>政治控制</strong>、<strong>经济掠夺</strong>、<strong>⽂化渗透</strong>。</p>
+</li>
+<li><p><strong>1840</strong> 年，英国发动第⼀次鸦⽚战争，中国战败。<strong>1856</strong> 年，英法国发动第⼆次鸦⽚战争，发动了著名的“⽕烧圆明园”；<strong>1900 年</strong>，⼋国联军发动侵华战争并签订《⾟丑条约》</p>
+</li>
+<li><p>中国割让⾹港岛给英国是在中英<strong>《南京条约》</strong>中规定的。</p>
+</li>
+<li><p>割占中国最多的帝国是<strong>俄国</strong>，赔款最多的是<strong>《⾟丑条约》</strong>。</p>
+</li>
+<li><p>1894 年⽇本发动甲午战争后签订的《⻢关条约》允许<strong>⽇本在中国设⼚</strong>，各国开始⼤规模的<strong>对华进⾏资本输出</strong>。</p>
+</li>
+<li><p>中国⾰命的主⼒军是<strong>农⺠阶级</strong>。中国⺠族资产的特性是<strong>⾰命性、软弱性或妥协性</strong>。****</p>
+</li>
+<li><p>中国第⼀次⼤规模的反侵略武装⽃争是<strong>⼴州三元⾥⼈⺠⽃争</strong>。</p>
+</li>
+<li><p>鸦⽚战争战死⻁⻔的将领是<strong>关天培</strong>，镇南关⼤捷的指挥⼤将是<strong>冯⼦材</strong>，甲午中⽇战争中战死的爱国将领有<strong>邓世昌、林永升、丁汝昌、刘步蟾</strong>。</p>
+</li>
+<li><p>要求中国实⾏⻔户开放政策的是美国，列强不能灭亡和⽠分中国的根本原因是<strong>中国⼈⺠进⾏了不屈的反侵略⽃争</strong>。</p>
+</li>
+<li><p>近代中国睁眼看世界的第⼀⼈是林则徐，他编写了《四洲志》，魏源的《海国图志》是在综合了世界各国历史，地理及对外政策后提出了<strong>“师夷⻓技以制夷</strong>”的思想，严复翻译了《天演论》。</p>
+</li>
+</ol>
+<h2 id="简述题："><a href="#简述题：" class="headerlink" title="简述题："></a><strong>简述题：</strong></h2><ol>
+<li>简述中国封建社会的基本特点？</li>
+</ol>
+<p>在经济上，<strong>封建⼟地所有制</strong>占主导地位；在政治上，实⾏<strong>⾼度中央集权的封建君主专制制度</strong>；在⽂化上，<strong>以儒家思想为核⼼</strong>；在社会结构上，<strong>是族权和政权相结合的封建宗法等级制度</strong>；中国封建社会的主要⽭盾是<strong>地主阶级和农⺠阶级</strong>的⽭盾。</p>
+<ol start="2">
+<li>为什么说 1840 年第⼀次鸦⽚战争是中国近代史的开端？</li>
+</ol>
+<p>第⼀次鸦⽚战争以中国失败⽽告终，<strong>主权ᇿ ⽴受到侵犯</strong>，<strong>领⼟完整遭到破坏</strong>，中国逐渐沦⼊国家主权受制于外国列强的半殖⺠地社会；鸦⽚战争后，随着五⼝通商和⻄⽅商品在中国的倾销，促使中国传统的封建的<strong>⾃给⾃⾜的⾃然经济开始解体</strong>。</p>
+<ol start="3">
+<li>简述近代中国半殖⺠地半封建社会的特点是什么？</li>
+</ol>
+<p>资本帝国主义成为⽀配中国的决定性⼒量；<strong>中国封建势⼒</strong>成为外国列强压迫、奴役中国⼈⺠的<strong>社会基础和统治⽀柱</strong>；<strong>封建剥削制度封建地主的徒弟所有制</strong>在⼴⼤地区保持着；<strong>中国资本主义</strong>没有成为中国社会经济的主体；近代中<strong>国各地区经济、政治和⽂化和发展是及不平衡</strong>的；⼈⺠毫<strong>⽆政治权利</strong>和⽣<strong>活的极端贫困化</strong>。</p>
+<ol start="4">
+<li>简述社会阶级关系的变动？</li>
+</ol>
+<p>旧的封建统治阶级——地<strong>主阶级继续拥有⼤量的⼟地</strong>；旧的被统治阶级——<strong>农⺠阶级仍是近代中国社会⼈数最多的被剥削阶级</strong>；中国资产阶级分为<strong>官僚买办资产阶级和⺠族资产阶级两部分。</strong></p>
+<ol start="5">
+<li>简述中国⼯⼈阶级为何具有⽆产阶级的特点?</li>
+</ol>
+<p><strong>深受帝国主义，封建势⼒和资产阶级</strong>三重压迫和剥削，⾰命性最强；⼈数虽少，但相对集中，便于形成<strong>⾰命的⼒量和传播先进的思想</strong>；同农⺠天然的联系，便于结成⼯农联盟；因此中国⼯⼈阶级是近代<strong>中国社会中最先进、最⾰命、最有⼒量的阶级</strong>。</p>
+<ol start="6">
+<li>简述近代中国的两对主要⽭盾及其关系？</li>
+</ol>
+<p>①在半殖⺠地半封建的中国，<strong>帝国主义与中华⺠族的⽭盾</strong>、<strong>封建主义与⼈⺠⼤众</strong>的⽭盾是两对主要⽭盾，⽽帝国主义与中华⺠族的⽭盾是各种⽭盾中最主要的⽭盾；</p>
+<p>②两对主要⽭盾之间的关系，⼀是当外国列强向中国发动侵略战争时，<strong>⺠族⽭盾上升到主要地位</strong>；⼆是当外国侵略者同中国封建政权相勾结共同镇压中国⾰命时，<strong>阶级⽭盾就上升为主要⽭盾</strong>；三是国内战争发展到直接威胁帝国主义在华利益及中国封建地主阶级统治时，<strong>帝国主义和国内封建主义</strong>完全公开站在⼀条线上。</p>
+<p>7、简述中国两⼤历史任务及其关系？</p>
+<p>①近代中国社会的性质和主要⽭盾决定了近代以来中华名族始终⾯临两⼤历史任务：⼀是球的<strong>⺠族独⽴和⼈⺠解放</strong>；⼆是实现<strong>国家繁荣富强和⼈⺠共同富裕</strong>。②两⼤历史任务既<strong>相互区别，⼜相互联系</strong>。</p>
+<p>其区别在于，<strong>前者要改变⺠族遭压迫、⼈⺠受剥削的地位和状况</strong>，是要从根本上<strong>解决⽣产关系问题</strong>；后者是要改变<strong>近代中国经济、⽂化和社会落后的地位和状况</strong>，解决⽣产⼒问题。其联系在于，只有完成第⼀⼤任务，才能为第⼆⼤任务<strong>的完成创造条件</strong>。</p>
+<p>8、简述反侵略⽃争失败及其原因？</p>
+<p>⼀是<strong>社会制度的腐败</strong>；⼆是<strong>经济技术的落后</strong>，前者是根本原因。</p>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="选择题：-1"><a href="#选择题：-1" class="headerlink" title="选择题："></a><strong>选择题：</strong></h2><p>1、1851 年的⾦⽥起义是太平运动的起点；太平天国由胜转衰的转折点是天京事变；1864 年 7 ⽉天京被攻</p>
+<p>破，太平天国农⺠战争失败。</p>
+<p>2、《天朝⽥亩制度》所建⽴的理想社会是“有⽥同耕、有饭同⻝、有⾐同穿、有钱同使、⽆处不均匀、⽆处不饱暖”。</p>
+<p>3、对洋务事业的指导思想最先做出⽐较完整表述的是冯桂芬，洋务运动的性质是“⾃救”活动，其指导思想是“中学为体，⻄学为⽤”；北洋海军全军覆没，标志着洋务运动的失败。</p>
+<p>4、维新变法最早开始于 1895 年的“公⻋上书”；其后康有为撰写了《新学伪经考》、《孔⼦改制考》、《⼈类公理》等著作；当时影响最⼤的学会是强学会、南学会和保国会等；影响较⼤的报纸有上海《时务报》、天津《国闻报》、湖南《湘报》等。</p>
+<p>5、对抗维新变法的代表作是湖⼴总督张之洞写的《劝学篇》。</p>
+<h2 id="简述题：-1"><a href="#简述题：-1" class="headerlink" title="简述题："></a><strong>简述题：</strong></h2><h3 id="简述太平天国农⺠战争爆发的根本原因？"><a href="#简述太平天国农⺠战争爆发的根本原因？" class="headerlink" title="简述太平天国农⺠战争爆发的根本原因？"></a>简述太平天国农⺠战争爆发的根本原因？</h3><p>⼀是<strong>封建专制政权</strong>和<strong>地主阶级</strong>对农⺠的<strong>政治压迫和经济剥削</strong>；⼆是<strong>鸦⽚战争</strong>带来的恶果，使得中国社会的<strong>阶级⽭盾普遍激化</strong>了；前者是战争爆发的根本原因。</p>
+<h3 id="简述太平天国的纲领⽂件。"><a href="#简述太平天国的纲领⽂件。" class="headerlink" title="简述太平天国的纲领⽂件。"></a>简述太平天国的纲领⽂件。</h3><p>太平天国前期的《天朝⽥亩制度》是⼀个以<strong>解决⼟地问题</strong>为中⼼的<strong>⽐较完整</strong>的<strong>社会改⾰⽅案</strong>，但此纲领并没有超出农⺠⼩⽣产者的ሀ 隘眼界，它所追求的理想天国是⼀种绝对平均的理想社会，是<strong>不切实际的空想</strong>；太平天国后期洪仁玕提出的《资政新篇》是⼀个<strong>带有鲜明的资本主义⾊彩</strong>的改⾰与建设⽅案，但通篇为涉及农⺠问题与⼟地问题。这⼀致命的弱点，决定了这个⽅案从⼀开始<strong>就缺乏实施的阶级基础和社会条件</strong>。</p>
+<h3 id="简述太平天国运动的历史意义？"><a href="#简述太平天国运动的历史意义？" class="headerlink" title="简述太平天国运动的历史意义？"></a>简述太平天国运动的历史意义？</h3><p>⼀是它沉重的<strong>打击了封建统治阶级</strong>，强烈撼动了清政府的统治根基；⼆它是中国<strong>旧式农⺠战争的最⾼峰</strong>；三是太平天国对孔⼦及<strong>儒家经典予以严厉批评</strong>，削弱了封建统治的精神⽀柱；四是太平天国农⺠战争有⼒地<strong>打击了外国侵略势⼒</strong>；五是它<strong>冲击了⻄⽅殖⺠主义</strong>在亚洲的统治。</p>
+<h3 id="简述太平天国失败的原因和教训？"><a href="#简述太平天国失败的原因和教训？" class="headerlink" title="简述太平天国失败的原因和教训？"></a>简述太平天国失败的原因和教训？</h3><p>太平天国失败的根本原因是<strong>缺乏先进阶级的领导</strong>，你哦年国⺠阶级不是新的⽣产⼒和⽣产关系的代表，带有<strong>阶级局限性</strong>；太平天国的失败还在于没有<strong>科学理论的指导</strong>；太平天国起义的失败表明，在半殖⺠地半封建社会，农⺠不能担负起领导反帝反封建⽃争。</p>
+<h3 id="简述洋务运动的内容？"><a href="#简述洋务运动的内容？" class="headerlink" title="简述洋务运动的内容？"></a>简述洋务运动的内容？</h3><p>洋务运动持续时间为 30 年，其内容主要有<strong>兴办近代企业</strong>，<strong>建⽴新式海路军</strong>，创办<strong>新式学堂</strong>，<strong>派遣留学⽣</strong>。</p>
+<h3 id="简述洋务运动的历史意义？"><a href="#简述洋务运动的历史意义？" class="headerlink" title="简述洋务运动的历史意义？"></a>简述洋务运动的历史意义？</h3><p>在客观上促进了中国早期<strong>⼯业和⺠族资本主义</strong>的发展；成为中国<strong>近代教育的开端</strong>；传播了新知识，打开了⼈们的眼界；引起了<strong>社会⻛⽓和价值观念的变化</strong>。</p>
+<h3 id="简述洋务运动失败的原因？"><a href="#简述洋务运动失败的原因？" class="headerlink" title="简述洋务运动失败的原因？"></a>简述洋务运动失败的原因？</h3><p>洋务运动具有<strong>封建性</strong>；洋务运动对⻄⽅列强具有<strong>依赖性</strong>；洋务企业的管理具有<strong>腐朽性</strong>。</p>
+<h2 id="简述维新派和守旧派的论战？"><a href="#简述维新派和守旧派的论战？" class="headerlink" title="简述维新派和守旧派的论战？"></a>简述维新派和守旧派的论战？</h2><p>两派之间的论战主要围绕三个问题展开：⼀是<strong>要不要变</strong>法；⼆是<strong>要不要兴⺠权、设议院</strong>，实⾏君主⽴宪；三是<strong>要不要废⼋股、改科举和兴学堂</strong>。论战的意义是资产阶级思想与封建主义思想在中国的第⼀次正⾯交锋，为维新变法运动作了思想舆论的准备。</p>
+<h3 id="简述“百⽇维新”的主要内容？"><a href="#简述“百⽇维新”的主要内容？" class="headerlink" title="简述“百⽇维新”的主要内容？"></a>简述“百⽇维新”的主要内容？</h3><p>在政治上，<strong>改⾰⾏政制度</strong>；在经济上，<strong>保护、奖励农⼯商业</strong>；在军事上，<strong>裁撤绿营</strong>，改练新式陆军；在⽂教⽅⾯上<strong>，改⾰科举制度，废⼋股，提倡⻄学</strong>。这些新政的内容，对中国<strong>⺠族资本主义的发展</strong>和<strong>资产阶级先进⽂化科学</strong>的传播都是⼗分有利的。</p>
+<h3 id="简述戊戌维新运动的意义？"><a href="#简述戊戌维新运动的意义？" class="headerlink" title="简述戊戌维新运动的意义？"></a>简述戊戌维新运动的意义？</h3><p>戊戌维新运动是⼀<strong>次爱国救亡运动</strong>；是⼀场<strong>资产性质</strong>的政治改⾰运动；是⼀场<strong>思想启蒙运动</strong>；在改⾰社会⻛⽓⽅⾯也有<strong>不可低估的意义</strong>。</p>
+<h2 id="简述戊戌维新运动失败的原因和教训？"><a href="#简述戊戌维新运动失败的原因和教训？" class="headerlink" title="简述戊戌维新运动失败的原因和教训？"></a>简述戊戌维新运动失败的原因和教训？</h2><p>戊戌维新运动失败的主要原因在于<strong>维新派⾃身的局限</strong>和以慈禧太后为⾸的强⼤的守旧势⼒的反对。维新派⾃身有三⽅⾯的弱点和局限：⼀是<strong>不敢否认封建主义</strong>；⼆是对<strong>帝国主义抱有幻想</strong>；三是<strong>脱离⼈⺠群众</strong>。戊戌维新以悲剧性的失败⽽告终，不仅暴露出资产阶级的软弱性，同时也说明在半殖⺠半封建的中国，企图通过统治者进⾏⾃上⽽下的改良的道路，是⾏不通的要想实现国家的ᇿ ⽴、⺠主、富强，必须采⽤⾰命的⼿段</p>
+<h2 id="第三章-辛亥革命"><a href="#第三章-辛亥革命" class="headerlink" title="第三章 辛亥革命"></a>第三章 辛亥革命</h2><p><strong>选择题：</strong></p>
+<p>1、<strong>1906 年</strong>清末新政开始<strong>废除科举考试</strong>。</p>
+<p>2、中国第⼀个<strong>资产阶级⾰命组织</strong>是<strong>孙中⼭组织的兴中会</strong>；其他资产阶级⾰命团体有<strong>⻩兴的华兴会</strong>，<strong>蔡元培的光复会</strong>；近代中国第⼀个全国性的资产阶级性质的<strong>政党是中国同盟</strong>会，其纲领是“<strong>驱除鞑虏，恢复中华，创⽴⺠国，平均地权</strong>”；同盟会的机关报是<strong>《⺠报》</strong>； 三⺠主义是<strong>⺠族、⺠权、⺠主</strong>。</p>
+<p>3、20 世纪初，资产阶级⾰命派宣传⺠主⾰命思想的代表作有章炳麟的<strong>《驳康有为轮⾰命书》</strong>、邹容的<strong>《⾰命军》</strong>、陈天华的<strong>《警世钟</strong>》和<strong>《猛回头》</strong>。</p>
+<p>4、⺠⽣主义的基本⽅案是<strong>核定低价；按价征税，涨价归公，按价收买</strong>。</p>
+<p>5、资产阶级组织的武装起义中影响做⼤的是 <strong>1891 年的⼴州起义</strong>，⼜称<strong>⻩花岗起义</strong>。⼈⺠武装起义尤为强烈的属四川省的保路运动。6、⾟亥⾰命的⾼潮出现在 1891 年 10 ⽉ 10 号的<strong>武昌起义</strong>。1912 年<strong>中华⺠国临时政府</strong>宣告成⽴，国号为“中华⺠国”，1912 年为中华⺠国元年。</p>
+<p>7、中国第⼀部具有资产阶级共和国宪法性质的法典是<strong>《中华⺠国临时约法》</strong>。</p>
+<p>8、北洋军阀统治了中国 16 年；1915 年袁世凯接收了<strong>⽇本提出的“⼆⼗⼀条”</strong>。以孙中⼭为⾸的⾰命派与北洋军阀进⾏的⽃争有 <strong>1913 年“⼆次⾰命”</strong>，1915 年<strong>蔡锷的护国运动</strong>，1917 年孙中⼭率领的第⼀次<strong>护法运动</strong>，1919 年的<strong>第⼆次护法运动</strong>。</p>
+<p>9、1914 年孙中⼭成⽴的中华⾰命党，第⼆次<strong>护法战争的失败</strong>标志着中<strong>国旧⺠主主义⾰命的终结</strong>。</p>
+<p><strong>简述题：</strong></p>
+<h3 id="简述清末新政的内容？"><a href="#简述清末新政的内容？" class="headerlink" title="简述清末新政的内容？"></a>简述清末新政的内容？</h3><p>⼀<strong>是改⾰管制，整顿吏治</strong>；⼆是<strong>改⾰兵制，训练新军</strong>；三是<strong>改⾰学制，提倡新学</strong>；四是<strong>奖励⼯商，兴办实业</strong>。</p>
+<h3 id="试述“三⺠主义”的内容？"><a href="#试述“三⺠主义”的内容？" class="headerlink" title="试述“三⺠主义”的内容？"></a>试述“三⺠主义”的内容？</h3><p>⺠族主义包括“驱除鞑虏，恢复中华”两性内容：⼀是以<strong>⾰命⼿段推翻清王</strong>朝，改变它⼀贯推⾏的⺠族歧视和压迫政策；⼆是<strong>变“次殖⺠地”的中国为ᇿ ⽴的中国</strong>，但其没有明确的反帝主张；⺠权主义内容是<strong>“创⽴⺠国</strong>”，即推翻封建君主主义专制制度，建⽴资产阶级的⺠主共和国，但其没有明确劳动⼈⺠在国家中的地位；⺠⽣主义的内容是<strong>“平均主义”</strong>，但其没有正⾯触及封建⼟地所有制，不能满⾜农⺠的⼟地要求；孙中⼭的三⺠主义学说，提出了⼀套中国历史上不曾有过的资产阶级共和国的建国⽅案，是⼀个<strong>⽐较完备的⺠主主义的⾰命纲领</strong>。</p>
+<h3 id="⾰命派与改良派的辩驳内容与意义？"><a href="#⾰命派与改良派的辩驳内容与意义？" class="headerlink" title="⾰命派与改良派的辩驳内容与意义？"></a>⾰命派与改良派的辩驳内容与意义？</h3><p>内容：⼀是要不要以<strong>⾰命⼿段推翻清政府</strong>；⼆是<strong>要不要推翻帝制</strong>，实⾏共和；三是要不要<strong>社会⾰命</strong>。</p>
+<p>意义：论战划清了⾰命与改良的界限，论战使<strong>资产阶级⺠主</strong>和<strong>三⺠主义思想</strong>得到了更加⼴泛的份额传播，为推翻清朝统治的⾰命⽃争奠定了思想基础。</p>
+<h3 id="为什么说南京临时政府是资产阶级共和国性质的⾰命政权？"><a href="#为什么说南京临时政府是资产阶级共和国性质的⾰命政权？" class="headerlink" title="为什么说南京临时政府是资产阶级共和国性质的⾰命政权？"></a>为什么说南京临时政府是资产阶级共和国性质的⾰命政权？</h3><p>⼀是⼈员构成上，<strong>资产阶级⾰命派控制着这个政权</strong>；⼆是在实⾏的各项政策措施上，集中体现了中国⺠族资产阶级的愿望和利益，⼀定程度上符合<strong>⼴⼤中国⼈⺠的利益</strong>。</p>
+<h3 id="简述南京临时政府的局限性？"><a href="#简述南京临时政府的局限性？" class="headerlink" title="简述南京临时政府的局限性？"></a>简述南京临时政府的局限性？</h3><p>⼀是企图⽤承认清政府与列强所定的的<strong>⼀切不平等条约和所⽋的⼀切外债</strong>，来换取列强承认中华⺠国；⼆是没有提出可以满⾜农⺠⼟地要求的政策与措施。</p>
+<h3 id="简述⾟亥⾰命胜利的历史意义？（为什么说⾟亥⾰命是⼀次⽐较完全意义上的资产阶级⺠主⾰命？）"><a href="#简述⾟亥⾰命胜利的历史意义？（为什么说⾟亥⾰命是⼀次⽐较完全意义上的资产阶级⺠主⾰命？）" class="headerlink" title="简述⾟亥⾰命胜利的历史意义？（为什么说⾟亥⾰命是⼀次⽐较完全意义上的资产阶级⺠主⾰命？）"></a>简述⾟亥⾰命胜利的历史意义？（为什么说⾟亥⾰命是⼀次⽐较完全意义上的资产阶级⺠主⾰命？）</h3><p>⼀是推翻了<strong>清王朝在中国的统治</strong>；⼆是结束了<strong>统治中国两千多年的封建君主专制制度</strong>，建⽴了中国历史上第⼀个资产阶级共和政府；三是<strong>⼀场思想解放运动</strong>；四是推翻了<strong>⺠族资本主义经济的发展</strong>；五是打击了<strong>帝国主义在华势⼒</strong>。</p>
+<h3 id="简述⾟亥⾰命的局限性？（⾟亥⾰命为什么会失败？）"><a href="#简述⾟亥⾰命的局限性？（⾟亥⾰命为什么会失败？）" class="headerlink" title="简述⾟亥⾰命的局限性？（⾟亥⾰命为什么会失败？）"></a>简述⾟亥⾰命的局限性？（⾟亥⾰命为什么会失败？）</h3><p>没有提出彻底的<strong>反对帝国主义</strong>和<strong>反对封建主义</strong>的⾰命纲领；没有<strong>充分发动和依靠群众</strong>；没有建⽴坚强的⾰命政党；资产阶级<strong>⾰命派的软弱性</strong>以及由此⽽来的⾟亥⾰命的局限性，使⾟亥⾰命难以摆脱失败的命运；⾟亥⾰命的失败表明：<strong>资产阶级共和国的⽅案不能救中国</strong>。</p>
+<h2 id="第四章-开天辟地的大事件"><a href="#第四章-开天辟地的大事件" class="headerlink" title="第四章 开天辟地的大事件"></a>第四章 开天辟地的大事件</h2><p><strong>选择题：</strong></p>
+<p>1、1915 年陈ᇿ 秀在上海创办的《新⻘年》，成为新⽂化运动兴起的标志。</p>
+<p>2、新⽂化运动的主要内容是提倡⺠主与科学，还提倡⽩话⽂、新⽂学，反对⽂⾔⽂，主张⽂学⾰命。新⽂化运动的第⼀篇⽩话⽂⼩说是鲁迅发表的《狂⼈⽇记》。3、在中国⼤地率先举起⻢克思主义旗帜的是李⼤钊。五四运动⽃争⽬标是“外争国权，内除国贼”。</p>
+<p>4、《共产党宣⾔》第⼀个中⽂全译本是陈望道翻译的。中国第⼀个地⽅共产党组织是上海共产主义⼩组。中国共产党第⼀、⼆次全国代表⼤会都是在上海举⾏。</p>
+<p>5、第⼀个产业⼯会是上海机器⼯会。第⼀个农⺠协会成⽴在浙江省萧⼭县衙前村。</p>
+<p>6、中国⼯⼈运动掀起⾼潮的起点是 1922 年⾹港海员罢⼯，终点是 1923 年京汉铁路⼯⼈罢⼯。中国⼯⼈运动史上最⻓的⼀次罢⼯是省港⼤罢⼯。</p>
+<p>7、建⽴⾰命统⼀战线的问题是在中共第三次全国代表⼤会上。国共合作的政治基础和⾰命统⼀战线的共同纲领是新三⺠主主义 。第⼀次国共合作的政治基础是联俄、联共、扶助农⼯三⼤政策。1924 年国⺠党“⼀⼤”的召开，标志着以第⼀次国共合作为基础的⾰命统⼀战线正式形成，改组后的国⺠党改为⼯⼈阶级、农⺠阶级、⼩资产阶级和⺠族资产阶级的⾰命联盟。</p>
+<p>8、1924 年成⽴的⻩埔军校把政治教育提到和军事训练同等重要的地位，注重培养学⽣的爱国思想和⾰命精神，这是同⼀切旧式军校的根本区别。</p>
+<p>9、北伐战争的直接⽬标是打到帝国主义⽀持北洋军阀。</p>
+<p>10、国⺠党右派为了打击共产党员和⼯农⾰命⼒量，以蒋介⽯为⾸后制造了中⼭舰事件、整理党务案事件。</p>
+<p><strong>简述题：</strong></p>
+<h3 id="简述五四前夕的新⽂化运动的历史意义？"><a href="#简述五四前夕的新⽂化运动的历史意义？" class="headerlink" title="简述五四前夕的新⽂化运动的历史意义？"></a>简述五四前夕的新⽂化运动的历史意义？</h3><p>⼀它是资产阶级⺠主主义的<strong>新⽂化同封建主义旧⽂化的⽃争</strong>；⼆是它<strong>⼤⼒宣传了⺠主与科学</strong>，启发了⼈们的<strong>理智与⺠主</strong>主义觉悟，开启了思想解放的潮流；三是它为五四运动创造了思想⽂化上的条件。</p>
+<h3 id="简述五四前夕的新⽂化运动的局限？"><a href="#简述五四前夕的新⽂化运动的局限？" class="headerlink" title="简述五四前夕的新⽂化运动的局限？"></a>简述五四前夕的新⽂化运动的局限？</h3><p>新闻欢运动提倡的资产阶级⺠主主义，并不能为<strong>⼈们提供⼀种思想武器去</strong>认识中国；他们没有把运动普及到⼯农群众中去；他们中的不少⼈在<strong>思想⽅法上存在绝对肯定或绝对否定的形式主义</strong>偏向。</p>
+<h3 id="简述五四运动的历史特点及意义？"><a href="#简述五四运动的历史特点及意义？" class="headerlink" title="简述五四运动的历史特点及意义？"></a>简述五四运动的历史特点及意义？</h3><p>五四运动是⼀次彻底的<strong>反帝反封建的⾰命运动</strong>；它是⼀场真正的群众性的⾰命运动；它促进了⻢克思主义在中国的⼴泛的传播，促进了⻢<strong>克思主义同中国⼯⼈运动</strong>的结合，为中国共产党的成⽴作了<strong>思想****和⼲部上</strong>的准备；它是中国新⺠主主义⾰命的伟⼤开端。</p>
+<h3 id="为什么说五四运动是中国新⺠主主义⾰命的伟⼤开端？"><a href="#为什么说五四运动是中国新⺠主主义⾰命的伟⼤开端？" class="headerlink" title="为什么说五四运动是中国新⺠主主义⾰命的伟⼤开端？"></a>为什么说五四运动是中国新⺠主主义⾰命的伟⼤开端？</h3><p>五四运动发⽣在俄国⼗⽉⾰命之后，中国⾰命逐渐成为世界⽆产阶级社会主义⾰命的⼀部分；五四运动以后，<strong>⽆产阶级逐渐代替资产阶级成为近代中国⺠族⺠主⾰命的领导者。</strong></p>
+<h3 id="为什么说中国共产党的诞⽣是⻢克思主义同中国⼯⼈运动相结合的产物？"><a href="#为什么说中国共产党的诞⽣是⻢克思主义同中国⼯⼈运动相结合的产物？" class="headerlink" title="为什么说中国共产党的诞⽣是⻢克思主义同中国⼯⼈运动相结合的产物？"></a>为什么说中国共产党的诞⽣是⻢克思主义同中国⼯⼈运动相结合的产物？</h3><p>五四以后，随着⼯⼈运动的发展，⼯⼈阶级急切需要找到<strong>实现本阶级意志的精神武器</strong>；⻢克思主义的⼴泛传播，也迫切需要从<strong>⼯⼈阶级中找到物质⼒量。</strong></p>
+<h3 id="早期共产党组织的成员同反⻢克思主义的思潮进⾏了那三次论战？"><a href="#早期共产党组织的成员同反⻢克思主义的思潮进⾏了那三次论战？" class="headerlink" title="早期共产党组织的成员同反⻢克思主义的思潮进⾏了那三次论战？"></a>早期共产党组织的成员同反⻢克思主义的思潮进⾏了那三次论战？</h3><p>⼀是同胡适围绕“<strong>问题与主义”的</strong>论战；⼆是关于社会主义的论战，强调<strong>资本主义道路在中国⾛</strong>不通，中国的出路只能是社会主义；三是同<strong>⽆政府主义的论战，</strong>指出必须以⾰命的⼿段夺取政权，建⽴⽆产阶级政权。</p>
+<h3 id="简述中国共产党成⽴的伟⼤意义？（为什么说中国共产党的成⽴是⼀个“开天辟地的⼤事件”）"><a href="#简述中国共产党成⽴的伟⼤意义？（为什么说中国共产党的成⽴是⼀个“开天辟地的⼤事件”）" class="headerlink" title="简述中国共产党成⽴的伟⼤意义？（为什么说中国共产党的成⽴是⼀个“开天辟地的⼤事件”）"></a>简述中国共产党成⽴的伟⼤意义？（为什么说中国共产党的成⽴是⼀个“开天辟地的⼤事件”）</h3><p>它标志着中国⾰命终于有了⼀个<strong>坚强的领导核⼼</strong>；中国⾰命从此有了⼀个科<strong>学的指导思想</strong>，即⻢克思主义；沟通了<strong>中国⾰命与世界⾰命的联系</strong>，使中国⾰命有了新的前途，<strong>即社会主义的前途</strong>。</p>
+<h3 id="简述中共“⼆⼤”的内容与意义？"><a href="#简述中共“⼆⼤”的内容与意义？" class="headerlink" title="简述中共“⼆⼤”的内容与意义？"></a>简述中共“⼆⼤”的内容与意义？</h3><p>1922 年中共⼆⼤的召开，党的三⼤纲领：消除内战，达到军阀，建设国内和平；推翻国际帝国主义的压迫，达到中华⺠族完全ᇿ ⽴；<strong>统⼀中国为真正的⺠主共和国</strong>。意义：中共⼆⼤在中国近代历史上第⼀次明确提出了<strong>反帝反封建的⺠主⾰命纲领</strong>，为<strong>中国⾰命指明了⽅向</strong>。</p>
+<h3 id="简述北伐战争得以胜利进军的原因？"><a href="#简述北伐战争得以胜利进军的原因？" class="headerlink" title="简述北伐战争得以胜利进军的原因？"></a>简述北伐战争得以胜利进军的原因？</h3><p>国内合作的实现，<strong>⾰命统⼀战线的建</strong>⽴，特别是共产党员和共⻘团员的先锋模范作⽤是北伐胜利的重要原因；北伐军得到⼴⼤⼯农群众的⼤⼒⽀持；北伐战争得到了<strong>苏联政府的多⽅⾯援助。</strong></p>
+<h3 id="简述国⺠⾰命失败的原因？"><a href="#简述国⺠⾰命失败的原因？" class="headerlink" title="简述国⺠⾰命失败的原因？"></a>简述国⺠⾰命失败的原因？</h3><p>客观上，帝<strong>国主义和中国封建主义势⼒的联合⼒量⼤⼤超过了⾰命联合⼒</strong>量；⾰命统⼀战线内部出现剧烈分化，蒋介⽯、汪精卫先后分裂统⼀战线，制造反攻政策；主观上，以陈ᇿ 秀为⾸的<strong>中共中央领导犯了右倾机会主义错误。</strong></p>
+<h3 id="简述国⺠⾰命的历史意义？"><a href="#简述国⺠⾰命的历史意义？" class="headerlink" title="简述国⺠⾰命的历史意义？"></a><strong>简述国⺠⾰命的历史意义？</strong></h3><p>沉重打击了<strong>帝国主义和封建主义的统治势⼒</strong>；扩⼤了中国共产党在中国⼈⺠中的政治影响，中国共产党正是从这场⾰命的失败中涉取教训，<strong>开始懂得了进⾏⼟地⾰命和掌握⾰命武装的重要性。</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>連濁</title>
+    <url>/2024/05/17/%E9%80%A3%E6%BF%81/</url>
+    <content><![CDATA[<p>連濁（れんだく）：連濁とは、ある語と語が組み合わさって、熟語（じゅくご）や複合語（ふくごうご）になったとき、後ろの語の先頭の音が、清音から濁音に変化する現象のことです、連濁は例外も多いのですが、それでも一般的なルールがありますので、次のようにまとめてみました。<br>連濁が起こりやすいグループと、連濁が起こりにくいグループに分けました。<br>連濁が起こりやすい：OO＋和語<br>和語とは、日本で古くから使われていた言葉で、基本的に訓読みします。<br>連濁が起こりにくい：OO＋外来語　OO＋かんご<br>それにたいして漢語とは、中国から伝わった言葉で、基本的に音読みします。<br>和語＋和語の組み合わせのとき、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>貝殻（かいがら）、長靴（ながぐつ）、夜空（よぞら）、巻き寿司（まきずし）、<br>鼻血（はなじ）、時々（ときどき）、前歯（まえば）、生け花（いけばな）<br>漢語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>気軽（きがる）、仕事（しごと）、豚汁（とんじる）、人数（にんずう）、<br>団子（だんご）、台所（だいどころ）、茶畑（ちゃばたけ）、煎餅(せんべい)。<br>変温現象：発音安くするの変化<br>舌を上顎につけてから「お」というと、自然に「の」になりますね。<br>外来語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>スナック菓子（がし）、サラダ皿（ざら）、スイーツ処（どころ）、キャベツ畑（ばたけ）<br>即ち、熟語や複合語の後ろの語側語、かつ後ろの語の先頭のかなが清音の場合、連濁することが多いです。<br>はな＋たば：はなだば（ｘ）はなたば<br>前にご紹介した基本のルールの通り、熟語や複合語の後ろの語が和語の場合、後ろの語の先頭のかなは濁音化すべきですが、もしその先頭のかなに濁音がある場合、連濁ないことがあります。<br>無傷（むきず）、座敷（ざしき）、絵筆（えふで）、ベイト先（さき）<br>次に、先後が並列構造になっている場合は、あまり連濁しません、<br>例えば、「すき嫌い」という複合語は、基本のルールならば「すきぎらい」となりますよね、<br>ですが「すき」と「嫌い」には並列構造がありますので連濁しません。<br>山川（やまかわ）、押し引き（おしひき）、嬉し悲しい（うれしかなしい）<br>まずは、熟語や複合語の後ろの語に漢語がくるときです<br>和語＋漢語の組み合わせのとき、ほとんど連濁しません<br>株券（かぶけん）、寒気（さむけ）、畑仕事（はたけしごと）、場所（ばしょ）、<br>家賃（やちん）、手帳（てちょう）、手本（てほん）、見本（みほん）<br>漢語＋漢語の組み合わせのとき、ほとんど連濁しません<br>価格（かかく）、旅行（ようこう）、完成（かんせい）、基礎（きそ）<br>携帯（けいたい）、位置（いち）、後輩（こはい）、警報（けいほう）<br>外来語＋漢語の組み合わせのとき、ほとんど連濁しません<br>グローバル化（か）、ヒット作、サービス単価（たんか）、リサイクル品（ひん）<br>例外１：<br>湯気（ゆげ）、足し算（たしざん）、登山（とざん）<br>例外２：長音<br>三本（さんぼん）、中国（ちゅごく）、定規（じょうぎ）、漫才（まんざい）、単行本（たんこんぼん）<br>和語＋外来語の組み合わせのとき、ほとんど連濁しません<br>一コース、一人カラオケ、負けチーム<br>漢語＋外来語の組み合わせのとき、ほとんど連濁しません<br>健康（けんこう）チェック、筋肉（きんにく）トレーニング、薬用（やくよう）ファンデション<br>外来語＋外来語<br>アフターサービス、レイトショー、ヘルスチェック、ワーキングホリデー。<br>連濁の一般的な規則をまとめますと、まずは熟語や複合語の後ろの語が何語なのかを確認します、<br>そして、和語なら連濁が起こりやすく、漢語や外来語が起こりにくいと考えてください。<br>転音：転音とは、熟語や複合語の前の語の最後の母音が変わることです。<br>例えば、「酒」＋「屋」の組み合わせの場合、前の語「酒」の最後の母音「え」が「あ」に変化します<br>さけ＋や＝さかや<br>「白」＋「玉」の組み合わせの場合、前の語「白」の最後の母音「お」が「あ」に変化します、<br>しろ＋たま＝しらたま<br>「船」＋「便」の組む合わせの場合、前の語「船」の最後の母音「え」が「あ」に変化します<br>ふね＋びん＝ふなびん<br>「🌴」＋「陰」の組む合わせの場合、前の語「木」の最後の母音「い」が「お」に変化します<br>き＋かげ＝こかげ<br>促音化：促音化とは、熟語や複合語の前の語の最後のかなと後ろの語の先頭のかながの子音が無声子音の場合、<br>前の語の最後のかなが促音になる変化です。<br>無声子音は「か、さ、た、は、ぱ」行の子音のことです<br>かつ＋て＝かって（勝＋手＝勝手）、けつ＋てい＝けってい(決＋定＝決定)、せつ＋てい＝せってい(説＋定＝設定)<br>いち＋てい＝いってい（一定）、せき＋けん＝せっけん（石鹸）、あつ＋かん＝あっかん（圧巻）<br>半濁音化：半濁音化とは、熟語や複合語の後ろの語のセントうのかなが「はぎょう」から「パ行」に変わることです。<br>例えば、「審判」の場合、後ろの語の先頭のかな「は」が「ぱ」にかわり、「しんぱん」と読みます<br>出発（しゅっぱつ）、鉛筆「えんぴつ」、扇風機「せんぷうき」、漢方（かんぽう）<br>ちなみに、半濁音化と促音化は同時に起こることも多いです、<br>いち＋ほん＝いっぽん<br>特に、前の語の最後のかなが「く、ち、つ」で、後ろに「は」行のかなが来るときです<br>六本木（ろっぽんぎ）、一本（いっぽん）、割烹（かっぽん）<br>音韻添加：音韻添加とは、熟語や複合語の後ろの語の先頭に、新しい音素がはいることをいいます。<br>例えば、「こさめ」の場合、そのまま読むと「こあめ」ですが「あめ」のまえにしい・ｓ・のおとが入って、「こさめ」とよみます。<br>春雨（はるさめ）<br>「真っ白」のように、「しろ」のまえに子音が・ｓ・のおとが入って、しいん・ｓ・が２つ連続することによって促音になることもあります<br>真っ青（まっさお）、真っ直ぐ（まっすぐ）<br>また、「真ん中」のように、「なか」のまえに発音「ｎ」の音が入ることもあります。<br>音韻脱落：<br>音韻脱落とは、音の一部がなくなることです、例えば、「河原」の場合、そのまま読むと「かわはら」ですが、「は」がなくなって、「かわら」と読みます。<br>なんで<br>音韻融合：<br>音韻融合とは、熟語や複合語の前の語の終わりと後ろの語の先頭が、混ざってような音になることです。<br>例えば、「狩人」の場合、そのまま読むと「かりひと」ですが、「り」と「ひと」が混ざって「りょうど」になり、「かりょうど」とみます。<br>素人（しろうと）、仲人（なこうど）<br>連声：<br>連声とは、熟語や複合語のまえの語のおわりが「ん」や「つ」で、後ろの語の先頭が、母音「あいうえお」「や行」「わ行」であるとき、<br>後ろの先頭が「た行」「な行」「ま行」に変わることです、漢語でよく見られます。<br>例えば、「反応」の場合、前の語のおわりが「ん」で、後ろの語の先頭が母音「お」なので、「お」が「な」行の「の」にへんかして「はんのう」と読みます。<br>因縁（いんねん）、銀杏（ぎんなん）、陰陽（おんみょう）</p>
+<p>まとめ：<br>変音現象は、発音しやすくするためのへんかです、変音現象には沢山の種類があり、また一度に複数の変温現象が起こることもあります、何故変音すると、発音しやすくなるでしょうか、もう一度「反応」を見てみましょう、もし変化しないまま「はんおん」とははっきり発音しょうとすると、「ん」から「お」に舌の形を変えるときに、息が途切れて発音がしにくいですね、では「ん」で舌を上顎につけてから「お」というどうしようか？息が繋がって、発音しやすいと思います、舌を上顎につけてから「お」というと、自然に「の」になりますね</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>镜像阶段：关系即伪，无中生伪有</title>
+    <url>/2024/05/17/%E9%95%9C%E5%83%8F%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%85%B3%E7%B3%BB%E5%8D%B3%E4%BC%AA%EF%BC%8C%E6%97%A0%E4%B8%AD%E7%94%9F%E4%BC%AA%E6%9C%89/</url>
+    <content><![CDATA[<p>镜像阶段：关系即伪&#x2F;无中生伪有-&gt;拉康任务弗洛伊德的那个本我是生物性的，拉康认为人的开端就是一个无，那个永远回不去母子共同体的“无”。<br>nothingness-&gt;hegel 人是一个黑夜。<br>是一个空洞的虚无，<br>人的实在意义上的否定性。<br>主奴辩证法。<br>Max：人的生活，现实意义上是社会关系的总和。<br>镜像阶段的定义：6-18个月 Freud。<br>小朋友站在镜子面前，发现镜子里面有一个小朋友的形象。<br>这个时候会感受到镜子里面那个统一完整的形象<br>进入了想象域，一种蜜月般的欣喜，<br>人总是一个早产儿，die<br>“动力无助”-&gt;主客不分<br>“破碎的身体”，在镜子里面看到了一个完整的自己，接着破碎化，会成为主体不可弥合的创伤，梦是被压抑的愿望的实现 。<br>梦是被压抑的愿望经过伪装之后的实现。<br>主体在认定了一个影像之后的关系，内在和外在的关系，你否定了内在的关系，将自身认知为了镜子中的自己，这是第一次异化。<br>第二次异化是在象征域中被语言结构的异化，语言是一面无声之镜。这是第二次的异化。<br>镜像误认是一种反对心理学（格式塔）上面的那种积极的心理学。<br>a-（小他者一号）&gt;a‘（moi，弗洛伊德语境下的理想自我）；镜像自我，idea-ich。<br>小他者不是一个具体实在的人，镜像阶段中作为自我认同对象的非我中介。</p>
 ]]></content>
   </entry>
   <entry>
@@ -5073,143 +5211,5 @@
 <p><strong>18 次元宇宙論</strong>……宇宙が梅雨期科学で言う 18 次元空間であるとする理論。HT 基礎構造理</p>
 <p>論が成立するためには宇宙は 18 次元空間でなければならなかったため C.S.が提唱した。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>近代史纲要</title>
-    <url>/2024/06/03/%E8%BF%91%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81/</url>
-    <content><![CDATA[<h1 id="第⼀章-反对外国侵略的⽃争"><a href="#第⼀章-反对外国侵略的⽃争" class="headerlink" title="第⼀章 反对外国侵略的⽃争"></a><strong>第⼀章 反对外国侵略的⽃争</strong></h1><h2 id="选择题："><a href="#选择题：" class="headerlink" title="选择题："></a><strong>选择题</strong>：</h2><ol>
-<li><p>清朝唯⼀盛世时期是<strong>康乾盛世</strong>。</p>
-</li>
-<li><p><strong>1640</strong> 年<strong>英国</strong>资产阶级⾰命爆发，资本主义的发展突出表现在<strong>⼯业⾰命的爆发</strong>上。</p>
-</li>
-<li><p>所谓的殖⺠地是指<strong>商品倾销市场</strong>、<strong>廉价劳动⼒</strong>、<strong>廉价原料的供应地</strong>和<strong>⾃由投资市场</strong>。</p>
-</li>
-<li><p>列强对中国的侵略主要有<strong>军事侵略</strong>、<strong>政治控制</strong>、<strong>经济掠夺</strong>、<strong>⽂化渗透</strong>。</p>
-</li>
-<li><p><strong>1840</strong> 年，英国发动第⼀次鸦⽚战争，中国战败。<strong>1856</strong> 年，英法国发动第⼆次鸦⽚战争，发动了著名的“⽕烧圆明园”；<strong>1900 年</strong>，⼋国联军发动侵华战争并签订《⾟丑条约》</p>
-</li>
-<li><p>中国割让⾹港岛给英国是在中英<strong>《南京条约》</strong>中规定的。</p>
-</li>
-<li><p>割占中国最多的帝国是<strong>俄国</strong>，赔款最多的是<strong>《⾟丑条约》</strong>。</p>
-</li>
-<li><p>1894 年⽇本发动甲午战争后签订的《⻢关条约》允许<strong>⽇本在中国设⼚</strong>，各国开始⼤规模的<strong>对华进⾏资本输出</strong>。</p>
-</li>
-<li><p>中国⾰命的主⼒军是<strong>农⺠阶级</strong>。中国⺠族资产的特性是<strong>⾰命性、软弱性或妥协性</strong>。****</p>
-</li>
-<li><p>中国第⼀次⼤规模的反侵略武装⽃争是<strong>⼴州三元⾥⼈⺠⽃争</strong>。</p>
-</li>
-<li><p>鸦⽚战争战死⻁⻔的将领是<strong>关天培</strong>，镇南关⼤捷的指挥⼤将是<strong>冯⼦材</strong>，甲午中⽇战争中战死的爱国将领有<strong>邓世昌、林永升、丁汝昌、刘步蟾</strong>。</p>
-</li>
-<li><p>要求中国实⾏⻔户开放政策的是美国，列强不能灭亡和⽠分中国的根本原因是<strong>中国⼈⺠进⾏了不屈的反侵略⽃争</strong>。</p>
-</li>
-<li><p>近代中国睁眼看世界的第⼀⼈是林则徐，他编写了《四洲志》，魏源的《海国图志》是在综合了世界各国历史，地理及对外政策后提出了<strong>“师夷⻓技以制夷</strong>”的思想，严复翻译了《天演论》。</p>
-</li>
-</ol>
-<h2 id="简述题："><a href="#简述题：" class="headerlink" title="简述题："></a><strong>简述题：</strong></h2><ol>
-<li>简述中国封建社会的基本特点？</li>
-</ol>
-<p>在经济上，<strong>封建⼟地所有制</strong>占主导地位；在政治上，实⾏<strong>⾼度中央集权的封建君主专制制度</strong>；在⽂化上，<strong>以儒家思想为核⼼</strong>；在社会结构上，<strong>是族权和政权相结合的封建宗法等级制度</strong>；中国封建社会的主要⽭盾是<strong>地主阶级和农⺠阶级</strong>的⽭盾。</p>
-<ol start="2">
-<li>为什么说 1840 年第⼀次鸦⽚战争是中国近代史的开端？</li>
-</ol>
-<p>第⼀次鸦⽚战争以中国失败⽽告终，<strong>主权ᇿ ⽴受到侵犯</strong>，<strong>领⼟完整遭到破坏</strong>，中国逐渐沦⼊国家主权受制于外国列强的半殖⺠地社会；鸦⽚战争后，随着五⼝通商和⻄⽅商品在中国的倾销，促使中国传统的封建的<strong>⾃给⾃⾜的⾃然经济开始解体</strong>。</p>
-<ol start="3">
-<li>简述近代中国半殖⺠地半封建社会的特点是什么？</li>
-</ol>
-<p>资本帝国主义成为⽀配中国的决定性⼒量；<strong>中国封建势⼒</strong>成为外国列强压迫、奴役中国⼈⺠的<strong>社会基础和统治⽀柱</strong>；<strong>封建剥削制度封建地主的徒弟所有制</strong>在⼴⼤地区保持着；<strong>中国资本主义</strong>没有成为中国社会经济的主体；近代中<strong>国各地区经济、政治和⽂化和发展是及不平衡</strong>的；⼈⺠毫<strong>⽆政治权利</strong>和⽣<strong>活的极端贫困化</strong>。</p>
-<ol start="4">
-<li>简述社会阶级关系的变动？</li>
-</ol>
-<p>旧的封建统治阶级——地<strong>主阶级继续拥有⼤量的⼟地</strong>；旧的被统治阶级——<strong>农⺠阶级仍是近代中国社会⼈数最多的被剥削阶级</strong>；中国资产阶级分为<strong>官僚买办资产阶级和⺠族资产阶级两部分。</strong></p>
-<ol start="5">
-<li>简述中国⼯⼈阶级为何具有⽆产阶级的特点?</li>
-</ol>
-<p><strong>深受帝国主义，封建势⼒和资产阶级</strong>三重压迫和剥削，⾰命性最强；⼈数虽少，但相对集中，便于形成<strong>⾰命的⼒量和传播先进的思想</strong>；同农⺠天然的联系，便于结成⼯农联盟；因此中国⼯⼈阶级是近代<strong>中国社会中最先进、最⾰命、最有⼒量的阶级</strong>。</p>
-<ol start="6">
-<li>简述近代中国的两对主要⽭盾及其关系？</li>
-</ol>
-<p>①在半殖⺠地半封建的中国，<strong>帝国主义与中华⺠族的⽭盾</strong>、<strong>封建主义与⼈⺠⼤众</strong>的⽭盾是两对主要⽭盾，⽽帝国主义与中华⺠族的⽭盾是各种⽭盾中最主要的⽭盾；</p>
-<p>②两对主要⽭盾之间的关系，⼀是当外国列强向中国发动侵略战争时，<strong>⺠族⽭盾上升到主要地位</strong>；⼆是当外国侵略者同中国封建政权相勾结共同镇压中国⾰命时，<strong>阶级⽭盾就上升为主要⽭盾</strong>；三是国内战争发展到直接威胁帝国主义在华利益及中国封建地主阶级统治时，<strong>帝国主义和国内封建主义</strong>完全公开站在⼀条线上。</p>
-<p>7、简述中国两⼤历史任务及其关系？</p>
-<p>①近代中国社会的性质和主要⽭盾决定了近代以来中华名族始终⾯临两⼤历史任务：⼀是球的<strong>⺠族独⽴和⼈⺠解放</strong>；⼆是实现<strong>国家繁荣富强和⼈⺠共同富裕</strong>。②两⼤历史任务既<strong>相互区别，⼜相互联系</strong>。</p>
-<p>其区别在于，<strong>前者要改变⺠族遭压迫、⼈⺠受剥削的地位和状况</strong>，是要从根本上<strong>解决⽣产关系问题</strong>；后者是要改变<strong>近代中国经济、⽂化和社会落后的地位和状况</strong>，解决⽣产⼒问题。其联系在于，只有完成第⼀⼤任务，才能为第⼆⼤任务<strong>的完成创造条件</strong>。</p>
-<p>8、简述反侵略⽃争失败及其原因？</p>
-<p>⼀是<strong>社会制度的腐败</strong>；⼆是<strong>经济技术的落后</strong>，前者是根本原因。</p>
-<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="选择题：-1"><a href="#选择题：-1" class="headerlink" title="选择题："></a><strong>选择题：</strong></h2><p>1、1851 年的⾦⽥起义是太平运动的起点；太平天国由胜转衰的转折点是天京事变；1864 年 7 ⽉天京被攻</p>
-<p>破，太平天国农⺠战争失败。</p>
-<p>2、《天朝⽥亩制度》所建⽴的理想社会是“有⽥同耕、有饭同⻝、有⾐同穿、有钱同使、⽆处不均匀、⽆处不饱暖”。</p>
-<p>3、对洋务事业的指导思想最先做出⽐较完整表述的是冯桂芬，洋务运动的性质是“⾃救”活动，其指导思想是“中学为体，⻄学为⽤”；北洋海军全军覆没，标志着洋务运动的失败。</p>
-<p>4、维新变法最早开始于 1895 年的“公⻋上书”；其后康有为撰写了《新学伪经考》、《孔⼦改制考》、《⼈类公理》等著作；当时影响最⼤的学会是强学会、南学会和保国会等；影响较⼤的报纸有上海《时务报》、天津《国闻报》、湖南《湘报》等。</p>
-<p>5、对抗维新变法的代表作是湖⼴总督张之洞写的《劝学篇》。</p>
-<h2 id="简述题：-1"><a href="#简述题：-1" class="headerlink" title="简述题："></a><strong>简述题：</strong></h2><h3 id="简述太平天国农⺠战争爆发的根本原因？"><a href="#简述太平天国农⺠战争爆发的根本原因？" class="headerlink" title="简述太平天国农⺠战争爆发的根本原因？"></a>简述太平天国农⺠战争爆发的根本原因？</h3><p>⼀是<strong>封建专制政权</strong>和<strong>地主阶级</strong>对农⺠的<strong>政治压迫和经济剥削</strong>；⼆是<strong>鸦⽚战争</strong>带来的恶果，使得中国社会的<strong>阶级⽭盾普遍激化</strong>了；前者是战争爆发的根本原因。</p>
-<h3 id="简述太平天国的纲领⽂件。"><a href="#简述太平天国的纲领⽂件。" class="headerlink" title="简述太平天国的纲领⽂件。"></a>简述太平天国的纲领⽂件。</h3><p>太平天国前期的《天朝⽥亩制度》是⼀个以<strong>解决⼟地问题</strong>为中⼼的<strong>⽐较完整</strong>的<strong>社会改⾰⽅案</strong>，但此纲领并没有超出农⺠⼩⽣产者的ሀ 隘眼界，它所追求的理想天国是⼀种绝对平均的理想社会，是<strong>不切实际的空想</strong>；太平天国后期洪仁玕提出的《资政新篇》是⼀个<strong>带有鲜明的资本主义⾊彩</strong>的改⾰与建设⽅案，但通篇为涉及农⺠问题与⼟地问题。这⼀致命的弱点，决定了这个⽅案从⼀开始<strong>就缺乏实施的阶级基础和社会条件</strong>。</p>
-<h3 id="简述太平天国运动的历史意义？"><a href="#简述太平天国运动的历史意义？" class="headerlink" title="简述太平天国运动的历史意义？"></a>简述太平天国运动的历史意义？</h3><p>⼀是它沉重的<strong>打击了封建统治阶级</strong>，强烈撼动了清政府的统治根基；⼆它是中国<strong>旧式农⺠战争的最⾼峰</strong>；三是太平天国对孔⼦及<strong>儒家经典予以严厉批评</strong>，削弱了封建统治的精神⽀柱；四是太平天国农⺠战争有⼒地<strong>打击了外国侵略势⼒</strong>；五是它<strong>冲击了⻄⽅殖⺠主义</strong>在亚洲的统治。</p>
-<h3 id="简述太平天国失败的原因和教训？"><a href="#简述太平天国失败的原因和教训？" class="headerlink" title="简述太平天国失败的原因和教训？"></a>简述太平天国失败的原因和教训？</h3><p>太平天国失败的根本原因是<strong>缺乏先进阶级的领导</strong>，你哦年国⺠阶级不是新的⽣产⼒和⽣产关系的代表，带有<strong>阶级局限性</strong>；太平天国的失败还在于没有<strong>科学理论的指导</strong>；太平天国起义的失败表明，在半殖⺠地半封建社会，农⺠不能担负起领导反帝反封建⽃争。</p>
-<h3 id="简述洋务运动的内容？"><a href="#简述洋务运动的内容？" class="headerlink" title="简述洋务运动的内容？"></a>简述洋务运动的内容？</h3><p>洋务运动持续时间为 30 年，其内容主要有<strong>兴办近代企业</strong>，<strong>建⽴新式海路军</strong>，创办<strong>新式学堂</strong>，<strong>派遣留学⽣</strong>。</p>
-<h3 id="简述洋务运动的历史意义？"><a href="#简述洋务运动的历史意义？" class="headerlink" title="简述洋务运动的历史意义？"></a>简述洋务运动的历史意义？</h3><p>在客观上促进了中国早期<strong>⼯业和⺠族资本主义</strong>的发展；成为中国<strong>近代教育的开端</strong>；传播了新知识，打开了⼈们的眼界；引起了<strong>社会⻛⽓和价值观念的变化</strong>。</p>
-<h3 id="简述洋务运动失败的原因？"><a href="#简述洋务运动失败的原因？" class="headerlink" title="简述洋务运动失败的原因？"></a>简述洋务运动失败的原因？</h3><p>洋务运动具有<strong>封建性</strong>；洋务运动对⻄⽅列强具有<strong>依赖性</strong>；洋务企业的管理具有<strong>腐朽性</strong>。</p>
-<h2 id="简述维新派和守旧派的论战？"><a href="#简述维新派和守旧派的论战？" class="headerlink" title="简述维新派和守旧派的论战？"></a>简述维新派和守旧派的论战？</h2><p>两派之间的论战主要围绕三个问题展开：⼀是<strong>要不要变</strong>法；⼆是<strong>要不要兴⺠权、设议院</strong>，实⾏君主⽴宪；三是<strong>要不要废⼋股、改科举和兴学堂</strong>。论战的意义是资产阶级思想与封建主义思想在中国的第⼀次正⾯交锋，为维新变法运动作了思想舆论的准备。</p>
-<h3 id="简述“百⽇维新”的主要内容？"><a href="#简述“百⽇维新”的主要内容？" class="headerlink" title="简述“百⽇维新”的主要内容？"></a>简述“百⽇维新”的主要内容？</h3><p>在政治上，<strong>改⾰⾏政制度</strong>；在经济上，<strong>保护、奖励农⼯商业</strong>；在军事上，<strong>裁撤绿营</strong>，改练新式陆军；在⽂教⽅⾯上<strong>，改⾰科举制度，废⼋股，提倡⻄学</strong>。这些新政的内容，对中国<strong>⺠族资本主义的发展</strong>和<strong>资产阶级先进⽂化科学</strong>的传播都是⼗分有利的。</p>
-<h3 id="简述戊戌维新运动的意义？"><a href="#简述戊戌维新运动的意义？" class="headerlink" title="简述戊戌维新运动的意义？"></a>简述戊戌维新运动的意义？</h3><p>戊戌维新运动是⼀<strong>次爱国救亡运动</strong>；是⼀场<strong>资产性质</strong>的政治改⾰运动；是⼀场<strong>思想启蒙运动</strong>；在改⾰社会⻛⽓⽅⾯也有<strong>不可低估的意义</strong>。</p>
-<h2 id="简述戊戌维新运动失败的原因和教训？"><a href="#简述戊戌维新运动失败的原因和教训？" class="headerlink" title="简述戊戌维新运动失败的原因和教训？"></a>简述戊戌维新运动失败的原因和教训？</h2><p>戊戌维新运动失败的主要原因在于<strong>维新派⾃身的局限</strong>和以慈禧太后为⾸的强⼤的守旧势⼒的反对。维新派⾃身有三⽅⾯的弱点和局限：⼀是<strong>不敢否认封建主义</strong>；⼆是对<strong>帝国主义抱有幻想</strong>；三是<strong>脱离⼈⺠群众</strong>。戊戌维新以悲剧性的失败⽽告终，不仅暴露出资产阶级的软弱性，同时也说明在半殖⺠半封建的中国，企图通过统治者进⾏⾃上⽽下的改良的道路，是⾏不通的要想实现国家的ᇿ ⽴、⺠主、富强，必须采⽤⾰命的⼿段</p>
-<h2 id="第三章-辛亥革命"><a href="#第三章-辛亥革命" class="headerlink" title="第三章 辛亥革命"></a>第三章 辛亥革命</h2><p><strong>选择题：</strong></p>
-<p>1、<strong>1906 年</strong>清末新政开始<strong>废除科举考试</strong>。</p>
-<p>2、中国第⼀个<strong>资产阶级⾰命组织</strong>是<strong>孙中⼭组织的兴中会</strong>；其他资产阶级⾰命团体有<strong>⻩兴的华兴会</strong>，<strong>蔡元培的光复会</strong>；近代中国第⼀个全国性的资产阶级性质的<strong>政党是中国同盟</strong>会，其纲领是“<strong>驱除鞑虏，恢复中华，创⽴⺠国，平均地权</strong>”；同盟会的机关报是<strong>《⺠报》</strong>； 三⺠主义是<strong>⺠族、⺠权、⺠主</strong>。</p>
-<p>3、20 世纪初，资产阶级⾰命派宣传⺠主⾰命思想的代表作有章炳麟的<strong>《驳康有为轮⾰命书》</strong>、邹容的<strong>《⾰命军》</strong>、陈天华的<strong>《警世钟</strong>》和<strong>《猛回头》</strong>。</p>
-<p>4、⺠⽣主义的基本⽅案是<strong>核定低价；按价征税，涨价归公，按价收买</strong>。</p>
-<p>5、资产阶级组织的武装起义中影响做⼤的是 <strong>1891 年的⼴州起义</strong>，⼜称<strong>⻩花岗起义</strong>。⼈⺠武装起义尤为强烈的属四川省的保路运动。6、⾟亥⾰命的⾼潮出现在 1891 年 10 ⽉ 10 号的<strong>武昌起义</strong>。1912 年<strong>中华⺠国临时政府</strong>宣告成⽴，国号为“中华⺠国”，1912 年为中华⺠国元年。</p>
-<p>7、中国第⼀部具有资产阶级共和国宪法性质的法典是<strong>《中华⺠国临时约法》</strong>。</p>
-<p>8、北洋军阀统治了中国 16 年；1915 年袁世凯接收了<strong>⽇本提出的“⼆⼗⼀条”</strong>。以孙中⼭为⾸的⾰命派与北洋军阀进⾏的⽃争有 <strong>1913 年“⼆次⾰命”</strong>，1915 年<strong>蔡锷的护国运动</strong>，1917 年孙中⼭率领的第⼀次<strong>护法运动</strong>，1919 年的<strong>第⼆次护法运动</strong>。</p>
-<p>9、1914 年孙中⼭成⽴的中华⾰命党，第⼆次<strong>护法战争的失败</strong>标志着中<strong>国旧⺠主主义⾰命的终结</strong>。</p>
-<p><strong>简述题：</strong></p>
-<h3 id="简述清末新政的内容？"><a href="#简述清末新政的内容？" class="headerlink" title="简述清末新政的内容？"></a>简述清末新政的内容？</h3><p>⼀<strong>是改⾰管制，整顿吏治</strong>；⼆是<strong>改⾰兵制，训练新军</strong>；三是<strong>改⾰学制，提倡新学</strong>；四是<strong>奖励⼯商，兴办实业</strong>。</p>
-<h3 id="试述“三⺠主义”的内容？"><a href="#试述“三⺠主义”的内容？" class="headerlink" title="试述“三⺠主义”的内容？"></a>试述“三⺠主义”的内容？</h3><p>⺠族主义包括“驱除鞑虏，恢复中华”两性内容：⼀是以<strong>⾰命⼿段推翻清王</strong>朝，改变它⼀贯推⾏的⺠族歧视和压迫政策；⼆是<strong>变“次殖⺠地”的中国为ᇿ ⽴的中国</strong>，但其没有明确的反帝主张；⺠权主义内容是<strong>“创⽴⺠国</strong>”，即推翻封建君主主义专制制度，建⽴资产阶级的⺠主共和国，但其没有明确劳动⼈⺠在国家中的地位；⺠⽣主义的内容是<strong>“平均主义”</strong>，但其没有正⾯触及封建⼟地所有制，不能满⾜农⺠的⼟地要求；孙中⼭的三⺠主义学说，提出了⼀套中国历史上不曾有过的资产阶级共和国的建国⽅案，是⼀个<strong>⽐较完备的⺠主主义的⾰命纲领</strong>。</p>
-<h3 id="⾰命派与改良派的辩驳内容与意义？"><a href="#⾰命派与改良派的辩驳内容与意义？" class="headerlink" title="⾰命派与改良派的辩驳内容与意义？"></a>⾰命派与改良派的辩驳内容与意义？</h3><p>内容：⼀是要不要以<strong>⾰命⼿段推翻清政府</strong>；⼆是<strong>要不要推翻帝制</strong>，实⾏共和；三是要不要<strong>社会⾰命</strong>。</p>
-<p>意义：论战划清了⾰命与改良的界限，论战使<strong>资产阶级⺠主</strong>和<strong>三⺠主义思想</strong>得到了更加⼴泛的份额传播，为推翻清朝统治的⾰命⽃争奠定了思想基础。</p>
-<h3 id="为什么说南京临时政府是资产阶级共和国性质的⾰命政权？"><a href="#为什么说南京临时政府是资产阶级共和国性质的⾰命政权？" class="headerlink" title="为什么说南京临时政府是资产阶级共和国性质的⾰命政权？"></a>为什么说南京临时政府是资产阶级共和国性质的⾰命政权？</h3><p>⼀是⼈员构成上，<strong>资产阶级⾰命派控制着这个政权</strong>；⼆是在实⾏的各项政策措施上，集中体现了中国⺠族资产阶级的愿望和利益，⼀定程度上符合<strong>⼴⼤中国⼈⺠的利益</strong>。</p>
-<h3 id="简述南京临时政府的局限性？"><a href="#简述南京临时政府的局限性？" class="headerlink" title="简述南京临时政府的局限性？"></a>简述南京临时政府的局限性？</h3><p>⼀是企图⽤承认清政府与列强所定的的<strong>⼀切不平等条约和所⽋的⼀切外债</strong>，来换取列强承认中华⺠国；⼆是没有提出可以满⾜农⺠⼟地要求的政策与措施。</p>
-<h3 id="简述⾟亥⾰命胜利的历史意义？（为什么说⾟亥⾰命是⼀次⽐较完全意义上的资产阶级⺠主⾰命？）"><a href="#简述⾟亥⾰命胜利的历史意义？（为什么说⾟亥⾰命是⼀次⽐较完全意义上的资产阶级⺠主⾰命？）" class="headerlink" title="简述⾟亥⾰命胜利的历史意义？（为什么说⾟亥⾰命是⼀次⽐较完全意义上的资产阶级⺠主⾰命？）"></a>简述⾟亥⾰命胜利的历史意义？（为什么说⾟亥⾰命是⼀次⽐较完全意义上的资产阶级⺠主⾰命？）</h3><p>⼀是推翻了<strong>清王朝在中国的统治</strong>；⼆是结束了<strong>统治中国两千多年的封建君主专制制度</strong>，建⽴了中国历史上第⼀个资产阶级共和政府；三是<strong>⼀场思想解放运动</strong>；四是推翻了<strong>⺠族资本主义经济的发展</strong>；五是打击了<strong>帝国主义在华势⼒</strong>。</p>
-<h3 id="简述⾟亥⾰命的局限性？（⾟亥⾰命为什么会失败？）"><a href="#简述⾟亥⾰命的局限性？（⾟亥⾰命为什么会失败？）" class="headerlink" title="简述⾟亥⾰命的局限性？（⾟亥⾰命为什么会失败？）"></a>简述⾟亥⾰命的局限性？（⾟亥⾰命为什么会失败？）</h3><p>没有提出彻底的<strong>反对帝国主义</strong>和<strong>反对封建主义</strong>的⾰命纲领；没有<strong>充分发动和依靠群众</strong>；没有建⽴坚强的⾰命政党；资产阶级<strong>⾰命派的软弱性</strong>以及由此⽽来的⾟亥⾰命的局限性，使⾟亥⾰命难以摆脱失败的命运；⾟亥⾰命的失败表明：<strong>资产阶级共和国的⽅案不能救中国</strong>。</p>
-<h2 id="第四章-开天辟地的大事件"><a href="#第四章-开天辟地的大事件" class="headerlink" title="第四章 开天辟地的大事件"></a>第四章 开天辟地的大事件</h2><p><strong>选择题：</strong></p>
-<p>1、1915 年陈ᇿ 秀在上海创办的《新⻘年》，成为新⽂化运动兴起的标志。</p>
-<p>2、新⽂化运动的主要内容是提倡⺠主与科学，还提倡⽩话⽂、新⽂学，反对⽂⾔⽂，主张⽂学⾰命。新⽂化运动的第⼀篇⽩话⽂⼩说是鲁迅发表的《狂⼈⽇记》。3、在中国⼤地率先举起⻢克思主义旗帜的是李⼤钊。五四运动⽃争⽬标是“外争国权，内除国贼”。</p>
-<p>4、《共产党宣⾔》第⼀个中⽂全译本是陈望道翻译的。中国第⼀个地⽅共产党组织是上海共产主义⼩组。中国共产党第⼀、⼆次全国代表⼤会都是在上海举⾏。</p>
-<p>5、第⼀个产业⼯会是上海机器⼯会。第⼀个农⺠协会成⽴在浙江省萧⼭县衙前村。</p>
-<p>6、中国⼯⼈运动掀起⾼潮的起点是 1922 年⾹港海员罢⼯，终点是 1923 年京汉铁路⼯⼈罢⼯。中国⼯⼈运动史上最⻓的⼀次罢⼯是省港⼤罢⼯。</p>
-<p>7、建⽴⾰命统⼀战线的问题是在中共第三次全国代表⼤会上。国共合作的政治基础和⾰命统⼀战线的共同纲领是新三⺠主主义 。第⼀次国共合作的政治基础是联俄、联共、扶助农⼯三⼤政策。1924 年国⺠党“⼀⼤”的召开，标志着以第⼀次国共合作为基础的⾰命统⼀战线正式形成，改组后的国⺠党改为⼯⼈阶级、农⺠阶级、⼩资产阶级和⺠族资产阶级的⾰命联盟。</p>
-<p>8、1924 年成⽴的⻩埔军校把政治教育提到和军事训练同等重要的地位，注重培养学⽣的爱国思想和⾰命精神，这是同⼀切旧式军校的根本区别。</p>
-<p>9、北伐战争的直接⽬标是打到帝国主义⽀持北洋军阀。</p>
-<p>10、国⺠党右派为了打击共产党员和⼯农⾰命⼒量，以蒋介⽯为⾸后制造了中⼭舰事件、整理党务案事件。</p>
-<p><strong>简述题：</strong></p>
-<h3 id="简述五四前夕的新⽂化运动的历史意义？"><a href="#简述五四前夕的新⽂化运动的历史意义？" class="headerlink" title="简述五四前夕的新⽂化运动的历史意义？"></a>简述五四前夕的新⽂化运动的历史意义？</h3><p>⼀它是资产阶级⺠主主义的<strong>新⽂化同封建主义旧⽂化的⽃争</strong>；⼆是它<strong>⼤⼒宣传了⺠主与科学</strong>，启发了⼈们的<strong>理智与⺠主</strong>主义觉悟，开启了思想解放的潮流；三是它为五四运动创造了思想⽂化上的条件。</p>
-<h3 id="简述五四前夕的新⽂化运动的局限？"><a href="#简述五四前夕的新⽂化运动的局限？" class="headerlink" title="简述五四前夕的新⽂化运动的局限？"></a>简述五四前夕的新⽂化运动的局限？</h3><p>新闻欢运动提倡的资产阶级⺠主主义，并不能为<strong>⼈们提供⼀种思想武器去</strong>认识中国；他们没有把运动普及到⼯农群众中去；他们中的不少⼈在<strong>思想⽅法上存在绝对肯定或绝对否定的形式主义</strong>偏向。</p>
-<h3 id="简述五四运动的历史特点及意义？"><a href="#简述五四运动的历史特点及意义？" class="headerlink" title="简述五四运动的历史特点及意义？"></a>简述五四运动的历史特点及意义？</h3><p>五四运动是⼀次彻底的<strong>反帝反封建的⾰命运动</strong>；它是⼀场真正的群众性的⾰命运动；它促进了⻢克思主义在中国的⼴泛的传播，促进了⻢<strong>克思主义同中国⼯⼈运动</strong>的结合，为中国共产党的成⽴作了<strong>思想****和⼲部上</strong>的准备；它是中国新⺠主主义⾰命的伟⼤开端。</p>
-<h3 id="为什么说五四运动是中国新⺠主主义⾰命的伟⼤开端？"><a href="#为什么说五四运动是中国新⺠主主义⾰命的伟⼤开端？" class="headerlink" title="为什么说五四运动是中国新⺠主主义⾰命的伟⼤开端？"></a>为什么说五四运动是中国新⺠主主义⾰命的伟⼤开端？</h3><p>五四运动发⽣在俄国⼗⽉⾰命之后，中国⾰命逐渐成为世界⽆产阶级社会主义⾰命的⼀部分；五四运动以后，<strong>⽆产阶级逐渐代替资产阶级成为近代中国⺠族⺠主⾰命的领导者。</strong></p>
-<h3 id="为什么说中国共产党的诞⽣是⻢克思主义同中国⼯⼈运动相结合的产物？"><a href="#为什么说中国共产党的诞⽣是⻢克思主义同中国⼯⼈运动相结合的产物？" class="headerlink" title="为什么说中国共产党的诞⽣是⻢克思主义同中国⼯⼈运动相结合的产物？"></a>为什么说中国共产党的诞⽣是⻢克思主义同中国⼯⼈运动相结合的产物？</h3><p>五四以后，随着⼯⼈运动的发展，⼯⼈阶级急切需要找到<strong>实现本阶级意志的精神武器</strong>；⻢克思主义的⼴泛传播，也迫切需要从<strong>⼯⼈阶级中找到物质⼒量。</strong></p>
-<h3 id="早期共产党组织的成员同反⻢克思主义的思潮进⾏了那三次论战？"><a href="#早期共产党组织的成员同反⻢克思主义的思潮进⾏了那三次论战？" class="headerlink" title="早期共产党组织的成员同反⻢克思主义的思潮进⾏了那三次论战？"></a>早期共产党组织的成员同反⻢克思主义的思潮进⾏了那三次论战？</h3><p>⼀是同胡适围绕“<strong>问题与主义”的</strong>论战；⼆是关于社会主义的论战，强调<strong>资本主义道路在中国⾛</strong>不通，中国的出路只能是社会主义；三是同<strong>⽆政府主义的论战，</strong>指出必须以⾰命的⼿段夺取政权，建⽴⽆产阶级政权。</p>
-<h3 id="简述中国共产党成⽴的伟⼤意义？（为什么说中国共产党的成⽴是⼀个“开天辟地的⼤事件”）"><a href="#简述中国共产党成⽴的伟⼤意义？（为什么说中国共产党的成⽴是⼀个“开天辟地的⼤事件”）" class="headerlink" title="简述中国共产党成⽴的伟⼤意义？（为什么说中国共产党的成⽴是⼀个“开天辟地的⼤事件”）"></a>简述中国共产党成⽴的伟⼤意义？（为什么说中国共产党的成⽴是⼀个“开天辟地的⼤事件”）</h3><p>它标志着中国⾰命终于有了⼀个<strong>坚强的领导核⼼</strong>；中国⾰命从此有了⼀个科<strong>学的指导思想</strong>，即⻢克思主义；沟通了<strong>中国⾰命与世界⾰命的联系</strong>，使中国⾰命有了新的前途，<strong>即社会主义的前途</strong>。</p>
-<h3 id="简述中共“⼆⼤”的内容与意义？"><a href="#简述中共“⼆⼤”的内容与意义？" class="headerlink" title="简述中共“⼆⼤”的内容与意义？"></a>简述中共“⼆⼤”的内容与意义？</h3><p>1922 年中共⼆⼤的召开，党的三⼤纲领：消除内战，达到军阀，建设国内和平；推翻国际帝国主义的压迫，达到中华⺠族完全ᇿ ⽴；<strong>统⼀中国为真正的⺠主共和国</strong>。意义：中共⼆⼤在中国近代历史上第⼀次明确提出了<strong>反帝反封建的⺠主⾰命纲领</strong>，为<strong>中国⾰命指明了⽅向</strong>。</p>
-<h3 id="简述北伐战争得以胜利进军的原因？"><a href="#简述北伐战争得以胜利进军的原因？" class="headerlink" title="简述北伐战争得以胜利进军的原因？"></a>简述北伐战争得以胜利进军的原因？</h3><p>国内合作的实现，<strong>⾰命统⼀战线的建</strong>⽴，特别是共产党员和共⻘团员的先锋模范作⽤是北伐胜利的重要原因；北伐军得到⼴⼤⼯农群众的⼤⼒⽀持；北伐战争得到了<strong>苏联政府的多⽅⾯援助。</strong></p>
-<h3 id="简述国⺠⾰命失败的原因？"><a href="#简述国⺠⾰命失败的原因？" class="headerlink" title="简述国⺠⾰命失败的原因？"></a>简述国⺠⾰命失败的原因？</h3><p>客观上，帝<strong>国主义和中国封建主义势⼒的联合⼒量⼤⼤超过了⾰命联合⼒</strong>量；⾰命统⼀战线内部出现剧烈分化，蒋介⽯、汪精卫先后分裂统⼀战线，制造反攻政策；主观上，以陈ᇿ 秀为⾸的<strong>中共中央领导犯了右倾机会主义错误。</strong></p>
-<h3 id="简述国⺠⾰命的历史意义？"><a href="#简述国⺠⾰命的历史意义？" class="headerlink" title="简述国⺠⾰命的历史意义？"></a><strong>简述国⺠⾰命的历史意义？</strong></h3><p>沉重打击了<strong>帝国主义和封建主义的统治势⼒</strong>；扩⼤了中国共产党在中国⼈⺠中的政治影响，中国共产党正是从这场⾰命的失败中涉取教训，<strong>开始懂得了进⾏⼟地⾰命和掌握⾰命武装的重要性。</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>镜像阶段：关系即伪，无中生伪有</title>
-    <url>/2024/05/17/%E9%95%9C%E5%83%8F%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%85%B3%E7%B3%BB%E5%8D%B3%E4%BC%AA%EF%BC%8C%E6%97%A0%E4%B8%AD%E7%94%9F%E4%BC%AA%E6%9C%89/</url>
-    <content><![CDATA[<p>镜像阶段：关系即伪&#x2F;无中生伪有-&gt;拉康任务弗洛伊德的那个本我是生物性的，拉康认为人的开端就是一个无，那个永远回不去母子共同体的“无”。<br>nothingness-&gt;hegel 人是一个黑夜。<br>是一个空洞的虚无，<br>人的实在意义上的否定性。<br>主奴辩证法。<br>Max：人的生活，现实意义上是社会关系的总和。<br>镜像阶段的定义：6-18个月 Freud。<br>小朋友站在镜子面前，发现镜子里面有一个小朋友的形象。<br>这个时候会感受到镜子里面那个统一完整的形象<br>进入了想象域，一种蜜月般的欣喜，<br>人总是一个早产儿，die<br>“动力无助”-&gt;主客不分<br>“破碎的身体”，在镜子里面看到了一个完整的自己，接着破碎化，会成为主体不可弥合的创伤，梦是被压抑的愿望的实现 。<br>梦是被压抑的愿望经过伪装之后的实现。<br>主体在认定了一个影像之后的关系，内在和外在的关系，你否定了内在的关系，将自身认知为了镜子中的自己，这是第一次异化。<br>第二次异化是在象征域中被语言结构的异化，语言是一面无声之镜。这是第二次的异化。<br>镜像误认是一种反对心理学（格式塔）上面的那种积极的心理学。<br>a-（小他者一号）&gt;a‘（moi，弗洛伊德语境下的理想自我）；镜像自我，idea-ich。<br>小他者不是一个具体实在的人，镜像阶段中作为自我认同对象的非我中介。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>連濁</title>
-    <url>/2024/05/17/%E9%80%A3%E6%BF%81/</url>
-    <content><![CDATA[<p>連濁（れんだく）：連濁とは、ある語と語が組み合わさって、熟語（じゅくご）や複合語（ふくごうご）になったとき、後ろの語の先頭の音が、清音から濁音に変化する現象のことです、連濁は例外も多いのですが、それでも一般的なルールがありますので、次のようにまとめてみました。<br>連濁が起こりやすいグループと、連濁が起こりにくいグループに分けました。<br>連濁が起こりやすい：OO＋和語<br>和語とは、日本で古くから使われていた言葉で、基本的に訓読みします。<br>連濁が起こりにくい：OO＋外来語　OO＋かんご<br>それにたいして漢語とは、中国から伝わった言葉で、基本的に音読みします。<br>和語＋和語の組み合わせのとき、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>貝殻（かいがら）、長靴（ながぐつ）、夜空（よぞら）、巻き寿司（まきずし）、<br>鼻血（はなじ）、時々（ときどき）、前歯（まえば）、生け花（いけばな）<br>漢語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>気軽（きがる）、仕事（しごと）、豚汁（とんじる）、人数（にんずう）、<br>団子（だんご）、台所（だいどころ）、茶畑（ちゃばたけ）、煎餅(せんべい)。<br>変温現象：発音安くするの変化<br>舌を上顎につけてから「お」というと、自然に「の」になりますね。<br>外来語＋和語の組み合わせのとき、先程と同じで、後ろの語の先頭のかなが「か、さ、た、は」行なら、連濁することが多いです。<br>スナック菓子（がし）、サラダ皿（ざら）、スイーツ処（どころ）、キャベツ畑（ばたけ）<br>即ち、熟語や複合語の後ろの語側語、かつ後ろの語の先頭のかなが清音の場合、連濁することが多いです。<br>はな＋たば：はなだば（ｘ）はなたば<br>前にご紹介した基本のルールの通り、熟語や複合語の後ろの語が和語の場合、後ろの語の先頭のかなは濁音化すべきですが、もしその先頭のかなに濁音がある場合、連濁ないことがあります。<br>無傷（むきず）、座敷（ざしき）、絵筆（えふで）、ベイト先（さき）<br>次に、先後が並列構造になっている場合は、あまり連濁しません、<br>例えば、「すき嫌い」という複合語は、基本のルールならば「すきぎらい」となりますよね、<br>ですが「すき」と「嫌い」には並列構造がありますので連濁しません。<br>山川（やまかわ）、押し引き（おしひき）、嬉し悲しい（うれしかなしい）<br>まずは、熟語や複合語の後ろの語に漢語がくるときです<br>和語＋漢語の組み合わせのとき、ほとんど連濁しません<br>株券（かぶけん）、寒気（さむけ）、畑仕事（はたけしごと）、場所（ばしょ）、<br>家賃（やちん）、手帳（てちょう）、手本（てほん）、見本（みほん）<br>漢語＋漢語の組み合わせのとき、ほとんど連濁しません<br>価格（かかく）、旅行（ようこう）、完成（かんせい）、基礎（きそ）<br>携帯（けいたい）、位置（いち）、後輩（こはい）、警報（けいほう）<br>外来語＋漢語の組み合わせのとき、ほとんど連濁しません<br>グローバル化（か）、ヒット作、サービス単価（たんか）、リサイクル品（ひん）<br>例外１：<br>湯気（ゆげ）、足し算（たしざん）、登山（とざん）<br>例外２：長音<br>三本（さんぼん）、中国（ちゅごく）、定規（じょうぎ）、漫才（まんざい）、単行本（たんこんぼん）<br>和語＋外来語の組み合わせのとき、ほとんど連濁しません<br>一コース、一人カラオケ、負けチーム<br>漢語＋外来語の組み合わせのとき、ほとんど連濁しません<br>健康（けんこう）チェック、筋肉（きんにく）トレーニング、薬用（やくよう）ファンデション<br>外来語＋外来語<br>アフターサービス、レイトショー、ヘルスチェック、ワーキングホリデー。<br>連濁の一般的な規則をまとめますと、まずは熟語や複合語の後ろの語が何語なのかを確認します、<br>そして、和語なら連濁が起こりやすく、漢語や外来語が起こりにくいと考えてください。<br>転音：転音とは、熟語や複合語の前の語の最後の母音が変わることです。<br>例えば、「酒」＋「屋」の組み合わせの場合、前の語「酒」の最後の母音「え」が「あ」に変化します<br>さけ＋や＝さかや<br>「白」＋「玉」の組み合わせの場合、前の語「白」の最後の母音「お」が「あ」に変化します、<br>しろ＋たま＝しらたま<br>「船」＋「便」の組む合わせの場合、前の語「船」の最後の母音「え」が「あ」に変化します<br>ふね＋びん＝ふなびん<br>「🌴」＋「陰」の組む合わせの場合、前の語「木」の最後の母音「い」が「お」に変化します<br>き＋かげ＝こかげ<br>促音化：促音化とは、熟語や複合語の前の語の最後のかなと後ろの語の先頭のかながの子音が無声子音の場合、<br>前の語の最後のかなが促音になる変化です。<br>無声子音は「か、さ、た、は、ぱ」行の子音のことです<br>かつ＋て＝かって（勝＋手＝勝手）、けつ＋てい＝けってい(決＋定＝決定)、せつ＋てい＝せってい(説＋定＝設定)<br>いち＋てい＝いってい（一定）、せき＋けん＝せっけん（石鹸）、あつ＋かん＝あっかん（圧巻）<br>半濁音化：半濁音化とは、熟語や複合語の後ろの語のセントうのかなが「はぎょう」から「パ行」に変わることです。<br>例えば、「審判」の場合、後ろの語の先頭のかな「は」が「ぱ」にかわり、「しんぱん」と読みます<br>出発（しゅっぱつ）、鉛筆「えんぴつ」、扇風機「せんぷうき」、漢方（かんぽう）<br>ちなみに、半濁音化と促音化は同時に起こることも多いです、<br>いち＋ほん＝いっぽん<br>特に、前の語の最後のかなが「く、ち、つ」で、後ろに「は」行のかなが来るときです<br>六本木（ろっぽんぎ）、一本（いっぽん）、割烹（かっぽん）<br>音韻添加：音韻添加とは、熟語や複合語の後ろの語の先頭に、新しい音素がはいることをいいます。<br>例えば、「こさめ」の場合、そのまま読むと「こあめ」ですが「あめ」のまえにしい・ｓ・のおとが入って、「こさめ」とよみます。<br>春雨（はるさめ）<br>「真っ白」のように、「しろ」のまえに子音が・ｓ・のおとが入って、しいん・ｓ・が２つ連続することによって促音になることもあります<br>真っ青（まっさお）、真っ直ぐ（まっすぐ）<br>また、「真ん中」のように、「なか」のまえに発音「ｎ」の音が入ることもあります。<br>音韻脱落：<br>音韻脱落とは、音の一部がなくなることです、例えば、「河原」の場合、そのまま読むと「かわはら」ですが、「は」がなくなって、「かわら」と読みます。<br>なんで<br>音韻融合：<br>音韻融合とは、熟語や複合語の前の語の終わりと後ろの語の先頭が、混ざってような音になることです。<br>例えば、「狩人」の場合、そのまま読むと「かりひと」ですが、「り」と「ひと」が混ざって「りょうど」になり、「かりょうど」とみます。<br>素人（しろうと）、仲人（なこうど）<br>連声：<br>連声とは、熟語や複合語のまえの語のおわりが「ん」や「つ」で、後ろの語の先頭が、母音「あいうえお」「や行」「わ行」であるとき、<br>後ろの先頭が「た行」「な行」「ま行」に変わることです、漢語でよく見られます。<br>例えば、「反応」の場合、前の語のおわりが「ん」で、後ろの語の先頭が母音「お」なので、「お」が「な」行の「の」にへんかして「はんのう」と読みます。<br>因縁（いんねん）、銀杏（ぎんなん）、陰陽（おんみょう）</p>
-<p>まとめ：<br>変音現象は、発音しやすくするためのへんかです、変音現象には沢山の種類があり、また一度に複数の変温現象が起こることもあります、何故変音すると、発音しやすくなるでしょうか、もう一度「反応」を見てみましょう、もし変化しないまま「はんおん」とははっきり発音しょうとすると、「ん」から「お」に舌の形を変えるときに、息が途切れて発音がしにくいですね、では「ん」で舌を上顎につけてから「お」というどうしようか？息が繋がって、発音しやすいと思います、舌を上顎につけてから「お」というと、自然に「の」になりますね</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>输出流输入流</title>
-    <url>/2024/06/05/%E8%BE%93%E5%87%BA%E6%B5%81%E8%BE%93%E5%85%A5%E6%B5%81/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
