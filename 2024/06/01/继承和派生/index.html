@@ -86,7 +86,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.6k</span>
+            <span class="post-count">2.5k</span>
         </span>
     </span>
 
@@ -95,7 +95,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">6 min</span>
+            <span class="post-count">10 min</span>
         </span>
     </span>
 </div>
@@ -224,9 +224,55 @@
 </li>
 <li><p>但是只能初始化从基类继承的成员。</p>
 </li>
-<li><p>语法形式:<br>*using B:.B;.</p>
+<li><p>语法形式:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> B::B;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>如果想要定制自己的成员，那么最好自己去书写构造函数。</p>
+<h3 id="若不继承基类的构造函数"><a href="#若不继承基类的构造函数" class="headerlink" title="若不继承基类的构造函数"></a>若不继承基类的构造函数</h3><ul>
+<li>派生类新增成员：派生类定义构造函数进行初始化</li>
+<li>继承来的成员：自动调用基类的构造函数进行初始化</li>
+<li>派生类的构造函数需要给基类的构造函数传递参数</li>
+</ul>
+<p>单继承时构造函数的定义语法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">派生类名::派生类名(基类所需要的形参，本类成员所需的形参)</span><br><span class="line">	基类名(参数表)，本类成员初始化列表</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="comment">//其他初始化;</span></span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">B</span>();</span><br><span class="line">    <span class="built_in">B</span>(<span class="type">int</span> i);</span><br><span class="line">    ~<span class="built_in">B</span>();</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> b;</span><br><span class="line">&#125;;</span><br><span class="line">B:<span class="built_in">B</span>()</span><br><span class="line">&#123;</span><br><span class="line">    b=<span class="number">0</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;B&#x27;s default constructor called&quot;</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">B::~<span class="built_in">B</span>()&#123;cout&lt;&lt;<span class="string">&quot;B&#x27;s destructor called&quot;</span>&lt;&lt;endl;&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">B::print</span><span class="params">()</span><span class="type">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>:publicB</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">C</span>();</span><br><span class="line">    <span class="built_in">C</span>(<span class="type">int</span> i,<span class="type">int</span> j);</span><br><span class="line">    ~<span class="built_in">C</span>();</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> c;</span><br><span class="line">&#125;;</span><br><span class="line">C:<span class="built_in">C</span>()</span><br><span class="line">&#123;</span><br><span class="line">    c=<span class="number">0</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;C&#x27;s default constructor called&quot;</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">C::~<span class="built_in">C</span>()&#123;cout&lt;&lt;<span class="string">&quot;C&#x27;s destructor called&quot;</span>&lt;&lt;endl;&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">C <span class="title">obj</span><span class="params">(<span class="number">5</span>,<span class="number">6</span>)</span></span>;</span><br><span class="line">    obj.<span class="built_in">print</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="多继承情况下派生类的构造函数"><a href="#多继承情况下派生类的构造函数" class="headerlink" title="多继承情况下派生类的构造函数"></a>多继承情况下派生类的构造函数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">派生类名::派生类名(参数表):</span><br><span class="line">基类名<span class="number">1</span>(基类<span class="number">1</span>初始化参数表),</span><br><span class="line">基类名<span class="number">2</span>(基类<span class="number">2</span>初始化参数表),</span><br><span class="line">基类名<span class="built_in">n</span>(基类n初始化参数表),</span><br><span class="line">本类成员初始化列表</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//其他初始化；</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="派生类与基类的构造函数"><a href="#派生类与基类的构造函数" class="headerlink" title="派生类与基类的构造函数"></a>派生类与基类的构造函数</h3><ul>
+<li><h4 id="当基类有默认构造函数是"><a href="#当基类有默认构造函数是" class="headerlink" title="当基类有默认构造函数是"></a>当基类有默认构造函数是</h4></li>
+<li><p>派生类构造函数可以不向基类构造函数传递参数</p>
+</li>
+<li><p>构造派生类的对象时，基类的默认构造函数将被调用</p>
+</li>
+<li><h4 id="如需执行基类中带参数的构造函数"><a href="#如需执行基类中带参数的构造函数" class="headerlink" title="如需执行基类中带参数的构造函数"></a>如需执行基类中带参数的构造函数</h4></li>
+<li><p>派生类构造函数应为基类构造函数提供参数</p>
 </li>
 </ul>
+<h3 id="构造函数的执行顺序"><a href="#构造函数的执行顺序" class="headerlink" title="构造函数的执行顺序"></a>构造函数的执行顺序</h3><h4 id="调用基类构造函数"><a href="#调用基类构造函数" class="headerlink" title="调用基类构造函数"></a>调用基类构造函数</h4><ul>
+<li>顺序按照它们被继承时声明的顺序（从左往右）</li>
+</ul>
+<h4 id="对初始化列表中的成员进行初始化"><a href="#对初始化列表中的成员进行初始化" class="headerlink" title="对初始化列表中的成员进行初始化"></a>对初始化列表中的成员进行初始化</h4><ul>
+<li>按照它们在类中的成员进行初始化</li>
+<li>对象成员初始化时自动调用其所属类的构造函数（由初始化列表提供参数）</li>
+</ul>
+<h4 id="执行派生类的构造函数体中的内容"><a href="#执行派生类的构造函数体中的内容" class="headerlink" title="执行派生类的构造函数体中的内容"></a>执行派生类的构造函数体中的内容</h4><h3 id="派生类构造函数的举例"><a href="#派生类构造函数的举例" class="headerlink" title="派生类构造函数的举例"></a>派生类构造函数的举例</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">class</span> <span class="title">Base1</span><span class="params">()</span></span>&#123;<span class="built_in">Base1</span>(<span class="type">int</span> i);&#125;;</span><br><span class="line"><span class="function"><span class="keyword">class</span> <span class="title">Base2</span><span class="params">()</span></span>&#123;<span class="built_in">Base2</span>(<span class="type">int</span> j);&#125;;</span><br><span class="line"><span class="function"><span class="keyword">class</span> <span class="title">Base3</span><span class="params">()</span></span>&#123;<span class="built_in">Base3</span>();&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span>:<span class="keyword">public</span> Base2,<span class="keyword">public</span> Base1,<span class="keyword">public</span> Base <span class="number">3</span></span><br><span class="line">&#123;<span class="comment">//派生新类Derived，注意类名的顺序</span></span><br><span class="line">    <span class="keyword">public</span>:<span class="comment">//派生类的共有成员</span></span><br><span class="line">    <span class="built_in">Derived</span>(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c):<span class="built_in">Base1</span>(a),<span class="built_in">member2</span>(d),<span class="built_in">menber1</span>(c),<span class="built_in">Base2</span>(b)&#123;&#125;</span><br><span class="line">    <span class="comment">//注意基类名的个数和顺序，注意成员对象名的个数与顺序</span></span><br><span class="line">    <span class="keyword">private</span>:<span class="comment">//派生类的私有成员对象</span></span><br><span class="line">    Base1 merber1;</span><br><span class="line">    Base2 merber2;</span><br><span class="line">    Base3 merber3;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Derived <span class="title">obj</span><span class="params">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="派生类的复制构造函数"><a href="#派生类的复制构造函数" class="headerlink" title="派生类的复制构造函数"></a>派生类的复制构造函数</h3><p>若派生类没有声明复制构造函数</p>
+<ul>
+<li>编译器会在需要的时候生成一个隐含的复制构造函数</li>
+<li>先调用基类的复制构造函数</li>
+<li>再为派生类新增的成员执行复制</li>
+</ul>
+<p>若派生类定义了复制构造函数</p>
+<ul>
+<li>一般都要为基类的复制构造函数传递参数</li>
+<li>复制构造函数都只能接受一个参数，既用来初始化派生类定义的成员，也将被传递给基类的复制构造函数</li>
+<li>基类的复制构造函数形参类型时基类对象的引用，实参可以是派生类对象的引用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C::C(const C&amp;c1):B(c1)&#123;&#125;</span><br></pre></td></tr></table></figure>
+
  
       <!-- reward -->
       
