@@ -83,7 +83,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">349</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -92,7 +92,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">5 min</span>
         </span>
     </span>
 </div>
@@ -107,15 +107,86 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg" alt="img"></p>
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$git init</span><br><span class="line">$git add</span><br><span class="line">$git commit</span><br></pre></td></tr></table></figure>
+  <h2 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h2><p>一般工作流程</p>
+<ul>
+<li>克隆Git资源作为工作目录。</li>
+<li>在克隆的资源上添加或修改文件</li>
+<li>如果其他人修改了，你可以更新资源</li>
+<li>在提交前查看修改</li>
+<li>提交修改</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
+</ul>
+<p><img src="https://p.sda1.dev/18/2fd9786efda6a8c9caa00586196f4d11/d04c8f15892553dd9f987d55ae96596d.png"></p>
+<p><a target="_blank" rel="noopener" href="https://streamable.com/x1ko62">https://streamable.com/x1ko62</a></p>
+<h2 id="Git工作区、暂存区和版本区"><a href="#Git工作区、暂存区和版本区" class="headerlink" title="Git工作区、暂存区和版本区"></a>Git工作区、暂存区和版本区</h2><ul>
+<li>工作区：就是你在电脑里能看到的目录。</li>
+<li>暂存区（stage or index）；一般存放在.git目录下的index文件中，所以我们把暂存区有时也叫作索引（index）。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.git/index</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+</ul>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt="工作区、版本库的暂存区和版本库之间的关系"></p>
+<ul>
+<li>左侧为工作区，右侧为版本库。在版本库中标记为“index”的区域是暂存区（stage&#x2F;index），标记为“master”的是master分支所代表的目录树。</li>
+<li>图中我们可以看出此时“HEAD”实际上是指向master分支的一个“游标”。所以图中的HEAD可以用master来替换。</li>
+</ul>
+<ul>
+<li>图中的 objects 标识的区域为 Git 的对象库，实际位于 “.git&#x2F;objects” 目录下，里面包含了创建的各种对象及内容。</li>
+<li>当对工作区修改（或新增）的文件执行 <strong>git add</strong> 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。</li>
+<li>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。</li>
+<li>当执行 <strong>git reset HEAD</strong> 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</li>
+<li>当执行 <strong>git rm –cached <file></file></strong> 命令时，会直接从暂存区删除文件，工作区则不做出改变。</li>
+<li>当执行 <strong>git checkout .</strong> 或者 <strong>git checkout – <file></file></strong> 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区中的改动。</li>
+<li>当执行 <strong>git checkout HEAD .</strong> 或者 <strong>git checkout HEAD <file></file></strong> 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。</li>
+</ul>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg" alt="img"></p>
+<h1 id="Git创建仓库"><a href="#Git创建仓库" class="headerlink" title="Git创建仓库"></a>Git创建仓库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+
+<p>Git使用该命令来初始化一个Git仓库，Git的很多命令都需要在Git的仓库中运行。</p>
+<p>在进行完这步操作之后，Git仓库会生成一个.git目录，该目录包含了资源的所有元数据。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init newrepo</span><br></pre></td></tr></table></figure>
+
+<p>这一步是将指定的目录作为Git仓库。而我们想要存入文件，以及将它们纳入版本控制就需要下面这样操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add *.c</span><br><span class="line">$ git add README</span><br><span class="line">$ git commit -m &#x27;初始化项目版本&#x27;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>注：</strong> 在 Linux 系统中，commit 信息使用单引号 **’**，Windows 系统，commit 信息使用双引号 **”**。</p>
+<p>所以在 git bash 中 <strong>git commit -m ‘提交说明’</strong> 这样是可以的，在 Windows 命令行中就要使用双引号 **git commit -m “提交说明”**。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone</span><br></pre></td></tr></table></figure>
+
+<p>我们使用git clone的命令从现有Git仓库中拷贝项目（类似swn checkout）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone &lt;repo&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果需要指定目录，则指令为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone &lt;repo&gt; &lt;directory&gt;</span><br></pre></td></tr></table></figure>
+
+<p>例子：比如我们要克隆hexo的小插件的Git代码仓库，可以用下面的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/theme-next/hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+
+<p>git的配置使用<strong>git config</strong>的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br><span class="line">credential.helper=osxkeychain</span><br><span class="line">core.repositoryformatversion=0</span><br><span class="line">core.filemode=true</span><br><span class="line">core.bare=false</span><br><span class="line">core.logallrefupdates=true</span><br><span class="line">core.ignorecase=true</span><br><span class="line">core.precomposeunicode=true</span><br></pre></td></tr></table></figure>
+
+<p>编辑git配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config -e#正对当前仓库</span><br></pre></td></tr></table></figure>
+
+<p>或者：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config -e --global#针对系统上所有仓库 </span><br></pre></td></tr></table></figure>
+
+<p>设置提交代码时的用户的信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name&quot;shiokou&quot;</span><br><span class="line">$ git config --global user.email shiokou0408@gmail.com</span><br></pre></td></tr></table></figure>
+
+<p>如果去掉–global参数只对目前仓库有效。</p>
+<h1 id="GIT操作"><a href="#GIT操作" class="headerlink" title="GIT操作"></a>GIT操作</h1><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git add</span><br><span class="line">$ git commit</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>git init:初始化仓库</li>
 <li>git add：添加文件到暂$存区</li>
 <li>git commit：将暂存区内容添加到仓库中</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git clone</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone</span><br></pre></td></tr></table></figure>
 
 <p>拷贝一份远程仓库，也就是下载一个项目</p>
 <h2 id="提交与修改"><a href="#提交与修改" class="headerlink" title="提交与修改"></a>提交与修改</h2><p>Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。</p>
@@ -432,11 +503,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/friends">友链</a>
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://bangumi.tv/">友链</a>
     </li>
     
     <li class="nav-item">
