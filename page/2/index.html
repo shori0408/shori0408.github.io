@@ -182,51 +182,28 @@
     <div class="article-meta">
       <a href="/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" class="article-date">
   <time datetime="2024-06-11T14:43:37.000Z" itemprop="datePublished">2024-06-11</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="什么是螺旋矩阵"><a href="#什么是螺旋矩阵" class="headerlink" title="什么是螺旋矩阵"></a>什么是螺旋矩阵</h2><p>螺旋矩阵就是从四周向中心遍历矩阵的所有元素，没有实质上的算法内容，更多的是做一个模拟，所以螺旋矩阵可以归类为模拟题。</p>
-<h2 id="螺旋矩阵的难点在哪里"><a href="#螺旋矩阵的难点在哪里" class="headerlink" title="螺旋矩阵的难点在哪里"></a>螺旋矩阵的难点在哪里</h2><p>螺旋矩阵作为一个模拟题，具有相当多的边界条件，在编写代码的时候，要把握好所有的边界，同时需要特判输入样例中的特殊情况。</p>
-<p>在模拟螺旋居正的过程中，我们的一个基本思路是：</p>
-<ol>
-<li>输出矩阵的基本信息：rows&amp;cols</li>
-<li>向右遍历</li>
-<li>向下遍历</li>
-<li>直到遍历完所有的元素</li>
-</ol>
-<p><img src="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ%E6%88%AA%E5%9B%BE20240611225505.png" alt="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ截图20240611225505.png"></p>
-<h2 id="59-螺旋矩阵-II"><a href="#59-螺旋矩阵-II" class="headerlink" title="59. 螺旋矩阵 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/spiral-matrix-ii/">59. 螺旋矩阵 II</a></h2><p>中等</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
-<p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">636</span>
+        </span>
+    </span>
 
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：[[1]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= n &lt;= 20</code></li>
-</ul>
-<p><img src="https://pic.leetcode-cn.com/1ad0fe88d15dc87643435eb7a17b368191725a44da4596722977e5798ace5b62-Picture2.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/193444cbca5529fcd1bafec33ef576fe1309690be2c0110de05868f4415a8723-Picture3.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/bca38a428306cb2aacc00513821e74150947ba241d9b7199bcad6c7e843a0105-Picture4.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/e5de1e07957417f13d9fae22e6fb18dd5331b50258f0297f00ba57d25651df4a-Picture5.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/2fde8dcd1481e390532995c02d3575ec9675a27390513c1540f40431dad7997a-Picture6.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/1950d4c8ab6b09b62b7d5900ece4d8d4be882abebd2417a3030d172aedbc304e-Picture7.png" alt="img"></p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> rows = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cols = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter the size of your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; rows &gt;&gt; cols;</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">matrix_1</span>(rows, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(cols)); <span class="comment">// Init with size</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; matrix_2; <span class="comment">// This should be a 1D vector</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; cols; j++) &#123;</span><br><span class="line">            cin &gt;&gt; matrix_1[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (matrix_1.<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = rows - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> c = cols - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> d = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = d; i &lt;= c; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[a][i]);</span><br><span class="line">        <span class="keyword">if</span> (++a &gt; b) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = a; i &lt;= b; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][c]);</span><br><span class="line">        <span class="keyword">if</span> (--c &lt; d) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = c; i &gt;= d; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[b][i]);</span><br><span class="line">        <span class="keyword">if</span> (--b &lt; a) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= a; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][d]);</span><br><span class="line">        <span class="keyword">if</span> (++d &gt; c) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix_2.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; matrix_2[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.<span class="built_in">empty</span>()) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = matrix[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>, t = <span class="number">0</span>, b = matrix.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = l; i &lt;= r; i++) res.<span class="built_in">push_back</span>(matrix[t][i]); <span class="comment">// left to right</span></span><br><span class="line">            <span class="keyword">if</span> (++t &gt; b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = t; i &lt;= b; i++) res.<span class="built_in">push_back</span>(matrix[i][r]); <span class="comment">// top to bottom</span></span><br><span class="line">            <span class="keyword">if</span> (l &gt; --r) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = r; i &gt;= l; i--) res.<span class="built_in">push_back</span>(matrix[b][i]); <span class="comment">// right to left</span></span><br><span class="line">            <span class="keyword">if</span> (t &gt; --b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= t; i--) res.<span class="built_in">push_back</span>(matrix[i][l]); <span class="comment">// bottom to top</span></span><br><span class="line">            <span class="keyword">if</span> (++l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">3 min</span>
+        </span>
+    </span>
+</div>
  
-      <!-- reward -->
-      
     </div>
-    
+       
 
     <!-- copyright -->
     
@@ -267,26 +244,28 @@
     <div class="article-meta">
       <a href="/2024/06/11/%E5%AF%B9%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%9A%84%E7%AE%80%E4%BB%8B/" class="article-date">
   <time datetime="2024-06-10T18:59:31.000Z" itemprop="datePublished">2024-06-11</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="尼采：什么是真理？"><a href="#尼采：什么是真理？" class="headerlink" title="尼采：什么是真理？"></a>尼采：什么是真理？</h2><p>一群活动的转喻，隐喻和拟人法。</p>
-<p>不能将尼采理解为反语言的人物，尼采其实预设了一种吐真剂的事物。</p>
-<p>转喻和隐喻是诗学的东西。</p>
-<p>这两个事物被雅各布森和研究Freud的Lacan给发扬光大了。</p>
-<p>转喻要有前后相连的因果性。</p>
-<p>千帆过境，隐喻要形成某种统一，转喻则不需要。</p>
-<h2 id="Lacan的看法"><a href="#Lacan的看法" class="headerlink" title="Lacan的看法"></a>Lacan的看法</h2><h3 id="Freud的《梦的解析》"><a href="#Freud的《梦的解析》" class="headerlink" title="Freud的《梦的解析》"></a>Freud的《梦的解析》</h3><p>梦有它伪装的形式。</p>
-<blockquote>
-<p>梦是无意识，Freud和Lacan共享一个事实</p>
-</blockquote>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">142</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">1 min</span>
+        </span>
+    </span>
+</div>
  
-      <!-- reward -->
-      
     </div>
-    
+       
 
     <!-- copyright -->
     
@@ -327,198 +306,28 @@
     <div class="article-meta">
       <a href="/2024/06/11/%E8%A5%BF%E5%8E%862236/" class="article-date">
   <time datetime="2024-06-10T17:05:01.000Z" itemprop="datePublished">2024-06-11</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="西暦-2236-年-用語集"><a href="#西暦-2236-年-用語集" class="headerlink" title="西暦 2236 年 用語集"></a>西暦 2236 年 用語集</h2><h3 id="A"><a href="#A" class="headerlink" title="[ A ]"></a>[ A ]</h3><p><strong>A.I</strong>.……Artificial Intelligence の略。→人工知能の項を参照。</p>
-<blockquote>
-<p><strong>A.I.:</strong> Abbreviation for Artificial Intelligence. </p>
-</blockquote>
-<h3 id="C"><a href="#C" class="headerlink" title="[ C ]"></a>[ C ]</h3><p><strong>C.S</strong>.……21 世紀の科学者。世界初の HT の科学的観測に立ち会った科学者の一人。HT 基礎構造理論を提唱した。晩年に失踪を遂げている。</p>
-<blockquote>
-<p><strong>C.S.:</strong> A 21st Century scientist. One of the scientists present when HT was first experimentally proven to exist. Advocated the HT Infrastructure Theory. Went missing in their final years</p>
-</blockquote>
-<p><strong>CLOSE</strong>……病名。Consciously Locks One’s Selective Elements syndrome の略。後天性のゲート障害でゲートを開けなくなることでテレパシー通信に支障をきたす症候群のこと。精神病のひとつだとされている。治療法は見つかっていない。</p>
-<blockquote>
-<p><strong>CLOSE:</strong> Condition name, standing for “Consciously Locks One’s Selective Elements Syndrome.” Refers to a syndrome which is an acquired Gate disorder that locks off one’s ability to access one’s Gate and hinders their ability to establish telepathic communication. Said to be a mental disorder with no known cures as of this date.</p>
-</blockquote>
-<h3 id="E"><a href="#E" class="headerlink" title="[ E ]"></a>[ E ]</h3><p><strong>EAJOS[elementary axiom jump of Shikine]</strong> ……21 世紀に発達した「間違い学問」における飛躍公理。イージョス。人工知能工学の世界では今なお新しい EAJOS が登録され続けている。</p>
-<blockquote>
-<p><strong>EAJOS:</strong> Abbreviation for “Elementary Axiom Jump of Studies.” Stands for axioms which make a “jump” or breakthrough in the “Improper Studies” developed in the 21st Century. EAJOS for short. In the artificial intelligence world, there are still new EAJOS being registered to this date</p>
-</blockquote>
-<p><strong>EMP[electromagnetic pulse]</strong> ……電磁パルス。強力な電磁衝撃波は電子回路などに損傷を与えることがある。核兵器の使用でも EMP が発生するので軍事用の電子装置には EMP 対策が施されているものも多い。</p>
-<blockquote>
-<p><strong>EMP:</strong> Short for electromagnetic pulse. An occurrence where powerful electromagnetic waves cause damage to electric circuits. The use of nuclear weapons would also create an EMP, so there are many pieces of military-use electronic equipment which have counter-EMP measures built into them.</p>
-</blockquote>
-<h3 id="H"><a href="#H" class="headerlink" title="[ H ]"></a>[ H ]</h3><p><strong>HT</strong>……Holding Task または Holding &amp; Taking の略。HT 現象。高次元空間で生ずる伝播現象、またはそれに関する理論。2033 年に C.S.によって提唱された HT 基礎構造理論によると、全ての物体には情報が通る道が存在し、その通路を介することで情報のやり取りができるという。ここで言う「情報」にあたるのが「HT 子」と呼ばれる粒子の波である。HT はプリ方向次元空間と相容れない、部分クラウド空間内での粒子の運動であるため HT 子を始め HT に関わる現象が物理学的に観測不可能(物理的に不可視)である。また、HT 基礎構造理論の記述には梅雨幾何学が用いられる。梅雨幾何学では空間を記述するために、我々に馴染みのあるユークリッド幾何学で定義される「次元」の概念を拡張している。HT 基礎構造理論では梅雨幾何学を用いることで、特殊な場合を除いて HT 現象が物理的に不可視であることを証明している。 また、これをきっかけにして 18 次元宇宙論などの多次元宇宙論が盛んに提唱された。一般にテレパシーと呼ばれるコミュニケーション方式は HT 子がヒトのゲートからゲートに伝わり処理されることで情報(言語、五感、思念など)を伝えることができるとしている。 ユーレイ現象とは深い関わりがあり、歴史的にはユーレイ現象の研究実験中に偶然開発されたのが HT である。 研究によると、もともと人類の脳には HT を司る感覚器官が存在していたがそれは近年発見されるまで退化していたものと考えられている。動物など、脳または神経中枢を有している生き物ともテレパシー通信が可能であることからテレパシーが言語をもたない生き物のコミュニケーション手段になっていることがわかった。これらのことから、人類を含むほとんどの生き物は古来テレパシーによってコミュニケーションをとっていたが人類のみ発達した言語に取って代わられ、やがてテレパシーによるコミュニケーションをしなくなったというのが通説になっている。HT が科学的に解釈される以前の超常現象(ユーレイ現象、第六感、シンクロニシティなど)の多くは HT 基礎構造理論によって合理的に説明できる。HT 開発……現代のヒトの脳の HT を司る器官は生まれながらには機能していないため、HT開発が必要になる。幼児に対し、親などがテレパシーによって外部からゲートを刺激することによって実現する。</p>
-<blockquote>
-<p><strong>HT:</strong> Short for Holding Task or Holding &amp; Taking. HT Phenomenon. A propagation phenomenon originating from higher-dimensional space, or the theory attached to it. In 2033, C.S. advocated the HT Infrastructure Theory. This theory states that there exists a path for data to pass through within all objects, and by using that path as an intermediary, we can hold and take in said data. The “data” in this case being the waves of particles referred to as “HT Particles.” Due to the movement of particles within a partial cloud space that is incompatible with a pre-directional dimension space, all HT-linked phenomenon, including HT Particles, are impossible to observe on a physics-level (as they are physically invisible.) In addition, Superposition Geometry has been utilized to describe the HT Infrastructure Theory. In Superposition Geometry, in order to describe a space, we expand upon the concept of a “dimension” as it is defined to us in the terms of the more familiar Euclidean Geometry. The HT Infrastructure Theory, by utilizing Euclidean Geometry, and excluding any special cases, proves that HT phenomena are physically invisible. In addition, springboarding off of this, multidimensional space theories such as the 18th Dimensional Space Theory have been actively advocated. The communication method known more commonly as Telepathy can convey data (I.E. language, any of the five senses, thoughts) by having HT Particles going from one human’s Gate to another and being processed as such. This is very much linked to ghostly phenomena, and, historically speaking, HT was developed by chance while conducting an experiment into the research of ghostly phenomena. Based on research, it is believed that the sensory organs to govern HT have always existed in the minds of the human race, but that they had remained degenerate until HT was discovered in recent years. Telepathy has become a means of communication for life-forms devoid of language, all due to the fact that telepathic communication is possible with animals, or basically life-forms that possess a brain or nerve center. Stemming from this, the commonly accepted theory is that almost all lifeforms, including humans, have communicated through telepathy since ancient times. Humans were the only ones to develop language and replace telepathy, eventually leading to the downfall of telepathic communication as a whole. A majority of paranormal phenomena that occurred before HT was scientifically explained can be logically explained via the HT Infrastructure Theory</p>
-</blockquote>
-<h3 id="N"><a href="#N" class="headerlink" title="[ N ]"></a>[ N ]</h3><p><strong>NSL 方式[No Signal of Locator method]</strong> ……無信号位置特定方式。GPS 通信の情報符号化方式の一つ。HT と水路に流れる情報を使って水路上にある目的地の位置を大まかに特定する。主に未開拓の水脈を発見するのに役立っている。HT を利用するので人間が水路からコードを読み取る(感じ取る)ことになるが、とても複雑で膨大な符号表を覚えていなければならない。また、HT を読み取る力や、未フォーマット情報を感じ取るセンスによって精度が大きく変わる。無信号というのはもともと、フォーマットされた位置情報の流れていない水路か位置情報を見つける方式だから。</p>
-<blockquote>
-<p><strong>NSL Method:</strong> Short for No Signal Locator Method. A method of coding GPS transmissions into usable data. By using the data coursing through canals and HT, it’s possible to get a general location of a specific point placed on the canalways. It mainly serves useful when trying to detect underdeveloped waterways. Since it utilizes HT, human beings will end up reading (sensing) the data from the canals, but they must remember a rather complicated and vast code sheet to do anything with it. In addition, the accuracy of this method will vary greatly based on one’s power to read HT and their sense for unformatted data. The reason why it is referred to as “no signal” is because the method finds location data and&#x2F;or canals that don’t have any formatted location data in them.</p>
-</blockquote>
-<h3 id="P"><a href="#P" class="headerlink" title="[ P ]"></a>[ P ]</h3><p>**panta rhei [パンタ・レイ]**……「万物は流転している」の意。古代ギリシャの哲学者ヘラクレイトスの言葉。</p>
-<blockquote>
-<p><strong>Panta Rhei:</strong> Greek for “all things are in flux,” a quote from the Ancient Greek philosopher, Heraclitus.</p>
-</blockquote>
-<h3 id="あ"><a href="#あ" class="headerlink" title="[ あ ]"></a>[ あ ]</h3><p>**アーカイヴ[Archive]**……アカシック・フォーンの原本が保管されている都市。しかし実際には地球上にそのような都市は見つかっておらず、架空の都市だと考えられている。アカシック・フォーンは実際にその文面が現代まで伝えられていることから存在を否定されることはないが、その原本の存在については懐疑的な考古学者も多い。アーカイヴに訪れたという人の証言も多数あるが噂の範疇でとどまっている。アーカイヴでは非常に膨大な数のアカシック・フォーンが大きな書棚に整頓されていると言われている。アカシック・フォーン[Akashic Phones]……パラダイムロスト以前の人類の学術的知識や文化、歴史と以後の地球の科学や歴史について記してある書籍のこと。どのくらいの期間書き連ねられたかは不明だが、その数は膨大で都市一つ分を埋め尽くす程だと言われていることから、かなり長い年月にわたって書き続けられたものだと考えられている。パラダイムロスト以前の地球の記録として残っているものはこのアカシック・フォーンしかない。世の中に出回っているものはアカシック・フォーンの原本を複写したものであり、現在ではそれをさらにデータ化したものが広く流通している。アカシック・フォーンの原本はアーカイヴという都市で保管されているという説がある。原本の表紙の色は赤色で統一されていると言わ</p>
-<p>れている。</p>
-<p>**アカクラ[赤倉]**……地名。ミョウコウにある地域で大きなスキー場がある。</p>
-<blockquote>
-<p><strong>Akakura:</strong> Place name. A certain area of Myoko and home to a rather large ski slope.</p>
-</blockquote>
-<p>**アルベルト・アインシュタイン[Albert Einstein]**……20 世紀の理論物理学者。光量子説、ブラウン運動、特殊相対性理論、一般相対性理論など物理学に非常に大きな影響を残した。意識的閉門症……→CLOSE の項を参照。</p>
-<blockquote>
-<p><strong>Albert Einstein:</strong> 20th-century theoretical physicist. Known for his huge impact on physics by introducing concepts such as Quantum Theory, Brownian Motion, and The Theory of Relativity.</p>
-</blockquote>
-<p><strong>違法ロボット[illegal robot]</strong> ……違法なロボット。特に、人間とそっくりな有機ヒューマノイドが出てきてからはロボットの表記義務を無視したロボットのことをいうようになった。</p>
-<blockquote>
-<p><strong>Illegal Robot(s):</strong> Refers to illegally-built robots that disregard the labelling requirements put in place since the rise of organic humanoids that look similar to human beings.</p>
-</blockquote>
-<p><strong>インターネット[Internet]</strong> ……個々のコンピュータネットワークを相互に結び拡張して世界的規模にまで広がったネットワークの集合体。</p>
-<p><strong>ウィトゲンシュタイン[Ludwig Josef Johann Wittgenstein]</strong> ……オーストリア生まれの哲学者。『語りえぬものについては、沈黙しなければならない』という言葉で有名。裏情報……世間一般には流れない情報。信憑性は弱い。</p>
-<p>**エーテル[aether, ether, luminiferous aether]**……主に 19 世紀までの物理学で、光が伝播するために必要だと思われていた媒質のこと。20 世紀には特殊相対性理論などの理論がエーテルの概念を用いずに確立されており、エーテルに関する物理学理論は今ではほとんど論じられていない。オイラーの公式[Euler’s formula] ……数学者レオンハルト・オイラーによって導かれた指数関数と三角関数の間に成り立つ定理のこと。</p>
-<p>$e^{i\theta}&#x3D;\cos \theta+i\sin\theta$</p>
-<p>とくに$\theta&#x3D;\pi$のときの</p>
-<p>$e^{i\theta}+1&#x3D;0$</p>
-<p>はオイラーの等式と呼ばれる。この式は対数を象徴する自然対数の底 e と三角関数を象徴するπ、虚数単位の i、乗法の単位元である 1、加法の単位元である 0 が一堂に会しており、様々な数学の分野の橋渡しをする。これがもっとも美しい公式と呼ばれるゆえんでもある。</p>
-<blockquote>
-<p>A theorem that establishes the relationship between exponential and trigonometric functions derived by mathematician Leonhard Euler.</p>
-<p>$e^{i\theta}&#x3D;\cos \theta+i\sin\theta$</p>
-<p>Special case θ&#x3D;π gives </p>
-<p>$e^{i\theta}+1&#x3D;0$</p>
-<p>The above is what is referred to as Euler’s identity. The special case puts together the base of natural logarithm ?, trigonometic constant π, imaginary unit i, multiplication unit element 1, and addition unit element 0, helping bridge several different fields of mathematics. That is also the reason why it is referred to as “The Most Beautiful Equation.”</p>
-</blockquote>
-<p><strong>オルタナティブ元素[Alternative elements]</strong> ……21 世紀に発見されたもう一つの化学元素。触媒の研究時に発見されたという逸話がある。プリ方向次元の虚×虚×虚の領域に存在していて特殊な環境以外でその単体を観測することはできない。普通の化学元素との化合物として普段は使われている。オルタナティブ高分子化合物はスマートツールスなどの柔らかいデバイスを形作っている。音声会話……テレパシー会話に対して、空気を媒体とした音を使って会話すること。</p>
-<blockquote>
-<p><strong>Alternative Elements:</strong> Alternative chemical elements discovered in the 21st Century. Anecdotes state that they were discovered when researching some catalyst. They exist in a times-three imaginary Pre-Directional Dimension, and cannot be observed outside of some </p>
-<p>special circumstances. They are normally used in compounds with normal chemical elements. Alternative High Molecular Compounds help form the squishy devices known as Smart Tools and things like them</p>
-</blockquote>
-<h3 id="か"><a href="#か" class="headerlink" title="[ か ]"></a>[ か ]</h3><p><strong>カード目録</strong>……図書館において、蔵書の名前や内容などの情報を書き記したカードが集められている場所。探している図書を見つけるのに便利。</p>
-<blockquote>
-<p><strong>Card Catalogue:</strong> A place in libraries where cards that have information pertaining to the subjects and names of the books within it can be found.</p>
-</blockquote>
-<p>**鏡の国[The alternative world]**……詳細は不明拡張言語パック……スマートツールス等のコンピュータ端末において、初期出荷状態でプリインストールされている言語ライブラリに加えて他の地域で使われている言語ライブラリを追加インストールするためのパッケージプログラム。</p>
-<blockquote>
-<p><strong>The Alternative World (Looking-Glass World):</strong> The details of this world are unknown. </p>
-</blockquote>
-<p><strong>かけ算[multiplication]</strong> ……算術における乗法のこと。a を b 回足し合わせるという操作を a×b のように表現する。</p>
-<blockquote>
-<p><strong>Multiplication:</strong> Basic arithmetical multiplication. An operation of adding <em>a</em> for <em>b</em> amount of times would be expressed as <em>a x b</em>, for example</p>
-</blockquote>
-<p>**記憶媒体[Storage]**……HT の情報媒体のうち記憶能力に特化しているもののこと。HT 子の伝達速度が非常に遅いため情報を劣化させないまま暫く保存することができる。→モノリス</p>
-<p>**ゲート[Gate]**……ヒトの脳にあると考えられているテレパシーに関する器官または機能、メカニズムのこと。ヒトがテレパシー通信をする際、ゲートが互いに開いていなければならない。テレパシーという現象がテレパシーによる再帰的な観測のみしかなされないという性質をもつため、ゲートがどのように働くのか詳しく解明されていないが、脳波や血流の調査から脳のどの辺りに所在するのかという目安はついている。動物など脳または神経中枢を有している生き物にもゲートがあると考えられているが、その真偽を確かめるのは原理的に不可能である。</p>
-<blockquote>
-<p><strong>Gate:</strong> The organ, function, and&#x2F;or mechanism related to telepathy perceived to be in the human brain. When people make a telepathic transmission, both of their Gates must be open. Due to the phenomenon known as telepathy having a nature which only allows it to be recursively observed via telepathy itself, and while there is no clear explanation on how Gates function, a rough estimate from observation of brainwaves and blood flow is that it lies somewhere in a part of the brain. It is assumed that life-forms with brains and&#x2F;or nerve centers such as animals also possess Gates, but it is theoretically impossible to prove that true or not. </p>
-</blockquote>
-<p><strong>月光</strong>……ベートーヴェンのピアノソナタ「月光」のこと。中でも第三楽章は難曲であるとされる。</p>
-<blockquote>
-<p><strong>Moonlight Sonata:</strong> Beethoven’s famous piano sonata, the third movement of which is said to be especially difficult to play correctly</p>
-</blockquote>
-<p><strong>五感</strong>……視覚、聴覚、嗅覚、味覚、触覚の五つの感覚。HT を含めた六感と区別されて使われることが多い。</p>
-<p><strong>国際水路法</strong>……世界中に張り巡らされた水路を正しく運用するための法律群のこと。心の素粒子……HT 子のこと。人の心は HT 子の運動によって記述できる。</p>
-<p>**個人向けスマートツールス用 A.I.秘書[Personal A.I. Secretary System]**……西暦 2230 年頃に普及し始めたスマートツールス用のシステム。第７世代の A.I.を基盤に作られていて、暮らしの中で人を支え、よきパートナーとなることを目的としている。ほとんど人間と同じ振る舞いをするため、情操教育にもよいとされていて、「最後まで味方でいてくれるパートナー」「途方に暮れたときに導いてくれるパートナー」などとして幼少期の精神発達を手助けする可能性があるという研究報告も出ている。略して PASS。</p>
-<blockquote>
-<p><strong>Personal A.I. Secretary System (PASS):</strong> A system for Smart Tools that started to come in style around 2230 A.D. Built by using 7th Generation A.I. as the base, its purpose is to support people in their daily lives and provide a faithful partner to them. Since it mimics human behavior well enough, it is said to be good for emotional development as well, with reports coming out that say that it has the possibility to help early childhood mental development by stating it as “a partner by your side till the very end” and “a partner that will show you the way when you’re lost.”</p>
-</blockquote>
-<h3 id="さ"><a href="#さ" class="headerlink" title="[ さ ]"></a><strong>[ さ ]</strong></h3><p><strong>さけないチーズ</strong>……有名な某商品以外のチーズのこと。</p>
-<p>**酸化銅(Ⅱ) [copper(II) oxide]**……化学式 CuO で表される銅の酸化物。黒色。</p>
-<blockquote>
-<p><strong>Copper (II) Oxide:</strong> A copper oxide denoted by the chemical formula CuO. Black in color</p>
-</blockquote>
-<p><strong>次元置換説[Dimension Permutation Hypothesis]</strong> ……宇宙が多次元空間でその一部分が影として現実に現れるものだとしたときに影の落とし方(次元の置換)によって様々なアスペクトの異なる宇宙が同時に存在するという説。</p>
-<blockquote>
-<p><strong>Dimension Permutation Hypothesis:</strong> Also known as the Permutation of Axis Hypothesis. A hypothesis based on the universe being a multi-dimensional space, and the way you get rid of a shadow (dimensional substitution) once a shadow forms from part of said universe. This theory supports universes of differing aspects coexisting at the same time</p>
-</blockquote>
-<p>**シャルル・ペロー[Charles Perrault]**……「長靴をはいた猫」の著者。</p>
-<blockquote>
-<p><strong>Charles Perrault:</strong> Author of the story “Puss in Boots.” </p>
-</blockquote>
-<p><strong>浄水器</strong>……水路の水を常に清潔に保つために施設事に設置される機械。</p>
-<p><strong>情報爆発[Information explosion]</strong> ……急速に増加する出版物やデータ、またその影響を指した言葉。特に水路で情報爆発が起こると中が情報で飽和してしまい、発信元の分からない情報で溢れるので通常の運用は不可能になる。</p>
-<blockquote>
-<p><strong>Information Overload:</strong> A word that refers to a sudden and quick increase in publications and data, and&#x2F;or the effects of such. To be specific, once an information overload occurs in the canals, the water becomes saturated with information, and overflows with information without a clear origin, making regular usage impossible</p>
-</blockquote>
-<p><strong>ショック療法[shock therapy]</strong> ……患者に対してある種の衝撃や身体的ストレスを一時的に与えることによって症状の改善をはかる方法。シリ・シオン[Siri Shion ]……アカシック・フォーンの著者として書籍にその名前が記されている。女性だと言い伝えられていて、その功績から「女神」「人類の英知の象徴」などと称えられることこともよくあるが、実在の人物であるかどうかは不明瞭である。</p>
-<blockquote>
-<p><strong>Shock Therapy:</strong> A method of therapy in which you temporarily expose a patient to a certain kind of “shock” or physical stress to improve their condition.</p>
-</blockquote>
-<p><strong>シリ・シオンの伝説</strong>……アカシック・フォーンの著者、シリ・シオンがパラダイムロスト以前の人類の学術的知識や文化、歴史をパラダイムロスト以後に伝えたという伝説のこと。パラダイムロストによって人類のもつ遺産は全て失われた。全てがゼロになった地球で彼女がパラダイムロスト以前の地球の諸々と以後の自然科学について記したものがアカシック・フォーンであるとされている。</p>
-<blockquote>
-</blockquote>
-<p><strong>人工知能</strong>……A.I. 23 世紀ではヒトとほぼ同等の思考能力をもつ A.I. 、つまり強い A.I.が実現されている。その基礎理論は 21 世紀に発展した「間違い学問」によって構築されていて A.I.の性格は選択されている公理の種類で決まる。人間と対話ができるという特徴から多岐にわたる分野で利用されている。近年では有機ロボット工学の発展も相まって HT や生殖機能を除いたヒトの特徴をほぼ全て再現したヒューマノイドが登場したが、生命倫理団体や労働組合の痛烈な批判を受けて全ての人工知能やロボットは人間とは区別され、人権を与えず、それらが人工知能やロボットであることが明らかに分かるように表示することを義務づける法律が制定された。現在では個人向けスマートツールス用 A.I.秘書が広く普及しており、人間のよきパートナーとして生活に加わっている。</p>
-<blockquote>
-<p><strong>Artificial Intelligence (A.I.):</strong> In the 23rd century, advanced forms of A.I. that possess cognitive thought nearly on par with humans were created. The basic theory was constructed from the “Improper Studies” developed during the 21st Century, and their personalities are determined </p>
-<p>by the variety of axiom selected for them. They are used in numerous different fields due to their ability to effectively communicate with humans. In recent years, along with the development of organic robotic engineering, humanoids that replicate nearly all human characteristics barring HT and reproductive capabilities have been ushered in, but after much scathing criticism from bioethics organizations and labor unions, laws have been established that obligate all artificial intelligence and robots to be distinct from humans, not given human rights, and presented in a way that makes them clearly recognizable as robots or A.I. Recently, Personal A.I. Secretary Systems have become very popular and have been integrated into people’s lives as reliable partners.</p>
-</blockquote>
-<p>**水路[Canal]**……HT のうち特にテレパシー運用を快適かつグローバルにするために世界中に設けられた情報媒体のこと。テレパシーのネットワーク。水路に手を浸すことで世界中の人々とテレパシー通信をすることができる。22 世紀に世界中に整備された。水路の形状は地域によって異なるが流れている水は WHO と WHTO の定めた世界基準に則って世界中で統一されている。</p>
-<blockquote>
-<p><strong>Canal:</strong> An information medium installed all over the world for the purpose for easy and global usage of HT—most importantly, telepathy. A veritable telepathic network. Dipping your hand in the waters of the canal gives you access to telepathic communication with people all over the world. By the 22th Century, service has hit every corner of the globe. The shape of canals differs from region to region, but the water that flows within is uniform across the world, conforming to the standards put in place by the WHO and WHTO.</p>
-</blockquote>
-<p>**スマートツールス[Smart Tools]**……23 世紀で一般的に普及している個人向けコンピュータ端末。狭義にはオルタナティブ高分子ゲルで構成され、トポロジカルに形を変えることが出来る端末のことを言う。近年注目されている「柔らかいデバイス」の代表格であり、分子構造の定義ファイルがあれば様々な形に固定できる。外膜を完全に閉じてしまう設計のため内蔵電池の交換が出来ず、その寿命は 5～6 年であるとされる。</p>
-<blockquote>
-<p><strong>Smart Tools:</strong> A type of personal computer terminal that has come into popularity in the 23rd century. Strictly speaking, a Smart Tool is a terminal capable of topological shape-shifting, composed from Alternative High Molecular gel. Extremely popular in recent years, they are referred to as being “soft devices”, and can turn into several different forms so long as the needed molecular construction definition files are present. Due to the outer membranes being completely sealed off, the inner battery is non-exchangeable, giving them a life-span of about 5-6 years.</p>
-</blockquote>
-<p><strong>生殖[reproduction]</strong> ……うみふやすこと。生物の個体が自分と同じ種の新しい個体を作り出すこと。</p>
-<p>**セキガワ[関川]**……地名。ミョウコウにある地域で、大きな川が流れている。善光寺……長野市にある寺。古くから宗派の別を超えて広く信仰を集めている。</p>
-<p><strong>ソフトモヒカン[soft Mohican]</strong> ……玉ねぎのような髪型。</p>
-<h3 id="た"><a href="#た" class="headerlink" title="[ た ]"></a><strong>[ た ]</strong></h3><p><strong>太陽嵐[solar storm]</strong> ……非常に大規模な太陽フレアが発生した際に太陽風が爆発的に放射され、それが地球や周りの人工衛星などに被害をもたらす現象。強力な電磁波も放射されるので電子機器が壊れることもある。</p>
-<p><strong>超高濃度情報爆発</strong>……HT 情報の高密度衝撃波。爆発的に大きなノイズ。</p>
-<p>**繋ぐ[Connect]**……テレパシー会話をするということ。ゲートを互いに開いて情報通信が可能な状態にすること。 また、記憶媒体などから情報を読み取ること。</p>
-<p><strong>ディスコース[Disc Course Shooter]</strong> ……ディスコースシューターのこと。23 世紀の公共交通機関。予約制で乗車駅と時間帯と降車駅を自由に指定できる。大きなディスクが特徴で、方向指示のリールに沿って飛行する。飛行原理はディスクにより力場を変容させて揚力を得る仕組み。また、それによって他の車両と接触しないようになっているため事故は開業以来ひとつも起きていない。</p>
-<p><strong>哲学的ゾンビ</strong>……物理学的反応は普通の人間と全く同じだがクオリアを持っていない人間のこと。またそれをもとにした哲学的思考実験。</p>
-<p><strong>テレパシー[Telepathy]</strong> ……→HT の項を参照。</p>
-<p><strong>テレパシーする</strong>……テレパシー通信、会話をすること。</p>
-<p><strong>トートロジー[tautology]</strong> ……トートロジーのこと。</p>
-<p><strong>銅[Copper]</strong> ……元素記号 Cu で表される原子番号 29 番の元素。赤色の金属。</p>
-<p><strong>東京タワー</strong>……国内最大の電波塔。</p>
-<p><strong>図書館[library]</strong> ……図書や資料を収集、保管し、閲覧ができるようにした施設。23 世紀では一般的に電子書籍が本棚に並べられていて、データの貸し出しをする。一部の研究機関等の隣接施設では紙製の書籍が置いてある図書館や書籍庫がある。</p>
-<h3 id="な"><a href="#な" class="headerlink" title="[ な ]"></a><strong>[ な ]</strong></h3><p><strong>ナガノ県ナガノ市[長野県長野市]</strong> ……地名。標高が高く寒冷な土地。虹[rainbow] ……同心円上に広がる七色の帯が空に突然現れる現象。虹は消えるときの帯の崩れ方に幾何学的な特徴を見せる。数式を用いると以下のように説明できる。<br>$$<br>&amp;&amp;x&#x3D;\cos^{n}(t)&amp;&amp;\\<br>&amp;&amp;y&#x3D;\sin^{n}(t)&amp;&amp;<br>\tag{*}<br>$$</p>
-<p>1 番外側の円の半径を r&#x3D;R とすると、r&#x3D;R&#x2F;2 のところにある輪が( * )において n&#x3D;1 で表さ</p>
-<p>れる。r が R&#x2F;2 より小さくなる従って n の値は㱣に無限に近づいていき、大きくなるに従って n の値は 0 に近づいていくようにして崩れて消えていく。神出鬼没な自然現象でほとんど観測されない。</p>
-<p><strong>虹[rainbow]</strong> ……雨上がりに七色の円弧状の帯が現れる現象。雨粒によって太陽光がスペク</p>
-<p>トル分解されることによって起こる現象。</p>
-<p><strong>二分割可能モデル[separable type]</strong> ……第 5 世代のスマートツールスから登場したモデル</p>
-<p>で、それまでとは違い本体を２つにまで分割することができる。第四世代までのスマートツールスは形を自在に変えることはできても分割することはできなかったので革新的な新技術である。</p>
-<p><strong>ネクラ[根暗</strong>]……根っから性格が暗いこと。またもっぱら A.I.との会話に熱心なマニア達のことをさす言葉でもある。</p>
-<p><strong>猫は獅子に頭を下げるのか？</strong>……C.S.の著書。21 世紀に執筆された。</p>
-<h3 id="は"><a href="#は" class="headerlink" title="[ は ]"></a><strong>[ は ]</strong></h3><p><strong>梅雨幾何学[Superposition geometry]</strong> ……21 世紀に提唱された幾何学。空間をクラウド</p>
-<p>という小さな広がりの重ね合わせで表現した。これによりそれまでの幾何学をいくつかのクラウドの組み合わせとして表せるほかに、一つの空間にいくつかの状態が重なり合った空間を表現できるようになった。</p>
-<p>**パッド[Pad]**……薄い板状のものでディスプレイを搭載している。ディスプレイ上に様々な</p>
-<p>文書や画像、動画を表示する。入力装置も豊富であり様々なメモが出来る。パッヘルベルのカノン……ヨハン・パッヘルベルが作曲したカノン様式作品。三つの声部と常奏低音によって構成されるとても有名な曲。バネの動き……単振動のこと。単振動は円運動の一次元成分を抽出した運動である。例えば円の半径を A、角速度をω、時刻を t とすると単振動する物体の位置 x は以下の式で表される。</p>
-<p>$x&#x3D;Asin(ωt)$</p>
-<p>また、これを二回微分すると $ ma&#x3D;-Kx $ という運動方程式が導ける。(m、a は運動する物体の質量と加速度、K は定数) 単振動をする物体は以上のようにかかる力が位置によって決まるのが特徴。バネ定数 k のバネに付けられた物体の運動方程式は ma&#x3D;-kx と表されるので、バネの動きも単振動である。</p>
-<p>**パラダイムロスト[The Paradigm Lost]**……21 世紀中盤にあったとされる宇宙規模の大変</p>
-<p>革。パラダイムロスト前後の記録はほとんど残されておらず、それがどのような変革だったのかについては様々な方法で検証がなされているがあまり明確には分かっていない。</p>
-<p>**フォーマット[Format]**……テレパシー通信をする際に相互間で情報をやり取りできるように共通の表現方法を用いるというプロセス。テレパシー会話をする際、ほとんどの場合、情報を言語にフォーマットしてから行われる。フォーマットされていない情報は色や興奮状態などしか伝わらないため会話をするのには向いていないからである。言語をもたない生き物とテレパシー通信をする際は情報のフォーマットの仕方が全く違うため高度な情報交換は期待できない。</p>
-<p>**プリ方向次元[pre directional axis]**…… 身の回りで起こる物理現象が含まれる 6 つの次元軸。またはその空間。幅、奥行き、高さとそれぞれの虚数軸を合わせた６本である。</p>
-<p><strong>フロイト先生、ユング</strong>……ジークムント・フロイトとカール・グスタフ・ユングのこと。フロイトは夢や無意識の研究をした第一人者。ユングも集合的無意識の存在などを主張した。</p>
-<p>**ヘラクレイトス[Hērakleitos]**……古代ギリシャの哲学者。「万物は流転している」という言</p>
-<p>葉で有名。</p>
-<h3 id="ま"><a href="#ま" class="headerlink" title="[ ま ]"></a><strong>[ ま ]</strong></h3><p>**ミョウコウ[妙高]**……地名。高原でスキーリゾート地として有名。妙高高原メッセ……妙高高原にある公共施設、公民館。ホールや図書館が市民に貸し出されている。</p>
-<p>**モノリス[monolith]**……板状の記憶媒体。様々な材質から、様々な大きさのものが作られており、それによって記憶容量や情報引き出し率が変わる。同じ体積では表面に文字が書かれている物の方が無地の物よりも記憶容量が大きいので、多くのモノリスには聖書などの文章が書かれている。</p>
-<h3 id="や"><a href="#や" class="headerlink" title="[ や ]"></a><strong>[ や ]</strong></h3><p>**ユーレイ現象[幽霊現象]**……生物の周りにある物体にその生物の情報が記憶され第三者がそ</p>
-<p>の情報を後で読み取ったときにあたかもその生物がそこにいるのかのように錯覚する現象。特に死去した人間が生前の姿でそこに生きているように見える現象のことを言うことが多い。</p>
-<p>依り代……ユーレイ現象において情報が蓄積している物体のこと。たいていの場合その亡骸</p>
-<p>が依り代となる。</p>
-<h3 id="ら"><a href="#ら" class="headerlink" title="[ ら ]"></a><strong>[ ら ]</strong></h3><p><strong>ラジオ[radio]</strong> ……電磁波を利用して放送局が報道や音楽を発信する音声放送。また、それ</p>
-<p>を受信する機械。</p>
-<p><strong>ラマーズ法[Lamaze Technique]</strong> ……無痛分娩法のひとつ。「ヒッ、ヒッ、フー」の呼吸法</p>
-<p>でよく知られている。</p>
-<p><strong>乱数放送[Numbers Station]</strong> ……数字、文字、あるいは単語などの羅列が流れる発信源不詳</p>
-<p>のラジオ放送。特定の相手に対して情報を伝達する暗号放送だとされる。→ワンタイムパッドルイス・キャロル[Lewis Carroll]……イギリスの作家、数学者。「不思議の国のアリス」の著者</p>
-<h3 id="わ"><a href="#わ" class="headerlink" title="[ わ ]"></a><strong>[ わ ]</strong></h3><p><strong>ワンタイムパッド[one time pad]</strong> ……乱数伴を一回だけ使う暗号の運用法。</p>
-<p>[ 数字 ]</p>
-<p><strong>18 次元宇宙論</strong>……宇宙が梅雨期科学で言う 18 次元空間であるとする理論。HT 基礎構造理</p>
-<p>論が成立するためには宇宙は 18 次元空間でなければならなかったため C.S.が提唱した。</p>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">5.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">25 min</span>
+        </span>
+    </span>
+</div>
  
-      <!-- reward -->
-      
     </div>
-    
+       
 
     <!-- copyright -->
     
@@ -559,81 +368,28 @@
     <div class="article-meta">
       <a href="/2024/06/10/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="article-date">
   <time datetime="2024-06-10T13:29:24.000Z" itemprop="datePublished">2024-06-10</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><h3 id="滑动窗口是什么"><a href="#滑动窗口是什么" class="headerlink" title="滑动窗口是什么"></a>滑动窗口是什么</h3><p>滑动窗口可以用来解决数组&#x2F;字符串的子元素问题，它可以将嵌套的循环问题，转换为单循环问题，降低时间复杂度。</p>
-<h4 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h4><p>给定一个整数数组，计算长度为 ‘k’ 的连续子数组的最大总和。</p>
-<p>输入：arr [] &#x3D; {100,200,300,400}</p>
-<p>​			k &#x3D; 2</p>
-<p>输出：700</p>
-<p>解释：300 + 400 &#x3D; 700</p>
-<h5 id="暴力解法"><a href="#暴力解法" class="headerlink" title="暴力解法"></a>暴力解法</h5><p>争对这个问题，我可以采用信息利用率最低的一种方式，就是将所有元素遍历一次。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">solution</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">fun</span><span class="params">(&amp;arr,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;arr.<span class="built_in">size</span>()-k+<span class="number">1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> cut=<span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;k;j++)</span><br><span class="line">            &#123;</span><br><span class="line">             cut=cut+arr[i+j];   </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">int</span> maxsum=<span class="built_in">max</span>(cut,mansum);</span><br><span class="line">     &#125;</span><br><span class="line">        <span class="keyword">return</span> maxsum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.5k</span>
+        </span>
+    </span>
 
-<p>如代码里所写的那样，这里的解题思路很简单，就是用i指针进行引导，j在i指针后，k区间内进行滑动，这里滑动完之后，会留下一个信息，怎么记录这一个信息呢？因为这道题让我输出的是单信息，不用考虑信息丢失，我们就有两种方法来解决它，第一个方法是开多余的空间来记录他，就是说启动一个动态数组来存储产生的k区间和值信息，第二个方式就是采用迭代更新的方式，因为我们需要的单数据只需要占用一个位置，我们只要每次把这个位置更新了就好了，要做到这一点其实也不难，只需要我们使用两个值来记录，一个是current值，一个是max值，max值在current值和之前的max值之间进行更新。</p>
-<h5 id="滑动窗口解法"><a href="#滑动窗口解法" class="headerlink" title="滑动窗口解法"></a>滑动窗口解法</h5><p>滑动窗口法只用了很小的一点变化就让窗口得到累加，我们可以寻找到不同窗口之间的关系，我们可以发现，其实窗口之间的信息差距只有1,数据的相似性高达$\frac{k-1}{k}\times100%$，这样我们其实在没算出一次的窗口时，都为下一次做了k-1次的运算，如果我们每次都把这个k-1次运算利用上，那我们的时间复杂度可以大大降低，下面时时间复杂度优化的计算过程。<br>$$<br>原本的时间复杂度（暴力法）：\\<br>窗口的个数:n&#x3D;arr.size()-k\\<br>而我们每个窗口都要进行k次运算，实际上我们运算的次数就是\\<br>n_1&#x3D;n\times\ k&#x3D;(arr.size()-k)\times k\\<br>而当我们采用滑动窗口的解法，每个窗口的运算变化是，减去一个无效数字，增加一个有效数字，所以运算的次数变为\\<br>n_2&#x3D;n\times 2&#x3D;(arr.size()-k)\times 2\\<br>$$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">solution</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span>:<span class="built_in">fun</span>(&amp;arr,<span class="type">int</span> k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> cut=<span class="number">0</span>,max_1=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            max_1+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        cut =max_1;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=k;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cut+=arr[i]-arr[i-k];</span><br><span class="line">            max_1=<span class="built_in">max</span>(max_1,cut);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max_1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="为什么要用滑动窗口"><a href="#为什么要用滑动窗口" class="headerlink" title="为什么要用滑动窗口"></a>为什么要用滑动窗口</h3><p>使用滑动窗口可以帮助我们公用已有的计算量，减少计算机运算的次数，提高程序运行效率。</p>
-<h3 id="怎么使用滑动窗口"><a href="#怎么使用滑动窗口" class="headerlink" title="怎么使用滑动窗口"></a>怎么使用滑动窗口</h3><ul>
-<li>判断是否存在大区间里套小区间</li>
-<li>小区间之间是否具有共有的运算量</li>
-</ul>
-<p>需要注意的部分在于</p>
-<ol>
-<li>k区间在滑动窗口下的更新方法</li>
-<li>算数列首项的思想。</li>
-</ol>
-<h2 id="209-长度最小的子数组"><a href="#209-长度最小的子数组" class="headerlink" title="209. 长度最小的子数组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-size-subarray-sum/">209. 长度最小的子数组</a></h2><p>中等</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> <strong>。</strong></p>
-<p>找出该数组中满足其总和大于等于 <code>target</code> 的长度最小的 </p>
-<p><strong>子数组</strong></p>
-<p><code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度<strong>。</strong>如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
-<blockquote>
-<p>注意：子数组意思是直接从数组里面取一个序列的元素，不是单个取值。</p>
-</blockquote>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：target = 7, nums = [2,3,1,2,4,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：子数组 [4,3] 是该条件下的长度最小的子数组。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：target = 4, nums = [1,4,4]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：target = 11, nums = [1,1,1,1,1,1,1,1]</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= target &lt;= 109</code></li>
-<li><code>1 &lt;= nums.length &lt;= 105</code></li>
-<li><code>1 &lt;= nums[i] &lt;= 105</code></li>
-</ul>
-<p><strong>进阶：</strong></p>
-<ul>
-<li>如果你已经实现 <code>O(n)</code> 时间复杂度的解法, 请尝试设计一个 <code>O(n log(n))</code> 时间复杂度的解法。</li>
-</ul>
-<h3 id="暴力解法-1"><a href="#暴力解法-1" class="headerlink" title="暴力解法"></a>暴力解法</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> maxsum=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> flag=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> cut=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;nums.<span class="built_in">size</span>();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i+j&lt;nums.<span class="built_in">size</span>())</span><br><span class="line">                &#123;</span><br><span class="line">                    cut+=nums[i+j];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">if</span>(cut&gt;=target)</span><br><span class="line">                &#123;</span><br><span class="line">                    flag=<span class="built_in">min</span>(j+<span class="number">1</span>,flag);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag==nums.<span class="built_in">size</span>()+<span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="滑动窗口-1"><a href="#滑动窗口-1" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> target, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> maxsum=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> flag=nums.<span class="built_in">size</span>()+<span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> cut=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;nums.<span class="built_in">size</span>();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                cut+=nums[j];</span><br><span class="line">                <span class="keyword">while</span>(cut&gt;=target)</span><br><span class="line">                &#123;</span><br><span class="line">                    cut-=nums[i++];</span><br><span class="line">                    flag=<span class="built_in">min</span>(j-i+<span class="number">2</span>,flag);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag==nums.<span class="built_in">size</span>()+<span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>在这里用到的滑动窗口其实就是不断调整子序列的起始位置和终止位置，从而得到我们想要的结果。</p>
-<p><img src="https://pic.leetcode-cn.com/1659059220-jxMpDA-209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.gif" alt="209.长度最小的子数组.gif"></p>
-<p>滑动窗口的精髓在于移动k区间的起始位置，关键代码在于</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(cut&gt;=target)</span><br><span class="line">&#123;</span><br><span class="line">    cut-=nums[i++];</span><br><span class="line">    flag=<span class="built_in">min</span>(flag,j+<span class="number">2</span>-i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们可以分析得知，要知道一个事实，能够取到目标值的k区间，其终点带来的效果不是超出这个target值，就是刚刚好。如果是超出这个值的话，我们只需要在前面减去多余的数字就可以了。</p>
-<p>在这个更新起始位置的代码中，我们用到的更新手段是，调节起始位置的索引，从而改变我们字串的索引值。</p>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">6 min</span>
+        </span>
+    </span>
+</div>
  
-      <!-- reward -->
-      
     </div>
-    
+       
 
     <!-- copyright -->
     
@@ -674,43 +430,28 @@
     <div class="article-meta">
       <a href="/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/" class="article-date">
   <time datetime="2024-06-09T04:07:56.000Z" itemprop="datePublished">2024-06-09</time>
-</a>    
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">380</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">1 min</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 104</code></li>
-<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
-<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
-</ul>
-<p><strong>进阶：</strong></p>
-<ul>
-<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
-</ul>
-<h3 id="题解1（暴力运算，平方加排序）"><a href="#题解1（暴力运算，平方加排序）" class="headerlink" title="题解1（暴力运算，平方加排序）"></a>题解1（暴力运算，平方加排序）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            nums[i++] = nums[i] * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="题解2（开新数组-左右指针）"><a href="#题解2（开新数组-左右指针）" class="headerlink" title="题解2（开新数组+左右指针）"></a>题解2（开新数组+左右指针）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b=a.<span class="built_in">size</span>()<span class="number">-1</span>,r=a.<span class="built_in">size</span>(),l=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">c</span><span class="params">(a.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[l])&lt;<span class="built_in">fabs</span>(a[r]))</span><br><span class="line">            &#123;</span><br><span class="line">                c[b]=a[r]*a[r];</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c[b--]=a[l]*a[l];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://pic.leetcode-cn.com/1631932242-BViXlX-977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" alt="977.有序数组的平方.gif"></p>
-<p>这个算法的思路是，新开一个数组用来记录信息，首位两个指针互相交换信息，有一个特点，其实就是，生成的新数组的值，其实应该从小到大，依次是从中间，左右之一取得的。</p>
-<h2 id><a href="#" class="headerlink" title></a></h2> 
-      <!-- reward -->
-      
-    </div>
-    
 
     <!-- copyright -->
     
@@ -751,123 +492,28 @@
     <div class="article-meta">
       <a href="/2024/06/09/%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/" class="article-date">
   <time datetime="2024-06-08T17:36:10.000Z" itemprop="datePublished">2024-06-09</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>数组其实是一个连续的内存空间，删除元素的基本原理是</p>
-<ul>
-<li>空间不变</li>
-<li>计数方法会进行包装</li>
-</ul>
-<h3 id="erase函数"><a href="#erase函数" class="headerlink" title="erase函数"></a>erase函数</h3><p>在vector这个模板里面，就算使用了erase函数，原本申请的数组所占有的内存也是不发生变化的。</p>
-<table>
-<thead>
-<tr>
-<th>a[0]</th>
-<th>a[1]</th>
-<th>a[2]</th>
-<th>a[3]</th>
-<th>a[4]</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-</tr>
-<tr>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>5</td>
-<td>5</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>删除4元素的原理，就是删除将下一位的元素那进来补位，然后通过某些手段，屏蔽接下来的元素，这样就可以形成一个新的数组</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void erase(&amp;a,int b)</span><br><span class="line">&#123;</span><br><span class="line">for(int i=0;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">if(a[i]==b)</span><br><span class="line">&#123;</span><br><span class="line">for(int j=i;j&lt;n;j++)</span><br><span class="line">&#123;</span><br><span class="line">a[j-1]=a[j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">复杂度O(i+(n-i))=O(n)</span><br></pre></td></tr></table></figure>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.7k</span>
+        </span>
+    </span>
 
-<h3 id="库函数的使用"><a href="#库函数的使用" class="headerlink" title="库函数的使用"></a>库函数的使用</h3><p>过于简单的题目（能用库函数一次解决的），就不要用库函数</p>
-<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><blockquote>
-<p>其实就是牺牲空间，获取时间，原理是这样的，我们采用额外的空间，比如再声明一个数组，这样一个数组有了之后，我们就可以采用快慢指针的方法，快指针的作用很简单，就是用于遍历数组中的所有元素，而慢指针的作用在于标度待删除元素的存在，确认数组在最后拥有的数组大小。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">delete element(&amp;a,int b)</span><br><span class="line">&#123;</span><br><span class="line">int slow=0;</span><br><span class="line">vector&lt;int&gt;a_1;</span><br><span class="line">for(int fast=0;fast&lt;a.size();fast++)</span><br><span class="line">&#123;</span><br><span class="line">if(a[fast]!=b) slow++;</span><br><span class="line">&#125;</span><br><span class="line">return slow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="什么是快慢指针"><a href="#什么是快慢指针" class="headerlink" title="什么是快慢指针"></a>什么是快慢指针</h4><p>快慢指针是双指针算法中的一种。不同于左右对撞指针，快慢指针中的两个指针是从同一侧但以不同的策略移动的指针。因此，两个指针中会有一个移动较快的快指针（fast）和一个较慢的慢指针（slow）。当快指针移动到数组的顶端时，停止遍历或进行新一轮遍历。</p>
-<h4 id="为什么要用快慢指针"><a href="#为什么要用快慢指针" class="headerlink" title="为什么要用快慢指针"></a>为什么要用快慢指针</h4><p>使用双指针最实在的好处在于，我们的快指针相当于一个探路侠，它每走一步就会给予慢指针一个信息，让慢指针完成它的一部分工作，这样尽量让两个指针分工操作。</p>
-<p>快指针的工作在前面进行，而快指针完成工作之后，对于它本身信息的传递，其实是不消耗空间，也不消耗时间的。我们可以利用信息的充分化利用，使得两个指针能干更多有意义的事情。</p>
-<h4 id="快慢指针是怎么用的"><a href="#快慢指针是怎么用的" class="headerlink" title="快慢指针是怎么用的"></a>快慢指针是怎么用的</h4><ul>
-<li>链表：在链表中，链表往往是单向链表，这个时候使用快慢指针，让它们朝着同一个方向进行迭代。</li>
-<li>数组：数组利用的是索引的只是，在return值里面使用索引，便可以返回对应长度数组的值。</li>
-</ul>
-<h2 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27. 移除元素"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-element/">27. 移除元素</a></h2><p>给你一个数组 <code>nums</code> 和一个值 <code>val</code>，你需要 <strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 移除所有数值等于 <code>val</code> 的元素。元素的顺序可能发生改变。然后返回 <code>nums</code> 中与 <code>val</code> 不同的元素的数量。</p>
-<p>假设 <code>nums</code> 中不等于 <code>val</code> 的元素数量为 <code>k</code>，要通过此题，您需要执行以下操作：</p>
-<ul>
-<li>更改 <code>nums</code> 数组，使 <code>nums</code> 的前 <code>k</code> 个元素包含不等于 <code>val</code> 的元素。<code>nums</code> 的其余元素和 <code>nums</code> 的大小并不重要。</li>
-<li>返回 <code>k</code>。</li>
-</ul>
-<p><strong>用户评测：</strong></p>
-<p>评测机将使用以下代码测试您的解决方案：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int[] nums = [...]; // 输入数组</span><br><span class="line">int val = ...; // 要移除的值</span><br><span class="line">int[] expectedNums = [...]; // 长度正确的预期答案。</span><br><span class="line">                            // 它以不等于 val 的值排序。</span><br><span class="line"></span><br><span class="line">int k = removeElement(nums, val); // 调用你的实现</span><br><span class="line"></span><br><span class="line">assert k == expectedNums.length;</span><br><span class="line">sort(nums, 0, k); // 排序 nums 的前 k 个元素</span><br><span class="line">for (int i = 0; i &lt; actualLength; i++) &#123;</span><br><span class="line">    assert nums[i] == expectedNums[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果所有的断言都通过，你的解决方案将会 <strong>通过</strong>。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,2,2,3], val = 3</span><br><span class="line">输出：2, nums = [2,2,_,_]</span><br><span class="line">解释：你的函数函数应该返回 k = 2, 并且 nums 中的前两个元素均为 2。</span><br><span class="line">你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,1,2,2,3,0,4,2], val = 2</span><br><span class="line">输出：5, nums = [0,1,4,0,3,_,_,_]</span><br><span class="line">解释：你的函数应该返回 k = 5，并且 nums 中的前五个元素为 0,0,1,3,4。</span><br><span class="line">注意这五个元素可以任意顺序返回。</span><br><span class="line">你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>0 &lt;= nums.length &lt;= 100</code></li>
-<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
-<li><code>0 &lt;= val &lt;= 100</code></li>
-</ul>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeElement(vector&lt;int&gt;&amp; nums, int val) &#123;</span><br><span class="line">        int slow = 0;</span><br><span class="line">        for (int fast = 0; fast &lt; nums.size(); fast++) &#123;</span><br><span class="line">            if (nums[fast] != val)</span><br><span class="line">                nums[slow++] = nums[fast];</span><br><span class="line">        &#125;</span><br><span class="line">        return slow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="https://p.sda1.dev/18/496fb1149023399a4fb0163b1520cb4b/B7EC9CA94D6DF2BEB4E92654E268692E.png"></p>
-<h2 id="26-删除有序数组中的重复项"><a href="#26-删除有序数组中的重复项" class="headerlink" title="26. 删除有序数组中的重复项"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">26. 删除有序数组中的重复项</a></h2><p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>给你一个 <strong>非严格递增排列</strong> 的数组 <code>nums</code> ，请你**<a target="_blank" rel="noopener" href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95"> 原地</a>** 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。元素的 <strong>相对顺序</strong> 应该保持 <strong>一致</strong> 。然后返回 <code>nums</code> 中唯一元素的个数。</p>
-<p>考虑 <code>nums</code> 的唯一元素的数量为 <code>k</code> ，你需要做以下事情确保你的题解可以被通过：</p>
-<ul>
-<li>更改数组 <code>nums</code> ，使 <code>nums</code> 的前 <code>k</code> 个元素包含唯一元素，并按照它们最初在 <code>nums</code> 中出现的顺序排列。<code>nums</code> 的其余元素与 <code>nums</code> 的大小不重要。</li>
-<li>返回 <code>k</code> 。</li>
-</ul>
-<p><strong>判题标准:</strong></p>
-<p>系统会用下面的代码来测试你的题解:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int[] nums = [...]; // 输入数组</span><br><span class="line">int[] expectedNums = [...]; // 长度正确的期望答案</span><br><span class="line"></span><br><span class="line">int k = removeDuplicates(nums); // 调用</span><br><span class="line"></span><br><span class="line">assert k == expectedNums.length;</span><br><span class="line">for (int i = 0; i &lt; k; i++) &#123;</span><br><span class="line">    assert nums[i] == expectedNums[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果所有断言都通过，那么您的题解将被 <strong>通过</strong>。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,1,2]</span><br><span class="line">输出：2, nums = [1,2,_]</span><br><span class="line">解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,0,1,1,1,2,2,3,3,4]</span><br><span class="line">输出：5, nums = [0,1,2,3,4]</span><br><span class="line">解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 3 * 104</code></li>
-<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
-<li><code>nums</code> 已按 <strong>非严格递增</strong> 排列</li>
-</ul>
-<h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int slow = 0;</span><br><span class="line">        for (int fast = 1; fast &lt; nums.size(); fast = fast + 1) &#123;</span><br><span class="line">            if (nums[slow] != nums[fast])</span><br><span class="line">                nums[++slow] = nums[fast];</span><br><span class="line">        &#125;</span><br><span class="line">        return slow + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://p.sda1.dev/18/0310a04d7db7eb8d955b8c89eca22e95/0DEE598ED87C4D5522F12F9FD0F44B2C.png"></p>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">6 min</span>
+        </span>
+    </span>
+</div>
  
-      <!-- reward -->
-      
     </div>
-    
+       
 
     <!-- copyright -->
     
@@ -908,351 +554,28 @@
     <div class="article-meta">
       <a href="/2024/06/04/n1%E8%80%83%E8%AF%95%E9%94%99%E9%A2%98/" class="article-date">
   <time datetime="2024-06-04T03:35:38.000Z" itemprop="datePublished">2024-06-04</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="2023年12月"><a href="#2023年12月" class="headerlink" title="2023年12月"></a>2023年12月</h2><ul>
-<li><p>墓前「ぼぜん」</p>
-<p>粗膳「そぜん」</p>
-<p>呆然「ぼうぜん」</p>
-<p>騒然「そうぜん」</p>
-</li>
-<li><p>諭す「さとす」</p>
-<p>あやす「泣く子をあやす」</p>
-<p>正す「ただす」「誤りを正す」</p>
-<p>癒す「いやす」</p>
-</li>
-<li><p>秩序「ちつじょ」</p>
-<p>全幅「ぜんぷく」</p>
-<p>潜伏「せんぷく」</p>
-</li>
-<li><p>清らか「きよらか」：清らかな愛</p>
-<p>朗らか「ほがらか」：ほがらかなひと</p>
-<p>滑らか「なめらか」：滑らかな肌</p>
-</li>
-<li><p>心境「しんきょう」：静かな心境</p>
-<p>人口「じんこう」：</p>
-<p>振興「しんこう」：産業を進行する</p>
-</li>
-<li><p>自制（じせい）：自律。自己の食欲を自制するのは難しいことです。</p>
-<p>自立（じりつ）：独立。彼は若い頃から自立して生活しています。</p>
-<p>自重（じじゅう）：自尊。彼は自分の言動に自重を持つべきです。</p>
-<p>自任（じにん）：自负。彼は自分の能力を自任しすぎている。</p>
-</li>
-<li><p>返上（へんじょう）</p>
-<p>還元（かんげん）：（化学）还原；还原，返回本来面目（包含以其他形式将利益还原转化的语感）</p>
-<p>配給（はいきゅう）：配给，配售。</p>
-<p>譲渡（じょうと）：转让，让出。</p>
-</li>
-<li><p>びっしょり：湿透的。雨の中を歩いていたら、びっしょりになりました。</p>
-<p>どっさり：大量的。彼は野菜をどっさりと買った。</p>
-<p>どんより：昏暗的。天気がどんよりとしていて、外に出る気分ではありません。</p>
-<p>ぐったり：筋疲力尽的。長い山登りの後、彼はぐったりと倒れました。</p>
-</li>
-<li><p>ノイズ：噪音。ノイズの多い環境で作業するのは難しいです。在噪音多的环境下工作是困难的。</p>
-<p>ロック：锁死，上锁。ドアをロックしてください。请把门锁上。</p>
-<p>タブー：禁忌。そのトピックは家庭内でのタブーとされています。这个话题在家庭中是禁忌的。</p>
-<p>ネック：颈部、障碍。彼はネックのけがを負った。他颈部受伤了。</p>
-</li>
-<li><p>発散（はっさん）：发散、释放。ストレスを発散するためには、運動が役立つことがあります。运动有时可以帮助释放压力。</p>
-<p>発射（はっしゃ）：发射。ロケットは成功裏に発射されました。火箭成功发射了。</p>
-<p>流出（りゅうしゅつ）：流出。この川は毎日多くの水を海に流出させています。这条河每天都向海洋流出大量的水。</p>
-<p>排出（はいしゅつ）：排出。工場は有害な化学物質を排出している可能性があります。工厂可能会排放有害化学物质。</p>
-</li>
-<li><p>紛らわしい（まぎらわしい）：令人困惑的。彼の言葉は紛らわしいので、誰もが理解できません。他的话令人困惑，没有人能理解。</p>
-<p>もっともらしい：貌似真实的。彼の説明はもっともらしいが、実際には事実とは異なる可能性があります。他的解释看似真实，但实际上可能与事实不符。</p>
-<p>図々しい：厚颜无耻的。彼は図々しい態度で他人のものを取りました。他用厚颜无耻的态度拿走了别人的东西。</p>
-<p>なれなれしい：过于亲近的。彼は初対面の人に対してなれなれしい態度をとることがあります。他有时对初次见面的人表现出过于亲近的态度。</p>
-</li>
-<li><p>行き詰まる（いきつまる）：陷入困境。プロジェクトは予算不足のため行き詰まりました。由于预算不足，项目陷入困境。</p>
-<p>行き着く（いきつく）：最终达到。彼は長い旅の末に夢の国に行き着きました。在漫长的旅途后，他最终到达了梦寐以求的国度。</p>
-<p>行き届く（いきとどく）：充分完成。彼は仕事を完璧に行き届けることに誇りを持っています。他以完美地完成工作为荣。</p>
-</li>
-<li><p>懸念（けねん）：担忧。彼は試験の結果を懸念しています。他担忧考试的结果。</p>
-<p>期待（きたい）：期待。新しいプロジェクトに対する期待が高まっています。对于新项目有着高度期待。</p>
-<p>心配（しんぱい）：担心。彼女は友達の安全を心配しています。她担心朋友的安全。</p>
-</li>
-<li><p>予想（よそう）：预期。天気予報によると、明日は雨が予想されています。根据天气预报，预计明天会下雨。</p>
-<p>重視（じゅうし）：重视。この会社は従業員の意見を重視しています。这家公司重视员工的意见。</p>
-</li>
-<li><p>やつれる：憔悴。忙しい仕事のため、彼は最近やつれているように見えます。由于繁忙的工作，他最近看起来憔悴。</p>
-<p>遠慮（えんりょ）：克制。彼女は遠慮せずに自分の意見を述べました。她毫不犹豫地表达了自己的意见。</p>
-<p>張り切る（はりきる）：充满干劲。新しいプロジェクトに取り組むため、彼は張り切っています。为了参与新项目，他充满干劲。</p>
-<p>やせ衰える（やせおとろえる）：瘦弱衰落。彼は病気でやせ衰えています。他因疾病而瘦弱衰落。</p>
-</li>
-<li><p>感動（かんどう）：感动。その映画は多くの人々を深く感動させました。这部电影深深感动了许多人。</p>
-<p>奮闘（ふんとう）する：努力奋斗。彼は困難に立ち向かい、必死に頑張っています。他面对困难，拼命努力。</p>
-<p>じっと我慢（がまん）する：默默忍耐。彼は長い間痛みを我慢していた。他默默忍受了很长时间的疼痛。</p>
-<p>必死に頑張る（ひっしにがんばる）：全力以赴。試験前に彼は必死に頑張った。考试前，他全力以赴。</p>
-</li>
-<li><p>激しく怒る（はげしくおこる）：愤怒地。彼は激しく怒り、部屋を出て行った。他愤怒地离开了房间。</p>
-<p>焦って取り組む（あせってとりくむ）：匆忙应对。プロジェクトの最後の瞬間になって、私たちは焦って取り組んだ。在项目的最后一刻，我们匆忙应对。</p>
-<p>不慮（ふりょ）：意外。不慮の事故で車が損傷しました。车辆在意外事故中受损。</p>
-</li>
-<li><p>仕方ない（しかたない）：没办法，无可奈何。雨が降ってピクニックは中止になった。仕方ないね。因为下雨，我们的野餐取消了。没办法啦。</p>
-<p>あり得ない（ありえない）：不可能，难以置信。その話はあり得ない。信じられない。那个故事不可能发生。难以置信。</p>
-<p>思いがけない（おもいがけない）：出乎意料之外。彼からのプレゼントは思いがけないものでした。他送的礼物是出乎意料之外的东西。</p>
-<p>情けない（なさけない）：无情；可怜；可耻。彼の状況は本当に情けない。他的情况真是可怜。</p>
-</li>
-<li><p>根こそぎ：全部，一点不留地。根こそぎ持って行く。全部拿走。</p>
-<p>すべて：全部，一切。すべての問題を解決しました。我们解决了所有的问题。</p>
-<p>だいぶ：相当，颇。この町はだいぶ変わりました。这个城镇发生了相当大的变化。</p>
-</li>
-<li><p>一度に（いちどに）：一次，同时。すべての仕事を一度に終わらせるのは難しい。一次完成所有工作很难。</p>
-<p>次々と（つぎつぎと）：一个接一个，依次。彼らは次々と部屋に入ってきた。他们一个接一个地进入了房间。</p>
-</li>
-<li><p>没頭する（ぼっとうする）：全身心投入。新しい趣味に没頭することで、彼はストレスを解消しています。通过全身心投入新的兴趣爱好，他减轻了压力。</p>
-<p>飽きる（あきる）：厌烦，腻烦。彼は同じ食事に飽きてしまった。他对相同的食物感到厌烦。</p>
-<p>憧れる（あこがれる）：向往，崇拜。彼女は映画スターに憧れています。她向往成为电影明星。</p>
-</li>
-<li><p>不満を持つ（ふまんをもつ）：感到不满。彼は給料に不満を持っている。他对工资感到不满。</p>
-<p>熱中する（ねっちゅうする）：热衷，沉迷。彼はゲームに熱中している。他沉迷于游戏。</p>
-</li>
-<li><p>兆し（きざし）：迹象。経済の兆しは依然として良くない。经济的迹象仍然不容乐观。</p>
-<p>予定（よてい）：计划。明日の予定を教えてもらえますか。能告诉我明天的计划吗？</p>
-<p>見通し（みとおし）：瞭望，眺望。（遠くの方まで見えること。）見通しのきく場所。眼界开阔的地方。预料，预见；推测。（物事のなりゆきや、未来の事まで予測すること。）これからの見通しがつかない。今后如何很难预料。</p>
-<p>予想（よそう）：预测。専門家は来年の経済成長について予想を出しました。专家们对明年的经济增长进行了预测。</p>
-</li>
-<li><p>収容（しゅうよう）收容，容纳。</p>
-<p>収納（しゅうのう）：收纳；收藏。（国や地方公共団体が、租税その他の現金を受領すること。）国庫に収納する。收入国库。</p>
-<p>収録（しゅうろく）：搜集，收录。刊载，刊登。载入书籍、报刊等。新聞に収録する。刊登在报上。</p>
-</li>
-<li><p>ビタミンに富む（とむ）：富裕。（財産が増える。）丰富。（たくさん持っている。）資源に富んでいる国。资源丰富的国家。</p>
-</li>
-<li><p>冴える（さえる）：寒冷，清澈，鲜明。清爽；清醒。目がさえてなかなか眠れない。精神兴奋根本睡不着。</p>
-</li>
-<li><p>厳守する（げんしゅする）：严守，严格遵守。（きびしく守ること。）秘密を厳守する。严守秘密。</p>
-</li>
-<li><p>豊か（ゆたか）：丰富。豊かな才能。丰富的才能。</p>
-</li>
-<li><p>喝了咖啡后，精神兴奋根本睡不着。</p>
-</li>
-<li><p>明確（めいかく）：明确。（明らかで確実なこと。）明確な判断を下す。做出明确的判断。</p>
-</li>
-<li><p>激烈，猛烈。痛烈に叱る。激烈地训斥。</p>
-</li>
-<li><p>残酷（ざんこく）：残酷，残忍，冷酷。残酷なしうちを受ける。受到残酷的对待。</p>
-</li>
-<li><p>過酷（かこく）：严酷，苛刻，残酷。（厳しすぎるさま。）過酷な条件。苛刻的条件。</p>
-</li>
-<li><p>猛烈（もうれつ）：猛烈，凶猛，激烈。猛烈に戦う。激烈战斗。</p>
-</li>
-<li><p>完結（かんけつ）：完成；完结；结束。この仕事が完結したらつぎの仕事にかかる。这一项工作完成后，就开始下一项工作。</p>
-</li>
-<li><p>終わる（おわる）：完，完毕，结束，告终，终了。（続いていた物事がしまいになる。）授業が終わる。下课</p>
-</li>
-<li><p>完成する（かんせいする）：完成，竣工。6 月に完成の予定。预定六月完成。</p>
-</li>
-<li><p>完了（かんりょう）：完结，完了。（完全に終わること。）仕事の完了を急ぐ。急于赶完工作。</p>
-</li>
-<li><p>脆い（もろい）：脆，易坏、脆弱。ガラス食器はきれいだが脆い。玻璃餐具很漂亮但是容易坏。</p>
-</li>
-<li><p>弱い（よわい）：弱，脆弱。彼は体力が弱い。他体力弱。</p>
-</li>
-<li><p>浅い（あさい）：浅，不深。この川は浅いところが多い。这条河有很多浅水区。</p>
-</li>
-<li><p>失われる（うしなわれる）：丢失，失落，丧失，失去。命を失う。丧命。</p>
-</li>
-<li><p>真剣（しんけん）：认真。そのもの前接形容词词干、名词，表示那个东西本身。</p>
-</li>
-<li><p>真剣（しんけん）で：中顿，后接句子</p>
-</li>
-<li><p>真剣（しんけん）に：变副词</p>
-</li>
-<li><p>真剣（しんけん）な：后接名词</p>
-</li>
-<li><p>する間：在~期间，状态一直持续</p>
-</li>
-<li><p>する限り：表示动作的限制条件， “只要”</p>
-</li>
-<li><p>するうちに：在~期间，发生了自然而然的变化</p>
-</li>
-<li><p>するとしたら：要是~的话，假定</p>
-</li>
-<li><p>できずにいたなら：ず表否定，いた处于某种状态，なら假定，要是不能的话</p>
-</li>
-<li><p>できずにいたところ：ところ表时候，即在不能打包行李的时候</p>
-</li>
-<li><p>できないようにしたら：ようにする坚持做、尽量做，たら假定，要是尽量不能的话</p>
-</li>
-<li><p>できないようにしたところ：在尽量不能的时候，语义不通</p>
-</li>
-<li><p>降ることがあるかのように：ことがある一般现在时，通常有这样的事情。かのように宛如、好像。好像（通常）会有下雪一样，语义不通</p>
-</li>
-<li><p>降るなんて思えないぐらい：なんて，惊讶感叹轻蔑的感情，“什么的”。思えない可能性的否定，不能认为。ぐらい程度。不能认为要下雪什么的程度，语义不通</p>
-</li>
-<li><p>降るとは思わないように：とは意外，ように好像。好像不觉得下雪了一样，与原文不搭配</p>
-</li>
-<li><p>降るんじゃないかというぐらい：んじゃないか委婉陈述意见，好像要下雪那种程度的冷 </p>
-</li>
-<li><p>歩くほかない：只好走</p>
-</li>
-<li><p>歩けなくもない：不是不能走</p>
-</li>
-<li><p>歩いてはいられない：不能再走了，迫于某种情况不能再继续以前的状态。</p>
-</li>
-<li><p>歩けるわけがない：强烈否定，不可能走得了。</p>
-</li>
-<li><p>おいでくださいました：尊敬語，表示“来”</p>
-</li>
-<li><p>お越しいただきました：谦让语，表示“来”</p>
-</li>
-<li><p>ご参加いただきました：谦让语，表示“参加”</p>
-</li>
-<li><p>ご覧くださいました：尊敬语，表示“看”</p>
-</li>
-<li><p>するつもりでいる：打算做某事，でいる处于某种状态。</p>
-</li>
-<li><p>してくるつもりだ：てくる，以前到现在的变化趋势，但时态为将来时，即未来会打算去海外旅行起来。</p>
-</li>
-<li><p>したつもりになれる：たつもり假装、就当作，なれる可能形，可以假装去了海外旅行。</p>
-</li>
-<li><p>するつもりになっていた：ていた过去持续的状态，即之前有过此种打算</p>
-</li>
-</ul>
-<h2 id="2023年7月"><a href="#2023年7月" class="headerlink" title="2023年7月"></a>2023年7月</h2><ul>
-<li><p>かんどく：干扰项<br>がんどく(玩読)：阅读,精读<br>かんとく(監督)：监督；导演；教练，领队<br>がんとく：干扰项</p>
-</li>
-<li><p>はしょう：干扰项<br>はせい（派生）：派生<br>はっしょう（発祥）：发源，发祥<br>はっせい（発生）：发生；出现</p>
-</li>
-<li><p>ぼけて（惚ける）： (头脑)迟钝；装糊涂；假装不知道<br>かけて（駆ける·欠ける·掛ける·架ける·賭ける）：跑；缺少，欠；挂上，戴上；架上；赌博<br>ぬけて（抜ける）：脱落；漏掉；跑气；穿过；退出，脱离<br>すけて（透ける）：透过，看见</p>
-</li>
-<li><p>いどむ（挑む）：挑战，挑衅；<br>はげむ（励む）：鼓励<br>なやむ（悩む）：烦恼<br>のぞむ（臨む）：面临；遭受；担任；临到</p>
-</li>
-<li><p>じょうじつに（情実）：情面，私情<br>にょじつに（如実に）：如实地</p>
-</li>
-<li><p>保護：保护<br>防御：防御<br>警備：警备，警戒；戒备；警卫<br>支援：支援</p>
-</li>
-<li><p>従順（じゅうじゅん）に：顺从；听话；温顺，驯顺，驯服<br>厳正（げんせい）に：严格<br>忠実（ちゅうじつ）に：忠诚，忠实；忠实于，如实，照原样<br>均等（きんとう）に：均等，均匀，平均</p>
-</li>
-<li><p>めくる：翻（书，被子等）<br>掬う（すくう）：抄取；捞取；掬取，捧；舀；撇<br>挟む（はさむ）：插入；夹住；隔；插（话）<br>摘む（つまむ）：（用手指）捏，夹；吃；摘取（要点）</p>
-</li>
-<li><p>志望：志愿，愿望。希望将来能实现某种志向的心愿。<br>本意：本意，本心；真心，真意；本来的愿望，初衷<br>欲求：欲望，希求<br>念願：（多年来的）心愿，愿望</p>
-</li>
-<li><p>ポーズ：【pose】姿势，样子，架子；【pause】暂停，停顿<br>カーソル：计算尺的游标，指针，指示器：光标<br>ピント：（相机的）焦点，焦距；（说话的）中心，要点<br>テンポ：（音乐的）拍子；（事情的发展）速度</p>
-</li>
-<li><p>乗り込む：乘上，坐进（交通工具）；（乘坐交通工具）进入，开进<br>食い込む：深入，陷入；侵入，侵犯；挤进<br>駆け込む：跑进，跑入里面<br>追い込む：赶进，撵进；逼入，使陷入（困境）</p>
-</li>
-<li><p>てっきり：满以为是，原以为一定是<br>きっぱり：断然，干脆，斩钉截铁，清楚，明确<br>しっかり：结实，紧固，连接紧密<br>はっきり：清楚，明确；（头脑）清醒</p>
-</li>
-<li><p>払う（はらう）：去除；支付；处理掉；驱赶<br>預かる（あずかる）：暂存，（代人）保管；担任，管理<br>返却する（へんきゃく）：还，归还，退还<br>用意する（ようい）：准备，预备；注意，警惕，防备</p>
-</li>
-<li><p>爽やか（さわやかな）：（天气）清爽，爽朗；（心情）爽快<br>穏やか（おだやか）：平稳；絶静；平静；温和；安详<br>細やか（こまやかな）：浓厚，细腻，深厚<br>軽やか（かろやかな）：（动作、节奏等）轻快</p>
-</li>
-<li><p>スポット：【spot】场所地点；污点，斑点；聚光灯<br>場所（ばしょ）：地方，场所<br>商品（しょうひん）：商品，货品<br>方法（ほうほう）：方法，办法<br>時期（じき）：时期，时候；期间</p>
-</li>
-<li><p>拮抗（きっこう）：较量，对抗，颉颃<br>差がある：有差距<br>差がない：没有差距<br>高くなっている：高的<br>低くなっている：低的</p>
-</li>
-<li><p>風当たり：受到的非难、压力；风势<br>要求（ようきゅう）：要求<br>信頼（しんらい）：信赖<br>期待（きたい）：期待，期望，希望，指望<br>批判（ひはん）：批判，批判，评论；指正</p>
-</li>
-<li><p>あどけない：天真无邪，天真烂漫，稚气<br>不安そうな（ふあんそうな）：不安的<br>真剣な（しんけんな）：认真的，一丝不苟的<br>無邪気な（むじゃきな）：天真无邪，单纯，天真，纯朴<br>羨ましそうな（うらやましそうな）：羡慕的，眼红的</p>
-</li>
-<li><p>解析：出荷：发货，装载货物；上市，出货<br>应该用：出演（しゅつえん）：演出；出场，登台。<br>应该用：出店（でみせ&#x2F;しゅってん）：分号，分店。由总店分到别处去的店。<br>应该用：出品（しゅっぴん）：展出作品，展出产品。</p>
-</li>
-<li><p>解析：譲る：让给，转让；谦让，让步<br>应该用：配送（はいそう）：发送；分发，分送<br>应该用：渡す（わたす）：交，付；给，交给<br>应该用：届ける（とどける）：送到；送给；送去；投递，递送</p>
-</li>
-<li><p>底力（そこぢから）：潜力，底力，深厚的力量。（底にひそんでいて、いざという時に発揮する強い力や能力。）<br>应该用：握力（あくりょく）：握力。<br>句意：他虽然看上去不起眼，但在重要场合的潜力很大。<br>应该用：超能力（ちょうのうりょく）：超能力。<br>应该用：能力（のうりょく）：能力。</p>
-</li>
-<li><p>巨大，极大<br>应该用：大規模（だいきぼ）：大规模，规模宏大。<br>应该用：高大（こうだい）：高大。<br>应该用：巨大（きょだい）：巨大。<br>句意：那个歌手，在年轻人中有着极高的人气。</p>
-</li>
-<li><p>手痛い：「ミスなどが」重大，严重<br>句意：在工作中犯了重大错误，给周围的人添麻烦了。<br>应该用：激しい（はげしい）：激烈，强烈。<br>应该用：手強い（てごわい）：不好对付的，不易击败的。<br>应该用：手早い（てばやい）：敏捷的。麻利，手快。</p>
-</li>
-<li><p>誘致：招徕，招揽，吸引<br>应该用：誘導（ゆうどう）：引导，诱导，导航<br>应该用：募集（ぼしゅう）：募集；征募；招募。<br>应该用：導入（どうにゅう）：导入，引进，引入，输入。</p>
-</li>
-<li><p>~を（も）満足させる：让……（也）感到满足</p>
-</li>
-<li><p>いつか：曾经，以前，过去不知何时；不知不觉，无意之中，不知何时；（未来）早晚，迟早，改日，不久。</p>
-</li>
-<li><p>につき：关于… 每； 以…的理由。<br>に至るまで：至…；（直）到…。从…甚至到…全部。强调上限，出现的名词常带有极端的含义。<br>をもって：以…，以此…。写明开始、结束、界线点。一般用于会议等正式场合的发言。作为书面语时是文件中使用的较为生硬的表达方式。<br>を皮切りに： 以…为开端。</p>
-</li>
-<li><p>誘われるまま：「<del>まま」表示顺其自然，听其自然；随心所欲，自由；无论怎样都……任凭……都无所谓；原封不动，一如原样，仍旧，照旧<br>誘われようが：干扰项<br>誘われた上に：「</del>上に」表示累加、递进，相当于”不仅……而且….”的意思。<br>誘われない限り：「~ない限り」表示在前項的前提下，后项就能得到保证。相当于”只要不……就……”。也可以翻译成”除非……”。</p>
-</li>
-<li><p>点に加えて：除了这一点外（还有）…「~に加えて」表示…再加上…；除…之外。<br>点を除いて：除了这一点外（没有）…；后项接否定，表达除了这个以外的合适的人、物和事情已没有了。即只有这个。<br>場合に加えて：除了这一种情况外（还有）…<br>場合を除いて：除了这一情况（没有）…</p>
-</li>
-<li><p>なってからであっても：「<del>てから」表示在……之后；「</del>であっても」表示虽然…..但是……<br>なったばかりなのか：「<del>たばかり」表示刚刚…<br>なってからというもの：「</del>てからというもの」表示自从……就……</p>
-</li>
-<li><p>入れたつもりだった：「<del>つもり」接在动词た形后面，表示就当作…….就算是……。<br>入れっぱなしだった：「</del>っぱなし」接在动词连用形后面，表示动作一直持续。放置不管、置之不理。<br>入れっこなかった：「<del>っこない」接在动词连用形后面，是一种强调否定表达，绝对不……绝不……。<br>入れるべきではなかった：「</del>べきではない」表示不应该……</p>
-</li>
-<li><p>広くないはずなんだよ：「<del>はずなんだ」表示説话人主观上的推测，应该……<br>広いなんてことはないよ：「</del>なんてことはない」表示加强语气，强调不存在某种情况<br>広くないわけじゃないんだよ：「<del>わけでは（じゃ）ない」表示并非会……；用来否定那些想当然的推测。<br>広いなんてもんじゃないよ：「</del>なんてもんじゃない」表示别提有多……；简直太…… 非常……</p>
-</li>
-<li><p>乗りたがったものだ：「<del>たがる」表示第三者的愿望，但因此此处是指过去的自己，不是现在的自己，因此可以用「</del>たがる」；「<del>たものだ」表示对过去事情的回忆。<br>乗りたがったところだ：「</del>たところだ」表示刚刚……<br>乗ってほしがったものだ：「ほしがる」表示第三者的愿望，一般没有「~てほしがる」的形式，故为干扰项<br>乗ってほしがったところだ：干扰项</p>
-</li>
-<li><p>秋の初めのこの時期は、真夏に戻ったかのような日もあればひんやりとした日もあり、気温の差が大きくて体調を崩しやすいので、注意が必要だ。<br>这个时期的初秋时节，有些日子仿佛回到了盛夏，而有些日子又比较凉爽，气温变化很大，很容易生病，所以需要当心。<br>要点：「<del>も</del>ば~も」表示既…又…。在前面叙述的基础上再继续叙述的表达方式。使用褒义词与褒义词、或者贬义词与贬义词的组合方式。</p>
-</li>
-<li><p>歴史的価値が高いとされる旧白木小学校の校舎を初めて見たが、とても100年前に建てられたものとは思えないほどの現代的なデザインに驚いた。<br>第一次看到被认为具有重要历史价值的原白木小学校址，它那现代化的设计让人很难相信它是100年前建成的。<br>要点：「~とは思えないほど」表示到了让人很难相信的程度。</p>
-</li>
-<li><p>企業の海外進出が成功するかどうかは、その国の事情をよく知る優秀な人材を確保できるか否かにかかっているといってもいいだろう。<br>可以说，一个企业能否成功进军海外，取决于它能否获得对该国情况充分了解的优秀人力资源。<br>要点：「<del>かどうかは、</del>か否かにかかっている」表示能否……取决于能否……。</p>
-</li>
-<li><p>空虚な：実質的な意味がない</p>
-<p>ネーミング：名前を付けること</p>
-<p>デフォルト：標準</p>
-<p>戯れ続ける：ここでは、付き合い続ける</p>
-</li>
-</ul>
-<h2 id="2022年12月"><a href="#2022年12月" class="headerlink" title="2022年12月"></a>2022年12月</h2><ul>
-<li><p>勇敢（ゆうかん）：勇敢。勇敢に挑む。勇敢地挑战。<br>ゆうがん：干扰项，无常用词<br>勇健（ゆうけん）：健壮，强壮有活力。<br>有限（ゆうげん）：有限。有限な資源。有限的资源。</p>
-</li>
-<li><p>深刻（しんこく）：严肃；重大。深刻な問題。重大的问题。<br>2.じゅうこく：干扰项，无常用词<br>3.忠告（ちゅうこく）：忠告，劝告。<br>忠告を受け入れる。接受忠告。<br>4.じんこく：干扰项，无常用词。</p>
-</li>
-<li><p>労わる（いたわる）：慰劳，安慰；同情。部下を労わる。慰劳部下。<br>敬う（うやまう）：尊敬。先生を敬う。尊敬老师<br>慕う（したう）：爱慕，怀念；敬慕，敬仰。母国を慕う。怀念祖国。<br>庇う（かばう）：庇护；保护。過失を庇う。包庇过错。</p>
-</li>
-<li><p>制定（せいてい）：制定。法律を制定する。制定法律。<br>せてい：干扰项，无常用词。<br>正常（せいじょう）：正常。正常に行動する。正常行动。<br>施錠（せじょう）：上锁。ドアに施錠する。給门上锁。</p>
-</li>
-<li><p>んげ：扰项，无常用词。<br>沈下（ちんか）：沉降，下沉。地面が沈下する。地面下沉。<br>進化（しんか）：进化；事物逐渐好转。社会は進化していく。社会将会继续进步<br>しんげ：干扰项，无常用词</p>
-</li>
-<li><p>：被大雪所阻挡，无法前进。<br>囲む（かこむ）：包围，围绕；围攻。石で庭を囲む。用石头把院子围上<br>絡む（からむ）：缠在上；纠缠。草が木に絡む。草缠在树上。<br>拒む（こばむ）：拒绝，不接受。命令を拒む。抗命令。<br>阻む（はばむ）：阻挡，阻止。人の行く道を阻む。阻挡别人的去路。</p>
-</li>
-<li><p>手軽（てがる）：简単，简便。手軽な方法。简便的方法。<br>軽率（けいそつ）：轻率，草率。軽率な判断。草率的判断。<br>気軽（きがる）：轻松愉快，舒畅，随意。気軽に聞いてください。请随便问。<br>軽快（けいかい）：动作轻快；心情愉快。軽快な曲。轻快的曲子</p>
-</li>
-<li><p>谋求知识的牢固，而重复“预习-上课-复习”这一循环。<br>ピッチ：pitch投球；划桨次数，速度。<br>サイクル：cycle周期，循环过程<br>シフト：shift移动；改変；替换；轮班。シフト制。轮制<br>ベース：base基本，基础；地基。赤をベースにする。以红色为底色。</p>
-</li>
-<li><p>代行（だいこう）：代理，代办。社長の代行をする。代理社长的职务。<br>仲裁（ちゅうさい）：调停，劝解。けんかを仲裁する。劝架。<br>干渉（かんしょう）：干渉，干预。内政に干渉する。干涉内政。</p>
-<p>媒介（ばいかい）：媒介，传播。ウイルスを媒介する。传播病毒</p>
-</li>
-<li><p>仕業（しわざ）：行为，搞鬼，勾当。彼の仕業に違いない。一定是他干的。<br>素振り（そぶり）：态度，举止，样子。怪しい素振り。可疑的举止<br>腕前（うでまえ）：能力，本事，手艺。腕前を試す。小试牛刀<br>扱い（あつかい）：使用；待遇；看待。飛行機の扱いは難しい。飞机的操作很难。</p>
-</li>
-<li><p>公寓正要完成的时候发现漏洞，工事就中止了<br>発覚（はっかく）：暴露，被发現。陰謀（いんぼう）が発覚した。阴谋败露了。<br>派生（はせい）：引发；从原有实物中分化。新しい問題が派生した。出现了新问题。<br>波及（はきゅう）：波及，影响。影響は全世界に波及する。影响波及全世界。<br>露出（ろしゅつ）：暴露露出。<br>電線が地上に露出した。电线露出地面。</p>
-</li>
-<li><p>ざらざら：手感粗糙，不光滑。<br>ねばねば：粘不拉几，黏黏糊糊。<br>すべすべ：光滑，滑溜。<br>ごつごつ：不平滑，凹凸不平；生硬。</p>
-</li>
-<li><p>掛け合う（かけあう）：相当于，对应；交涉。上司に掛け合う。与上司交涉。<br>張り合う（はりあう）：竞争，争夺。二人で彼女を張り合う。两个人争她一个。<br>噛み合う（かみあう）：互相咬；齿轮咬合；一致。意見が嚙み合わない。意见不一致。<br>釣り合う（つりあう）：平衡，均衡；匀称，合适。収入と支出が釣り合う。收支平衡。</p>
-</li>
-<li><p>我被朋友刺激到，开始了我的事业。<br>触発（しょくはつ）：触发；受到刺激。例：他人の成功に触発された。&#x2F;被别人的成功刺激了。<br>誘う（さそう）：邀请，劝诱。例：映画館に誘われた。&#x2F;被约去电影院了。<br>提案（ていあん）：建议，提案。例：法律改正について提案する。&#x2F;提议改正法律。<br>助ける（たすける）：帮助，救命。例：父の仕事を助ける。&#x2F;帮父亲干活。<br>刺激（しげき）：物理，生理刺激。</p>
-</li>
-<li><p>言動（げんどう）：语言和行为。閉口（へいこう）：为难；吃不消；没办法；腻烦；折服。<br>慣れる（なれる）：习慣；熟练；亲近。例：新しい仕事に慣れた。&#x2F;习惯新的工作了。<br>困る（こまる）：难受；苦恼；穷困。例：事件の処理に困る。&#x2F;事情难以处理。<br>がっかりする：灰心，失望。<br>ほっとする：松了一口气，放心。例：試験が終わってほっとする。&#x2F;考完试松了一口气。</p>
-</li>
-<li><p>気まま（きまま）：随意，任意；任性。例：気ままな子ども。&#x2F;任性的孩子。<br>質素（しっそ）：朴素；俭朴；简陋。例：質素な暮らし。&#x2F;俭朴的生活<br>退屈（たいくつ）：无聊，闷；寂寞。例：退屈な内容。&#x2F;无聊的内容。<br>贅沢（ぜいたく）：奢侈；浪費。例：贅沢に使う。&#x2F;大手大脚地使用。<br>自由（じゆう）：自由；随意。</p>
-</li>
-<li><p>まだ：还没，尚未。例：まだ来ていない。&#x2F;还没来。<br>かなり：颇为；相当；出乎意料。例：かなり疲れた。&#x2F;相当疲劳了<br>いくつか：一些；一点点；附在数后面表示零数。例：りんごがいくつある。&#x2F;有几个苹果。<br>恐らく（おそらく）：恐怕，大概，一定。例：恐らく雨になる。&#x2F;恐怕要下雨。</p>
-</li>
-<li><p>手分け（てわけ）：分工。例：手分けして探す。&#x2F;分头寻找。<br>分割（ぶんかつ）：分割，瓜分；分期付款。例：領土を分割する。&#x2F;瓜分领土。<br>分別（ぶんべつ）：辨別力；判断力；分类。例：分別がつく。&#x2F;有分辨力。<br>分担（ぶんたん）：分担。例：費用を分担する。&#x2F;分担费用。<br>分類（ぶんるい）：分类。例：血液型で分類する。&#x2F;按血型分类。</p>
-</li>
-<li><p>生麻利地处理了剩下的工作。<br>てきぱき：麻利，爽快，敏捷，利索。<br>早く正確に（はやくせいかくに）：又快又正确地。</p>
-<p>時間をかけて丁寧に（じかんをかけてていねいに）：花费时间仔细地。<br>張り切って（はりきって）：干劲十足。<br>嫌がらず（いやがらず）：不讨厌，不勉强。</p>
-</li>
-<li><p>应该用：最後（さいご）：最后。最後の荷物です。这是最后的行李。<br>句意：因为很想知道结局，所以我就熬夜把很厚一本书看完了。<br>应该用：後ろ（うしろ）：后面<br>应该用：先端（せんたん）：顶端，头；先锋。葉の先端。叶子尖尖。</p>
-</li>
-<li><p>そそる：引起，勾起（感情或行为）<br>应该用：注意を払う（はらう）：提醒注意，给与警告。<br>应该用：煽る（あおる）：吹动，煽动。愛国心を煽る。激发爱国情怀。<br>句意：料理的色，香，味都是勾出食欲的要素。<br>应该用：強いられる（しいられる）：被迫。</p>
-</li>
-<li><p>遮断（しゃだん）：截断，隔断；分离。退路を遮断する。切断退路。<br>句意：这个房间的话，就可以阻外面的声音，录音钢琴演奏了<br>应该用：中止（ちゅうし）：中止，中途取消。<br>应该用：控える（ひかえる）：控制，节制。塩分を控える。控制盐分摄取。<br>应该用：終わりにする（おわり）：结束，终止</p>
-</li>
-<li><p>要請（ようせい）：请求，要求。彼からの要請だ。这是他的请求。<br>应该用：需要（じゅよう）：需要，需求。需要が急増する。需求量剧增。<br>句意：在受地的请求下，国家派遣医疗队伍前往。<br>应该用：必要（ひつよう）：必要，必需，必须。その必要はない。没有那个必要。<br>应该用：請求（せいきゅう）：请求，索取，要求。</p>
-</li>
-<li><p>ぎこちない：生硬，笨拙，笨手笨脚<br>句意：我在和我的偶像歌手面的时候，紧张地连动作都有些僵硬了<br>去掉ぎこちないので也可以使句子通顺。</p>
-<p>应该用：悪い（わるい）：不好，差。生育（せいいく）が悪そうだ。生长不好。<br>应该用：不明瞭（ふめいりょう）：发音不明确</p>
-</li>
-<li><p>解析：断じて（だんじて）：决不，绝对。断じて許せない。决不可饶恕<br>应该用：まったく：副词，完全；实在是。私はまったく知らなかった。我完全不知道。<br>应该用：全然（ぜんぜん）：加上否定，表示完全不。<br>应该用：決して（けっして）：强烈否定，绝不会。決して忘れません。绝不会忘记<br>句意：对待别人歧视或是欺凌的行为是绝对不允许的。</p>
-</li>
-<li><p>あまりに：太<del>，过于</del>。<br>いっさい：一切，全部；完全不<del>（后接否定）。例：遅刻は一切許さない。&#x2F;お酒は一切飲まない。<br>できれば：如果可以的话。<br>どうしても：怎么也</del>，无论如何也~。</p>
-</li>
-</ul>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">6.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">23 min</span>
+        </span>
+    </span>
+</div>
  
-      <!-- reward -->
-      
     </div>
-    
+       
 
     <!-- copyright -->
     
@@ -1293,82 +616,28 @@
     <div class="article-meta">
       <a href="/2024/06/03/Leetcode%20Problems/" class="article-date">
   <time datetime="2024-06-02T18:27:54.000Z" itemprop="datePublished">2024-06-03</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
-<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
-<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
-<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
-<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
-<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.1k</span>
+        </span>
+    </span>
 
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= candies &lt;= 10^9</code></li>
-<li><code>1 &lt;= num_people &lt;= 1000</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">        int n = num_people;</span><br><span class="line">        vector&lt;int&gt; ans(n);</span><br><span class="line">        for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">            if (candies &gt;= i + 1) &#123;</span><br><span class="line">                candies -= i + 1;</span><br><span class="line">                ans[i % n] += i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ans[i % n] += candies;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="575-分糖果"><a href="#575-分糖果" class="headerlink" title="575. 分糖果"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/distribute-candies/">575. 分糖果</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>Alice 有 <code>n</code> 枚糖，其中第 <code>i</code> 枚糖的类型为 <code>candyType[i]</code> 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。</p>
-<p>医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 <code>n / 2</code> 即可（<code>n</code> 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。</p>
-<p>给你一个长度为 <code>n</code> 的整数数组 <code>candyType</code> ，返回： Alice <em>在仅吃掉 <code>n / 2</code> 枚糖的情况下，可以吃到糖的 <strong>最多</strong> 种类数</em>。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：candyType = [1,1,2,2,3,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：candyType = [1,1,2,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：candyType = [6,6,6,6]</span><br><span class="line">输出：1</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，尽管她能吃 2 枚，但只能吃到 1 种糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>n == candyType.length</code></li>
-<li><code>2 &lt;= n &lt;= 104</code></li>
-<li><code>n</code> 是一个偶数</li>
-<li><code>-105 &lt;= candyType[i] &lt;= 105</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(vector&lt;int&gt;&amp; candyType) &#123;</span><br><span class="line">        unordered_set&lt;int&gt; candyset(candyType.begin(), candyType.end());</span><br><span class="line">        return min(candyType.size() &gt;&gt; 1, candyset.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2928-给小朋友们分糖果-I"><a href="#2928-给小朋友们分糖果-I" class="headerlink" title="2928. 给小朋友们分糖果 I"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/distribute-candies-among-children-i/">2928. 给小朋友们分糖果 I</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>给你两个正整数 <code>n</code> 和 <code>limit</code> 。</p>
-<p>请你将 <code>n</code> 颗糖果分给 <code>3</code> 位小朋友，确保没有任何小朋友得到超过 <code>limit</code> 颗糖果，请你返回满足此条件下的 <strong>总方案数</strong> 。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 5, limit = 2</span><br><span class="line">输出：3</span><br><span class="line">解释：总共有 3 种方法分配 5 颗糖果，且每位小朋友的糖果数不超过 2 ：(1, 2, 2) ，(2, 1, 2) 和 (2, 2, 1) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3, limit = 3</span><br><span class="line">输出：10</span><br><span class="line">解释：总共有 10 种方法分配 3 颗糖果，且每位小朋友的糖果数不超过 3 ：(0, 0, 3) ，(0, 1, 2) ，(0, 2, 1) ，(0, 3, 0) ，(1, 0, 2) ，(1, 1, 1) ，(1, 2, 0) ，(2, 0, 1) ，(2, 1, 0) 和 (3, 0, 0) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= n &lt;= 50</code></li>
-<li><code>1 &lt;= limit &lt;= 50</code></li>
-</ul>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">4 min</span>
+        </span>
+    </span>
+</div>
  
-      <!-- reward -->
-      
     </div>
-    
+       
 
     <!-- copyright -->
     
@@ -1409,18 +678,28 @@
     <div class="article-meta">
       <a href="/2024/06/01/%E6%B0%B4%E5%A4%8F/" class="article-date">
   <time datetime="2024-06-01T15:37:53.000Z" itemprop="datePublished">2024-06-01</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>s</p>
-<p>你的身上散发着死人的气息</p>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">13</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">1 min</span>
+        </span>
+    </span>
+</div>
  
-      <!-- reward -->
-      
     </div>
-    
+       
 
     <!-- copyright -->
     
@@ -1461,222 +740,28 @@
     <div class="article-meta">
       <a href="/2024/06/01/%E7%BB%A7%E6%89%BF%E5%92%8C%E6%B4%BE%E7%94%9F/" class="article-date">
   <time datetime="2024-06-01T13:41:14.000Z" itemprop="datePublished">2024-06-01</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="导学"><a href="#导学" class="headerlink" title="导学"></a>导学</h2><h2 id="继承的基本概念和语法"><a href="#继承的基本概念和语法" class="headerlink" title="继承的基本概念和语法"></a>继承的基本概念和语法</h2><ul>
-<li><p>继承与派生是同一过程从不同的角度看</p>
-<ol>
-<li>保持已有类的特性而构造新类的过程称为继承。</li>
-<li>在已有类的基础上新增自己的特性而产生新类的过程称为派生，</li>
-</ol>
-</li>
-<li><p>被继承的已有类称为基类(或父类)</p>
-</li>
-<li><p>派生出的新类称为派生类(或子类)。</p>
-</li>
-<li><p>直接参与派生出某类的基类称为直接基类</p>
-</li>
-<li><p>基类的基类甚至更高层的基类称为间接基类。</p>
-</li>
-</ul>
-<h3 id="派生的目的"><a href="#派生的目的" class="headerlink" title="派生的目的"></a>派生的目的</h3><ul>
-<li>当新的问题出现，原有程序无法解决时，需要对原有程序进行改造。</li>
-</ul>
-<h3 id="单继承时派生类的定义"><a href="#单继承时派生类的定义" class="headerlink" title="单继承时派生类的定义"></a>单继承时派生类的定义</h3><ul>
-<li><p>语法<br>class 派生类名:继承方式 基类名<br>{成员声明;}；</p>
-</li>
-<li><p>例</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* class Derived: public Base</span><br><span class="line">  public:</span><br><span class="line">  Derived ();</span><br><span class="line">  ~Derived ();</span><br><span class="line">  &#125;；</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="多继承时派生类的定义"><a href="#多继承时派生类的定义" class="headerlink" title="多继承时派生类的定义"></a>多继承时派生类的定义</h3><ul>
-<li><p>语法<br>class 派生类名:继承方式1 基类名1,继承方式2 基类名2<br>{成员声明;}；<br>注意:每一个“继承方式”，只用于限制对紧随其后之基类的继承。</p>
-</li>
-<li><p>例</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Derived: public Basel, private Base2</span><br><span class="line">public:</span><br><span class="line">Derived ();</span><br><span class="line">~Derived ();</span><br><span class="line">&#125;；</span><br></pre></td></tr></table></figure>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">3.4k</span>
+        </span>
+    </span>
 
-<h3 id="派生类的构成"><a href="#派生类的构成" class="headerlink" title="派生类的构成"></a>派生类的构成</h3><ul>
-<li><p>吸收基类成员</p>
-</li>
-<li><p>改造基类成员</p>
-</li>
-<li><p>添加新的成员</p>
-</li>
-</ul>
-<h3 id="吸收基类成员"><a href="#吸收基类成员" class="headerlink" title="吸收基类成员"></a>吸收基类成员</h3><ul>
-<li><p>默认情况下派生类包含了全部基类中除构造和析构函数之外的所有成员。</p>
-</li>
-<li><p>C++11规定可以用using语句继承基类构造函数。</p>
-</li>
-</ul>
-<h2 id="基类与派生类类型转换"><a href="#基类与派生类类型转换" class="headerlink" title="基类与派生类类型转换"></a>基类与派生类类型转换</h2><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ul>
-<li><p>共有派生类对象可以被当作基类的对象使用，反之则不可。</p>
-<ol>
-<li>派生类的对象可以隐含转换为基类对象</li>
-<li>派生类的对象可以初始化基类的引用</li>
-<li>派生类的指针可以隐含转换基类的指针</li>
-</ol>
-</li>
-<li><p>通过基类对象名，指针只能使用从基类继承的成员。</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Base1&#123;//基类1定义</span><br><span class="line">public:</span><br><span class="line">	void display()const</span><br><span class="line">	&#123;</span><br><span class="line">	cout&lt;&lt;&quot;Base1::display()&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Base2:public Base1&#123;//派生类Base2定义</span><br><span class="line">public:</span><br><span class="line">	void display() const &#123;cout&lt;&lt;&quot;Base2::display()&quot;&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class Derived:public Base2&#123;//公有派生类Derived定义</span><br><span class="line">public：</span><br><span class="line">void display()const</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Derived.play()&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void fun(Base1 *ptr)</span><br><span class="line">&#123;</span><br><span class="line">ptr-&gt;display();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Base1 base1;//声明Base1类对象</span><br><span class="line">Base2 base2;//声明Base2类对象</span><br><span class="line">Derived derived;//声明Derived类对象</span><br><span class="line"></span><br><span class="line">fun(&amp;base1);//三个对象调用fun函数</span><br><span class="line">fun(&amp;base2);</span><br><span class="line">fun(&amp;derived);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">//这样调用的都是Base1的display函数</span><br><span class="line">//需要用虚函数才能解决这个问题</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="私有继承和保护继承"><a href="#私有继承和保护继承" class="headerlink" title="私有继承和保护继承"></a>私有继承和保护继承</h2><h3 id="私有继承（private）"><a href="#私有继承（private）" class="headerlink" title="私有继承（private）"></a>私有继承（private）</h3><h4 id="继承的访问控制"><a href="#继承的访问控制" class="headerlink" title="继承的访问控制"></a>继承的访问控制</h4><ul>
-<li>基类的public和protected成员：都以private身份出现在派生类中；</li>
-<li>基类的private成员：不可直接访问</li>
-</ul>
-<h4 id="访问权限"><a href="#访问权限" class="headerlink" title="访问权限"></a>访问权限</h4><ul>
-<li>派生类中的成员函数：可以直接访问基类中的public和protected成员，但不能直接访问基类的private成员；</li>
-<li>通过派生类的对象：不能直接访问从基类继承的任何成员。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#ifndef _RECTANGLE_H</span><br><span class="line">#define _RECTANGLE_H</span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">class Rectangle:private Point&#123;//派生类定义部分</span><br><span class="line">public://新增共有函数成员</span><br><span class="line">	void initRectangle(float x,float y.float w.float h)</span><br><span class="line">	&#123;</span><br><span class="line">	initPoint(x,y);//调用基类共有成员函数</span><br><span class="line">	this-&gt;w=w;</span><br><span class="line">	this-&gt;h=h;</span><br><span class="line">	&#125;</span><br><span class="line">	void move(float offX,float offY)&#123;Point::move(offX,offY);&#125;</span><br><span class="line">	float getX()const &#123;return Point::getX();&#125;</span><br><span class="line">	float getY()const &#123;return Point::getY();&#125;</span><br><span class="line">	float getH()const &#123;return h;&#125;</span><br><span class="line">	float getW()const &#123;return w;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include Rectangle.h</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">Rectangle rect; //定义Rectangle类的对象</span><br><span class="line">rect.initRectangle(2,3,20,10);//设置矩形的数据</span><br><span class="line">rect.move(3,2); //移动矩形位置</span><br><span class="line">cout &lt;&lt; &quot;The data of rect(x,y,w,h): &quot;&lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; rect.getX() &lt;&lt;&quot;,&quot;</span><br><span class="line">//输出矩形的特征参数</span><br><span class="line">&lt;&lt; rect.getY() &lt;&lt; &quot;,</span><br><span class="line">&lt;&lt; rect.getW() &lt;&lt; &quot;,</span><br><span class="line">&lt;&lt; rect.getH( &lt;&lt; end;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="保护继承-protected"><a href="#保护继承-protected" class="headerlink" title="保护继承(protected)"></a>保护继承(protected)</h3><h4 id="继承的访问控制-1"><a href="#继承的访问控制-1" class="headerlink" title="继承的访问控制"></a>继承的访问控制</h4><ul>
-<li><p>基类的public和protected成员:都以protected身份出现在派生类中</p>
-</li>
-<li><p>基类的private成员:不可直接访问</p>
-</li>
-</ul>
-<h4 id="访问权限-1"><a href="#访问权限-1" class="headerlink" title="访问权限"></a>访问权限</h4><ul>
-<li><p>派生类中的成员函数:可以直接访问关中的public和protected成员，但不能直接访问基类的private成员:</p>
-</li>
-<li><p>通过派生类的对象:不能直接访问从基类继承的任何成员</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">protected 成员的特点与作用</span><br><span class="line">。对建立其所在类对象的模块来说，它与 private 成员的性质相同</span><br><span class="line">对于其派生类来说，它与 public 成员的性质相同,</span><br><span class="line">既实现了数据隐藏，又方便继承，实现代码重用。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class A&#123;</span><br><span class="line">protected:</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">int main()&#123;</span><br><span class="line">A a;</span><br><span class="line">a.x=5;//错误</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class A&#123;</span><br><span class="line">protected;</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">class B:public A&#123;</span><br><span class="line">public:</span><br><span class="line">	void function();</span><br><span class="line">&#125;;</span><br><span class="line">void B::function()</span><br><span class="line">&#123;</span><br><span class="line">x=5;//正确</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">class A &#123;</span><br><span class="line">public:</span><br><span class="line">void setA(int);</span><br><span class="line">void showA() const;</span><br><span class="line">private:</span><br><span class="line">int a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class B &#123;</span><br><span class="line">public:</span><br><span class="line">void setB(int);</span><br><span class="line">void showB() const;</span><br><span class="line">private:</span><br><span class="line">int b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class C : public A, private B &#123;</span><br><span class="line">public:</span><br><span class="line">void setC(int, int, int);</span><br><span class="line">void showC() const;</span><br><span class="line">private const:</span><br><span class="line">int c;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void A::setA(int x)&#123;</span><br><span class="line">a=X;</span><br><span class="line">&#125;</span><br><span class="line">void B:setB(int x)&#123;</span><br><span class="line">b=X;</span><br><span class="line">&#125;</span><br><span class="line">void C::setC(int x, int y, int z) &#123;</span><br><span class="line">//派生类成员直接访问基类的</span><br><span class="line">//公有成员</span><br><span class="line">setA(x);</span><br><span class="line">setB(y);</span><br><span class="line">C=Z;</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">C obj;</span><br><span class="line">obj.setA(5);</span><br><span class="line">obj.showA();</span><br><span class="line">obj.setC(6,7,9);</span><br><span class="line">obj.showC0;</span><br><span class="line">obj.setB(6);错误</span><br><span class="line">obj.showB(); 错误</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="继承方式简介及共有继承"><a href="#继承方式简介及共有继承" class="headerlink" title="继承方式简介及共有继承"></a>继承方式简介及共有继承</h2><h2 id="不同继承方式的影响主要体现在"><a href="#不同继承方式的影响主要体现在" class="headerlink" title="不同继承方式的影响主要体现在:"></a>不同继承方式的影响主要体现在:</h2><ul>
-<li><p>派生类成员对基类成员的访问权限;</p>
-</li>
-<li><p>通过派生类对象对基类成员的访问权限。</p>
-</li>
-</ul>
-<h2 id="三种继承方式"><a href="#三种继承方式" class="headerlink" title="三种继承方式"></a>三种继承方式</h2><p>公有继承<br>私有继承<br>保护继承</p>
-<h2 id="公有继承-public"><a href="#公有继承-public" class="headerlink" title="公有继承(public)"></a>公有继承(public)</h2><h3 id="继承的访问控制-2"><a href="#继承的访问控制-2" class="headerlink" title="继承的访问控制"></a>继承的访问控制</h3><p><strong>基类的public和protected成员</strong>:访问属性在派生类中保持不变<br><strong>基类的private成员</strong>:不可直接访问。</p>
-<h3 id="访问权限-2"><a href="#访问权限-2" class="headerlink" title="访问权限"></a>访问权限</h3><p>派生类中的成员函数:可以直接访问基类中的public和protected成员，但不能直接访问基类的private成员<br>通过派生类的对象:只能访问public成员。</p>
-<p><img src="https://p.sda1.dev/18/72f2d3f970d68d69376784de327ea7f8/50446767001f7e1e8497e9ede157d0eb.png"></p>
-<p><img src="https://p.sda1.dev/18/bb2282a9b163a5286ce979532f3ea08b/2868f075356ccddd175e6611e3897f1a.png"></p>
-<h2 id="派生类的构造函数"><a href="#派生类的构造函数" class="headerlink" title="派生类的构造函数"></a>派生类的构造函数</h2><h3 id="默认情况下"><a href="#默认情况下" class="headerlink" title="默认情况下"></a>默认情况下</h3><ul>
-<li><p>基类的构造函数不被继承;</p>
-</li>
-<li><p>派生类需要定义自己的构造函数。</p>
-</li>
-</ul>
-<h3 id="C-11规定"><a href="#C-11规定" class="headerlink" title="C++11规定"></a>C++11规定</h3><ul>
-<li><p>可用using语句继承基类构造函数;</p>
-</li>
-<li><p>但是只能初始化从基类继承的成员。</p>
-</li>
-<li><p>语法形式:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> B::B;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>如果想要定制自己的成员，那么最好自己去书写构造函数。</p>
-<h3 id="若不继承基类的构造函数"><a href="#若不继承基类的构造函数" class="headerlink" title="若不继承基类的构造函数"></a>若不继承基类的构造函数</h3><ul>
-<li>派生类新增成员：派生类定义构造函数进行初始化</li>
-<li>继承来的成员：自动调用基类的构造函数进行初始化</li>
-<li>派生类的构造函数需要给基类的构造函数传递参数</li>
-</ul>
-<p>单继承时构造函数的定义语法</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">派生类名::派生类名(基类所需要的形参，本类成员所需的形参)</span><br><span class="line">	基类名(参数表)，本类成员初始化列表</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="comment">//其他初始化;</span></span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">B</span>();</span><br><span class="line">    <span class="built_in">B</span>(<span class="type">int</span> i);</span><br><span class="line">    ~<span class="built_in">B</span>();</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> b;</span><br><span class="line">&#125;;</span><br><span class="line">B:<span class="built_in">B</span>()</span><br><span class="line">&#123;</span><br><span class="line">    b=<span class="number">0</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;B&#x27;s default constructor called&quot;</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">B::~<span class="built_in">B</span>()&#123;cout&lt;&lt;<span class="string">&quot;B&#x27;s destructor called&quot;</span>&lt;&lt;endl;&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">B::print</span><span class="params">()</span><span class="type">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>:publicB</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">C</span>();</span><br><span class="line">    <span class="built_in">C</span>(<span class="type">int</span> i,<span class="type">int</span> j);</span><br><span class="line">    ~<span class="built_in">C</span>();</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> c;</span><br><span class="line">&#125;;</span><br><span class="line">C:<span class="built_in">C</span>()</span><br><span class="line">&#123;</span><br><span class="line">    c=<span class="number">0</span>;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;C&#x27;s default constructor called&quot;</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">C::~<span class="built_in">C</span>()&#123;cout&lt;&lt;<span class="string">&quot;C&#x27;s destructor called&quot;</span>&lt;&lt;endl;&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">C <span class="title">obj</span><span class="params">(<span class="number">5</span>,<span class="number">6</span>)</span></span>;</span><br><span class="line">    obj.<span class="built_in">print</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="多继承情况下派生类的构造函数"><a href="#多继承情况下派生类的构造函数" class="headerlink" title="多继承情况下派生类的构造函数"></a>多继承情况下派生类的构造函数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">派生类名::派生类名(参数表):</span><br><span class="line">基类名<span class="number">1</span>(基类<span class="number">1</span>初始化参数表),</span><br><span class="line">基类名<span class="number">2</span>(基类<span class="number">2</span>初始化参数表),</span><br><span class="line">基类名<span class="built_in">n</span>(基类n初始化参数表),</span><br><span class="line">本类成员初始化列表</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//其他初始化；</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="派生类与基类的构造函数"><a href="#派生类与基类的构造函数" class="headerlink" title="派生类与基类的构造函数"></a>派生类与基类的构造函数</h3><ul>
-<li><h4 id="当基类有默认构造函数是"><a href="#当基类有默认构造函数是" class="headerlink" title="当基类有默认构造函数是"></a>当基类有默认构造函数是</h4></li>
-<li><p>派生类构造函数可以不向基类构造函数传递参数</p>
-</li>
-<li><p>构造派生类的对象时，基类的默认构造函数将被调用</p>
-</li>
-<li><h4 id="如需执行基类中带参数的构造函数"><a href="#如需执行基类中带参数的构造函数" class="headerlink" title="如需执行基类中带参数的构造函数"></a>如需执行基类中带参数的构造函数</h4></li>
-<li><p>派生类构造函数应为基类构造函数提供参数</p>
-</li>
-</ul>
-<h3 id="构造函数的执行顺序"><a href="#构造函数的执行顺序" class="headerlink" title="构造函数的执行顺序"></a>构造函数的执行顺序</h3><h4 id="调用基类构造函数"><a href="#调用基类构造函数" class="headerlink" title="调用基类构造函数"></a>调用基类构造函数</h4><ul>
-<li>顺序按照它们被继承时声明的顺序（从左往右）</li>
-</ul>
-<h4 id="对初始化列表中的成员进行初始化"><a href="#对初始化列表中的成员进行初始化" class="headerlink" title="对初始化列表中的成员进行初始化"></a>对初始化列表中的成员进行初始化</h4><ul>
-<li>按照它们在类中的成员进行初始化</li>
-<li>对象成员初始化时自动调用其所属类的构造函数（由初始化列表提供参数）</li>
-</ul>
-<h4 id="执行派生类的构造函数体中的内容"><a href="#执行派生类的构造函数体中的内容" class="headerlink" title="执行派生类的构造函数体中的内容"></a>执行派生类的构造函数体中的内容</h4><h3 id="派生类构造函数的举例"><a href="#派生类构造函数的举例" class="headerlink" title="派生类构造函数的举例"></a>派生类构造函数的举例</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">class</span> <span class="title">Base1</span><span class="params">()</span></span>&#123;<span class="built_in">Base1</span>(<span class="type">int</span> i);&#125;;</span><br><span class="line"><span class="function"><span class="keyword">class</span> <span class="title">Base2</span><span class="params">()</span></span>&#123;<span class="built_in">Base2</span>(<span class="type">int</span> j);&#125;;</span><br><span class="line"><span class="function"><span class="keyword">class</span> <span class="title">Base3</span><span class="params">()</span></span>&#123;<span class="built_in">Base3</span>();&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span>:<span class="keyword">public</span> Base2,<span class="keyword">public</span> Base1,<span class="keyword">public</span> Base <span class="number">3</span></span><br><span class="line">&#123;<span class="comment">//派生新类Derived，注意类名的顺序</span></span><br><span class="line">    <span class="keyword">public</span>:<span class="comment">//派生类的共有成员</span></span><br><span class="line">    <span class="built_in">Derived</span>(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c):<span class="built_in">Base1</span>(a),<span class="built_in">member2</span>(d),<span class="built_in">menber1</span>(c),<span class="built_in">Base2</span>(b)&#123;&#125;</span><br><span class="line">    <span class="comment">//注意基类名的个数和顺序，注意成员对象名的个数与顺序</span></span><br><span class="line">    <span class="keyword">private</span>:<span class="comment">//派生类的私有成员对象</span></span><br><span class="line">    Base1 merber1;</span><br><span class="line">    Base2 merber2;</span><br><span class="line">    Base3 merber3;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Derived <span class="title">obj</span><span class="params">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="派生类的复制构造函数"><a href="#派生类的复制构造函数" class="headerlink" title="派生类的复制构造函数"></a>派生类的复制构造函数</h3><p>若派生类没有声明复制构造函数</p>
-<ul>
-<li>编译器会在需要的时候生成一个隐含的复制构造函数</li>
-<li>先调用基类的复制构造函数</li>
-<li>再为派生类新增的成员执行复制</li>
-</ul>
-<p>若派生类定义了复制构造函数</p>
-<ul>
-<li>一般都要为基类的复制构造函数传递参数</li>
-<li>复制构造函数都只能接受一个参数，既用来初始化派生类定义的成员，也将被传递给基类的复制构造函数</li>
-<li>基类的复制构造函数形参类型时基类对象的引用，实参可以是派生类对象的引用</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C::C(const C&amp;c1):B(c1)&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>我们从前面学习的知识可以知道，我们对象的引用最后都可以指向基类的对象</p>
-</blockquote>
-<h3 id="派生类的析构函数"><a href="#派生类的析构函数" class="headerlink" title="派生类的析构函数"></a>派生类的析构函数</h3><ul>
-<li>析构函数无法被继承，必要的时候需要自己去书写</li>
-<li>声明方式与无继承关系的函数一样</li>
-<li>不需要主动去调用基类的析构函数（系统会代劳）</li>
-<li>先执行派生类析构函数的函数体，再调用基类的析构函数</li>
-</ul>
-<h3 id="派生类对象析构举例"><a href="#派生类对象析构举例" class="headerlink" title="派生类对象析构举例"></a>派生类对象析构举例</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base1</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Base1</span>(<span class="type">int</span> i)&#123;cout&lt;&lt;<span class="string">&quot;1g\n&quot;</span>;&#125;</span><br><span class="line"><span class="comment">//基础构造函数</span></span><br><span class="line">	~<span class="built_in">Base1</span>()&#123;cout&lt;&lt;<span class="string">&quot;1x\n&quot;</span>;&#125;</span><br><span class="line"><span class="comment">//析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base2</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Base2</span>(<span class="type">int</span> j)&#123;cout&lt;&lt;<span class="string">&quot;2g\n&quot;</span>;&#125;</span><br><span class="line">    ~<span class="built_in">Base2</span>()&#123;cout&lt;&lt;<span class="string">&quot;2x\n&quot;</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base3</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Base3</span>()&#123;cout&lt;&lt;<span class="string">&quot;3g\n&quot;</span>;&#125;</span><br><span class="line">    ~<span class="built_in">Base3</span>()&#123;cout&lt;&lt;<span class="string">&quot;3x\n&quot;</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span>:<span class="keyword">public</span> Base2,<span class="keyword">public</span> Base1,<span class="keyword">public</span> Base3 &#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Derived</span>(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c,<span class="type">int</span> d):<span class="built_in">Base1</span>(a),<span class="built_in">member2</span>(d),<span class="built_in">member1</span>(c),<span class="built_in">Base2</span>(b)&#123;&#125;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    Base1 member1;</span><br><span class="line">    Base2 member2;</span><br><span class="line">    Base3 member3;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">Derived <span class="title">obj</span><span class="params">(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span></span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="访问从基类继承的成员"><a href="#访问从基类继承的成员" class="headerlink" title="访问从基类继承的成员"></a>访问从基类继承的成员</h3><h4 id="作用域限定"><a href="#作用域限定" class="headerlink" title="作用域限定"></a>作用域限定</h4><p>当派生类与基类有相同成员时：</p>
-<ul>
-<li>若未特别限定，则通过派生类对象使用的时派生类中的同名成员</li>
-<li>如要通过派生类对象访问基类中被隐藏的同名对象，应使用基类名和作用域操作符(::)来限定</li>
-</ul>
-<h3 id="多继承同名隐藏举例"><a href="#多继承同名隐藏举例" class="headerlink" title="多继承同名隐藏举例"></a>多继承同名隐藏举例</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base1</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> var;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;cout&lt;&lt;<span class="string">&quot;m1\n&quot;</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base2</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> var;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;cout&lt;&lt;<span class="string">&quot;m2\n&quot;</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span>:<span class="keyword">public</span> Base1,<span class="keyword">public</span> Base2&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> var;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;cout&lt;&lt;<span class="string">&quot;md\n&quot;</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Derived d;</span><br><span class="line">    Derived *p=&amp;d;</span><br><span class="line">    <span class="comment">//访问Derived类中的成员变量</span></span><br><span class="line">    d.var=<span class="number">1</span>;</span><br><span class="line">    d.<span class="built_in">fun</span>();</span><br><span class="line">    <span class="comment">//访问Base1类中的成员变量</span></span><br><span class="line">    d.Base1::var=<span class="number">2</span>;</span><br><span class="line">    d.Base1::<span class="built_in">fun</span>();</span><br><span class="line">    <span class="comment">//访问Base2类中的成员变量</span></span><br><span class="line">    d.Base2::var=<span class="number">3</span>;</span><br><span class="line">    d.Base2::<span class="built_in">fun</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="二义性问题"><a href="#二义性问题" class="headerlink" title="二义性问题"></a>二义性问题</h3><ul>
-<li><p>如果从不同的基类继承了同名成员，但是再派生类中没有定义同名成员，“派生类对象名或引用名，成员名”、“派生类指针-&gt;成员名”访问成员存在二义性问题。</p>
-</li>
-<li><p>解决方式：用类名限定</p>
-</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;<span class="keyword">public</span>:<span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">()</span></span>;&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>&#123;<span class="keyword">public</span>:<span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">()</span></span>;<span class="function"><span class="type">void</span> <span class="title">g</span><span class="params">()</span></span>;&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span>:<span class="keyword">public</span> A,<span class="keyword">public</span> B&#123;<span class="keyword">public</span>:<span class="function"><span class="type">void</span> <span class="title">g</span><span class="params">()</span></span>;<span class="function"><span class="type">void</span> <span class="title">h</span><span class="params">()</span></span>;&#125;;</span><br><span class="line"><span class="comment">//如果定义C c1,那么c1.f()具有二义性</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base0</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>: <span class="type">int</span> var0;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">fun0</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base1</span>: <span class="keyword">public</span> Base0&#123;</span><br><span class="line">    <span class="keyword">public</span>:<span class="comment">//外部接口</span></span><br><span class="line">    <span class="type">int</span> var1;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Base2</span>: <span class="keyword">public</span> Base0&#123;</span><br><span class="line">    <span class="keyword">public</span>:<span class="comment">//外部接口</span></span><br><span class="line">    <span class="type">int</span> var2;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span>: <span class="keyword">public</span> Base1, <span class="keyword">public</span> Base2&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> var;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;cout&lt;&lt;<span class="string">&quot;Member of Derived&quot;</span>&lt;&lt;endl;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Derived d;</span><br><span class="line">    d.Base1::var0=<span class="number">2</span>;</span><br><span class="line">    d.Base1::<span class="built_in">fun0</span>();</span><br><span class="line">    d.Base2::var0=<span class="number">3</span>;</span><br><span class="line">    d.Base2::<span class="built_in">fun0</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>Derived类对象d的存储结构示意图</p>
-<p><img src="https://p.sda1.dev/18/cf7c5e1488272f0990eb30c2f8d96221/8f90affba196eb508fec6d073e25e63b.png" alt="https://p.sda1.dev/18/cf7c5e1488272f0990eb30c2f8d96221/8f90affba196eb508fec6d073e25e63b.png"></p>
-<h3 id="虚基类"><a href="#虚基类" class="headerlink" title="虚基类"></a>虚基类</h3><h4 id="需要解决的问题"><a href="#需要解决的问题" class="headerlink" title="需要解决的问题"></a>需要解决的问题</h4><ul>
-<li><p>当派生类从多个基类派生，而这些基类又共同基类，则在访问此共同基类中的成员时，将产生冗余，并可能因为冗余而带来不一致性。</p>
-</li>
-<li><p>以virtual来说明基类的类继承方式</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B1</span>:<span class="keyword">virtual</span> <span class="keyword">public</span> B;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>主要用来解决多继承问题时可能发生的对同一基类继承多次而产生的二义性问题</p>
-</li>
-<li><p>为最远的派生类提供唯一的基类对象，而不产生多次复制</p>
-</li>
-<li><p>在第一级继承的时候就要将共同基类设计为虚基类</p>
-</li>
-</ul>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">14 min</span>
+        </span>
+    </span>
+</div>
  
-      <!-- reward -->
-      
     </div>
-    
+       
 
     <!-- copyright -->
     
@@ -1993,7 +1078,17 @@
 </script>
 
 <!-- Katex -->
-
+ 
+    
+        <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.15.1/katex.min.css">
+        <script src="https://cdn.staticfile.org/KaTeX/0.15.1/katex.min.js"></script>
+        <script src="https://cdn.staticfile.org/KaTeX/0.15.1/contrib/auto-render.min.js"></script>
+        
+            <script src="https://cdn.staticfile.org/KaTeX/0.15.1/contrib/copy-tex.min.js"></script>
+            <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.15.1/contrib/copy-tex.min.css">
+        
+    
+ 
 <!-- busuanzi  -->
  
 <script src="/js/busuanzi-2.3.pure.min.js"></script>
