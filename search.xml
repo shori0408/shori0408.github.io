@@ -1,6 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode Problems</title>
+    <url>/2024/06/03/Leetcode%20Problems/</url>
+    <content><![CDATA[<h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
+<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
+<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
+<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
+<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
+<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= candies &lt;= 10^9</code></li>
+<li><code>1 &lt;= num_people &lt;= 1000</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">        int n = num_people;</span><br><span class="line">        vector&lt;int&gt; ans(n);</span><br><span class="line">        for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">            if (candies &gt;= i + 1) &#123;</span><br><span class="line">                candies -= i + 1;</span><br><span class="line">                ans[i % n] += i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ans[i % n] += candies;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="575-分糖果"><a href="#575-分糖果" class="headerlink" title="575. 分糖果"></a><a href="https://leetcode.cn/problems/distribute-candies/">575. 分糖果</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>提示</p>
+<p>Alice 有 <code>n</code> 枚糖，其中第 <code>i</code> 枚糖的类型为 <code>candyType[i]</code> 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。</p>
+<p>医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 <code>n / 2</code> 即可（<code>n</code> 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。</p>
+<p>给你一个长度为 <code>n</code> 的整数数组 <code>candyType</code> ，返回： Alice <em>在仅吃掉 <code>n / 2</code> 枚糖的情况下，可以吃到糖的 <strong>最多</strong> 种类数</em>。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,2,3,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [6,6,6,6]</span><br><span class="line">输出：1</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，尽管她能吃 2 枚，但只能吃到 1 种糖。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>n == candyType.length</code></li>
+<li><code>2 &lt;= n &lt;= 104</code></li>
+<li><code>n</code> 是一个偶数</li>
+<li><code>-105 &lt;= candyType[i] &lt;= 105</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(vector&lt;int&gt;&amp; candyType) &#123;</span><br><span class="line">        unordered_set&lt;int&gt; candyset(candyType.begin(), candyType.end());</span><br><span class="line">        return min(candyType.size() &gt;&gt; 1, candyset.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2928-给小朋友们分糖果-I"><a href="#2928-给小朋友们分糖果-I" class="headerlink" title="2928. 给小朋友们分糖果 I"></a><a href="https://leetcode.cn/problems/distribute-candies-among-children-i/">2928. 给小朋友们分糖果 I</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>提示</p>
+<p>给你两个正整数 <code>n</code> 和 <code>limit</code> 。</p>
+<p>请你将 <code>n</code> 颗糖果分给 <code>3</code> 位小朋友，确保没有任何小朋友得到超过 <code>limit</code> 颗糖果，请你返回满足此条件下的 <strong>总方案数</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, limit = 2</span><br><span class="line">输出：3</span><br><span class="line">解释：总共有 3 种方法分配 5 颗糖果，且每位小朋友的糖果数不超过 2 ：(1, 2, 2) ，(2, 1, 2) 和 (2, 2, 1) 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3, limit = 3</span><br><span class="line">输出：10</span><br><span class="line">解释：总共有 10 种方法分配 3 颗糖果，且每位小朋友的糖果数不超过 3 ：(0, 0, 3) ，(0, 1, 2) ，(0, 2, 1) ，(0, 3, 0) ，(1, 0, 2) ，(1, 1, 1) ，(1, 2, 0) ，(2, 0, 1) ，(2, 1, 0) 和 (3, 0, 0) 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 50</code></li>
+<li><code>1 &lt;= limit &lt;= 50</code></li>
+</ul>
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>c++模板</title>
+    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
+<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你使用这个食谱时，你可以指定不同的材料：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用这个三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用特化后的三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>24年gal收集</title>
     <url>/2024/06/30/24%E5%B9%B4gal%E6%94%B6%E9%9B%86/</url>
     <content><![CDATA[<h2 id="新打"><a href="#新打" class="headerlink" title="新打"></a>新打</h2><ol>
@@ -27,6 +135,21 @@
 </li>
 </ol>
 <p>目を閉じて、心の声に耳を澄ませてみてください。<br>ただ、騒がしく心のなかでたくさんの声がしているのが分かれば十分です。<br>今行ったこれは実は一種の「瞑想」なんです。<br>どうですか、このときあなたは「今」を感じることができているはずです。<br>誰も「過去に聞いた歌」を口ずさんでいませんし「未来の予定」についても話していません。<br>あなたの耳に入ってくるのは外の音と、心臓の音と、鼻息の音だけです。<br>全て「いま」ここにある音です。<br>怠け者の３分間瞑想法<br>シオン「私の声は」<br>シオン「届かない」<br>届くべきではない。<br>心象素粒子<br>偉大なるドクター達へ<br>ユーレイ現象<br>死んだはずの人があたかも底にいるように感じる現象<br>ユーレイ現象　テレパシーの発現<br>梅雨<br>情報のフォーマット<br>HTとは「Holding Task」または「Holding&amp;Tasking」のことです。<br>こことの素粒子が私達の目に見えない道を行き来する現象。<br>テレパシーの原理<br>道ー＞道路<br>HTこー＞車<br>ハル　シオン、君は最初から、夢のような嘘だったのかも知れない<br>君にだけ何通かのメールは届いてないはずです<br>整个世界宛若一场幻梦，沉沦其中的人们，用日间残念缝补出了一个个残缺的故事。瑕瑜互现的世界化为完美的宝石，杂质如沉水的浮沫，不见踪影。<br>破碎的文字编织如网，笼络了过往的时流，抚摸着浓缩现时的结晶，连缀着称为未来的蜃景。<br>夢の中では夢のおかしさに気付けないから、誰かに言われるまではなにもおかしいと思えなかった。<br>私たちの現実は誰かの心の中の世界だったってこと。<br>称为梦境的是画笔，它大笔如椽，在纯白的画板上烙印下了世界的痕迹，在世界的边境。浓墨重彩的梦境与千篇一律的现实交织，模糊了虚拟与真实。<br>被诱骗参加了一场与机器人角力的音乐会，台下的人并不是因为我拥有天赋才来到这里，而是因为机器人能够弹奏得比我更好。<br>世间万物，宛若大树，岿然不动，anatagaushinattamonohaanatajishindesu<br>C.S.「君は真面目で、まっすくで、誠実で……だけど臆病な人です」<br>C.S.「だから、約東を破ってしまうことがとても怖いんです」<br>C.S.「ル—ルを破ってしまうことを恐れるんです」<br>C.S.「自分のなりたいようになんてなれないですよ」<br>C.S.「心理宇宙に来てまでみんな苦悩しているのが良い証拠じやないですか」</p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>等間隔の黒い透明</title>
+    <url>/2024/06/30/hatena%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<h2 id="Episode1"><a href="#Episode1" class="headerlink" title="Episode1"></a>Episode1</h2><p>讲述了男主和女主的关系，女主是一位娇生惯养的公主一般的角色，男主则死承担着一位情绪价值的提供者的角度，女主有着与其年龄不相符的外貌，男女主保留着	不正当的男女关系。</p>
+<h2 id="Episode2"><a href="#Episode2" class="headerlink" title="Episode2"></a>Episode2</h2><p>男主的工作是网页设计，他会讲网上的所见所闻（如隧道的挖掘）之类的新闻告诉女主。男主与一个骆驼男一起工作，似乎还很害怕他。</p>
+<h2 id="Episode3"><a href="#Episode3" class="headerlink" title="Episode3"></a>Episode3</h2><p>与骆驼的谈话，从对骆驼个人的情感倾向到对这个国家乃至星球的喜好。</p>
+<p>我们从出生开始，就一直在能指链条上延宕。这个过程在这个链条上一直都存在。</p>
+<p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630045837684.png" alt="image-20240630045837684"></p>
+<h2 id="Episode4"><a href="#Episode4" class="headerlink" title="Episode4"></a>Episode4</h2><p>男主在经历一场电波的旅途，这段对电车上糟糕环境的描写可圈可点，以及说在这条路上骑自行车追逐的描绘。</p>
+<h2 id="Episode5"><a href="#Episode5" class="headerlink" title="Episode5"></a>Episode5</h2><p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630050539263.png" alt="image-20240630050539263"></p>
 ]]></content>
       <tags>
         <tag>gal</tag>
@@ -1551,80 +1674,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Leetcode Problems</title>
-    <url>/2024/06/03/Leetcode%20Problems/</url>
-    <content><![CDATA[<h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
-<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
-<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
-<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
-<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
-<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= candies &lt;= 10^9</code></li>
-<li><code>1 &lt;= num_people &lt;= 1000</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">        int n = num_people;</span><br><span class="line">        vector&lt;int&gt; ans(n);</span><br><span class="line">        for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">            if (candies &gt;= i + 1) &#123;</span><br><span class="line">                candies -= i + 1;</span><br><span class="line">                ans[i % n] += i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ans[i % n] += candies;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="575-分糖果"><a href="#575-分糖果" class="headerlink" title="575. 分糖果"></a><a href="https://leetcode.cn/problems/distribute-candies/">575. 分糖果</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>Alice 有 <code>n</code> 枚糖，其中第 <code>i</code> 枚糖的类型为 <code>candyType[i]</code> 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。</p>
-<p>医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 <code>n / 2</code> 即可（<code>n</code> 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。</p>
-<p>给你一个长度为 <code>n</code> 的整数数组 <code>candyType</code> ，返回： Alice <em>在仅吃掉 <code>n / 2</code> 枚糖的情况下，可以吃到糖的 <strong>最多</strong> 种类数</em>。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,2,3,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [6,6,6,6]</span><br><span class="line">输出：1</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，尽管她能吃 2 枚，但只能吃到 1 种糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>n == candyType.length</code></li>
-<li><code>2 &lt;= n &lt;= 104</code></li>
-<li><code>n</code> 是一个偶数</li>
-<li><code>-105 &lt;= candyType[i] &lt;= 105</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(vector&lt;int&gt;&amp; candyType) &#123;</span><br><span class="line">        unordered_set&lt;int&gt; candyset(candyType.begin(), candyType.end());</span><br><span class="line">        return min(candyType.size() &gt;&gt; 1, candyset.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2928-给小朋友们分糖果-I"><a href="#2928-给小朋友们分糖果-I" class="headerlink" title="2928. 给小朋友们分糖果 I"></a><a href="https://leetcode.cn/problems/distribute-candies-among-children-i/">2928. 给小朋友们分糖果 I</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>给你两个正整数 <code>n</code> 和 <code>limit</code> 。</p>
-<p>请你将 <code>n</code> 颗糖果分给 <code>3</code> 位小朋友，确保没有任何小朋友得到超过 <code>limit</code> 颗糖果，请你返回满足此条件下的 <strong>总方案数</strong> 。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, limit = 2</span><br><span class="line">输出：3</span><br><span class="line">解释：总共有 3 种方法分配 5 颗糖果，且每位小朋友的糖果数不超过 2 ：(1, 2, 2) ，(2, 1, 2) 和 (2, 2, 1) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3, limit = 3</span><br><span class="line">输出：10</span><br><span class="line">解释：总共有 10 种方法分配 3 颗糖果，且每位小朋友的糖果数不超过 3 ：(0, 0, 3) ，(0, 1, 2) ，(0, 2, 1) ，(0, 3, 0) ，(1, 0, 2) ，(1, 1, 1) ，(1, 2, 0) ，(2, 0, 1) ，(2, 1, 0) 和 (3, 0, 0) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= n &lt;= 50</code></li>
-<li><code>1 &lt;= limit &lt;= 50</code></li>
-</ul>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git操作</title>
     <url>/2024/07/23/git%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg" alt="img"></p>
@@ -1729,354 +1778,6 @@
 </tr>
 </tbody></table>
 ]]></content>
-  </entry>
-  <entry>
-    <title>等間隔の黒い透明</title>
-    <url>/2024/06/30/hatena%E6%94%B6%E9%9B%86/</url>
-    <content><![CDATA[<h2 id="Episode1"><a href="#Episode1" class="headerlink" title="Episode1"></a>Episode1</h2><p>讲述了男主和女主的关系，女主是一位娇生惯养的公主一般的角色，男主则死承担着一位情绪价值的提供者的角度，女主有着与其年龄不相符的外貌，男女主保留着	不正当的男女关系。</p>
-<h2 id="Episode2"><a href="#Episode2" class="headerlink" title="Episode2"></a>Episode2</h2><p>男主的工作是网页设计，他会讲网上的所见所闻（如隧道的挖掘）之类的新闻告诉女主。男主与一个骆驼男一起工作，似乎还很害怕他。</p>
-<h2 id="Episode3"><a href="#Episode3" class="headerlink" title="Episode3"></a>Episode3</h2><p>与骆驼的谈话，从对骆驼个人的情感倾向到对这个国家乃至星球的喜好。</p>
-<p>我们从出生开始，就一直在能指链条上延宕。这个过程在这个链条上一直都存在。</p>
-<p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630045837684.png" alt="image-20240630045837684"></p>
-<h2 id="Episode4"><a href="#Episode4" class="headerlink" title="Episode4"></a>Episode4</h2><p>男主在经历一场电波的旅途，这段对电车上糟糕环境的描写可圈可点，以及说在这条路上骑自行车追逐的描绘。</p>
-<h2 id="Episode5"><a href="#Episode5" class="headerlink" title="Episode5"></a>Episode5</h2><p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630050539263.png" alt="image-20240630050539263"></p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c++模板</title>
-    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
-<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你使用这个食谱时，你可以指定不同的材料：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用这个三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用特化后的三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>jqv</title>
-    <url>/2024/05/21/jqv/</url>
-    <content><![CDATA[<ul>
-<li><h2 id="sentence"><a href="#sentence" class="headerlink" title="sentence"></a>sentence</h2></li>
-<li><p>異った窓ガラスみたいに、人差し指の軌跡がくっきりと浮かんだ。</p>
-</li>
-<li><p>自分よりちいさいの、弱いものを愛でる感情とうのは自然だ。</p>
-</li>
-<li><p>世界が元通り三ならない限り 変容の呪縛からは逃れられない</p>
-</li>
-<li><h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2></li>
-<li><p>やむ【止・已】 に 止(や)まれぬ<strong>止めようとしても止められない。</strong> <strong>そうしないではいられない。</strong></p>
-</li>
-<li><p>「なでりなでり」って何だよ</p>
-</li>
-</ul>
-<p>16-Jul-2016 — そこは「なでなで」だろ！ 「り」ってなんだ「り」って！ そもそも「撫でる撫でる」からの「撫で撫で」だろ！ 古文か？古文なのか！？</p>
-<ul>
-<li>orthodox</li>
-</ul>
-<p>一般に正統的と認められているさま。 伝統的に承認されているさま。</p>
-<ul>
-<li><p>「ブレーキ役」の言い換えや類語・同義語 - Weblio類語辞典</p>
-<p>ブレーキ役の言い換えや別の言い方。・物事が深刻化しないようにあらかじめ用意しておく仕組みのこと安全弁安全装置ブレーキブレーキ役.</p>
-</li>
-<li><p>あっさり</p>
-</li>
-</ul>
-<p>① 人や物事の状態、性質が、複雑でなく、淡泊平明であるさま。 しつこくないさま。 あっさら。 ② 手数のかからないさま。</p>
-<ul>
-<li>デリケート</li>
-</ul>
-<p>① ( 人の心・感情などについて ) 鋭敏で、傷つきやすいさま。 繊細なさま。 ② ( 鑑賞、賞美するものなどについて ) 微妙な味わいを持っているさま。 また、微細な差のあるさま。</p>
-<ul>
-<li>さえあれば</li>
-</ul>
-<p>ラーメンさえあればいいです。 T：<strong>「それがあったら、他には何も必要ない、問題ない」という意味です</strong>。 「【Vます】さえすれば」は、「する」が変わった形の「〜さえしてくれれば」「〜さえできれば」なども使えます。</p>
-<ul>
-<li>「座が白ける」とはどういう意味ですか？</li>
-</ul>
-<p>ざがしらける 〔語源〕「白ける」は、<strong>白っぽくなる。</strong> <strong>色があせる。</strong> <strong>転じて、その場の興が冷める</strong>。</p>
-<ul>
-<li>「とげとげ」とはどういう意味ですか？</li>
-</ul>
-<p>とげ‐とげ【刺刺】 [ 1 ] 〘 副詞 〙 ( 「と」を伴っても用いる ) <strong>とげとげしいさま</strong>。</p>
-<ul>
-<li>ロン‐げ【ロン毛】</li>
-</ul>
-<p>《「ロン」はロングの略》俗に、<strong>髪の毛の長いこと</strong>。 また、長く伸ばした髪形。 主に、男性についていう。</p>
-<ul>
-<li>「うぜ」とはどういう意味ですか？</li>
-</ul>
-<p>「うぜえ」とも》<strong>あれこれとうるさい。</strong> <strong>わずらわしい</strong>。 [補説]もとは「不快だ。 気味が悪い」という意の、八王子を中心とする東京多摩地区の方言。</p>
-<ul>
-<li>「テディボーイ」とはどういう意味ですか？</li>
-</ul>
-<p><strong>不良少年</strong>。 特にエドワード7世時代（1901〜10）の服装を好んで着用した1950年代から60年代初めのロンドンの不良少年をさす。 エドワードの愛称、テディーに由来する。</p>
-<ul>
-<li>あいだ‐がらあひだ‥【間柄】</li>
-</ul>
-<p>① <strong>親類、血族などの続き合い</strong>。 ② 互いの関係。 付き合い。 交際。</p>
-<ul>
-<li>ばっちり</li>
-</ul>
-<p><strong>満足のいく様子であることを示す表現</strong>。 大体副詞的に用いる。</p>
-<ul>
-<li>ユナイテッドステイツとはどういう意味ですか？</li>
-</ul>
-<p>ユナイテッド・ステーツ（United States）は、<strong>合衆国</strong>を意味する。 特にアメリカ合衆国を指すことが多い。 ユナイテッド・ステーツ (フリゲート)(en:USS United States (1797)) - アメリカ海軍の帆走フリゲート。</p>
-<ul>
-<li>ネガティブ思考とはどういう意味ですか？</li>
-</ul>
-<p><strong>何かにつけて、どうせ失敗するさ、私はだめなんだなどと悪い方向に考えが向くこと</strong>。 物事を否定的にとらえる考え方。</p>
-<ul>
-<li>ステイツとはどういう意味ですか？</li>
-</ul>
-<p>「states」とは・「states」の意味</p>
-<p>「states」は、英語で「state」の複数形であり、<strong>主に「州」や「国家」という意味で使用される</strong>。 また、状態や状況を表す場合もある。May 23, 2023</p>
-<ul>
-<li>スノッブ</li>
-</ul>
-<p>30の言語版</p>
-<ul>
-<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ページ</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%83%88:%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ノート</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">閲覧</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=edit">編集</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=history">履歴表示</a></p>
-</li>
-</ul>
-<p>ツール</p>
-<p>出典: フリー百科事典『ウィキペディア（Wikipedia）』</p>
-<table>
-<thead>
-<tr>
-<th><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Disambig_gray.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Disambig_gray.svg/25px-Disambig_gray.svg.png" alt="曖昧さ回避"></a></th>
-<th>この項目では、社会用語について説明しています。<a href="https://ja.wikipedia.org/wiki/%E3%81%8A%E7%AC%91%E3%81%84%E8%8A%B8%E4%BA%BA">お笑い芸人</a>については「<a href="https://ja.wikipedia.org/wiki/SNOB">SNOB</a>」をご覧ください。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wiktionary-logo.svg/40px-Wiktionary-logo.svg.png" alt="img"></p>
-<p><a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AA%E3%83%BC">ウィクショナリー</a>に関連の辞書項目があります。</p>
-<p><strong><a href="https://ja.wiktionary.org/wiki/en:snob">en:snob</a></strong></p>
-<p><strong>スノッブ</strong>（snob）は、一般に<a href="https://ja.wikipedia.org/w/index.php?title=%E4%BF%97%E7%89%A9&action=edit&redlink=1">俗物</a>、また<strong>スノビズム</strong>（snobbism）は俗物根性と訳され、多くの場合「知識・教養をひけらかす見栄張りの気取り屋」「上位の者に取り入り、下の者を見下す嫌味な人物」「紳士気取りの俗物」といった意味で使われる。一方で、<a href="https://ja.wikipedia.org/wiki/%E8%80%BD%E7%BE%8E%E4%B8%BB%E7%BE%A9">耽美主義</a>や<a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%B3%E3%83%87%E3%82%A3%E3%82%BA%E3%83%A0">ダンディズム</a>、<a href="https://ja.wikipedia.org/wiki/%E7%B2%8B">粋</a>、<a href="https://ja.wikipedia.org/wiki/%E6%B4%92%E8%90%BD">洒落</a>を含意したりと（特に<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">ファッション</a>において）、単に批判的な言葉としてのみ使用されるわけではない。</p>
-<ul>
-<li>うんぬんかんぬん</li>
-</ul>
-<p>「うんともすんとも」の「すんとも」、「仲良し小良し」の「小良し」のように、<strong>大して意味のない要素を後に続けて使うこと</strong>は、よく見られる現象です。</p>
-<ul>
-<li>サラマンダーとはどういう意味ですか？</li>
-</ul>
-<p>サラマンダーは英語でsalamanderと表記され、意味としては<strong>サンショウウオや、西洋の伝説上の動物</strong>となります。 西洋の伝説上の動物・火の精と、火で加熱する調理器具のサラマンダーをかけているのは？といわれています。</p>
-<ul>
-<li>May I have your name とはどういう意味ですか？</li>
-</ul>
-<p>May I have いただけますか？ your name あなたのお名前を、Please は丁寧 な表現で、つまり <strong>お名前をいただけますか？</strong> という意味になります。 端的に What is your name? でもいいですが、直接的な表現ですので、お客 様にはこの表現を使うのは好ましくありません。</p>
-<ul>
-<li>あたい 【一人称】</li>
-</ul>
-<p> <strong>「あたし」がくだけた表現</strong>。 元は下町女性の言葉で、1970～80年代頃には不良少女などが用いていたが、現在はほとんど使われない。</p>
-<ul>
-<li>「グーパンチ」とはどういう意味ですか？</li>
-</ul>
-<p><strong>拳を握った状態で繰り出すパンチのこと</strong>。 グーパンとは、グーの状態（拳を握った状態）で相手に打撃を加えること。 パンチというと一般的にゲンコツで繰り出されるものなので、女性（平手のイメージが強い）や、通常殴り合いのケンカなどをしない人物や状況から繰り出されるパンチを特にこのように称する。</p>
-<ul>
-<li>「パッシブスキル」の言い換えは？</li>
-</ul>
-<p><strong>「受動スキル」「常時発動スキル」「永続スキル」</strong>とも呼ばれている。 「パッシブスキル」の対義語は「アクティブスキル」であり、必殺技や魔法、ゲージがたまったあとの技など手動で発動される能力のことを指す。</p>
-<ul>
-<li>サグラダ・ファミリアは2026年に完成しますか？</li>
-</ul>
-<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2fXPOG7GTW_KW2nd3QlMe0B7K1D3bkMpDdfxKLAXqh3VH2agNPCkYkLay6w&s" alt="サグラダ・ファミリア、2026年の完成が確実に。聖堂につながる ..."></p>
-<p>聖堂につながる巨大階段は2034<strong>年</strong>までかかる見込み バルセロナの<strong>サグラダ</strong>・<strong>ファミリア</strong>聖堂が、着工から140<strong>年</strong>以上の時を経て、<strong>2026年に完成</strong>すると発表された。</p>
-<ul>
-<li>前かがみ／</li>
-</ul>
-<p>前屈 の共通する意味<strong>上半身を前に折り曲げること</strong>。</p>
-<ul>
-<li><p>へたれ へたれ（ヘタレ）は、<strong>弱った物、臆病な様子や情けない性格をした人物を指す俗語</strong>。</p>
-</li>
-<li><p>エゴ</p>
-</li>
-</ul>
-<p>① <strong>認識、意欲、行動などの主体として、他と区別される自分。</strong> <strong>自己。</strong> <strong>自我</strong>。 ② フロイトの用語。</p>
-<ul>
-<li>物差しとは何ですか？</li>
-</ul>
-<p><strong>物の長さを計る器具の総称</strong>。 物差しは物を差し計る意である。 人類が最初に使い始めた計器で、また今日でも広く使われている。 普通、木、金属または骨などの板または棒に目盛りをつけたもの（直尺(ちょくしゃく)）をいうが、両端間の長さを基準とした端面尺もある。</p>
-<ul>
-<li>「バキバキ」とはどういう意味ですか？</li>
-</ul>
-<p>「バキバキ」とは<strong>活きの良さを表す浜言葉</strong>。 魚を手で持つと身が垂れずにピンと立つほどバキバキしているという意味です。 焼き魚などに調理しても一夜干しに加工されても、新鮮なものはひと味違います。</p>
-<ul>
-<li>ぷにぷに意味</li>
-</ul>
-<p><strong>風船のようにぶよぶよしたモンスター</strong>。 空中を漂っているだけで特別な攻撃はしてこないが、耐久力が異常に高いうえに弾力があるため溜めボムでの押し潰しも効かず、気絶させて場外に落とさない限り倒すのは困難。 ※この「プニプニ」の解説は、「爆ボンバーマン」の解説の一部です。</p>
-<ul>
-<li>しっとり</li>
-</ul>
-<p>① <strong>湿気が軽く全体にいきわたっているさま、濡れ湿っているさまを表わす語</strong>。 ② ゆっくりと落ち着いたさま、深く静まりかえっているさまを表わす語。 また、よく整って安定しているさまを表わす語。</p>
-<ul>
-<li>しごき</li>
-</ul>
-<p>志古貴とは、<strong>帯の下に巻いて斜め後ろに垂らす飾り帯</strong>のことです。 志古貴は振袖や花嫁衣装や七五三の衣装などに用います。 七五三の七歳のお祝いで、女の子が使用する志古貴は単色染めで房が付いているものが多くなっています。 選ぶ際には、着物や帯との調和を考えますが、帯揚げと色を揃える方も多いようです。May 31, 2024</p>
-<p><a href="https://kimono-rentalier.jp/column/kimono/shigoki/#:~:text=%E5%BF%97%E5%8F%A4%E8%B2%B4%E3%81%A8%E3%81%AF,%E6%96%B9%E3%82%82%E5%A4%9A%E3%81%84%E3%82%88%E3%81%86%E3%81%A7%E3%81%99%E3%80%82"><br>志古貴（しごき）とは？わかりやすく説明 - きものレンタリエ<img src="/2024/05/21/jqv/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFNUlEQVR4AcVXA5QrWRBN/2iM2M7Ytta2bdu2bdu2vXuwtq1+rzsZfvv/Wz1WOoOzO+fUqCuv7ru31Bp8Cf+vqTjIeRX5PMt9CE91HDUjy/YcJBdW+2cNoHfvQ7Usy32VuMC0hmly142aiX5OaVx5NvpcXGBewXO8ZwwcctLMAfBc30kiHWS0f8btka3idRsEuTl4EBMASG+T4w0b58dbNvMr1ryZX45W7aAE1lu55C1qjTdt4mcZrltEAOLmwD4zAiAXVDuZ1jLAjLaP4rUdqeOAmfxHiQJumeZ4pnej7fWKv7/Yi8B/iDp8xhGtHPbt7trKiDO+wDMxVteRnTQAIL+LqOeegtqJz1Z88pnAsr0XKOxkum6TS2rNCPINW2Bexm2hDSYx6c5rVljLdF+SFADJV1iLG64iENPRNnD48QLPdN8xRHmcwZ9bQrtM58/SXY+IWvMyKVwaTgig78SztCzF/p4o5K6T8qrCibI3Vt9lZ2CJkg6yHJHIV0IlgaFVAPLUksdemB4AtwZ3GcniXP8J0zJwwRUk022UYCTH6u++T1hqyx56WuBGG6fc4Y7IBlMC6G7fJJ0SibQU9VYZzmuQvftNPGzpky8ILMd7nhIcMvTvfYxqs0Fu7KAwBQPDX/Vstp1+EgCW5TlLKRlbeAe5pi0bjp8otFkC47RlpsBhg1XgfK536931qsHtkQ0Y9MflfmEZyIVByQ4ZB0COlnuRJItYquOtgTMuHirFGjMzWL9iaCaQZgvlMEtwB9Id4D6IN3SkqwZ3RmupnIlZKVTs791lX71SljqLHCtvyh0BgOR4AGW3SgoUlY9LnvwKJzPYfiJZ4PMcdTb8/U2sqNasGtxdUIy+EKdgaEz5Y0BtwMAgqugq5X/cFW0kvalrTdmUQmV+Rg2G9NNb/pIj5V614LhtEHn0j6i19Emu0cZEtuiaWwSqBmJWCpXla6DlawiwSC6tt04JIFwWpuewuOwvKlYPXuoE5T9B9yWSM699Sp9gSZjyC7Ef0ECTJdD0jSlrPb/aLhqsP+AmS7gz0qw6OYurc0ljkgqZv1lCiVKR5Eb7HxrU5yKW4nhrogOSJBMOHxFSbg1tpRY8Xt+ZKRptHwyWb3C3RL6rPv8OAByf4fzfSIIXRNAlF9e6R4fI5kY4vMLoMBN6gUrwWG2nkaXZX0FwmnyHqcoUKC5ULpbmvEsjeQqrqbR4uuuepS+9IfTsurcWCfmA0mhyfKepHda76/56JNVj5M+zvar+A6eeLeDSL1FlIaGDmqHpdwfQ0/SrR0O6iiYd/vfE8qeeTxx8u721HC2ZKgQgXlj18WdCEo1pC2IKy85Fo42osMaJLO+jRYMOI8PfHEgfYanTG3Lni5GNCA0H/o8l9Kfn6AtD+0HmuFYM+k4aDg4HlJ31n/k1yyLl7PEb0iiAnk23S1W6HuiJ1bQG53v7laMV9cQUWPuo78BjtFOOY8ke3mZQH8958w2AOi1VleTKb552H1h83Z0CBtIbSuMxBfbgJt9m82Gg/CCaNUjUh9b88FPilYz7i0upRocXE3FOZlKMwXCpRVK0zJvUUsoz3DcpAFKd73BzaCNuCm0wK7OEN0Jr/oxAQNZzkl/LS+qsyNoetMoveuq7UmerO8187BS/0T4Qb9s0XR3A+P3/MJIAN/gEg2W7WFVrpVzVVp6MxStaKrklsBuq6julPVuCO834zWjghNO16A1n0dwGhbPSnynJ7Dtq+dMvzf7lNFba4MZKtodkCR/Ek7bQQWBtF7Bmn/3b8X9k6wHtcFwfZlArEwAAAABJRU5ErkJggg==" alt="img">きものレンタリエhttps://kimono-rentalier.jp › ... › 着物の豆知識</a></p>
-<p><img src="data:image/jpeg;base64,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" alt="志古貴（しごき）とは？わかりやすく説明 | きものレンタリエの ..."></p>
-<ul>
-<li>かうぱー</li>
-</ul>
-<p><strong>尿道球腺液</strong>（にょうどうきゅうせんえき、英: Bulbourethral gland fluid）は、男性の尿道球腺から分泌される弱アルカリ性の粘性がある無臭無色透明な液体である。 一般にはカウパー腺液（単にカウパーやカウパー液とも）と呼ばれる。</p>
-<ul>
-<li>くすくすするの意味は？</li>
-</ul>
-<p>① <strong>物がくすぶるさまを表わす語</strong>。 ② こっそりと事をするさま、また、そのような性格のさまを表わす語。 こそこそ。 ③ しのんで笑う声、また、その様子を表わす語。</p>
-<ul>
-<li>「てっぺん」はどこの方言ですか？</li>
-</ul>
-<p>おにころし即ち酒精分の多い悪酒をいふ。 <strong>駿河の方言</strong>。</p>
-<p>① <strong>兜(かぶと)のいただき。</strong> <strong>転じて、頭のいただき。</strong> <strong>② 物のいちばん高い所。</strong> <strong>頂上。</strong></p>
-<ul>
-<li>トロトロ</li>
-</ul>
-<p>とろ‐とろ ① <strong>物がとけて、流動体・粘液状になっているさまを表わす語</strong>。 ② 粘液状のものがたれ落ちたり流れたりするさまを表わす語。 ④ 動作が緩慢で、ゆったりしたさまを表わす語。</p>
-<ul>
-<li>ビロード</li>
-</ul>
-<p>日本大百科全書(ニッポニカ) 「ビロード」の意味・わかりやすい解説<strong>添毛(てんもう)織物の一つで、織面に輪奈(わな)を出し、ときにはそれを切断して羽毛のようになった織物</strong>である。 ビロードとは、ポルトガル語のベルードvelludo、スペイン語のベルードvelludeの転訛(てんか)した語といわれている。</p>
-<ul>
-<li>「てろてろ」は方言ですか？</li>
-</ul>
-<p>私が大好きな「てろてろ」は泥酔状態 の事を指す<strong>津軽弁</strong>です。 「てろてろどなってまったじゃ～ 」です。 しかも、どちらかと言うとイイ（？） 泥酔状態（私的に）です。</p>
-<ul>
-<li>レロレロ</li>
-</ul>
-<p>① <strong>舌がもつれて発音が不明瞭なさまを表わす語</strong>。 ② 幼児をあやすのに、舌で上顎をはじいて音をたてるさまを表わす語。 ① 酒の酔いや麻痺などで、舌がもつれて何を言っているのかよくわからないさま。</p>
-<ul>
-<li>もどかしい</li>
-</ul>
-<p><strong>思うようにならず苛立つ。</strong> <strong>物事が捗らないので、いらいらする。</strong> <strong>じれったい。</strong> <strong>歯痒い。</strong></p>
-<ul>
-<li>いっそ の 事(こと)</li>
-</ul>
-<p><strong>あれこれと考えた末、それらとは一段違ったことを思い切って選ぶ気持を表わす</strong>。 また、時に、好ましいものをあきらめて意に染まないものを選ぶときの、投げやりな気持を表わす。 思い切って。 むしろ。</p>
-<ul>
-<li>とろん</li>
-</ul>
-<p>① <strong>濃い液体や空気などが重く沈んでいるさまを表わす語</strong>。 どろん。 ② ねむけを催したり、酒に酔ったりして目つきのぼんやりしているさまを表わす語。</p>
-<ul>
-<li>負えない</li>
-</ul>
-<p>［形］《連語「負えない」の一語化》<strong>どうしようもない。</strong> <strong>手がつけられない。</strong></p>
-<ul>
-<li>チロチロ</li>
-</ul>
-<p>① <strong>火、光または水の流れなどが細くかすかであるさまを表わす語</strong>。 また、灯火などが断続的に明暗をくり返しながらほのめくさまをいう。 ちらちら。</p>
-<ul>
-<li>ピンチ</li>
-</ul>
-<p>① <strong>追いつめられて非常に苦しい事態。</strong> <strong>危機。</strong> <strong>窮地。</strong> <strong>苦境。</strong></p>
-<ul>
-<li>「クルクル」とはどういう意味ですか？</li>
-</ul>
-<p>① <strong>物が軽やかにつづいて回るさま、また、何回も回すさまを表わす語</strong>。 ② 幾重にも巻くさまやまるめるさま、また、巻いてあるものを解くさまを表わす語。 ぐるぐる。 ③ 物事を滞りなく行なうさま、また、物事のすらすらと進行するさまを表わす語。</p>
-<ul>
-<li>艶めかしい</li>
-</ul>
-<p>① 人の容姿、態度などについていう。 <strong>優美である、上品である、もの柔らかである</strong>。 「あて」や「清ら」などとともに用いられることが多い。 ② 特に若い女性などの容姿をいうことが多いところから、次第に女性の若い魅力をいうようになり、後世は、女性の性的魅力を、さらに性的魅力一般を表現する語となる。</p>
-<p>[<br>艶めかしい(ナマメカシイ)とは？ 意味や使い方 - コトバンク](<a href="https://kotobank.jp/word/%E8%89%B6%E3%82%81%E3%81%8B%E3%81%97%E3%81%84-589696#:~:text=%E2%91%A0">https://kotobank.jp/word/艶めかしい-589696#:~:text=①</a> 人の容姿、態度,用いられることが多い。&amp;text&#x3D;② 特に若い女性など,表現する語となる。)</p>
-<ul>
-<li>あどけない</li>
-</ul>
-<p>[ 文語形 ]あどけな・し 〘 形容詞ク活用 〙 （子供の態度、様子などが）<strong>無心で愛らしい。</strong> <strong>無邪気である。</strong> <strong>することが幼い。</strong> <strong>わるぎがない。</strong></p>
-<ul>
-<li>すぼめる</li>
-</ul>
-<p>「すぼめる」「つぼめる」は、「窄める」とも書く。 「すぼめる」は、<strong>広がっていたものを小さくするときに用いる</strong>。 「つぼめる」は、管のようなものの口の面積を小さくする意。 また、「傘をつぼめる」のように、開いていたものを閉じる意味もある。</p>
-<ul>
-<li>恋愛において押して引くとどうなる？</li>
-</ul>
-<p>押して引く行為は、<strong>自分のことを考えてもらえる時間を増やすこととなり、距離を縮めるきっかけになります</strong>。 自分に気がある素振りをしていた異性がある日、急にそっけなくなったら、無性に気になるものです。 とくに相手が男性の場合、好意を抱いている相手に逃げられそうになると、本能的に追いかけたくなるといった男性心理が働きます。</p>
-<ul>
-<li>エレクト</li>
-</ul>
-<p>〘 名詞 〙 ( [英語] erect ) <strong>性器が勃起すること</strong>。</p>
-<ul>
-<li>ラストスパート</li>
-</ul>
-<p>ラスト‐スパート 〘 名詞 〙 ( [英語] last spurt ) <strong>競走・競泳などの競技で、ゴール近くで最後のがんばりを見せて力走・力泳すること</strong>。 転じて、物事の終了間際に、全力でことにあたること。</p>
-<ul>
-<li>エクスタシー</li>
-</ul>
-<p>エクスタシー（ecstasy）１ <strong>快感が最高潮に達して無我夢中の状態になること</strong>。 恍惚 こうこつ 。 忘我。 ２ 宗教的儀礼などの際に体験される神秘的な心境。</p>
-<ul>
-<li>ドクドクとはどういう意味ですか？</li>
-</ul>
-<p>どく‐どく ① ( 「と」を伴って用いることもある ) <strong>酒・水や血など、液体がさかんに流れ出たり、あふれ出たりするさまを表わす語</strong>。 ② 興奮したり不安を感じたりして胸が高鳴るさまを表わす語。</p>
-<ul>
-<li>怯む</li>
-</ul>
-<p><strong>恐れて勢いが弱る。</strong> <strong>おじける。</strong> <strong>萎縮する。</strong></p>
-<p><a href="https://kotobank.jp/word/%E6%80%AF%E3%82%80-614240#:~:text=%E6%81%90%E3%82%8C%E3%81%A6%E5%8B%A2%E3%81%84%E3%81%8C%E5%BC%B1%E3%82%8B,%E8%90%8E%E7%B8%AE%E3%81%99%E3%82%8B%E3%80%82"><br>怯む(ヒルム)とは？ 意味や使い方 - コトバンク</a></p>
-<ul>
-<li>しくしく</li>
-</ul>
-<p><strong>弱弱しく泣くさま。</strong> <strong>強くはないが体が絶えず痛むさま</strong>。</p>
-<ul>
-<li>ヒンズースクワット</li>
-</ul>
-<p>「ヒンズースクワット」は、<strong>かかとを上げたまま行います</strong>。 1. つま先立ちになり、膝を前に出し、両手は横に置いたままスクワットします。 2. そして、かかとは上げたまま、両腕を前に振ってバランスをとりながら、足の親指の付け根にある母指球に力を入れて立ち上がります。</p>
-<ul>
-<li>「あざとかわいい」とはどういう意味ですか？</li>
-</ul>
-<p>「あざとかわいい」は計算高さを意味する「あざとい」と、愛らしさなどを意味する「かわいい」の2つの言葉が合わさった造語です。 つまり、「あざとかわいい」とは、<strong>魅力的に見せるために計算された言動をとるさまであり、そこにプラス、自然と人の心を惹きつけ好かれる外見や雰囲気を兼ね備えているイメージ</strong>でしょうか。</p>
-<ul>
-<li>タンパク質</li>
-</ul>
-<p>たんぱく質とは たんぱく質とは<strong>アミノ酸が多数結合した高分子化合物</strong>で、筋肉や臓器など体を構成する要素として非常に重要なものです。 また、それだけでなく、たんぱく質は、アミノ酸の組み合わせや種類、量などの違いによって形状や働きが異なり、酵素やホルモン、免疫物質としてさまざまな機能を担っています。</p>
-<ul>
-<li>「取り憑かれた」とはどういう意味ですか？</li>
-</ul>
-<p>取り憑かれるとは、<strong>ある思念に固執している、妄想にとらわれている、という状況</strong>を指す意味で用いられる表現。<a href="https://www.weblio.jp/content/%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B#:~:text=%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B%E3%81%A8%E3%81%AF%E3%80%81%E3%81%82%E3%82%8B,%E6%84%8F%E5%91%B3%E3%81%A7%E7%94%A8%E3%81%84%E3%82%89%E3%82%8C%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">取り憑かれる(とりつかれる)</a></p>
-<ul>
-<li>ポワントワークとは何ですか？</li>
-</ul>
-<p><strong>トウシューズを履き、足先を完全に伸ばし、爪先の先端でステップを踏むこと</strong>。 ほとんどの場合、女性が行う（男性がトウシューズを履くことはほとんどない）。</p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
-      </tags>
   </entry>
   <entry>
     <title>n1考试错题</title>
@@ -2422,13 +2123,302 @@
       </tags>
   </entry>
   <entry>
-    <title>存在与虚无</title>
-    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
-    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
-<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
+    <title>jqv</title>
+    <url>/2024/05/21/jqv/</url>
+    <content><![CDATA[<ul>
+<li><h2 id="sentence"><a href="#sentence" class="headerlink" title="sentence"></a>sentence</h2></li>
+<li><p>異った窓ガラスみたいに、人差し指の軌跡がくっきりと浮かんだ。</p>
+</li>
+<li><p>自分よりちいさいの、弱いものを愛でる感情とうのは自然だ。</p>
+</li>
+<li><p>世界が元通り三ならない限り 変容の呪縛からは逃れられない</p>
+</li>
+<li><h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2></li>
+<li><p>やむ【止・已】 に 止(や)まれぬ<strong>止めようとしても止められない。</strong> <strong>そうしないではいられない。</strong></p>
+</li>
+<li><p>「なでりなでり」って何だよ</p>
+</li>
+</ul>
+<p>16-Jul-2016 — そこは「なでなで」だろ！ 「り」ってなんだ「り」って！ そもそも「撫でる撫でる」からの「撫で撫で」だろ！ 古文か？古文なのか！？</p>
+<ul>
+<li>orthodox</li>
+</ul>
+<p>一般に正統的と認められているさま。 伝統的に承認されているさま。</p>
+<ul>
+<li><p>「ブレーキ役」の言い換えや類語・同義語 - Weblio類語辞典</p>
+<p>ブレーキ役の言い換えや別の言い方。・物事が深刻化しないようにあらかじめ用意しておく仕組みのこと安全弁安全装置ブレーキブレーキ役.</p>
+</li>
+<li><p>あっさり</p>
+</li>
+</ul>
+<p>① 人や物事の状態、性質が、複雑でなく、淡泊平明であるさま。 しつこくないさま。 あっさら。 ② 手数のかからないさま。</p>
+<ul>
+<li>デリケート</li>
+</ul>
+<p>① ( 人の心・感情などについて ) 鋭敏で、傷つきやすいさま。 繊細なさま。 ② ( 鑑賞、賞美するものなどについて ) 微妙な味わいを持っているさま。 また、微細な差のあるさま。</p>
+<ul>
+<li>さえあれば</li>
+</ul>
+<p>ラーメンさえあればいいです。 T：<strong>「それがあったら、他には何も必要ない、問題ない」という意味です</strong>。 「【Vます】さえすれば」は、「する」が変わった形の「〜さえしてくれれば」「〜さえできれば」なども使えます。</p>
+<ul>
+<li>「座が白ける」とはどういう意味ですか？</li>
+</ul>
+<p>ざがしらける 〔語源〕「白ける」は、<strong>白っぽくなる。</strong> <strong>色があせる。</strong> <strong>転じて、その場の興が冷める</strong>。</p>
+<ul>
+<li>「とげとげ」とはどういう意味ですか？</li>
+</ul>
+<p>とげ‐とげ【刺刺】 [ 1 ] 〘 副詞 〙 ( 「と」を伴っても用いる ) <strong>とげとげしいさま</strong>。</p>
+<ul>
+<li>ロン‐げ【ロン毛】</li>
+</ul>
+<p>《「ロン」はロングの略》俗に、<strong>髪の毛の長いこと</strong>。 また、長く伸ばした髪形。 主に、男性についていう。</p>
+<ul>
+<li>「うぜ」とはどういう意味ですか？</li>
+</ul>
+<p>「うぜえ」とも》<strong>あれこれとうるさい。</strong> <strong>わずらわしい</strong>。 [補説]もとは「不快だ。 気味が悪い」という意の、八王子を中心とする東京多摩地区の方言。</p>
+<ul>
+<li>「テディボーイ」とはどういう意味ですか？</li>
+</ul>
+<p><strong>不良少年</strong>。 特にエドワード7世時代（1901〜10）の服装を好んで着用した1950年代から60年代初めのロンドンの不良少年をさす。 エドワードの愛称、テディーに由来する。</p>
+<ul>
+<li>あいだ‐がらあひだ‥【間柄】</li>
+</ul>
+<p>① <strong>親類、血族などの続き合い</strong>。 ② 互いの関係。 付き合い。 交際。</p>
+<ul>
+<li>ばっちり</li>
+</ul>
+<p><strong>満足のいく様子であることを示す表現</strong>。 大体副詞的に用いる。</p>
+<ul>
+<li>ユナイテッドステイツとはどういう意味ですか？</li>
+</ul>
+<p>ユナイテッド・ステーツ（United States）は、<strong>合衆国</strong>を意味する。 特にアメリカ合衆国を指すことが多い。 ユナイテッド・ステーツ (フリゲート)(en:USS United States (1797)) - アメリカ海軍の帆走フリゲート。</p>
+<ul>
+<li>ネガティブ思考とはどういう意味ですか？</li>
+</ul>
+<p><strong>何かにつけて、どうせ失敗するさ、私はだめなんだなどと悪い方向に考えが向くこと</strong>。 物事を否定的にとらえる考え方。</p>
+<ul>
+<li>ステイツとはどういう意味ですか？</li>
+</ul>
+<p>「states」とは・「states」の意味</p>
+<p>「states」は、英語で「state」の複数形であり、<strong>主に「州」や「国家」という意味で使用される</strong>。 また、状態や状況を表す場合もある。May 23, 2023</p>
+<ul>
+<li>スノッブ</li>
+</ul>
+<p>30の言語版</p>
+<ul>
+<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ページ</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%83%88:%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ノート</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">閲覧</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=edit">編集</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=history">履歴表示</a></p>
+</li>
+</ul>
+<p>ツール</p>
+<p>出典: フリー百科事典『ウィキペディア（Wikipedia）』</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Disambig_gray.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Disambig_gray.svg/25px-Disambig_gray.svg.png" alt="曖昧さ回避"></a></th>
+<th>この項目では、社会用語について説明しています。<a href="https://ja.wikipedia.org/wiki/%E3%81%8A%E7%AC%91%E3%81%84%E8%8A%B8%E4%BA%BA">お笑い芸人</a>については「<a href="https://ja.wikipedia.org/wiki/SNOB">SNOB</a>」をご覧ください。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wiktionary-logo.svg/40px-Wiktionary-logo.svg.png" alt="img"></p>
+<p><a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AA%E3%83%BC">ウィクショナリー</a>に関連の辞書項目があります。</p>
+<p><strong><a href="https://ja.wiktionary.org/wiki/en:snob">en:snob</a></strong></p>
+<p><strong>スノッブ</strong>（snob）は、一般に<a href="https://ja.wikipedia.org/w/index.php?title=%E4%BF%97%E7%89%A9&action=edit&redlink=1">俗物</a>、また<strong>スノビズム</strong>（snobbism）は俗物根性と訳され、多くの場合「知識・教養をひけらかす見栄張りの気取り屋」「上位の者に取り入り、下の者を見下す嫌味な人物」「紳士気取りの俗物」といった意味で使われる。一方で、<a href="https://ja.wikipedia.org/wiki/%E8%80%BD%E7%BE%8E%E4%B8%BB%E7%BE%A9">耽美主義</a>や<a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%B3%E3%83%87%E3%82%A3%E3%82%BA%E3%83%A0">ダンディズム</a>、<a href="https://ja.wikipedia.org/wiki/%E7%B2%8B">粋</a>、<a href="https://ja.wikipedia.org/wiki/%E6%B4%92%E8%90%BD">洒落</a>を含意したりと（特に<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">ファッション</a>において）、単に批判的な言葉としてのみ使用されるわけではない。</p>
+<ul>
+<li>うんぬんかんぬん</li>
+</ul>
+<p>「うんともすんとも」の「すんとも」、「仲良し小良し」の「小良し」のように、<strong>大して意味のない要素を後に続けて使うこと</strong>は、よく見られる現象です。</p>
+<ul>
+<li>サラマンダーとはどういう意味ですか？</li>
+</ul>
+<p>サラマンダーは英語でsalamanderと表記され、意味としては<strong>サンショウウオや、西洋の伝説上の動物</strong>となります。 西洋の伝説上の動物・火の精と、火で加熱する調理器具のサラマンダーをかけているのは？といわれています。</p>
+<ul>
+<li>May I have your name とはどういう意味ですか？</li>
+</ul>
+<p>May I have いただけますか？ your name あなたのお名前を、Please は丁寧 な表現で、つまり <strong>お名前をいただけますか？</strong> という意味になります。 端的に What is your name? でもいいですが、直接的な表現ですので、お客 様にはこの表現を使うのは好ましくありません。</p>
+<ul>
+<li>あたい 【一人称】</li>
+</ul>
+<p> <strong>「あたし」がくだけた表現</strong>。 元は下町女性の言葉で、1970～80年代頃には不良少女などが用いていたが、現在はほとんど使われない。</p>
+<ul>
+<li>「グーパンチ」とはどういう意味ですか？</li>
+</ul>
+<p><strong>拳を握った状態で繰り出すパンチのこと</strong>。 グーパンとは、グーの状態（拳を握った状態）で相手に打撃を加えること。 パンチというと一般的にゲンコツで繰り出されるものなので、女性（平手のイメージが強い）や、通常殴り合いのケンカなどをしない人物や状況から繰り出されるパンチを特にこのように称する。</p>
+<ul>
+<li>「パッシブスキル」の言い換えは？</li>
+</ul>
+<p><strong>「受動スキル」「常時発動スキル」「永続スキル」</strong>とも呼ばれている。 「パッシブスキル」の対義語は「アクティブスキル」であり、必殺技や魔法、ゲージがたまったあとの技など手動で発動される能力のことを指す。</p>
+<ul>
+<li>サグラダ・ファミリアは2026年に完成しますか？</li>
+</ul>
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2fXPOG7GTW_KW2nd3QlMe0B7K1D3bkMpDdfxKLAXqh3VH2agNPCkYkLay6w&s" alt="サグラダ・ファミリア、2026年の完成が確実に。聖堂につながる ..."></p>
+<p>聖堂につながる巨大階段は2034<strong>年</strong>までかかる見込み バルセロナの<strong>サグラダ</strong>・<strong>ファミリア</strong>聖堂が、着工から140<strong>年</strong>以上の時を経て、<strong>2026年に完成</strong>すると発表された。</p>
+<ul>
+<li>前かがみ／</li>
+</ul>
+<p>前屈 の共通する意味<strong>上半身を前に折り曲げること</strong>。</p>
+<ul>
+<li><p>へたれ へたれ（ヘタレ）は、<strong>弱った物、臆病な様子や情けない性格をした人物を指す俗語</strong>。</p>
+</li>
+<li><p>エゴ</p>
+</li>
+</ul>
+<p>① <strong>認識、意欲、行動などの主体として、他と区別される自分。</strong> <strong>自己。</strong> <strong>自我</strong>。 ② フロイトの用語。</p>
+<ul>
+<li>物差しとは何ですか？</li>
+</ul>
+<p><strong>物の長さを計る器具の総称</strong>。 物差しは物を差し計る意である。 人類が最初に使い始めた計器で、また今日でも広く使われている。 普通、木、金属または骨などの板または棒に目盛りをつけたもの（直尺(ちょくしゃく)）をいうが、両端間の長さを基準とした端面尺もある。</p>
+<ul>
+<li>「バキバキ」とはどういう意味ですか？</li>
+</ul>
+<p>「バキバキ」とは<strong>活きの良さを表す浜言葉</strong>。 魚を手で持つと身が垂れずにピンと立つほどバキバキしているという意味です。 焼き魚などに調理しても一夜干しに加工されても、新鮮なものはひと味違います。</p>
+<ul>
+<li>ぷにぷに意味</li>
+</ul>
+<p><strong>風船のようにぶよぶよしたモンスター</strong>。 空中を漂っているだけで特別な攻撃はしてこないが、耐久力が異常に高いうえに弾力があるため溜めボムでの押し潰しも効かず、気絶させて場外に落とさない限り倒すのは困難。 ※この「プニプニ」の解説は、「爆ボンバーマン」の解説の一部です。</p>
+<ul>
+<li>しっとり</li>
+</ul>
+<p>① <strong>湿気が軽く全体にいきわたっているさま、濡れ湿っているさまを表わす語</strong>。 ② ゆっくりと落ち着いたさま、深く静まりかえっているさまを表わす語。 また、よく整って安定しているさまを表わす語。</p>
+<ul>
+<li>しごき</li>
+</ul>
+<p>志古貴とは、<strong>帯の下に巻いて斜め後ろに垂らす飾り帯</strong>のことです。 志古貴は振袖や花嫁衣装や七五三の衣装などに用います。 七五三の七歳のお祝いで、女の子が使用する志古貴は単色染めで房が付いているものが多くなっています。 選ぶ際には、着物や帯との調和を考えますが、帯揚げと色を揃える方も多いようです。May 31, 2024</p>
+<p><a href="https://kimono-rentalier.jp/column/kimono/shigoki/#:~:text=%E5%BF%97%E5%8F%A4%E8%B2%B4%E3%81%A8%E3%81%AF,%E6%96%B9%E3%82%82%E5%A4%9A%E3%81%84%E3%82%88%E3%81%86%E3%81%A7%E3%81%99%E3%80%82"><br>志古貴（しごき）とは？わかりやすく説明 - きものレンタリエ<img src="/2024/05/21/jqv/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFNUlEQVR4AcVXA5QrWRBN/2iM2M7Ytta2bdu2bdu2vXuwtq1+rzsZfvv/Wz1WOoOzO+fUqCuv7ru31Bp8Cf+vqTjIeRX5PMt9CE91HDUjy/YcJBdW+2cNoHfvQ7Usy32VuMC0hmly142aiX5OaVx5NvpcXGBewXO8ZwwcctLMAfBc30kiHWS0f8btka3idRsEuTl4EBMASG+T4w0b58dbNvMr1ryZX45W7aAE1lu55C1qjTdt4mcZrltEAOLmwD4zAiAXVDuZ1jLAjLaP4rUdqeOAmfxHiQJumeZ4pnej7fWKv7/Yi8B/iDp8xhGtHPbt7trKiDO+wDMxVteRnTQAIL+LqOeegtqJz1Z88pnAsr0XKOxkum6TS2rNCPINW2Bexm2hDSYx6c5rVljLdF+SFADJV1iLG64iENPRNnD48QLPdN8xRHmcwZ9bQrtM58/SXY+IWvMyKVwaTgig78SztCzF/p4o5K6T8qrCibI3Vt9lZ2CJkg6yHJHIV0IlgaFVAPLUksdemB4AtwZ3GcniXP8J0zJwwRUk022UYCTH6u++T1hqyx56WuBGG6fc4Y7IBlMC6G7fJJ0SibQU9VYZzmuQvftNPGzpky8ILMd7nhIcMvTvfYxqs0Fu7KAwBQPDX/Vstp1+EgCW5TlLKRlbeAe5pi0bjp8otFkC47RlpsBhg1XgfK536931qsHtkQ0Y9MflfmEZyIVByQ4ZB0COlnuRJItYquOtgTMuHirFGjMzWL9iaCaQZgvlMEtwB9Id4D6IN3SkqwZ3RmupnIlZKVTs791lX71SljqLHCtvyh0BgOR4AGW3SgoUlY9LnvwKJzPYfiJZ4PMcdTb8/U2sqNasGtxdUIy+EKdgaEz5Y0BtwMAgqugq5X/cFW0kvalrTdmUQmV+Rg2G9NNb/pIj5V614LhtEHn0j6i19Emu0cZEtuiaWwSqBmJWCpXla6DlawiwSC6tt04JIFwWpuewuOwvKlYPXuoE5T9B9yWSM699Sp9gSZjyC7Ef0ECTJdD0jSlrPb/aLhqsP+AmS7gz0qw6OYurc0ljkgqZv1lCiVKR5Eb7HxrU5yKW4nhrogOSJBMOHxFSbg1tpRY8Xt+ZKRptHwyWb3C3RL6rPv8OAByf4fzfSIIXRNAlF9e6R4fI5kY4vMLoMBN6gUrwWG2nkaXZX0FwmnyHqcoUKC5ULpbmvEsjeQqrqbR4uuuepS+9IfTsurcWCfmA0mhyfKepHda76/56JNVj5M+zvar+A6eeLeDSL1FlIaGDmqHpdwfQ0/SrR0O6iiYd/vfE8qeeTxx8u721HC2ZKgQgXlj18WdCEo1pC2IKy85Fo42osMaJLO+jRYMOI8PfHEgfYanTG3Lni5GNCA0H/o8l9Kfn6AtD+0HmuFYM+k4aDg4HlJ31n/k1yyLl7PEb0iiAnk23S1W6HuiJ1bQG53v7laMV9cQUWPuo78BjtFOOY8ke3mZQH8958w2AOi1VleTKb552H1h83Z0CBtIbSuMxBfbgJt9m82Gg/CCaNUjUh9b88FPilYz7i0upRocXE3FOZlKMwXCpRVK0zJvUUsoz3DcpAFKd73BzaCNuCm0wK7OEN0Jr/oxAQNZzkl/LS+qsyNoetMoveuq7UmerO8187BS/0T4Qb9s0XR3A+P3/MJIAN/gEg2W7WFVrpVzVVp6MxStaKrklsBuq6julPVuCO834zWjghNO16A1n0dwGhbPSnynJ7Dtq+dMvzf7lNFba4MZKtodkCR/Ek7bQQWBtF7Bmn/3b8X9k6wHtcFwfZlArEwAAAABJRU5ErkJggg==" alt="img">きものレンタリエhttps://kimono-rentalier.jp › ... › 着物の豆知識</a></p>
+<p><img src="data:image/jpeg;base64,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" alt="志古貴（しごき）とは？わかりやすく説明 | きものレンタリエの ..."></p>
+<ul>
+<li>かうぱー</li>
+</ul>
+<p><strong>尿道球腺液</strong>（にょうどうきゅうせんえき、英: Bulbourethral gland fluid）は、男性の尿道球腺から分泌される弱アルカリ性の粘性がある無臭無色透明な液体である。 一般にはカウパー腺液（単にカウパーやカウパー液とも）と呼ばれる。</p>
+<ul>
+<li>くすくすするの意味は？</li>
+</ul>
+<p>① <strong>物がくすぶるさまを表わす語</strong>。 ② こっそりと事をするさま、また、そのような性格のさまを表わす語。 こそこそ。 ③ しのんで笑う声、また、その様子を表わす語。</p>
+<ul>
+<li>「てっぺん」はどこの方言ですか？</li>
+</ul>
+<p>おにころし即ち酒精分の多い悪酒をいふ。 <strong>駿河の方言</strong>。</p>
+<p>① <strong>兜(かぶと)のいただき。</strong> <strong>転じて、頭のいただき。</strong> <strong>② 物のいちばん高い所。</strong> <strong>頂上。</strong></p>
+<ul>
+<li>トロトロ</li>
+</ul>
+<p>とろ‐とろ ① <strong>物がとけて、流動体・粘液状になっているさまを表わす語</strong>。 ② 粘液状のものがたれ落ちたり流れたりするさまを表わす語。 ④ 動作が緩慢で、ゆったりしたさまを表わす語。</p>
+<ul>
+<li>ビロード</li>
+</ul>
+<p>日本大百科全書(ニッポニカ) 「ビロード」の意味・わかりやすい解説<strong>添毛(てんもう)織物の一つで、織面に輪奈(わな)を出し、ときにはそれを切断して羽毛のようになった織物</strong>である。 ビロードとは、ポルトガル語のベルードvelludo、スペイン語のベルードvelludeの転訛(てんか)した語といわれている。</p>
+<ul>
+<li>「てろてろ」は方言ですか？</li>
+</ul>
+<p>私が大好きな「てろてろ」は泥酔状態 の事を指す<strong>津軽弁</strong>です。 「てろてろどなってまったじゃ～ 」です。 しかも、どちらかと言うとイイ（？） 泥酔状態（私的に）です。</p>
+<ul>
+<li>レロレロ</li>
+</ul>
+<p>① <strong>舌がもつれて発音が不明瞭なさまを表わす語</strong>。 ② 幼児をあやすのに、舌で上顎をはじいて音をたてるさまを表わす語。 ① 酒の酔いや麻痺などで、舌がもつれて何を言っているのかよくわからないさま。</p>
+<ul>
+<li>もどかしい</li>
+</ul>
+<p><strong>思うようにならず苛立つ。</strong> <strong>物事が捗らないので、いらいらする。</strong> <strong>じれったい。</strong> <strong>歯痒い。</strong></p>
+<ul>
+<li>いっそ の 事(こと)</li>
+</ul>
+<p><strong>あれこれと考えた末、それらとは一段違ったことを思い切って選ぶ気持を表わす</strong>。 また、時に、好ましいものをあきらめて意に染まないものを選ぶときの、投げやりな気持を表わす。 思い切って。 むしろ。</p>
+<ul>
+<li>とろん</li>
+</ul>
+<p>① <strong>濃い液体や空気などが重く沈んでいるさまを表わす語</strong>。 どろん。 ② ねむけを催したり、酒に酔ったりして目つきのぼんやりしているさまを表わす語。</p>
+<ul>
+<li>負えない</li>
+</ul>
+<p>［形］《連語「負えない」の一語化》<strong>どうしようもない。</strong> <strong>手がつけられない。</strong></p>
+<ul>
+<li>チロチロ</li>
+</ul>
+<p>① <strong>火、光または水の流れなどが細くかすかであるさまを表わす語</strong>。 また、灯火などが断続的に明暗をくり返しながらほのめくさまをいう。 ちらちら。</p>
+<ul>
+<li>ピンチ</li>
+</ul>
+<p>① <strong>追いつめられて非常に苦しい事態。</strong> <strong>危機。</strong> <strong>窮地。</strong> <strong>苦境。</strong></p>
+<ul>
+<li>「クルクル」とはどういう意味ですか？</li>
+</ul>
+<p>① <strong>物が軽やかにつづいて回るさま、また、何回も回すさまを表わす語</strong>。 ② 幾重にも巻くさまやまるめるさま、また、巻いてあるものを解くさまを表わす語。 ぐるぐる。 ③ 物事を滞りなく行なうさま、また、物事のすらすらと進行するさまを表わす語。</p>
+<ul>
+<li>艶めかしい</li>
+</ul>
+<p>① 人の容姿、態度などについていう。 <strong>優美である、上品である、もの柔らかである</strong>。 「あて」や「清ら」などとともに用いられることが多い。 ② 特に若い女性などの容姿をいうことが多いところから、次第に女性の若い魅力をいうようになり、後世は、女性の性的魅力を、さらに性的魅力一般を表現する語となる。</p>
+<p>[<br>艶めかしい(ナマメカシイ)とは？ 意味や使い方 - コトバンク](<a href="https://kotobank.jp/word/%E8%89%B6%E3%82%81%E3%81%8B%E3%81%97%E3%81%84-589696#:~:text=%E2%91%A0">https://kotobank.jp/word/艶めかしい-589696#:~:text=①</a> 人の容姿、態度,用いられることが多い。&amp;text&#x3D;② 特に若い女性など,表現する語となる。)</p>
+<ul>
+<li>あどけない</li>
+</ul>
+<p>[ 文語形 ]あどけな・し 〘 形容詞ク活用 〙 （子供の態度、様子などが）<strong>無心で愛らしい。</strong> <strong>無邪気である。</strong> <strong>することが幼い。</strong> <strong>わるぎがない。</strong></p>
+<ul>
+<li>すぼめる</li>
+</ul>
+<p>「すぼめる」「つぼめる」は、「窄める」とも書く。 「すぼめる」は、<strong>広がっていたものを小さくするときに用いる</strong>。 「つぼめる」は、管のようなものの口の面積を小さくする意。 また、「傘をつぼめる」のように、開いていたものを閉じる意味もある。</p>
+<ul>
+<li>恋愛において押して引くとどうなる？</li>
+</ul>
+<p>押して引く行為は、<strong>自分のことを考えてもらえる時間を増やすこととなり、距離を縮めるきっかけになります</strong>。 自分に気がある素振りをしていた異性がある日、急にそっけなくなったら、無性に気になるものです。 とくに相手が男性の場合、好意を抱いている相手に逃げられそうになると、本能的に追いかけたくなるといった男性心理が働きます。</p>
+<ul>
+<li>エレクト</li>
+</ul>
+<p>〘 名詞 〙 ( [英語] erect ) <strong>性器が勃起すること</strong>。</p>
+<ul>
+<li>ラストスパート</li>
+</ul>
+<p>ラスト‐スパート 〘 名詞 〙 ( [英語] last spurt ) <strong>競走・競泳などの競技で、ゴール近くで最後のがんばりを見せて力走・力泳すること</strong>。 転じて、物事の終了間際に、全力でことにあたること。</p>
+<ul>
+<li>エクスタシー</li>
+</ul>
+<p>エクスタシー（ecstasy）１ <strong>快感が最高潮に達して無我夢中の状態になること</strong>。 恍惚 こうこつ 。 忘我。 ２ 宗教的儀礼などの際に体験される神秘的な心境。</p>
+<ul>
+<li>ドクドクとはどういう意味ですか？</li>
+</ul>
+<p>どく‐どく ① ( 「と」を伴って用いることもある ) <strong>酒・水や血など、液体がさかんに流れ出たり、あふれ出たりするさまを表わす語</strong>。 ② 興奮したり不安を感じたりして胸が高鳴るさまを表わす語。</p>
+<ul>
+<li>怯む</li>
+</ul>
+<p><strong>恐れて勢いが弱る。</strong> <strong>おじける。</strong> <strong>萎縮する。</strong></p>
+<p><a href="https://kotobank.jp/word/%E6%80%AF%E3%82%80-614240#:~:text=%E6%81%90%E3%82%8C%E3%81%A6%E5%8B%A2%E3%81%84%E3%81%8C%E5%BC%B1%E3%82%8B,%E8%90%8E%E7%B8%AE%E3%81%99%E3%82%8B%E3%80%82"><br>怯む(ヒルム)とは？ 意味や使い方 - コトバンク</a></p>
+<ul>
+<li>しくしく</li>
+</ul>
+<p><strong>弱弱しく泣くさま。</strong> <strong>強くはないが体が絶えず痛むさま</strong>。</p>
+<ul>
+<li>ヒンズースクワット</li>
+</ul>
+<p>「ヒンズースクワット」は、<strong>かかとを上げたまま行います</strong>。 1. つま先立ちになり、膝を前に出し、両手は横に置いたままスクワットします。 2. そして、かかとは上げたまま、両腕を前に振ってバランスをとりながら、足の親指の付け根にある母指球に力を入れて立ち上がります。</p>
+<ul>
+<li>「あざとかわいい」とはどういう意味ですか？</li>
+</ul>
+<p>「あざとかわいい」は計算高さを意味する「あざとい」と、愛らしさなどを意味する「かわいい」の2つの言葉が合わさった造語です。 つまり、「あざとかわいい」とは、<strong>魅力的に見せるために計算された言動をとるさまであり、そこにプラス、自然と人の心を惹きつけ好かれる外見や雰囲気を兼ね備えているイメージ</strong>でしょうか。</p>
+<ul>
+<li>タンパク質</li>
+</ul>
+<p>たんぱく質とは たんぱく質とは<strong>アミノ酸が多数結合した高分子化合物</strong>で、筋肉や臓器など体を構成する要素として非常に重要なものです。 また、それだけでなく、たんぱく質は、アミノ酸の組み合わせや種類、量などの違いによって形状や働きが異なり、酵素やホルモン、免疫物質としてさまざまな機能を担っています。</p>
+<ul>
+<li>「取り憑かれた」とはどういう意味ですか？</li>
+</ul>
+<p>取り憑かれるとは、<strong>ある思念に固執している、妄想にとらわれている、という状況</strong>を指す意味で用いられる表現。<a href="https://www.weblio.jp/content/%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B#:~:text=%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B%E3%81%A8%E3%81%AF%E3%80%81%E3%81%82%E3%82%8B,%E6%84%8F%E5%91%B3%E3%81%A7%E7%94%A8%E3%81%84%E3%82%89%E3%82%8C%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">取り憑かれる(とりつかれる)</a></p>
+<ul>
+<li>ポワントワークとは何ですか？</li>
+</ul>
+<p><strong>トウシューズを履き、足先を完全に伸ばし、爪先の先端でステップを踏むこと</strong>。 ほとんどの場合、女性が行う（男性がトウシューズを履くことはほとんどない）。</p>
 ]]></content>
       <tags>
-        <tag>读书</tag>
+        <tag>gal</tag>
       </tags>
   </entry>
   <entry>
@@ -2453,6 +2443,15 @@
     <title>小他者、对象a、大他者</title>
     <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
     <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拉康和弗洛伊德关于无意识的论述</title>
+    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
+    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
 ]]></content>
       <tags>
         <tag>精神分析</tag>
@@ -2649,18 +2648,19 @@
       </tags>
   </entry>
   <entry>
+    <title>存在与虚无</title>
+    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
+    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
+<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
+]]></content>
+      <tags>
+        <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>感想</title>
     <url>/2024/07/21/%E6%84%9F%E6%83%B3/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>拉康和弗洛伊德关于无意识的论述</title>
-    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
-    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
-      </tags>
   </entry>
   <entry>
     <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
@@ -2693,6 +2693,41 @@
 ]]></content>
       <tags>
         <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有序数组的平方</title>
+    <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
+    <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
+</ul>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
+</ul>
+<h3 id="题解1（暴力运算，平方加排序）"><a href="#题解1（暴力运算，平方加排序）" class="headerlink" title="题解1（暴力运算，平方加排序）"></a>题解1（暴力运算，平方加排序）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            nums[i++] = nums[i] * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="题解2（开新数组-左右指针）"><a href="#题解2（开新数组-左右指针）" class="headerlink" title="题解2（开新数组+左右指针）"></a>题解2（开新数组+左右指针）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b=a.<span class="built_in">size</span>()<span class="number">-1</span>,r=a.<span class="built_in">size</span>(),l=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">c</span><span class="params">(a.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[l])&lt;<span class="built_in">fabs</span>(a[r]))</span><br><span class="line">            &#123;</span><br><span class="line">                c[b]=a[r]*a[r];</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c[b--]=a[l]*a[l];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.leetcode-cn.com/1631932242-BViXlX-977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" alt="977.有序数组的平方.gif"></p>
+<p>这个算法的思路是，新开一个数组用来记录信息，首位两个指针互相交换信息，有一个特点，其实就是，生成的新数组的值，其实应该从小到大，依次是从中间，左右之一取得的。</p>
+<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
+      <tags>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -3164,6 +3199,23 @@
       </tags>
   </entry>
   <entry>
+    <title>死月妖花</title>
+    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#52;&#103;&#x61;&#x74;&#x73;&#x75;&#x38;&#x6b;&#97;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#52;&#103;&#x61;&#x74;&#x73;&#x75;&#x38;&#x6b;&#97;&#x40;&#103;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></p>
+<p>推特账号：@4gatsu_8ka</p>
+<h3 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h3><p>本作の全編予想プレイ時間は50<del>120時間で寸(文字数换算で230万字程度)。<br>1編当たりの予想プレイ時間は最短編で2</del>4時間、最長編で10~20時間です</p>
+<p>非常に長いので健康な害さないよう，適宜休憩を取りながらプレイして下さい</p>
+<h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><p>立木三日（tachiki mika）：在打完驶向过去的梦的剧本之后，出现的一个带着能面，着着红袍的女性，伴随她的出现是一阵清脆的铃声。</p>
+<h2 id="咒杀篇"><a href="#咒杀篇" class="headerlink" title="咒杀篇"></a>咒杀篇</h2><h3 id="四月病（四月七日）："><a href="#四月病（四月七日）：" class="headerlink" title="四月病（四月七日）："></a>四月病（四月七日）：</h3><p>介绍了夏美四月病的病状，在预知梦的能力发作时，看见了飞在天空中的气球，然后还有一具被剥皮了的尸体。这里会出现茜和夏美一起吃饭的剧情，吃饭的过程中，四月病发作，恶心得夏美到厕所呕吐了。</p>
+<h3 id="四月八日の朝："><a href="#四月八日の朝：" class="headerlink" title="四月八日の朝："></a>四月八日の朝：</h3><p>四月八日早上起床，家外面出现了警笛声，学生也被要求待在自己的家里，不要外出。在出门之后，偶遇倒垃圾的美冬。</p>
+<h2 id="诧言篇"><a href="#诧言篇" class="headerlink" title="诧言篇"></a>诧言篇</h2><h2 id="明徵篇"><a href="#明徵篇" class="headerlink" title="明徵篇"></a>明徵篇</h2><h3 id="過去へ馳せる夢"><a href="#過去へ馳せる夢" class="headerlink" title="過去へ馳せる夢"></a>過去へ馳せる夢</h3><p>这里是处在五月六号的刚过十二点钟之后发生的故事，这个时候两人的父母都已经亡故。</p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>日语n1文法</title>
     <url>/2024/05/19/%E6%97%A5%E8%AF%ADn1%E6%96%87%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-第一章"><a href="#1-第一章" class="headerlink" title="1. 第一章"></a>1. 第一章</h2><h3 id="1-1-～あっての"><a href="#1-1-～あっての" class="headerlink" title="1.1 ～あっての"></a>1.1 <strong>～あっての</strong></h3><p>名A＋（が）あっての＋名B</p>
@@ -3190,55 +3242,90 @@
       </tags>
   </entry>
   <entry>
-    <title>死月妖花</title>
-    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#x34;&#103;&#x61;&#116;&#115;&#117;&#56;&#x6b;&#97;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x34;&#103;&#x61;&#116;&#115;&#117;&#56;&#x6b;&#97;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a></p>
-<p>推特账号：@4gatsu_8ka</p>
-<h3 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h3><p>本作の全編予想プレイ時間は50<del>120時間で寸(文字数换算で230万字程度)。<br>1編当たりの予想プレイ時間は最短編で2</del>4時間、最長編で10~20時間です</p>
-<p>非常に長いので健康な害さないよう，適宜休憩を取りながらプレイして下さい</p>
-<h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><p>立木三日（tachiki mika）：在打完驶向过去的梦的剧本之后，出现的一个带着能面，着着红袍的女性，伴随她的出现是一阵清脆的铃声。</p>
-<h2 id="咒杀篇"><a href="#咒杀篇" class="headerlink" title="咒杀篇"></a>咒杀篇</h2><h3 id="四月病（四月七日）："><a href="#四月病（四月七日）：" class="headerlink" title="四月病（四月七日）："></a>四月病（四月七日）：</h3><p>介绍了夏美四月病的病状，在预知梦的能力发作时，看见了飞在天空中的气球，然后还有一具被剥皮了的尸体。这里会出现茜和夏美一起吃饭的剧情，吃饭的过程中，四月病发作，恶心得夏美到厕所呕吐了。</p>
-<h3 id="四月八日の朝："><a href="#四月八日の朝：" class="headerlink" title="四月八日の朝："></a>四月八日の朝：</h3><p>四月八日早上起床，家外面出现了警笛声，学生也被要求待在自己的家里，不要外出。在出门之后，偶遇倒垃圾的美冬。</p>
-<h2 id="诧言篇"><a href="#诧言篇" class="headerlink" title="诧言篇"></a>诧言篇</h2><h2 id="明徵篇"><a href="#明徵篇" class="headerlink" title="明徵篇"></a>明徵篇</h2><h3 id="過去へ馳せる夢"><a href="#過去へ馳せる夢" class="headerlink" title="過去へ馳せる夢"></a>過去へ馳せる夢</h3><p>这里是处在五月六号的刚过十二点钟之后发生的故事，这个时候两人的父母都已经亡故。</p>
-]]></content>
+    <title>洛谷P1002过河卒带来的思考</title>
+    <url>/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/</url>
+    <content><![CDATA[<h1 id="动态规划（Dynamic-Programing）"><a href="#动态规划（Dynamic-Programing）" class="headerlink" title="动态规划（Dynamic Programing）"></a>动态规划（Dynamic Programing）</h1><h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><p>dynamic programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems.</p>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">斐波那契数列可以看作一个简易的DP问题</span><br><span class="line">F(n)=F(n-1)+F(n-2);(n&gt;=3)</span><br><span class="line">F(10)=F(9)+F(8);</span><br><span class="line">F(9)=F(8)+F(7);</span><br><span class="line">……</span><br><span class="line">F(3)=F(2)+F(1);</span><br></pre></td></tr></table></figure>
+
+<p>如果是使用递归思路，那么程序需要将每一次需要的元素都重新算一次，会导致重复的运算，如果是在DP算法里面，每一次算过的数都用一个数组或者哈希表存储起来，之后就可以复用了，这样能减少运算量。</p>
+<h2 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h2><h4 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h4><p>F(n-1)和F(n-2)称为F(n)的最优子结构</p>
+<h4 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h4><p>F(n)&#x3D;F(n-1)+F(n-2)就称为状态转移方程</p>
+<h4 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h4><p>F(1) &#x3D; 1, F(2) &#x3D; 2 就是边界啦</p>
+<h4 id="重叠子问题"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题</h4><p>比如F(10)&#x3D; F(9)+F(8),F(9) &#x3D; F(8) + F(7) ,f(8)就是重叠子问题</p>
+<h2 id="适用例题"><a href="#适用例题" class="headerlink" title="适用例题"></a>适用例题</h2><blockquote>
+<p>如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。</p>
+</blockquote>
+<p>比如一些求最值的场景，如<strong>最长递增子序列、最小编辑距离、背包问题、凑零钱问题</strong>等等，都是动态规划的经典应用场景。</p>
+<p>动态规划的核心思想就是<strong>拆分子问题，记住过往，减少重复计算。</strong> 并且动态规划一般都是自底向上的，因此到这里，基于<strong>青蛙跳阶</strong>问题，我总结了一下我做动态规划的思路：</p>
+<h4 id="穷举分析"><a href="#穷举分析" class="headerlink" title="穷举分析"></a>穷举分析</h4><h4 id="确定边界"><a href="#确定边界" class="headerlink" title="确定边界"></a>确定边界</h4><h4 id="找出规律，确定最优子结构"><a href="#找出规律，确定最优子结构" class="headerlink" title="找出规律，确定最优子结构"></a>找出规律，确定最优子结构</h4><h4 id="写出状态转移方程"><a href="#写出状态转移方程" class="headerlink" title="写出状态转移方程"></a>写出状态转移方程</h4><h4 id="leetcode案例分析"><a href="#leetcode案例分析" class="headerlink" title="leetcode案例分析"></a>leetcode案例分析</h4><blockquote>
+<p>给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [10,9,2,5,3,7,101,18]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [0,1,0,3,2,3]</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>穷举分析</p>
+<p>因为动态规划，核心思想包括<strong>拆分子问题，记住过往，减少重复计算。</strong> 所以我们在思考原问题：<strong>数组num[i]的最长递增子序列长度时</strong>，可以思考下<strong>相关子问题</strong>，比如原问题是否跟<strong>子问题</strong>num[i-1]的最长递增子序列长度有关呢？</p>
+</li>
+<li><p>在穷举分析的时候，可以将元素写成两个数组的形式，这样便于找寻规律。</p>
+</li>
+<li><p>现在让我们分析一下</p>
+<table>
+<thead>
+<tr>
+<th>nums的元素数量</th>
+<th>最大子序列长度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>{10} 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>{10}||{9} 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>{10}||{9}||{2} 1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>{2，5} 2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>{2，3}||{2，5} 2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>{2，3，7}||{2，5，7} 3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>{2，3，7，101}||{2，5，7，101} 4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>{2，3，7，18}||{2，5，7，18} 4</td>
+</tr>
+</tbody></table>
+<p>可以得到，最大子序列长度</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Dp[i]=max&#123;Dp[j]&#125;+1;</span><br><span class="line">j&gt;=0&amp;&amp;j&lt;=i-1;</span><br><span class="line">nums[i]&gt;nums[j];</span><br></pre></td></tr></table></figure>
+
+<p>符合这样的状态转移方程</p>
+<p>最优子结构：max{Dp[j]}+1.</p>
+<p>状态转移方程：Dp[i]&#x3D;max{Dp[j]}+1.</p>
+<p>边界：Dp[0]&#x3D;1.</p>
+<p>出现了重叠子问题.</p>
+<p>所以给出本题的题解</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int lengthOfLIS(int[] nums) &#123;</span><br><span class="line">    if(nums.size()==0)</span><br><span class="line">    &#123;return 0;&#125;</span><br><span class="line">    //保证程序的健壮性</span><br><span class="line">    int Dp[nums.size()];</span><br><span class="line">    Dp[0]=1;</span><br><span class="line">    //声明一个数组，用来存储目标值</span><br><span class="line">    for(int i=0;i&lt;nums.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">    for(int j=0;j&lt;i-1;j++)</span><br><span class="line">    &#123;</span><br><span class="line">    if(nums[i]&gt;nums[j])</span><br><span class="line">    &#123;</span><br><span class="line">    Dp[i]=max(Dp[j])+1;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;Dp[i]=max(Dp[j]);&#125;</span><br><span class="line">    //分类：满足飞升条件的+1，不满足的占位</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //利用双重循环遍历所列举的情况，将最终值算出来</span><br><span class="line">    return Dp[nums.size()-1];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="几种不同的解决思路"><a href="#几种不同的解决思路" class="headerlink" title="几种不同的解决思路"></a>几种不同的解决思路</h1><p>下面是过河卒的集中不同思路。</p>
+<h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1>]]></content>
       <tags>
-        <tag>gal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有序数组的平方</title>
-    <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
-    <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 104</code></li>
-<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
-<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
-</ul>
-<p><strong>进阶：</strong></p>
-<ul>
-<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
-</ul>
-<h3 id="题解1（暴力运算，平方加排序）"><a href="#题解1（暴力运算，平方加排序）" class="headerlink" title="题解1（暴力运算，平方加排序）"></a>题解1（暴力运算，平方加排序）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            nums[i++] = nums[i] * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="题解2（开新数组-左右指针）"><a href="#题解2（开新数组-左右指针）" class="headerlink" title="题解2（开新数组+左右指针）"></a>题解2（开新数组+左右指针）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b=a.<span class="built_in">size</span>()<span class="number">-1</span>,r=a.<span class="built_in">size</span>(),l=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">c</span><span class="params">(a.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[l])&lt;<span class="built_in">fabs</span>(a[r]))</span><br><span class="line">            &#123;</span><br><span class="line">                c[b]=a[r]*a[r];</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c[b--]=a[l]*a[l];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://pic.leetcode-cn.com/1631932242-BViXlX-977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" alt="977.有序数组的平方.gif"></p>
-<p>这个算法的思路是，新开一个数组用来记录信息，首位两个指针互相交换信息，有一个特点，其实就是，生成的新数组的值，其实应该从小到大，依次是从中间，左右之一取得的。</p>
-<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
-      <tags>
-        <tag>leetcode</tag>
+        <tag>洛谷</tag>
       </tags>
   </entry>
   <entry>
@@ -3333,93 +3420,6 @@
       </tags>
   </entry>
   <entry>
-    <title>洛谷P1002过河卒带来的思考</title>
-    <url>/2024/05/24/%E6%B4%9B%E8%B0%B7P1002%E8%BF%87%E6%B2%B3%E5%8D%92%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%80%9D%E8%80%83/</url>
-    <content><![CDATA[<h1 id="动态规划（Dynamic-Programing）"><a href="#动态规划（Dynamic-Programing）" class="headerlink" title="动态规划（Dynamic Programing）"></a>动态规划（Dynamic Programing）</h1><h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><p>dynamic programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems.</p>
-<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">斐波那契数列可以看作一个简易的DP问题</span><br><span class="line">F(n)=F(n-1)+F(n-2);(n&gt;=3)</span><br><span class="line">F(10)=F(9)+F(8);</span><br><span class="line">F(9)=F(8)+F(7);</span><br><span class="line">……</span><br><span class="line">F(3)=F(2)+F(1);</span><br></pre></td></tr></table></figure>
-
-<p>如果是使用递归思路，那么程序需要将每一次需要的元素都重新算一次，会导致重复的运算，如果是在DP算法里面，每一次算过的数都用一个数组或者哈希表存储起来，之后就可以复用了，这样能减少运算量。</p>
-<h2 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h2><h4 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h4><p>F(n-1)和F(n-2)称为F(n)的最优子结构</p>
-<h4 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h4><p>F(n)&#x3D;F(n-1)+F(n-2)就称为状态转移方程</p>
-<h4 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h4><p>F(1) &#x3D; 1, F(2) &#x3D; 2 就是边界啦</p>
-<h4 id="重叠子问题"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题</h4><p>比如F(10)&#x3D; F(9)+F(8),F(9) &#x3D; F(8) + F(7) ,f(8)就是重叠子问题</p>
-<h2 id="适用例题"><a href="#适用例题" class="headerlink" title="适用例题"></a>适用例题</h2><blockquote>
-<p>如果一个问题，可以把所有可能的答案穷举出来，并且穷举出来后，发现存在重叠子问题，就可以考虑使用动态规划。</p>
-</blockquote>
-<p>比如一些求最值的场景，如<strong>最长递增子序列、最小编辑距离、背包问题、凑零钱问题</strong>等等，都是动态规划的经典应用场景。</p>
-<p>动态规划的核心思想就是<strong>拆分子问题，记住过往，减少重复计算。</strong> 并且动态规划一般都是自底向上的，因此到这里，基于<strong>青蛙跳阶</strong>问题，我总结了一下我做动态规划的思路：</p>
-<h4 id="穷举分析"><a href="#穷举分析" class="headerlink" title="穷举分析"></a>穷举分析</h4><h4 id="确定边界"><a href="#确定边界" class="headerlink" title="确定边界"></a>确定边界</h4><h4 id="找出规律，确定最优子结构"><a href="#找出规律，确定最优子结构" class="headerlink" title="找出规律，确定最优子结构"></a>找出规律，确定最优子结构</h4><h4 id="写出状态转移方程"><a href="#写出状态转移方程" class="headerlink" title="写出状态转移方程"></a>写出状态转移方程</h4><h4 id="leetcode案例分析"><a href="#leetcode案例分析" class="headerlink" title="leetcode案例分析"></a>leetcode案例分析</h4><blockquote>
-<p>给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [10,9,2,5,3,7,101,18]</span><br><span class="line">输出：4</span><br><span class="line">解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [0,1,0,3,2,3]</span><br><span class="line">输出：4</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li><p>穷举分析</p>
-<p>因为动态规划，核心思想包括<strong>拆分子问题，记住过往，减少重复计算。</strong> 所以我们在思考原问题：<strong>数组num[i]的最长递增子序列长度时</strong>，可以思考下<strong>相关子问题</strong>，比如原问题是否跟<strong>子问题</strong>num[i-1]的最长递增子序列长度有关呢？</p>
-</li>
-<li><p>在穷举分析的时候，可以将元素写成两个数组的形式，这样便于找寻规律。</p>
-</li>
-<li><p>现在让我们分析一下</p>
-<table>
-<thead>
-<tr>
-<th>nums的元素数量</th>
-<th>最大子序列长度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>{10} 1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>{10}||{9} 1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>{10}||{9}||{2} 1</td>
-</tr>
-<tr>
-<td>4</td>
-<td>{2，5} 2</td>
-</tr>
-<tr>
-<td>5</td>
-<td>{2，3}||{2，5} 2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>{2，3，7}||{2，5，7} 3</td>
-</tr>
-<tr>
-<td>7</td>
-<td>{2，3，7，101}||{2，5，7，101} 4</td>
-</tr>
-<tr>
-<td>8</td>
-<td>{2，3，7，18}||{2，5，7，18} 4</td>
-</tr>
-</tbody></table>
-<p>可以得到，最大子序列长度</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Dp[i]=max&#123;Dp[j]&#125;+1;</span><br><span class="line">j&gt;=0&amp;&amp;j&lt;=i-1;</span><br><span class="line">nums[i]&gt;nums[j];</span><br></pre></td></tr></table></figure>
-
-<p>符合这样的状态转移方程</p>
-<p>最优子结构：max{Dp[j]}+1.</p>
-<p>状态转移方程：Dp[i]&#x3D;max{Dp[j]}+1.</p>
-<p>边界：Dp[0]&#x3D;1.</p>
-<p>出现了重叠子问题.</p>
-<p>所以给出本题的题解</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int lengthOfLIS(int[] nums) &#123;</span><br><span class="line">    if(nums.size()==0)</span><br><span class="line">    &#123;return 0;&#125;</span><br><span class="line">    //保证程序的健壮性</span><br><span class="line">    int Dp[nums.size()];</span><br><span class="line">    Dp[0]=1;</span><br><span class="line">    //声明一个数组，用来存储目标值</span><br><span class="line">    for(int i=0;i&lt;nums.size();i++)</span><br><span class="line">    &#123;</span><br><span class="line">    for(int j=0;j&lt;i-1;j++)</span><br><span class="line">    &#123;</span><br><span class="line">    if(nums[i]&gt;nums[j])</span><br><span class="line">    &#123;</span><br><span class="line">    Dp[i]=max(Dp[j])+1;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;Dp[i]=max(Dp[j]);&#125;</span><br><span class="line">    //分类：满足飞升条件的+1，不满足的占位</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //利用双重循环遍历所列举的情况，将最终值算出来</span><br><span class="line">    return Dp[nums.size()-1];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="几种不同的解决思路"><a href="#几种不同的解决思路" class="headerlink" title="几种不同的解决思路"></a>几种不同的解决思路</h1><p>下面是过河卒的集中不同思路。</p>
-<h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1>]]></content>
-      <tags>
-        <tag>洛谷</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爱与典范</title>
     <url>/2024/05/17/%E7%88%B1%E4%B8%8E%E5%85%B8%E8%8C%83/</url>
     <content><![CDATA[<p>   ▪   爱的典范：<br>不是讲述对与错的问题，典雅爱情中，起作用的是一种符号爱完成生化成了一种符号，成为了一首诗歌。<br>在虐恋之中，症状代替了符号。<br>使徒的爱：圣爱是幻想父亲的爱，对自己的幻想的爱的一种回应，他正在永恒地爱着我，我也可以永恒地爱着她。这只手是一种幻影，幻想自己的手是可以伸进火堆里而幻想出的大他者的手。<br>在使徒在受鞭笞的时候，他们会处于那种极致的享乐之中，他们真的能感受到大他者拉着了他。<br>“性关系的尽头是爱，因此我不会说并不存在爱，我知识说性关系不存在”<br>一朵曼妙的花朵<br>一个新鲜的水果<br>在我双手触碰两者的时候，突然有一只手伸了出来。在触碰这只手的过程中，那只手突然着火了。我只能用作为表达失败的方式来表达爱，在爱的灰烬之处，向我伸出了一只手。<br>lacan：这灰烬之手是一种镜像的自恋结构。<br>古典的爱中，典雅爱情之中，性是不可能，自恋式的想象。<br>原作者的解释不是权威，作者已死。<br>爱处于偶然的逻辑相中，爱的相遇链接了原本两个没有关系的能指。其如其分的神迹，直接有了一朵美丽的花。她仿佛有无限的可能，在诱惑着我。<br>1、Darian Loader《拉康》：这两只手一定不是对称结构。<br>2、Bruce Fink：爱必须是一种回应（积极的解读）<br>从灰烬中伸出的那只手理解为父之名，在爱之中，我们和父之名打交道。父之名认可了你的爱，将你的爱注册在案。没有爱就没有注册在安的结婚证，爱是一种必然的创伤，爱召唤出了父之名。给了我们一种担保，让我们不至于过于哀悼我们成为灰烬的爱情。<br>   ▪   爱的表达<br>说、写、做<br>说就是言说：任何对爱的表达都是对爱的缺失，“我爱你”的意思就是你来爱我吧。苏格拉底把爱当成了背爱，而不是爱人。<br>小宝宝在刚出生的时候，所有的言爱都是对爱的请求。<br>分析师保持沉默的原因：避免向来访者索取爱。<br>说爱就等于要求被爱，说我爱你就等于在说你来爱我吧，这并不是对爱的表达，而是对爱的索取。<br>写就是一个人无法谈论爱，但是当那个人写出来的时候，就能打动你，在书写与字母不存在爱与言说的矛盾，情书比任何通过言语而表达的爱都要真实。<br>爱在停止书写的地方，是未断却无法写出之物。<br>你觉得你写的东西可能不太正确，但是你的爱却有了一个实在的参照物。可以告诉自己，我的爱就在信纸背后，在留白之处，它有一个可以寄托的场所。<br>做的维度（make love）：在完全简化为某个行为之前，就是单纯的求爱，对于男人，在做的时候，与其说他们实在做，不如说他们是在享受性，感知对方的一个部位，感受到了自己的膨胀和丰满，就意味着无所缺失，我不知道他在激动什么，不能被菲勒斯完全收编，部分认同男性（癔症式的），沦为一个普遍的像男人认同阳具一样的女性认同，女人不存在，没有所谓的女人，女人不存在。<br>如何表达爱：没有性关系，写只能在写不出的地方表达爱，说我爱你的实际意思是我缺少爱，请你来爱我。给出你所没有的，表达爱，给出你所没有的，爱的表达本身就是一种自返的结构，在说写做之中，都会遇到挫折，在说不了，写不了，做不了的地方，爱就出现在这里：请拒我所赠，盖非也。<br>给出你所没有的，你和她面对面，站在苍茫的雪地里，两个人都冻的瑟瑟发抖，但是你就是想要抱住她，你就想向她伸出手。<br>   ▪   如果试图“言说”爱<br>爱处在偶然的逻辑相中，是停止却无法写出的东西，只能以诗的形式写出。情不知所起，一往情深。相顾无言，唯有泪千行。<br>只有当语言死亡的时候，你才能活得一瞬间的真实。<br>晚期拉康是比较可怜的，是一个无法忍受自己年龄的人，说脏话，说悖论，试图将自己的平生所学一起用一遍，1975年之后拉康进入了一个强热的思辨当中，进入了一个Fichte的绝对知识，用数学的方式，将自己的理论封装起来：数理逻辑、拓扑学、波罗米结。<br>《若灵根的守灵夜》晚年的拉康奢侈无度，但是他又非常地吝啬：是爱使享乐得以屈从。到底我思是什么东西？在我思之万物之处我不在，我在我不死不在之处，即是说我等于爱。我思是一种爱与恨的战场，是Gott与魔鬼交战的战场，在诗人的角度，诗人透过自己的作品，以某种斜视，一瞥而见了作品的作者。ich&#x3D;ich（自我命名）<br>母子关系：demand-need&#x3D;desire<br>恋爱关系：desire（爱&#x2F;请求的反向投资）+need（信的内容）&#x3D;demand（情书）<br>“请拒我所赠，该非也”：否定信中的内容，不能送早餐，过分夸大的实在物，太过于压迫别人了。<br>如果没有爱的话，我们还是会在转喻链上延宕。<br>不是万物都可以计算（资本主义）：个人的价值不可以计算。</p>
@@ -3429,34 +3429,9 @@
       </tags>
   </entry>
   <entry>
-    <title>碧蓝幻想relink因子</title>
-    <url>/2024/07/09/%E7%A2%A7%E8%93%9D%E5%B9%BB%E6%83%B3relink%E5%9B%A0%E5%AD%90/</url>
-    <content><![CDATA[<p>碧蓝幻想relink里面的因子可以大致分为基本因子和专属因子，而获取方式通常是万事屋抽奖和遗物鉴定，万事屋可以出角色的专属因子，遗物鉴定会有特殊因子，像刀上舞、属性克制转换、追击等。</p>
-<blockquote>
-<p>碧蓝幻想存在伤害上限，能增加这个上限的因子目前有，伤害上限和刀上舞。</p>
-</blockquote>
-<ul>
-<li>因子的副词条不会出现和主词条一样的。</li>
-</ul>
-<p>毕业的因子的配置是：</p>
-<p>四个伤害上限V+；</p>
-<p>一个暴击率V+（理论上可以实现百爆）；</p>
-<p>属性克制转换；</p>
-<p>三个追击；</p>
-<p>角色专属因子；</p>
-<ul>
-<li>因子等级</li>
-</ul>
-<p>每个因子的等级上限不同，五级因子+觉醒武器天赋因子（等级+1），单个因子最多提供16的因子技能等级。</p>
-<ul>
-<li>因子推荐</li>
-</ul>
-<p>热血：在满血状态下能有70%左右的攻击力加成。</p>
-<p>暴君：可以大幅度增加攻击力，并且能够压制血量，触发原巴武器的浩劫天赋，连击加成</p>
-]]></content>
-      <tags>
-        <tag>碧蓝幻想</tag>
-      </tags>
+    <title>碧蓝幻想relink菲莉技巧</title>
+    <url>/2024/07/08/%E7%A2%A7%E8%93%9D%E5%B9%BB%E6%83%B3relink%E8%8F%B2%E8%8E%89%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>神树之馆汉化日志</title>
@@ -3833,6 +3808,36 @@
       </tags>
   </entry>
   <entry>
+    <title>碧蓝幻想relink因子</title>
+    <url>/2024/07/09/%E7%A2%A7%E8%93%9D%E5%B9%BB%E6%83%B3relink%E5%9B%A0%E5%AD%90/</url>
+    <content><![CDATA[<p>碧蓝幻想relink里面的因子可以大致分为基本因子和专属因子，而获取方式通常是万事屋抽奖和遗物鉴定，万事屋可以出角色的专属因子，遗物鉴定会有特殊因子，像刀上舞、属性克制转换、追击等。</p>
+<blockquote>
+<p>碧蓝幻想存在伤害上限，能增加这个上限的因子目前有，伤害上限和刀上舞。</p>
+</blockquote>
+<ul>
+<li>因子的副词条不会出现和主词条一样的。</li>
+</ul>
+<p>毕业的因子的配置是：</p>
+<p>四个伤害上限V+；</p>
+<p>一个暴击率V+（理论上可以实现百爆）；</p>
+<p>属性克制转换；</p>
+<p>三个追击；</p>
+<p>角色专属因子；</p>
+<ul>
+<li>因子等级</li>
+</ul>
+<p>每个因子的等级上限不同，五级因子+觉醒武器天赋因子（等级+1），单个因子最多提供16的因子技能等级。</p>
+<ul>
+<li>因子推荐</li>
+</ul>
+<p>热血：在满血状态下能有70%左右的攻击力加成。</p>
+<p>暴君：可以大幅度增加攻击力，并且能够压制血量，触发原巴武器的浩劫天赋，连击加成</p>
+]]></content>
+      <tags>
+        <tag>碧蓝幻想</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>移除链表元素</title>
     <url>/2024/06/12/%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/</url>
     <content><![CDATA[<h2 id="1-线性表是什么"><a href="#1-线性表是什么" class="headerlink" title="1. 线性表是什么"></a>1. 线性表是什么</h2><h3 id="1-1线性表的抽象数据类型"><a href="#1-1线性表的抽象数据类型" class="headerlink" title="1.1线性表的抽象数据类型"></a>1.1线性表的抽象数据类型</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">ADT 线性表(List)</span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(*L)</span></span>;<span class="comment">//初始化链表</span></span><br><span class="line">	<span class="built_in">ListEmpty</span>(L);<span class="comment">//检查链表是否为空</span></span><br><span class="line">	<span class="built_in">clearList</span>(*L);<span class="comment">//清空链表已有元素</span></span><br><span class="line">	<span class="built_in">GetElem</span>(L,i,*e);<span class="comment">//将链表的第i个位置的元素的值赋给e，然后返回</span></span><br><span class="line">	<span class="built_in">LocateElem</span>(L,e);<span class="comment">//查找L中是否有e，Yes：元素位置，No：0</span></span><br><span class="line">	<span class="built_in">ListInsert</span>(*L,i,e);<span class="comment">//在L的第i个位置插入元素e</span></span><br><span class="line">	<span class="built_in">ListDelete</span>(*L,i,*e);<span class="comment">//删除线性表的第i个元素，并用e返回其值</span></span><br><span class="line">	<span class="built_in">ListLength</span>(L);<span class="comment">//返回线性表L的元素个数</span></span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
@@ -3889,45 +3894,6 @@
 <h2 id="2-线性表是"><a href="#2-线性表是" class="headerlink" title="2. 线性表是"></a>2. 线性表是</h2>]]></content>
       <tags>
         <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>碧蓝幻想relink菲莉技巧</title>
-    <url>/2024/07/08/%E7%A2%A7%E8%93%9D%E5%B9%BB%E6%83%B3relink%E8%8F%B2%E8%8E%89%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>“刺青，以对抗自己没有生命力这件事情。”</title>
-    <url>/2024/06/12/%E7%BA%B9%E8%BA%AB%E7%9A%84%E7%88%B1%E6%AC%B2%E6%9C%BA%E5%88%B6/</url>
-    <content><![CDATA[<h2 id="1-自残的机制"><a href="#1-自残的机制" class="headerlink" title="1 自残的机制"></a>1 自残的机制</h2><h3 id="1-1-凯瑟琳·里奥特"><a href="#1-1-凯瑟琳·里奥特" class="headerlink" title="1.1  凯瑟琳·里奥特"></a>1.1  凯瑟琳·里奥特</h3><p>自残就是给自己做一个标记，不管是洞穿、划痕还是畸形处理，这些都是古来有之的。</p>
-<ul>
-<li><strong>洞穿：打耳洞、唇钉、鼻钉</strong></li>
-<li><strong>划痕：纹身、烟头，划一刀</strong></li>
-<li><strong>畸形处理：裹小脚、带很重的围脖</strong></li>
-<li><strong>割礼</strong></li>
-</ul>
-<p><strong>为什么人会对自己的身体动刀呢？</strong></p>
-<p>在石器时代，那个刀耕火种的年代，外出狩猎的男人，最开始是在忍受痛苦，有着伤疤，在后面男人发现，伤口象征着苦难、坚韧、功劳、荣耀。</p>
-<p>男人发现，如果自己完好无伤地回来，，那收到的各种待遇都不如那些受伤回来的伙伴，于是男人便发生了倒错-即自己给自己制造一些伤口，以证明自己的阳刚之气，证明自己的最英勇的人，我值得你们的拜服。</p>
-<p>伤口是一个能指，是一个象征，是进入某个关系的注册符。</p>
-<h3 id="1-2-存在被抛入世，它的第一个注册符是什么？"><a href="#1-2-存在被抛入世，它的第一个注册符是什么？" class="headerlink" title="1.2 存在被抛入世，它的第一个注册符是什么？"></a>1.2 存在被抛入世，它的第一个注册符是什么？</h3><p>就是你的肚脐眼，肚脐眼是主体与母亲分离的一个标志。</p>
-<p>分离是主题最初的，永恒的创伤。</p>
-<h4 id="1-2-1-独生子女"><a href="#1-2-1-独生子女" class="headerlink" title="1.2.1 独生子女"></a>1.2.1 独生子女</h4><p>父母难以放开他们唯一的孩子</p>
-<h4 id="1-2-2-社会原因"><a href="#1-2-2-社会原因" class="headerlink" title="1.2.2 社会原因"></a>1.2.2 社会原因</h4><p>孩子无法独立面对经济压力</p>
-<h4 id="1-2-3-年轻人找不到自己的身份"><a href="#1-2-3-年轻人找不到自己的身份" class="headerlink" title="1.2.3 年轻人找不到自己的身份"></a>1.2.3 年轻人找不到自己的身份</h4><p>这个时候，年轻人就会用某种伤痕，来证明自己的身份。</p>
-<p>闻一个人的名字，来证明自己爱ta。</p>
-<p>看到某个卡通符号，就能认同自己是某个小团体的存在。</p>
-<h3 id="1-3-凯瑟琳的一个示例"><a href="#1-3-凯瑟琳的一个示例" class="headerlink" title="1.3 凯瑟琳的一个示例"></a>1.3 凯瑟琳的一个示例</h3><h4 id="1-3-1-伤痕纹身是一个隐喻，一个症状"><a href="#1-3-1-伤痕纹身是一个隐喻，一个症状" class="headerlink" title="1.3.1 伤痕纹身是一个隐喻，一个症状"></a>1.3.1 伤痕纹身是一个隐喻，一个症状</h4><h4 id="1-3-2-案例"><a href="#1-3-2-案例" class="headerlink" title="1.3.2 案例"></a>1.3.2 案例</h4><p>三岁的时候，被养父母从孤儿院中领养，对亲生父母没有任何记忆，只知道母亲在她出生几个月的时候，就去世了。</p>
-<p>她不能说出完整的情感，长期自残，有自杀的冲动。</p>
-<p>自残行为体现着案例女主说，自己身份的疑问？</p>
-<p>案主通过在身体上打标记，试图来控制自己的身体，获取自己身体的控制权。</p>
-<p>案主会脱得越来越多，像是在展示某种战利品一样。</p>
-<p>通过展示自己的伤口，实在诉说自己的痛苦，希望捕获他人的目光，能爱我，以及爱我的痛苦。</p>
-<p>案主开始给分析师看她写的日记，分析师解读她的日记。</p>
-<p>分析师在阅读她的伤口。</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
@@ -4185,6 +4151,40 @@
 ]]></content>
       <tags>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>“刺青，以对抗自己没有生命力这件事情。”</title>
+    <url>/2024/06/12/%E7%BA%B9%E8%BA%AB%E7%9A%84%E7%88%B1%E6%AC%B2%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="1-自残的机制"><a href="#1-自残的机制" class="headerlink" title="1 自残的机制"></a>1 自残的机制</h2><h3 id="1-1-凯瑟琳·里奥特"><a href="#1-1-凯瑟琳·里奥特" class="headerlink" title="1.1  凯瑟琳·里奥特"></a>1.1  凯瑟琳·里奥特</h3><p>自残就是给自己做一个标记，不管是洞穿、划痕还是畸形处理，这些都是古来有之的。</p>
+<ul>
+<li><strong>洞穿：打耳洞、唇钉、鼻钉</strong></li>
+<li><strong>划痕：纹身、烟头，划一刀</strong></li>
+<li><strong>畸形处理：裹小脚、带很重的围脖</strong></li>
+<li><strong>割礼</strong></li>
+</ul>
+<p><strong>为什么人会对自己的身体动刀呢？</strong></p>
+<p>在石器时代，那个刀耕火种的年代，外出狩猎的男人，最开始是在忍受痛苦，有着伤疤，在后面男人发现，伤口象征着苦难、坚韧、功劳、荣耀。</p>
+<p>男人发现，如果自己完好无伤地回来，，那收到的各种待遇都不如那些受伤回来的伙伴，于是男人便发生了倒错-即自己给自己制造一些伤口，以证明自己的阳刚之气，证明自己的最英勇的人，我值得你们的拜服。</p>
+<p>伤口是一个能指，是一个象征，是进入某个关系的注册符。</p>
+<h3 id="1-2-存在被抛入世，它的第一个注册符是什么？"><a href="#1-2-存在被抛入世，它的第一个注册符是什么？" class="headerlink" title="1.2 存在被抛入世，它的第一个注册符是什么？"></a>1.2 存在被抛入世，它的第一个注册符是什么？</h3><p>就是你的肚脐眼，肚脐眼是主体与母亲分离的一个标志。</p>
+<p>分离是主题最初的，永恒的创伤。</p>
+<h4 id="1-2-1-独生子女"><a href="#1-2-1-独生子女" class="headerlink" title="1.2.1 独生子女"></a>1.2.1 独生子女</h4><p>父母难以放开他们唯一的孩子</p>
+<h4 id="1-2-2-社会原因"><a href="#1-2-2-社会原因" class="headerlink" title="1.2.2 社会原因"></a>1.2.2 社会原因</h4><p>孩子无法独立面对经济压力</p>
+<h4 id="1-2-3-年轻人找不到自己的身份"><a href="#1-2-3-年轻人找不到自己的身份" class="headerlink" title="1.2.3 年轻人找不到自己的身份"></a>1.2.3 年轻人找不到自己的身份</h4><p>这个时候，年轻人就会用某种伤痕，来证明自己的身份。</p>
+<p>闻一个人的名字，来证明自己爱ta。</p>
+<p>看到某个卡通符号，就能认同自己是某个小团体的存在。</p>
+<h3 id="1-3-凯瑟琳的一个示例"><a href="#1-3-凯瑟琳的一个示例" class="headerlink" title="1.3 凯瑟琳的一个示例"></a>1.3 凯瑟琳的一个示例</h3><h4 id="1-3-1-伤痕纹身是一个隐喻，一个症状"><a href="#1-3-1-伤痕纹身是一个隐喻，一个症状" class="headerlink" title="1.3.1 伤痕纹身是一个隐喻，一个症状"></a>1.3.1 伤痕纹身是一个隐喻，一个症状</h4><h4 id="1-3-2-案例"><a href="#1-3-2-案例" class="headerlink" title="1.3.2 案例"></a>1.3.2 案例</h4><p>三岁的时候，被养父母从孤儿院中领养，对亲生父母没有任何记忆，只知道母亲在她出生几个月的时候，就去世了。</p>
+<p>她不能说出完整的情感，长期自残，有自杀的冲动。</p>
+<p>自残行为体现着案例女主说，自己身份的疑问？</p>
+<p>案主通过在身体上打标记，试图来控制自己的身体，获取自己身体的控制权。</p>
+<p>案主会脱得越来越多，像是在展示某种战利品一样。</p>
+<p>通过展示自己的伤口，实在诉说自己的痛苦，希望捕获他人的目光，能爱我，以及爱我的痛苦。</p>
+<p>案主开始给分析师看她写的日记，分析师解读她的日记。</p>
+<p>分析师在阅读她的伤口。</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
