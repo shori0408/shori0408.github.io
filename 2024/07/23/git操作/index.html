@@ -83,7 +83,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.4k</span>
+            <span class="post-count">2.2k</span>
         </span>
     </span>
 
@@ -92,7 +92,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">5 min</span>
+            <span class="post-count">9 min</span>
         </span>
     </span>
 </div>
@@ -117,7 +117,6 @@
 <li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
 </ul>
 <p><img src="https://p.sda1.dev/18/2fd9786efda6a8c9caa00586196f4d11/d04c8f15892553dd9f987d55ae96596d.png"></p>
-<p><a target="_blank" rel="noopener" href="https://streamable.com/x1ko62">https://streamable.com/x1ko62</a></p>
 <h2 id="Git工作区、暂存区和版本区"><a href="#Git工作区、暂存区和版本区" class="headerlink" title="Git工作区、暂存区和版本区"></a>Git工作区、暂存区和版本区</h2><ul>
 <li>工作区：就是你在电脑里能看到的目录。</li>
 <li>暂存区（stage or index）；一般存放在.git目录下的index文件中，所以我们把暂存区有时也叫作索引（index）。</li>
@@ -279,6 +278,80 @@
 <td align="left">上传远程代码并合并</td>
 </tr>
 </tbody></table>
+<h2 id="Git分支管理"><a href="#Git分支管理" class="headerlink" title="Git分支管理"></a>Git分支管理</h2><p>分支代表一条独立的开发线，分支有以下优势。</p>
+<ul>
+<li>可以从开发主线上分离</li>
+<li>不影响主线的同时工作</li>
+</ul>
+<p><img src="https://static.jyshare.com/images/svg/git-brance.svg" alt="img"></p>
+<p>Git的分支更像是指向更改快照的指针。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch(branchname)</span><br></pre></td></tr></table></figure>
+
+<p>创建分支命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout(branchname)</span><br></pre></td></tr></table></figure>
+
+<p>切换分支命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge</span><br></pre></td></tr></table></figure>
+
+<p>合并分支命令：可以选择多次合并统一分支，也可以直接删除被并入的分支。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir gitdemo</span><br><span class="line">$ cd gitdemo/</span><br><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository...</span><br><span class="line">$ touch README</span><br><span class="line">$ git add README</span><br><span class="line">$ git commit -m &#x27;第一次版本提交&#x27;</span><br><span class="line">[master (root-commit) 3b58100] 第一次版本提交</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README</span><br></pre></td></tr></table></figure>
+
+<p>测试目录</p>
+<p>Git分支管理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>没有参数的时候，会显示本地分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+
+<p>手动创建分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git branch yushio</span><br><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  yushio</span><br></pre></td></tr></table></figure>
+
+<p>切换分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">README</span><br><span class="line">$ echo &#x27;runoob.com&#x27; &gt; test.txt</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m &#x27;add test.txt&#x27;</span><br><span class="line">[master 3e92c19] add test.txt</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 test.txt</span><br><span class="line">$ ls</span><br><span class="line">README        test.txt</span><br><span class="line">$ git checkout testing</span><br><span class="line">Switched to branch &#x27;testing&#x27;</span><br><span class="line">$ ls</span><br><span class="line">README</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">$ ls</span><br><span class="line">README        test.txt</span><br></pre></td></tr></table></figure>
+
+<p>创建分支并切换</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b newtest</span><br><span class="line">Switched to a new branch &#x27;newtest&#x27;</span><br><span class="line">$ git rm test.txt </span><br><span class="line">rm &#x27;test.txt&#x27;</span><br><span class="line">$ ls</span><br><span class="line">README</span><br><span class="line">$ touch runoob.php</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -am &#x27;removed test.txt、add runoob.php&#x27;</span><br><span class="line">[newtest c1501a2] removed test.txt、add runoob.php</span><br><span class="line"> 2 files changed, 1 deletion(-)</span><br><span class="line"> create mode 100644 runoob.php</span><br><span class="line"> delete mode 100644 test.txt</span><br><span class="line">$ ls</span><br><span class="line">README        runoob.php</span><br><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">$ ls</span><br><span class="line">README        test.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>创建了新分支，新的分支上删除了test.txt，增加了runoob.php，但是切换回master分支之后，前者还在，后者不在。</p>
+<p>删除分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d (branchname)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  testing</span><br><span class="line">$ git branch -d testing</span><br><span class="line">Deleted branch testing (was 85fc7e7).</span><br><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+
+<p>合并分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  newtest</span><br><span class="line">$ ls</span><br><span class="line">README        test.txt</span><br><span class="line">$ git merge newtest</span><br><span class="line">Updating 3e92c19..c1501a2</span><br><span class="line">Fast-forward</span><br><span class="line"> runoob.php | 0</span><br><span class="line"> test.txt   | 1 -</span><br><span class="line"> 2 files changed, 1 deletion(-)</span><br><span class="line"> create mode 100644 runoob.php</span><br><span class="line"> delete mode 100644 test.txt</span><br><span class="line">$ ls</span><br><span class="line">README        runoob.ph</span><br></pre></td></tr></table></figure>
+
+<p>将newtest合并到主分支上，newtest.txt没有了，合并完成之后，删除分支。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d newtest</span><br><span class="line">Deleted branch newtest (was c1501a2).</span><br></pre></td></tr></table></figure>
+
+<p>之后就只有master分支了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+
+<p>合并冲突</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">$ cat runoob.php</span><br></pre></td></tr></table></figure>
+
+<p>将runoob.php内容改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &#x27;runoob&#x27;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>创建change_site分支：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b change_site</span><br><span class="line">Switched to a new branch &#x27;change_site&#x27;</span><br><span class="line">$ vim runoob.php</span><br><span class="line">$ head -3 runoob.php</span><br><span class="line">&lt;?php</span><br><span class="line">echo &#x27;runoob&#x27;;</span><br><span class="line">?&gt;</span><br><span class="line">$ git commit -am &#x27;changed the runoob.php&#x27;</span><br><span class="line">[change_site 7774248] changed the runoob.php</span><br><span class="line"> 1 file changed, 3 insertions(+)</span><br></pre></td></tr></table></figure>
+
+<p>换回master</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">$ cat runoob.php</span><br><span class="line">$ vim runoob.php    # 修改内容如下</span><br><span class="line">$ cat runoob.php</span><br><span class="line">&lt;?php</span><br><span class="line">echo 1;</span><br><span class="line">?&gt;</span><br><span class="line">$ git diff</span><br><span class="line">diff --git a/runoob.php b/runoob.php</span><br><span class="line">index e69de29..ac60739 100644</span><br><span class="line">--- a/runoob.php</span><br><span class="line">+++ b/runoob.php</span><br><span class="line">@@ -0,0 +1,3 @@</span><br><span class="line">+&lt;?php</span><br><span class="line">+echo 1;</span><br><span class="line">+?&gt;</span><br><span class="line">$ git commit -am &#x27;修改代码&#x27;</span><br><span class="line">[master c68142b] 修改代码</span><br><span class="line"> 1 file changed, 3 insertions(+)</span><br></pre></td></tr></table></figure>
+
+<p>现在合并“change_site”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ git merge change_site</span><br><span class="line">Auto-merging runoob.php</span><br><span class="line">CONFLICT (content): Merge conflict in runoob.php</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br><span class="line"></span><br><span class="line">$ cat runoob.php     # 打开文件，看到冲突内容</span><br><span class="line">&lt;?php</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">echo 1;</span><br><span class="line">=======</span><br><span class="line">echo &#x27;runoob&#x27;;</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; change_site</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>出现冲突，手动修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ vim runoob.php </span><br><span class="line">$ cat runoob.php</span><br><span class="line">&lt;?php</span><br><span class="line">echo 1;</span><br><span class="line">echo &#x27;runoob&#x27;;</span><br><span class="line">?&gt;</span><br><span class="line">$ git diff</span><br><span class="line">diff --cc runoob.php</span><br><span class="line">index ac60739,b63d7d7..0000000</span><br><span class="line">--- a/runoob.php</span><br><span class="line">+++ b/runoob.php</span><br><span class="line">@@@ -1,3 -1,3 +1,4 @@@</span><br><span class="line">  &lt;?php</span><br><span class="line"> +echo 1;</span><br><span class="line">+ echo &#x27;runoob&#x27;;</span><br><span class="line">  ?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>通知Git文件冲突已经解决</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git status -s</span><br><span class="line">UU runoob.php</span><br><span class="line">$ git add runoob.php</span><br><span class="line">$ git status -s</span><br><span class="line">M  runoob.php</span><br><span class="line">$ git commit</span><br><span class="line">[master 88afe0e] Merge branch &#x27;change_site&#x27;</span><br></pre></td></tr></table></figure>
+
  
       <!-- reward -->
       

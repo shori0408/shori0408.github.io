@@ -1659,6 +1659,21 @@
       </tags>
   </entry>
   <entry>
+    <title>等間隔の黒い透明</title>
+    <url>/2024/06/30/hatena%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<h2 id="Episode1"><a href="#Episode1" class="headerlink" title="Episode1"></a>Episode1</h2><p>讲述了男主和女主的关系，女主是一位娇生惯养的公主一般的角色，男主则死承担着一位情绪价值的提供者的角度，女主有着与其年龄不相符的外貌，男女主保留着	不正当的男女关系。</p>
+<h2 id="Episode2"><a href="#Episode2" class="headerlink" title="Episode2"></a>Episode2</h2><p>男主的工作是网页设计，他会讲网上的所见所闻（如隧道的挖掘）之类的新闻告诉女主。男主与一个骆驼男一起工作，似乎还很害怕他。</p>
+<h2 id="Episode3"><a href="#Episode3" class="headerlink" title="Episode3"></a>Episode3</h2><p>与骆驼的谈话，从对骆驼个人的情感倾向到对这个国家乃至星球的喜好。</p>
+<p>我们从出生开始，就一直在能指链条上延宕。这个过程在这个链条上一直都存在。</p>
+<p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630045837684.png" alt="image-20240630045837684"></p>
+<h2 id="Episode4"><a href="#Episode4" class="headerlink" title="Episode4"></a>Episode4</h2><p>男主在经历一场电波的旅途，这段对电车上糟糕环境的描写可圈可点，以及说在这条路上骑自行车追逐的描绘。</p>
+<h2 id="Episode5"><a href="#Episode5" class="headerlink" title="Episode5"></a>Episode5</h2><p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630050539263.png" alt="image-20240630050539263"></p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git操作</title>
     <url>/2024/07/23/git%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h2><p>一般工作流程</p>
@@ -1671,7 +1686,6 @@
 <li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
 </ul>
 <p><img src="https://p.sda1.dev/18/2fd9786efda6a8c9caa00586196f4d11/d04c8f15892553dd9f987d55ae96596d.png"></p>
-<p><a href="https://streamable.com/x1ko62">https://streamable.com/x1ko62</a></p>
 <h2 id="Git工作区、暂存区和版本区"><a href="#Git工作区、暂存区和版本区" class="headerlink" title="Git工作区、暂存区和版本区"></a>Git工作区、暂存区和版本区</h2><ul>
 <li>工作区：就是你在电脑里能看到的目录。</li>
 <li>暂存区（stage or index）；一般存放在.git目录下的index文件中，所以我们把暂存区有时也叫作索引（index）。</li>
@@ -1833,22 +1847,81 @@
 <td align="left">上传远程代码并合并</td>
 </tr>
 </tbody></table>
+<h2 id="Git分支管理"><a href="#Git分支管理" class="headerlink" title="Git分支管理"></a>Git分支管理</h2><p>分支代表一条独立的开发线，分支有以下优势。</p>
+<ul>
+<li>可以从开发主线上分离</li>
+<li>不影响主线的同时工作</li>
+</ul>
+<p><img src="https://static.jyshare.com/images/svg/git-brance.svg" alt="img"></p>
+<p>Git的分支更像是指向更改快照的指针。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch(branchname)</span><br></pre></td></tr></table></figure>
+
+<p>创建分支命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git checkout(branchname)</span><br></pre></td></tr></table></figure>
+
+<p>切换分支命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git merge</span><br></pre></td></tr></table></figure>
+
+<p>合并分支命令：可以选择多次合并统一分支，也可以直接删除被并入的分支。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ mkdir gitdemo</span><br><span class="line">$ cd gitdemo/</span><br><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository...</span><br><span class="line">$ touch README</span><br><span class="line">$ git add README</span><br><span class="line">$ git commit -m &#x27;第一次版本提交&#x27;</span><br><span class="line">[master (root-commit) 3b58100] 第一次版本提交</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README</span><br></pre></td></tr></table></figure>
+
+<p>测试目录</p>
+<p>Git分支管理</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>没有参数的时候，会显示本地分支</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+
+<p>手动创建分支</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch yushio</span><br><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  yushio</span><br></pre></td></tr></table></figure>
+
+<p>切换分支</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls</span><br><span class="line">README</span><br><span class="line">$ echo &#x27;runoob.com&#x27; &gt; test.txt</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m &#x27;add test.txt&#x27;</span><br><span class="line">[master 3e92c19] add test.txt</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 test.txt</span><br><span class="line">$ ls</span><br><span class="line">README        test.txt</span><br><span class="line">$ git checkout testing</span><br><span class="line">Switched to branch &#x27;testing&#x27;</span><br><span class="line">$ ls</span><br><span class="line">README</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">$ ls</span><br><span class="line">README        test.txt</span><br></pre></td></tr></table></figure>
+
+<p>创建分支并切换</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git checkout -b newtest</span><br><span class="line">Switched to a new branch &#x27;newtest&#x27;</span><br><span class="line">$ git rm test.txt </span><br><span class="line">rm &#x27;test.txt&#x27;</span><br><span class="line">$ ls</span><br><span class="line">README</span><br><span class="line">$ touch runoob.php</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -am &#x27;removed test.txt、add runoob.php&#x27;</span><br><span class="line">[newtest c1501a2] removed test.txt、add runoob.php</span><br><span class="line"> 2 files changed, 1 deletion(-)</span><br><span class="line"> create mode 100644 runoob.php</span><br><span class="line"> delete mode 100644 test.txt</span><br><span class="line">$ ls</span><br><span class="line">README        runoob.php</span><br><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">$ ls</span><br><span class="line">README        test.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>创建了新分支，新的分支上删除了test.txt，增加了runoob.php，但是切换回master分支之后，前者还在，后者不在。</p>
+<p>删除分支</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git branch -d (branchname)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  testing</span><br><span class="line">$ git branch -d testing</span><br><span class="line">Deleted branch testing (was 85fc7e7).</span><br><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+
+<p>合并分支</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git merge</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">  newtest</span><br><span class="line">$ ls</span><br><span class="line">README        test.txt</span><br><span class="line">$ git merge newtest</span><br><span class="line">Updating 3e92c19..c1501a2</span><br><span class="line">Fast-forward</span><br><span class="line"> runoob.php | 0</span><br><span class="line"> test.txt   | 1 -</span><br><span class="line"> 2 files changed, 1 deletion(-)</span><br><span class="line"> create mode 100644 runoob.php</span><br><span class="line"> delete mode 100644 test.txt</span><br><span class="line">$ ls</span><br><span class="line">README        runoob.ph</span><br></pre></td></tr></table></figure>
+
+<p>将newtest合并到主分支上，newtest.txt没有了，合并完成之后，删除分支。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch -d newtest</span><br><span class="line">Deleted branch newtest (was c1501a2).</span><br></pre></td></tr></table></figure>
+
+<p>之后就只有master分支了。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br></pre></td></tr></table></figure>
+
+<p>合并冲突</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">$ cat runoob.php</span><br></pre></td></tr></table></figure>
+
+<p>将runoob.php内容改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &#x27;runoob&#x27;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>创建change_site分支：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git checkout -b change_site</span><br><span class="line">Switched to a new branch &#x27;change_site&#x27;</span><br><span class="line">$ vim runoob.php</span><br><span class="line">$ head -3 runoob.php</span><br><span class="line">&lt;?php</span><br><span class="line">echo &#x27;runoob&#x27;;</span><br><span class="line">?&gt;</span><br><span class="line">$ git commit -am &#x27;changed the runoob.php&#x27;</span><br><span class="line">[change_site 7774248] changed the runoob.php</span><br><span class="line"> 1 file changed, 3 insertions(+)</span><br></pre></td></tr></table></figure>
+
+<p>换回master</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">$ cat runoob.php</span><br><span class="line">$ vim runoob.php    # 修改内容如下</span><br><span class="line">$ cat runoob.php</span><br><span class="line">&lt;?php</span><br><span class="line">echo 1;</span><br><span class="line">?&gt;</span><br><span class="line">$ git diff</span><br><span class="line">diff --git a/runoob.php b/runoob.php</span><br><span class="line">index e69de29..ac60739 100644</span><br><span class="line">--- a/runoob.php</span><br><span class="line">+++ b/runoob.php</span><br><span class="line">@@ -0,0 +1,3 @@</span><br><span class="line">+&lt;?php</span><br><span class="line">+echo 1;</span><br><span class="line">+?&gt;</span><br><span class="line">$ git commit -am &#x27;修改代码&#x27;</span><br><span class="line">[master c68142b] 修改代码</span><br><span class="line"> 1 file changed, 3 insertions(+)</span><br></pre></td></tr></table></figure>
+
+<p>现在合并“change_site”</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git merge change_site</span><br><span class="line">Auto-merging runoob.php</span><br><span class="line">CONFLICT (content): Merge conflict in runoob.php</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br><span class="line"></span><br><span class="line">$ cat runoob.php     # 打开文件，看到冲突内容</span><br><span class="line">&lt;?php</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">echo 1;</span><br><span class="line">=======</span><br><span class="line">echo &#x27;runoob&#x27;;</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; change_site</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>出现冲突，手动修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ vim runoob.php </span><br><span class="line">$ cat runoob.php</span><br><span class="line">&lt;?php</span><br><span class="line">echo 1;</span><br><span class="line">echo &#x27;runoob&#x27;;</span><br><span class="line">?&gt;</span><br><span class="line">$ git diff</span><br><span class="line">diff --cc runoob.php</span><br><span class="line">index ac60739,b63d7d7..0000000</span><br><span class="line">--- a/runoob.php</span><br><span class="line">+++ b/runoob.php</span><br><span class="line">@@@ -1,3 -1,3 +1,4 @@@</span><br><span class="line">  &lt;?php</span><br><span class="line"> +echo 1;</span><br><span class="line">+ echo &#x27;runoob&#x27;;</span><br><span class="line">  ?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>通知Git文件冲突已经解决</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git status -s</span><br><span class="line">UU runoob.php</span><br><span class="line">$ git add runoob.php</span><br><span class="line">$ git status -s</span><br><span class="line">M  runoob.php</span><br><span class="line">$ git commit</span><br><span class="line">[master 88afe0e] Merge branch &#x27;change_site&#x27;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
-  </entry>
-  <entry>
-    <title>等間隔の黒い透明</title>
-    <url>/2024/06/30/hatena%E6%94%B6%E9%9B%86/</url>
-    <content><![CDATA[<h2 id="Episode1"><a href="#Episode1" class="headerlink" title="Episode1"></a>Episode1</h2><p>讲述了男主和女主的关系，女主是一位娇生惯养的公主一般的角色，男主则死承担着一位情绪价值的提供者的角度，女主有着与其年龄不相符的外貌，男女主保留着	不正当的男女关系。</p>
-<h2 id="Episode2"><a href="#Episode2" class="headerlink" title="Episode2"></a>Episode2</h2><p>男主的工作是网页设计，他会讲网上的所见所闻（如隧道的挖掘）之类的新闻告诉女主。男主与一个骆驼男一起工作，似乎还很害怕他。</p>
-<h2 id="Episode3"><a href="#Episode3" class="headerlink" title="Episode3"></a>Episode3</h2><p>与骆驼的谈话，从对骆驼个人的情感倾向到对这个国家乃至星球的喜好。</p>
-<p>我们从出生开始，就一直在能指链条上延宕。这个过程在这个链条上一直都存在。</p>
-<p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630045837684.png" alt="image-20240630045837684"></p>
-<h2 id="Episode4"><a href="#Episode4" class="headerlink" title="Episode4"></a>Episode4</h2><p>男主在经历一场电波的旅途，这段对电车上糟糕环境的描写可圈可点，以及说在这条路上骑自行车追逐的描绘。</p>
-<h2 id="Episode5"><a href="#Episode5" class="headerlink" title="Episode5"></a>Episode5</h2><p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630050539263.png" alt="image-20240630050539263"></p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
-      </tags>
   </entry>
   <entry>
     <title>jqv</title>
@@ -2493,16 +2566,6 @@
       </tags>
   </entry>
   <entry>
-    <title>存在与虚无</title>
-    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
-    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
-<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
-]]></content>
-      <tags>
-        <tag>读书</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>对弗洛伊德的简介</title>
     <url>/2024/06/11/%E5%AF%B9%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%9A%84%E7%AE%80%E4%BB%8B/</url>
     <content><![CDATA[<h2 id="尼采：什么是真理？"><a href="#尼采：什么是真理？" class="headerlink" title="尼采：什么是真理？"></a>尼采：什么是真理？</h2><p>一群活动的转喻，隐喻和拟人法。</p>
@@ -2521,9 +2584,19 @@
       </tags>
   </entry>
   <entry>
-    <title>拉康和弗洛伊德关于无意识的论述</title>
-    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
-    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
+    <title>存在与虚无</title>
+    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
+    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
+<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
+]]></content>
+      <tags>
+        <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小他者、对象a、大他者</title>
+    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
+    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
 ]]></content>
       <tags>
         <tag>精神分析</tag>
@@ -2535,9 +2608,9 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>小他者、对象a、大他者</title>
-    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
-    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+    <title>拉康和弗洛伊德关于无意识的论述</title>
+    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
+    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
 ]]></content>
       <tags>
         <tag>精神分析</tag>
@@ -3202,6 +3275,39 @@
       </tags>
   </entry>
   <entry>
+    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
+    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
+<blockquote>
+<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
+</blockquote>
+<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>differance</td>
+<td>延异</td>
+<td>共时性</td>
+</tr>
+<tr>
+<td>difference</td>
+<td>差异</td>
+<td>历时性</td>
+</tr>
+</tbody></table>
+<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>有序数组的平方</title>
     <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
     <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
@@ -3237,6 +3343,41 @@
       </tags>
   </entry>
   <entry>
+    <title>死月妖花</title>
+    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#52;&#103;&#x61;&#x74;&#115;&#x75;&#x38;&#x6b;&#x61;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;">&#52;&#103;&#x61;&#x74;&#115;&#x75;&#x38;&#x6b;&#x61;&#x40;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a></p>
+<p>推特账号：@4gatsu_8ka</p>
+<h3 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h3><p>本作の全編予想プレイ時間は50<del>120時間で寸(文字数换算で230万字程度)。<br>1編当たりの予想プレイ時間は最短編で2</del>4時間、最長編で10~20時間です</p>
+<p>非常に長いので健康な害さないよう，適宜休憩を取りながらプレイして下さい</p>
+<h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><p>立木三日（tachiki mika）：在打完驶向过去的梦的剧本之后，出现的一个带着能面，着着红袍的女性，伴随她的出现是一阵清脆的铃声。</p>
+<h2 id="咒杀篇"><a href="#咒杀篇" class="headerlink" title="咒杀篇"></a>咒杀篇</h2><h3 id="四月病（四月七日）："><a href="#四月病（四月七日）：" class="headerlink" title="四月病（四月七日）："></a>四月病（四月七日）：</h3><p>介绍了夏美四月病的病状，在预知梦的能力发作时，看见了飞在天空中的气球，然后还有一具被剥皮了的尸体。这里会出现茜和夏美一起吃饭的剧情，吃饭的过程中，四月病发作，恶心得夏美到厕所呕吐了。</p>
+<h3 id="四月八日の朝："><a href="#四月八日の朝：" class="headerlink" title="四月八日の朝："></a>四月八日の朝：</h3><p>四月八日早上起床，家外面出现了警笛声，学生也被要求待在自己的家里，不要外出。在出门之后，偶遇倒垃圾的美冬。</p>
+<h2 id="诧言篇"><a href="#诧言篇" class="headerlink" title="诧言篇"></a>诧言篇</h2><h2 id="明徵篇"><a href="#明徵篇" class="headerlink" title="明徵篇"></a>明徵篇</h2><h3 id="過去へ馳せる夢"><a href="#過去へ馳せる夢" class="headerlink" title="過去へ馳せる夢"></a>過去へ馳せる夢</h3><p>这里是处在五月六号的刚过十二点钟之后发生的故事，这个时候两人的父母都已经亡故。</p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水夏</title>
+    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
+    <content><![CDATA[<p>s</p>
+<p>你的身上散发着死人的气息</p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>洛谷做题日记</title>
+    <url>/2024/06/20/%E6%B4%9B%E8%B0%B7%E5%81%9A%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>洛谷</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>日语n1文法</title>
     <url>/2024/05/19/%E6%97%A5%E8%AF%ADn1%E6%96%87%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-第一章"><a href="#1-第一章" class="headerlink" title="1. 第一章"></a>1. 第一章</h2><h3 id="1-1-～あっての"><a href="#1-1-～あっての" class="headerlink" title="1.1 ～あっての"></a>1.1 <strong>～あっての</strong></h3><p>名A＋（が）あっての＋名B</p>
@@ -3260,56 +3401,6 @@
 ]]></content>
       <tags>
         <tag>日本語</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>死月妖花</title>
-    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#52;&#x67;&#97;&#116;&#115;&#x75;&#x38;&#107;&#x61;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#52;&#x67;&#97;&#116;&#115;&#x75;&#x38;&#107;&#x61;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a></p>
-<p>推特账号：@4gatsu_8ka</p>
-<h3 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h3><p>本作の全編予想プレイ時間は50<del>120時間で寸(文字数换算で230万字程度)。<br>1編当たりの予想プレイ時間は最短編で2</del>4時間、最長編で10~20時間です</p>
-<p>非常に長いので健康な害さないよう，適宜休憩を取りながらプレイして下さい</p>
-<h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><p>立木三日（tachiki mika）：在打完驶向过去的梦的剧本之后，出现的一个带着能面，着着红袍的女性，伴随她的出现是一阵清脆的铃声。</p>
-<h2 id="咒杀篇"><a href="#咒杀篇" class="headerlink" title="咒杀篇"></a>咒杀篇</h2><h3 id="四月病（四月七日）："><a href="#四月病（四月七日）：" class="headerlink" title="四月病（四月七日）："></a>四月病（四月七日）：</h3><p>介绍了夏美四月病的病状，在预知梦的能力发作时，看见了飞在天空中的气球，然后还有一具被剥皮了的尸体。这里会出现茜和夏美一起吃饭的剧情，吃饭的过程中，四月病发作，恶心得夏美到厕所呕吐了。</p>
-<h3 id="四月八日の朝："><a href="#四月八日の朝：" class="headerlink" title="四月八日の朝："></a>四月八日の朝：</h3><p>四月八日早上起床，家外面出现了警笛声，学生也被要求待在自己的家里，不要外出。在出门之后，偶遇倒垃圾的美冬。</p>
-<h2 id="诧言篇"><a href="#诧言篇" class="headerlink" title="诧言篇"></a>诧言篇</h2><h2 id="明徵篇"><a href="#明徵篇" class="headerlink" title="明徵篇"></a>明徵篇</h2><h3 id="過去へ馳せる夢"><a href="#過去へ馳せる夢" class="headerlink" title="過去へ馳せる夢"></a>過去へ馳せる夢</h3><p>这里是处在五月六号的刚过十二点钟之后发生的故事，这个时候两人的父母都已经亡故。</p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
-    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
-<blockquote>
-<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
-</blockquote>
-<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>名称</th>
-<th>性质</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>differance</td>
-<td>延异</td>
-<td>共时性</td>
-</tr>
-<tr>
-<td>difference</td>
-<td>差异</td>
-<td>历时性</td>
-</tr>
-</tbody></table>
-<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
@@ -3397,24 +3488,6 @@
 <h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1>]]></content>
       <tags>
         <tag>洛谷</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>洛谷做题日记</title>
-    <url>/2024/06/20/%E6%B4%9B%E8%B0%B7%E5%81%9A%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>洛谷</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>水夏</title>
-    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
-    <content><![CDATA[<p>s</p>
-<p>你的身上散发着死人的气息</p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
       </tags>
   </entry>
   <entry>
@@ -3528,11 +3601,6 @@
       <tags>
         <tag>碧蓝幻想</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>碧蓝幻想relink菲莉技巧</title>
-    <url>/2024/07/08/%E7%A2%A7%E8%93%9D%E5%B9%BB%E6%83%B3relink%E8%8F%B2%E8%8E%89%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>神树之馆汉化日志</title>
@@ -3794,6 +3862,11 @@
       </tags>
   </entry>
   <entry>
+    <title>碧蓝幻想relink菲莉技巧</title>
+    <url>/2024/07/08/%E7%A2%A7%E8%93%9D%E5%B9%BB%E6%83%B3relink%E8%8F%B2%E8%8E%89%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>移除链表元素</title>
     <url>/2024/06/12/%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/</url>
     <content><![CDATA[<h2 id="1-线性表是什么"><a href="#1-线性表是什么" class="headerlink" title="1. 线性表是什么"></a>1. 线性表是什么</h2><h3 id="1-1线性表的抽象数据类型"><a href="#1-1线性表的抽象数据类型" class="headerlink" title="1.1线性表的抽象数据类型"></a>1.1线性表的抽象数据类型</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">ADT 线性表(List)</span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(*L)</span></span>;<span class="comment">//初始化链表</span></span><br><span class="line">	<span class="built_in">ListEmpty</span>(L);<span class="comment">//检查链表是否为空</span></span><br><span class="line">	<span class="built_in">clearList</span>(*L);<span class="comment">//清空链表已有元素</span></span><br><span class="line">	<span class="built_in">GetElem</span>(L,i,*e);<span class="comment">//将链表的第i个位置的元素的值赋给e，然后返回</span></span><br><span class="line">	<span class="built_in">LocateElem</span>(L,e);<span class="comment">//查找L中是否有e，Yes：元素位置，No：0</span></span><br><span class="line">	<span class="built_in">ListInsert</span>(*L,i,e);<span class="comment">//在L的第i个位置插入元素e</span></span><br><span class="line">	<span class="built_in">ListDelete</span>(*L,i,*e);<span class="comment">//删除线性表的第i个元素，并用e返回其值</span></span><br><span class="line">	<span class="built_in">ListLength</span>(L);<span class="comment">//返回线性表L的元素个数</span></span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
@@ -3999,6 +4072,49 @@
 ]]></content>
       <tags>
         <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>螺旋矩阵</title>
+    <url>/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<h2 id="什么是螺旋矩阵"><a href="#什么是螺旋矩阵" class="headerlink" title="什么是螺旋矩阵"></a>什么是螺旋矩阵</h2><p>螺旋矩阵就是从四周向中心遍历矩阵的所有元素，没有实质上的算法内容，更多的是做一个模拟，所以螺旋矩阵可以归类为模拟题。</p>
+<h2 id="螺旋矩阵的难点在哪里"><a href="#螺旋矩阵的难点在哪里" class="headerlink" title="螺旋矩阵的难点在哪里"></a>螺旋矩阵的难点在哪里</h2><p>螺旋矩阵作为一个模拟题，具有相当多的边界条件，在编写代码的时候，要把握好所有的边界，同时需要特判输入样例中的特殊情况。</p>
+<p>在模拟螺旋居正的过程中，我们的一个基本思路是：</p>
+<ol>
+<li>输出矩阵的基本信息：rows&amp;cols</li>
+<li>向右遍历</li>
+<li>向下遍历</li>
+<li>直到遍历完所有的元素</li>
+</ol>
+<p><img src="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ%E6%88%AA%E5%9B%BE20240611225505.png" alt="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ截图20240611225505.png"></p>
+<h2 id="59-螺旋矩阵-II"><a href="#59-螺旋矩阵-II" class="headerlink" title="59. 螺旋矩阵 II"></a><a href="https://leetcode.cn/problems/spiral-matrix-ii/">59. 螺旋矩阵 II</a></h2><p>中等</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：[[1]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 20</code></li>
+</ul>
+<p><img src="https://pic.leetcode-cn.com/1ad0fe88d15dc87643435eb7a17b368191725a44da4596722977e5798ace5b62-Picture2.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/193444cbca5529fcd1bafec33ef576fe1309690be2c0110de05868f4415a8723-Picture3.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/bca38a428306cb2aacc00513821e74150947ba241d9b7199bcad6c7e843a0105-Picture4.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/e5de1e07957417f13d9fae22e6fb18dd5331b50258f0297f00ba57d25651df4a-Picture5.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/2fde8dcd1481e390532995c02d3575ec9675a27390513c1540f40431dad7997a-Picture6.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/1950d4c8ab6b09b62b7d5900ece4d8d4be882abebd2417a3030d172aedbc304e-Picture7.png" alt="img"></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> rows = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cols = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter the size of your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; rows &gt;&gt; cols;</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">matrix_1</span>(rows, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(cols)); <span class="comment">// Init with size</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; matrix_2; <span class="comment">// This should be a 1D vector</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; cols; j++) &#123;</span><br><span class="line">            cin &gt;&gt; matrix_1[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (matrix_1.<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = rows - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> c = cols - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> d = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = d; i &lt;= c; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[a][i]);</span><br><span class="line">        <span class="keyword">if</span> (++a &gt; b) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = a; i &lt;= b; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][c]);</span><br><span class="line">        <span class="keyword">if</span> (--c &lt; d) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = c; i &gt;= d; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[b][i]);</span><br><span class="line">        <span class="keyword">if</span> (--b &lt; a) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= a; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][d]);</span><br><span class="line">        <span class="keyword">if</span> (++d &gt; c) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix_2.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; matrix_2[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.<span class="built_in">empty</span>()) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = matrix[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>, t = <span class="number">0</span>, b = matrix.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = l; i &lt;= r; i++) res.<span class="built_in">push_back</span>(matrix[t][i]); <span class="comment">// left to right</span></span><br><span class="line">            <span class="keyword">if</span> (++t &gt; b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = t; i &lt;= b; i++) res.<span class="built_in">push_back</span>(matrix[i][r]); <span class="comment">// top to bottom</span></span><br><span class="line">            <span class="keyword">if</span> (l &gt; --r) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = r; i &gt;= l; i--) res.<span class="built_in">push_back</span>(matrix[b][i]); <span class="comment">// right to left</span></span><br><span class="line">            <span class="keyword">if</span> (t &gt; --b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= t; i--) res.<span class="built_in">push_back</span>(matrix[i][l]); <span class="comment">// bottom to top</span></span><br><span class="line">            <span class="keyword">if</span> (++l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -4213,49 +4329,6 @@
 ]]></content>
       <tags>
         <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>螺旋矩阵</title>
-    <url>/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<h2 id="什么是螺旋矩阵"><a href="#什么是螺旋矩阵" class="headerlink" title="什么是螺旋矩阵"></a>什么是螺旋矩阵</h2><p>螺旋矩阵就是从四周向中心遍历矩阵的所有元素，没有实质上的算法内容，更多的是做一个模拟，所以螺旋矩阵可以归类为模拟题。</p>
-<h2 id="螺旋矩阵的难点在哪里"><a href="#螺旋矩阵的难点在哪里" class="headerlink" title="螺旋矩阵的难点在哪里"></a>螺旋矩阵的难点在哪里</h2><p>螺旋矩阵作为一个模拟题，具有相当多的边界条件，在编写代码的时候，要把握好所有的边界，同时需要特判输入样例中的特殊情况。</p>
-<p>在模拟螺旋居正的过程中，我们的一个基本思路是：</p>
-<ol>
-<li>输出矩阵的基本信息：rows&amp;cols</li>
-<li>向右遍历</li>
-<li>向下遍历</li>
-<li>直到遍历完所有的元素</li>
-</ol>
-<p><img src="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ%E6%88%AA%E5%9B%BE20240611225505.png" alt="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ截图20240611225505.png"></p>
-<h2 id="59-螺旋矩阵-II"><a href="#59-螺旋矩阵-II" class="headerlink" title="59. 螺旋矩阵 II"></a><a href="https://leetcode.cn/problems/spiral-matrix-ii/">59. 螺旋矩阵 II</a></h2><p>中等</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
-<p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：[[1]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= n &lt;= 20</code></li>
-</ul>
-<p><img src="https://pic.leetcode-cn.com/1ad0fe88d15dc87643435eb7a17b368191725a44da4596722977e5798ace5b62-Picture2.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/193444cbca5529fcd1bafec33ef576fe1309690be2c0110de05868f4415a8723-Picture3.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/bca38a428306cb2aacc00513821e74150947ba241d9b7199bcad6c7e843a0105-Picture4.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/e5de1e07957417f13d9fae22e6fb18dd5331b50258f0297f00ba57d25651df4a-Picture5.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/2fde8dcd1481e390532995c02d3575ec9675a27390513c1540f40431dad7997a-Picture6.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/1950d4c8ab6b09b62b7d5900ece4d8d4be882abebd2417a3030d172aedbc304e-Picture7.png" alt="img"></p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> rows = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cols = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter the size of your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; rows &gt;&gt; cols;</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">matrix_1</span>(rows, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(cols)); <span class="comment">// Init with size</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; matrix_2; <span class="comment">// This should be a 1D vector</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; cols; j++) &#123;</span><br><span class="line">            cin &gt;&gt; matrix_1[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (matrix_1.<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = rows - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> c = cols - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> d = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = d; i &lt;= c; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[a][i]);</span><br><span class="line">        <span class="keyword">if</span> (++a &gt; b) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = a; i &lt;= b; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][c]);</span><br><span class="line">        <span class="keyword">if</span> (--c &lt; d) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = c; i &gt;= d; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[b][i]);</span><br><span class="line">        <span class="keyword">if</span> (--b &lt; a) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= a; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][d]);</span><br><span class="line">        <span class="keyword">if</span> (++d &gt; c) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix_2.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; matrix_2[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.<span class="built_in">empty</span>()) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = matrix[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>, t = <span class="number">0</span>, b = matrix.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = l; i &lt;= r; i++) res.<span class="built_in">push_back</span>(matrix[t][i]); <span class="comment">// left to right</span></span><br><span class="line">            <span class="keyword">if</span> (++t &gt; b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = t; i &lt;= b; i++) res.<span class="built_in">push_back</span>(matrix[i][r]); <span class="comment">// top to bottom</span></span><br><span class="line">            <span class="keyword">if</span> (l &gt; --r) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = r; i &gt;= l; i--) res.<span class="built_in">push_back</span>(matrix[b][i]); <span class="comment">// right to left</span></span><br><span class="line">            <span class="keyword">if</span> (t &gt; --b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= t; i--) res.<span class="built_in">push_back</span>(matrix[i][l]); <span class="comment">// bottom to top</span></span><br><span class="line">            <span class="keyword">if</span> (++l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
