@@ -33,21 +33,6 @@
       </tags>
   </entry>
   <entry>
-    <title>等間隔の黒い透明</title>
-    <url>/2024/06/30/hatena%E6%94%B6%E9%9B%86/</url>
-    <content><![CDATA[<h2 id="Episode1"><a href="#Episode1" class="headerlink" title="Episode1"></a>Episode1</h2><p>讲述了男主和女主的关系，女主是一位娇生惯养的公主一般的角色，男主则死承担着一位情绪价值的提供者的角度，女主有着与其年龄不相符的外貌，男女主保留着	不正当的男女关系。</p>
-<h2 id="Episode2"><a href="#Episode2" class="headerlink" title="Episode2"></a>Episode2</h2><p>男主的工作是网页设计，他会讲网上的所见所闻（如隧道的挖掘）之类的新闻告诉女主。男主与一个骆驼男一起工作，似乎还很害怕他。</p>
-<h2 id="Episode3"><a href="#Episode3" class="headerlink" title="Episode3"></a>Episode3</h2><p>与骆驼的谈话，从对骆驼个人的情感倾向到对这个国家乃至星球的喜好。</p>
-<p>我们从出生开始，就一直在能指链条上延宕。这个过程在这个链条上一直都存在。</p>
-<p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630045837684.png" alt="image-20240630045837684"></p>
-<h2 id="Episode4"><a href="#Episode4" class="headerlink" title="Episode4"></a>Episode4</h2><p>男主在经历一场电波的旅途，这段对电车上糟糕环境的描写可圈可点，以及说在这条路上骑自行车追逐的描绘。</p>
-<h2 id="Episode5"><a href="#Episode5" class="headerlink" title="Episode5"></a>Episode5</h2><p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630050539263.png" alt="image-20240630050539263"></p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>c++模板</title>
     <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<p>s</p>
@@ -154,112 +139,6 @@
       <tags>
         <tag>leetcode</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>git操作</title>
-    <url>/2024/07/23/git%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg" alt="img"></p>
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$git init</span><br><span class="line">$git add</span><br><span class="line">$git commit</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>git init:初始化仓库</li>
-<li>git add：添加文件到暂$存区</li>
-<li>git commit：将暂存区内容添加到仓库中</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$git clone</span><br></pre></td></tr></table></figure>
-
-<p>拷贝一份远程仓库，也就是下载一个项目</p>
-<h2 id="提交与修改"><a href="#提交与修改" class="headerlink" title="提交与修改"></a>提交与修改</h2><p>Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。</p>
-<p>下表列出了有关创建与提交你的项目的快照的命令：</p>
-<table>
-<thead>
-<tr>
-<th align="left">命令</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>git add</code></td>
-<td align="left">添加文件到暂存区</td>
-</tr>
-<tr>
-<td align="left"><code>git status</code></td>
-<td align="left">查看仓库当前的状态，显示有变更的文件。</td>
-</tr>
-<tr>
-<td align="left"><code>git diff</code></td>
-<td align="left">比较文件的不同，即暂存区和工作区的差异。</td>
-</tr>
-<tr>
-<td align="left"><code>git commit</code></td>
-<td align="left">提交暂存区到本地仓库。</td>
-</tr>
-<tr>
-<td align="left"><code>git reset</code></td>
-<td align="left">回退版本。</td>
-</tr>
-<tr>
-<td align="left"><code>git rm</code></td>
-<td align="left">将文件从暂存区和工作区中删除。</td>
-</tr>
-<tr>
-<td align="left"><code>git mv</code></td>
-<td align="left">移动或重命名工作区文件。</td>
-</tr>
-<tr>
-<td align="left"><code>git checkout</code></td>
-<td align="left">分支切换。</td>
-</tr>
-<tr>
-<td align="left"><code>git switch （Git 2.23 版本引入）</code></td>
-<td align="left">更清晰地切换分支。</td>
-</tr>
-<tr>
-<td align="left"><code>git restore （Git 2.23 版本引入）</code></td>
-<td align="left">恢复或撤销文件的更改。</td>
-</tr>
-</tbody></table>
-<h2 id="提交日志"><a href="#提交日志" class="headerlink" title="提交日志"></a>提交日志</h2><table>
-<thead>
-<tr>
-<th align="left">命令</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>git log</code></td>
-<td align="left">查看历史提交记录</td>
-</tr>
-<tr>
-<td align="left"><code>git blame &lt;file&gt;</code></td>
-<td align="left">以列表形式查看指定文件的历史修改记录</td>
-</tr>
-</tbody></table>
-<h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><table>
-<thead>
-<tr>
-<th align="left">命令</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>git remote</code></td>
-<td align="left">远程仓库操作</td>
-</tr>
-<tr>
-<td align="left"><code>git fetch</code></td>
-<td align="left">从远程获取代码库</td>
-</tr>
-<tr>
-<td align="left"><code>git pull</code></td>
-<td align="left">下载远程代码并合并</td>
-</tr>
-<tr>
-<td align="left"><code>git push</code></td>
-<td align="left">上传远程代码并合并</td>
-</tr>
-</tbody></table>
-]]></content>
   </entry>
   <entry>
     <title>markdown语法</title>
@@ -1780,303 +1659,110 @@
 ]]></content>
   </entry>
   <entry>
-    <title>jqv</title>
-    <url>/2024/05/21/jqv/</url>
-    <content><![CDATA[<ul>
-<li><h2 id="sentence"><a href="#sentence" class="headerlink" title="sentence"></a>sentence</h2></li>
-<li><p>異った窓ガラスみたいに、人差し指の軌跡がくっきりと浮かんだ。</p>
-</li>
-<li><p>自分よりちいさいの、弱いものを愛でる感情とうのは自然だ。</p>
-</li>
-<li><p>世界が元通り三ならない限り 変容の呪縛からは逃れられない</p>
-</li>
-<li><h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2></li>
-<li><p>やむ【止・已】 に 止(や)まれぬ<strong>止めようとしても止められない。</strong> <strong>そうしないではいられない。</strong></p>
-</li>
-<li><p>「なでりなでり」って何だよ</p>
-</li>
-</ul>
-<p>16-Jul-2016 — そこは「なでなで」だろ！ 「り」ってなんだ「り」って！ そもそも「撫でる撫でる」からの「撫で撫で」だろ！ 古文か？古文なのか！？</p>
+    <title>git操作</title>
+    <url>/2024/07/23/git%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-command.jpg" alt="img"></p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$git init</span><br><span class="line">$git add</span><br><span class="line">$git commit</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>orthodox</li>
+<li>git init:初始化仓库</li>
+<li>git add：添加文件到暂$存区</li>
+<li>git commit：将暂存区内容添加到仓库中</li>
 </ul>
-<p>一般に正統的と認められているさま。 伝統的に承認されているさま。</p>
-<ul>
-<li><p>「ブレーキ役」の言い換えや類語・同義語 - Weblio類語辞典</p>
-<p>ブレーキ役の言い換えや別の言い方。・物事が深刻化しないようにあらかじめ用意しておく仕組みのこと安全弁安全装置ブレーキブレーキ役.</p>
-</li>
-<li><p>あっさり</p>
-</li>
-</ul>
-<p>① 人や物事の状態、性質が、複雑でなく、淡泊平明であるさま。 しつこくないさま。 あっさら。 ② 手数のかからないさま。</p>
-<ul>
-<li>デリケート</li>
-</ul>
-<p>① ( 人の心・感情などについて ) 鋭敏で、傷つきやすいさま。 繊細なさま。 ② ( 鑑賞、賞美するものなどについて ) 微妙な味わいを持っているさま。 また、微細な差のあるさま。</p>
-<ul>
-<li>さえあれば</li>
-</ul>
-<p>ラーメンさえあればいいです。 T：<strong>「それがあったら、他には何も必要ない、問題ない」という意味です</strong>。 「【Vます】さえすれば」は、「する」が変わった形の「〜さえしてくれれば」「〜さえできれば」なども使えます。</p>
-<ul>
-<li>「座が白ける」とはどういう意味ですか？</li>
-</ul>
-<p>ざがしらける 〔語源〕「白ける」は、<strong>白っぽくなる。</strong> <strong>色があせる。</strong> <strong>転じて、その場の興が冷める</strong>。</p>
-<ul>
-<li>「とげとげ」とはどういう意味ですか？</li>
-</ul>
-<p>とげ‐とげ【刺刺】 [ 1 ] 〘 副詞 〙 ( 「と」を伴っても用いる ) <strong>とげとげしいさま</strong>。</p>
-<ul>
-<li>ロン‐げ【ロン毛】</li>
-</ul>
-<p>《「ロン」はロングの略》俗に、<strong>髪の毛の長いこと</strong>。 また、長く伸ばした髪形。 主に、男性についていう。</p>
-<ul>
-<li>「うぜ」とはどういう意味ですか？</li>
-</ul>
-<p>「うぜえ」とも》<strong>あれこれとうるさい。</strong> <strong>わずらわしい</strong>。 [補説]もとは「不快だ。 気味が悪い」という意の、八王子を中心とする東京多摩地区の方言。</p>
-<ul>
-<li>「テディボーイ」とはどういう意味ですか？</li>
-</ul>
-<p><strong>不良少年</strong>。 特にエドワード7世時代（1901〜10）の服装を好んで着用した1950年代から60年代初めのロンドンの不良少年をさす。 エドワードの愛称、テディーに由来する。</p>
-<ul>
-<li>あいだ‐がらあひだ‥【間柄】</li>
-</ul>
-<p>① <strong>親類、血族などの続き合い</strong>。 ② 互いの関係。 付き合い。 交際。</p>
-<ul>
-<li>ばっちり</li>
-</ul>
-<p><strong>満足のいく様子であることを示す表現</strong>。 大体副詞的に用いる。</p>
-<ul>
-<li>ユナイテッドステイツとはどういう意味ですか？</li>
-</ul>
-<p>ユナイテッド・ステーツ（United States）は、<strong>合衆国</strong>を意味する。 特にアメリカ合衆国を指すことが多い。 ユナイテッド・ステーツ (フリゲート)(en:USS United States (1797)) - アメリカ海軍の帆走フリゲート。</p>
-<ul>
-<li>ネガティブ思考とはどういう意味ですか？</li>
-</ul>
-<p><strong>何かにつけて、どうせ失敗するさ、私はだめなんだなどと悪い方向に考えが向くこと</strong>。 物事を否定的にとらえる考え方。</p>
-<ul>
-<li>ステイツとはどういう意味ですか？</li>
-</ul>
-<p>「states」とは・「states」の意味</p>
-<p>「states」は、英語で「state」の複数形であり、<strong>主に「州」や「国家」という意味で使用される</strong>。 また、状態や状況を表す場合もある。May 23, 2023</p>
-<ul>
-<li>スノッブ</li>
-</ul>
-<p>30の言語版</p>
-<ul>
-<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ページ</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%83%88:%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ノート</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">閲覧</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=edit">編集</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=history">履歴表示</a></p>
-</li>
-</ul>
-<p>ツール</p>
-<p>出典: フリー百科事典『ウィキペディア（Wikipedia）』</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$git clone</span><br></pre></td></tr></table></figure>
+
+<p>拷贝一份远程仓库，也就是下载一个项目</p>
+<h2 id="提交与修改"><a href="#提交与修改" class="headerlink" title="提交与修改"></a>提交与修改</h2><p>Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。</p>
+<p>下表列出了有关创建与提交你的项目的快照的命令：</p>
 <table>
 <thead>
 <tr>
-<th><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Disambig_gray.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Disambig_gray.svg/25px-Disambig_gray.svg.png" alt="曖昧さ回避"></a></th>
-<th>この項目では、社会用語について説明しています。<a href="https://ja.wikipedia.org/wiki/%E3%81%8A%E7%AC%91%E3%81%84%E8%8A%B8%E4%BA%BA">お笑い芸人</a>については「<a href="https://ja.wikipedia.org/wiki/SNOB">SNOB</a>」をご覧ください。</th>
+<th align="left">命令</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td></td>
-<td></td>
+<td align="left"><code>git add</code></td>
+<td align="left">添加文件到暂存区</td>
+</tr>
+<tr>
+<td align="left"><code>git status</code></td>
+<td align="left">查看仓库当前的状态，显示有变更的文件。</td>
+</tr>
+<tr>
+<td align="left"><code>git diff</code></td>
+<td align="left">比较文件的不同，即暂存区和工作区的差异。</td>
+</tr>
+<tr>
+<td align="left"><code>git commit</code></td>
+<td align="left">提交暂存区到本地仓库。</td>
+</tr>
+<tr>
+<td align="left"><code>git reset</code></td>
+<td align="left">回退版本。</td>
+</tr>
+<tr>
+<td align="left"><code>git rm</code></td>
+<td align="left">将文件从暂存区和工作区中删除。</td>
+</tr>
+<tr>
+<td align="left"><code>git mv</code></td>
+<td align="left">移动或重命名工作区文件。</td>
+</tr>
+<tr>
+<td align="left"><code>git checkout</code></td>
+<td align="left">分支切换。</td>
+</tr>
+<tr>
+<td align="left"><code>git switch （Git 2.23 版本引入）</code></td>
+<td align="left">更清晰地切换分支。</td>
+</tr>
+<tr>
+<td align="left"><code>git restore （Git 2.23 版本引入）</code></td>
+<td align="left">恢复或撤销文件的更改。</td>
 </tr>
 </tbody></table>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wiktionary-logo.svg/40px-Wiktionary-logo.svg.png" alt="img"></p>
-<p><a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AA%E3%83%BC">ウィクショナリー</a>に関連の辞書項目があります。</p>
-<p><strong><a href="https://ja.wiktionary.org/wiki/en:snob">en:snob</a></strong></p>
-<p><strong>スノッブ</strong>（snob）は、一般に<a href="https://ja.wikipedia.org/w/index.php?title=%E4%BF%97%E7%89%A9&action=edit&redlink=1">俗物</a>、また<strong>スノビズム</strong>（snobbism）は俗物根性と訳され、多くの場合「知識・教養をひけらかす見栄張りの気取り屋」「上位の者に取り入り、下の者を見下す嫌味な人物」「紳士気取りの俗物」といった意味で使われる。一方で、<a href="https://ja.wikipedia.org/wiki/%E8%80%BD%E7%BE%8E%E4%B8%BB%E7%BE%A9">耽美主義</a>や<a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%B3%E3%83%87%E3%82%A3%E3%82%BA%E3%83%A0">ダンディズム</a>、<a href="https://ja.wikipedia.org/wiki/%E7%B2%8B">粋</a>、<a href="https://ja.wikipedia.org/wiki/%E6%B4%92%E8%90%BD">洒落</a>を含意したりと（特に<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">ファッション</a>において）、単に批判的な言葉としてのみ使用されるわけではない。</p>
-<ul>
-<li>うんぬんかんぬん</li>
-</ul>
-<p>「うんともすんとも」の「すんとも」、「仲良し小良し」の「小良し」のように、<strong>大して意味のない要素を後に続けて使うこと</strong>は、よく見られる現象です。</p>
-<ul>
-<li>サラマンダーとはどういう意味ですか？</li>
-</ul>
-<p>サラマンダーは英語でsalamanderと表記され、意味としては<strong>サンショウウオや、西洋の伝説上の動物</strong>となります。 西洋の伝説上の動物・火の精と、火で加熱する調理器具のサラマンダーをかけているのは？といわれています。</p>
-<ul>
-<li>May I have your name とはどういう意味ですか？</li>
-</ul>
-<p>May I have いただけますか？ your name あなたのお名前を、Please は丁寧 な表現で、つまり <strong>お名前をいただけますか？</strong> という意味になります。 端的に What is your name? でもいいですが、直接的な表現ですので、お客 様にはこの表現を使うのは好ましくありません。</p>
-<ul>
-<li>あたい 【一人称】</li>
-</ul>
-<p> <strong>「あたし」がくだけた表現</strong>。 元は下町女性の言葉で、1970～80年代頃には不良少女などが用いていたが、現在はほとんど使われない。</p>
-<ul>
-<li>「グーパンチ」とはどういう意味ですか？</li>
-</ul>
-<p><strong>拳を握った状態で繰り出すパンチのこと</strong>。 グーパンとは、グーの状態（拳を握った状態）で相手に打撃を加えること。 パンチというと一般的にゲンコツで繰り出されるものなので、女性（平手のイメージが強い）や、通常殴り合いのケンカなどをしない人物や状況から繰り出されるパンチを特にこのように称する。</p>
-<ul>
-<li>「パッシブスキル」の言い換えは？</li>
-</ul>
-<p><strong>「受動スキル」「常時発動スキル」「永続スキル」</strong>とも呼ばれている。 「パッシブスキル」の対義語は「アクティブスキル」であり、必殺技や魔法、ゲージがたまったあとの技など手動で発動される能力のことを指す。</p>
-<ul>
-<li>サグラダ・ファミリアは2026年に完成しますか？</li>
-</ul>
-<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2fXPOG7GTW_KW2nd3QlMe0B7K1D3bkMpDdfxKLAXqh3VH2agNPCkYkLay6w&s" alt="サグラダ・ファミリア、2026年の完成が確実に。聖堂につながる ..."></p>
-<p>聖堂につながる巨大階段は2034<strong>年</strong>までかかる見込み バルセロナの<strong>サグラダ</strong>・<strong>ファミリア</strong>聖堂が、着工から140<strong>年</strong>以上の時を経て、<strong>2026年に完成</strong>すると発表された。</p>
-<ul>
-<li>前かがみ／</li>
-</ul>
-<p>前屈 の共通する意味<strong>上半身を前に折り曲げること</strong>。</p>
-<ul>
-<li><p>へたれ へたれ（ヘタレ）は、<strong>弱った物、臆病な様子や情けない性格をした人物を指す俗語</strong>。</p>
-</li>
-<li><p>エゴ</p>
-</li>
-</ul>
-<p>① <strong>認識、意欲、行動などの主体として、他と区別される自分。</strong> <strong>自己。</strong> <strong>自我</strong>。 ② フロイトの用語。</p>
-<ul>
-<li>物差しとは何ですか？</li>
-</ul>
-<p><strong>物の長さを計る器具の総称</strong>。 物差しは物を差し計る意である。 人類が最初に使い始めた計器で、また今日でも広く使われている。 普通、木、金属または骨などの板または棒に目盛りをつけたもの（直尺(ちょくしゃく)）をいうが、両端間の長さを基準とした端面尺もある。</p>
-<ul>
-<li>「バキバキ」とはどういう意味ですか？</li>
-</ul>
-<p>「バキバキ」とは<strong>活きの良さを表す浜言葉</strong>。 魚を手で持つと身が垂れずにピンと立つほどバキバキしているという意味です。 焼き魚などに調理しても一夜干しに加工されても、新鮮なものはひと味違います。</p>
-<ul>
-<li>ぷにぷに意味</li>
-</ul>
-<p><strong>風船のようにぶよぶよしたモンスター</strong>。 空中を漂っているだけで特別な攻撃はしてこないが、耐久力が異常に高いうえに弾力があるため溜めボムでの押し潰しも効かず、気絶させて場外に落とさない限り倒すのは困難。 ※この「プニプニ」の解説は、「爆ボンバーマン」の解説の一部です。</p>
-<ul>
-<li>しっとり</li>
-</ul>
-<p>① <strong>湿気が軽く全体にいきわたっているさま、濡れ湿っているさまを表わす語</strong>。 ② ゆっくりと落ち着いたさま、深く静まりかえっているさまを表わす語。 また、よく整って安定しているさまを表わす語。</p>
-<ul>
-<li>しごき</li>
-</ul>
-<p>志古貴とは、<strong>帯の下に巻いて斜め後ろに垂らす飾り帯</strong>のことです。 志古貴は振袖や花嫁衣装や七五三の衣装などに用います。 七五三の七歳のお祝いで、女の子が使用する志古貴は単色染めで房が付いているものが多くなっています。 選ぶ際には、着物や帯との調和を考えますが、帯揚げと色を揃える方も多いようです。May 31, 2024</p>
-<p><a href="https://kimono-rentalier.jp/column/kimono/shigoki/#:~:text=%E5%BF%97%E5%8F%A4%E8%B2%B4%E3%81%A8%E3%81%AF,%E6%96%B9%E3%82%82%E5%A4%9A%E3%81%84%E3%82%88%E3%81%86%E3%81%A7%E3%81%99%E3%80%82"><br>志古貴（しごき）とは？わかりやすく説明 - きものレンタリエ<img src="/2024/05/21/jqv/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFNUlEQVR4AcVXA5QrWRBN/2iM2M7Ytta2bdu2bdu2vXuwtq1+rzsZfvv/Wz1WOoOzO+fUqCuv7ru31Bp8Cf+vqTjIeRX5PMt9CE91HDUjy/YcJBdW+2cNoHfvQ7Usy32VuMC0hmly142aiX5OaVx5NvpcXGBewXO8ZwwcctLMAfBc30kiHWS0f8btka3idRsEuTl4EBMASG+T4w0b58dbNvMr1ryZX45W7aAE1lu55C1qjTdt4mcZrltEAOLmwD4zAiAXVDuZ1jLAjLaP4rUdqeOAmfxHiQJumeZ4pnej7fWKv7/Yi8B/iDp8xhGtHPbt7trKiDO+wDMxVteRnTQAIL+LqOeegtqJz1Z88pnAsr0XKOxkum6TS2rNCPINW2Bexm2hDSYx6c5rVljLdF+SFADJV1iLG64iENPRNnD48QLPdN8xRHmcwZ9bQrtM58/SXY+IWvMyKVwaTgig78SztCzF/p4o5K6T8qrCibI3Vt9lZ2CJkg6yHJHIV0IlgaFVAPLUksdemB4AtwZ3GcniXP8J0zJwwRUk022UYCTH6u++T1hqyx56WuBGG6fc4Y7IBlMC6G7fJJ0SibQU9VYZzmuQvftNPGzpky8ILMd7nhIcMvTvfYxqs0Fu7KAwBQPDX/Vstp1+EgCW5TlLKRlbeAe5pi0bjp8otFkC47RlpsBhg1XgfK536931qsHtkQ0Y9MflfmEZyIVByQ4ZB0COlnuRJItYquOtgTMuHirFGjMzWL9iaCaQZgvlMEtwB9Id4D6IN3SkqwZ3RmupnIlZKVTs791lX71SljqLHCtvyh0BgOR4AGW3SgoUlY9LnvwKJzPYfiJZ4PMcdTb8/U2sqNasGtxdUIy+EKdgaEz5Y0BtwMAgqugq5X/cFW0kvalrTdmUQmV+Rg2G9NNb/pIj5V614LhtEHn0j6i19Emu0cZEtuiaWwSqBmJWCpXla6DlawiwSC6tt04JIFwWpuewuOwvKlYPXuoE5T9B9yWSM699Sp9gSZjyC7Ef0ECTJdD0jSlrPb/aLhqsP+AmS7gz0qw6OYurc0ljkgqZv1lCiVKR5Eb7HxrU5yKW4nhrogOSJBMOHxFSbg1tpRY8Xt+ZKRptHwyWb3C3RL6rPv8OAByf4fzfSIIXRNAlF9e6R4fI5kY4vMLoMBN6gUrwWG2nkaXZX0FwmnyHqcoUKC5ULpbmvEsjeQqrqbR4uuuepS+9IfTsurcWCfmA0mhyfKepHda76/56JNVj5M+zvar+A6eeLeDSL1FlIaGDmqHpdwfQ0/SrR0O6iiYd/vfE8qeeTxx8u721HC2ZKgQgXlj18WdCEo1pC2IKy85Fo42osMaJLO+jRYMOI8PfHEgfYanTG3Lni5GNCA0H/o8l9Kfn6AtD+0HmuFYM+k4aDg4HlJ31n/k1yyLl7PEb0iiAnk23S1W6HuiJ1bQG53v7laMV9cQUWPuo78BjtFOOY8ke3mZQH8958w2AOi1VleTKb552H1h83Z0CBtIbSuMxBfbgJt9m82Gg/CCaNUjUh9b88FPilYz7i0upRocXE3FOZlKMwXCpRVK0zJvUUsoz3DcpAFKd73BzaCNuCm0wK7OEN0Jr/oxAQNZzkl/LS+qsyNoetMoveuq7UmerO8187BS/0T4Qb9s0XR3A+P3/MJIAN/gEg2W7WFVrpVzVVp6MxStaKrklsBuq6julPVuCO834zWjghNO16A1n0dwGhbPSnynJ7Dtq+dMvzf7lNFba4MZKtodkCR/Ek7bQQWBtF7Bmn/3b8X9k6wHtcFwfZlArEwAAAABJRU5ErkJggg==" alt="img">きものレンタリエhttps://kimono-rentalier.jp › ... › 着物の豆知識</a></p>
-<p><img src="data:image/jpeg;base64,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" alt="志古貴（しごき）とは？わかりやすく説明 | きものレンタリエの ..."></p>
-<ul>
-<li>かうぱー</li>
-</ul>
-<p><strong>尿道球腺液</strong>（にょうどうきゅうせんえき、英: Bulbourethral gland fluid）は、男性の尿道球腺から分泌される弱アルカリ性の粘性がある無臭無色透明な液体である。 一般にはカウパー腺液（単にカウパーやカウパー液とも）と呼ばれる。</p>
-<ul>
-<li>くすくすするの意味は？</li>
-</ul>
-<p>① <strong>物がくすぶるさまを表わす語</strong>。 ② こっそりと事をするさま、また、そのような性格のさまを表わす語。 こそこそ。 ③ しのんで笑う声、また、その様子を表わす語。</p>
-<ul>
-<li>「てっぺん」はどこの方言ですか？</li>
-</ul>
-<p>おにころし即ち酒精分の多い悪酒をいふ。 <strong>駿河の方言</strong>。</p>
-<p>① <strong>兜(かぶと)のいただき。</strong> <strong>転じて、頭のいただき。</strong> <strong>② 物のいちばん高い所。</strong> <strong>頂上。</strong></p>
-<ul>
-<li>トロトロ</li>
-</ul>
-<p>とろ‐とろ ① <strong>物がとけて、流動体・粘液状になっているさまを表わす語</strong>。 ② 粘液状のものがたれ落ちたり流れたりするさまを表わす語。 ④ 動作が緩慢で、ゆったりしたさまを表わす語。</p>
-<ul>
-<li>ビロード</li>
-</ul>
-<p>日本大百科全書(ニッポニカ) 「ビロード」の意味・わかりやすい解説<strong>添毛(てんもう)織物の一つで、織面に輪奈(わな)を出し、ときにはそれを切断して羽毛のようになった織物</strong>である。 ビロードとは、ポルトガル語のベルードvelludo、スペイン語のベルードvelludeの転訛(てんか)した語といわれている。</p>
-<ul>
-<li>「てろてろ」は方言ですか？</li>
-</ul>
-<p>私が大好きな「てろてろ」は泥酔状態 の事を指す<strong>津軽弁</strong>です。 「てろてろどなってまったじゃ～ 」です。 しかも、どちらかと言うとイイ（？） 泥酔状態（私的に）です。</p>
-<ul>
-<li>レロレロ</li>
-</ul>
-<p>① <strong>舌がもつれて発音が不明瞭なさまを表わす語</strong>。 ② 幼児をあやすのに、舌で上顎をはじいて音をたてるさまを表わす語。 ① 酒の酔いや麻痺などで、舌がもつれて何を言っているのかよくわからないさま。</p>
-<ul>
-<li>もどかしい</li>
-</ul>
-<p><strong>思うようにならず苛立つ。</strong> <strong>物事が捗らないので、いらいらする。</strong> <strong>じれったい。</strong> <strong>歯痒い。</strong></p>
-<ul>
-<li>いっそ の 事(こと)</li>
-</ul>
-<p><strong>あれこれと考えた末、それらとは一段違ったことを思い切って選ぶ気持を表わす</strong>。 また、時に、好ましいものをあきらめて意に染まないものを選ぶときの、投げやりな気持を表わす。 思い切って。 むしろ。</p>
-<ul>
-<li>とろん</li>
-</ul>
-<p>① <strong>濃い液体や空気などが重く沈んでいるさまを表わす語</strong>。 どろん。 ② ねむけを催したり、酒に酔ったりして目つきのぼんやりしているさまを表わす語。</p>
-<ul>
-<li>負えない</li>
-</ul>
-<p>［形］《連語「負えない」の一語化》<strong>どうしようもない。</strong> <strong>手がつけられない。</strong></p>
-<ul>
-<li>チロチロ</li>
-</ul>
-<p>① <strong>火、光または水の流れなどが細くかすかであるさまを表わす語</strong>。 また、灯火などが断続的に明暗をくり返しながらほのめくさまをいう。 ちらちら。</p>
-<ul>
-<li>ピンチ</li>
-</ul>
-<p>① <strong>追いつめられて非常に苦しい事態。</strong> <strong>危機。</strong> <strong>窮地。</strong> <strong>苦境。</strong></p>
-<ul>
-<li>「クルクル」とはどういう意味ですか？</li>
-</ul>
-<p>① <strong>物が軽やかにつづいて回るさま、また、何回も回すさまを表わす語</strong>。 ② 幾重にも巻くさまやまるめるさま、また、巻いてあるものを解くさまを表わす語。 ぐるぐる。 ③ 物事を滞りなく行なうさま、また、物事のすらすらと進行するさまを表わす語。</p>
-<ul>
-<li>艶めかしい</li>
-</ul>
-<p>① 人の容姿、態度などについていう。 <strong>優美である、上品である、もの柔らかである</strong>。 「あて」や「清ら」などとともに用いられることが多い。 ② 特に若い女性などの容姿をいうことが多いところから、次第に女性の若い魅力をいうようになり、後世は、女性の性的魅力を、さらに性的魅力一般を表現する語となる。</p>
-<p>[<br>艶めかしい(ナマメカシイ)とは？ 意味や使い方 - コトバンク](<a href="https://kotobank.jp/word/%E8%89%B6%E3%82%81%E3%81%8B%E3%81%97%E3%81%84-589696#:~:text=%E2%91%A0">https://kotobank.jp/word/艶めかしい-589696#:~:text=①</a> 人の容姿、態度,用いられることが多い。&amp;text&#x3D;② 特に若い女性など,表現する語となる。)</p>
-<ul>
-<li>あどけない</li>
-</ul>
-<p>[ 文語形 ]あどけな・し 〘 形容詞ク活用 〙 （子供の態度、様子などが）<strong>無心で愛らしい。</strong> <strong>無邪気である。</strong> <strong>することが幼い。</strong> <strong>わるぎがない。</strong></p>
-<ul>
-<li>すぼめる</li>
-</ul>
-<p>「すぼめる」「つぼめる」は、「窄める」とも書く。 「すぼめる」は、<strong>広がっていたものを小さくするときに用いる</strong>。 「つぼめる」は、管のようなものの口の面積を小さくする意。 また、「傘をつぼめる」のように、開いていたものを閉じる意味もある。</p>
-<ul>
-<li>恋愛において押して引くとどうなる？</li>
-</ul>
-<p>押して引く行為は、<strong>自分のことを考えてもらえる時間を増やすこととなり、距離を縮めるきっかけになります</strong>。 自分に気がある素振りをしていた異性がある日、急にそっけなくなったら、無性に気になるものです。 とくに相手が男性の場合、好意を抱いている相手に逃げられそうになると、本能的に追いかけたくなるといった男性心理が働きます。</p>
-<ul>
-<li>エレクト</li>
-</ul>
-<p>〘 名詞 〙 ( [英語] erect ) <strong>性器が勃起すること</strong>。</p>
-<ul>
-<li>ラストスパート</li>
-</ul>
-<p>ラスト‐スパート 〘 名詞 〙 ( [英語] last spurt ) <strong>競走・競泳などの競技で、ゴール近くで最後のがんばりを見せて力走・力泳すること</strong>。 転じて、物事の終了間際に、全力でことにあたること。</p>
-<ul>
-<li>エクスタシー</li>
-</ul>
-<p>エクスタシー（ecstasy）１ <strong>快感が最高潮に達して無我夢中の状態になること</strong>。 恍惚 こうこつ 。 忘我。 ２ 宗教的儀礼などの際に体験される神秘的な心境。</p>
-<ul>
-<li>ドクドクとはどういう意味ですか？</li>
-</ul>
-<p>どく‐どく ① ( 「と」を伴って用いることもある ) <strong>酒・水や血など、液体がさかんに流れ出たり、あふれ出たりするさまを表わす語</strong>。 ② 興奮したり不安を感じたりして胸が高鳴るさまを表わす語。</p>
-<ul>
-<li>怯む</li>
-</ul>
-<p><strong>恐れて勢いが弱る。</strong> <strong>おじける。</strong> <strong>萎縮する。</strong></p>
-<p><a href="https://kotobank.jp/word/%E6%80%AF%E3%82%80-614240#:~:text=%E6%81%90%E3%82%8C%E3%81%A6%E5%8B%A2%E3%81%84%E3%81%8C%E5%BC%B1%E3%82%8B,%E8%90%8E%E7%B8%AE%E3%81%99%E3%82%8B%E3%80%82"><br>怯む(ヒルム)とは？ 意味や使い方 - コトバンク</a></p>
-<ul>
-<li>しくしく</li>
-</ul>
-<p><strong>弱弱しく泣くさま。</strong> <strong>強くはないが体が絶えず痛むさま</strong>。</p>
-<ul>
-<li>ヒンズースクワット</li>
-</ul>
-<p>「ヒンズースクワット」は、<strong>かかとを上げたまま行います</strong>。 1. つま先立ちになり、膝を前に出し、両手は横に置いたままスクワットします。 2. そして、かかとは上げたまま、両腕を前に振ってバランスをとりながら、足の親指の付け根にある母指球に力を入れて立ち上がります。</p>
-<ul>
-<li>「あざとかわいい」とはどういう意味ですか？</li>
-</ul>
-<p>「あざとかわいい」は計算高さを意味する「あざとい」と、愛らしさなどを意味する「かわいい」の2つの言葉が合わさった造語です。 つまり、「あざとかわいい」とは、<strong>魅力的に見せるために計算された言動をとるさまであり、そこにプラス、自然と人の心を惹きつけ好かれる外見や雰囲気を兼ね備えているイメージ</strong>でしょうか。</p>
-<ul>
-<li>タンパク質</li>
-</ul>
-<p>たんぱく質とは たんぱく質とは<strong>アミノ酸が多数結合した高分子化合物</strong>で、筋肉や臓器など体を構成する要素として非常に重要なものです。 また、それだけでなく、たんぱく質は、アミノ酸の組み合わせや種類、量などの違いによって形状や働きが異なり、酵素やホルモン、免疫物質としてさまざまな機能を担っています。</p>
-<ul>
-<li>「取り憑かれた」とはどういう意味ですか？</li>
-</ul>
-<p>取り憑かれるとは、<strong>ある思念に固執している、妄想にとらわれている、という状況</strong>を指す意味で用いられる表現。<a href="https://www.weblio.jp/content/%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B#:~:text=%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B%E3%81%A8%E3%81%AF%E3%80%81%E3%81%82%E3%82%8B,%E6%84%8F%E5%91%B3%E3%81%A7%E7%94%A8%E3%81%84%E3%82%89%E3%82%8C%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">取り憑かれる(とりつかれる)</a></p>
-<ul>
-<li>ポワントワークとは何ですか？</li>
-</ul>
-<p><strong>トウシューズを履き、足先を完全に伸ばし、爪先の先端でステップを踏むこと</strong>。 ほとんどの場合、女性が行う（男性がトウシューズを履くことはほとんどない）。</p>
+<h2 id="提交日志"><a href="#提交日志" class="headerlink" title="提交日志"></a>提交日志</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>git log</code></td>
+<td align="left">查看历史提交记录</td>
+</tr>
+<tr>
+<td align="left"><code>git blame &lt;file&gt;</code></td>
+<td align="left">以列表形式查看指定文件的历史修改记录</td>
+</tr>
+</tbody></table>
+<h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>git remote</code></td>
+<td align="left">远程仓库操作</td>
+</tr>
+<tr>
+<td align="left"><code>git fetch</code></td>
+<td align="left">从远程获取代码库</td>
+</tr>
+<tr>
+<td align="left"><code>git pull</code></td>
+<td align="left">下载远程代码并合并</td>
+</tr>
+<tr>
+<td align="left"><code>git push</code></td>
+<td align="left">上传远程代码并合并</td>
+</tr>
+</tbody></table>
 ]]></content>
-      <tags>
-        <tag>gal</tag>
-      </tags>
   </entry>
   <entry>
     <title>n1考试错题</title>
@@ -2422,6 +2108,320 @@
       </tags>
   </entry>
   <entry>
+    <title>等間隔の黒い透明</title>
+    <url>/2024/06/30/hatena%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<h2 id="Episode1"><a href="#Episode1" class="headerlink" title="Episode1"></a>Episode1</h2><p>讲述了男主和女主的关系，女主是一位娇生惯养的公主一般的角色，男主则死承担着一位情绪价值的提供者的角度，女主有着与其年龄不相符的外貌，男女主保留着	不正当的男女关系。</p>
+<h2 id="Episode2"><a href="#Episode2" class="headerlink" title="Episode2"></a>Episode2</h2><p>男主的工作是网页设计，他会讲网上的所见所闻（如隧道的挖掘）之类的新闻告诉女主。男主与一个骆驼男一起工作，似乎还很害怕他。</p>
+<h2 id="Episode3"><a href="#Episode3" class="headerlink" title="Episode3"></a>Episode3</h2><p>与骆驼的谈话，从对骆驼个人的情感倾向到对这个国家乃至星球的喜好。</p>
+<p>我们从出生开始，就一直在能指链条上延宕。这个过程在这个链条上一直都存在。</p>
+<p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630045837684.png" alt="image-20240630045837684"></p>
+<h2 id="Episode4"><a href="#Episode4" class="headerlink" title="Episode4"></a>Episode4</h2><p>男主在经历一场电波的旅途，这段对电车上糟糕环境的描写可圈可点，以及说在这条路上骑自行车追逐的描绘。</p>
+<h2 id="Episode5"><a href="#Episode5" class="headerlink" title="Episode5"></a>Episode5</h2><p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630050539263.png" alt="image-20240630050539263"></p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jqv</title>
+    <url>/2024/05/21/jqv/</url>
+    <content><![CDATA[<ul>
+<li><h2 id="sentence"><a href="#sentence" class="headerlink" title="sentence"></a>sentence</h2></li>
+<li><p>異った窓ガラスみたいに、人差し指の軌跡がくっきりと浮かんだ。</p>
+</li>
+<li><p>自分よりちいさいの、弱いものを愛でる感情とうのは自然だ。</p>
+</li>
+<li><p>世界が元通り三ならない限り 変容の呪縛からは逃れられない</p>
+</li>
+<li><h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2></li>
+<li><p>やむ【止・已】 に 止(や)まれぬ<strong>止めようとしても止められない。</strong> <strong>そうしないではいられない。</strong></p>
+</li>
+<li><p>「なでりなでり」って何だよ</p>
+</li>
+</ul>
+<p>16-Jul-2016 — そこは「なでなで」だろ！ 「り」ってなんだ「り」って！ そもそも「撫でる撫でる」からの「撫で撫で」だろ！ 古文か？古文なのか！？</p>
+<ul>
+<li>orthodox</li>
+</ul>
+<p>一般に正統的と認められているさま。 伝統的に承認されているさま。</p>
+<ul>
+<li><p>「ブレーキ役」の言い換えや類語・同義語 - Weblio類語辞典</p>
+<p>ブレーキ役の言い換えや別の言い方。・物事が深刻化しないようにあらかじめ用意しておく仕組みのこと安全弁安全装置ブレーキブレーキ役.</p>
+</li>
+<li><p>あっさり</p>
+</li>
+</ul>
+<p>① 人や物事の状態、性質が、複雑でなく、淡泊平明であるさま。 しつこくないさま。 あっさら。 ② 手数のかからないさま。</p>
+<ul>
+<li>デリケート</li>
+</ul>
+<p>① ( 人の心・感情などについて ) 鋭敏で、傷つきやすいさま。 繊細なさま。 ② ( 鑑賞、賞美するものなどについて ) 微妙な味わいを持っているさま。 また、微細な差のあるさま。</p>
+<ul>
+<li>さえあれば</li>
+</ul>
+<p>ラーメンさえあればいいです。 T：<strong>「それがあったら、他には何も必要ない、問題ない」という意味です</strong>。 「【Vます】さえすれば」は、「する」が変わった形の「〜さえしてくれれば」「〜さえできれば」なども使えます。</p>
+<ul>
+<li>「座が白ける」とはどういう意味ですか？</li>
+</ul>
+<p>ざがしらける 〔語源〕「白ける」は、<strong>白っぽくなる。</strong> <strong>色があせる。</strong> <strong>転じて、その場の興が冷める</strong>。</p>
+<ul>
+<li>「とげとげ」とはどういう意味ですか？</li>
+</ul>
+<p>とげ‐とげ【刺刺】 [ 1 ] 〘 副詞 〙 ( 「と」を伴っても用いる ) <strong>とげとげしいさま</strong>。</p>
+<ul>
+<li>ロン‐げ【ロン毛】</li>
+</ul>
+<p>《「ロン」はロングの略》俗に、<strong>髪の毛の長いこと</strong>。 また、長く伸ばした髪形。 主に、男性についていう。</p>
+<ul>
+<li>「うぜ」とはどういう意味ですか？</li>
+</ul>
+<p>「うぜえ」とも》<strong>あれこれとうるさい。</strong> <strong>わずらわしい</strong>。 [補説]もとは「不快だ。 気味が悪い」という意の、八王子を中心とする東京多摩地区の方言。</p>
+<ul>
+<li>「テディボーイ」とはどういう意味ですか？</li>
+</ul>
+<p><strong>不良少年</strong>。 特にエドワード7世時代（1901〜10）の服装を好んで着用した1950年代から60年代初めのロンドンの不良少年をさす。 エドワードの愛称、テディーに由来する。</p>
+<ul>
+<li>あいだ‐がらあひだ‥【間柄】</li>
+</ul>
+<p>① <strong>親類、血族などの続き合い</strong>。 ② 互いの関係。 付き合い。 交際。</p>
+<ul>
+<li>ばっちり</li>
+</ul>
+<p><strong>満足のいく様子であることを示す表現</strong>。 大体副詞的に用いる。</p>
+<ul>
+<li>ユナイテッドステイツとはどういう意味ですか？</li>
+</ul>
+<p>ユナイテッド・ステーツ（United States）は、<strong>合衆国</strong>を意味する。 特にアメリカ合衆国を指すことが多い。 ユナイテッド・ステーツ (フリゲート)(en:USS United States (1797)) - アメリカ海軍の帆走フリゲート。</p>
+<ul>
+<li>ネガティブ思考とはどういう意味ですか？</li>
+</ul>
+<p><strong>何かにつけて、どうせ失敗するさ、私はだめなんだなどと悪い方向に考えが向くこと</strong>。 物事を否定的にとらえる考え方。</p>
+<ul>
+<li>ステイツとはどういう意味ですか？</li>
+</ul>
+<p>「states」とは・「states」の意味</p>
+<p>「states」は、英語で「state」の複数形であり、<strong>主に「州」や「国家」という意味で使用される</strong>。 また、状態や状況を表す場合もある。May 23, 2023</p>
+<ul>
+<li>スノッブ</li>
+</ul>
+<p>30の言語版</p>
+<ul>
+<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ページ</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%83%88:%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ノート</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">閲覧</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=edit">編集</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=history">履歴表示</a></p>
+</li>
+</ul>
+<p>ツール</p>
+<p>出典: フリー百科事典『ウィキペディア（Wikipedia）』</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Disambig_gray.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Disambig_gray.svg/25px-Disambig_gray.svg.png" alt="曖昧さ回避"></a></th>
+<th>この項目では、社会用語について説明しています。<a href="https://ja.wikipedia.org/wiki/%E3%81%8A%E7%AC%91%E3%81%84%E8%8A%B8%E4%BA%BA">お笑い芸人</a>については「<a href="https://ja.wikipedia.org/wiki/SNOB">SNOB</a>」をご覧ください。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wiktionary-logo.svg/40px-Wiktionary-logo.svg.png" alt="img"></p>
+<p><a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AA%E3%83%BC">ウィクショナリー</a>に関連の辞書項目があります。</p>
+<p><strong><a href="https://ja.wiktionary.org/wiki/en:snob">en:snob</a></strong></p>
+<p><strong>スノッブ</strong>（snob）は、一般に<a href="https://ja.wikipedia.org/w/index.php?title=%E4%BF%97%E7%89%A9&action=edit&redlink=1">俗物</a>、また<strong>スノビズム</strong>（snobbism）は俗物根性と訳され、多くの場合「知識・教養をひけらかす見栄張りの気取り屋」「上位の者に取り入り、下の者を見下す嫌味な人物」「紳士気取りの俗物」といった意味で使われる。一方で、<a href="https://ja.wikipedia.org/wiki/%E8%80%BD%E7%BE%8E%E4%B8%BB%E7%BE%A9">耽美主義</a>や<a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%B3%E3%83%87%E3%82%A3%E3%82%BA%E3%83%A0">ダンディズム</a>、<a href="https://ja.wikipedia.org/wiki/%E7%B2%8B">粋</a>、<a href="https://ja.wikipedia.org/wiki/%E6%B4%92%E8%90%BD">洒落</a>を含意したりと（特に<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">ファッション</a>において）、単に批判的な言葉としてのみ使用されるわけではない。</p>
+<ul>
+<li>うんぬんかんぬん</li>
+</ul>
+<p>「うんともすんとも」の「すんとも」、「仲良し小良し」の「小良し」のように、<strong>大して意味のない要素を後に続けて使うこと</strong>は、よく見られる現象です。</p>
+<ul>
+<li>サラマンダーとはどういう意味ですか？</li>
+</ul>
+<p>サラマンダーは英語でsalamanderと表記され、意味としては<strong>サンショウウオや、西洋の伝説上の動物</strong>となります。 西洋の伝説上の動物・火の精と、火で加熱する調理器具のサラマンダーをかけているのは？といわれています。</p>
+<ul>
+<li>May I have your name とはどういう意味ですか？</li>
+</ul>
+<p>May I have いただけますか？ your name あなたのお名前を、Please は丁寧 な表現で、つまり <strong>お名前をいただけますか？</strong> という意味になります。 端的に What is your name? でもいいですが、直接的な表現ですので、お客 様にはこの表現を使うのは好ましくありません。</p>
+<ul>
+<li>あたい 【一人称】</li>
+</ul>
+<p> <strong>「あたし」がくだけた表現</strong>。 元は下町女性の言葉で、1970～80年代頃には不良少女などが用いていたが、現在はほとんど使われない。</p>
+<ul>
+<li>「グーパンチ」とはどういう意味ですか？</li>
+</ul>
+<p><strong>拳を握った状態で繰り出すパンチのこと</strong>。 グーパンとは、グーの状態（拳を握った状態）で相手に打撃を加えること。 パンチというと一般的にゲンコツで繰り出されるものなので、女性（平手のイメージが強い）や、通常殴り合いのケンカなどをしない人物や状況から繰り出されるパンチを特にこのように称する。</p>
+<ul>
+<li>「パッシブスキル」の言い換えは？</li>
+</ul>
+<p><strong>「受動スキル」「常時発動スキル」「永続スキル」</strong>とも呼ばれている。 「パッシブスキル」の対義語は「アクティブスキル」であり、必殺技や魔法、ゲージがたまったあとの技など手動で発動される能力のことを指す。</p>
+<ul>
+<li>サグラダ・ファミリアは2026年に完成しますか？</li>
+</ul>
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2fXPOG7GTW_KW2nd3QlMe0B7K1D3bkMpDdfxKLAXqh3VH2agNPCkYkLay6w&s" alt="サグラダ・ファミリア、2026年の完成が確実に。聖堂につながる ..."></p>
+<p>聖堂につながる巨大階段は2034<strong>年</strong>までかかる見込み バルセロナの<strong>サグラダ</strong>・<strong>ファミリア</strong>聖堂が、着工から140<strong>年</strong>以上の時を経て、<strong>2026年に完成</strong>すると発表された。</p>
+<ul>
+<li>前かがみ／</li>
+</ul>
+<p>前屈 の共通する意味<strong>上半身を前に折り曲げること</strong>。</p>
+<ul>
+<li><p>へたれ へたれ（ヘタレ）は、<strong>弱った物、臆病な様子や情けない性格をした人物を指す俗語</strong>。</p>
+</li>
+<li><p>エゴ</p>
+</li>
+</ul>
+<p>① <strong>認識、意欲、行動などの主体として、他と区別される自分。</strong> <strong>自己。</strong> <strong>自我</strong>。 ② フロイトの用語。</p>
+<ul>
+<li>物差しとは何ですか？</li>
+</ul>
+<p><strong>物の長さを計る器具の総称</strong>。 物差しは物を差し計る意である。 人類が最初に使い始めた計器で、また今日でも広く使われている。 普通、木、金属または骨などの板または棒に目盛りをつけたもの（直尺(ちょくしゃく)）をいうが、両端間の長さを基準とした端面尺もある。</p>
+<ul>
+<li>「バキバキ」とはどういう意味ですか？</li>
+</ul>
+<p>「バキバキ」とは<strong>活きの良さを表す浜言葉</strong>。 魚を手で持つと身が垂れずにピンと立つほどバキバキしているという意味です。 焼き魚などに調理しても一夜干しに加工されても、新鮮なものはひと味違います。</p>
+<ul>
+<li>ぷにぷに意味</li>
+</ul>
+<p><strong>風船のようにぶよぶよしたモンスター</strong>。 空中を漂っているだけで特別な攻撃はしてこないが、耐久力が異常に高いうえに弾力があるため溜めボムでの押し潰しも効かず、気絶させて場外に落とさない限り倒すのは困難。 ※この「プニプニ」の解説は、「爆ボンバーマン」の解説の一部です。</p>
+<ul>
+<li>しっとり</li>
+</ul>
+<p>① <strong>湿気が軽く全体にいきわたっているさま、濡れ湿っているさまを表わす語</strong>。 ② ゆっくりと落ち着いたさま、深く静まりかえっているさまを表わす語。 また、よく整って安定しているさまを表わす語。</p>
+<ul>
+<li>しごき</li>
+</ul>
+<p>志古貴とは、<strong>帯の下に巻いて斜め後ろに垂らす飾り帯</strong>のことです。 志古貴は振袖や花嫁衣装や七五三の衣装などに用います。 七五三の七歳のお祝いで、女の子が使用する志古貴は単色染めで房が付いているものが多くなっています。 選ぶ際には、着物や帯との調和を考えますが、帯揚げと色を揃える方も多いようです。May 31, 2024</p>
+<p><a href="https://kimono-rentalier.jp/column/kimono/shigoki/#:~:text=%E5%BF%97%E5%8F%A4%E8%B2%B4%E3%81%A8%E3%81%AF,%E6%96%B9%E3%82%82%E5%A4%9A%E3%81%84%E3%82%88%E3%81%86%E3%81%A7%E3%81%99%E3%80%82"><br>志古貴（しごき）とは？わかりやすく説明 - きものレンタリエ<img src="/2024/05/21/jqv/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFNUlEQVR4AcVXA5QrWRBN/2iM2M7Ytta2bdu2bdu2vXuwtq1+rzsZfvv/Wz1WOoOzO+fUqCuv7ru31Bp8Cf+vqTjIeRX5PMt9CE91HDUjy/YcJBdW+2cNoHfvQ7Usy32VuMC0hmly142aiX5OaVx5NvpcXGBewXO8ZwwcctLMAfBc30kiHWS0f8btka3idRsEuTl4EBMASG+T4w0b58dbNvMr1ryZX45W7aAE1lu55C1qjTdt4mcZrltEAOLmwD4zAiAXVDuZ1jLAjLaP4rUdqeOAmfxHiQJumeZ4pnej7fWKv7/Yi8B/iDp8xhGtHPbt7trKiDO+wDMxVteRnTQAIL+LqOeegtqJz1Z88pnAsr0XKOxkum6TS2rNCPINW2Bexm2hDSYx6c5rVljLdF+SFADJV1iLG64iENPRNnD48QLPdN8xRHmcwZ9bQrtM58/SXY+IWvMyKVwaTgig78SztCzF/p4o5K6T8qrCibI3Vt9lZ2CJkg6yHJHIV0IlgaFVAPLUksdemB4AtwZ3GcniXP8J0zJwwRUk022UYCTH6u++T1hqyx56WuBGG6fc4Y7IBlMC6G7fJJ0SibQU9VYZzmuQvftNPGzpky8ILMd7nhIcMvTvfYxqs0Fu7KAwBQPDX/Vstp1+EgCW5TlLKRlbeAe5pi0bjp8otFkC47RlpsBhg1XgfK536931qsHtkQ0Y9MflfmEZyIVByQ4ZB0COlnuRJItYquOtgTMuHirFGjMzWL9iaCaQZgvlMEtwB9Id4D6IN3SkqwZ3RmupnIlZKVTs791lX71SljqLHCtvyh0BgOR4AGW3SgoUlY9LnvwKJzPYfiJZ4PMcdTb8/U2sqNasGtxdUIy+EKdgaEz5Y0BtwMAgqugq5X/cFW0kvalrTdmUQmV+Rg2G9NNb/pIj5V614LhtEHn0j6i19Emu0cZEtuiaWwSqBmJWCpXla6DlawiwSC6tt04JIFwWpuewuOwvKlYPXuoE5T9B9yWSM699Sp9gSZjyC7Ef0ECTJdD0jSlrPb/aLhqsP+AmS7gz0qw6OYurc0ljkgqZv1lCiVKR5Eb7HxrU5yKW4nhrogOSJBMOHxFSbg1tpRY8Xt+ZKRptHwyWb3C3RL6rPv8OAByf4fzfSIIXRNAlF9e6R4fI5kY4vMLoMBN6gUrwWG2nkaXZX0FwmnyHqcoUKC5ULpbmvEsjeQqrqbR4uuuepS+9IfTsurcWCfmA0mhyfKepHda76/56JNVj5M+zvar+A6eeLeDSL1FlIaGDmqHpdwfQ0/SrR0O6iiYd/vfE8qeeTxx8u721HC2ZKgQgXlj18WdCEo1pC2IKy85Fo42osMaJLO+jRYMOI8PfHEgfYanTG3Lni5GNCA0H/o8l9Kfn6AtD+0HmuFYM+k4aDg4HlJ31n/k1yyLl7PEb0iiAnk23S1W6HuiJ1bQG53v7laMV9cQUWPuo78BjtFOOY8ke3mZQH8958w2AOi1VleTKb552H1h83Z0CBtIbSuMxBfbgJt9m82Gg/CCaNUjUh9b88FPilYz7i0upRocXE3FOZlKMwXCpRVK0zJvUUsoz3DcpAFKd73BzaCNuCm0wK7OEN0Jr/oxAQNZzkl/LS+qsyNoetMoveuq7UmerO8187BS/0T4Qb9s0XR3A+P3/MJIAN/gEg2W7WFVrpVzVVp6MxStaKrklsBuq6julPVuCO834zWjghNO16A1n0dwGhbPSnynJ7Dtq+dMvzf7lNFba4MZKtodkCR/Ek7bQQWBtF7Bmn/3b8X9k6wHtcFwfZlArEwAAAABJRU5ErkJggg==" alt="img">きものレンタリエhttps://kimono-rentalier.jp › ... › 着物の豆知識</a></p>
+<p><img src="data:image/jpeg;base64,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" alt="志古貴（しごき）とは？わかりやすく説明 | きものレンタリエの ..."></p>
+<ul>
+<li>かうぱー</li>
+</ul>
+<p><strong>尿道球腺液</strong>（にょうどうきゅうせんえき、英: Bulbourethral gland fluid）は、男性の尿道球腺から分泌される弱アルカリ性の粘性がある無臭無色透明な液体である。 一般にはカウパー腺液（単にカウパーやカウパー液とも）と呼ばれる。</p>
+<ul>
+<li>くすくすするの意味は？</li>
+</ul>
+<p>① <strong>物がくすぶるさまを表わす語</strong>。 ② こっそりと事をするさま、また、そのような性格のさまを表わす語。 こそこそ。 ③ しのんで笑う声、また、その様子を表わす語。</p>
+<ul>
+<li>「てっぺん」はどこの方言ですか？</li>
+</ul>
+<p>おにころし即ち酒精分の多い悪酒をいふ。 <strong>駿河の方言</strong>。</p>
+<p>① <strong>兜(かぶと)のいただき。</strong> <strong>転じて、頭のいただき。</strong> <strong>② 物のいちばん高い所。</strong> <strong>頂上。</strong></p>
+<ul>
+<li>トロトロ</li>
+</ul>
+<p>とろ‐とろ ① <strong>物がとけて、流動体・粘液状になっているさまを表わす語</strong>。 ② 粘液状のものがたれ落ちたり流れたりするさまを表わす語。 ④ 動作が緩慢で、ゆったりしたさまを表わす語。</p>
+<ul>
+<li>ビロード</li>
+</ul>
+<p>日本大百科全書(ニッポニカ) 「ビロード」の意味・わかりやすい解説<strong>添毛(てんもう)織物の一つで、織面に輪奈(わな)を出し、ときにはそれを切断して羽毛のようになった織物</strong>である。 ビロードとは、ポルトガル語のベルードvelludo、スペイン語のベルードvelludeの転訛(てんか)した語といわれている。</p>
+<ul>
+<li>「てろてろ」は方言ですか？</li>
+</ul>
+<p>私が大好きな「てろてろ」は泥酔状態 の事を指す<strong>津軽弁</strong>です。 「てろてろどなってまったじゃ～ 」です。 しかも、どちらかと言うとイイ（？） 泥酔状態（私的に）です。</p>
+<ul>
+<li>レロレロ</li>
+</ul>
+<p>① <strong>舌がもつれて発音が不明瞭なさまを表わす語</strong>。 ② 幼児をあやすのに、舌で上顎をはじいて音をたてるさまを表わす語。 ① 酒の酔いや麻痺などで、舌がもつれて何を言っているのかよくわからないさま。</p>
+<ul>
+<li>もどかしい</li>
+</ul>
+<p><strong>思うようにならず苛立つ。</strong> <strong>物事が捗らないので、いらいらする。</strong> <strong>じれったい。</strong> <strong>歯痒い。</strong></p>
+<ul>
+<li>いっそ の 事(こと)</li>
+</ul>
+<p><strong>あれこれと考えた末、それらとは一段違ったことを思い切って選ぶ気持を表わす</strong>。 また、時に、好ましいものをあきらめて意に染まないものを選ぶときの、投げやりな気持を表わす。 思い切って。 むしろ。</p>
+<ul>
+<li>とろん</li>
+</ul>
+<p>① <strong>濃い液体や空気などが重く沈んでいるさまを表わす語</strong>。 どろん。 ② ねむけを催したり、酒に酔ったりして目つきのぼんやりしているさまを表わす語。</p>
+<ul>
+<li>負えない</li>
+</ul>
+<p>［形］《連語「負えない」の一語化》<strong>どうしようもない。</strong> <strong>手がつけられない。</strong></p>
+<ul>
+<li>チロチロ</li>
+</ul>
+<p>① <strong>火、光または水の流れなどが細くかすかであるさまを表わす語</strong>。 また、灯火などが断続的に明暗をくり返しながらほのめくさまをいう。 ちらちら。</p>
+<ul>
+<li>ピンチ</li>
+</ul>
+<p>① <strong>追いつめられて非常に苦しい事態。</strong> <strong>危機。</strong> <strong>窮地。</strong> <strong>苦境。</strong></p>
+<ul>
+<li>「クルクル」とはどういう意味ですか？</li>
+</ul>
+<p>① <strong>物が軽やかにつづいて回るさま、また、何回も回すさまを表わす語</strong>。 ② 幾重にも巻くさまやまるめるさま、また、巻いてあるものを解くさまを表わす語。 ぐるぐる。 ③ 物事を滞りなく行なうさま、また、物事のすらすらと進行するさまを表わす語。</p>
+<ul>
+<li>艶めかしい</li>
+</ul>
+<p>① 人の容姿、態度などについていう。 <strong>優美である、上品である、もの柔らかである</strong>。 「あて」や「清ら」などとともに用いられることが多い。 ② 特に若い女性などの容姿をいうことが多いところから、次第に女性の若い魅力をいうようになり、後世は、女性の性的魅力を、さらに性的魅力一般を表現する語となる。</p>
+<p>[<br>艶めかしい(ナマメカシイ)とは？ 意味や使い方 - コトバンク](<a href="https://kotobank.jp/word/%E8%89%B6%E3%82%81%E3%81%8B%E3%81%97%E3%81%84-589696#:~:text=%E2%91%A0">https://kotobank.jp/word/艶めかしい-589696#:~:text=①</a> 人の容姿、態度,用いられることが多い。&amp;text&#x3D;② 特に若い女性など,表現する語となる。)</p>
+<ul>
+<li>あどけない</li>
+</ul>
+<p>[ 文語形 ]あどけな・し 〘 形容詞ク活用 〙 （子供の態度、様子などが）<strong>無心で愛らしい。</strong> <strong>無邪気である。</strong> <strong>することが幼い。</strong> <strong>わるぎがない。</strong></p>
+<ul>
+<li>すぼめる</li>
+</ul>
+<p>「すぼめる」「つぼめる」は、「窄める」とも書く。 「すぼめる」は、<strong>広がっていたものを小さくするときに用いる</strong>。 「つぼめる」は、管のようなものの口の面積を小さくする意。 また、「傘をつぼめる」のように、開いていたものを閉じる意味もある。</p>
+<ul>
+<li>恋愛において押して引くとどうなる？</li>
+</ul>
+<p>押して引く行為は、<strong>自分のことを考えてもらえる時間を増やすこととなり、距離を縮めるきっかけになります</strong>。 自分に気がある素振りをしていた異性がある日、急にそっけなくなったら、無性に気になるものです。 とくに相手が男性の場合、好意を抱いている相手に逃げられそうになると、本能的に追いかけたくなるといった男性心理が働きます。</p>
+<ul>
+<li>エレクト</li>
+</ul>
+<p>〘 名詞 〙 ( [英語] erect ) <strong>性器が勃起すること</strong>。</p>
+<ul>
+<li>ラストスパート</li>
+</ul>
+<p>ラスト‐スパート 〘 名詞 〙 ( [英語] last spurt ) <strong>競走・競泳などの競技で、ゴール近くで最後のがんばりを見せて力走・力泳すること</strong>。 転じて、物事の終了間際に、全力でことにあたること。</p>
+<ul>
+<li>エクスタシー</li>
+</ul>
+<p>エクスタシー（ecstasy）１ <strong>快感が最高潮に達して無我夢中の状態になること</strong>。 恍惚 こうこつ 。 忘我。 ２ 宗教的儀礼などの際に体験される神秘的な心境。</p>
+<ul>
+<li>ドクドクとはどういう意味ですか？</li>
+</ul>
+<p>どく‐どく ① ( 「と」を伴って用いることもある ) <strong>酒・水や血など、液体がさかんに流れ出たり、あふれ出たりするさまを表わす語</strong>。 ② 興奮したり不安を感じたりして胸が高鳴るさまを表わす語。</p>
+<ul>
+<li>怯む</li>
+</ul>
+<p><strong>恐れて勢いが弱る。</strong> <strong>おじける。</strong> <strong>萎縮する。</strong></p>
+<p><a href="https://kotobank.jp/word/%E6%80%AF%E3%82%80-614240#:~:text=%E6%81%90%E3%82%8C%E3%81%A6%E5%8B%A2%E3%81%84%E3%81%8C%E5%BC%B1%E3%82%8B,%E8%90%8E%E7%B8%AE%E3%81%99%E3%82%8B%E3%80%82"><br>怯む(ヒルム)とは？ 意味や使い方 - コトバンク</a></p>
+<ul>
+<li>しくしく</li>
+</ul>
+<p><strong>弱弱しく泣くさま。</strong> <strong>強くはないが体が絶えず痛むさま</strong>。</p>
+<ul>
+<li>ヒンズースクワット</li>
+</ul>
+<p>「ヒンズースクワット」は、<strong>かかとを上げたまま行います</strong>。 1. つま先立ちになり、膝を前に出し、両手は横に置いたままスクワットします。 2. そして、かかとは上げたまま、両腕を前に振ってバランスをとりながら、足の親指の付け根にある母指球に力を入れて立ち上がります。</p>
+<ul>
+<li>「あざとかわいい」とはどういう意味ですか？</li>
+</ul>
+<p>「あざとかわいい」は計算高さを意味する「あざとい」と、愛らしさなどを意味する「かわいい」の2つの言葉が合わさった造語です。 つまり、「あざとかわいい」とは、<strong>魅力的に見せるために計算された言動をとるさまであり、そこにプラス、自然と人の心を惹きつけ好かれる外見や雰囲気を兼ね備えているイメージ</strong>でしょうか。</p>
+<ul>
+<li>タンパク質</li>
+</ul>
+<p>たんぱく質とは たんぱく質とは<strong>アミノ酸が多数結合した高分子化合物</strong>で、筋肉や臓器など体を構成する要素として非常に重要なものです。 また、それだけでなく、たんぱく質は、アミノ酸の組み合わせや種類、量などの違いによって形状や働きが異なり、酵素やホルモン、免疫物質としてさまざまな機能を担っています。</p>
+<ul>
+<li>「取り憑かれた」とはどういう意味ですか？</li>
+</ul>
+<p>取り憑かれるとは、<strong>ある思念に固執している、妄想にとらわれている、という状況</strong>を指す意味で用いられる表現。<a href="https://www.weblio.jp/content/%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B#:~:text=%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B%E3%81%A8%E3%81%AF%E3%80%81%E3%81%82%E3%82%8B,%E6%84%8F%E5%91%B3%E3%81%A7%E7%94%A8%E3%81%84%E3%82%89%E3%82%8C%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">取り憑かれる(とりつかれる)</a></p>
+<ul>
+<li>ポワントワークとは何ですか？</li>
+</ul>
+<p><strong>トウシューズを履き、足先を完全に伸ばし、爪先の先端でステップを踏むこと</strong>。 ほとんどの場合、女性が行う（男性がトウシューズを履くことはほとんどない）。</p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>存在与虚无</title>
     <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
     <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
@@ -2429,15 +2429,6 @@
 ]]></content>
       <tags>
         <tag>读书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小他者、对象a、大他者</title>
-    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
-    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
@@ -2459,9 +2450,27 @@
       </tags>
   </entry>
   <entry>
+    <title>拉康和弗洛伊德关于无意识的论述</title>
+    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
+    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>感想</title>
     <url>/2024/07/21/%E6%84%9F%E6%83%B3/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>小他者、对象a、大他者</title>
+    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
+    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
   </entry>
   <entry>
     <title>（5）数据的共享和保护</title>
@@ -2651,39 +2660,6 @@
 ]]></content>
       <tags>
         <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
-    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
-<blockquote>
-<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
-</blockquote>
-<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>名称</th>
-<th>性质</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>differance</td>
-<td>延异</td>
-<td>共时性</td>
-</tr>
-<tr>
-<td>difference</td>
-<td>差异</td>
-<td>历时性</td>
-</tr>
-</tbody></table>
-<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
@@ -3155,9 +3131,33 @@
       </tags>
   </entry>
   <entry>
-    <title>拉康和弗洛伊德关于无意识的论述</title>
-    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
-    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
+    <title>文论：几个基本概念的梳理（上）因为有你的存在，世界才有了纵深的意义</title>
+    <url>/2024/05/19/%E6%96%87%E8%AE%BA%EF%BC%9A%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E6%A2%B3%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
+<blockquote>
+<p>Freud：转喻对应梦的移置，隐喻对应着梦的凝缩，还有快乐原则和超越快乐原则。<br>试图厘清理路&#x2F;关系：<br>名词解释-&gt;忘了<br>说不定他错了 呢？<br>说不定别有深意呢？<br>从共时性走到历时性，它是结构主义最后要面对的一个危机，这是德里达说的。<br>结构主义的危机：起源<br>结构主义的事物，是作为一种结构的一种差异出现的。</p>
+</blockquote>
+<h3 id="《结构，符号，游戏》"><a href="#《结构，符号，游戏》" class="headerlink" title="《结构，符号，游戏》"></a>《结构，符号，游戏》</h3><p><strong>Perhaps sth has occurred in the history of the concept of the structure that could be called an “event”.</strong><br>在结构主义里面，在最开始你是不知道它在那里的。<br>德里达认为，真正架构符号系统的事物绝不是处于符号系统之中的，而是作为这个符号系统的中心，但是却外在于这个结构中。（构成性例外）<br><strong>trancedental conscious conscience god man and so on.</strong><br>人之后？危机（头）-&gt;中心-&gt;语言！<br>God 超人：语言一直是沉浸在自身的，当语言成为一个新的大他者的时候，神迹就都已经变成死的了。<br>未有-&gt;Lacan：不可能的才是真实的，语言断裂之处才是大写的真实。<br>differance：延异，目的是在共时性中搞出一种历时性。<br>difference：差异<br>反对语音中心主义：书写首要，声音是刻在耳朵上的书写。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>性质</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>differance</td>
+<td>延异</td>
+<td>共时性</td>
+</tr>
+<tr>
+<td>difference</td>
+<td>差异</td>
+<td>历时性</td>
+</tr>
+</tbody></table>
+<p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
 ]]></content>
       <tags>
         <tag>精神分析</tag>
@@ -3225,17 +3225,10 @@
       </tags>
   </entry>
   <entry>
-    <title>死月妖花</title>
-    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
+    <title>水夏</title>
+    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
     <content><![CDATA[<p>s</p>
-<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#x34;&#x67;&#97;&#x74;&#x73;&#117;&#x38;&#x6b;&#97;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#x6d;">&#x34;&#x67;&#97;&#x74;&#x73;&#117;&#x38;&#x6b;&#97;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#x6d;</a></p>
-<p>推特账号：@4gatsu_8ka</p>
-<h3 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h3><p>本作の全編予想プレイ時間は50<del>120時間で寸(文字数换算で230万字程度)。<br>1編当たりの予想プレイ時間は最短編で2</del>4時間、最長編で10~20時間です</p>
-<p>非常に長いので健康な害さないよう，適宜休憩を取りながらプレイして下さい</p>
-<h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><p>立木三日（tachiki mika）：在打完驶向过去的梦的剧本之后，出现的一个带着能面，着着红袍的女性，伴随她的出现是一阵清脆的铃声。</p>
-<h2 id="咒杀篇"><a href="#咒杀篇" class="headerlink" title="咒杀篇"></a>咒杀篇</h2><h3 id="四月病（四月七日）："><a href="#四月病（四月七日）：" class="headerlink" title="四月病（四月七日）："></a>四月病（四月七日）：</h3><p>介绍了夏美四月病的病状，在预知梦的能力发作时，看见了飞在天空中的气球，然后还有一具被剥皮了的尸体。这里会出现茜和夏美一起吃饭的剧情，吃饭的过程中，四月病发作，恶心得夏美到厕所呕吐了。</p>
-<h3 id="四月八日の朝："><a href="#四月八日の朝：" class="headerlink" title="四月八日の朝："></a>四月八日の朝：</h3><p>四月八日早上起床，家外面出现了警笛声，学生也被要求待在自己的家里，不要外出。在出门之后，偶遇倒垃圾的美冬。</p>
-<h2 id="诧言篇"><a href="#诧言篇" class="headerlink" title="诧言篇"></a>诧言篇</h2><h2 id="明徵篇"><a href="#明徵篇" class="headerlink" title="明徵篇"></a>明徵篇</h2><h3 id="過去へ馳せる夢"><a href="#過去へ馳せる夢" class="headerlink" title="過去へ馳せる夢"></a>過去へ馳せる夢</h3><p>这里是处在五月六号的刚过十二点钟之后发生的故事，这个时候两人的父母都已经亡故。</p>
+<p>你的身上散发着死人的气息</p>
 ]]></content>
       <tags>
         <tag>gal</tag>
@@ -3329,10 +3322,17 @@
       </tags>
   </entry>
   <entry>
-    <title>水夏</title>
-    <url>/2024/06/01/%E6%B0%B4%E5%A4%8F/</url>
+    <title>死月妖花</title>
+    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
     <content><![CDATA[<p>s</p>
-<p>你的身上散发着死人的气息</p>
+<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#52;&#103;&#x61;&#116;&#115;&#117;&#56;&#x6b;&#x61;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#52;&#103;&#x61;&#116;&#115;&#117;&#56;&#x6b;&#x61;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p>推特账号：@4gatsu_8ka</p>
+<h3 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h3><p>本作の全編予想プレイ時間は50<del>120時間で寸(文字数换算で230万字程度)。<br>1編当たりの予想プレイ時間は最短編で2</del>4時間、最長編で10~20時間です</p>
+<p>非常に長いので健康な害さないよう，適宜休憩を取りながらプレイして下さい</p>
+<h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><p>立木三日（tachiki mika）：在打完驶向过去的梦的剧本之后，出现的一个带着能面，着着红袍的女性，伴随她的出现是一阵清脆的铃声。</p>
+<h2 id="咒杀篇"><a href="#咒杀篇" class="headerlink" title="咒杀篇"></a>咒杀篇</h2><h3 id="四月病（四月七日）："><a href="#四月病（四月七日）：" class="headerlink" title="四月病（四月七日）："></a>四月病（四月七日）：</h3><p>介绍了夏美四月病的病状，在预知梦的能力发作时，看见了飞在天空中的气球，然后还有一具被剥皮了的尸体。这里会出现茜和夏美一起吃饭的剧情，吃饭的过程中，四月病发作，恶心得夏美到厕所呕吐了。</p>
+<h3 id="四月八日の朝："><a href="#四月八日の朝：" class="headerlink" title="四月八日の朝："></a>四月八日の朝：</h3><p>四月八日早上起床，家外面出现了警笛声，学生也被要求待在自己的家里，不要外出。在出门之后，偶遇倒垃圾的美冬。</p>
+<h2 id="诧言篇"><a href="#诧言篇" class="headerlink" title="诧言篇"></a>诧言篇</h2><h2 id="明徵篇"><a href="#明徵篇" class="headerlink" title="明徵篇"></a>明徵篇</h2><h3 id="過去へ馳せる夢"><a href="#過去へ馳せる夢" class="headerlink" title="過去へ馳せる夢"></a>過去へ馳せる夢</h3><p>这里是处在五月六号的刚过十二点钟之后发生的故事，这个时候两人的父母都已经亡故。</p>
 ]]></content>
       <tags>
         <tag>gal</tag>
@@ -3838,6 +3838,40 @@
       </tags>
   </entry>
   <entry>
+    <title>“刺青，以对抗自己没有生命力这件事情。”</title>
+    <url>/2024/06/12/%E7%BA%B9%E8%BA%AB%E7%9A%84%E7%88%B1%E6%AC%B2%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="1-自残的机制"><a href="#1-自残的机制" class="headerlink" title="1 自残的机制"></a>1 自残的机制</h2><h3 id="1-1-凯瑟琳·里奥特"><a href="#1-1-凯瑟琳·里奥特" class="headerlink" title="1.1  凯瑟琳·里奥特"></a>1.1  凯瑟琳·里奥特</h3><p>自残就是给自己做一个标记，不管是洞穿、划痕还是畸形处理，这些都是古来有之的。</p>
+<ul>
+<li><strong>洞穿：打耳洞、唇钉、鼻钉</strong></li>
+<li><strong>划痕：纹身、烟头，划一刀</strong></li>
+<li><strong>畸形处理：裹小脚、带很重的围脖</strong></li>
+<li><strong>割礼</strong></li>
+</ul>
+<p><strong>为什么人会对自己的身体动刀呢？</strong></p>
+<p>在石器时代，那个刀耕火种的年代，外出狩猎的男人，最开始是在忍受痛苦，有着伤疤，在后面男人发现，伤口象征着苦难、坚韧、功劳、荣耀。</p>
+<p>男人发现，如果自己完好无伤地回来，，那收到的各种待遇都不如那些受伤回来的伙伴，于是男人便发生了倒错-即自己给自己制造一些伤口，以证明自己的阳刚之气，证明自己的最英勇的人，我值得你们的拜服。</p>
+<p>伤口是一个能指，是一个象征，是进入某个关系的注册符。</p>
+<h3 id="1-2-存在被抛入世，它的第一个注册符是什么？"><a href="#1-2-存在被抛入世，它的第一个注册符是什么？" class="headerlink" title="1.2 存在被抛入世，它的第一个注册符是什么？"></a>1.2 存在被抛入世，它的第一个注册符是什么？</h3><p>就是你的肚脐眼，肚脐眼是主体与母亲分离的一个标志。</p>
+<p>分离是主题最初的，永恒的创伤。</p>
+<h4 id="1-2-1-独生子女"><a href="#1-2-1-独生子女" class="headerlink" title="1.2.1 独生子女"></a>1.2.1 独生子女</h4><p>父母难以放开他们唯一的孩子</p>
+<h4 id="1-2-2-社会原因"><a href="#1-2-2-社会原因" class="headerlink" title="1.2.2 社会原因"></a>1.2.2 社会原因</h4><p>孩子无法独立面对经济压力</p>
+<h4 id="1-2-3-年轻人找不到自己的身份"><a href="#1-2-3-年轻人找不到自己的身份" class="headerlink" title="1.2.3 年轻人找不到自己的身份"></a>1.2.3 年轻人找不到自己的身份</h4><p>这个时候，年轻人就会用某种伤痕，来证明自己的身份。</p>
+<p>闻一个人的名字，来证明自己爱ta。</p>
+<p>看到某个卡通符号，就能认同自己是某个小团体的存在。</p>
+<h3 id="1-3-凯瑟琳的一个示例"><a href="#1-3-凯瑟琳的一个示例" class="headerlink" title="1.3 凯瑟琳的一个示例"></a>1.3 凯瑟琳的一个示例</h3><h4 id="1-3-1-伤痕纹身是一个隐喻，一个症状"><a href="#1-3-1-伤痕纹身是一个隐喻，一个症状" class="headerlink" title="1.3.1 伤痕纹身是一个隐喻，一个症状"></a>1.3.1 伤痕纹身是一个隐喻，一个症状</h4><h4 id="1-3-2-案例"><a href="#1-3-2-案例" class="headerlink" title="1.3.2 案例"></a>1.3.2 案例</h4><p>三岁的时候，被养父母从孤儿院中领养，对亲生父母没有任何记忆，只知道母亲在她出生几个月的时候，就去世了。</p>
+<p>她不能说出完整的情感，长期自残，有自杀的冲动。</p>
+<p>自残行为体现着案例女主说，自己身份的疑问？</p>
+<p>案主通过在身体上打标记，试图来控制自己的身体，获取自己身体的控制权。</p>
+<p>案主会脱得越来越多，像是在展示某种战利品一样。</p>
+<p>通过展示自己的伤口，实在诉说自己的痛苦，希望捕获他人的目光，能爱我，以及爱我的痛苦。</p>
+<p>案主开始给分析师看她写的日记，分析师解读她的日记。</p>
+<p>分析师在阅读她的伤口。</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>继承和派生</title>
     <url>/2024/06/01/%E7%BB%A7%E6%89%BF%E5%92%8C%E6%B4%BE%E7%94%9F/</url>
     <content><![CDATA[<h2 id="导学"><a href="#导学" class="headerlink" title="导学"></a>导学</h2><h2 id="继承的基本概念和语法"><a href="#继承的基本概念和语法" class="headerlink" title="继承的基本概念和语法"></a>继承的基本概念和语法</h2><ul>
@@ -4052,40 +4086,6 @@
       </tags>
   </entry>
   <entry>
-    <title>“刺青，以对抗自己没有生命力这件事情。”</title>
-    <url>/2024/06/12/%E7%BA%B9%E8%BA%AB%E7%9A%84%E7%88%B1%E6%AC%B2%E6%9C%BA%E5%88%B6/</url>
-    <content><![CDATA[<h2 id="1-自残的机制"><a href="#1-自残的机制" class="headerlink" title="1 自残的机制"></a>1 自残的机制</h2><h3 id="1-1-凯瑟琳·里奥特"><a href="#1-1-凯瑟琳·里奥特" class="headerlink" title="1.1  凯瑟琳·里奥特"></a>1.1  凯瑟琳·里奥特</h3><p>自残就是给自己做一个标记，不管是洞穿、划痕还是畸形处理，这些都是古来有之的。</p>
-<ul>
-<li><strong>洞穿：打耳洞、唇钉、鼻钉</strong></li>
-<li><strong>划痕：纹身、烟头，划一刀</strong></li>
-<li><strong>畸形处理：裹小脚、带很重的围脖</strong></li>
-<li><strong>割礼</strong></li>
-</ul>
-<p><strong>为什么人会对自己的身体动刀呢？</strong></p>
-<p>在石器时代，那个刀耕火种的年代，外出狩猎的男人，最开始是在忍受痛苦，有着伤疤，在后面男人发现，伤口象征着苦难、坚韧、功劳、荣耀。</p>
-<p>男人发现，如果自己完好无伤地回来，，那收到的各种待遇都不如那些受伤回来的伙伴，于是男人便发生了倒错-即自己给自己制造一些伤口，以证明自己的阳刚之气，证明自己的最英勇的人，我值得你们的拜服。</p>
-<p>伤口是一个能指，是一个象征，是进入某个关系的注册符。</p>
-<h3 id="1-2-存在被抛入世，它的第一个注册符是什么？"><a href="#1-2-存在被抛入世，它的第一个注册符是什么？" class="headerlink" title="1.2 存在被抛入世，它的第一个注册符是什么？"></a>1.2 存在被抛入世，它的第一个注册符是什么？</h3><p>就是你的肚脐眼，肚脐眼是主体与母亲分离的一个标志。</p>
-<p>分离是主题最初的，永恒的创伤。</p>
-<h4 id="1-2-1-独生子女"><a href="#1-2-1-独生子女" class="headerlink" title="1.2.1 独生子女"></a>1.2.1 独生子女</h4><p>父母难以放开他们唯一的孩子</p>
-<h4 id="1-2-2-社会原因"><a href="#1-2-2-社会原因" class="headerlink" title="1.2.2 社会原因"></a>1.2.2 社会原因</h4><p>孩子无法独立面对经济压力</p>
-<h4 id="1-2-3-年轻人找不到自己的身份"><a href="#1-2-3-年轻人找不到自己的身份" class="headerlink" title="1.2.3 年轻人找不到自己的身份"></a>1.2.3 年轻人找不到自己的身份</h4><p>这个时候，年轻人就会用某种伤痕，来证明自己的身份。</p>
-<p>闻一个人的名字，来证明自己爱ta。</p>
-<p>看到某个卡通符号，就能认同自己是某个小团体的存在。</p>
-<h3 id="1-3-凯瑟琳的一个示例"><a href="#1-3-凯瑟琳的一个示例" class="headerlink" title="1.3 凯瑟琳的一个示例"></a>1.3 凯瑟琳的一个示例</h3><h4 id="1-3-1-伤痕纹身是一个隐喻，一个症状"><a href="#1-3-1-伤痕纹身是一个隐喻，一个症状" class="headerlink" title="1.3.1 伤痕纹身是一个隐喻，一个症状"></a>1.3.1 伤痕纹身是一个隐喻，一个症状</h4><h4 id="1-3-2-案例"><a href="#1-3-2-案例" class="headerlink" title="1.3.2 案例"></a>1.3.2 案例</h4><p>三岁的时候，被养父母从孤儿院中领养，对亲生父母没有任何记忆，只知道母亲在她出生几个月的时候，就去世了。</p>
-<p>她不能说出完整的情感，长期自残，有自杀的冲动。</p>
-<p>自残行为体现着案例女主说，自己身份的疑问？</p>
-<p>案主通过在身体上打标记，试图来控制自己的身体，获取自己身体的控制权。</p>
-<p>案主会脱得越来越多，像是在展示某种战利品一样。</p>
-<p>通过展示自己的伤口，实在诉说自己的痛苦，希望捕获他人的目光，能爱我，以及爱我的痛苦。</p>
-<p>案主开始给分析师看她写的日记，分析师解读她的日记。</p>
-<p>分析师在阅读她的伤口。</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>移除链表元素</title>
     <url>/2024/06/12/%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/</url>
     <content><![CDATA[<h2 id="1-线性表是什么"><a href="#1-线性表是什么" class="headerlink" title="1. 线性表是什么"></a>1. 线性表是什么</h2><h3 id="1-1线性表的抽象数据类型"><a href="#1-1线性表的抽象数据类型" class="headerlink" title="1.1线性表的抽象数据类型"></a>1.1线性表的抽象数据类型</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">ADT 线性表(List)</span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(*L)</span></span>;<span class="comment">//初始化链表</span></span><br><span class="line">	<span class="built_in">ListEmpty</span>(L);<span class="comment">//检查链表是否为空</span></span><br><span class="line">	<span class="built_in">clearList</span>(*L);<span class="comment">//清空链表已有元素</span></span><br><span class="line">	<span class="built_in">GetElem</span>(L,i,*e);<span class="comment">//将链表的第i个位置的元素的值赋给e，然后返回</span></span><br><span class="line">	<span class="built_in">LocateElem</span>(L,e);<span class="comment">//查找L中是否有e，Yes：元素位置，No：0</span></span><br><span class="line">	<span class="built_in">ListInsert</span>(*L,i,e);<span class="comment">//在L的第i个位置插入元素e</span></span><br><span class="line">	<span class="built_in">ListDelete</span>(*L,i,*e);<span class="comment">//删除线性表的第i个元素，并用e返回其值</span></span><br><span class="line">	<span class="built_in">ListLength</span>(L);<span class="comment">//返回线性表L的元素个数</span></span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
@@ -4185,15 +4185,6 @@
 ]]></content>
       <tags>
         <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>镜像阶段：关系即伪，无中生伪有</title>
-    <url>/2024/05/17/%E9%95%9C%E5%83%8F%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%85%B3%E7%B3%BB%E5%8D%B3%E4%BC%AA%EF%BC%8C%E6%97%A0%E4%B8%AD%E7%94%9F%E4%BC%AA%E6%9C%89/</url>
-    <content><![CDATA[<p>镜像阶段：关系即伪&#x2F;无中生伪有-&gt;拉康任务弗洛伊德的那个本我是生物性的，拉康认为人的开端就是一个无，那个永远回不去母子共同体的“无”。<br>nothingness-&gt;hegel 人是一个黑夜。<br>是一个空洞的虚无，<br>人的实在意义上的否定性。<br>主奴辩证法。<br>Max：人的生活，现实意义上是社会关系的总和。<br>镜像阶段的定义：6-18个月 Freud。<br>小朋友站在镜子面前，发现镜子里面有一个小朋友的形象。<br>这个时候会感受到镜子里面那个统一完整的形象<br>进入了想象域，一种蜜月般的欣喜，<br>人总是一个早产儿，die<br>“动力无助”-&gt;主客不分<br>“破碎的身体”，在镜子里面看到了一个完整的自己，接着破碎化，会成为主体不可弥合的创伤，梦是被压抑的愿望的实现 。<br>梦是被压抑的愿望经过伪装之后的实现。<br>主体在认定了一个影像之后的关系，内在和外在的关系，你否定了内在的关系，将自身认知为了镜子中的自己，这是第一次异化。<br>第二次异化是在象征域中被语言结构的异化，语言是一面无声之镜。这是第二次的异化。<br>镜像误认是一种反对心理学（格式塔）上面的那种积极的心理学。<br>a-（小他者一号）&gt;a‘（moi，弗洛伊德语境下的理想自我）；镜像自我，idea-ich。<br>小他者不是一个具体实在的人，镜像阶段中作为自我认同对象的非我中介。</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
@@ -4384,6 +4375,15 @@
 ]]></content>
       <tags>
         <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>镜像阶段：关系即伪，无中生伪有</title>
+    <url>/2024/05/17/%E9%95%9C%E5%83%8F%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%85%B3%E7%B3%BB%E5%8D%B3%E4%BC%AA%EF%BC%8C%E6%97%A0%E4%B8%AD%E7%94%9F%E4%BC%AA%E6%9C%89/</url>
+    <content><![CDATA[<p>镜像阶段：关系即伪&#x2F;无中生伪有-&gt;拉康任务弗洛伊德的那个本我是生物性的，拉康认为人的开端就是一个无，那个永远回不去母子共同体的“无”。<br>nothingness-&gt;hegel 人是一个黑夜。<br>是一个空洞的虚无，<br>人的实在意义上的否定性。<br>主奴辩证法。<br>Max：人的生活，现实意义上是社会关系的总和。<br>镜像阶段的定义：6-18个月 Freud。<br>小朋友站在镜子面前，发现镜子里面有一个小朋友的形象。<br>这个时候会感受到镜子里面那个统一完整的形象<br>进入了想象域，一种蜜月般的欣喜，<br>人总是一个早产儿，die<br>“动力无助”-&gt;主客不分<br>“破碎的身体”，在镜子里面看到了一个完整的自己，接着破碎化，会成为主体不可弥合的创伤，梦是被压抑的愿望的实现 。<br>梦是被压抑的愿望经过伪装之后的实现。<br>主体在认定了一个影像之后的关系，内在和外在的关系，你否定了内在的关系，将自身认知为了镜子中的自己，这是第一次异化。<br>第二次异化是在象征域中被语言结构的异化，语言是一面无声之镜。这是第二次的异化。<br>镜像误认是一种反对心理学（格式塔）上面的那种积极的心理学。<br>a-（小他者一号）&gt;a‘（moi，弗洛伊德语境下的理想自我）；镜像自我，idea-ich。<br>小他者不是一个具体实在的人，镜像阶段中作为自我认同对象的非我中介。</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
