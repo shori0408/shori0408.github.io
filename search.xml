@@ -107,40 +107,6 @@
       </tags>
   </entry>
   <entry>
-    <title>c++模板</title>
-    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
-<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你使用这个食谱时，你可以指定不同的材料：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用这个三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用特化后的三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>markdown语法</title>
     <url>/2024/05/18/Markdown%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="常用公式"><a href="#常用公式" class="headerlink" title="常用公式"></a>常用公式</h2><blockquote>
@@ -1674,6 +1640,40 @@
       </tags>
   </entry>
   <entry>
+    <title>c++模板</title>
+    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
+<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你使用这个食谱时，你可以指定不同的材料：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用这个三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用特化后的三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git操作</title>
     <url>/2024/07/23/git%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h2><p>一般工作流程</p>
@@ -1924,6 +1924,333 @@
 ]]></content>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jqv</title>
+    <url>/2024/05/21/jqv/</url>
+    <content><![CDATA[<ul>
+<li><h2 id="sentence"><a href="#sentence" class="headerlink" title="sentence"></a>sentence</h2></li>
+<li><p>異った窓ガラスみたいに、人差し指の軌跡がくっきりと浮かんだ。</p>
+</li>
+<li><p>自分よりちいさいの、弱いものを愛でる感情とうのは自然だ。</p>
+</li>
+<li><p>世界が元通り三ならない限り 変容の呪縛からは逃れられない</p>
+</li>
+<li><h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2></li>
+<li><p>やむ【止・已】 に 止(や)まれぬ<strong>止めようとしても止められない。</strong> <strong>そうしないではいられない。</strong></p>
+</li>
+<li><p>「なでりなでり」って何だよ</p>
+</li>
+</ul>
+<p>16-Jul-2016 — そこは「なでなで」だろ！ 「り」ってなんだ「り」って！ そもそも「撫でる撫でる」からの「撫で撫で」だろ！ 古文か？古文なのか！？</p>
+<ul>
+<li>orthodox</li>
+</ul>
+<p>一般に正統的と認められているさま。 伝統的に承認されているさま。</p>
+<ul>
+<li><p>「ブレーキ役」の言い換えや類語・同義語 - Weblio類語辞典</p>
+<p>ブレーキ役の言い換えや別の言い方。・物事が深刻化しないようにあらかじめ用意しておく仕組みのこと安全弁安全装置ブレーキブレーキ役.</p>
+</li>
+<li><p>あっさり</p>
+</li>
+</ul>
+<p>① 人や物事の状態、性質が、複雑でなく、淡泊平明であるさま。 しつこくないさま。 あっさら。 ② 手数のかからないさま。</p>
+<ul>
+<li>デリケート</li>
+</ul>
+<p>① ( 人の心・感情などについて ) 鋭敏で、傷つきやすいさま。 繊細なさま。 ② ( 鑑賞、賞美するものなどについて ) 微妙な味わいを持っているさま。 また、微細な差のあるさま。</p>
+<ul>
+<li>さえあれば</li>
+</ul>
+<p>ラーメンさえあればいいです。 T：<strong>「それがあったら、他には何も必要ない、問題ない」という意味です</strong>。 「【Vます】さえすれば」は、「する」が変わった形の「〜さえしてくれれば」「〜さえできれば」なども使えます。</p>
+<ul>
+<li>「座が白ける」とはどういう意味ですか？</li>
+</ul>
+<p>ざがしらける 〔語源〕「白ける」は、<strong>白っぽくなる。</strong> <strong>色があせる。</strong> <strong>転じて、その場の興が冷める</strong>。</p>
+<ul>
+<li>「とげとげ」とはどういう意味ですか？</li>
+</ul>
+<p>とげ‐とげ【刺刺】 [ 1 ] 〘 副詞 〙 ( 「と」を伴っても用いる ) <strong>とげとげしいさま</strong>。</p>
+<ul>
+<li>ロン‐げ【ロン毛】</li>
+</ul>
+<p>《「ロン」はロングの略》俗に、<strong>髪の毛の長いこと</strong>。 また、長く伸ばした髪形。 主に、男性についていう。</p>
+<ul>
+<li>「うぜ」とはどういう意味ですか？</li>
+</ul>
+<p>「うぜえ」とも》<strong>あれこれとうるさい。</strong> <strong>わずらわしい</strong>。 [補説]もとは「不快だ。 気味が悪い」という意の、八王子を中心とする東京多摩地区の方言。</p>
+<ul>
+<li>「テディボーイ」とはどういう意味ですか？</li>
+</ul>
+<p><strong>不良少年</strong>。 特にエドワード7世時代（1901〜10）の服装を好んで着用した1950年代から60年代初めのロンドンの不良少年をさす。 エドワードの愛称、テディーに由来する。</p>
+<ul>
+<li>あいだ‐がらあひだ‥【間柄】</li>
+</ul>
+<p>① <strong>親類、血族などの続き合い</strong>。 ② 互いの関係。 付き合い。 交際。</p>
+<ul>
+<li>ばっちり</li>
+</ul>
+<p><strong>満足のいく様子であることを示す表現</strong>。 大体副詞的に用いる。</p>
+<ul>
+<li>ユナイテッドステイツとはどういう意味ですか？</li>
+</ul>
+<p>ユナイテッド・ステーツ（United States）は、<strong>合衆国</strong>を意味する。 特にアメリカ合衆国を指すことが多い。 ユナイテッド・ステーツ (フリゲート)(en:USS United States (1797)) - アメリカ海軍の帆走フリゲート。</p>
+<ul>
+<li>ネガティブ思考とはどういう意味ですか？</li>
+</ul>
+<p><strong>何かにつけて、どうせ失敗するさ、私はだめなんだなどと悪い方向に考えが向くこと</strong>。 物事を否定的にとらえる考え方。</p>
+<ul>
+<li>ステイツとはどういう意味ですか？</li>
+</ul>
+<p>「states」とは・「states」の意味</p>
+<p>「states」は、英語で「state」の複数形であり、<strong>主に「州」や「国家」という意味で使用される</strong>。 また、状態や状況を表す場合もある。May 23, 2023</p>
+<ul>
+<li>スノッブ</li>
+</ul>
+<p>30の言語版</p>
+<ul>
+<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ページ</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%83%88:%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ノート</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">閲覧</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=edit">編集</a></p>
+</li>
+<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=history">履歴表示</a></p>
+</li>
+</ul>
+<p>ツール</p>
+<p>出典: フリー百科事典『ウィキペディア（Wikipedia）』</p>
+<table>
+<thead>
+<tr>
+<th><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Disambig_gray.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Disambig_gray.svg/25px-Disambig_gray.svg.png" alt="曖昧さ回避"></a></th>
+<th>この項目では、社会用語について説明しています。<a href="https://ja.wikipedia.org/wiki/%E3%81%8A%E7%AC%91%E3%81%84%E8%8A%B8%E4%BA%BA">お笑い芸人</a>については「<a href="https://ja.wikipedia.org/wiki/SNOB">SNOB</a>」をご覧ください。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wiktionary-logo.svg/40px-Wiktionary-logo.svg.png" alt="img"></p>
+<p><a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AA%E3%83%BC">ウィクショナリー</a>に関連の辞書項目があります。</p>
+<p><strong><a href="https://ja.wiktionary.org/wiki/en:snob">en:snob</a></strong></p>
+<p><strong>スノッブ</strong>（snob）は、一般に<a href="https://ja.wikipedia.org/w/index.php?title=%E4%BF%97%E7%89%A9&action=edit&redlink=1">俗物</a>、また<strong>スノビズム</strong>（snobbism）は俗物根性と訳され、多くの場合「知識・教養をひけらかす見栄張りの気取り屋」「上位の者に取り入り、下の者を見下す嫌味な人物」「紳士気取りの俗物」といった意味で使われる。一方で、<a href="https://ja.wikipedia.org/wiki/%E8%80%BD%E7%BE%8E%E4%B8%BB%E7%BE%A9">耽美主義</a>や<a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%B3%E3%83%87%E3%82%A3%E3%82%BA%E3%83%A0">ダンディズム</a>、<a href="https://ja.wikipedia.org/wiki/%E7%B2%8B">粋</a>、<a href="https://ja.wikipedia.org/wiki/%E6%B4%92%E8%90%BD">洒落</a>を含意したりと（特に<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">ファッション</a>において）、単に批判的な言葉としてのみ使用されるわけではない。</p>
+<ul>
+<li>うんぬんかんぬん</li>
+</ul>
+<p>「うんともすんとも」の「すんとも」、「仲良し小良し」の「小良し」のように、<strong>大して意味のない要素を後に続けて使うこと</strong>は、よく見られる現象です。</p>
+<ul>
+<li>サラマンダーとはどういう意味ですか？</li>
+</ul>
+<p>サラマンダーは英語でsalamanderと表記され、意味としては<strong>サンショウウオや、西洋の伝説上の動物</strong>となります。 西洋の伝説上の動物・火の精と、火で加熱する調理器具のサラマンダーをかけているのは？といわれています。</p>
+<ul>
+<li>May I have your name とはどういう意味ですか？</li>
+</ul>
+<p>May I have いただけますか？ your name あなたのお名前を、Please は丁寧 な表現で、つまり <strong>お名前をいただけますか？</strong> という意味になります。 端的に What is your name? でもいいですが、直接的な表現ですので、お客 様にはこの表現を使うのは好ましくありません。</p>
+<ul>
+<li>あたい 【一人称】</li>
+</ul>
+<p> <strong>「あたし」がくだけた表現</strong>。 元は下町女性の言葉で、1970～80年代頃には不良少女などが用いていたが、現在はほとんど使われない。</p>
+<ul>
+<li>「グーパンチ」とはどういう意味ですか？</li>
+</ul>
+<p><strong>拳を握った状態で繰り出すパンチのこと</strong>。 グーパンとは、グーの状態（拳を握った状態）で相手に打撃を加えること。 パンチというと一般的にゲンコツで繰り出されるものなので、女性（平手のイメージが強い）や、通常殴り合いのケンカなどをしない人物や状況から繰り出されるパンチを特にこのように称する。</p>
+<ul>
+<li>「パッシブスキル」の言い換えは？</li>
+</ul>
+<p><strong>「受動スキル」「常時発動スキル」「永続スキル」</strong>とも呼ばれている。 「パッシブスキル」の対義語は「アクティブスキル」であり、必殺技や魔法、ゲージがたまったあとの技など手動で発動される能力のことを指す。</p>
+<ul>
+<li>サグラダ・ファミリアは2026年に完成しますか？</li>
+</ul>
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2fXPOG7GTW_KW2nd3QlMe0B7K1D3bkMpDdfxKLAXqh3VH2agNPCkYkLay6w&s" alt="サグラダ・ファミリア、2026年の完成が確実に。聖堂につながる ..."></p>
+<p>聖堂につながる巨大階段は2034<strong>年</strong>までかかる見込み バルセロナの<strong>サグラダ</strong>・<strong>ファミリア</strong>聖堂が、着工から140<strong>年</strong>以上の時を経て、<strong>2026年に完成</strong>すると発表された。</p>
+<ul>
+<li>前かがみ／</li>
+</ul>
+<p>前屈 の共通する意味<strong>上半身を前に折り曲げること</strong>。</p>
+<ul>
+<li><p>へたれ へたれ（ヘタレ）は、<strong>弱った物、臆病な様子や情けない性格をした人物を指す俗語</strong>。</p>
+</li>
+<li><p>エゴ</p>
+</li>
+</ul>
+<p>① <strong>認識、意欲、行動などの主体として、他と区別される自分。</strong> <strong>自己。</strong> <strong>自我</strong>。 ② フロイトの用語。</p>
+<ul>
+<li>物差しとは何ですか？</li>
+</ul>
+<p><strong>物の長さを計る器具の総称</strong>。 物差しは物を差し計る意である。 人類が最初に使い始めた計器で、また今日でも広く使われている。 普通、木、金属または骨などの板または棒に目盛りをつけたもの（直尺(ちょくしゃく)）をいうが、両端間の長さを基準とした端面尺もある。</p>
+<ul>
+<li>「バキバキ」とはどういう意味ですか？</li>
+</ul>
+<p>「バキバキ」とは<strong>活きの良さを表す浜言葉</strong>。 魚を手で持つと身が垂れずにピンと立つほどバキバキしているという意味です。 焼き魚などに調理しても一夜干しに加工されても、新鮮なものはひと味違います。</p>
+<ul>
+<li>ぷにぷに意味</li>
+</ul>
+<p><strong>風船のようにぶよぶよしたモンスター</strong>。 空中を漂っているだけで特別な攻撃はしてこないが、耐久力が異常に高いうえに弾力があるため溜めボムでの押し潰しも効かず、気絶させて場外に落とさない限り倒すのは困難。 ※この「プニプニ」の解説は、「爆ボンバーマン」の解説の一部です。</p>
+<ul>
+<li>しっとり</li>
+</ul>
+<p>① <strong>湿気が軽く全体にいきわたっているさま、濡れ湿っているさまを表わす語</strong>。 ② ゆっくりと落ち着いたさま、深く静まりかえっているさまを表わす語。 また、よく整って安定しているさまを表わす語。</p>
+<ul>
+<li>しごき</li>
+</ul>
+<p>志古貴とは、<strong>帯の下に巻いて斜め後ろに垂らす飾り帯</strong>のことです。 志古貴は振袖や花嫁衣装や七五三の衣装などに用います。 七五三の七歳のお祝いで、女の子が使用する志古貴は単色染めで房が付いているものが多くなっています。 選ぶ際には、着物や帯との調和を考えますが、帯揚げと色を揃える方も多いようです。May 31, 2024</p>
+<p><a href="https://kimono-rentalier.jp/column/kimono/shigoki/#:~:text=%E5%BF%97%E5%8F%A4%E8%B2%B4%E3%81%A8%E3%81%AF,%E6%96%B9%E3%82%82%E5%A4%9A%E3%81%84%E3%82%88%E3%81%86%E3%81%A7%E3%81%99%E3%80%82"><br>志古貴（しごき）とは？わかりやすく説明 - きものレンタリエ<img src="/2024/05/21/jqv/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFNUlEQVR4AcVXA5QrWRBN/2iM2M7Ytta2bdu2bdu2vXuwtq1+rzsZfvv/Wz1WOoOzO+fUqCuv7ru31Bp8Cf+vqTjIeRX5PMt9CE91HDUjy/YcJBdW+2cNoHfvQ7Usy32VuMC0hmly142aiX5OaVx5NvpcXGBewXO8ZwwcctLMAfBc30kiHWS0f8btka3idRsEuTl4EBMASG+T4w0b58dbNvMr1ryZX45W7aAE1lu55C1qjTdt4mcZrltEAOLmwD4zAiAXVDuZ1jLAjLaP4rUdqeOAmfxHiQJumeZ4pnej7fWKv7/Yi8B/iDp8xhGtHPbt7trKiDO+wDMxVteRnTQAIL+LqOeegtqJz1Z88pnAsr0XKOxkum6TS2rNCPINW2Bexm2hDSYx6c5rVljLdF+SFADJV1iLG64iENPRNnD48QLPdN8xRHmcwZ9bQrtM58/SXY+IWvMyKVwaTgig78SztCzF/p4o5K6T8qrCibI3Vt9lZ2CJkg6yHJHIV0IlgaFVAPLUksdemB4AtwZ3GcniXP8J0zJwwRUk022UYCTH6u++T1hqyx56WuBGG6fc4Y7IBlMC6G7fJJ0SibQU9VYZzmuQvftNPGzpky8ILMd7nhIcMvTvfYxqs0Fu7KAwBQPDX/Vstp1+EgCW5TlLKRlbeAe5pi0bjp8otFkC47RlpsBhg1XgfK536931qsHtkQ0Y9MflfmEZyIVByQ4ZB0COlnuRJItYquOtgTMuHirFGjMzWL9iaCaQZgvlMEtwB9Id4D6IN3SkqwZ3RmupnIlZKVTs791lX71SljqLHCtvyh0BgOR4AGW3SgoUlY9LnvwKJzPYfiJZ4PMcdTb8/U2sqNasGtxdUIy+EKdgaEz5Y0BtwMAgqugq5X/cFW0kvalrTdmUQmV+Rg2G9NNb/pIj5V614LhtEHn0j6i19Emu0cZEtuiaWwSqBmJWCpXla6DlawiwSC6tt04JIFwWpuewuOwvKlYPXuoE5T9B9yWSM699Sp9gSZjyC7Ef0ECTJdD0jSlrPb/aLhqsP+AmS7gz0qw6OYurc0ljkgqZv1lCiVKR5Eb7HxrU5yKW4nhrogOSJBMOHxFSbg1tpRY8Xt+ZKRptHwyWb3C3RL6rPv8OAByf4fzfSIIXRNAlF9e6R4fI5kY4vMLoMBN6gUrwWG2nkaXZX0FwmnyHqcoUKC5ULpbmvEsjeQqrqbR4uuuepS+9IfTsurcWCfmA0mhyfKepHda76/56JNVj5M+zvar+A6eeLeDSL1FlIaGDmqHpdwfQ0/SrR0O6iiYd/vfE8qeeTxx8u721HC2ZKgQgXlj18WdCEo1pC2IKy85Fo42osMaJLO+jRYMOI8PfHEgfYanTG3Lni5GNCA0H/o8l9Kfn6AtD+0HmuFYM+k4aDg4HlJ31n/k1yyLl7PEb0iiAnk23S1W6HuiJ1bQG53v7laMV9cQUWPuo78BjtFOOY8ke3mZQH8958w2AOi1VleTKb552H1h83Z0CBtIbSuMxBfbgJt9m82Gg/CCaNUjUh9b88FPilYz7i0upRocXE3FOZlKMwXCpRVK0zJvUUsoz3DcpAFKd73BzaCNuCm0wK7OEN0Jr/oxAQNZzkl/LS+qsyNoetMoveuq7UmerO8187BS/0T4Qb9s0XR3A+P3/MJIAN/gEg2W7WFVrpVzVVp6MxStaKrklsBuq6julPVuCO834zWjghNO16A1n0dwGhbPSnynJ7Dtq+dMvzf7lNFba4MZKtodkCR/Ek7bQQWBtF7Bmn/3b8X9k6wHtcFwfZlArEwAAAABJRU5ErkJggg==" alt="img">きものレンタリエhttps://kimono-rentalier.jp › ... › 着物の豆知識</a></p>
+<p><img src="data:image/jpeg;base64,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" alt="志古貴（しごき）とは？わかりやすく説明 | きものレンタリエの ..."></p>
+<ul>
+<li>かうぱー</li>
+</ul>
+<p><strong>尿道球腺液</strong>（にょうどうきゅうせんえき、英: Bulbourethral gland fluid）は、男性の尿道球腺から分泌される弱アルカリ性の粘性がある無臭無色透明な液体である。 一般にはカウパー腺液（単にカウパーやカウパー液とも）と呼ばれる。</p>
+<ul>
+<li>くすくすするの意味は？</li>
+</ul>
+<p>① <strong>物がくすぶるさまを表わす語</strong>。 ② こっそりと事をするさま、また、そのような性格のさまを表わす語。 こそこそ。 ③ しのんで笑う声、また、その様子を表わす語。</p>
+<ul>
+<li>「てっぺん」はどこの方言ですか？</li>
+</ul>
+<p>おにころし即ち酒精分の多い悪酒をいふ。 <strong>駿河の方言</strong>。</p>
+<p>① <strong>兜(かぶと)のいただき。</strong> <strong>転じて、頭のいただき。</strong> <strong>② 物のいちばん高い所。</strong> <strong>頂上。</strong></p>
+<ul>
+<li>トロトロ</li>
+</ul>
+<p>とろ‐とろ ① <strong>物がとけて、流動体・粘液状になっているさまを表わす語</strong>。 ② 粘液状のものがたれ落ちたり流れたりするさまを表わす語。 ④ 動作が緩慢で、ゆったりしたさまを表わす語。</p>
+<ul>
+<li>ビロード</li>
+</ul>
+<p>日本大百科全書(ニッポニカ) 「ビロード」の意味・わかりやすい解説<strong>添毛(てんもう)織物の一つで、織面に輪奈(わな)を出し、ときにはそれを切断して羽毛のようになった織物</strong>である。 ビロードとは、ポルトガル語のベルードvelludo、スペイン語のベルードvelludeの転訛(てんか)した語といわれている。</p>
+<ul>
+<li>「てろてろ」は方言ですか？</li>
+</ul>
+<p>私が大好きな「てろてろ」は泥酔状態 の事を指す<strong>津軽弁</strong>です。 「てろてろどなってまったじゃ～ 」です。 しかも、どちらかと言うとイイ（？） 泥酔状態（私的に）です。</p>
+<ul>
+<li>レロレロ</li>
+</ul>
+<p>① <strong>舌がもつれて発音が不明瞭なさまを表わす語</strong>。 ② 幼児をあやすのに、舌で上顎をはじいて音をたてるさまを表わす語。 ① 酒の酔いや麻痺などで、舌がもつれて何を言っているのかよくわからないさま。</p>
+<ul>
+<li>もどかしい</li>
+</ul>
+<p><strong>思うようにならず苛立つ。</strong> <strong>物事が捗らないので、いらいらする。</strong> <strong>じれったい。</strong> <strong>歯痒い。</strong></p>
+<ul>
+<li>いっそ の 事(こと)</li>
+</ul>
+<p><strong>あれこれと考えた末、それらとは一段違ったことを思い切って選ぶ気持を表わす</strong>。 また、時に、好ましいものをあきらめて意に染まないものを選ぶときの、投げやりな気持を表わす。 思い切って。 むしろ。</p>
+<ul>
+<li>とろん</li>
+</ul>
+<p>① <strong>濃い液体や空気などが重く沈んでいるさまを表わす語</strong>。 どろん。 ② ねむけを催したり、酒に酔ったりして目つきのぼんやりしているさまを表わす語。</p>
+<ul>
+<li>負えない</li>
+</ul>
+<p>［形］《連語「負えない」の一語化》<strong>どうしようもない。</strong> <strong>手がつけられない。</strong></p>
+<ul>
+<li>チロチロ</li>
+</ul>
+<p>① <strong>火、光または水の流れなどが細くかすかであるさまを表わす語</strong>。 また、灯火などが断続的に明暗をくり返しながらほのめくさまをいう。 ちらちら。</p>
+<ul>
+<li>ピンチ</li>
+</ul>
+<p>① <strong>追いつめられて非常に苦しい事態。</strong> <strong>危機。</strong> <strong>窮地。</strong> <strong>苦境。</strong></p>
+<ul>
+<li>「クルクル」とはどういう意味ですか？</li>
+</ul>
+<p>① <strong>物が軽やかにつづいて回るさま、また、何回も回すさまを表わす語</strong>。 ② 幾重にも巻くさまやまるめるさま、また、巻いてあるものを解くさまを表わす語。 ぐるぐる。 ③ 物事を滞りなく行なうさま、また、物事のすらすらと進行するさまを表わす語。</p>
+<ul>
+<li>艶めかしい</li>
+</ul>
+<p>① 人の容姿、態度などについていう。 <strong>優美である、上品である、もの柔らかである</strong>。 「あて」や「清ら」などとともに用いられることが多い。 ② 特に若い女性などの容姿をいうことが多いところから、次第に女性の若い魅力をいうようになり、後世は、女性の性的魅力を、さらに性的魅力一般を表現する語となる。</p>
+<p>[<br>艶めかしい(ナマメカシイ)とは？ 意味や使い方 - コトバンク](<a href="https://kotobank.jp/word/%E8%89%B6%E3%82%81%E3%81%8B%E3%81%97%E3%81%84-589696#:~:text=%E2%91%A0">https://kotobank.jp/word/艶めかしい-589696#:~:text=①</a> 人の容姿、態度,用いられることが多い。&amp;text&#x3D;② 特に若い女性など,表現する語となる。)</p>
+<ul>
+<li>あどけない</li>
+</ul>
+<p>[ 文語形 ]あどけな・し 〘 形容詞ク活用 〙 （子供の態度、様子などが）<strong>無心で愛らしい。</strong> <strong>無邪気である。</strong> <strong>することが幼い。</strong> <strong>わるぎがない。</strong></p>
+<ul>
+<li>すぼめる</li>
+</ul>
+<p>「すぼめる」「つぼめる」は、「窄める」とも書く。 「すぼめる」は、<strong>広がっていたものを小さくするときに用いる</strong>。 「つぼめる」は、管のようなものの口の面積を小さくする意。 また、「傘をつぼめる」のように、開いていたものを閉じる意味もある。</p>
+<ul>
+<li>恋愛において押して引くとどうなる？</li>
+</ul>
+<p>押して引く行為は、<strong>自分のことを考えてもらえる時間を増やすこととなり、距離を縮めるきっかけになります</strong>。 自分に気がある素振りをしていた異性がある日、急にそっけなくなったら、無性に気になるものです。 とくに相手が男性の場合、好意を抱いている相手に逃げられそうになると、本能的に追いかけたくなるといった男性心理が働きます。</p>
+<ul>
+<li>エレクト</li>
+</ul>
+<p>〘 名詞 〙 ( [英語] erect ) <strong>性器が勃起すること</strong>。</p>
+<ul>
+<li>ラストスパート</li>
+</ul>
+<p>ラスト‐スパート 〘 名詞 〙 ( [英語] last spurt ) <strong>競走・競泳などの競技で、ゴール近くで最後のがんばりを見せて力走・力泳すること</strong>。 転じて、物事の終了間際に、全力でことにあたること。</p>
+<ul>
+<li>エクスタシー</li>
+</ul>
+<p>エクスタシー（ecstasy）１ <strong>快感が最高潮に達して無我夢中の状態になること</strong>。 恍惚 こうこつ 。 忘我。 ２ 宗教的儀礼などの際に体験される神秘的な心境。</p>
+<ul>
+<li>ドクドクとはどういう意味ですか？</li>
+</ul>
+<p>どく‐どく ① ( 「と」を伴って用いることもある ) <strong>酒・水や血など、液体がさかんに流れ出たり、あふれ出たりするさまを表わす語</strong>。 ② 興奮したり不安を感じたりして胸が高鳴るさまを表わす語。</p>
+<ul>
+<li>怯む</li>
+</ul>
+<p><strong>恐れて勢いが弱る。</strong> <strong>おじける。</strong> <strong>萎縮する。</strong></p>
+<p><a href="https://kotobank.jp/word/%E6%80%AF%E3%82%80-614240#:~:text=%E6%81%90%E3%82%8C%E3%81%A6%E5%8B%A2%E3%81%84%E3%81%8C%E5%BC%B1%E3%82%8B,%E8%90%8E%E7%B8%AE%E3%81%99%E3%82%8B%E3%80%82"><br>怯む(ヒルム)とは？ 意味や使い方 - コトバンク</a></p>
+<ul>
+<li>しくしく</li>
+</ul>
+<p><strong>弱弱しく泣くさま。</strong> <strong>強くはないが体が絶えず痛むさま</strong>。</p>
+<ul>
+<li>ヒンズースクワット</li>
+</ul>
+<p>「ヒンズースクワット」は、<strong>かかとを上げたまま行います</strong>。 1. つま先立ちになり、膝を前に出し、両手は横に置いたままスクワットします。 2. そして、かかとは上げたまま、両腕を前に振ってバランスをとりながら、足の親指の付け根にある母指球に力を入れて立ち上がります。</p>
+<ul>
+<li>「あざとかわいい」とはどういう意味ですか？</li>
+</ul>
+<p>「あざとかわいい」は計算高さを意味する「あざとい」と、愛らしさなどを意味する「かわいい」の2つの言葉が合わさった造語です。 つまり、「あざとかわいい」とは、<strong>魅力的に見せるために計算された言動をとるさまであり、そこにプラス、自然と人の心を惹きつけ好かれる外見や雰囲気を兼ね備えているイメージ</strong>でしょうか。</p>
+<ul>
+<li>タンパク質</li>
+</ul>
+<p>たんぱく質とは たんぱく質とは<strong>アミノ酸が多数結合した高分子化合物</strong>で、筋肉や臓器など体を構成する要素として非常に重要なものです。 また、それだけでなく、たんぱく質は、アミノ酸の組み合わせや種類、量などの違いによって形状や働きが異なり、酵素やホルモン、免疫物質としてさまざまな機能を担っています。</p>
+<ul>
+<li>「取り憑かれた」とはどういう意味ですか？</li>
+</ul>
+<p>取り憑かれるとは、<strong>ある思念に固執している、妄想にとらわれている、という状況</strong>を指す意味で用いられる表現。<a href="https://www.weblio.jp/content/%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B#:~:text=%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B%E3%81%A8%E3%81%AF%E3%80%81%E3%81%82%E3%82%8B,%E6%84%8F%E5%91%B3%E3%81%A7%E7%94%A8%E3%81%84%E3%82%89%E3%82%8C%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">取り憑かれる(とりつかれる)</a></p>
+<ul>
+<li>ポワントワークとは何ですか？</li>
+</ul>
+<p><strong>トウシューズを履き、足先を完全に伸ばし、爪先の先端でステップを踏むこと</strong>。 ほとんどの場合、女性が行う（男性がトウシューズを履くことはほとんどない）。</p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>回到拉康：拉康的战场，敌人与回答</title>
+    <url>/2024/07/23/%E5%9B%9E%E5%88%B0%E6%8B%89%E5%BA%B7%EF%BC%9A%E6%8B%89%E5%BA%B7%E7%9A%84%E6%88%98%E5%9C%BA%EF%BC%8C%E6%95%8C%E4%BA%BA%E4%B8%8E%E5%9B%9E%E7%AD%94/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>回到拉康：拉康的战场，敌人与回答</title>
+    <url>/2024/07/23/%E5%9B%9E%E5%88%B0%E6%8B%89%E5%BA%B7%EF%BC%9A%E6%8B%89%E5%BA%B7%E7%9A%84%E6%88%98%E5%9C%BA%EF%BC%8C%E6%95%8C%E4%BA%BA%E4%BA%8E-%E4%B8%8E%E5%9B%9E%E7%AD%94/</url>
+    <content><![CDATA[<h2 id="回到拉康"><a href="#回到拉康" class="headerlink" title="回到拉康"></a>回到拉康</h2><h3 id="亚里士多德的《诗学》"><a href="#亚里士多德的《诗学》" class="headerlink" title="亚里士多德的《诗学》"></a>亚里士多德的《诗学》</h3><p>俄狄浦斯的关键是Plot，对具体事件的安排，是事件的组合排列。</p>
+<p>开始&#x2F;发展&#x2F;结尾 the construction of events。</p>
+<h4 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h4><p>逻辑-&gt;线性时间，回环的逻辑。</p>
+<p>给自己定下一个逻辑。</p>
+<p>借用一个主题，将自己的时间非线性化，给自己定下一个逻辑。</p>
+<h4 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h4><h3 id="拉康选集"><a href="#拉康选集" class="headerlink" title="拉康选集"></a>拉康选集</h3><h4 id="失窃的信"><a href="#失窃的信" class="headerlink" title="失窃的信"></a>失窃的信</h4><p>信件的消失是不可能，这是一种无意识对于真理的隐藏。</p>
+<p>充满了发展，却又连接不起来的开端和结尾。</p>
+<p>人没有主体性，镜像自我。</p>
+<h4 id="海德格尔《从未有而来》"><a href="#海德格尔《从未有而来》" class="headerlink" title="海德格尔《从未有而来》"></a>海德格尔《从未有而来》</h4><p>主导问题：对存在的遗忘，存在者的存在样态是生命。</p>
+<h4 id="倒错"><a href="#倒错" class="headerlink" title="倒错"></a>倒错</h4><p>appropriate：悲剧美，可以分手。</p>
+<p>这里的内容其实我都没有怎么读懂，现在来串联一下自己了解到的东西，转喻和隐喻的关系我想到了一个比较适合我的理解方式：首先需要准备一个链条，转喻和隐喻都是行为，更换链条的一个结点就是隐喻，前一个结点的动作传到下一个结点就是转喻。</p>
+<p>语言两极结构（the bipolar structure of language）</p>
+<p>隐喻（相似性）和转喻（邻近性）的“二元模式对于认识所有的言语行为和人类一般行为都具有根本性的意义和影响。”③ 这也就意味着，隐喻和转喻的结构模式作为一种普泛性的研究范式，从修辞学<br>走向文化学的必然，这对于更深入地解释人类行为、精神病症、深层心理等棘手而重要的问题，具有巨大的方法论和认识论价值。</p>
+<p>症候就是一个能指被另一个有关的能指替</p>
+<p>I（纵聚合）轴 II（横组合）轴<br>隐喻 转喻<br>相似 邻近<br>选择 组合<br>替换 构成<br>聚合 组合<br>共时 历时<br>邻近性紊乱 相似性紊乱<br>浪漫主义和象征主义 现实主义<br>超现实主义 立体主义<br>抒情诗 史诗<br>诗歌 散文<br>蒙太奇 特写<br>交感巫术 模拟巫术<br>梦的认同与象征 梦的移置与凝缩</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
@@ -2270,305 +2597,6 @@
       </tags>
   </entry>
   <entry>
-    <title>jqv</title>
-    <url>/2024/05/21/jqv/</url>
-    <content><![CDATA[<ul>
-<li><h2 id="sentence"><a href="#sentence" class="headerlink" title="sentence"></a>sentence</h2></li>
-<li><p>異った窓ガラスみたいに、人差し指の軌跡がくっきりと浮かんだ。</p>
-</li>
-<li><p>自分よりちいさいの、弱いものを愛でる感情とうのは自然だ。</p>
-</li>
-<li><p>世界が元通り三ならない限り 変容の呪縛からは逃れられない</p>
-</li>
-<li><h2 id="Words"><a href="#Words" class="headerlink" title="Words"></a>Words</h2></li>
-<li><p>やむ【止・已】 に 止(や)まれぬ<strong>止めようとしても止められない。</strong> <strong>そうしないではいられない。</strong></p>
-</li>
-<li><p>「なでりなでり」って何だよ</p>
-</li>
-</ul>
-<p>16-Jul-2016 — そこは「なでなで」だろ！ 「り」ってなんだ「り」って！ そもそも「撫でる撫でる」からの「撫で撫で」だろ！ 古文か？古文なのか！？</p>
-<ul>
-<li>orthodox</li>
-</ul>
-<p>一般に正統的と認められているさま。 伝統的に承認されているさま。</p>
-<ul>
-<li><p>「ブレーキ役」の言い換えや類語・同義語 - Weblio類語辞典</p>
-<p>ブレーキ役の言い換えや別の言い方。・物事が深刻化しないようにあらかじめ用意しておく仕組みのこと安全弁安全装置ブレーキブレーキ役.</p>
-</li>
-<li><p>あっさり</p>
-</li>
-</ul>
-<p>① 人や物事の状態、性質が、複雑でなく、淡泊平明であるさま。 しつこくないさま。 あっさら。 ② 手数のかからないさま。</p>
-<ul>
-<li>デリケート</li>
-</ul>
-<p>① ( 人の心・感情などについて ) 鋭敏で、傷つきやすいさま。 繊細なさま。 ② ( 鑑賞、賞美するものなどについて ) 微妙な味わいを持っているさま。 また、微細な差のあるさま。</p>
-<ul>
-<li>さえあれば</li>
-</ul>
-<p>ラーメンさえあればいいです。 T：<strong>「それがあったら、他には何も必要ない、問題ない」という意味です</strong>。 「【Vます】さえすれば」は、「する」が変わった形の「〜さえしてくれれば」「〜さえできれば」なども使えます。</p>
-<ul>
-<li>「座が白ける」とはどういう意味ですか？</li>
-</ul>
-<p>ざがしらける 〔語源〕「白ける」は、<strong>白っぽくなる。</strong> <strong>色があせる。</strong> <strong>転じて、その場の興が冷める</strong>。</p>
-<ul>
-<li>「とげとげ」とはどういう意味ですか？</li>
-</ul>
-<p>とげ‐とげ【刺刺】 [ 1 ] 〘 副詞 〙 ( 「と」を伴っても用いる ) <strong>とげとげしいさま</strong>。</p>
-<ul>
-<li>ロン‐げ【ロン毛】</li>
-</ul>
-<p>《「ロン」はロングの略》俗に、<strong>髪の毛の長いこと</strong>。 また、長く伸ばした髪形。 主に、男性についていう。</p>
-<ul>
-<li>「うぜ」とはどういう意味ですか？</li>
-</ul>
-<p>「うぜえ」とも》<strong>あれこれとうるさい。</strong> <strong>わずらわしい</strong>。 [補説]もとは「不快だ。 気味が悪い」という意の、八王子を中心とする東京多摩地区の方言。</p>
-<ul>
-<li>「テディボーイ」とはどういう意味ですか？</li>
-</ul>
-<p><strong>不良少年</strong>。 特にエドワード7世時代（1901〜10）の服装を好んで着用した1950年代から60年代初めのロンドンの不良少年をさす。 エドワードの愛称、テディーに由来する。</p>
-<ul>
-<li>あいだ‐がらあひだ‥【間柄】</li>
-</ul>
-<p>① <strong>親類、血族などの続き合い</strong>。 ② 互いの関係。 付き合い。 交際。</p>
-<ul>
-<li>ばっちり</li>
-</ul>
-<p><strong>満足のいく様子であることを示す表現</strong>。 大体副詞的に用いる。</p>
-<ul>
-<li>ユナイテッドステイツとはどういう意味ですか？</li>
-</ul>
-<p>ユナイテッド・ステーツ（United States）は、<strong>合衆国</strong>を意味する。 特にアメリカ合衆国を指すことが多い。 ユナイテッド・ステーツ (フリゲート)(en:USS United States (1797)) - アメリカ海軍の帆走フリゲート。</p>
-<ul>
-<li>ネガティブ思考とはどういう意味ですか？</li>
-</ul>
-<p><strong>何かにつけて、どうせ失敗するさ、私はだめなんだなどと悪い方向に考えが向くこと</strong>。 物事を否定的にとらえる考え方。</p>
-<ul>
-<li>ステイツとはどういう意味ですか？</li>
-</ul>
-<p>「states」とは・「states」の意味</p>
-<p>「states」は、英語で「state」の複数形であり、<strong>主に「州」や「国家」という意味で使用される</strong>。 また、状態や状況を表す場合もある。May 23, 2023</p>
-<ul>
-<li>スノッブ</li>
-</ul>
-<p>30の言語版</p>
-<ul>
-<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ページ</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/wiki/%E3%83%8E%E3%83%BC%E3%83%88:%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">ノート</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96">閲覧</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=edit">編集</a></p>
-</li>
-<li><p><a href="https://ja.wikipedia.org/w/index.php?title=%E3%82%B9%E3%83%8E%E3%83%83%E3%83%96&action=history">履歴表示</a></p>
-</li>
-</ul>
-<p>ツール</p>
-<p>出典: フリー百科事典『ウィキペディア（Wikipedia）』</p>
-<table>
-<thead>
-<tr>
-<th><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Disambig_gray.svg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Disambig_gray.svg/25px-Disambig_gray.svg.png" alt="曖昧さ回避"></a></th>
-<th>この項目では、社会用語について説明しています。<a href="https://ja.wikipedia.org/wiki/%E3%81%8A%E7%AC%91%E3%81%84%E8%8A%B8%E4%BA%BA">お笑い芸人</a>については「<a href="https://ja.wikipedia.org/wiki/SNOB">SNOB</a>」をご覧ください。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Wiktionary-logo.svg/40px-Wiktionary-logo.svg.png" alt="img"></p>
-<p><a href="https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AA%E3%83%BC">ウィクショナリー</a>に関連の辞書項目があります。</p>
-<p><strong><a href="https://ja.wiktionary.org/wiki/en:snob">en:snob</a></strong></p>
-<p><strong>スノッブ</strong>（snob）は、一般に<a href="https://ja.wikipedia.org/w/index.php?title=%E4%BF%97%E7%89%A9&action=edit&redlink=1">俗物</a>、また<strong>スノビズム</strong>（snobbism）は俗物根性と訳され、多くの場合「知識・教養をひけらかす見栄張りの気取り屋」「上位の者に取り入り、下の者を見下す嫌味な人物」「紳士気取りの俗物」といった意味で使われる。一方で、<a href="https://ja.wikipedia.org/wiki/%E8%80%BD%E7%BE%8E%E4%B8%BB%E7%BE%A9">耽美主義</a>や<a href="https://ja.wikipedia.org/wiki/%E3%83%80%E3%83%B3%E3%83%87%E3%82%A3%E3%82%BA%E3%83%A0">ダンディズム</a>、<a href="https://ja.wikipedia.org/wiki/%E7%B2%8B">粋</a>、<a href="https://ja.wikipedia.org/wiki/%E6%B4%92%E8%90%BD">洒落</a>を含意したりと（特に<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3">ファッション</a>において）、単に批判的な言葉としてのみ使用されるわけではない。</p>
-<ul>
-<li>うんぬんかんぬん</li>
-</ul>
-<p>「うんともすんとも」の「すんとも」、「仲良し小良し」の「小良し」のように、<strong>大して意味のない要素を後に続けて使うこと</strong>は、よく見られる現象です。</p>
-<ul>
-<li>サラマンダーとはどういう意味ですか？</li>
-</ul>
-<p>サラマンダーは英語でsalamanderと表記され、意味としては<strong>サンショウウオや、西洋の伝説上の動物</strong>となります。 西洋の伝説上の動物・火の精と、火で加熱する調理器具のサラマンダーをかけているのは？といわれています。</p>
-<ul>
-<li>May I have your name とはどういう意味ですか？</li>
-</ul>
-<p>May I have いただけますか？ your name あなたのお名前を、Please は丁寧 な表現で、つまり <strong>お名前をいただけますか？</strong> という意味になります。 端的に What is your name? でもいいですが、直接的な表現ですので、お客 様にはこの表現を使うのは好ましくありません。</p>
-<ul>
-<li>あたい 【一人称】</li>
-</ul>
-<p> <strong>「あたし」がくだけた表現</strong>。 元は下町女性の言葉で、1970～80年代頃には不良少女などが用いていたが、現在はほとんど使われない。</p>
-<ul>
-<li>「グーパンチ」とはどういう意味ですか？</li>
-</ul>
-<p><strong>拳を握った状態で繰り出すパンチのこと</strong>。 グーパンとは、グーの状態（拳を握った状態）で相手に打撃を加えること。 パンチというと一般的にゲンコツで繰り出されるものなので、女性（平手のイメージが強い）や、通常殴り合いのケンカなどをしない人物や状況から繰り出されるパンチを特にこのように称する。</p>
-<ul>
-<li>「パッシブスキル」の言い換えは？</li>
-</ul>
-<p><strong>「受動スキル」「常時発動スキル」「永続スキル」</strong>とも呼ばれている。 「パッシブスキル」の対義語は「アクティブスキル」であり、必殺技や魔法、ゲージがたまったあとの技など手動で発動される能力のことを指す。</p>
-<ul>
-<li>サグラダ・ファミリアは2026年に完成しますか？</li>
-</ul>
-<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2fXPOG7GTW_KW2nd3QlMe0B7K1D3bkMpDdfxKLAXqh3VH2agNPCkYkLay6w&s" alt="サグラダ・ファミリア、2026年の完成が確実に。聖堂につながる ..."></p>
-<p>聖堂につながる巨大階段は2034<strong>年</strong>までかかる見込み バルセロナの<strong>サグラダ</strong>・<strong>ファミリア</strong>聖堂が、着工から140<strong>年</strong>以上の時を経て、<strong>2026年に完成</strong>すると発表された。</p>
-<ul>
-<li>前かがみ／</li>
-</ul>
-<p>前屈 の共通する意味<strong>上半身を前に折り曲げること</strong>。</p>
-<ul>
-<li><p>へたれ へたれ（ヘタレ）は、<strong>弱った物、臆病な様子や情けない性格をした人物を指す俗語</strong>。</p>
-</li>
-<li><p>エゴ</p>
-</li>
-</ul>
-<p>① <strong>認識、意欲、行動などの主体として、他と区別される自分。</strong> <strong>自己。</strong> <strong>自我</strong>。 ② フロイトの用語。</p>
-<ul>
-<li>物差しとは何ですか？</li>
-</ul>
-<p><strong>物の長さを計る器具の総称</strong>。 物差しは物を差し計る意である。 人類が最初に使い始めた計器で、また今日でも広く使われている。 普通、木、金属または骨などの板または棒に目盛りをつけたもの（直尺(ちょくしゃく)）をいうが、両端間の長さを基準とした端面尺もある。</p>
-<ul>
-<li>「バキバキ」とはどういう意味ですか？</li>
-</ul>
-<p>「バキバキ」とは<strong>活きの良さを表す浜言葉</strong>。 魚を手で持つと身が垂れずにピンと立つほどバキバキしているという意味です。 焼き魚などに調理しても一夜干しに加工されても、新鮮なものはひと味違います。</p>
-<ul>
-<li>ぷにぷに意味</li>
-</ul>
-<p><strong>風船のようにぶよぶよしたモンスター</strong>。 空中を漂っているだけで特別な攻撃はしてこないが、耐久力が異常に高いうえに弾力があるため溜めボムでの押し潰しも効かず、気絶させて場外に落とさない限り倒すのは困難。 ※この「プニプニ」の解説は、「爆ボンバーマン」の解説の一部です。</p>
-<ul>
-<li>しっとり</li>
-</ul>
-<p>① <strong>湿気が軽く全体にいきわたっているさま、濡れ湿っているさまを表わす語</strong>。 ② ゆっくりと落ち着いたさま、深く静まりかえっているさまを表わす語。 また、よく整って安定しているさまを表わす語。</p>
-<ul>
-<li>しごき</li>
-</ul>
-<p>志古貴とは、<strong>帯の下に巻いて斜め後ろに垂らす飾り帯</strong>のことです。 志古貴は振袖や花嫁衣装や七五三の衣装などに用います。 七五三の七歳のお祝いで、女の子が使用する志古貴は単色染めで房が付いているものが多くなっています。 選ぶ際には、着物や帯との調和を考えますが、帯揚げと色を揃える方も多いようです。May 31, 2024</p>
-<p><a href="https://kimono-rentalier.jp/column/kimono/shigoki/#:~:text=%E5%BF%97%E5%8F%A4%E8%B2%B4%E3%81%A8%E3%81%AF,%E6%96%B9%E3%82%82%E5%A4%9A%E3%81%84%E3%82%88%E3%81%86%E3%81%A7%E3%81%99%E3%80%82"><br>志古貴（しごき）とは？わかりやすく説明 - きものレンタリエ<img src="/2024/05/21/jqv/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFNUlEQVR4AcVXA5QrWRBN/2iM2M7Ytta2bdu2bdu2vXuwtq1+rzsZfvv/Wz1WOoOzO+fUqCuv7ru31Bp8Cf+vqTjIeRX5PMt9CE91HDUjy/YcJBdW+2cNoHfvQ7Usy32VuMC0hmly142aiX5OaVx5NvpcXGBewXO8ZwwcctLMAfBc30kiHWS0f8btka3idRsEuTl4EBMASG+T4w0b58dbNvMr1ryZX45W7aAE1lu55C1qjTdt4mcZrltEAOLmwD4zAiAXVDuZ1jLAjLaP4rUdqeOAmfxHiQJumeZ4pnej7fWKv7/Yi8B/iDp8xhGtHPbt7trKiDO+wDMxVteRnTQAIL+LqOeegtqJz1Z88pnAsr0XKOxkum6TS2rNCPINW2Bexm2hDSYx6c5rVljLdF+SFADJV1iLG64iENPRNnD48QLPdN8xRHmcwZ9bQrtM58/SXY+IWvMyKVwaTgig78SztCzF/p4o5K6T8qrCibI3Vt9lZ2CJkg6yHJHIV0IlgaFVAPLUksdemB4AtwZ3GcniXP8J0zJwwRUk022UYCTH6u++T1hqyx56WuBGG6fc4Y7IBlMC6G7fJJ0SibQU9VYZzmuQvftNPGzpky8ILMd7nhIcMvTvfYxqs0Fu7KAwBQPDX/Vstp1+EgCW5TlLKRlbeAe5pi0bjp8otFkC47RlpsBhg1XgfK536931qsHtkQ0Y9MflfmEZyIVByQ4ZB0COlnuRJItYquOtgTMuHirFGjMzWL9iaCaQZgvlMEtwB9Id4D6IN3SkqwZ3RmupnIlZKVTs791lX71SljqLHCtvyh0BgOR4AGW3SgoUlY9LnvwKJzPYfiJZ4PMcdTb8/U2sqNasGtxdUIy+EKdgaEz5Y0BtwMAgqugq5X/cFW0kvalrTdmUQmV+Rg2G9NNb/pIj5V614LhtEHn0j6i19Emu0cZEtuiaWwSqBmJWCpXla6DlawiwSC6tt04JIFwWpuewuOwvKlYPXuoE5T9B9yWSM699Sp9gSZjyC7Ef0ECTJdD0jSlrPb/aLhqsP+AmS7gz0qw6OYurc0ljkgqZv1lCiVKR5Eb7HxrU5yKW4nhrogOSJBMOHxFSbg1tpRY8Xt+ZKRptHwyWb3C3RL6rPv8OAByf4fzfSIIXRNAlF9e6R4fI5kY4vMLoMBN6gUrwWG2nkaXZX0FwmnyHqcoUKC5ULpbmvEsjeQqrqbR4uuuepS+9IfTsurcWCfmA0mhyfKepHda76/56JNVj5M+zvar+A6eeLeDSL1FlIaGDmqHpdwfQ0/SrR0O6iiYd/vfE8qeeTxx8u721HC2ZKgQgXlj18WdCEo1pC2IKy85Fo42osMaJLO+jRYMOI8PfHEgfYanTG3Lni5GNCA0H/o8l9Kfn6AtD+0HmuFYM+k4aDg4HlJ31n/k1yyLl7PEb0iiAnk23S1W6HuiJ1bQG53v7laMV9cQUWPuo78BjtFOOY8ke3mZQH8958w2AOi1VleTKb552H1h83Z0CBtIbSuMxBfbgJt9m82Gg/CCaNUjUh9b88FPilYz7i0upRocXE3FOZlKMwXCpRVK0zJvUUsoz3DcpAFKd73BzaCNuCm0wK7OEN0Jr/oxAQNZzkl/LS+qsyNoetMoveuq7UmerO8187BS/0T4Qb9s0XR3A+P3/MJIAN/gEg2W7WFVrpVzVVp6MxStaKrklsBuq6julPVuCO834zWjghNO16A1n0dwGhbPSnynJ7Dtq+dMvzf7lNFba4MZKtodkCR/Ek7bQQWBtF7Bmn/3b8X9k6wHtcFwfZlArEwAAAABJRU5ErkJggg==" alt="img">きものレンタリエhttps://kimono-rentalier.jp › ... › 着物の豆知識</a></p>
-<p><img src="data:image/jpeg;base64,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" alt="志古貴（しごき）とは？わかりやすく説明 | きものレンタリエの ..."></p>
-<ul>
-<li>かうぱー</li>
-</ul>
-<p><strong>尿道球腺液</strong>（にょうどうきゅうせんえき、英: Bulbourethral gland fluid）は、男性の尿道球腺から分泌される弱アルカリ性の粘性がある無臭無色透明な液体である。 一般にはカウパー腺液（単にカウパーやカウパー液とも）と呼ばれる。</p>
-<ul>
-<li>くすくすするの意味は？</li>
-</ul>
-<p>① <strong>物がくすぶるさまを表わす語</strong>。 ② こっそりと事をするさま、また、そのような性格のさまを表わす語。 こそこそ。 ③ しのんで笑う声、また、その様子を表わす語。</p>
-<ul>
-<li>「てっぺん」はどこの方言ですか？</li>
-</ul>
-<p>おにころし即ち酒精分の多い悪酒をいふ。 <strong>駿河の方言</strong>。</p>
-<p>① <strong>兜(かぶと)のいただき。</strong> <strong>転じて、頭のいただき。</strong> <strong>② 物のいちばん高い所。</strong> <strong>頂上。</strong></p>
-<ul>
-<li>トロトロ</li>
-</ul>
-<p>とろ‐とろ ① <strong>物がとけて、流動体・粘液状になっているさまを表わす語</strong>。 ② 粘液状のものがたれ落ちたり流れたりするさまを表わす語。 ④ 動作が緩慢で、ゆったりしたさまを表わす語。</p>
-<ul>
-<li>ビロード</li>
-</ul>
-<p>日本大百科全書(ニッポニカ) 「ビロード」の意味・わかりやすい解説<strong>添毛(てんもう)織物の一つで、織面に輪奈(わな)を出し、ときにはそれを切断して羽毛のようになった織物</strong>である。 ビロードとは、ポルトガル語のベルードvelludo、スペイン語のベルードvelludeの転訛(てんか)した語といわれている。</p>
-<ul>
-<li>「てろてろ」は方言ですか？</li>
-</ul>
-<p>私が大好きな「てろてろ」は泥酔状態 の事を指す<strong>津軽弁</strong>です。 「てろてろどなってまったじゃ～ 」です。 しかも、どちらかと言うとイイ（？） 泥酔状態（私的に）です。</p>
-<ul>
-<li>レロレロ</li>
-</ul>
-<p>① <strong>舌がもつれて発音が不明瞭なさまを表わす語</strong>。 ② 幼児をあやすのに、舌で上顎をはじいて音をたてるさまを表わす語。 ① 酒の酔いや麻痺などで、舌がもつれて何を言っているのかよくわからないさま。</p>
-<ul>
-<li>もどかしい</li>
-</ul>
-<p><strong>思うようにならず苛立つ。</strong> <strong>物事が捗らないので、いらいらする。</strong> <strong>じれったい。</strong> <strong>歯痒い。</strong></p>
-<ul>
-<li>いっそ の 事(こと)</li>
-</ul>
-<p><strong>あれこれと考えた末、それらとは一段違ったことを思い切って選ぶ気持を表わす</strong>。 また、時に、好ましいものをあきらめて意に染まないものを選ぶときの、投げやりな気持を表わす。 思い切って。 むしろ。</p>
-<ul>
-<li>とろん</li>
-</ul>
-<p>① <strong>濃い液体や空気などが重く沈んでいるさまを表わす語</strong>。 どろん。 ② ねむけを催したり、酒に酔ったりして目つきのぼんやりしているさまを表わす語。</p>
-<ul>
-<li>負えない</li>
-</ul>
-<p>［形］《連語「負えない」の一語化》<strong>どうしようもない。</strong> <strong>手がつけられない。</strong></p>
-<ul>
-<li>チロチロ</li>
-</ul>
-<p>① <strong>火、光または水の流れなどが細くかすかであるさまを表わす語</strong>。 また、灯火などが断続的に明暗をくり返しながらほのめくさまをいう。 ちらちら。</p>
-<ul>
-<li>ピンチ</li>
-</ul>
-<p>① <strong>追いつめられて非常に苦しい事態。</strong> <strong>危機。</strong> <strong>窮地。</strong> <strong>苦境。</strong></p>
-<ul>
-<li>「クルクル」とはどういう意味ですか？</li>
-</ul>
-<p>① <strong>物が軽やかにつづいて回るさま、また、何回も回すさまを表わす語</strong>。 ② 幾重にも巻くさまやまるめるさま、また、巻いてあるものを解くさまを表わす語。 ぐるぐる。 ③ 物事を滞りなく行なうさま、また、物事のすらすらと進行するさまを表わす語。</p>
-<ul>
-<li>艶めかしい</li>
-</ul>
-<p>① 人の容姿、態度などについていう。 <strong>優美である、上品である、もの柔らかである</strong>。 「あて」や「清ら」などとともに用いられることが多い。 ② 特に若い女性などの容姿をいうことが多いところから、次第に女性の若い魅力をいうようになり、後世は、女性の性的魅力を、さらに性的魅力一般を表現する語となる。</p>
-<p>[<br>艶めかしい(ナマメカシイ)とは？ 意味や使い方 - コトバンク](<a href="https://kotobank.jp/word/%E8%89%B6%E3%82%81%E3%81%8B%E3%81%97%E3%81%84-589696#:~:text=%E2%91%A0">https://kotobank.jp/word/艶めかしい-589696#:~:text=①</a> 人の容姿、態度,用いられることが多い。&amp;text&#x3D;② 特に若い女性など,表現する語となる。)</p>
-<ul>
-<li>あどけない</li>
-</ul>
-<p>[ 文語形 ]あどけな・し 〘 形容詞ク活用 〙 （子供の態度、様子などが）<strong>無心で愛らしい。</strong> <strong>無邪気である。</strong> <strong>することが幼い。</strong> <strong>わるぎがない。</strong></p>
-<ul>
-<li>すぼめる</li>
-</ul>
-<p>「すぼめる」「つぼめる」は、「窄める」とも書く。 「すぼめる」は、<strong>広がっていたものを小さくするときに用いる</strong>。 「つぼめる」は、管のようなものの口の面積を小さくする意。 また、「傘をつぼめる」のように、開いていたものを閉じる意味もある。</p>
-<ul>
-<li>恋愛において押して引くとどうなる？</li>
-</ul>
-<p>押して引く行為は、<strong>自分のことを考えてもらえる時間を増やすこととなり、距離を縮めるきっかけになります</strong>。 自分に気がある素振りをしていた異性がある日、急にそっけなくなったら、無性に気になるものです。 とくに相手が男性の場合、好意を抱いている相手に逃げられそうになると、本能的に追いかけたくなるといった男性心理が働きます。</p>
-<ul>
-<li>エレクト</li>
-</ul>
-<p>〘 名詞 〙 ( [英語] erect ) <strong>性器が勃起すること</strong>。</p>
-<ul>
-<li>ラストスパート</li>
-</ul>
-<p>ラスト‐スパート 〘 名詞 〙 ( [英語] last spurt ) <strong>競走・競泳などの競技で、ゴール近くで最後のがんばりを見せて力走・力泳すること</strong>。 転じて、物事の終了間際に、全力でことにあたること。</p>
-<ul>
-<li>エクスタシー</li>
-</ul>
-<p>エクスタシー（ecstasy）１ <strong>快感が最高潮に達して無我夢中の状態になること</strong>。 恍惚 こうこつ 。 忘我。 ２ 宗教的儀礼などの際に体験される神秘的な心境。</p>
-<ul>
-<li>ドクドクとはどういう意味ですか？</li>
-</ul>
-<p>どく‐どく ① ( 「と」を伴って用いることもある ) <strong>酒・水や血など、液体がさかんに流れ出たり、あふれ出たりするさまを表わす語</strong>。 ② 興奮したり不安を感じたりして胸が高鳴るさまを表わす語。</p>
-<ul>
-<li>怯む</li>
-</ul>
-<p><strong>恐れて勢いが弱る。</strong> <strong>おじける。</strong> <strong>萎縮する。</strong></p>
-<p><a href="https://kotobank.jp/word/%E6%80%AF%E3%82%80-614240#:~:text=%E6%81%90%E3%82%8C%E3%81%A6%E5%8B%A2%E3%81%84%E3%81%8C%E5%BC%B1%E3%82%8B,%E8%90%8E%E7%B8%AE%E3%81%99%E3%82%8B%E3%80%82"><br>怯む(ヒルム)とは？ 意味や使い方 - コトバンク</a></p>
-<ul>
-<li>しくしく</li>
-</ul>
-<p><strong>弱弱しく泣くさま。</strong> <strong>強くはないが体が絶えず痛むさま</strong>。</p>
-<ul>
-<li>ヒンズースクワット</li>
-</ul>
-<p>「ヒンズースクワット」は、<strong>かかとを上げたまま行います</strong>。 1. つま先立ちになり、膝を前に出し、両手は横に置いたままスクワットします。 2. そして、かかとは上げたまま、両腕を前に振ってバランスをとりながら、足の親指の付け根にある母指球に力を入れて立ち上がります。</p>
-<ul>
-<li>「あざとかわいい」とはどういう意味ですか？</li>
-</ul>
-<p>「あざとかわいい」は計算高さを意味する「あざとい」と、愛らしさなどを意味する「かわいい」の2つの言葉が合わさった造語です。 つまり、「あざとかわいい」とは、<strong>魅力的に見せるために計算された言動をとるさまであり、そこにプラス、自然と人の心を惹きつけ好かれる外見や雰囲気を兼ね備えているイメージ</strong>でしょうか。</p>
-<ul>
-<li>タンパク質</li>
-</ul>
-<p>たんぱく質とは たんぱく質とは<strong>アミノ酸が多数結合した高分子化合物</strong>で、筋肉や臓器など体を構成する要素として非常に重要なものです。 また、それだけでなく、たんぱく質は、アミノ酸の組み合わせや種類、量などの違いによって形状や働きが異なり、酵素やホルモン、免疫物質としてさまざまな機能を担っています。</p>
-<ul>
-<li>「取り憑かれた」とはどういう意味ですか？</li>
-</ul>
-<p>取り憑かれるとは、<strong>ある思念に固執している、妄想にとらわれている、という状況</strong>を指す意味で用いられる表現。<a href="https://www.weblio.jp/content/%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B#:~:text=%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%82%8B%E3%81%A8%E3%81%AF%E3%80%81%E3%81%82%E3%82%8B,%E6%84%8F%E5%91%B3%E3%81%A7%E7%94%A8%E3%81%84%E3%82%89%E3%82%8C%E3%82%8B%E8%A1%A8%E7%8F%BE%E3%80%82">取り憑かれる(とりつかれる)</a></p>
-<ul>
-<li>ポワントワークとは何ですか？</li>
-</ul>
-<p><strong>トウシューズを履き、足先を完全に伸ばし、爪先の先端でステップを踏むこと</strong>。 ほとんどの場合、女性が行う（男性がトウシューズを履くことはほとんどない）。</p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>因为有你的存在，世界才有了纵深的意义</title>
     <url>/2024/05/19/%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
     <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
@@ -2602,34 +2630,6 @@
       </tags>
   </entry>
   <entry>
-    <title>回到拉康：拉康的战场，敌人与回答</title>
-    <url>/2024/07/23/%E5%9B%9E%E5%88%B0%E6%8B%89%E5%BA%B7%EF%BC%9A%E6%8B%89%E5%BA%B7%E7%9A%84%E6%88%98%E5%9C%BA%EF%BC%8C%E6%95%8C%E4%BA%BA%E4%BA%8E-%E4%B8%8E%E5%9B%9E%E7%AD%94/</url>
-    <content><![CDATA[<h2 id="回到拉康"><a href="#回到拉康" class="headerlink" title="回到拉康"></a>回到拉康</h2><h3 id="亚里士多德的《诗学》"><a href="#亚里士多德的《诗学》" class="headerlink" title="亚里士多德的《诗学》"></a>亚里士多德的《诗学》</h3><p>俄狄浦斯的关键是Plot，对具体事件的安排，是事件的组合排列。</p>
-<p>开始&#x2F;发展&#x2F;结尾 the construction of events。</p>
-<h4 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h4><p>逻辑-&gt;线性时间，回环的逻辑。</p>
-<p>给自己定下一个逻辑。</p>
-<p>借用一个主题，将自己的时间非线性化，给自己定下一个逻辑。</p>
-<h4 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h4><h3 id="拉康选集"><a href="#拉康选集" class="headerlink" title="拉康选集"></a>拉康选集</h3><h4 id="失窃的信"><a href="#失窃的信" class="headerlink" title="失窃的信"></a>失窃的信</h4><p>信件的消失是不可能，这是一种无意识对于真理的隐藏。</p>
-<p>充满了发展，却又连接不起来的开端和结尾。</p>
-<p>人没有主体性，镜像自我。</p>
-<h4 id="海德格尔《从未有而来》"><a href="#海德格尔《从未有而来》" class="headerlink" title="海德格尔《从未有而来》"></a>海德格尔《从未有而来》</h4><p>主导问题：对存在的遗忘，存在者的存在样态是生命。</p>
-<h4 id="倒错"><a href="#倒错" class="headerlink" title="倒错"></a>倒错</h4><p>appropriate：悲剧美，可以分手。</p>
-<p>这里的内容其实我都没有怎么读懂，现在来串联一下自己了解到的东西，转喻和隐喻的关系我想到了一个比较适合我的理解方式：首先需要准备一个链条，转喻和隐喻都是行为，更换链条的一个结点就是隐喻，前一个结点的动作传到下一个结点就是转喻。</p>
-<p>语言两极结构（the bipolar structure of language）</p>
-<p>隐喻（相似性）和转喻（邻近性）的“二元模式对于认识所有的言语行为和人类一般行为都具有根本性的意义和影响。”③ 这也就意味着，隐喻和转喻的结构模式作为一种普泛性的研究范式，从修辞学<br>走向文化学的必然，这对于更深入地解释人类行为、精神病症、深层心理等棘手而重要的问题，具有巨大的方法论和认识论价值。</p>
-<p>症候就是一个能指被另一个有关的能指替</p>
-<p>I（纵聚合）轴 II（横组合）轴<br>隐喻 转喻<br>相似 邻近<br>选择 组合<br>替换 构成<br>聚合 组合<br>共时 历时<br>邻近性紊乱 相似性紊乱<br>浪漫主义和象征主义 现实主义<br>超现实主义 立体主义<br>抒情诗 史诗<br>诗歌 散文<br>蒙太奇 特写<br>交感巫术 模拟巫术<br>梦的认同与象征 梦的移置与凝缩</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>回到拉康：拉康的战场，敌人与回答</title>
-    <url>/2024/07/23/%E5%9B%9E%E5%88%B0%E6%8B%89%E5%BA%B7%EF%BC%9A%E6%8B%89%E5%BA%B7%E7%9A%84%E6%88%98%E5%9C%BA%EF%BC%8C%E6%95%8C%E4%BA%BA%E4%B8%8E%E5%9B%9E%E7%AD%94/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>存在与虚无</title>
     <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
     <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
@@ -2637,33 +2637,6 @@
 ]]></content>
       <tags>
         <tag>读书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>对弗洛伊德的简介</title>
-    <url>/2024/06/11/%E5%AF%B9%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%9A%84%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<h2 id="尼采：什么是真理？"><a href="#尼采：什么是真理？" class="headerlink" title="尼采：什么是真理？"></a>尼采：什么是真理？</h2><p>一群活动的转喻，隐喻和拟人法。</p>
-<p>不能将尼采理解为反语言的人物，尼采其实预设了一种吐真剂的事物。</p>
-<p>转喻和隐喻是诗学的东西。</p>
-<p>这两个事物被雅各布森和研究Freud的Lacan给发扬光大了。</p>
-<p>转喻要有前后相连的因果性。</p>
-<p>千帆过境，隐喻要形成某种统一，转喻则不需要。</p>
-<h2 id="Lacan的看法"><a href="#Lacan的看法" class="headerlink" title="Lacan的看法"></a>Lacan的看法</h2><h3 id="Freud的《梦的解析》"><a href="#Freud的《梦的解析》" class="headerlink" title="Freud的《梦的解析》"></a>Freud的《梦的解析》</h3><p>梦有它伪装的形式。</p>
-<blockquote>
-<p>梦是无意识，Freud和Lacan共享一个事实</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>小他者、对象a、大他者</title>
-    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
-    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
@@ -2807,6 +2780,33 @@
       </tags>
   </entry>
   <entry>
+    <title>对弗洛伊德的简介</title>
+    <url>/2024/06/11/%E5%AF%B9%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%9A%84%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h2 id="尼采：什么是真理？"><a href="#尼采：什么是真理？" class="headerlink" title="尼采：什么是真理？"></a>尼采：什么是真理？</h2><p>一群活动的转喻，隐喻和拟人法。</p>
+<p>不能将尼采理解为反语言的人物，尼采其实预设了一种吐真剂的事物。</p>
+<p>转喻和隐喻是诗学的东西。</p>
+<p>这两个事物被雅各布森和研究Freud的Lacan给发扬光大了。</p>
+<p>转喻要有前后相连的因果性。</p>
+<p>千帆过境，隐喻要形成某种统一，转喻则不需要。</p>
+<h2 id="Lacan的看法"><a href="#Lacan的看法" class="headerlink" title="Lacan的看法"></a>Lacan的看法</h2><h3 id="Freud的《梦的解析》"><a href="#Freud的《梦的解析》" class="headerlink" title="Freud的《梦的解析》"></a>Freud的《梦的解析》</h3><p>梦有它伪装的形式。</p>
+<blockquote>
+<p>梦是无意识，Freud和Lacan共享一个事实</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>小他者、对象a、大他者</title>
+    <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
+    <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>感想</title>
     <url>/2024/07/21/%E6%84%9F%E6%83%B3/</url>
     <content><![CDATA[]]></content>
@@ -2818,196 +2818,6 @@
 ]]></content>
       <tags>
         <tag>精神分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>（5）数据的共享和保护</title>
-    <url>/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/</url>
-    <content><![CDATA[<h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
-<p>其作用域始于“(”,终于”)”</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">double area(double radius);</span><br><span class="line">//radius的作用域仅在此处，不能用于程序正文其他地方</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部作用域（块作用域）"><a href="#局部作用域（块作用域）" class="headerlink" title="局部作用域（块作用域）"></a>局部作用域（块作用域）</h3><ul>
-<li>函数的形参，在块中声明的标识符</li>
-<li>作用域自声明处起，限于块中</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void fun(int a)</span><br><span class="line">&#123;int b=a;</span><br><span class="line">cin&gt;&gt;b;</span><br><span class="line">if(b&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">int c;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="类作用域"><a href="#类作用域" class="headerlink" title="类作用域"></a>类作用域</h3><ul>
-<li>类的对象具有类作用域</li>
-</ul>
-<p>其范围包括类体和成员函数体。</p>
-<ul>
-<li>在类作用域以外访问类的成员：<ol>
-<li>静态成员：通过类名，或者该类的对象名，对象引用访问。</li>
-<li>非静态成员：通过类名，或者该类的对象名，对象引用，对象指针访问。</li>
-</ol>
-</li>
-</ul>
-<h3 id="文件作用域"><a href="#文件作用域" class="headerlink" title="文件作用域"></a>文件作用域</h3><ul>
-<li>不在前述各个作用域中出现的声明，就具有文件作用域。</li>
-<li>其作用域开始于声明点，结束于文件尾。</li>
-</ul>
-<blockquote>
-<p>可见性：</p>
-<ul>
-<li>可见性是从对标识符的引用的角度来谈的概念</li>
-<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
-<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
-<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
-<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
-</ul>
-</blockquote>
-<h3 id="命名空间作用域"><a href="#命名空间作用域" class="headerlink" title="命名空间作用域"></a>命名空间作用域</h3><blockquote>
-<p>可见性：</p>
-<ul>
-<li>可见性是从对标识符的引用的角度来谈的概念</li>
-<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
-<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
-<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
-<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
-</ul>
-</blockquote>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int i;//全局变量，文件作用域</span><br><span class="line">int main()</span><br><span class="line">i=5;//为全局变量赋值</span><br><span class="line">&#123;</span><br><span class="line">int i;</span><br><span class="line">i=7;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出7，内层会屏蔽外层作用变量</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出5</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="对象的生存期"><a href="#对象的生存期" class="headerlink" title="对象的生存期"></a>对象的生存期</h2><h3 id="静态生存区"><a href="#静态生存区" class="headerlink" title="静态生存区"></a>静态生存区</h3><ul>
-<li>这种生存期与程序的运行期相同。</li>
-<li>在文件作用域中声明的对象具有这种生存期。</li>
-<li>在函数内部声明静态生存期对象，要冠以关键字static。</li>
-</ul>
-<h3 id="非静态生存区"><a href="#非静态生存区" class="headerlink" title="非静态生存区"></a>非静态生存区</h3><ul>
-<li>开始于程序执行到声明点时，结束于该标识符的作用域结束处。</li>
-<li>块作用域中声明的，没有用static修饰的对象，是动态生存区的对象（习惯称我为局部生存期对象）</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std</span><br><span class="line">int i=1;//i为全局变量</span><br><span class="line">void other()</span><br><span class="line">&#123;</span><br><span class="line">static int a=2;</span><br><span class="line">static int b;</span><br><span class="line">//a，b为静态局部变量，具有全局寿命，局部可见。</span><br><span class="line">//只第一次进入函数时被初始化。</span><br><span class="line">int c=10;</span><br><span class="line">//c为局部变量，具有动态生存期</span><br><span class="line">//每次进入函数时都被初始化</span><br><span class="line">a+=2;i+=32;c+=5;</span><br><span class="line">cout&lt;&lt;&quot;--OTHER--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot;i:&quot;&lt;&lt;i&lt;&lt;&quot;a:&quot;&lt;&lt;a&lt;&lt;&quot;b:&quot;&lt;&lt;b&lt;&lt;&quot;c:&quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">b=a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">static int a;</span><br><span class="line">//a静态局部变量，有全局寿命，局部可见</span><br><span class="line">int b=-10;</span><br><span class="line">int c=0;</span><br><span class="line">//b，c为局部变量，具有动态生存期</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">c+=8;other();</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">i+=10;</span><br><span class="line">other();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">--MAIN--</span><br><span class="line">i:1 a:0 b:-10 c:0</span><br><span class="line">--OTHER--</span><br><span class="line">i:33 a:4 b:0 c:15</span><br><span class="line">--MAIN--</span><br><span class="line">i:33 a:0 b:-10 c:8</span><br><span class="line">--OTHER--</span><br><span class="line">i:75 a:6 b:4 c:15</span><br></pre></td></tr></table></figure>
-
-<h2 id="类的静态数据成员"><a href="#类的静态数据成员" class="headerlink" title="类的静态数据成员"></a>类的静态数据成员</h2><ul>
-<li>用关键词static声明</li>
-<li>为该类所有对象共享，静态数据成员具有静态生存期。</li>
-<li>必须在类外定义和初始化，用（::）来指明所属的类。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point a(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">a.showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">b.showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="静态函数成员"><a href="#静态函数成员" class="headerlink" title="静态函数成员"></a>静态函数成员</h2><p>静态函数处理静态数据</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point::showCount();//输出对象个数</span><br><span class="line">Point a(4,5);//声明对象a，其构造函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);//声明对象b，其复制函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="类的友元"><a href="#类的友元" class="headerlink" title="类的友元"></a>类的友元</h2><h3 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h3><ul>
-<li>友元时c++提供的一种破坏数据封装和数据隐藏的机制。</li>
-<li>提供将一个模板声明为另一个模板的友元，一个模板能够引用到另一个模板中本是被隐藏的信息。</li>
-<li>可以声明友元函数和友元类</li>
-<li>为了确保数据的完整性，及数据封装于隐藏的原则，建议慎重使用友元。</li>
-</ul>
-<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><ul>
-<li>友元函数是在类声明中由关键字friend修饰的说明的非成员函数，在它的函数体中能够通过对象名访问private和protected成员。</li>
-<li>作用：增加灵活性，使程序员可以在封装和快速性方面做合理选择</li>
-<li>访问对象中的成员必须通过对象名。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x,int y):x(x),y(y)</span><br><span class="line">&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">Point(Point&amp; p)</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(Point &amp;a,Point &amp;b);</span><br><span class="line">static int showCOUNT()&#123;return count;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">static int count;</span><br><span class="line">&#125;;</span><br><span class="line">float dist(Point&amp; a,Point&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">double x=a.x-b.x;</span><br><span class="line">double y=a.y-b.y;</span><br><span class="line">//有修改原本数据的隐患</span><br><span class="line">//避免每次用对象的x，y都要调用一次函数</span><br><span class="line">return </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><ul>
-<li><p>若一个类为另一个类的友元，则此类的所有成员，都能访问对方类的私有成员。</p>
-</li>
-<li><p>声明语法：将友元类名放在另一个类中使用friend修饰说明。</p>
-</li>
-<li><p>友元关系是单向的，数据成员的开放也就是单向的。</p>
-</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">friend class B;</span><br><span class="line">public:</span><br><span class="line">void display()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;x&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">void set(int i);</span><br><span class="line">void display();</span><br><span class="line">private:</span><br><span class="line">A a;</span><br><span class="line">&#125;</span><br><span class="line">void B::set(int i)</span><br><span class="line">&#123;</span><br><span class="line">a.x=i;</span><br><span class="line">&#125;</span><br><span class="line">void B::display()</span><br><span class="line">&#123;</span><br><span class="line">a.display();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="共享数据的保护"><a href="#共享数据的保护" class="headerlink" title="共享数据的保护"></a>共享数据的保护</h2><h3 id="常类型"><a href="#常类型" class="headerlink" title="常类型"></a>常类型</h3><h4 id="常对象：必须进行初始化，不能被更新。const-类名-对象名；"><a href="#常对象：必须进行初始化，不能被更新。const-类名-对象名；" class="headerlink" title="常对象：必须进行初始化，不能被更新。const 类名 对象名；"></a>常对象：必须进行初始化，不能被更新。const 类名 对象名；</h4><ul>
-<li>用const修饰的对象</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i,int j):x(i),y(j)&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">A const a(3,4);//a是常对象，不能被更新</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"><a href="#常成员：用const进行修饰的类成员：常数据成员和常函数成员。" class="headerlink" title="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"></a>常成员：用const进行修饰的类成员：常数据成员和常函数成员。</h4><ul>
-<li>常成员函数</li>
-<li>使用const关键字说明的函数</li>
-<li>常成员函数不更新对象的数据成员</li>
-<li>常成员函数说明格式：</li>
-</ul>
-<blockquote>
-<p>类型说明符 函数名（参数表) const；这里，const是函数类型的一个组成部分，因此在实现部分也要带const关键字。</p>
-</blockquote>
-<ul>
-<li>const关键字可以被用于参与对重载函数的区分</li>
-<li>通过常对象只能调用它的常成员函数</li>
-<li>常数据成员：使用const说明的数据成员</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class R</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">R(int r1,int r2):r1(r1),r2(r2)&#123;&#125;</span><br><span class="line">void print();</span><br><span class="line">void print() const;</span><br><span class="line">private:</span><br><span class="line">int r1,r2;</span><br><span class="line">&#125;;</span><br><span class="line">void R::print()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">void R::print()const</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">R a(5,4);</span><br><span class="line">a.print();</span><br><span class="line">const R b(20,53);</span><br><span class="line">b.print();//调用void print const()</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i):</span><br><span class="line">void print();</span><br><span class="line">private:</span><br><span class="line">const int a;</span><br><span class="line">static const int b;//静态常数据对象</span><br><span class="line">&#125;;</span><br><span class="line">const int A::b=10;</span><br><span class="line">A::A(int i):a(i)&#123;&#125;</span><br><span class="line">void A::print()&#123;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;&quot;:&quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">A a1(100),a2(0);</span><br><span class="line">a1.print();</span><br><span class="line">a2.print();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="常引用：被引用的对象不能被更新。const-类型说明符号-引用名"><a href="#常引用：被引用的对象不能被更新。const-类型说明符号-引用名" class="headerlink" title="常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名"></a>常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(const Point &amp;p1,const Point &amp;p2);</span><br><span class="line">private x,y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在友元函数中用常引用做参数，既能获得较高的执行效率，又能保证实参的安全性。</p>
-</blockquote>
-<h4 id="常数组：数组元素不能被更新。类型说明符-const-数组名-大小"><a href="#常数组：数组元素不能被更新。类型说明符-const-数组名-大小" class="headerlink" title="常数组：数组元素不能被更新。类型说明符 const 数组名[大小]"></a>常数组：数组元素不能被更新。类型说明符 const 数组名[大小]</h4><h4 id="常指针：指向常量的指针。"><a href="#常指针：指向常量的指针。" class="headerlink" title="常指针：指向常量的指针。"></a>常指针：指向常量的指针。</h4><h2 id="多文件结构"><a href="#多文件结构" class="headerlink" title="多文件结构"></a>多文件结构</h2><h3 id="C-的一般组织结构"><a href="#C-的一般组织结构" class="headerlink" title="C++的一般组织结构"></a>C++的一般组织结构</h3><h4 id="一个工程可以分为多个源文件，例如："><a href="#一个工程可以分为多个源文件，例如：" class="headerlink" title="一个工程可以分为多个源文件，例如："></a>一个工程可以分为多个源文件，例如：</h4><ul>
-<li>类声明文件（.h文件）</li>
-<li>类实现文件（.cpp文件）</li>
-<li>类的使用文件（main()所在的.cpp文件)</li>
-</ul>
-<h4 id="利用多个工程来组合各个文件"><a href="#利用多个工程来组合各个文件" class="headerlink" title="利用多个工程来组合各个文件"></a>利用多个工程来组合各个文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//文件1，类的定义，Point.h</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//文件2，point.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int Point::count=0;</span><br><span class="line">Point::Point(const Point &amp;p):x(p.x),y(p.y)</span><br><span class="line">&#123;count++;&#125;</span><br><span class="line">void Point::showCount()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count=&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//文件3，主函数 5_10.cpp</span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="外部变量"><a href="#外部变量" class="headerlink" title="外部变量"></a>外部变量</h3><ul>
-<li>除了在定义它的源文件中可以使用外，还能被其他文件使用。</li>
-<li>文件作用域中定义的变量，默认情况下都是外部变量。</li>
-<li>在其他文件中如果需要使用的化，需要用extern关键字声明。</li>
-<li>在所有类的之外声明的函数（也就是非成员函数），都具有文件作用域的。</li>
-<li>这样的函数都可以在不同的编译单元中被调用</li>
-<li>只要在调用之前进行，引用性声明（即声明函数原型）即可。</li>
-</ul>
-<blockquote>
-<p>将变量和函数限制在编译单元内</p>
-<ul>
-<li>将匿名命名空间中定义的变量和函数，都不会暴露给其他的编译单元</li>
-</ul>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">namespace</span><br><span class="line">&#123;</span><br><span class="line">//匿名的命名空间</span><br><span class="line">int n;</span><br><span class="line">void f()</span><br><span class="line">&#123;</span><br><span class="line">n++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="标准c-库"><a href="#标准c-库" class="headerlink" title="标准c++库"></a>标准c++库</h2><blockquote>
-<p>标准c++类库是一个及其灵活且可拓展的可重用软件模块的集合。</p>
-</blockquote>
-<h3 id="输入-输出类"><a href="#输入-输出类" class="headerlink" title="输入&#x2F;输出类"></a>输入&#x2F;输出类</h3><h3 id="容器类和抽象数据类型"><a href="#容器类和抽象数据类型" class="headerlink" title="容器类和抽象数据类型"></a>容器类和抽象数据类型</h3><h3 id="存储管理类"><a href="#存储管理类" class="headerlink" title="存储管理类"></a>存储管理类</h3><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h3 id="运行环境支持"><a href="#运行环境支持" class="headerlink" title="运行环境支持"></a>运行环境支持</h3><h2 id="编译预处理"><a href="#编译预处理" class="headerlink" title="编译预处理"></a>编译预处理</h2><h3 id="include包含指令"><a href="#include包含指令" class="headerlink" title="#include包含指令"></a>#include包含指令</h3><ul>
-<li>将一个源文件嵌入到当前源文件中该点处。<ol>
-<li>#include&lt;文件名&gt;：按标准模式搜索，文件位于c++系统目录的include子目录下</li>
-<li>#include“文件名”：首先在当前目录中搜索，若没有，在按标准方式搜索。</li>
-</ol>
-</li>
-</ul>
-<h3 id="define-宏定义指令"><a href="#define-宏定义指令" class="headerlink" title="#define 宏定义指令"></a>#define 宏定义指令</h3><ul>
-<li>定义符号常量，很多情况已经被const定义语句取代。</li>
-<li>定义带参数宏，已经被内联函数取代。</li>
-</ul>
-<h3 id="undif"><a href="#undif" class="headerlink" title="#undif"></a>#undif</h3><ul>
-<li>删除由#define定义的宏，使之不再起作用</li>
-</ul>
-<h3 id="条件编译指令——-if和-endif"><a href="#条件编译指令——-if和-endif" class="headerlink" title="条件编译指令——#if和#endif"></a>条件编译指令——#if和#endif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令——-else"><a href="#条件编译指令——-else" class="headerlink" title="条件编译指令——#else"></a>条件编译指令——#else</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文1</span><br><span class="line">#else</span><br><span class="line">//当“常量表达式”为零时编译</span><br><span class="line">程序正文2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令——-elif"><a href="#条件编译指令——-elif" class="headerlink" title="条件编译指令——#elif"></a>条件编译指令——#elif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式1</span><br><span class="line">程序正文1//当“常量表达式1”非零时编译</span><br><span class="line">#elif 常量表达式2</span><br><span class="line">程序正文2//当“常量表达式2”非零时编译</span><br><span class="line">#else</span><br><span class="line">程序正文3//其他情况下编译</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<h3 id="条件编译指令"><a href="#条件编译指令" class="headerlink" title="条件编译指令"></a>条件编译指令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#ifdef 标识符</span><br><span class="line">程序段1</span><br><span class="line">#else</span><br><span class="line">程序段2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果“标识符”经#define定义过，且未经undef删除，则编译程序段1；否则编译程序段2.</p>
-</blockquote>
-<h2 id="第五章小结"><a href="#第五章小结" class="headerlink" title="第五章小结"></a>第五章小结</h2><ul>
-<li>对象的生存期，作用域与可见性。</li>
-<li>类的静态成员。</li>
-<li>数据的共享和保护。</li>
-<li>友元</li>
-<li>编译预处理指令</li>
-<li>多文件结构与工程</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
@@ -3479,6 +3289,196 @@
       </tags>
   </entry>
   <entry>
+    <title>（5）数据的共享和保护</title>
+    <url>/2024/05/29/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%85%B1%E4%BA%AB%E5%92%8C%E4%BF%9D%E6%8A%A4/</url>
+    <content><![CDATA[<h2 id="标识符的作用域和可见性"><a href="#标识符的作用域和可见性" class="headerlink" title="标识符的作用域和可见性"></a>标识符的作用域和可见性</h2><h3 id="函数原型作用域"><a href="#函数原型作用域" class="headerlink" title="函数原型作用域"></a>函数原型作用域</h3><p>函数原型中的参数</p>
+<p>其作用域始于“(”,终于”)”</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">double area(double radius);</span><br><span class="line">//radius的作用域仅在此处，不能用于程序正文其他地方</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部作用域（块作用域）"><a href="#局部作用域（块作用域）" class="headerlink" title="局部作用域（块作用域）"></a>局部作用域（块作用域）</h3><ul>
+<li>函数的形参，在块中声明的标识符</li>
+<li>作用域自声明处起，限于块中</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void fun(int a)</span><br><span class="line">&#123;int b=a;</span><br><span class="line">cin&gt;&gt;b;</span><br><span class="line">if(b&gt;0)</span><br><span class="line">&#123;</span><br><span class="line">int c;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类作用域"><a href="#类作用域" class="headerlink" title="类作用域"></a>类作用域</h3><ul>
+<li>类的对象具有类作用域</li>
+</ul>
+<p>其范围包括类体和成员函数体。</p>
+<ul>
+<li>在类作用域以外访问类的成员：<ol>
+<li>静态成员：通过类名，或者该类的对象名，对象引用访问。</li>
+<li>非静态成员：通过类名，或者该类的对象名，对象引用，对象指针访问。</li>
+</ol>
+</li>
+</ul>
+<h3 id="文件作用域"><a href="#文件作用域" class="headerlink" title="文件作用域"></a>文件作用域</h3><ul>
+<li>不在前述各个作用域中出现的声明，就具有文件作用域。</li>
+<li>其作用域开始于声明点，结束于文件尾。</li>
+</ul>
+<blockquote>
+<p>可见性：</p>
+<ul>
+<li>可见性是从对标识符的引用的角度来谈的概念</li>
+<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
+<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
+<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
+<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
+</ul>
+</blockquote>
+<h3 id="命名空间作用域"><a href="#命名空间作用域" class="headerlink" title="命名空间作用域"></a>命名空间作用域</h3><blockquote>
+<p>可见性：</p>
+<ul>
+<li>可见性是从对标识符的引用的角度来谈的概念</li>
+<li>可见性表示从内层作用域向外层作用域“看”时能看见声明。</li>
+<li>如果标识在某处可见，就可以在该处引用此标识符。</li>
+<li>如果某个标识符在外层中声明，且在内层中没有同一个标识符的声明，则该标识符在内层可见。</li>
+<li>对于两个嵌套的作用域，如果在内层作用域内声明了与外层作用域中同名的标识符，则外层的标识符在内层不可见。</li>
+</ul>
+</blockquote>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int i;//全局变量，文件作用域</span><br><span class="line">int main()</span><br><span class="line">i=5;//为全局变量赋值</span><br><span class="line">&#123;</span><br><span class="line">int i;</span><br><span class="line">i=7;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出7，内层会屏蔽外层作用变量</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;//输出5</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象的生存期"><a href="#对象的生存期" class="headerlink" title="对象的生存期"></a>对象的生存期</h2><h3 id="静态生存区"><a href="#静态生存区" class="headerlink" title="静态生存区"></a>静态生存区</h3><ul>
+<li>这种生存期与程序的运行期相同。</li>
+<li>在文件作用域中声明的对象具有这种生存期。</li>
+<li>在函数内部声明静态生存期对象，要冠以关键字static。</li>
+</ul>
+<h3 id="非静态生存区"><a href="#非静态生存区" class="headerlink" title="非静态生存区"></a>非静态生存区</h3><ul>
+<li>开始于程序执行到声明点时，结束于该标识符的作用域结束处。</li>
+<li>块作用域中声明的，没有用static修饰的对象，是动态生存区的对象（习惯称我为局部生存期对象）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std</span><br><span class="line">int i=1;//i为全局变量</span><br><span class="line">void other()</span><br><span class="line">&#123;</span><br><span class="line">static int a=2;</span><br><span class="line">static int b;</span><br><span class="line">//a，b为静态局部变量，具有全局寿命，局部可见。</span><br><span class="line">//只第一次进入函数时被初始化。</span><br><span class="line">int c=10;</span><br><span class="line">//c为局部变量，具有动态生存期</span><br><span class="line">//每次进入函数时都被初始化</span><br><span class="line">a+=2;i+=32;c+=5;</span><br><span class="line">cout&lt;&lt;&quot;--OTHER--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot;i:&quot;&lt;&lt;i&lt;&lt;&quot;a:&quot;&lt;&lt;a&lt;&lt;&quot;b:&quot;&lt;&lt;b&lt;&lt;&quot;c:&quot;&lt;&lt;c&lt;&lt;endl;</span><br><span class="line">b=a;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">static int a;</span><br><span class="line">//a静态局部变量，有全局寿命，局部可见</span><br><span class="line">int b=-10;</span><br><span class="line">int c=0;</span><br><span class="line">//b，c为局部变量，具有动态生存期</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">c+=8;other();</span><br><span class="line">cout&lt;&lt;&quot;--MAIN--\n&quot;;</span><br><span class="line">cout&lt;&lt;&quot; i:&quot;&lt;&lt;i&lt;&lt;&quot; a:&quot;&lt;&lt;a&lt;&lt;&quot; b:&quot;&lt;&lt;b&lt;&lt;&quot; c:&quot;&lt;&lt;c;</span><br><span class="line">i+=10;</span><br><span class="line">other();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">运行结果</span><br><span class="line">--MAIN--</span><br><span class="line">i:1 a:0 b:-10 c:0</span><br><span class="line">--OTHER--</span><br><span class="line">i:33 a:4 b:0 c:15</span><br><span class="line">--MAIN--</span><br><span class="line">i:33 a:0 b:-10 c:8</span><br><span class="line">--OTHER--</span><br><span class="line">i:75 a:6 b:4 c:15</span><br></pre></td></tr></table></figure>
+
+<h2 id="类的静态数据成员"><a href="#类的静态数据成员" class="headerlink" title="类的静态数据成员"></a>类的静态数据成员</h2><ul>
+<li>用关键词static声明</li>
+<li>为该类所有对象共享，静态数据成员具有静态生存期。</li>
+<li>必须在类外定义和初始化，用（::）来指明所属的类。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point a(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">a.showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">b.showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="静态函数成员"><a href="#静态函数成员" class="headerlink" title="静态函数成员"></a>静态函数成员</h2><p>静态函数处理静态数据</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()//输出静态数据成员</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">int Point::count=0;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point::showCount();//输出对象个数</span><br><span class="line">Point a(4,5);//声明对象a，其构造函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point A:&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);//声明对象b，其复制函数使count+1</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类的友元"><a href="#类的友元" class="headerlink" title="类的友元"></a>类的友元</h2><h3 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h3><ul>
+<li>友元时c++提供的一种破坏数据封装和数据隐藏的机制。</li>
+<li>提供将一个模板声明为另一个模板的友元，一个模板能够引用到另一个模板中本是被隐藏的信息。</li>
+<li>可以声明友元函数和友元类</li>
+<li>为了确保数据的完整性，及数据封装于隐藏的原则，建议慎重使用友元。</li>
+</ul>
+<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><ul>
+<li>友元函数是在类声明中由关键字friend修饰的说明的非成员函数，在它的函数体中能够通过对象名访问private和protected成员。</li>
+<li>作用：增加灵活性，使程序员可以在封装和快速性方面做合理选择</li>
+<li>访问对象中的成员必须通过对象名。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x,int y):x(x),y(y)</span><br><span class="line">&#123;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">Point(Point&amp; p)</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(Point &amp;a,Point &amp;b);</span><br><span class="line">static int showCOUNT()&#123;return count;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">static int count;</span><br><span class="line">&#125;;</span><br><span class="line">float dist(Point&amp; a,Point&amp; b)</span><br><span class="line">&#123;</span><br><span class="line">double x=a.x-b.x;</span><br><span class="line">double y=a.y-b.y;</span><br><span class="line">//有修改原本数据的隐患</span><br><span class="line">//避免每次用对象的x，y都要调用一次函数</span><br><span class="line">return </span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><ul>
+<li><p>若一个类为另一个类的友元，则此类的所有成员，都能访问对方类的私有成员。</p>
+</li>
+<li><p>声明语法：将友元类名放在另一个类中使用friend修饰说明。</p>
+</li>
+<li><p>友元关系是单向的，数据成员的开放也就是单向的。</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">friend class B;</span><br><span class="line">public:</span><br><span class="line">void display()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;x&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">private:</span><br><span class="line">int x;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">void set(int i);</span><br><span class="line">void display();</span><br><span class="line">private:</span><br><span class="line">A a;</span><br><span class="line">&#125;</span><br><span class="line">void B::set(int i)</span><br><span class="line">&#123;</span><br><span class="line">a.x=i;</span><br><span class="line">&#125;</span><br><span class="line">void B::display()</span><br><span class="line">&#123;</span><br><span class="line">a.display();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="共享数据的保护"><a href="#共享数据的保护" class="headerlink" title="共享数据的保护"></a>共享数据的保护</h2><h3 id="常类型"><a href="#常类型" class="headerlink" title="常类型"></a>常类型</h3><h4 id="常对象：必须进行初始化，不能被更新。const-类名-对象名；"><a href="#常对象：必须进行初始化，不能被更新。const-类名-对象名；" class="headerlink" title="常对象：必须进行初始化，不能被更新。const 类名 对象名；"></a>常对象：必须进行初始化，不能被更新。const 类名 对象名；</h4><ul>
+<li>用const修饰的对象</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i,int j):x(i),y(j)&#123;&#125;</span><br><span class="line">private:</span><br><span class="line">int x,y;</span><br><span class="line">&#125;;</span><br><span class="line">A const a(3,4);//a是常对象，不能被更新</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"><a href="#常成员：用const进行修饰的类成员：常数据成员和常函数成员。" class="headerlink" title="常成员：用const进行修饰的类成员：常数据成员和常函数成员。"></a>常成员：用const进行修饰的类成员：常数据成员和常函数成员。</h4><ul>
+<li>常成员函数</li>
+<li>使用const关键字说明的函数</li>
+<li>常成员函数不更新对象的数据成员</li>
+<li>常成员函数说明格式：</li>
+</ul>
+<blockquote>
+<p>类型说明符 函数名（参数表) const；这里，const是函数类型的一个组成部分，因此在实现部分也要带const关键字。</p>
+</blockquote>
+<ul>
+<li>const关键字可以被用于参与对重载函数的区分</li>
+<li>通过常对象只能调用它的常成员函数</li>
+<li>常数据成员：使用const说明的数据成员</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class R</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">R(int r1,int r2):r1(r1),r2(r2)&#123;&#125;</span><br><span class="line">void print();</span><br><span class="line">void print() const;</span><br><span class="line">private:</span><br><span class="line">int r1,r2;</span><br><span class="line">&#125;;</span><br><span class="line">void R::print()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">void R::print()const</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;r1&lt;&lt;&quot;:&quot;&lt;&lt;r2&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">R a(5,4);</span><br><span class="line">a.print();</span><br><span class="line">const R b(20,53);</span><br><span class="line">b.print();//调用void print const()</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">A(int i):</span><br><span class="line">void print();</span><br><span class="line">private:</span><br><span class="line">const int a;</span><br><span class="line">static const int b;//静态常数据对象</span><br><span class="line">&#125;;</span><br><span class="line">const int A::b=10;</span><br><span class="line">A::A(int i):a(i)&#123;&#125;</span><br><span class="line">void A::print()&#123;</span><br><span class="line">cout&lt;&lt;a&lt;&lt;&quot;:&quot;&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">A a1(100),a2(0);</span><br><span class="line">a1.print();</span><br><span class="line">a2.print();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="常引用：被引用的对象不能被更新。const-类型说明符号-引用名"><a href="#常引用：被引用的对象不能被更新。const-类型说明符号-引用名" class="headerlink" title="常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名"></a>常引用：被引用的对象不能被更新。const 类型说明符号 &amp;引用名</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Point</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)&#123;&#125;</span><br><span class="line">int getX()&#123;return x;&#125;</span><br><span class="line">int getY()&#123;return y;&#125;</span><br><span class="line">friend float dist(const Point &amp;p1,const Point &amp;p2);</span><br><span class="line">private x,y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在友元函数中用常引用做参数，既能获得较高的执行效率，又能保证实参的安全性。</p>
+</blockquote>
+<h4 id="常数组：数组元素不能被更新。类型说明符-const-数组名-大小"><a href="#常数组：数组元素不能被更新。类型说明符-const-数组名-大小" class="headerlink" title="常数组：数组元素不能被更新。类型说明符 const 数组名[大小]"></a>常数组：数组元素不能被更新。类型说明符 const 数组名[大小]</h4><h4 id="常指针：指向常量的指针。"><a href="#常指针：指向常量的指针。" class="headerlink" title="常指针：指向常量的指针。"></a>常指针：指向常量的指针。</h4><h2 id="多文件结构"><a href="#多文件结构" class="headerlink" title="多文件结构"></a>多文件结构</h2><h3 id="C-的一般组织结构"><a href="#C-的一般组织结构" class="headerlink" title="C++的一般组织结构"></a>C++的一般组织结构</h3><h4 id="一个工程可以分为多个源文件，例如："><a href="#一个工程可以分为多个源文件，例如：" class="headerlink" title="一个工程可以分为多个源文件，例如："></a>一个工程可以分为多个源文件，例如：</h4><ul>
+<li>类声明文件（.h文件）</li>
+<li>类实现文件（.cpp文件）</li>
+<li>类的使用文件（main()所在的.cpp文件)</li>
+</ul>
+<h4 id="利用多个工程来组合各个文件"><a href="#利用多个工程来组合各个文件" class="headerlink" title="利用多个工程来组合各个文件"></a>利用多个工程来组合各个文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//文件1，类的定义，Point.h</span><br><span class="line">class Point//Point类定义</span><br><span class="line">&#123;</span><br><span class="line">private://私有数据成员</span><br><span class="line">int x;</span><br><span class="line">int y;</span><br><span class="line">static int count;//静态数据成员的定义和初始化，使用类名限定</span><br><span class="line">public://外部接口</span><br><span class="line">Point(int x=0,int y=0):x(x),y(y)//构造函数</span><br><span class="line">&#123;</span><br><span class="line">count++;//在构造函数中对count叠加，所有对象共同维护一个count</span><br><span class="line">&#125;</span><br><span class="line">int getX()&#123;return x&#125;;</span><br><span class="line">int getY()&#123;return y&#125;;</span><br><span class="line">Point (Point &amp;p)//拷贝构造函数</span><br><span class="line">&#123;</span><br><span class="line">x=p.x;</span><br><span class="line">y=p.y;</span><br><span class="line">count++;</span><br><span class="line">&#125;</span><br><span class="line">~Point()&#123;count--;&#125;</span><br><span class="line">static void showCount()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">//文件2，point.h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int Point::count=0;</span><br><span class="line">Point::Point(const Point &amp;p):x(p.x),y(p.y)</span><br><span class="line">&#123;count++;&#125;</span><br><span class="line">void Point::showCount()</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;&quot;Object count=&quot;&lt;&lt;count&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//文件3，主函数 5_10.cpp</span><br><span class="line">#include&quot;Point.h&quot;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">Point(4,5);</span><br><span class="line">cout&lt;&lt;&quot;Point A&quot;&lt;&lt;a.getX()&lt;&lt;&quot;,&quot;&lt;&lt;a.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">Point b(a);</span><br><span class="line">cout&lt;&lt;&quot;Point B:&quot;&lt;&lt;b.getX()&lt;&lt;&quot;,&quot;&lt;&lt;b.getY();</span><br><span class="line">Point::showCount();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="外部变量"><a href="#外部变量" class="headerlink" title="外部变量"></a>外部变量</h3><ul>
+<li>除了在定义它的源文件中可以使用外，还能被其他文件使用。</li>
+<li>文件作用域中定义的变量，默认情况下都是外部变量。</li>
+<li>在其他文件中如果需要使用的化，需要用extern关键字声明。</li>
+<li>在所有类的之外声明的函数（也就是非成员函数），都具有文件作用域的。</li>
+<li>这样的函数都可以在不同的编译单元中被调用</li>
+<li>只要在调用之前进行，引用性声明（即声明函数原型）即可。</li>
+</ul>
+<blockquote>
+<p>将变量和函数限制在编译单元内</p>
+<ul>
+<li>将匿名命名空间中定义的变量和函数，都不会暴露给其他的编译单元</li>
+</ul>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">namespace</span><br><span class="line">&#123;</span><br><span class="line">//匿名的命名空间</span><br><span class="line">int n;</span><br><span class="line">void f()</span><br><span class="line">&#123;</span><br><span class="line">n++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="标准c-库"><a href="#标准c-库" class="headerlink" title="标准c++库"></a>标准c++库</h2><blockquote>
+<p>标准c++类库是一个及其灵活且可拓展的可重用软件模块的集合。</p>
+</blockquote>
+<h3 id="输入-输出类"><a href="#输入-输出类" class="headerlink" title="输入&#x2F;输出类"></a>输入&#x2F;输出类</h3><h3 id="容器类和抽象数据类型"><a href="#容器类和抽象数据类型" class="headerlink" title="容器类和抽象数据类型"></a>容器类和抽象数据类型</h3><h3 id="存储管理类"><a href="#存储管理类" class="headerlink" title="存储管理类"></a>存储管理类</h3><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h3 id="运行环境支持"><a href="#运行环境支持" class="headerlink" title="运行环境支持"></a>运行环境支持</h3><h2 id="编译预处理"><a href="#编译预处理" class="headerlink" title="编译预处理"></a>编译预处理</h2><h3 id="include包含指令"><a href="#include包含指令" class="headerlink" title="#include包含指令"></a>#include包含指令</h3><ul>
+<li>将一个源文件嵌入到当前源文件中该点处。<ol>
+<li>#include&lt;文件名&gt;：按标准模式搜索，文件位于c++系统目录的include子目录下</li>
+<li>#include“文件名”：首先在当前目录中搜索，若没有，在按标准方式搜索。</li>
+</ol>
+</li>
+</ul>
+<h3 id="define-宏定义指令"><a href="#define-宏定义指令" class="headerlink" title="#define 宏定义指令"></a>#define 宏定义指令</h3><ul>
+<li>定义符号常量，很多情况已经被const定义语句取代。</li>
+<li>定义带参数宏，已经被内联函数取代。</li>
+</ul>
+<h3 id="undif"><a href="#undif" class="headerlink" title="#undif"></a>#undif</h3><ul>
+<li>删除由#define定义的宏，使之不再起作用</li>
+</ul>
+<h3 id="条件编译指令——-if和-endif"><a href="#条件编译指令——-if和-endif" class="headerlink" title="条件编译指令——#if和#endif"></a>条件编译指令——#if和#endif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令——-else"><a href="#条件编译指令——-else" class="headerlink" title="条件编译指令——#else"></a>条件编译指令——#else</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式</span><br><span class="line">//当“常量表达式”非零时编译</span><br><span class="line">程序正文1</span><br><span class="line">#else</span><br><span class="line">//当“常量表达式”为零时编译</span><br><span class="line">程序正文2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令——-elif"><a href="#条件编译指令——-elif" class="headerlink" title="条件编译指令——#elif"></a>条件编译指令——#elif</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#if 常量表达式1</span><br><span class="line">程序正文1//当“常量表达式1”非零时编译</span><br><span class="line">#elif 常量表达式2</span><br><span class="line">程序正文2//当“常量表达式2”非零时编译</span><br><span class="line">#else</span><br><span class="line">程序正文3//其他情况下编译</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件编译指令"><a href="#条件编译指令" class="headerlink" title="条件编译指令"></a>条件编译指令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#ifdef 标识符</span><br><span class="line">程序段1</span><br><span class="line">#else</span><br><span class="line">程序段2</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果“标识符”经#define定义过，且未经undef删除，则编译程序段1；否则编译程序段2.</p>
+</blockquote>
+<h2 id="第五章小结"><a href="#第五章小结" class="headerlink" title="第五章小结"></a>第五章小结</h2><ul>
+<li>对象的生存期，作用域与可见性。</li>
+<li>类的静态成员。</li>
+<li>数据的共享和保护。</li>
+<li>友元</li>
+<li>编译预处理指令</li>
+<li>多文件结构与工程</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>日语n1文法</title>
     <url>/2024/05/19/%E6%97%A5%E8%AF%ADn1%E6%96%87%E6%B3%95/</url>
     <content><![CDATA[<h2 id="1-第一章"><a href="#1-第一章" class="headerlink" title="1. 第一章"></a>1. 第一章</h2><h3 id="1-1-～あっての"><a href="#1-1-～あっての" class="headerlink" title="1.1 ～あっての"></a>1.1 <strong>～あっての</strong></h3><p>名A＋（が）あっての＋名B</p>
@@ -3502,23 +3502,6 @@
 ]]></content>
       <tags>
         <tag>日本語</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>死月妖花</title>
-    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#x34;&#103;&#97;&#x74;&#115;&#117;&#56;&#107;&#97;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x34;&#103;&#97;&#x74;&#115;&#117;&#56;&#107;&#97;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></p>
-<p>推特账号：@4gatsu_8ka</p>
-<h3 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h3><p>本作の全編予想プレイ時間は50<del>120時間で寸(文字数换算で230万字程度)。<br>1編当たりの予想プレイ時間は最短編で2</del>4時間、最長編で10~20時間です</p>
-<p>非常に長いので健康な害さないよう，適宜休憩を取りながらプレイして下さい</p>
-<h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><p>立木三日（tachiki mika）：在打完驶向过去的梦的剧本之后，出现的一个带着能面，着着红袍的女性，伴随她的出现是一阵清脆的铃声。</p>
-<h2 id="咒杀篇"><a href="#咒杀篇" class="headerlink" title="咒杀篇"></a>咒杀篇</h2><h3 id="四月病（四月七日）："><a href="#四月病（四月七日）：" class="headerlink" title="四月病（四月七日）："></a>四月病（四月七日）：</h3><p>介绍了夏美四月病的病状，在预知梦的能力发作时，看见了飞在天空中的气球，然后还有一具被剥皮了的尸体。这里会出现茜和夏美一起吃饭的剧情，吃饭的过程中，四月病发作，恶心得夏美到厕所呕吐了。</p>
-<h3 id="四月八日の朝："><a href="#四月八日の朝：" class="headerlink" title="四月八日の朝："></a>四月八日の朝：</h3><p>四月八日早上起床，家外面出现了警笛声，学生也被要求待在自己的家里，不要外出。在出门之后，偶遇倒垃圾的美冬。</p>
-<h2 id="诧言篇"><a href="#诧言篇" class="headerlink" title="诧言篇"></a>诧言篇</h2><h2 id="明徵篇"><a href="#明徵篇" class="headerlink" title="明徵篇"></a>明徵篇</h2><h3 id="過去へ馳せる夢"><a href="#過去へ馳せる夢" class="headerlink" title="過去へ馳せる夢"></a>過去へ馳せる夢</h3><p>这里是处在五月六号的刚过十二点钟之后发生的故事，这个时候两人的父母都已经亡故。</p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
       </tags>
   </entry>
   <entry>
@@ -3567,11 +3550,20 @@
       </tags>
   </entry>
   <entry>
-    <title>洛谷做题日记</title>
-    <url>/2024/06/20/%E6%B4%9B%E8%B0%B7%E5%81%9A%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
+    <title>死月妖花</title>
+    <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#52;&#103;&#97;&#x74;&#x73;&#x75;&#x38;&#x6b;&#x61;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#109;">&#52;&#103;&#97;&#x74;&#x73;&#x75;&#x38;&#x6b;&#x61;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#109;</a></p>
+<p>推特账号：@4gatsu_8ka</p>
+<h3 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h3><p>本作の全編予想プレイ時間は50<del>120時間で寸(文字数换算で230万字程度)。<br>1編当たりの予想プレイ時間は最短編で2</del>4時間、最長編で10~20時間です</p>
+<p>非常に長いので健康な害さないよう，適宜休憩を取りながらプレイして下さい</p>
+<h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><p>立木三日（tachiki mika）：在打完驶向过去的梦的剧本之后，出现的一个带着能面，着着红袍的女性，伴随她的出现是一阵清脆的铃声。</p>
+<h2 id="咒杀篇"><a href="#咒杀篇" class="headerlink" title="咒杀篇"></a>咒杀篇</h2><h3 id="四月病（四月七日）："><a href="#四月病（四月七日）：" class="headerlink" title="四月病（四月七日）："></a>四月病（四月七日）：</h3><p>介绍了夏美四月病的病状，在预知梦的能力发作时，看见了飞在天空中的气球，然后还有一具被剥皮了的尸体。这里会出现茜和夏美一起吃饭的剧情，吃饭的过程中，四月病发作，恶心得夏美到厕所呕吐了。</p>
+<h3 id="四月八日の朝："><a href="#四月八日の朝：" class="headerlink" title="四月八日の朝："></a>四月八日の朝：</h3><p>四月八日早上起床，家外面出现了警笛声，学生也被要求待在自己的家里，不要外出。在出门之后，偶遇倒垃圾的美冬。</p>
+<h2 id="诧言篇"><a href="#诧言篇" class="headerlink" title="诧言篇"></a>诧言篇</h2><h2 id="明徵篇"><a href="#明徵篇" class="headerlink" title="明徵篇"></a>明徵篇</h2><h3 id="過去へ馳せる夢"><a href="#過去へ馳せる夢" class="headerlink" title="過去へ馳せる夢"></a>過去へ馳せる夢</h3><p>这里是处在五月六号的刚过十二点钟之后发生的故事，这个时候两人的父母都已经亡故。</p>
+]]></content>
       <tags>
-        <tag>洛谷</tag>
+        <tag>gal</tag>
       </tags>
   </entry>
   <entry>
@@ -3657,6 +3649,14 @@
 </ol>
 <h1 id="几种不同的解决思路"><a href="#几种不同的解决思路" class="headerlink" title="几种不同的解决思路"></a>几种不同的解决思路</h1><p>下面是过河卒的集中不同思路。</p>
 <h1 id="数组下标平移变换的技巧"><a href="#数组下标平移变换的技巧" class="headerlink" title="数组下标平移变换的技巧"></a>数组下标平移变换的技巧</h1>]]></content>
+      <tags>
+        <tag>洛谷</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>洛谷做题日记</title>
+    <url>/2024/06/20/%E6%B4%9B%E8%B0%B7%E5%81%9A%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
       <tags>
         <tag>洛谷</tag>
       </tags>
@@ -4246,51 +4246,6 @@
       </tags>
   </entry>
   <entry>
-    <title>高精度问题</title>
-    <url>/2024/07/21/%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	我们在使用c++在进行一系列运算的过程中，不能按照我们在日常生活中的思维，因为在编程语言的计算中，往往还需要考虑内存的问题，位数过高的数据会超过系统能提供的内存大小，导致报错，而我们又需要进行一些高精度的计算问题，所以会出现专门解决高精度运算的高精度算法。</p>
-<p>​	高精度算法有四个基本的类型：高精度加法、高精度减法、高精度乘法、高精度除法。在本文中，我们将由浅入深，由易到难，层层剥开高精度算法背后的秘密。</p>
-<h2 id="高精度加法"><a href="#高精度加法" class="headerlink" title="高精度加法"></a>高精度加法</h2><p>​	由于通常的存储计位方式会导致我们的内存出现越界的情况，在高精度加法的运算中，我们采取了使用字符串存储目标数据的方式。</p>
-<p>​	整个程序的设计思路应该从，语言选择-&gt;输出选项-&gt;无效数据的排除-&gt;数据处理-&gt;结果输出的路线出发，下面给出一个高精度加法的例题，我们将从这个例题出发，剖析高精度加法的算法。</p>
-<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>高精度加法。</p>
-<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>两个整数<em>a</em>,<em>b</em>。</p>
-<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>结果。</p>
-<h4 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h4><p><strong>输入 #1</strong>复制</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>输出 #1</strong>复制</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h4><ul>
-<li><p>20%20% 数据 <em>a</em>,<em>b</em> 在 long long 范围内；</p>
-</li>
-<li><p>100% 数据 0&lt;𝑎,𝑏≤$10^1008#</p>
-</li>
-<li><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-int main()
-&#123;
-    string s=&#123;s1,s2&#125;;
-    for(int i=0;i&lt;=1;i++)
-    &#123;
-        s[i]=getline(cin,line);
-    &#125;
-    for(int )
-    
-&#125;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">​	在计算这个高精度问题的时候，我们需要知道我们现在其实是在用字符串进行着计算，所以我们做的事情其实是将运算转化为字符串的计算，而联想我们平时用到的加法运算方式，就能发现，其实我们在进行多位数运算的时候，其实很多时候是使用了进位法的，所以现在我们需要解决的问题就是，研究明白字符串的进位运算方式。</span><br><span class="line"></span><br><span class="line">​	在我们的思考过程中，我们先遍历一遍我们给如的这两个字符串的所有情况，不难发现，我们的运算位数和短的那个字符串相关，最简单的情况是，我们变换的位数和短字符串是一样的，一般的情况呢是需要运算比短字符串多一位的，最特殊的情况就是需要连续进位，这样就不能确定具体多少次了，最高位需要特殊处理，而一般位数的相加我只需要进行以下操作。</span><br><span class="line"></span><br><span class="line">```cpp</span><br><span class="line">for(int i=0;i&lt;minlength;i++)</span><br><span class="line">&#123;</span><br><span class="line">	int tem=s1[s1.size()-i]-&#x27;&#x27;+s2[s2.size()-i]-&#x27;&#x27;;</span><br><span class="line">if(i=minlength-1&amp;&amp;tem&gt;9)</span><br><span class="line">&#123;</span><br><span class="line">	flag=1;</span><br><span class="line">	break;</span><br><span class="line">&#125;</span><br><span class="line">if(tem&gt;9)</span><br><span class="line">&#123;</span><br><span class="line">	s[i]+=tem%10;</span><br><span class="line">	s[i+1]++;</span><br><span class="line">&#125;</span><br><span class="line">else </span><br><span class="line">&#123;</span><br><span class="line">	s[i]+=tem%10;   	</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-</li>
-</ul>
-<p>在处理最高位的时候，我们需要考虑的事情在于，短字符串的最高位和其对应的长字符串的那一位相加之后的结果，这里其实可以分为三个类型：第一是相加的结果小于10，这样就直接结束处理过程，准备进入输出过程，而如果相加的结果大于10的话，这个时候也要分两种情况，第一种是进位的时候，不会导致下一位的结果也大于等于10，反之就又需要进位。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=minlength;i&lt;maxlength;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(s[i]&gt;<span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        s[i]+=s1[i];</span><br><span class="line">        s[i]++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>螺旋矩阵</title>
     <url>/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/</url>
     <content><![CDATA[<h2 id="什么是螺旋矩阵"><a href="#什么是螺旋矩阵" class="headerlink" title="什么是螺旋矩阵"></a>什么是螺旋矩阵</h2><p>螺旋矩阵就是从四周向中心遍历矩阵的所有元素，没有实质上的算法内容，更多的是做一个模拟，所以螺旋矩阵可以归类为模拟题。</p>
@@ -4564,15 +4519,6 @@ int main()
       </tags>
   </entry>
   <entry>
-    <title>镜像阶段：关系即伪，无中生伪有</title>
-    <url>/2024/05/17/%E9%95%9C%E5%83%8F%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%85%B3%E7%B3%BB%E5%8D%B3%E4%BC%AA%EF%BC%8C%E6%97%A0%E4%B8%AD%E7%94%9F%E4%BC%AA%E6%9C%89/</url>
-    <content><![CDATA[<p>镜像阶段：关系即伪&#x2F;无中生伪有-&gt;拉康任务弗洛伊德的那个本我是生物性的，拉康认为人的开端就是一个无，那个永远回不去母子共同体的“无”。<br>nothingness-&gt;hegel 人是一个黑夜。<br>是一个空洞的虚无，<br>人的实在意义上的否定性。<br>主奴辩证法。<br>Max：人的生活，现实意义上是社会关系的总和。<br>镜像阶段的定义：6-18个月 Freud。<br>小朋友站在镜子面前，发现镜子里面有一个小朋友的形象。<br>这个时候会感受到镜子里面那个统一完整的形象<br>进入了想象域，一种蜜月般的欣喜，<br>人总是一个早产儿，die<br>“动力无助”-&gt;主客不分<br>“破碎的身体”，在镜子里面看到了一个完整的自己，接着破碎化，会成为主体不可弥合的创伤，梦是被压抑的愿望的实现 。<br>梦是被压抑的愿望经过伪装之后的实现。<br>主体在认定了一个影像之后的关系，内在和外在的关系，你否定了内在的关系，将自身认知为了镜子中的自己，这是第一次异化。<br>第二次异化是在象征域中被语言结构的异化，语言是一面无声之镜。这是第二次的异化。<br>镜像误认是一种反对心理学（格式塔）上面的那种积极的心理学。<br>a-（小他者一号）&gt;a‘（moi，弗洛伊德语境下的理想自我）；镜像自我，idea-ich。<br>小他者不是一个具体实在的人，镜像阶段中作为自我认同对象的非我中介。</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>西历2236</title>
     <url>/2024/06/11/%E8%A5%BF%E5%8E%862236/</url>
     <content><![CDATA[<h2 id="西暦-2236-年-用語集"><a href="#西暦-2236-年-用語集" class="headerlink" title="西暦 2236 年 用語集"></a>西暦 2236 年 用語集</h2><h3 id="A"><a href="#A" class="headerlink" title="[ A ]"></a>[ A ]</h3><p><strong>A.I</strong>.……Artificial Intelligence の略。→人工知能の項を参照。</p>
@@ -4760,6 +4706,78 @@ int main()
 ]]></content>
       <tags>
         <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>镜像阶段：关系即伪，无中生伪有</title>
+    <url>/2024/05/17/%E9%95%9C%E5%83%8F%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%85%B3%E7%B3%BB%E5%8D%B3%E4%BC%AA%EF%BC%8C%E6%97%A0%E4%B8%AD%E7%94%9F%E4%BC%AA%E6%9C%89/</url>
+    <content><![CDATA[<p>镜像阶段：关系即伪&#x2F;无中生伪有-&gt;拉康任务弗洛伊德的那个本我是生物性的，拉康认为人的开端就是一个无，那个永远回不去母子共同体的“无”。<br>nothingness-&gt;hegel 人是一个黑夜。<br>是一个空洞的虚无，<br>人的实在意义上的否定性。<br>主奴辩证法。<br>Max：人的生活，现实意义上是社会关系的总和。<br>镜像阶段的定义：6-18个月 Freud。<br>小朋友站在镜子面前，发现镜子里面有一个小朋友的形象。<br>这个时候会感受到镜子里面那个统一完整的形象<br>进入了想象域，一种蜜月般的欣喜，<br>人总是一个早产儿，die<br>“动力无助”-&gt;主客不分<br>“破碎的身体”，在镜子里面看到了一个完整的自己，接着破碎化，会成为主体不可弥合的创伤，梦是被压抑的愿望的实现 。<br>梦是被压抑的愿望经过伪装之后的实现。<br>主体在认定了一个影像之后的关系，内在和外在的关系，你否定了内在的关系，将自身认知为了镜子中的自己，这是第一次异化。<br>第二次异化是在象征域中被语言结构的异化，语言是一面无声之镜。这是第二次的异化。<br>镜像误认是一种反对心理学（格式塔）上面的那种积极的心理学。<br>a-（小他者一号）&gt;a‘（moi，弗洛伊德语境下的理想自我）；镜像自我，idea-ich。<br>小他者不是一个具体实在的人，镜像阶段中作为自我认同对象的非我中介。</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>青空的卡缪</title>
+    <url>/2024/07/25/%E9%9D%92%E7%A9%BA%E7%9A%84%E5%8D%A1%E7%BC%AA/</url>
+    <content><![CDATA[<p>s </p>
+<p>在两位少女在乘坐电车回家的平常日，出现了不平常的事情。</p>
+<ul>
+<li>末班车上除了两位少女之外，谁都不在</li>
+<li>出现了脸部只有血盆大口的异形</li>
+<li>站台的土地开始崩坏</li>
+</ul>
+<p>在正常道路被异形堵住之后，萤和磷决定从以前林业公司运送木材的小道返回萤的家。</p>
+<p>在这条道路上遇到一只狗，然后还有一个穿着工作服，拿着大锯子的类人怪物。</p>
+<p>选择了去找聪，会被异形轮大米。</p>
+]]></content>
+      <tags>
+        <tag>galgame</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高精度问题</title>
+    <url>/2024/07/21/%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	我们在使用c++在进行一系列运算的过程中，不能按照我们在日常生活中的思维，因为在编程语言的计算中，往往还需要考虑内存的问题，位数过高的数据会超过系统能提供的内存大小，导致报错，而我们又需要进行一些高精度的计算问题，所以会出现专门解决高精度运算的高精度算法。</p>
+<p>​	高精度算法有四个基本的类型：高精度加法、高精度减法、高精度乘法、高精度除法。在本文中，我们将由浅入深，由易到难，层层剥开高精度算法背后的秘密。</p>
+<h2 id="高精度加法"><a href="#高精度加法" class="headerlink" title="高精度加法"></a>高精度加法</h2><p>​	由于通常的存储计位方式会导致我们的内存出现越界的情况，在高精度加法的运算中，我们采取了使用字符串存储目标数据的方式。</p>
+<p>​	整个程序的设计思路应该从，语言选择-&gt;输出选项-&gt;无效数据的排除-&gt;数据处理-&gt;结果输出的路线出发，下面给出一个高精度加法的例题，我们将从这个例题出发，剖析高精度加法的算法。</p>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>高精度加法。</p>
+<h4 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h4><p>两个整数<em>a</em>,<em>b</em>。</p>
+<h4 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h4><p>结果。</p>
+<h4 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h4><p><strong>输入 #1</strong>复制</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #1</strong>复制</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明&#x2F;提示"></a>说明&#x2F;提示</h4><ul>
+<li><p>20%20% 数据 <em>a</em>,<em>b</em> 在 long long 范围内；</p>
+</li>
+<li><p>100% 数据 0&lt;𝑎,𝑏≤$10^1008#</p>
+</li>
+<li><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main()
+&#123;
+    string s=&#123;s1,s2&#125;;
+    for(int i=0;i&lt;=1;i++)
+    &#123;
+        s[i]=getline(cin,line);
+    &#125;
+    for(int )
+    
+&#125;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">​	在计算这个高精度问题的时候，我们需要知道我们现在其实是在用字符串进行着计算，所以我们做的事情其实是将运算转化为字符串的计算，而联想我们平时用到的加法运算方式，就能发现，其实我们在进行多位数运算的时候，其实很多时候是使用了进位法的，所以现在我们需要解决的问题就是，研究明白字符串的进位运算方式。</span><br><span class="line"></span><br><span class="line">​	在我们的思考过程中，我们先遍历一遍我们给如的这两个字符串的所有情况，不难发现，我们的运算位数和短的那个字符串相关，最简单的情况是，我们变换的位数和短字符串是一样的，一般的情况呢是需要运算比短字符串多一位的，最特殊的情况就是需要连续进位，这样就不能确定具体多少次了，最高位需要特殊处理，而一般位数的相加我只需要进行以下操作。</span><br><span class="line"></span><br><span class="line">```cpp</span><br><span class="line">for(int i=0;i&lt;minlength;i++)</span><br><span class="line">&#123;</span><br><span class="line">	int tem=s1[s1.size()-i]-&#x27;&#x27;+s2[s2.size()-i]-&#x27;&#x27;;</span><br><span class="line">if(i=minlength-1&amp;&amp;tem&gt;9)</span><br><span class="line">&#123;</span><br><span class="line">	flag=1;</span><br><span class="line">	break;</span><br><span class="line">&#125;</span><br><span class="line">if(tem&gt;9)</span><br><span class="line">&#123;</span><br><span class="line">	s[i]+=tem%10;</span><br><span class="line">	s[i+1]++;</span><br><span class="line">&#125;</span><br><span class="line">else </span><br><span class="line">&#123;</span><br><span class="line">	s[i]+=tem%10;   	</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<p>在处理最高位的时候，我们需要考虑的事情在于，短字符串的最高位和其对应的长字符串的那一位相加之后的结果，这里其实可以分为三个类型：第一是相加的结果小于10，这样就直接结束处理过程，准备进入输出过程，而如果相加的结果大于10的话，这个时候也要分两种情况，第一种是进位的时候，不会导致下一位的结果也大于等于10，反之就又需要进位。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=minlength;i&lt;maxlength;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(s[i]&gt;<span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        s[i]+=s1[i];</span><br><span class="line">        s[i]++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>c++</tag>
       </tags>
   </entry>
 </search>
