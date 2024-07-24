@@ -1,6 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>24年gal收集</title>
+    <url>/2024/06/30/24%E5%B9%B4gal%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<h2 id="新打"><a href="#新打" class="headerlink" title="新打"></a>新打</h2><ol>
+<li><p><a href="https://bangumi.tv/subject/43372">Dies irae ～Amantes amentes～</a></p>
+</li>
+<li><p><a href="https://bangumi.tv/subject/324325">私は女優になりたいの</a></p>
+</li>
+</ol>
+<h2 id="在打"><a href="#在打" class="headerlink" title="在打"></a>在打</h2><ol>
+<li><p><a href="https://bangumi.tv/subject/40445">J.Q.V 人類救済部～With love from isotope～</a></p>
+</li>
+<li><p><a href="https://bangumi.tv/subject/15920">水夏<del>SUIKA</del></a></p>
+</li>
+<li><p><a href="https://bangumi.tv/subject/137427">等間隔の黒い透明</a></p>
+</li>
+<li></li>
+</ol>
+<h2 id="复打"><a href="#复打" class="headerlink" title="复打"></a>复打</h2><ol>
+<li><p><a href="https://bangumi.tv/subject/280440">死月妖花～四月八日～</a></p>
+</li>
+<li><p><a href="https://bangumi.tv/subject/7978">最果てのイマ</a></p>
+</li>
+<li><p><a href="https://bangumi.tv/subject/137992">西历2236年</a></p>
+</li>
+</ol>
+<p>目を閉じて、心の声に耳を澄ませてみてください。<br>ただ、騒がしく心のなかでたくさんの声がしているのが分かれば十分です。<br>今行ったこれは実は一種の「瞑想」なんです。<br>どうですか、このときあなたは「今」を感じることができているはずです。<br>誰も「過去に聞いた歌」を口ずさんでいませんし「未来の予定」についても話していません。<br>あなたの耳に入ってくるのは外の音と、心臓の音と、鼻息の音だけです。<br>全て「いま」ここにある音です。<br>怠け者の３分間瞑想法<br>シオン「私の声は」<br>シオン「届かない」<br>届くべきではない。<br>心象素粒子<br>偉大なるドクター達へ<br>ユーレイ現象<br>死んだはずの人があたかも底にいるように感じる現象<br>ユーレイ現象　テレパシーの発現<br>梅雨<br>情報のフォーマット<br>HTとは「Holding Task」または「Holding&amp;Tasking」のことです。<br>こことの素粒子が私達の目に見えない道を行き来する現象。<br>テレパシーの原理<br>道ー＞道路<br>HTこー＞車<br>ハル　シオン、君は最初から、夢のような嘘だったのかも知れない<br>君にだけ何通かのメールは届いてないはずです<br>整个世界宛若一场幻梦，沉沦其中的人们，用日间残念缝补出了一个个残缺的故事。瑕瑜互现的世界化为完美的宝石，杂质如沉水的浮沫，不见踪影。<br>破碎的文字编织如网，笼络了过往的时流，抚摸着浓缩现时的结晶，连缀着称为未来的蜃景。<br>夢の中では夢のおかしさに気付けないから、誰かに言われるまではなにもおかしいと思えなかった。<br>私たちの現実は誰かの心の中の世界だったってこと。<br>称为梦境的是画笔，它大笔如椽，在纯白的画板上烙印下了世界的痕迹，在世界的边境。浓墨重彩的梦境与千篇一律的现实交织，模糊了虚拟与真实。<br>被诱骗参加了一场与机器人角力的音乐会，台下的人并不是因为我拥有天赋才来到这里，而是因为机器人能够弹奏得比我更好。<br>世间万物，宛若大树，岿然不动，anatagaushinattamonohaanatajishindesu<br>C.S.「君は真面目で、まっすくで、誠実で……だけど臆病な人です」<br>C.S.「だから、約東を破ってしまうことがとても怖いんです」<br>C.S.「ル—ルを破ってしまうことを恐れるんです」<br>C.S.「自分のなりたいようになんてなれないですよ」<br>C.S.「心理宇宙に来てまでみんな苦悩しているのが良い証拠じやないですか」</p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Leetcode Problems</title>
+    <url>/2024/06/03/Leetcode%20Problems/</url>
+    <content><![CDATA[<h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
+<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
+<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
+<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
+<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
+<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= candies &lt;= 10^9</code></li>
+<li><code>1 &lt;= num_people &lt;= 1000</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">        int n = num_people;</span><br><span class="line">        vector&lt;int&gt; ans(n);</span><br><span class="line">        for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">            if (candies &gt;= i + 1) &#123;</span><br><span class="line">                candies -= i + 1;</span><br><span class="line">                ans[i % n] += i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ans[i % n] += candies;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="575-分糖果"><a href="#575-分糖果" class="headerlink" title="575. 分糖果"></a><a href="https://leetcode.cn/problems/distribute-candies/">575. 分糖果</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>提示</p>
+<p>Alice 有 <code>n</code> 枚糖，其中第 <code>i</code> 枚糖的类型为 <code>candyType[i]</code> 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。</p>
+<p>医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 <code>n / 2</code> 即可（<code>n</code> 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。</p>
+<p>给你一个长度为 <code>n</code> 的整数数组 <code>candyType</code> ，返回： Alice <em>在仅吃掉 <code>n / 2</code> 枚糖的情况下，可以吃到糖的 <strong>最多</strong> 种类数</em>。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,2,3,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [6,6,6,6]</span><br><span class="line">输出：1</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，尽管她能吃 2 枚，但只能吃到 1 种糖。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>n == candyType.length</code></li>
+<li><code>2 &lt;= n &lt;= 104</code></li>
+<li><code>n</code> 是一个偶数</li>
+<li><code>-105 &lt;= candyType[i] &lt;= 105</code></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(vector&lt;int&gt;&amp; candyType) &#123;</span><br><span class="line">        unordered_set&lt;int&gt; candyset(candyType.begin(), candyType.end());</span><br><span class="line">        return min(candyType.size() &gt;&gt; 1, candyset.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2928-给小朋友们分糖果-I"><a href="#2928-给小朋友们分糖果-I" class="headerlink" title="2928. 给小朋友们分糖果 I"></a><a href="https://leetcode.cn/problems/distribute-candies-among-children-i/">2928. 给小朋友们分糖果 I</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>提示</p>
+<p>给你两个正整数 <code>n</code> 和 <code>limit</code> 。</p>
+<p>请你将 <code>n</code> 颗糖果分给 <code>3</code> 位小朋友，确保没有任何小朋友得到超过 <code>limit</code> 颗糖果，请你返回满足此条件下的 <strong>总方案数</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, limit = 2</span><br><span class="line">输出：3</span><br><span class="line">解释：总共有 3 种方法分配 5 颗糖果，且每位小朋友的糖果数不超过 2 ：(1, 2, 2) ，(2, 1, 2) 和 (2, 2, 1) 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3, limit = 3</span><br><span class="line">输出：10</span><br><span class="line">解释：总共有 10 种方法分配 3 颗糖果，且每位小朋友的糖果数不超过 3 ：(0, 0, 3) ，(0, 1, 2) ，(0, 2, 1) ，(0, 3, 0) ，(1, 0, 2) ，(1, 1, 1) ，(1, 2, 0) ，(2, 0, 1) ，(2, 1, 0) 和 (3, 0, 0) 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 50</code></li>
+<li><code>1 &lt;= limit &lt;= 50</code></li>
+</ul>
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>c++模板</title>
+    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<p>s</p>
+<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
+<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当你使用这个食谱时，你可以指定不同的材料：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用这个三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>使用特化后的三明治机器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>等間隔の黒い透明</title>
+    <url>/2024/06/30/hatena%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<h2 id="Episode1"><a href="#Episode1" class="headerlink" title="Episode1"></a>Episode1</h2><p>讲述了男主和女主的关系，女主是一位娇生惯养的公主一般的角色，男主则死承担着一位情绪价值的提供者的角度，女主有着与其年龄不相符的外貌，男女主保留着	不正当的男女关系。</p>
+<h2 id="Episode2"><a href="#Episode2" class="headerlink" title="Episode2"></a>Episode2</h2><p>男主的工作是网页设计，他会讲网上的所见所闻（如隧道的挖掘）之类的新闻告诉女主。男主与一个骆驼男一起工作，似乎还很害怕他。</p>
+<h2 id="Episode3"><a href="#Episode3" class="headerlink" title="Episode3"></a>Episode3</h2><p>与骆驼的谈话，从对骆驼个人的情感倾向到对这个国家乃至星球的喜好。</p>
+<p>我们从出生开始，就一直在能指链条上延宕。这个过程在这个链条上一直都存在。</p>
+<p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630045837684.png" alt="image-20240630045837684"></p>
+<h2 id="Episode4"><a href="#Episode4" class="headerlink" title="Episode4"></a>Episode4</h2><p>男主在经历一场电波的旅途，这段对电车上糟糕环境的描写可圈可点，以及说在这条路上骑自行车追逐的描绘。</p>
+<h2 id="Episode5"><a href="#Episode5" class="headerlink" title="Episode5"></a>Episode5</h2><p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630050539263.png" alt="image-20240630050539263"></p>
+]]></content>
+      <tags>
+        <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown语法</title>
     <url>/2024/05/18/Markdown%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="常用公式"><a href="#常用公式" class="headerlink" title="常用公式"></a>常用公式</h2><blockquote>
@@ -1519,146 +1674,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Leetcode Problems</title>
-    <url>/2024/06/03/Leetcode%20Problems/</url>
-    <content><![CDATA[<h2 id="1103-分糖果-II"><a href="#1103-分糖果-II" class="headerlink" title="1103. 分糖果 II"></a><a href="https://leetcode.cn/problems/distribute-candies-to-people/">1103. 分糖果 II</a></h2><p>排排坐，分糖果。</p>
-<p>我们买了一些糖果 <code>candies</code>，打算把它们分给排好队的 <strong><code>n = num_people</code></strong> 个小朋友。</p>
-<p>给第一个小朋友 1 颗糖果，第二个小朋友 2 颗，依此类推，直到给最后一个小朋友 <code>n</code> 颗糖果。</p>
-<p>然后，我们再回到队伍的起点，给第一个小朋友 <code>n + 1</code> 颗糖果，第二个小朋友 <code>n + 2</code> 颗，依此类推，直到给最后一个小朋友 <code>2 * n</code> 颗糖果。</p>
-<p>重复上述过程（每次都比上一次多给出一颗糖果，当到达队伍终点后再次从队伍起点开始），直到我们分完所有的糖果。注意，就算我们手中的剩下糖果数不够（不比前一次发出的糖果多），这些糖果也会全部发给当前的小朋友。</p>
-<p>返回一个长度为 <code>num_people</code>、元素之和为 <code>candies</code> 的数组，以表示糖果的最终分发情况（即 <code>ans[i]</code> 表示第 <code>i</code> 个小朋友分到的糖果数）。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 7, num_people = 4</span><br><span class="line">输出：[1,2,3,1]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3,0]。</span><br><span class="line">第四次，ans[3] += 1（因为此时只剩下 1 颗糖果），最终数组变为 [1,2,3,1]。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candies = 10, num_people = 3</span><br><span class="line">输出：[5,2,3]</span><br><span class="line">解释：</span><br><span class="line">第一次，ans[0] += 1，数组变为 [1,0,0]。</span><br><span class="line">第二次，ans[1] += 2，数组变为 [1,2,0]。</span><br><span class="line">第三次，ans[2] += 3，数组变为 [1,2,3]。</span><br><span class="line">第四次，ans[0] += 4，最终数组变为 [5,2,3]。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= candies &lt;= 10^9</code></li>
-<li><code>1 &lt;= num_people &lt;= 1000</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; distributeCandies(int candies, int num_people) &#123;</span><br><span class="line">        int n = num_people;</span><br><span class="line">        vector&lt;int&gt; ans(n);</span><br><span class="line">        for (int i = 0; i &lt; n * n; i++) &#123;</span><br><span class="line">            if (candies &gt;= i + 1) &#123;</span><br><span class="line">                candies -= i + 1;</span><br><span class="line">                ans[i % n] += i + 1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ans[i % n] += candies;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="575-分糖果"><a href="#575-分糖果" class="headerlink" title="575. 分糖果"></a><a href="https://leetcode.cn/problems/distribute-candies/">575. 分糖果</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>Alice 有 <code>n</code> 枚糖，其中第 <code>i</code> 枚糖的类型为 <code>candyType[i]</code> 。Alice 注意到她的体重正在增长，所以前去拜访了一位医生。</p>
-<p>医生建议 Alice 要少摄入糖分，只吃掉她所有糖的 <code>n / 2</code> 即可（<code>n</code> 是一个偶数）。Alice 非常喜欢这些糖，她想要在遵循医生建议的情况下，尽可能吃到最多不同种类的糖。</p>
-<p>给你一个长度为 <code>n</code> 的整数数组 <code>candyType</code> ，返回： Alice <em>在仅吃掉 <code>n / 2</code> 枚糖的情况下，可以吃到糖的 <strong>最多</strong> 种类数</em>。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,2,3,3]</span><br><span class="line">输出：3</span><br><span class="line">解释：Alice 只能吃 6 / 2 = 3 枚糖，由于只有 3 种糖，她可以每种吃一枚。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [1,1,2,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，不管她选择吃的种类是 [1,2]、[1,3] 还是 [2,3]，她只能吃到两种不同类的糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：candyType = [6,6,6,6]</span><br><span class="line">输出：1</span><br><span class="line">解释：Alice 只能吃 4 / 2 = 2 枚糖，尽管她能吃 2 枚，但只能吃到 1 种糖。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>n == candyType.length</code></li>
-<li><code>2 &lt;= n &lt;= 104</code></li>
-<li><code>n</code> 是一个偶数</li>
-<li><code>-105 &lt;= candyType[i] &lt;= 105</code></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(vector&lt;int&gt;&amp; candyType) &#123;</span><br><span class="line">        unordered_set&lt;int&gt; candyset(candyType.begin(), candyType.end());</span><br><span class="line">        return min(candyType.size() &gt;&gt; 1, candyset.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2928-给小朋友们分糖果-I"><a href="#2928-给小朋友们分糖果-I" class="headerlink" title="2928. 给小朋友们分糖果 I"></a><a href="https://leetcode.cn/problems/distribute-candies-among-children-i/">2928. 给小朋友们分糖果 I</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>给你两个正整数 <code>n</code> 和 <code>limit</code> 。</p>
-<p>请你将 <code>n</code> 颗糖果分给 <code>3</code> 位小朋友，确保没有任何小朋友得到超过 <code>limit</code> 颗糖果，请你返回满足此条件下的 <strong>总方案数</strong> 。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 5, limit = 2</span><br><span class="line">输出：3</span><br><span class="line">解释：总共有 3 种方法分配 5 颗糖果，且每位小朋友的糖果数不超过 2 ：(1, 2, 2) ，(2, 1, 2) 和 (2, 2, 1) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3, limit = 3</span><br><span class="line">输出：10</span><br><span class="line">解释：总共有 10 种方法分配 3 颗糖果，且每位小朋友的糖果数不超过 3 ：(0, 0, 3) ，(0, 1, 2) ，(0, 2, 1) ，(0, 3, 0) ，(1, 0, 2) ，(1, 1, 1) ，(1, 2, 0) ，(2, 0, 1) ，(2, 1, 0) 和 (3, 0, 0) 。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= n &lt;= 50</code></li>
-<li><code>1 &lt;= limit &lt;= 50</code></li>
-</ul>
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int distributeCandies(int n, int limit) &#123;</span><br><span class="line">        int sum=0;</span><br><span class="line">        for(int i=0;i&lt;=limit;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;=limit;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(n-i-j&lt;=limit&amp;&amp;n-i-j&gt;=0)sum++; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c++模板</title>
-    <url>/2024/05/22/c-%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<p>s</p>
-<h2 id="什么是模板"><a href="#什么是模板" class="headerlink" title="什么是模板"></a>什么是模板</h2><p>想象你在厨房里准备做各种不同类型的三明治。你不想每次都按照不同的配方来做，而是希望有一个通用的做三明治的方法。模板就像是这个通用的方法，它告诉你如何做三明治，而不关心具体的材料。</p>
-<h2 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">T makeSandwich(T ingredient1, T ingredient2) &#123;</span><br><span class="line">    // 假装做三明治的步骤</span><br><span class="line">    return ingredient1 + &quot; and &quot; + ingredient2 + &quot; sandwich&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你使用这个食谱时，你可以指定不同的材料：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Ham&quot;, &quot;Cheese&quot;) &lt;&lt; std::endl; // 输出 &quot;Ham and Cheese sandwich&quot;</span><br><span class="line">std::cout &lt;&lt; makeSandwich(&quot;Peanut Butter&quot;, &quot;Jelly&quot;) &lt;&lt; std::endl; // 输出 &quot;Peanut Butter and Jelly sandwich&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h2><p>类模板就像是一个通用的三明治机器，这个机器可以根据你给的材料，做出不同类型的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">private:</span><br><span class="line">    T ingredient1;</span><br><span class="line">    T ingredient2;</span><br><span class="line">public:</span><br><span class="line">    SandwichMaker(T a, T b) : ingredient1(a), ingredient2(b) &#123;&#125;</span><br><span class="line">    void make() &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用这个三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; hamCheeseMaker(&quot;Ham&quot;, &quot;Cheese&quot;);</span><br><span class="line">hamCheeseMaker.make(); // 输出 &quot;Making a Ham and Cheese sandwich.&quot;</span><br><span class="line"></span><br><span class="line">SandwichMaker&lt;std::string&gt; pbjMaker(&quot;Peanut Butter&quot;, &quot;Jelly&quot;);</span><br><span class="line">pbjMaker.make(); // 输出 &quot;Making a Peanut Butter and Jelly sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板特化"><a href="#模板特化" class="headerlink" title="模板特化"></a>模板特化</h2><p>有时候，你的三明治机器需要对某些特殊的材料有特别的处理方法。比如说，如果你要做一个“冰淇淋三明治”，步骤可能会和普通的三明治不一样。这时，你可以用模板特化。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;typename T&gt;</span><br><span class="line">class SandwichMaker &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(T ingredient1, T ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 特化冰淇淋三明治</span><br><span class="line">template&lt;&gt;</span><br><span class="line">class SandwichMaker&lt;std::string&gt; &#123;</span><br><span class="line">public:</span><br><span class="line">    void make(std::string ingredient1, std::string ingredient2) &#123;</span><br><span class="line">        std::cout &lt;&lt; &quot;Making a special &quot; &lt;&lt; ingredient1 &lt;&lt; &quot; and &quot; &lt;&lt; ingredient2 &lt;&lt; &quot; ice cream sandwich.&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>使用特化后的三明治机器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SandwichMaker&lt;std::string&gt; iceCreamSandwichMaker;</span><br><span class="line">iceCreamSandwichMaker.make(&quot;Chocolate&quot;, &quot;Vanilla&quot;); // 输出 &quot;Making a special Chocolate and Vanilla ice cream sandwich.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="模板元编程"><a href="#模板元编程" class="headerlink" title="模板元编程"></a>模板元编程</h2><p>模板元编程就像是在做三明治之前，提前在脑子里计划好步骤。例如，你要计算你需要准备多少片面包来做一系列的三明治。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">template&lt;int N&gt;</span><br><span class="line">struct BreadSlices &#123;</span><br><span class="line">    static const int value = N * 2; // 每个三明治需要两片面包</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;To make 5 sandwiches, you need &quot; &lt;&lt; BreadSlices&lt;5&gt;::value &lt;&lt; &quot; slices of bread.&quot; &lt;&lt; std::endl; // 输出 &quot;To make 5 sandwiches, you need 10 slices of bread.&quot;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>24年gal收集</title>
-    <url>/2024/06/30/24%E5%B9%B4gal%E6%94%B6%E9%9B%86/</url>
-    <content><![CDATA[<h2 id="新打"><a href="#新打" class="headerlink" title="新打"></a>新打</h2><ol>
-<li><p><a href="https://bangumi.tv/subject/43372">Dies irae ～Amantes amentes～</a></p>
-</li>
-<li><p><a href="https://bangumi.tv/subject/324325">私は女優になりたいの</a></p>
-</li>
-</ol>
-<h2 id="在打"><a href="#在打" class="headerlink" title="在打"></a>在打</h2><ol>
-<li><p><a href="https://bangumi.tv/subject/40445">J.Q.V 人類救済部～With love from isotope～</a></p>
-</li>
-<li><p><a href="https://bangumi.tv/subject/15920">水夏<del>SUIKA</del></a></p>
-</li>
-<li><p><a href="https://bangumi.tv/subject/137427">等間隔の黒い透明</a></p>
-</li>
-<li></li>
-</ol>
-<h2 id="复打"><a href="#复打" class="headerlink" title="复打"></a>复打</h2><ol>
-<li><p><a href="https://bangumi.tv/subject/280440">死月妖花～四月八日～</a></p>
-</li>
-<li><p><a href="https://bangumi.tv/subject/7978">最果てのイマ</a></p>
-</li>
-<li><p><a href="https://bangumi.tv/subject/137992">西历2236年</a></p>
-</li>
-</ol>
-<p>目を閉じて、心の声に耳を澄ませてみてください。<br>ただ、騒がしく心のなかでたくさんの声がしているのが分かれば十分です。<br>今行ったこれは実は一種の「瞑想」なんです。<br>どうですか、このときあなたは「今」を感じることができているはずです。<br>誰も「過去に聞いた歌」を口ずさんでいませんし「未来の予定」についても話していません。<br>あなたの耳に入ってくるのは外の音と、心臓の音と、鼻息の音だけです。<br>全て「いま」ここにある音です。<br>怠け者の３分間瞑想法<br>シオン「私の声は」<br>シオン「届かない」<br>届くべきではない。<br>心象素粒子<br>偉大なるドクター達へ<br>ユーレイ現象<br>死んだはずの人があたかも底にいるように感じる現象<br>ユーレイ現象　テレパシーの発現<br>梅雨<br>情報のフォーマット<br>HTとは「Holding Task」または「Holding&amp;Tasking」のことです。<br>こことの素粒子が私達の目に見えない道を行き来する現象。<br>テレパシーの原理<br>道ー＞道路<br>HTこー＞車<br>ハル　シオン、君は最初から、夢のような嘘だったのかも知れない<br>君にだけ何通かのメールは届いてないはずです<br>整个世界宛若一场幻梦，沉沦其中的人们，用日间残念缝补出了一个个残缺的故事。瑕瑜互现的世界化为完美的宝石，杂质如沉水的浮沫，不见踪影。<br>破碎的文字编织如网，笼络了过往的时流，抚摸着浓缩现时的结晶，连缀着称为未来的蜃景。<br>夢の中では夢のおかしさに気付けないから、誰かに言われるまではなにもおかしいと思えなかった。<br>私たちの現実は誰かの心の中の世界だったってこと。<br>称为梦境的是画笔，它大笔如椽，在纯白的画板上烙印下了世界的痕迹，在世界的边境。浓墨重彩的梦境与千篇一律的现实交织，模糊了虚拟与真实。<br>被诱骗参加了一场与机器人角力的音乐会，台下的人并不是因为我拥有天赋才来到这里，而是因为机器人能够弹奏得比我更好。<br>世间万物，宛若大树，岿然不动，anatagaushinattamonohaanatajishindesu<br>C.S.「君は真面目で、まっすくで、誠実で……だけど臆病な人です」<br>C.S.「だから、約東を破ってしまうことがとても怖いんです」<br>C.S.「ル—ルを破ってしまうことを恐れるんです」<br>C.S.「自分のなりたいようになんてなれないですよ」<br>C.S.「心理宇宙に来てまでみんな苦悩しているのが良い証拠じやないですか」</p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git操作</title>
     <url>/2024/07/23/git%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h2><p>一般工作流程</p>
@@ -1909,21 +1924,6 @@
 ]]></content>
       <tags>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>等間隔の黒い透明</title>
-    <url>/2024/06/30/hatena%E6%94%B6%E9%9B%86/</url>
-    <content><![CDATA[<h2 id="Episode1"><a href="#Episode1" class="headerlink" title="Episode1"></a>Episode1</h2><p>讲述了男主和女主的关系，女主是一位娇生惯养的公主一般的角色，男主则死承担着一位情绪价值的提供者的角度，女主有着与其年龄不相符的外貌，男女主保留着	不正当的男女关系。</p>
-<h2 id="Episode2"><a href="#Episode2" class="headerlink" title="Episode2"></a>Episode2</h2><p>男主的工作是网页设计，他会讲网上的所见所闻（如隧道的挖掘）之类的新闻告诉女主。男主与一个骆驼男一起工作，似乎还很害怕他。</p>
-<h2 id="Episode3"><a href="#Episode3" class="headerlink" title="Episode3"></a>Episode3</h2><p>与骆驼的谈话，从对骆驼个人的情感倾向到对这个国家乃至星球的喜好。</p>
-<p>我们从出生开始，就一直在能指链条上延宕。这个过程在这个链条上一直都存在。</p>
-<p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630045837684.png" alt="image-20240630045837684"></p>
-<h2 id="Episode4"><a href="#Episode4" class="headerlink" title="Episode4"></a>Episode4</h2><p>男主在经历一场电波的旅途，这段对电车上糟糕环境的描写可圈可点，以及说在这条路上骑自行车追逐的描绘。</p>
-<h2 id="Episode5"><a href="#Episode5" class="headerlink" title="Episode5"></a>Episode5</h2><p><img src="/2024/06/30/hatena%E6%94%B6%E9%9B%86/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240630050539263.png" alt="image-20240630050539263"></p>
-]]></content>
-      <tags>
-        <tag>gal</tag>
       </tags>
   </entry>
   <entry>
@@ -2223,6 +2223,34 @@
 ]]></content>
       <tags>
         <tag>gal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>回到拉康：拉康的战场，敌人与回答</title>
+    <url>/2024/07/23/%E5%9B%9E%E5%88%B0%E6%8B%89%E5%BA%B7%EF%BC%9A%E6%8B%89%E5%BA%B7%E7%9A%84%E6%88%98%E5%9C%BA%EF%BC%8C%E6%95%8C%E4%BA%BA%E4%B8%8E%E5%9B%9E%E7%AD%94/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>回到拉康：拉康的战场，敌人与回答</title>
+    <url>/2024/07/23/%E5%9B%9E%E5%88%B0%E6%8B%89%E5%BA%B7%EF%BC%9A%E6%8B%89%E5%BA%B7%E7%9A%84%E6%88%98%E5%9C%BA%EF%BC%8C%E6%95%8C%E4%BA%BA%E4%BA%8E-%E4%B8%8E%E5%9B%9E%E7%AD%94/</url>
+    <content><![CDATA[<h2 id="回到拉康"><a href="#回到拉康" class="headerlink" title="回到拉康"></a>回到拉康</h2><h3 id="亚里士多德的《诗学》"><a href="#亚里士多德的《诗学》" class="headerlink" title="亚里士多德的《诗学》"></a>亚里士多德的《诗学》</h3><p>俄狄浦斯的关键是Plot，对具体事件的安排，是事件的组合排列。</p>
+<p>开始&#x2F;发展&#x2F;结尾 the construction of events。</p>
+<h4 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h4><p>逻辑-&gt;线性时间，回环的逻辑。</p>
+<p>给自己定下一个逻辑。</p>
+<p>借用一个主题，将自己的时间非线性化，给自己定下一个逻辑。</p>
+<h4 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h4><h3 id="拉康选集"><a href="#拉康选集" class="headerlink" title="拉康选集"></a>拉康选集</h3><h4 id="失窃的信"><a href="#失窃的信" class="headerlink" title="失窃的信"></a>失窃的信</h4><p>信件的消失是不可能，这是一种无意识对于真理的隐藏。</p>
+<p>充满了发展，却又连接不起来的开端和结尾。</p>
+<p>人没有主体性，镜像自我。</p>
+<h4 id="海德格尔《从未有而来》"><a href="#海德格尔《从未有而来》" class="headerlink" title="海德格尔《从未有而来》"></a>海德格尔《从未有而来》</h4><p>主导问题：对存在的遗忘，存在者的存在样态是生命。</p>
+<h4 id="倒错"><a href="#倒错" class="headerlink" title="倒错"></a>倒错</h4><p>appropriate：悲剧美，可以分手。</p>
+<p>这里的内容其实我都没有怎么读懂，现在来串联一下自己了解到的东西，转喻和隐喻的关系我想到了一个比较适合我的理解方式：首先需要准备一个链条，转喻和隐喻都是行为，更换链条的一个结点就是隐喻，前一个结点的动作传到下一个结点就是转喻。</p>
+<p>语言两极结构（the bipolar structure of language）</p>
+<p>隐喻（相似性）和转喻（邻近性）的“二元模式对于认识所有的言语行为和人类一般行为都具有根本性的意义和影响。”③ 这也就意味着，隐喻和转喻的结构模式作为一种普泛性的研究范式，从修辞学<br>走向文化学的必然，这对于更深入地解释人类行为、精神病症、深层心理等棘手而重要的问题，具有巨大的方法论和认识论价值。</p>
+<p>症候就是一个能指被另一个有关的能指替</p>
+<p>I（纵聚合）轴 II（横组合）轴<br>隐喻 转喻<br>相似 邻近<br>选择 组合<br>替换 构成<br>聚合 组合<br>共时 历时<br>邻近性紊乱 相似性紊乱<br>浪漫主义和象征主义 现实主义<br>超现实主义 立体主义<br>抒情诗 史诗<br>诗歌 散文<br>蒙太奇 特写<br>交感巫术 模拟巫术<br>梦的认同与象征 梦的移置与凝缩</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
@@ -2569,34 +2597,6 @@
       </tags>
   </entry>
   <entry>
-    <title>回到拉康：拉康的战场，敌人与回答</title>
-    <url>/2024/07/23/%E5%9B%9E%E5%88%B0%E6%8B%89%E5%BA%B7%EF%BC%9A%E6%8B%89%E5%BA%B7%E7%9A%84%E6%88%98%E5%9C%BA%EF%BC%8C%E6%95%8C%E4%BA%BA%E4%BA%8E-%E4%B8%8E%E5%9B%9E%E7%AD%94/</url>
-    <content><![CDATA[<h2 id="回到拉康"><a href="#回到拉康" class="headerlink" title="回到拉康"></a>回到拉康</h2><h3 id="亚里士多德的《诗学》"><a href="#亚里士多德的《诗学》" class="headerlink" title="亚里士多德的《诗学》"></a>亚里士多德的《诗学》</h3><p>俄狄浦斯的关键是Plot，对具体事件的安排，是事件的组合排列。</p>
-<p>开始&#x2F;发展&#x2F;结尾 the construction of events。</p>
-<h4 id="开端"><a href="#开端" class="headerlink" title="开端"></a>开端</h4><p>逻辑-&gt;线性时间，回环的逻辑。</p>
-<p>给自己定下一个逻辑。</p>
-<p>借用一个主题，将自己的时间非线性化，给自己定下一个逻辑。</p>
-<h4 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h4><h3 id="拉康选集"><a href="#拉康选集" class="headerlink" title="拉康选集"></a>拉康选集</h3><h4 id="失窃的信"><a href="#失窃的信" class="headerlink" title="失窃的信"></a>失窃的信</h4><p>信件的消失是不可能，这是一种无意识对于真理的隐藏。</p>
-<p>充满了发展，却又连接不起来的开端和结尾。</p>
-<p>人没有主体性，镜像自我。</p>
-<h4 id="海德格尔《从未有而来》"><a href="#海德格尔《从未有而来》" class="headerlink" title="海德格尔《从未有而来》"></a>海德格尔《从未有而来》</h4><p>主导问题：对存在的遗忘，存在者的存在样态是生命。</p>
-<h4 id="倒错"><a href="#倒错" class="headerlink" title="倒错"></a>倒错</h4><p>appropriate：悲剧美，可以分手。</p>
-<p>这里的内容其实我都没有怎么读懂，现在来串联一下自己了解到的东西，转喻和隐喻的关系我想到了一个比较适合我的理解方式：首先需要准备一个链条，转喻和隐喻都是行为，更换链条的一个结点就是隐喻，前一个结点的动作传到下一个结点就是转喻。</p>
-<p>语言两极结构（the bipolar structure of language）</p>
-<p>隐喻（相似性）和转喻（邻近性）的“二元模式对于认识所有的言语行为和人类一般行为都具有根本性的意义和影响。”③ 这也就意味着，隐喻和转喻的结构模式作为一种普泛性的研究范式，从修辞学<br>走向文化学的必然，这对于更深入地解释人类行为、精神病症、深层心理等棘手而重要的问题，具有巨大的方法论和认识论价值。</p>
-<p>症候就是一个能指被另一个有关的能指替</p>
-<p>I（纵聚合）轴 II（横组合）轴<br>隐喻 转喻<br>相似 邻近<br>选择 组合<br>替换 构成<br>聚合 组合<br>共时 历时<br>邻近性紊乱 相似性紊乱<br>浪漫主义和象征主义 现实主义<br>超现实主义 立体主义<br>抒情诗 史诗<br>诗歌 散文<br>蒙太奇 特写<br>交感巫术 模拟巫术<br>梦的认同与象征 梦的移置与凝缩</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>回到拉康：拉康的战场，敌人与回答</title>
-    <url>/2024/07/23/%E5%9B%9E%E5%88%B0%E6%8B%89%E5%BA%B7%EF%BC%9A%E6%8B%89%E5%BA%B7%E7%9A%84%E6%88%98%E5%9C%BA%EF%BC%8C%E6%95%8C%E4%BA%BA%E4%B8%8E%E5%9B%9E%E7%AD%94/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>因为有你的存在，世界才有了纵深的意义</title>
     <url>/2024/05/19/%E5%9B%A0%E4%B8%BA%E6%9C%89%E4%BD%A0%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BC%8C%E4%B8%96%E7%95%8C%E6%89%8D%E6%9C%89%E4%BA%86%E7%BA%B5%E6%B7%B1%E7%9A%84%E6%84%8F%E4%B9%89/</url>
     <content><![CDATA[<h3 id="结构主义：共时性-历时性"><a href="#结构主义：共时性-历时性" class="headerlink" title="结构主义：共时性&#x2F;历时性"></a>结构主义：共时性&#x2F;历时性</h3><p>前者是转喻，代表着欲望和能指链<br>后者是隐喻，代表着症候和“真实”</p>
@@ -2624,6 +2624,34 @@
 </tr>
 </tbody></table>
 <p>恭喜你！你已经和德里达走到了同一条路上，共时和历时不可分开。<br>因为你的出现，符号系统才有了延异，有了纵深，有了历时性的维度。有了历时！有了意义！</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>存在与虚无</title>
+    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
+    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
+<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
+]]></content>
+      <tags>
+        <tag>读书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>对弗洛伊德的简介</title>
+    <url>/2024/06/11/%E5%AF%B9%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%9A%84%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h2 id="尼采：什么是真理？"><a href="#尼采：什么是真理？" class="headerlink" title="尼采：什么是真理？"></a>尼采：什么是真理？</h2><p>一群活动的转喻，隐喻和拟人法。</p>
+<p>不能将尼采理解为反语言的人物，尼采其实预设了一种吐真剂的事物。</p>
+<p>转喻和隐喻是诗学的东西。</p>
+<p>这两个事物被雅各布森和研究Freud的Lacan给发扬光大了。</p>
+<p>转喻要有前后相连的因果性。</p>
+<p>千帆过境，隐喻要形成某种统一，转喻则不需要。</p>
+<h2 id="Lacan的看法"><a href="#Lacan的看法" class="headerlink" title="Lacan的看法"></a>Lacan的看法</h2><h3 id="Freud的《梦的解析》"><a href="#Freud的《梦的解析》" class="headerlink" title="Freud的《梦的解析》"></a>Freud的《梦的解析》</h3><p>梦有它伪装的形式。</p>
+<blockquote>
+<p>梦是无意识，Freud和Lacan共享一个事实</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>精神分析</tag>
@@ -2770,34 +2798,6 @@
       </tags>
   </entry>
   <entry>
-    <title>对弗洛伊德的简介</title>
-    <url>/2024/06/11/%E5%AF%B9%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E7%9A%84%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<h2 id="尼采：什么是真理？"><a href="#尼采：什么是真理？" class="headerlink" title="尼采：什么是真理？"></a>尼采：什么是真理？</h2><p>一群活动的转喻，隐喻和拟人法。</p>
-<p>不能将尼采理解为反语言的人物，尼采其实预设了一种吐真剂的事物。</p>
-<p>转喻和隐喻是诗学的东西。</p>
-<p>这两个事物被雅各布森和研究Freud的Lacan给发扬光大了。</p>
-<p>转喻要有前后相连的因果性。</p>
-<p>千帆过境，隐喻要形成某种统一，转喻则不需要。</p>
-<h2 id="Lacan的看法"><a href="#Lacan的看法" class="headerlink" title="Lacan的看法"></a>Lacan的看法</h2><h3 id="Freud的《梦的解析》"><a href="#Freud的《梦的解析》" class="headerlink" title="Freud的《梦的解析》"></a>Freud的《梦的解析》</h3><p>梦有它伪装的形式。</p>
-<blockquote>
-<p>梦是无意识，Freud和Lacan共享一个事实</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>存在与虚无</title>
-    <url>/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/</url>
-    <content><![CDATA[<p><img src="/2024/05/17/%E5%AD%98%E5%9C%A8%E4%B8%8E%E8%99%9A%E6%97%A0/himanatsu1.jpg" alt="存在"></p>
-<p>apparence：显象<br>conscience positionelle：意识的位置<br>contingence：偶然性<br>absurde：荒谬的<br>corps：身体的<br>dimention：维度<br>Étre ：存在<br>avoir：拥有<br>existence：存在<br>existentialisme：存在主义<br>l’être-dans-le-monde:在世的存在<br>l’être-au-milieu-du-monde:没于世界的存在<br>étre -la：desein，在那里<br>interrogation：拷问<br>mauvaise foi：自欺，坏的相信<br>bonnoe foi：好的相信，真诚<br>mobile：动力，motif，动机<br>monde：世界<br>Noéme:noese胡塞尔现象学中的术语，前者翻译成，作为对象的意识，后者译作作为活动的意识。<br>poesence à  soi：面对自我在唱<br>projet：谋划，计划<br>rien：乌有<br>est été ：被存在<br>exister：动词的存在<br>一、现象的观念：<br>消除二元论，用现象的一元论替换的理解：类比自然科学当中的实验，理论不足以解决问题（二元论）的情况时，现象会给出答案。<br>在面对对象变成语言中，我们会将具有同类性质的对象抽象为一个类，在类中我们有私密数据，保护数据还有公开数据，现象学还原就是只关注测试函数中出现的对象，人们陷入二元论的原因，究其根本是不能访问私有数据，探究对象本质。<br>这样思考，就能发现，现象学还原之后的对象就只具有对象的部分性质，如果我们拿现象来概括对象的所有，就会陷入以偏概全的逻辑谬误。<br>不理解的地方：这样的还原为什么是把存在物的整个存在吸收到它隐藏的那个实在中，为什么物体的实在性能否定显现。<br>学习的东西：<br>黑格尔：“景象背后这幻觉”<br>胡塞尔和海德格尔“现象学”<br>康德的现象（Erecheinung）6</p>
-]]></content>
-      <tags>
-        <tag>读书</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小他者、对象a、大他者</title>
     <url>/2024/05/17/%E5%B0%8F%E4%BB%96%E8%80%85%E3%80%81%E5%AF%B9%E8%B1%A1a%E3%80%81%E5%A4%A7%E4%BB%96%E8%80%85/</url>
     <content><![CDATA[<p>Lacan理论：（1901-1981）<br>Zizek：1936-1953古典时期<br>1、镜像阶段<br>2、回到Freud（理论弑父）<br>3、语言结构主义（索绪尔提出的能指）<br>青年拉康：<br>1、超现实主义思潮（达利，蛋中达利）<br>拉康认为Freud是自己的精神导师。<br>母子共同体：反对建构主义，行走的疯癫，这个世界全都是假的。<br>2、新黑格尔主义<br>柯耶夫 主体间性的讨论。<br>对显示的批判，对黑格尔的主奴辩证法、欲望辩证法的重新解读。<br>乔伊斯《尤利西斯》-后现代主义的著作<br>拉康和巴塔耶的妻子西维娅来了一场激情<br>早期拉康：<br>想象域：镜像理论<br>①小他者：不是梦中情人的a<br>②伪自我&#x2F;伪主体a‘（moi）<br>中期拉康：<br>象征域：能指链<br>①语言学的结构主义：语言即对存在的杀戮<br>②伪个人主体论：大他者理论A“无意识是大他者的语言”，颠覆弗洛伊德的无意识（最基本的原欲）。<br>③欲望-&gt;转喻<br>晚期拉康：真实域（实在界），容易被理解成实在论的实在，象征域的失败才能进入真实域。这个时候才出现了对象a。<br>绝对的肯定，显示的错位，用宗教的话语就是神的衣裳在你的手心划过。Freud给出的人格理论有心心相惜的点。等待戈多：在明知他不会来的情况下，还是要等待他来。缺如。<br>①大写的物<br>②对象啊<br>③症候（症象人）</p>
@@ -2810,6 +2810,32 @@
     <title>感想</title>
     <url>/2024/07/21/%E6%84%9F%E6%83%B3/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>日语n1文法</title>
+    <url>/2024/05/19/%E6%97%A5%E8%AF%ADn1%E6%96%87%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="1-第一章"><a href="#1-第一章" class="headerlink" title="1. 第一章"></a>1. 第一章</h2><h3 id="1-1-～あっての"><a href="#1-1-～あっての" class="headerlink" title="1.1 ～あっての"></a>1.1 <strong>～あっての</strong></h3><p>名A＋（が）あっての＋名B</p>
+<h3 id="1-2-以外の何物でもない"><a href="#1-2-以外の何物でもない" class="headerlink" title="1.2 ~以外の何物でもない"></a>1.2 ~以外の何物でもない</h3><p>名＋以外の何物でもない</p>
+<h3 id="1-3-いかんで／いかんでは／如何によっては／いかんにかかっている／いかんだ"><a href="#1-3-いかんで／いかんでは／如何によっては／いかんにかかっている／いかんだ" class="headerlink" title="1.3 ~いかんで／いかんでは／如何によっては／いかんにかかっている／いかんだ"></a>1.3 ~いかんで／いかんでは／如何によっては／いかんにかかっている／いかんだ</h3><p>（１）～いかんで／いかんでは／いかんにとっては</p>
+<p>名（の）＋いかんで</p>
+<p>（２）～いかんにかかっている／いかんだ</p>
+<p>名＋いかんにかかっている／いかんだ</p>
+<h3 id="1-4-～いかんにかかわらず／いかんいよらず／いかんをとわず"><a href="#1-4-～いかんにかかわらず／いかんいよらず／いかんをとわず" class="headerlink" title="1.4 ～いかんにかかわらず／いかんいよらず／いかんをとわず"></a>1.4 ～いかんにかかわらず／いかんいよらず／いかんをとわず</h3><p>名（の）＋いかんにかかわらず／いかんいよらず／いかんをとわず</p>
+<h3 id="1-5-いざ～となると／いざ～となれば／いざ～となったら"><a href="#1-5-いざ～となると／いざ～となれば／いざ～となったら" class="headerlink" title="1.5 いざ～となると／いざ～となれば／いざ～となったら"></a>1.5 いざ～となると／いざ～となれば／いざ～となったら</h3><p>（１）いざとると／いざとなれば／いざとなたら</p>
+<p>（２）いざ～となると／いざ～となれば</p>
+<h3 id="1-6-～言わずもがな"><a href="#1-6-～言わずもがな" class="headerlink" title="1.6 ～言わずもがな"></a>1.6 ～言わずもがな</h3><p>（１）言わずもがなだ／言わずもがな＋の＋名</p>
+<p>（２）名＋は言わずもがな</p>
+<h3 id="1-7-（よ）うが／（よ）うと"><a href="#1-7-（よ）うが／（よ）うと" class="headerlink" title="1.7 （よ）うが／（よ）うと"></a>1.7 （よ）うが／（よ）うと</h3><p>$$<br>\begin{aligned}<br>\left.<br>\begin{aligned}<br>動意向形\\<br>イ形ーかろう\\<br>名／ナ形ーだろう．であろう<br>\end{aligned}<br>\right}<br>\qquad\text{＋が／と}<br>\end{aligned}<br>$$</p>
+<h3 id="1-8-～（よ）うとも／くとも"><a href="#1-8-～（よ）うとも／くとも" class="headerlink" title="1.8 ～（よ）うとも／くとも"></a>1.8 ～（よ）うとも／くとも</h3><p>$$<br>\begin{aligned}<br>\left.<br>\begin{aligned}<br>動意向形\\<br>イ形ーく\\<br>\end{aligned}<br>\right}<br>\qquad\text{＋とも}<br>\end{aligned}<br>$$</p>
+<h3 id="1-9-～（よ）うが～まいが／（よ）うと～まいと"><a href="#1-9-～（よ）うが～まいが／（よ）うと～まいと" class="headerlink" title="1.9 ～（よ）うが～まいが／（よ）うと～まいと"></a>1.9 ～（よ）うが～まいが／（よ）うと～まいと</h3><p>動意向形＋が＋動（ます）＋が</p>
+<p>動意向形＋と＋動（ます）＋と</p>
+<h3 id="1-10-～（よ）うが～（よ）うが／（よ）うと～（よ）うと"><a href="#1-10-～（よ）うが～（よ）うが／（よ）うと～（よ）うと" class="headerlink" title="1.10 ～（よ）うが～（よ）うが／（よ）うと～（よ）うと"></a>1.10 <strong>～（よ）うが～（よ）うが／（よ）うと～（よ）うと</strong></h3><p>$$<br>\begin{aligned}<br>\left.<br>\begin{aligned}<br>動意向形\\<br>イ形ーかろう\\<br>名／ナ形ーだろう．であろう<br>\end{aligned}<br>\right}<br>\qquad\text{＋が／と}<br>\end{aligned}<br>$$</p>
+<h2 id="2-第二章"><a href="#2-第二章" class="headerlink" title="2. 第二章"></a>2. 第二章</h2><h3 id="2-1-よ-うにも～ない"><a href="#2-1-よ-うにも～ない" class="headerlink" title="2.1 ~(よ)うにも～ない"></a>2.1 ~(よ)うにも～ない</h3><h3 id="2-2-～甲斐があって／甲斐がある／甲斐もなく／甲斐がない"><a href="#2-2-～甲斐があって／甲斐がある／甲斐もなく／甲斐がない" class="headerlink" title="2.2　～甲斐があって／甲斐がある／甲斐もなく／甲斐がない"></a>2.2　～甲斐があって／甲斐がある／甲斐もなく／甲斐がない</h3><h3 id="2-3-～かいなか"><a href="#2-3-～かいなか" class="headerlink" title="2.3　～かいなか"></a>2.3　～かいなか</h3><h3 id="2-4-～限りだ"><a href="#2-4-～限りだ" class="headerlink" title="2.4　～限りだ"></a>2.4　～限りだ</h3><h3 id="2-5-～が最後／たら最後"><a href="#2-5-～が最後／たら最後" class="headerlink" title="2.5　～が最後／たら最後"></a>2.5　～が最後／たら最後</h3><h3 id="2-6-～かたがた"><a href="#2-6-～かたがた" class="headerlink" title="2.6　～かたがた"></a>2.6　～かたがた</h3><h3 id="2-7-～かたわら"><a href="#2-7-～かたわら" class="headerlink" title="2.7　～かたわら"></a>2.7　～かたわら</h3><h3 id="2-8-～がてら"><a href="#2-8-～がてら" class="headerlink" title="2.8　～がてら"></a>2.8　～がてら</h3><h3 id="2-9-～が早いか"><a href="#2-9-～が早いか" class="headerlink" title="2.9　～が早いか"></a>2.9　～が早いか</h3><h3 id="2-10-～からある／からする／からの"><a href="#2-10-～からある／からする／からの" class="headerlink" title="2.10　～からある／からする／からの"></a>2.10　～からある／からする／からの</h3><p>3.　</p>
+<p>3.1　</p>
+]]></content>
+      <tags>
+        <tag>日本語</tag>
+      </tags>
   </entry>
   <entry>
     <title>（5）数据的共享和保护</title>
@@ -3002,12 +3028,38 @@
       </tags>
   </entry>
   <entry>
-    <title>拉康和弗洛伊德关于无意识的论述</title>
-    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
-    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
-]]></content>
+    <title>有序数组的平方</title>
+    <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
+    <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
+<p>简单</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
+</ul>
+<p><strong>进阶：</strong></p>
+<ul>
+<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
+</ul>
+<h3 id="题解1（暴力运算，平方加排序）"><a href="#题解1（暴力运算，平方加排序）" class="headerlink" title="题解1（暴力运算，平方加排序）"></a>题解1（暴力运算，平方加排序）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            nums[i++] = nums[i] * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="题解2（开新数组-左右指针）"><a href="#题解2（开新数组-左右指针）" class="headerlink" title="题解2（开新数组+左右指针）"></a>题解2（开新数组+左右指针）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b=a.<span class="built_in">size</span>()<span class="number">-1</span>,r=a.<span class="built_in">size</span>(),l=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">c</span><span class="params">(a.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[l])&lt;<span class="built_in">fabs</span>(a[r]))</span><br><span class="line">            &#123;</span><br><span class="line">                c[b]=a[r]*a[r];</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c[b--]=a[l]*a[l];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.leetcode-cn.com/1631932242-BViXlX-977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" alt="977.有序数组的平方.gif"></p>
+<p>这个算法的思路是，新开一个数组用来记录信息，首位两个指针互相交换信息，有一个特点，其实就是，生成的新数组的值，其实应该从小到大，依次是从中间，左右之一取得的。</p>
+<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
       <tags>
-        <tag>精神分析</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -3479,71 +3531,19 @@
       </tags>
   </entry>
   <entry>
-    <title>日语n1文法</title>
-    <url>/2024/05/19/%E6%97%A5%E8%AF%ADn1%E6%96%87%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="1-第一章"><a href="#1-第一章" class="headerlink" title="1. 第一章"></a>1. 第一章</h2><h3 id="1-1-～あっての"><a href="#1-1-～あっての" class="headerlink" title="1.1 ～あっての"></a>1.1 <strong>～あっての</strong></h3><p>名A＋（が）あっての＋名B</p>
-<h3 id="1-2-以外の何物でもない"><a href="#1-2-以外の何物でもない" class="headerlink" title="1.2 ~以外の何物でもない"></a>1.2 ~以外の何物でもない</h3><p>名＋以外の何物でもない</p>
-<h3 id="1-3-いかんで／いかんでは／如何によっては／いかんにかかっている／いかんだ"><a href="#1-3-いかんで／いかんでは／如何によっては／いかんにかかっている／いかんだ" class="headerlink" title="1.3 ~いかんで／いかんでは／如何によっては／いかんにかかっている／いかんだ"></a>1.3 ~いかんで／いかんでは／如何によっては／いかんにかかっている／いかんだ</h3><p>（１）～いかんで／いかんでは／いかんにとっては</p>
-<p>名（の）＋いかんで</p>
-<p>（２）～いかんにかかっている／いかんだ</p>
-<p>名＋いかんにかかっている／いかんだ</p>
-<h3 id="1-4-～いかんにかかわらず／いかんいよらず／いかんをとわず"><a href="#1-4-～いかんにかかわらず／いかんいよらず／いかんをとわず" class="headerlink" title="1.4 ～いかんにかかわらず／いかんいよらず／いかんをとわず"></a>1.4 ～いかんにかかわらず／いかんいよらず／いかんをとわず</h3><p>名（の）＋いかんにかかわらず／いかんいよらず／いかんをとわず</p>
-<h3 id="1-5-いざ～となると／いざ～となれば／いざ～となったら"><a href="#1-5-いざ～となると／いざ～となれば／いざ～となったら" class="headerlink" title="1.5 いざ～となると／いざ～となれば／いざ～となったら"></a>1.5 いざ～となると／いざ～となれば／いざ～となったら</h3><p>（１）いざとると／いざとなれば／いざとなたら</p>
-<p>（２）いざ～となると／いざ～となれば</p>
-<h3 id="1-6-～言わずもがな"><a href="#1-6-～言わずもがな" class="headerlink" title="1.6 ～言わずもがな"></a>1.6 ～言わずもがな</h3><p>（１）言わずもがなだ／言わずもがな＋の＋名</p>
-<p>（２）名＋は言わずもがな</p>
-<h3 id="1-7-（よ）うが／（よ）うと"><a href="#1-7-（よ）うが／（よ）うと" class="headerlink" title="1.7 （よ）うが／（よ）うと"></a>1.7 （よ）うが／（よ）うと</h3><p>$$<br>\begin{aligned}<br>\left.<br>\begin{aligned}<br>動意向形\\<br>イ形ーかろう\\<br>名／ナ形ーだろう．であろう<br>\end{aligned}<br>\right}<br>\qquad\text{＋が／と}<br>\end{aligned}<br>$$</p>
-<h3 id="1-8-～（よ）うとも／くとも"><a href="#1-8-～（よ）うとも／くとも" class="headerlink" title="1.8 ～（よ）うとも／くとも"></a>1.8 ～（よ）うとも／くとも</h3><p>$$<br>\begin{aligned}<br>\left.<br>\begin{aligned}<br>動意向形\\<br>イ形ーく\\<br>\end{aligned}<br>\right}<br>\qquad\text{＋とも}<br>\end{aligned}<br>$$</p>
-<h3 id="1-9-～（よ）うが～まいが／（よ）うと～まいと"><a href="#1-9-～（よ）うが～まいが／（よ）うと～まいと" class="headerlink" title="1.9 ～（よ）うが～まいが／（よ）うと～まいと"></a>1.9 ～（よ）うが～まいが／（よ）うと～まいと</h3><p>動意向形＋が＋動（ます）＋が</p>
-<p>動意向形＋と＋動（ます）＋と</p>
-<h3 id="1-10-～（よ）うが～（よ）うが／（よ）うと～（よ）うと"><a href="#1-10-～（よ）うが～（よ）うが／（よ）うと～（よ）うと" class="headerlink" title="1.10 ～（よ）うが～（よ）うが／（よ）うと～（よ）うと"></a>1.10 <strong>～（よ）うが～（よ）うが／（よ）うと～（よ）うと</strong></h3><p>$$<br>\begin{aligned}<br>\left.<br>\begin{aligned}<br>動意向形\\<br>イ形ーかろう\\<br>名／ナ形ーだろう．であろう<br>\end{aligned}<br>\right}<br>\qquad\text{＋が／と}<br>\end{aligned}<br>$$</p>
-<h2 id="2-第二章"><a href="#2-第二章" class="headerlink" title="2. 第二章"></a>2. 第二章</h2><h3 id="2-1-よ-うにも～ない"><a href="#2-1-よ-うにも～ない" class="headerlink" title="2.1 ~(よ)うにも～ない"></a>2.1 ~(よ)うにも～ない</h3><h3 id="2-2-～甲斐があって／甲斐がある／甲斐もなく／甲斐がない"><a href="#2-2-～甲斐があって／甲斐がある／甲斐もなく／甲斐がない" class="headerlink" title="2.2　～甲斐があって／甲斐がある／甲斐もなく／甲斐がない"></a>2.2　～甲斐があって／甲斐がある／甲斐もなく／甲斐がない</h3><h3 id="2-3-～かいなか"><a href="#2-3-～かいなか" class="headerlink" title="2.3　～かいなか"></a>2.3　～かいなか</h3><h3 id="2-4-～限りだ"><a href="#2-4-～限りだ" class="headerlink" title="2.4　～限りだ"></a>2.4　～限りだ</h3><h3 id="2-5-～が最後／たら最後"><a href="#2-5-～が最後／たら最後" class="headerlink" title="2.5　～が最後／たら最後"></a>2.5　～が最後／たら最後</h3><h3 id="2-6-～かたがた"><a href="#2-6-～かたがた" class="headerlink" title="2.6　～かたがた"></a>2.6　～かたがた</h3><h3 id="2-7-～かたわら"><a href="#2-7-～かたわら" class="headerlink" title="2.7　～かたわら"></a>2.7　～かたわら</h3><h3 id="2-8-～がてら"><a href="#2-8-～がてら" class="headerlink" title="2.8　～がてら"></a>2.8　～がてら</h3><h3 id="2-9-～が早いか"><a href="#2-9-～が早いか" class="headerlink" title="2.9　～が早いか"></a>2.9　～が早いか</h3><h3 id="2-10-～からある／からする／からの"><a href="#2-10-～からある／からする／からの" class="headerlink" title="2.10　～からある／からする／からの"></a>2.10　～からある／からする／からの</h3><p>3.　</p>
-<p>3.1　</p>
+    <title>拉康和弗洛伊德关于无意识的论述</title>
+    <url>/2024/05/17/%E6%8B%89%E5%BA%B7%E5%92%8C%E5%BC%97%E6%B4%9B%E4%BC%8A%E5%BE%B7%E5%85%B3%E4%BA%8E%E6%97%A0%E6%84%8F%E8%AF%86%E7%9A%84%E8%AE%BA%E8%BF%B0/</url>
+    <content><![CDATA[<p>在拉康选集中，拉康说明了回到弗洛伊德的意义。<br>Wo Ss war,Soll ich werden.<br>where the id was,there the ego shall be.<br>拉康将两者进行对比，认为翻译是错误的。<br>Wo-&gt;where:德语对地点的区别比较严格，wohin去某地，wohere从哪里出发。所以不能用简单的where来代替。<br>-&gt;O wohim -&gt;wohere-&gt;wokhao<br>Ss it（本我）没有用任何定冠词：der（阳性）das（中性）die（阴性）<br>war：sein      da-sein（be，was）<br>soll：should<br>ich:主体。<br>werden：在德语里是变成&#x2F;并不是去到哪里。不是到达wo不是从wo出来，而是凭空地在某个地方生成出来的事物。<br>在它所在的地方，在它绝对所在的地方，我出现在那里，这是我的责任。<br>骑手自我：自我（ich）像一个骑马的人，驾驭着那个本我（Ss）。<br>在它（无意识）所在的地方，在它绝对所在的地方，我出现在那里，这是我（S&#x2F;）的责任。<br>对弗洛伊德的颠覆，自我是要去控制本我的，在拉康这里无意识是一个空位，它应该在这里，它曾经在某个地方，它已经一闪而过了，但是我应该出现在这里，我凭空出现在这里，这是我的责任。<br>能指链：主体需要把这个缺口缝补上。<br>它曾在能指链上留下了一个空缺，伪自我必须要道这个断裂之处去。<br>我并不知道那个弗洛伊德所谓的那个无意识的我已经死了，所以我作为主体才能来到这个位置，我作为主体是以不在而在的状态出现在那个能指链的断裂之处。<br>把两个东西缝合在了一起：一个真正的存在会因自知而死，一个话语（将大他者的言语转述）却是由死来维持（维持住了表面的稳定，你作为符号系统的工具，不断修补）。<br>死了两次：第一次是在镜像阶段的误认（没有死透的就是对象a），第二次是你会说话进入了象征域之后.<br>人是死掉的存在。<br>集体无意识：弗洛伊德，拉康的无意识。遵从剥夺他意识的他者。<br>A Nazi Jew</p>
 ]]></content>
       <tags>
-        <tag>日本語</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有序数组的平方</title>
-    <url>/2024/06/09/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/</url>
-    <content><![CDATA[<h2 id="977-有序数组的平方"><a href="#977-有序数组的平方" class="headerlink" title="977. 有序数组的平方"></a><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977. 有序数组的平方</a></h2><p>已解答</p>
-<p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 104</code></li>
-<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
-<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
-</ul>
-<p><strong>进阶：</strong></p>
-<ul>
-<li>请你设计时间复杂度为 <code>O(n)</code> 的算法解决本问题</li>
-</ul>
-<h3 id="题解1（暴力运算，平方加排序）"><a href="#题解1（暴力运算，平方加排序）" class="headerlink" title="题解1（暴力运算，平方加排序）"></a>题解1（暴力运算，平方加排序）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; nums.<span class="built_in">size</span>()) &#123;</span><br><span class="line">            nums[i++] = nums[i] * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="题解2（开新数组-左右指针）"><a href="#题解2（开新数组-左右指针）" class="headerlink" title="题解2（开新数组+左右指针）"></a>题解2（开新数组+左右指针）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sortedSquares</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> b=a.<span class="built_in">size</span>()<span class="number">-1</span>,r=a.<span class="built_in">size</span>(),l=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">c</span><span class="params">(a.size(),<span class="number">0</span>)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">fabs</span>(a[l])&lt;<span class="built_in">fabs</span>(a[r]))</span><br><span class="line">            &#123;</span><br><span class="line">                c[b]=a[r]*a[r];</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                c[b--]=a[l]*a[l];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://pic.leetcode-cn.com/1631932242-BViXlX-977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.gif" alt="977.有序数组的平方.gif"></p>
-<p>这个算法的思路是，新开一个数组用来记录信息，首位两个指针互相交换信息，有一个特点，其实就是，生成的新数组的值，其实应该从小到大，依次是从中间，左右之一取得的。</p>
-<h2 id><a href="#" class="headerlink" title></a></h2>]]></content>
-      <tags>
-        <tag>leetcode</tag>
+        <tag>精神分析</tag>
       </tags>
   </entry>
   <entry>
     <title>死月妖花</title>
     <url>/2024/05/30/%E6%AD%BB%E6%9C%88%E5%A6%96%E8%8A%B1/</url>
     <content><![CDATA[<p>s</p>
-<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#52;&#x67;&#x61;&#x74;&#x73;&#x75;&#56;&#x6b;&#x61;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#52;&#x67;&#x61;&#x74;&#x73;&#x75;&#56;&#x6b;&#x61;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</a></p>
+<h2 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h2><h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p>作者的邮箱：<a href="mailto:&#x34;&#103;&#x61;&#x74;&#x73;&#x75;&#56;&#x6b;&#97;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x34;&#103;&#x61;&#x74;&#x73;&#x75;&#56;&#x6b;&#97;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a></p>
 <p>推特账号：@4gatsu_8ka</p>
 <h3 id="游戏时长"><a href="#游戏时长" class="headerlink" title="游戏时长"></a>游戏时长</h3><p>本作の全編予想プレイ時間は50<del>120時間で寸(文字数换算で230万字程度)。<br>1編当たりの予想プレイ時間は最短編で2</del>4時間、最長編で10~20時間です</p>
 <p>非常に長いので健康な害さないよう，適宜休憩を取りながらプレイして下さい</p>
@@ -3564,14 +3564,6 @@
 ]]></content>
       <tags>
         <tag>gal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>洛谷做题日记</title>
-    <url>/2024/06/20/%E6%B4%9B%E8%B0%B7%E5%81%9A%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>洛谷</tag>
       </tags>
   </entry>
   <entry>
@@ -3662,6 +3654,14 @@
       </tags>
   </entry>
   <entry>
+    <title>洛谷做题日记</title>
+    <url>/2024/06/20/%E6%B4%9B%E8%B0%B7%E5%81%9A%E9%A2%98%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>洛谷</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>滑动窗口</title>
     <url>/2024/06/10/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</url>
     <content><![CDATA[<h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><h3 id="滑动窗口是什么"><a href="#滑动窗口是什么" class="headerlink" title="滑动窗口是什么"></a>滑动窗口是什么</h3><p>滑动窗口可以用来解决数组&#x2F;字符串的子元素问题，它可以将嵌套的循环问题，转换为单循环问题，降低时间复杂度。</p>
@@ -3735,15 +3735,6 @@
       </tags>
   </entry>
   <entry>
-    <title>爱与典范</title>
-    <url>/2024/05/17/%E7%88%B1%E4%B8%8E%E5%85%B8%E8%8C%83/</url>
-    <content><![CDATA[<p>   ▪   爱的典范：<br>不是讲述对与错的问题，典雅爱情中，起作用的是一种符号爱完成生化成了一种符号，成为了一首诗歌。<br>在虐恋之中，症状代替了符号。<br>使徒的爱：圣爱是幻想父亲的爱，对自己的幻想的爱的一种回应，他正在永恒地爱着我，我也可以永恒地爱着她。这只手是一种幻影，幻想自己的手是可以伸进火堆里而幻想出的大他者的手。<br>在使徒在受鞭笞的时候，他们会处于那种极致的享乐之中，他们真的能感受到大他者拉着了他。<br>“性关系的尽头是爱，因此我不会说并不存在爱，我知识说性关系不存在”<br>一朵曼妙的花朵<br>一个新鲜的水果<br>在我双手触碰两者的时候，突然有一只手伸了出来。在触碰这只手的过程中，那只手突然着火了。我只能用作为表达失败的方式来表达爱，在爱的灰烬之处，向我伸出了一只手。<br>lacan：这灰烬之手是一种镜像的自恋结构。<br>古典的爱中，典雅爱情之中，性是不可能，自恋式的想象。<br>原作者的解释不是权威，作者已死。<br>爱处于偶然的逻辑相中，爱的相遇链接了原本两个没有关系的能指。其如其分的神迹，直接有了一朵美丽的花。她仿佛有无限的可能，在诱惑着我。<br>1、Darian Loader《拉康》：这两只手一定不是对称结构。<br>2、Bruce Fink：爱必须是一种回应（积极的解读）<br>从灰烬中伸出的那只手理解为父之名，在爱之中，我们和父之名打交道。父之名认可了你的爱，将你的爱注册在案。没有爱就没有注册在安的结婚证，爱是一种必然的创伤，爱召唤出了父之名。给了我们一种担保，让我们不至于过于哀悼我们成为灰烬的爱情。<br>   ▪   爱的表达<br>说、写、做<br>说就是言说：任何对爱的表达都是对爱的缺失，“我爱你”的意思就是你来爱我吧。苏格拉底把爱当成了背爱，而不是爱人。<br>小宝宝在刚出生的时候，所有的言爱都是对爱的请求。<br>分析师保持沉默的原因：避免向来访者索取爱。<br>说爱就等于要求被爱，说我爱你就等于在说你来爱我吧，这并不是对爱的表达，而是对爱的索取。<br>写就是一个人无法谈论爱，但是当那个人写出来的时候，就能打动你，在书写与字母不存在爱与言说的矛盾，情书比任何通过言语而表达的爱都要真实。<br>爱在停止书写的地方，是未断却无法写出之物。<br>你觉得你写的东西可能不太正确，但是你的爱却有了一个实在的参照物。可以告诉自己，我的爱就在信纸背后，在留白之处，它有一个可以寄托的场所。<br>做的维度（make love）：在完全简化为某个行为之前，就是单纯的求爱，对于男人，在做的时候，与其说他们实在做，不如说他们是在享受性，感知对方的一个部位，感受到了自己的膨胀和丰满，就意味着无所缺失，我不知道他在激动什么，不能被菲勒斯完全收编，部分认同男性（癔症式的），沦为一个普遍的像男人认同阳具一样的女性认同，女人不存在，没有所谓的女人，女人不存在。<br>如何表达爱：没有性关系，写只能在写不出的地方表达爱，说我爱你的实际意思是我缺少爱，请你来爱我。给出你所没有的，表达爱，给出你所没有的，爱的表达本身就是一种自返的结构，在说写做之中，都会遇到挫折，在说不了，写不了，做不了的地方，爱就出现在这里：请拒我所赠，盖非也。<br>给出你所没有的，你和她面对面，站在苍茫的雪地里，两个人都冻的瑟瑟发抖，但是你就是想要抱住她，你就想向她伸出手。<br>   ▪   如果试图“言说”爱<br>爱处在偶然的逻辑相中，是停止却无法写出的东西，只能以诗的形式写出。情不知所起，一往情深。相顾无言，唯有泪千行。<br>只有当语言死亡的时候，你才能活得一瞬间的真实。<br>晚期拉康是比较可怜的，是一个无法忍受自己年龄的人，说脏话，说悖论，试图将自己的平生所学一起用一遍，1975年之后拉康进入了一个强热的思辨当中，进入了一个Fichte的绝对知识，用数学的方式，将自己的理论封装起来：数理逻辑、拓扑学、波罗米结。<br>《若灵根的守灵夜》晚年的拉康奢侈无度，但是他又非常地吝啬：是爱使享乐得以屈从。到底我思是什么东西？在我思之万物之处我不在，我在我不死不在之处，即是说我等于爱。我思是一种爱与恨的战场，是Gott与魔鬼交战的战场，在诗人的角度，诗人透过自己的作品，以某种斜视，一瞥而见了作品的作者。ich&#x3D;ich（自我命名）<br>母子关系：demand-need&#x3D;desire<br>恋爱关系：desire（爱&#x2F;请求的反向投资）+need（信的内容）&#x3D;demand（情书）<br>“请拒我所赠，该非也”：否定信中的内容，不能送早餐，过分夸大的实在物，太过于压迫别人了。<br>如果没有爱的话，我们还是会在转喻链上延宕。<br>不是万物都可以计算（资本主义）：个人的价值不可以计算。</p>
-]]></content>
-      <tags>
-        <tag>精神分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>碧蓝幻想relink因子</title>
     <url>/2024/07/09/%E7%A2%A7%E8%93%9D%E5%B9%BB%E6%83%B3relink%E5%9B%A0%E5%AD%90/</url>
     <content><![CDATA[<p>碧蓝幻想relink里面的因子可以大致分为基本因子和专属因子，而获取方式通常是万事屋抽奖和遗物鉴定，万事屋可以出角色的专属因子，遗物鉴定会有特殊因子，像刀上舞、属性克制转换、追击等。</p>
@@ -3777,6 +3768,15 @@
     <title>碧蓝幻想relink菲莉技巧</title>
     <url>/2024/07/08/%E7%A2%A7%E8%93%9D%E5%B9%BB%E6%83%B3relink%E8%8F%B2%E8%8E%89%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>爱与典范</title>
+    <url>/2024/05/17/%E7%88%B1%E4%B8%8E%E5%85%B8%E8%8C%83/</url>
+    <content><![CDATA[<p>   ▪   爱的典范：<br>不是讲述对与错的问题，典雅爱情中，起作用的是一种符号爱完成生化成了一种符号，成为了一首诗歌。<br>在虐恋之中，症状代替了符号。<br>使徒的爱：圣爱是幻想父亲的爱，对自己的幻想的爱的一种回应，他正在永恒地爱着我，我也可以永恒地爱着她。这只手是一种幻影，幻想自己的手是可以伸进火堆里而幻想出的大他者的手。<br>在使徒在受鞭笞的时候，他们会处于那种极致的享乐之中，他们真的能感受到大他者拉着了他。<br>“性关系的尽头是爱，因此我不会说并不存在爱，我知识说性关系不存在”<br>一朵曼妙的花朵<br>一个新鲜的水果<br>在我双手触碰两者的时候，突然有一只手伸了出来。在触碰这只手的过程中，那只手突然着火了。我只能用作为表达失败的方式来表达爱，在爱的灰烬之处，向我伸出了一只手。<br>lacan：这灰烬之手是一种镜像的自恋结构。<br>古典的爱中，典雅爱情之中，性是不可能，自恋式的想象。<br>原作者的解释不是权威，作者已死。<br>爱处于偶然的逻辑相中，爱的相遇链接了原本两个没有关系的能指。其如其分的神迹，直接有了一朵美丽的花。她仿佛有无限的可能，在诱惑着我。<br>1、Darian Loader《拉康》：这两只手一定不是对称结构。<br>2、Bruce Fink：爱必须是一种回应（积极的解读）<br>从灰烬中伸出的那只手理解为父之名，在爱之中，我们和父之名打交道。父之名认可了你的爱，将你的爱注册在案。没有爱就没有注册在安的结婚证，爱是一种必然的创伤，爱召唤出了父之名。给了我们一种担保，让我们不至于过于哀悼我们成为灰烬的爱情。<br>   ▪   爱的表达<br>说、写、做<br>说就是言说：任何对爱的表达都是对爱的缺失，“我爱你”的意思就是你来爱我吧。苏格拉底把爱当成了背爱，而不是爱人。<br>小宝宝在刚出生的时候，所有的言爱都是对爱的请求。<br>分析师保持沉默的原因：避免向来访者索取爱。<br>说爱就等于要求被爱，说我爱你就等于在说你来爱我吧，这并不是对爱的表达，而是对爱的索取。<br>写就是一个人无法谈论爱，但是当那个人写出来的时候，就能打动你，在书写与字母不存在爱与言说的矛盾，情书比任何通过言语而表达的爱都要真实。<br>爱在停止书写的地方，是未断却无法写出之物。<br>你觉得你写的东西可能不太正确，但是你的爱却有了一个实在的参照物。可以告诉自己，我的爱就在信纸背后，在留白之处，它有一个可以寄托的场所。<br>做的维度（make love）：在完全简化为某个行为之前，就是单纯的求爱，对于男人，在做的时候，与其说他们实在做，不如说他们是在享受性，感知对方的一个部位，感受到了自己的膨胀和丰满，就意味着无所缺失，我不知道他在激动什么，不能被菲勒斯完全收编，部分认同男性（癔症式的），沦为一个普遍的像男人认同阳具一样的女性认同，女人不存在，没有所谓的女人，女人不存在。<br>如何表达爱：没有性关系，写只能在写不出的地方表达爱，说我爱你的实际意思是我缺少爱，请你来爱我。给出你所没有的，表达爱，给出你所没有的，爱的表达本身就是一种自返的结构，在说写做之中，都会遇到挫折，在说不了，写不了，做不了的地方，爱就出现在这里：请拒我所赠，盖非也。<br>给出你所没有的，你和她面对面，站在苍茫的雪地里，两个人都冻的瑟瑟发抖，但是你就是想要抱住她，你就想向她伸出手。<br>   ▪   如果试图“言说”爱<br>爱处在偶然的逻辑相中，是停止却无法写出的东西，只能以诗的形式写出。情不知所起，一往情深。相顾无言，唯有泪千行。<br>只有当语言死亡的时候，你才能活得一瞬间的真实。<br>晚期拉康是比较可怜的，是一个无法忍受自己年龄的人，说脏话，说悖论，试图将自己的平生所学一起用一遍，1975年之后拉康进入了一个强热的思辨当中，进入了一个Fichte的绝对知识，用数学的方式，将自己的理论封装起来：数理逻辑、拓扑学、波罗米结。<br>《若灵根的守灵夜》晚年的拉康奢侈无度，但是他又非常地吝啬：是爱使享乐得以屈从。到底我思是什么东西？在我思之万物之处我不在，我在我不死不在之处，即是说我等于爱。我思是一种爱与恨的战场，是Gott与魔鬼交战的战场，在诗人的角度，诗人透过自己的作品，以某种斜视，一瞥而见了作品的作者。ich&#x3D;ich（自我命名）<br>母子关系：demand-need&#x3D;desire<br>恋爱关系：desire（爱&#x2F;请求的反向投资）+need（信的内容）&#x3D;demand（情书）<br>“请拒我所赠，该非也”：否定信中的内容，不能送早餐，过分夸大的实在物，太过于压迫别人了。<br>如果没有爱的话，我们还是会在转喻链上延宕。<br>不是万物都可以计算（资本主义）：个人的价值不可以计算。</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
   </entry>
   <entry>
     <title>神树之馆汉化日志</title>
@@ -4038,6 +4038,65 @@
       </tags>
   </entry>
   <entry>
+    <title>移除链表元素</title>
+    <url>/2024/06/12/%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<h2 id="1-线性表是什么"><a href="#1-线性表是什么" class="headerlink" title="1. 线性表是什么"></a>1. 线性表是什么</h2><h3 id="1-1线性表的抽象数据类型"><a href="#1-1线性表的抽象数据类型" class="headerlink" title="1.1线性表的抽象数据类型"></a>1.1线性表的抽象数据类型</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">ADT 线性表(List)</span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(*L)</span></span>;<span class="comment">//初始化链表</span></span><br><span class="line">	<span class="built_in">ListEmpty</span>(L);<span class="comment">//检查链表是否为空</span></span><br><span class="line">	<span class="built_in">clearList</span>(*L);<span class="comment">//清空链表已有元素</span></span><br><span class="line">	<span class="built_in">GetElem</span>(L,i,*e);<span class="comment">//将链表的第i个位置的元素的值赋给e，然后返回</span></span><br><span class="line">	<span class="built_in">LocateElem</span>(L,e);<span class="comment">//查找L中是否有e，Yes：元素位置，No：0</span></span><br><span class="line">	<span class="built_in">ListInsert</span>(*L,i,e);<span class="comment">//在L的第i个位置插入元素e</span></span><br><span class="line">	<span class="built_in">ListDelete</span>(*L,i,*e);<span class="comment">//删除线性表的第i个元素，并用e返回其值</span></span><br><span class="line">	<span class="built_in">ListLength</span>(L);<span class="comment">//返回线性表L的元素个数</span></span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-1合并链表"><a href="#1-1-1合并链表" class="headerlink" title="1.1.1合并链表"></a>1.1.1合并链表</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">union</span><span class="params">(List *La,List Lb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a_len,b_len;</span><br><span class="line">    ElemType e;</span><br><span class="line">    a_len=<span class="built_in">ListLength</span>(La);</span><br><span class="line">    b_len=<span class="built_in">ListLength</span>(Lb);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=Lb;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">GetElem</span>(Lb,i,e);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">LocateElem</span>(La,e,equal))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">ListInsert</span>(La,++a_len,e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//查找，然后将La中没有的元素添加到后面</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是求合集的函数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-2-线性表的顺序存储结构"><a href="#1-1-2-线性表的顺序存储结构" class="headerlink" title="1.1.2 线性表的顺序存储结构"></a>1.1.2 线性表的顺序存储结构</h4><p>用一段地址连续的内存单元，依次存储线性表的数据元素</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXSIZE 20</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></span><br><span class="line">&#123;</span><br><span class="line">	ElemType data[MAXZIZE];</span><br><span class="line">	<span class="type">int</span> length;</span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>存储的起始位置：数组data</li>
+<li>线性表的最大存储容量</li>
+<li>线性表的当前长度</li>
+</ul>
+<h4 id="1-1-3-顺序存储结构的插入与删除"><a href="#1-1-3-顺序存储结构的插入与删除" class="headerlink" title="1.1.3 顺序存储结构的插入与删除"></a>1.1.3 顺序存储结构的插入与删除</h4><ul>
+<li>插入</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(SqList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L.length==<span class="number">0</span>||i&lt;<span class="number">1</span>||i&gt;L.length) <span class="keyword">return</span> Error;</span><br><span class="line">        *e=L.data[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> ok;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>插入</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(SqList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;length==MAXSIZE) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;L-&gt;length+<span class="number">1</span>) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;=L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(k=L-&gt;length<span class="number">-1</span>;k&gt;=i<span class="number">-1</span>;k--) L-&gt;date[k+<span class="number">1</span>]=L-&gt;data[k];</span><br><span class="line">    &#125;<span class="comment">//将目标位置和之后的元素全部向后移动一个位置</span></span><br><span class="line">    L-&gt;data[i<span class="number">-1</span>]=e;</span><br><span class="line">    L-&gt;length++;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListDelete</span><span class="params">(SqList *L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;length==<span class="number">0</span>) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;L-&gt;length) <span class="keyword">return</span> ERROR;</span><br><span class="line">    *e=L-&gt;date[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">if</span>(i&lt;L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(k=i;k&lt;L-&gt;length;k++)</span><br><span class="line">        &#123;</span><br><span class="line">            L-&gt;data[k<span class="number">-1</span>]=L-&gt;data[k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//删完之后，对应元素后面的元素全部前移一格，然后data数组大小减少一个</span></span><br><span class="line">    L-&gt;length--;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-结点（Node）"><a href="#1-2-结点（Node）" class="headerlink" title="1.2 结点（Node）"></a>1.2 结点（Node）</h3><p><img src="https://p.sda1.dev/18/aa16fe49d763d936b9ce44b1569d0159/a0880ffb4ecd93c9a7e526015bfcb84f.png"></p>
+<p>链表中的第一个结点的存储位置叫做头指针</p>
+<p><img src="https://p.sda1.dev/18/e24ef5346e902d28b84e8ce5ed398ce2/2cb8d8b89841146ec2a8266b491eacdf.png"></p>
+<h4 id="1-2-1-线性表链式存储结构代码描述"><a href="#1-2-1-线性表链式存储结构代码描述" class="headerlink" title="1.2.1 线性表链式存储结构代码描述"></a>1.2.1 线性表链式存储结构代码描述</h4><ul>
+<li>如果链表为空表，则头结点的指针域为“空”</li>
+</ul>
+<p><img src="https://p.sda1.dev/18/0ea6255eb2b334fa8b3bad7fb350cb08/43d6cb960da89e117f050254b3fe8a8e.png"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Node;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">LinkList</span>;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p.sda1.dev/18/341f9a39bb60f151f17ec60d38e9a021/506858485659b7b7837169ab906b131e.png"></p>
+<h4 id="1-2-2-单链表的读取"><a href="#1-2-2-单链表的读取" class="headerlink" title="1.2.2 单链表的读取"></a>1.2.2 单链表的读取</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p;</span><br><span class="line">    p=L-&gt;next;<span class="comment">//声明一个新结点</span></span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//用next指针将所有结点串联起来</span></span><br><span class="line">    <span class="keyword">if</span>(!p||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    *e=p-&gt;data;</span><br><span class="line">    <span class="keyword">return</span> Ok;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-2-3-单链表的插入和删除"><a href="#1-2-3-单链表的插入和删除" class="headerlink" title="1.2.3 单链表的插入和删除"></a>1.2.3 单链表的插入和删除</h4><ul>
+<li>插入</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p,s;</span><br><span class="line">    p=*L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//将p叠加到目标元素的位置</span></span><br><span class="line">    <span class="keyword">if</span>(!p||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    s=<span class="keyword">new</span> LinkList;</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    s-&gt;next=p-&gt;next;</span><br><span class="line">    p-&gt;next=s;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p.sda1.dev/18/327a8926e7b97bb927aa24434286e8ef/37bdeb1162591f31909725168c75dce7.png"></p>
+<ul>
+<li>删除</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p,s;</span><br><span class="line">    p=*L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//将p叠加到目标元素的位置</span></span><br><span class="line">    <span class="keyword">if</span>(!(p-next)||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    s=p-&gt;next;</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    p-&gt;next=q-&gt;next;</span><br><span class="line">    <span class="comment">//p-&gt;next=p-&gt;next-&gt;next也可以</span></span><br><span class="line">    *e=q-&gt;data;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://p.sda1.dev/18/d9b13d452e51d62e01f0f62fed7a5fd9/e436c6cbece682c27c19e2bb7a5a086c.png"></p>
+<h2 id="2-线性表是"><a href="#2-线性表是" class="headerlink" title="2. 线性表是"></a>2. 线性表是</h2>]]></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>移除元素</title>
     <url>/2024/06/09/%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>数组其实是一个连续的内存空间，删除元素的基本原理是</p>
@@ -4153,65 +4212,6 @@
       </tags>
   </entry>
   <entry>
-    <title>移除链表元素</title>
-    <url>/2024/06/12/%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/</url>
-    <content><![CDATA[<h2 id="1-线性表是什么"><a href="#1-线性表是什么" class="headerlink" title="1. 线性表是什么"></a>1. 线性表是什么</h2><h3 id="1-1线性表的抽象数据类型"><a href="#1-1线性表的抽象数据类型" class="headerlink" title="1.1线性表的抽象数据类型"></a>1.1线性表的抽象数据类型</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">ADT 线性表(List)</span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(*L)</span></span>;<span class="comment">//初始化链表</span></span><br><span class="line">	<span class="built_in">ListEmpty</span>(L);<span class="comment">//检查链表是否为空</span></span><br><span class="line">	<span class="built_in">clearList</span>(*L);<span class="comment">//清空链表已有元素</span></span><br><span class="line">	<span class="built_in">GetElem</span>(L,i,*e);<span class="comment">//将链表的第i个位置的元素的值赋给e，然后返回</span></span><br><span class="line">	<span class="built_in">LocateElem</span>(L,e);<span class="comment">//查找L中是否有e，Yes：元素位置，No：0</span></span><br><span class="line">	<span class="built_in">ListInsert</span>(*L,i,e);<span class="comment">//在L的第i个位置插入元素e</span></span><br><span class="line">	<span class="built_in">ListDelete</span>(*L,i,*e);<span class="comment">//删除线性表的第i个元素，并用e返回其值</span></span><br><span class="line">	<span class="built_in">ListLength</span>(L);<span class="comment">//返回线性表L的元素个数</span></span><br><span class="line">endADT</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-1-1合并链表"><a href="#1-1-1合并链表" class="headerlink" title="1.1.1合并链表"></a>1.1.1合并链表</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">union</span><span class="params">(List *La,List Lb)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a_len,b_len;</span><br><span class="line">    ElemType e;</span><br><span class="line">    a_len=<span class="built_in">ListLength</span>(La);</span><br><span class="line">    b_len=<span class="built_in">ListLength</span>(Lb);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=Lb;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">GetElem</span>(Lb,i,e);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">LocateElem</span>(La,e,equal))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">ListInsert</span>(La,++a_len,e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//查找，然后将La中没有的元素添加到后面</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是求合集的函数</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="1-1-2-线性表的顺序存储结构"><a href="#1-1-2-线性表的顺序存储结构" class="headerlink" title="1.1.2 线性表的顺序存储结构"></a>1.1.2 线性表的顺序存储结构</h4><p>用一段地址连续的内存单元，依次存储线性表的数据元素</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXSIZE 20</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> ElemType</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></span><br><span class="line">&#123;</span><br><span class="line">	ElemType data[MAXZIZE];</span><br><span class="line">	<span class="type">int</span> length;</span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>存储的起始位置：数组data</li>
-<li>线性表的最大存储容量</li>
-<li>线性表的当前长度</li>
-</ul>
-<h4 id="1-1-3-顺序存储结构的插入与删除"><a href="#1-1-3-顺序存储结构的插入与删除" class="headerlink" title="1.1.3 顺序存储结构的插入与删除"></a>1.1.3 顺序存储结构的插入与删除</h4><ul>
-<li>插入</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(SqList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L.length==<span class="number">0</span>||i&lt;<span class="number">1</span>||i&gt;L.length) <span class="keyword">return</span> Error;</span><br><span class="line">        *e=L.data[i<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> ok;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>插入</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(SqList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;length==MAXSIZE) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;L-&gt;length+<span class="number">1</span>) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;=L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(k=L-&gt;length<span class="number">-1</span>;k&gt;=i<span class="number">-1</span>;k--) L-&gt;date[k+<span class="number">1</span>]=L-&gt;data[k];</span><br><span class="line">    &#125;<span class="comment">//将目标位置和之后的元素全部向后移动一个位置</span></span><br><span class="line">    L-&gt;data[i<span class="number">-1</span>]=e;</span><br><span class="line">    L-&gt;length++;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListDelete</span><span class="params">(SqList *L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    <span class="keyword">if</span>(L-&gt;length==<span class="number">0</span>) <span class="keyword">return</span> ERROR;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>||i&gt;L-&gt;length) <span class="keyword">return</span> ERROR;</span><br><span class="line">    *e=L-&gt;date[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">if</span>(i&lt;L-&gt;length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(k=i;k&lt;L-&gt;length;k++)</span><br><span class="line">        &#123;</span><br><span class="line">            L-&gt;data[k<span class="number">-1</span>]=L-&gt;data[k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//删完之后，对应元素后面的元素全部前移一格，然后data数组大小减少一个</span></span><br><span class="line">    L-&gt;length--;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-结点（Node）"><a href="#1-2-结点（Node）" class="headerlink" title="1.2 结点（Node）"></a>1.2 结点（Node）</h3><p><img src="https://p.sda1.dev/18/aa16fe49d763d936b9ce44b1569d0159/a0880ffb4ecd93c9a7e526015bfcb84f.png"></p>
-<p>链表中的第一个结点的存储位置叫做头指针</p>
-<p><img src="https://p.sda1.dev/18/e24ef5346e902d28b84e8ce5ed398ce2/2cb8d8b89841146ec2a8266b491eacdf.png"></p>
-<h4 id="1-2-1-线性表链式存储结构代码描述"><a href="#1-2-1-线性表链式存储结构代码描述" class="headerlink" title="1.2.1 线性表链式存储结构代码描述"></a>1.2.1 线性表链式存储结构代码描述</h4><ul>
-<li>如果链表为空表，则头结点的指针域为“空”</li>
-</ul>
-<p><img src="https://p.sda1.dev/18/0ea6255eb2b334fa8b3bad7fb350cb08/43d6cb960da89e117f050254b3fe8a8e.png"></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Node;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">LinkList</span>;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://p.sda1.dev/18/341f9a39bb60f151f17ec60d38e9a021/506858485659b7b7837169ab906b131e.png"></p>
-<h4 id="1-2-2-单链表的读取"><a href="#1-2-2-单链表的读取" class="headerlink" title="1.2.2 单链表的读取"></a>1.2.2 单链表的读取</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br><span class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p;</span><br><span class="line">    p=L-&gt;next;<span class="comment">//声明一个新结点</span></span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//用next指针将所有结点串联起来</span></span><br><span class="line">    <span class="keyword">if</span>(!p||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    *e=p-&gt;data;</span><br><span class="line">    <span class="keyword">return</span> Ok;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-3-单链表的插入和删除"><a href="#1-2-3-单链表的插入和删除" class="headerlink" title="1.2.3 单链表的插入和删除"></a>1.2.3 单链表的插入和删除</h4><ul>
-<li>插入</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p,s;</span><br><span class="line">    p=*L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//将p叠加到目标元素的位置</span></span><br><span class="line">    <span class="keyword">if</span>(!p||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    s=<span class="keyword">new</span> LinkList;</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    s-&gt;next=p-&gt;next;</span><br><span class="line">    p-&gt;next=s;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://p.sda1.dev/18/327a8926e7b97bb927aa24434286e8ef/37bdeb1162591f31909725168c75dce7.png"></p>
-<ul>
-<li>删除</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(LinkList L,<span class="type">int</span> i,ElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> j;</span><br><span class="line">    LinkList p,s;</span><br><span class="line">    p=*L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;<span class="comment">//将p叠加到目标元素的位置</span></span><br><span class="line">    <span class="keyword">if</span>(!(p-next)||j&gt;i) <span class="keyword">return</span> ERROR;</span><br><span class="line">    s=p-&gt;next;</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    p-&gt;next=q-&gt;next;</span><br><span class="line">    <span class="comment">//p-&gt;next=p-&gt;next-&gt;next也可以</span></span><br><span class="line">    *e=q-&gt;data;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://p.sda1.dev/18/d9b13d452e51d62e01f0f62fed7a5fd9/e436c6cbece682c27c19e2bb7a5a086c.png"></p>
-<h2 id="2-线性表是"><a href="#2-线性表是" class="headerlink" title="2. 线性表是"></a>2. 线性表是</h2>]]></content>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>“刺青，以对抗自己没有生命力这件事情。”</title>
     <url>/2024/06/12/%E7%BA%B9%E8%BA%AB%E7%9A%84%E7%88%B1%E6%AC%B2%E6%9C%BA%E5%88%B6/</url>
     <content><![CDATA[<h2 id="1-自残的机制"><a href="#1-自残的机制" class="headerlink" title="1 自残的机制"></a>1 自残的机制</h2><h3 id="1-1-凯瑟琳·里奥特"><a href="#1-1-凯瑟琳·里奥特" class="headerlink" title="1.1  凯瑟琳·里奥特"></a>1.1  凯瑟琳·里奥特</h3><p>自残就是给自己做一个标记，不管是洞穿、划痕还是畸形处理，这些都是古来有之的。</p>
@@ -4243,49 +4243,6 @@
 ]]></content>
       <tags>
         <tag>精神分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>螺旋矩阵</title>
-    <url>/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<h2 id="什么是螺旋矩阵"><a href="#什么是螺旋矩阵" class="headerlink" title="什么是螺旋矩阵"></a>什么是螺旋矩阵</h2><p>螺旋矩阵就是从四周向中心遍历矩阵的所有元素，没有实质上的算法内容，更多的是做一个模拟，所以螺旋矩阵可以归类为模拟题。</p>
-<h2 id="螺旋矩阵的难点在哪里"><a href="#螺旋矩阵的难点在哪里" class="headerlink" title="螺旋矩阵的难点在哪里"></a>螺旋矩阵的难点在哪里</h2><p>螺旋矩阵作为一个模拟题，具有相当多的边界条件，在编写代码的时候，要把握好所有的边界，同时需要特判输入样例中的特殊情况。</p>
-<p>在模拟螺旋居正的过程中，我们的一个基本思路是：</p>
-<ol>
-<li>输出矩阵的基本信息：rows&amp;cols</li>
-<li>向右遍历</li>
-<li>向下遍历</li>
-<li>直到遍历完所有的元素</li>
-</ol>
-<p><img src="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ%E6%88%AA%E5%9B%BE20240611225505.png" alt="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ截图20240611225505.png"></p>
-<h2 id="59-螺旋矩阵-II"><a href="#59-螺旋矩阵-II" class="headerlink" title="59. 螺旋矩阵 II"></a><a href="https://leetcode.cn/problems/spiral-matrix-ii/">59. 螺旋矩阵 II</a></h2><p>中等</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
-<p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：[[1]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>1 &lt;= n &lt;= 20</code></li>
-</ul>
-<p><img src="https://pic.leetcode-cn.com/1ad0fe88d15dc87643435eb7a17b368191725a44da4596722977e5798ace5b62-Picture2.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/193444cbca5529fcd1bafec33ef576fe1309690be2c0110de05868f4415a8723-Picture3.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/bca38a428306cb2aacc00513821e74150947ba241d9b7199bcad6c7e843a0105-Picture4.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/e5de1e07957417f13d9fae22e6fb18dd5331b50258f0297f00ba57d25651df4a-Picture5.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/2fde8dcd1481e390532995c02d3575ec9675a27390513c1540f40431dad7997a-Picture6.png" alt="img"></p>
-<p><img src="https://pic.leetcode-cn.com/1950d4c8ab6b09b62b7d5900ece4d8d4be882abebd2417a3030d172aedbc304e-Picture7.png" alt="img"></p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> rows = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cols = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter the size of your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; rows &gt;&gt; cols;</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">matrix_1</span>(rows, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(cols)); <span class="comment">// Init with size</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; matrix_2; <span class="comment">// This should be a 1D vector</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; cols; j++) &#123;</span><br><span class="line">            cin &gt;&gt; matrix_1[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (matrix_1.<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = rows - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> c = cols - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> d = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = d; i &lt;= c; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[a][i]);</span><br><span class="line">        <span class="keyword">if</span> (++a &gt; b) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = a; i &lt;= b; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][c]);</span><br><span class="line">        <span class="keyword">if</span> (--c &lt; d) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = c; i &gt;= d; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[b][i]);</span><br><span class="line">        <span class="keyword">if</span> (--b &lt; a) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= a; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][d]);</span><br><span class="line">        <span class="keyword">if</span> (++d &gt; c) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix_2.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; matrix_2[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.<span class="built_in">empty</span>()) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = matrix[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>, t = <span class="number">0</span>, b = matrix.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = l; i &lt;= r; i++) res.<span class="built_in">push_back</span>(matrix[t][i]); <span class="comment">// left to right</span></span><br><span class="line">            <span class="keyword">if</span> (++t &gt; b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = t; i &lt;= b; i++) res.<span class="built_in">push_back</span>(matrix[i][r]); <span class="comment">// top to bottom</span></span><br><span class="line">            <span class="keyword">if</span> (l &gt; --r) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = r; i &gt;= l; i--) res.<span class="built_in">push_back</span>(matrix[b][i]); <span class="comment">// right to left</span></span><br><span class="line">            <span class="keyword">if</span> (t &gt; --b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= t; i--) res.<span class="built_in">push_back</span>(matrix[i][l]); <span class="comment">// bottom to top</span></span><br><span class="line">            <span class="keyword">if</span> (++l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -4519,12 +4476,46 @@
       </tags>
   </entry>
   <entry>
-    <title>镜像阶段：关系即伪，无中生伪有</title>
-    <url>/2024/05/17/%E9%95%9C%E5%83%8F%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%85%B3%E7%B3%BB%E5%8D%B3%E4%BC%AA%EF%BC%8C%E6%97%A0%E4%B8%AD%E7%94%9F%E4%BC%AA%E6%9C%89/</url>
-    <content><![CDATA[<p>镜像阶段：关系即伪&#x2F;无中生伪有-&gt;拉康任务弗洛伊德的那个本我是生物性的，拉康认为人的开端就是一个无，那个永远回不去母子共同体的“无”。<br>nothingness-&gt;hegel 人是一个黑夜。<br>是一个空洞的虚无，<br>人的实在意义上的否定性。<br>主奴辩证法。<br>Max：人的生活，现实意义上是社会关系的总和。<br>镜像阶段的定义：6-18个月 Freud。<br>小朋友站在镜子面前，发现镜子里面有一个小朋友的形象。<br>这个时候会感受到镜子里面那个统一完整的形象<br>进入了想象域，一种蜜月般的欣喜，<br>人总是一个早产儿，die<br>“动力无助”-&gt;主客不分<br>“破碎的身体”，在镜子里面看到了一个完整的自己，接着破碎化，会成为主体不可弥合的创伤，梦是被压抑的愿望的实现 。<br>梦是被压抑的愿望经过伪装之后的实现。<br>主体在认定了一个影像之后的关系，内在和外在的关系，你否定了内在的关系，将自身认知为了镜子中的自己，这是第一次异化。<br>第二次异化是在象征域中被语言结构的异化，语言是一面无声之镜。这是第二次的异化。<br>镜像误认是一种反对心理学（格式塔）上面的那种积极的心理学。<br>a-（小他者一号）&gt;a‘（moi，弗洛伊德语境下的理想自我）；镜像自我，idea-ich。<br>小他者不是一个具体实在的人，镜像阶段中作为自我认同对象的非我中介。</p>
+    <title>螺旋矩阵</title>
+    <url>/2024/06/11/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<h2 id="什么是螺旋矩阵"><a href="#什么是螺旋矩阵" class="headerlink" title="什么是螺旋矩阵"></a>什么是螺旋矩阵</h2><p>螺旋矩阵就是从四周向中心遍历矩阵的所有元素，没有实质上的算法内容，更多的是做一个模拟，所以螺旋矩阵可以归类为模拟题。</p>
+<h2 id="螺旋矩阵的难点在哪里"><a href="#螺旋矩阵的难点在哪里" class="headerlink" title="螺旋矩阵的难点在哪里"></a>螺旋矩阵的难点在哪里</h2><p>螺旋矩阵作为一个模拟题，具有相当多的边界条件，在编写代码的时候，要把握好所有的边界，同时需要特判输入样例中的特殊情况。</p>
+<p>在模拟螺旋居正的过程中，我们的一个基本思路是：</p>
+<ol>
+<li>输出矩阵的基本信息：rows&amp;cols</li>
+<li>向右遍历</li>
+<li>向下遍历</li>
+<li>直到遍历完所有的元素</li>
+</ol>
+<p><img src="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ%E6%88%AA%E5%9B%BE20240611225505.png" alt="https://p.sda1.dev/18/5f73561576743bdf724935475bb82a49/QQ截图20240611225505.png"></p>
+<h2 id="59-螺旋矩阵-II"><a href="#59-螺旋矩阵-II" class="headerlink" title="59. 螺旋矩阵 II"></a><a href="https://leetcode.cn/problems/spiral-matrix-ii/">59. 螺旋矩阵 II</a></h2><p>中等</p>
+<p>相关标签</p>
+<p>相关企业</p>
+<p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：[[1]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 20</code></li>
+</ul>
+<p><img src="https://pic.leetcode-cn.com/1ad0fe88d15dc87643435eb7a17b368191725a44da4596722977e5798ace5b62-Picture2.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/193444cbca5529fcd1bafec33ef576fe1309690be2c0110de05868f4415a8723-Picture3.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/bca38a428306cb2aacc00513821e74150947ba241d9b7199bcad6c7e843a0105-Picture4.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/e5de1e07957417f13d9fae22e6fb18dd5331b50258f0297f00ba57d25651df4a-Picture5.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/2fde8dcd1481e390532995c02d3575ec9675a27390513c1540f40431dad7997a-Picture6.png" alt="img"></p>
+<p><img src="https://pic.leetcode-cn.com/1950d4c8ab6b09b62b7d5900ece4d8d4be882abebd2417a3030d172aedbc304e-Picture7.png" alt="img"></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> rows = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> cols = <span class="number">0</span>;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter the size of your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cin &gt;&gt; rows &gt;&gt; cols;</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">matrix_1</span>(rows, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(cols)); <span class="comment">// Init with size</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; matrix_2; <span class="comment">// This should be a 1D vector</span></span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter your matrix&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; cols; j++) &#123;</span><br><span class="line">            cin &gt;&gt; matrix_1[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (matrix_1.<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> b = rows - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> c = cols - <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> d = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = d; i &lt;= c; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[a][i]);</span><br><span class="line">        <span class="keyword">if</span> (++a &gt; b) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = a; i &lt;= b; ++i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][c]);</span><br><span class="line">        <span class="keyword">if</span> (--c &lt; d) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = c; i &gt;= d; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[b][i]);</span><br><span class="line">        <span class="keyword">if</span> (--b &lt; a) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= a; --i) matrix_2.<span class="built_in">push_back</span>(matrix_1[i][d]);</span><br><span class="line">        <span class="keyword">if</span> (++d &gt; c) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; matrix_2.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        cout &lt;&lt; matrix_2[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">spiralOrder</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.<span class="built_in">empty</span>()) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = matrix[<span class="number">0</span>].<span class="built_in">size</span>() - <span class="number">1</span>, t = <span class="number">0</span>, b = matrix.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = l; i &lt;= r; i++) res.<span class="built_in">push_back</span>(matrix[t][i]); <span class="comment">// left to right</span></span><br><span class="line">            <span class="keyword">if</span> (++t &gt; b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = t; i &lt;= b; i++) res.<span class="built_in">push_back</span>(matrix[i][r]); <span class="comment">// top to bottom</span></span><br><span class="line">            <span class="keyword">if</span> (l &gt; --r) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = r; i &gt;= l; i--) res.<span class="built_in">push_back</span>(matrix[b][i]); <span class="comment">// right to left</span></span><br><span class="line">            <span class="keyword">if</span> (t &gt; --b) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = b; i &gt;= t; i--) res.<span class="built_in">push_back</span>(matrix[i][l]); <span class="comment">// bottom to top</span></span><br><span class="line">            <span class="keyword">if</span> (++l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
-        <tag>精神分析</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -4718,6 +4709,33 @@
       </tags>
   </entry>
   <entry>
+    <title>镜像阶段：关系即伪，无中生伪有</title>
+    <url>/2024/05/17/%E9%95%9C%E5%83%8F%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%85%B3%E7%B3%BB%E5%8D%B3%E4%BC%AA%EF%BC%8C%E6%97%A0%E4%B8%AD%E7%94%9F%E4%BC%AA%E6%9C%89/</url>
+    <content><![CDATA[<p>镜像阶段：关系即伪&#x2F;无中生伪有-&gt;拉康任务弗洛伊德的那个本我是生物性的，拉康认为人的开端就是一个无，那个永远回不去母子共同体的“无”。<br>nothingness-&gt;hegel 人是一个黑夜。<br>是一个空洞的虚无，<br>人的实在意义上的否定性。<br>主奴辩证法。<br>Max：人的生活，现实意义上是社会关系的总和。<br>镜像阶段的定义：6-18个月 Freud。<br>小朋友站在镜子面前，发现镜子里面有一个小朋友的形象。<br>这个时候会感受到镜子里面那个统一完整的形象<br>进入了想象域，一种蜜月般的欣喜，<br>人总是一个早产儿，die<br>“动力无助”-&gt;主客不分<br>“破碎的身体”，在镜子里面看到了一个完整的自己，接着破碎化，会成为主体不可弥合的创伤，梦是被压抑的愿望的实现 。<br>梦是被压抑的愿望经过伪装之后的实现。<br>主体在认定了一个影像之后的关系，内在和外在的关系，你否定了内在的关系，将自身认知为了镜子中的自己，这是第一次异化。<br>第二次异化是在象征域中被语言结构的异化，语言是一面无声之镜。这是第二次的异化。<br>镜像误认是一种反对心理学（格式塔）上面的那种积极的心理学。<br>a-（小他者一号）&gt;a‘（moi，弗洛伊德语境下的理想自我）；镜像自我，idea-ich。<br>小他者不是一个具体实在的人，镜像阶段中作为自我认同对象的非我中介。</p>
+]]></content>
+      <tags>
+        <tag>精神分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>青空的卡缪</title>
+    <url>/2024/07/25/%E9%9D%92%E7%A9%BA%E7%9A%84%E5%8D%A1%E7%BC%AA/</url>
+    <content><![CDATA[<p>s </p>
+<p>在两位少女在乘坐电车回家的平常日，出现了不平常的事情。</p>
+<ul>
+<li>末班车上除了两位少女之外，谁都不在</li>
+<li>出现了脸部只有血盆大口的异形</li>
+<li>站台的土地开始崩坏</li>
+</ul>
+<p>在正常道路被异形堵住之后，萤和磷决定从以前林业公司运送木材的小道返回萤的家。</p>
+<p>在这条道路上遇到一只狗，然后还有一个穿着工作服，拿着大锯子的类人怪物。</p>
+<p>选择了去找聪，会被异形轮大米。</p>
+]]></content>
+      <tags>
+        <tag>galgame</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>高精度问题</title>
     <url>/2024/07/21/%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	我们在使用c++在进行一系列运算的过程中，不能按照我们在日常生活中的思维，因为在编程语言的计算中，往往还需要考虑内存的问题，位数过高的数据会超过系统能提供的内存大小，导致报错，而我们又需要进行一些高精度的计算问题，所以会出现专门解决高精度运算的高精度算法。</p>
@@ -4760,24 +4778,6 @@ int main()
 ]]></content>
       <tags>
         <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>青空的卡缪</title>
-    <url>/2024/07/25/%E9%9D%92%E7%A9%BA%E7%9A%84%E5%8D%A1%E7%BC%AA/</url>
-    <content><![CDATA[<p>s </p>
-<p>在两位少女在乘坐电车回家的平常日，出现了不平常的事情。</p>
-<ul>
-<li>末班车上除了两位少女之外，谁都不在</li>
-<li>出现了脸部只有血盆大口的异形</li>
-<li>站台的土地开始崩坏</li>
-</ul>
-<p>在正常道路被异形堵住之后，萤和磷决定从以前林业公司运送木材的小道返回萤的家。</p>
-<p>在这条道路上遇到一只狗，然后还有一个穿着工作服，拿着大锯子的类人怪物。</p>
-<p>选择了去找聪，会被异形轮大米。</p>
-]]></content>
-      <tags>
-        <tag>galgame</tag>
       </tags>
   </entry>
 </search>
