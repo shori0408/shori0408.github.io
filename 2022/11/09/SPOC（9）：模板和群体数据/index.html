@@ -83,7 +83,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">5.3k</span>
+            <span class="post-count">5.5k</span>
         </span>
     </span>
 
@@ -303,6 +303,17 @@
 
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Calculator.h&quot;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Calculator c;</span><br><span class="line">    c.<span class="built_in">run</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="队列类模板"><a href="#队列类模板" class="headerlink" title="队列类模板"></a>队列类模板</h2><p>队列是只能向一端添加元素，从另一端删除元素的线性群体 </p>
+<p><img src="https://p.sda1.dev/18/2708dae00ae662a19e5ddfbf78876da9/16069c1ef745b44e7269b5727e60bea9.png"></p>
+<h4 id="队列的基本状态"><a href="#队列的基本状态" class="headerlink" title="队列的基本状态"></a>队列的基本状态</h4><h5 id="队空"><a href="#队空" class="headerlink" title="队空"></a>队空</h5><p>队列中没有元素（以数组容纳的队列为例） </p>
+<p><img src="https://p.sda1.dev/18/46d2917246cb33788209e927810ea360/4902e4a84c2432cf417e542efb823bca.png" alt="队空"></p>
+<h5 id="队满"><a href="#队满" class="headerlink" title="队满"></a>队满</h5><p>队列中元素个数达到上限（以数组容纳的队列为例） </p>
+<p><img src="https://p.sda1.dev/18/c6cd6a2e8dc850b0afc04a8957986da1/bd4f36ed24ee1d73e5166304aafafa3c.png" alt="队满"></p>
+<h5 id="一般状态-1"><a href="#一般状态-1" class="headerlink" title="一般状态"></a>一般状态</h5><p>队列中有元素，但未达到队满状态（以数组容纳的队列为例） </p>
+<p><img src="https://p.sda1.dev/18/3b0e4eaa847c11fd85c5f23d20fb5938/a08bff26e1c143198a59e26331431a7c.png" alt="一般状态"></p>
+<h4 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h4><p>在想象中将数组弯曲成环形，元素出队时，后继元素不移动，每当队尾达到数组最</p>
+<p>后一个元素时，便再回到数组开头。 </p>
+<p><img src="https://p.sda1.dev/18/bdae161bb1351c1c524e9ab0991d6081/d89afbf32a0f4607b749ee964ed0cdab.png" alt="循环队列"></p>
  
       <!-- reward -->
       
