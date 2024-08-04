@@ -83,7 +83,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.7k</span>
+            <span class="post-count">2.2k</span>
         </span>
     </span>
 
@@ -92,7 +92,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">6 min</span>
+            <span class="post-count">8 min</span>
         </span>
     </span>
 </div>
@@ -184,11 +184,7 @@
 
 
 <p><img src="https://p.sda1.dev/18/496fb1149023399a4fb0163b1520cb4b/B7EC9CA94D6DF2BEB4E92654E268692E.png"></p>
-<h2 id="26-删除有序数组中的重复项"><a href="#26-删除有序数组中的重复项" class="headerlink" title="26. 删除有序数组中的重复项"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">26. 删除有序数组中的重复项</a></h2><p>简单</p>
-<p>相关标签</p>
-<p>相关企业</p>
-<p>提示</p>
-<p>给你一个 <strong>非严格递增排列</strong> 的数组 <code>nums</code> ，请你**<a target="_blank" rel="noopener" href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95"> 原地</a>** 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。元素的 <strong>相对顺序</strong> 应该保持 <strong>一致</strong> 。然后返回 <code>nums</code> 中唯一元素的个数。</p>
+<h2 id="26-删除有序数组中的重复项"><a href="#26-删除有序数组中的重复项" class="headerlink" title="26. 删除有序数组中的重复项"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">26. 删除有序数组中的重复项</a></h2><p>给你一个 <strong>非严格递增排列</strong> 的数组 <code>nums</code> ，请你**<a target="_blank" rel="noopener" href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95"> 原地</a>** 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。元素的 <strong>相对顺序</strong> 应该保持 <strong>一致</strong> 。然后返回 <code>nums</code> 中唯一元素的个数。</p>
 <p>考虑 <code>nums</code> 的唯一元素的数量为 <code>k</code> ，你需要做以下事情确保你的题解可以被通过：</p>
 <ul>
 <li>更改数组 <code>nums</code> ，使 <code>nums</code> 的前 <code>k</code> 个元素包含唯一元素，并按照它们最初在 <code>nums</code> 中出现的顺序排列。<code>nums</code> 的其余元素与 <code>nums</code> 的大小不重要。</li>
@@ -211,6 +207,10 @@
 <li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
 <li><code>nums</code> 已按 <strong>非严格递增</strong> 排列</li>
 </ul>
+<p>​	我们来分析删除元素这个算法的原理，首先我们给定的一个数组它是严格递增的，在这里我们需要把重复的元素都删掉，然后返回整个数组的长度，可以看到我们这边是使用了一个快慢指针的方法，一个慢指针，一个快指针。</p>
+<p>​	这里基本的思路是，如果说就是快指针和慢指针所指的两个数它相同的话。那么就只有快指针向前走一步，慢指针不动。在这里我们可以举一个例子，假如说嗯，这时候有三个相同的元素卖指针已经指向了第1个元素，而会计证指向的是第2个元素，这时候进行一步操作。因为这两个指针指向的元素的值是相同的，所以说慢指针不动，然后快指针向前走一步。</p>
+<p>​	接下来继续操作，这个时候慢指针指向了第1个元素，然后快指针指向了第3个元素。因为这个时候会计证和慢指针的值还是相同的，所以说慢指针不动，快指针继续前进。这个时候快指针已经指向了和慢指针不同的元素。这个时候循环继续，因为快指针和慢指针它指向的元素已经不同了，所以说慢指针和快指针都向前走一步。而我们的操作中，当慢指针和快指针它们的值不同的时候，我们会将快指针的值赋给慢指针。</p>
+<p>​	所以说慢指针，它最后会走的步数是。数组中不同元素的个数，而慢指针它本身的一个值是索引，所以说我们在计算数组长度的时候需要返回就是慢指针它的值，加上一个1。</p>
 <h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int slow = 0;</span><br><span class="line">        for (int fast = 1; fast &lt; nums.size(); fast = fast + 1) &#123;</span><br><span class="line">            if (nums[slow] != nums[fast])</span><br><span class="line">                nums[++slow] = nums[fast];</span><br><span class="line">        &#125;</span><br><span class="line">        return slow + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://p.sda1.dev/18/0310a04d7db7eb8d955b8c89eca22e95/0DEE598ED87C4D5522F12F9FD0F44B2C.png"></p>

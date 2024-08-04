@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Tag: 算法 |  柳瀬しおこうの夢</title>
+      <title>算法：两两交换链表中的节点 |  柳瀬しおこうの夢</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -55,267 +55,225 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-算法：两两交换链表中的节点"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">#&nbsp算法</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2024" class="archive-year">2024</a>
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  算法：两两交换链表中的节点
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/08/04/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/" class="article-date">
+  <time datetime="2024-08-04T07:21:50.000Z" itemprop="datePublished">2024-08-04</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">864</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">3 min</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2024/08/04/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/" class="archive-article-date">
-  <time datetime="2024-08-04T07:21:50.000Z" itemprop="datePublished">08/04</time>
-</a>
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2024/08/04/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/"
-    >算法：两两交换链表中的节点</a> 
-</h2>
+  <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/swap-nodes-in-pairs/">24. 两两交换链表中的节点</a></p>
+<p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/10/03/swap_ex1.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4]</span><br><span class="line">输出：[2,1,4,3]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = []</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1]</span><br><span class="line">输出：[1]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li>链表中节点的数目在范围 <code>[0, 100]</code> 内</li>
+<li><code>0 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+<p>这里进行交换的是列表的物理阶段而不是链表节点中的值，这里需要用到虚拟头节点的方式。这里做交换最值班的思想是先取出一个交换基元，能够知道我们需要设置的指针有：当前指针cur、两个临时指针，分别用于存储下一个当前指针的存放位置和下一个当前指针存放位置的下一个节点。这个基础单元一共有三个位置，在最开始的情况中还有一个虚拟头接点这个虚拟头接点，是当前最开始的位置（只有这个位置能够改变前面两个指针的指向）</p>
+<p>现在我们要分析指针改变方向的一个方式，我们是首先将当前指针（cur）的下一个指针，指向原本指针（cur）的下一个指针的下一个指针，然后我们要进行的是将原本指针（cur）的下一个指针的下一个指针指向原本指针的下一个指针（temp），这个指针我们是用临时指针存储过的，所以说我们可以直接指向临时指针。</p>
+<p>然后对于我们这个单元其实是一般化的，在这个情况我们会遇到就是末尾，会还有一个节点或者说没有节点的情况，如果说有节点的话，那他就是一个奇数的链表。这个时候我们需要判断一下，因为这个时候当前指针已经来到了倒数第二个指针的位置，如果是这个时候的话当前指针（cur）的下一个指针的下一个指针它是空指针；如果说是偶数指针的话，偶数节点的话那他的下一位已经是空指针。就是当前指针（cur）的下一位是空指针，所以说我们需要了解的就是，如果说进行完这样一次操作之后，当前指针的下一个指针或者下下个指针为空指针的时候这个操作就应该结束了。最后要求返回头节点，其实就是返回我们的虚拟头节点的下一个指针。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode() : val(0), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x, ListNode *next) : val(x), next(next) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">swapPairs</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        ListNode *dummyhead=<span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">        dummyhead-&gt;next=head;</span><br><span class="line">        ListNode *cur=dummyhead;</span><br><span class="line">        <span class="keyword">while</span>(cur-&gt;next!=<span class="literal">nullptr</span>&amp;&amp;cur-&gt;next-&gt;next!=<span class="literal">nullptr</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ListNode *temp=cur-&gt;next;</span><br><span class="line">            ListNode *temp1=temp-&gt;next-&gt;next;</span><br><span class="line">            cur-&gt;next=temp-&gt;next;</span><br><span class="line">            cur-&gt;next-&gt;next=temp;</span><br><span class="line">            temp-&gt;next-&gt;next-&gt;next=temp1;</span><br><span class="line">            cur=temp;</span><br><span class="line">            <span class="comment">//ListNode *temp=cur-&gt;next;</span></span><br><span class="line">            <span class="comment">//ListNode *temp1=temp-&gt;next-&gt;next;</span></span><br><span class="line">            <span class="comment">//cur-&gt;next=cur-&gt;next-&gt;next;</span></span><br><span class="line">            <span class="comment">//cur-&gt;next-&gt;next=cur-&gt;next;</span></span><br><span class="line">            <span class="comment">//temp-&gt;next-&gt;next-&gt;next=temp1;</span></span><br><span class="line">            <span class="comment">//cur=temp;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummyhead-&gt;next;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
  
-
-    </header>
-    
-    
+      <!-- reward -->
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-  
-  </div>
-  </div>
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2022" class="archive-year">2022</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/11/01/%E7%AE%97%E6%B3%95%EF%BC%9A%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" class="archive-article-date">
-  <time datetime="2022-10-31T18:25:15.000Z" itemprop="datePublished">11/01</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/11/01/%E7%AE%97%E6%B3%95%EF%BC%9A%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"
-    >算法：反转链表</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/24/%E7%AE%97%E6%B3%95%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="archive-article-date">
-  <time datetime="2022-10-23T18:18:39.000Z" itemprop="datePublished">10/24</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/24/%E7%AE%97%E6%B3%95%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"
-    >算法：动态规划</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/21/%E7%AE%97%E6%B3%95%EF%BC%9A%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  <time datetime="2022-10-21T11:22:30.000Z" itemprop="datePublished">10/21</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/21/%E7%AE%97%E6%B3%95%EF%BC%9A%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98/"
-    >算法：高精度问题</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/11/%E7%AE%97%E6%B3%95%EF%BC%9A%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" class="archive-article-date">
-  <time datetime="2022-10-11T14:43:37.000Z" itemprop="datePublished">10/11</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/11/%E7%AE%97%E6%B3%95%EF%BC%9A%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/"
-    >算法：螺旋矩阵</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/10/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="archive-article-date">
-  <time datetime="2022-10-10T13:29:24.000Z" itemprop="datePublished">10/10</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/10/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"
-    >算法：滑动窗口</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/09/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/" class="archive-article-date">
-  <time datetime="2022-10-09T04:07:56.000Z" itemprop="datePublished">10/09</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/09/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/"
-    >算法：有序数组的平方</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/09/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/" class="archive-article-date">
-  <time datetime="2022-10-08T17:36:10.000Z" itemprop="datePublished">10/09</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/09/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/"
-    >算法：移除元素</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/06/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%BA%8C%E5%88%86%E6%B3%95/" class="archive-article-date">
-  <time datetime="2022-10-06T06:23:47.000Z" itemprop="datePublished">10/06</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/06/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%BA%8C%E5%88%86%E6%B3%95/"
-    >算法：二分法</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-
-    
-  </div>
-</article>
-      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
       
     </div>
-  </div>
-  
-  
+    
 
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/08/04/%E7%AE%97%E6%B3%95%EF%BC%9A%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2024/08/02/%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%EF%BC%9A-Zc-preprocessor/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">预处理器：/Zc:preprocessor</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "NE1hi2bwLBi5TmvHcJqkvMj4-MdYXbMMI",
+    app_key: "tlaS1mHTwUo374IsMy8CwE2j",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
   
+    
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -452,6 +410,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
