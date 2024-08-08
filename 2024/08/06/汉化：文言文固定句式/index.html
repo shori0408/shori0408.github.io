@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>算法：环形链表Ⅱ |  柳瀬しおこうの夢</title>
+      <title>汉化：文言文固定句式 |  柳瀬しおこうの夢</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -56,7 +56,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-算法：环形链表Ⅱ"
+  id="post-汉化：文言文固定句式"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  算法：环形链表Ⅱ
+  汉化：文言文固定句式
 </h1>
  
 
@@ -75,15 +75,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/08/05/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%E2%85%A1/" class="article-date">
-  <time datetime="2024-08-04T21:30:59.000Z" itemprop="datePublished">2024-08-05</time>
+      <a href="/2024/08/06/%E6%B1%89%E5%8C%96%EF%BC%9A%E6%96%87%E8%A8%80%E6%96%87%E5%9B%BA%E5%AE%9A%E5%8F%A5%E5%BC%8F/" class="article-date">
+  <time datetime="2024-08-06T01:33:48.000Z" itemprop="datePublished">2024-08-06</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.4k</span>
+            <span class="post-count">3.5k</span>
         </span>
     </span>
 
@@ -92,7 +92,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">5 min</span>
+            <span class="post-count">11 min</span>
         </span>
     </span>
 </div>
@@ -107,58 +107,89 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/">142. 环形链表 II</a></p>
-<p>给定一个链表的头节点  <code>head</code> ，返回链表开始入环的第一个节点。 <em>如果链表无环，则返回 <code>null</code>。</em></p>
-<p>如果链表中有某个节点，可以通过连续跟踪 <code>next</code> 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（<strong>索引从 0 开始</strong>）。如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意：<code>pos</code> 不作为参数进行传递</strong>，仅仅是为了标识链表的实际情况。</p>
-<p><strong>不允许修改</strong> 链表。</p>
-<p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [3,2,0,-4], pos = 1</span><br><span class="line">输出：返回索引为 1 的链表节点</span><br><span class="line">解释：链表中有一个环，其尾部连接到第二个节点。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2], pos = 0</span><br><span class="line">输出：返回索引为 0 的链表节点</span><br><span class="line">解释：链表中有一个环，其尾部连接到第一个节点。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1], pos = -1</span><br><span class="line">输出：返回 null</span><br><span class="line">解释：链表中没有环。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li>链表中节点的数目范围在范围 <code>[0, 104]</code> 内</li>
-<li><code>-105 &lt;= Node.val &lt;= 105</code></li>
-<li><code>pos</code> 的值为 <code>-1</code> 或者链表中的一个有效索引</li>
-</ul>
-<p><strong>进阶：</strong>你是否可以使用 <code>O(1)</code> 空间解决此题？</p>
-<p>思路<br>这道题目，不仅考察对链表的操作，而且还需要一些数学运算。</p>
-<p>主要考察两知识点：</p>
-<p>判断链表是否环<br>如果有环，如何找到这个环的入口<br>判断链表是否环<br>可以使用快慢指针法， 分别定义 fast 和 slow指针，从头结点出发，fast指针每次移动两个节点，slow指针每次移动一个节点，如果 fast 和 slow指针在途中相遇 ，说明这个链表有环。</p>
-<p>为什么fast 走两个节点，slow走一个节点，有环的话，一定会在环内相遇呢，而不是永远的错开呢</p>
-<p>首先第一点： fast指针一定先进入环中，如果fast 指针和slow指针相遇的话，一定是在环中相遇，这是毋庸置疑的。</p>
-<p>那么我们来看一下，为什么fast指针和slow指针一定会相遇呢</p>
-<p>可以画一个环，然后让 fast指针在任意一个节点开始追赶slow指针。</p>
-<p>会发现最终都是这种情况， 如下图：</p>
-<p>fast和slow各自再走一步， fast和slow就相遇了</p>
-<p>这是因为fast是走两步，slow是走一步，其实相对于slow来说，fast是一个节点一个节点的靠近slow的，所以fast一定可以和slow重合。</p>
-<p>如果有环，如何找到这个环的入口<br>此时我们已经可以判断链表是否有环了，那么接下来要找这个环的入口了</p>
-<p>假设从头结点到环形入口节点 的节点数为x。<br>环形入口节点到 fast指针与slow指针相遇节点 节点数为y。<br>从相遇节点 再到环形入口节点节点数为 z。 如图所示：</p>
-<p>那么相遇时：<br>slow指针走过的节点数为: <strong>x + y</strong><br>fast指针走过的节点数： **x + y + n (y + z)**，n为fast指针在环内走了n圈才遇到slow指针， <strong>（y+z）</strong>为 一圈内节点的个数</p>
-<p>因为fast指针是一步走两个节点，slow指针一步走一个节点， 所以 fast指针走过的节点数 &#x3D; slow指针走过的节点数 * 2</p>
-<p><strong>(x + y) * 2 &#x3D; x + y + n (y + z)</strong></p>
-<p>两边消掉一个（x+y）: <strong>x + y &#x3D; n (y + z)</strong></p>
-<p>因为我们要找环形的入口，那么要求的是x，因为x表示 头结点到 环形入口节点的的距离。</p>
-<p>所以我们要求x ，将x单独放在左面：<strong>x &#x3D; n (y + z) - y</strong></p>
-<p>在从n(y+z)中提出一个 （y+z）来，整理公式之后为如下公式：<strong>x &#x3D; (n - 1) (y + z) + z</strong> 注意这里n一定是大于等于1的，因为 fast指针至少要多走一圈才能相遇slow指针</p>
-<p>这个公式说明什么呢，</p>
-<p>先拿n为1的情况来举例，意味着fast指针在环形里转了一圈之后，就遇到了 slow指针了。</p>
-<p>当 n为1的时候，公式就化解为 <strong>x &#x3D; z</strong></p>
-<p>这就意味着，从头结点出发一个指针，从相遇节点 也出发一个指针，这两个指针每次只走一个节点， 那么当这两个指针相遇的时候就是 环形入口的节点</p>
-<p>也就是在相遇节点处，定义一个指针<strong>index1</strong>，在头结点处定一个指针<strong>index2</strong>。</p>
-<p>让index1和index2同时移动，每次移动一个节点， 那么他们相遇的地方就是 环形入口的节点。</p>
-<p>那么 n如果大于1是什么情况呢，就是fast指针在环形转n圈之后才遇到 slow指针。</p>
-<p>其实这种情况和n为1的时候 效果是一样的，一样可以通过这个方法找到 环形的入口节点，只不过，index1 指针在环里 多转了(n-1)圈，然后再遇到index2，相遇点依然是环形的入口节点。</p>
-<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">detectCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        ListNode*fast=head;</span><br><span class="line">        ListNode*slow=head;</span><br><span class="line">        <span class="keyword">while</span>(fast!=<span class="literal">NULL</span>&amp;&amp;fast-&gt;next!=<span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            slow=slow-&gt;next;</span><br><span class="line">            fast=fast-&gt;next-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(slow==fast)</span><br><span class="line">            &#123;</span><br><span class="line">                ListNode*index1=fast;</span><br><span class="line">                ListNode*index2=head;</span><br><span class="line">                <span class="keyword">while</span>(index1!=index2)</span><br><span class="line">                &#123;</span><br><span class="line">                    index1=index1-&gt;next;</span><br><span class="line">                    index2=index2-&gt;next;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> index2;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+  <h3 id="無乃……乎？"><a href="#無乃……乎？" class="headerlink" title="無乃……乎？"></a>無乃……乎？</h3><p>這是一種表示測度語氣的固定格式，它表明的是對某種情況的估計或者對某件事情的認識。一般可譯為「恐怕……吧」或者「只怕……吧」。例子是很多的。如：</p>
+<p>①勞師以襲遠，非所聞也。師勞力竭，遠主備之，無乃不可乎？（應譯為：使軍隊疲勞去襲擊遠方的國家，沒有聽到過這樣的事。軍隊疲勞力量竭盡，遠方的君主對這件事有準備，恐怕不行吧？）《崤之戰》。</p>
+<p>②暮婚而晨別，無乃太匆忙？（應譯為：晚上結婚而早上就得離別，只怕太匆忙了吧？）《新婚別》</p>
+<p>教材中有一篇古文叫《季氏將伐顓臾》，其中有一句話，也屬於這種固定格式。「求！無乃爾是過與？」（句中劃線句應譯為：冉求！恐怕該責備的是你們吧？）</p>
+<h3 id="……孰與……"><a href="#……孰與……" class="headerlink" title="……孰與……"></a>……孰與……</h3><p>這是一種用來表比較的固定格式，用來比較兩個人的高下、優劣或兩件事的得失、好壞。它又可以分為兩類。一類是句中提出了比較內容的，一類是句中沒有提出比較內容的。前者應翻譯成：「……與……相比，誰（哪一樣）……」，後者應譯為：「……與……比較起來怎麼樣」。這種格式在古文中出現的頻率是非常高的。如下面的例子：</p>
+<p>①吾孰與城北徐公美？《鄒忌諷齊王納諫》（我跟城北的徐公相比誰更漂亮？）</p>
+<p>②沛公曰：「孰與君少長？」《鴻門宴》（（項伯）跟你相比，誰的年紀大，誰的年紀小？）</p>
+<p>③公之視廉將軍孰與秦王？《廉頗藺相如列傳》（你們看廉將軍跟秦王相比，怎麼樣？）</p>
+<p>④某業所就，孰與仲多？《原君》（我所完成的功業跟二哥相比，誰更多？）</p>
+<p>文中的三個加線句均應譯為「你跟我比怎麼樣呢」。</p>
+<h3 id="……之謂也-其……之謂也"><a href="#……之謂也-其……之謂也" class="headerlink" title="……之謂也 其……之謂也"></a>……之謂也 其……之謂也</h3><p>這是賓語提前的一種固定格式，是一種表示總結性的判斷句。應該強調一下的是在這種格式中的「之」屬於結構助詞，起到的是提賓的作用。句首有「其」的也屬於這種格式，而「其」屬於句首語氣助詞，表推測，應譯為「大概」。這種固定格式可譯為「說的就是……啊」，或者譯為「大概說的就是……啊」。請看下面例句：</p>
+<p>①聞道百，以為莫己若者，我之謂也。《莊子·秋水》（聽到了一些道理，以為天下沒有誰超過自己了，說的就是我這種人啊！）</p>
+<p>②詩曰：「他人有心，予忖度之。」——夫子之謂也。《孟子·齊桓晉文之事》（《詩經》上說：「別人有什麼心思，我猜測得到它。」說的就是夫子這樣的人啊！）</p>
+<h3 id="……之謂也-其……之謂也-1"><a href="#……之謂也-其……之謂也-1" class="headerlink" title="……之謂也 其……之謂也"></a>……之謂也 其……之謂也</h3><p>這是賓語提前的一種固定格式，是一種表示總結性的判斷句。應該強調一下的是在這種格式中的「之」屬於結構助詞，起到的是提賓的作用。句首有「其」的也屬於這種格式，而「其」屬於句首語氣助詞，表推測，應譯為「大概」。這種固定格式可譯為「說的就是……啊」，或者譯為「大概說的就是……啊」。請看下面例句：</p>
+<p>①聞道百，以為莫己若者，我之謂也。《莊子·秋水》（聽到了一些道理，以為天下沒有誰超過自己了，說的就是我這種人啊！）</p>
+<p>②詩曰：「他人有心，予忖度之。」——夫子之謂也。《孟子·齊桓晉文之事》（《詩經》上說：「別人有什麼心思，我猜測得到它。」說的就是夫子這樣的人啊！）</p>
+<p>③太史公曰：「傳曰：『其身正，不令則行；其身不正，雖令不從。』其李將軍之謂也。《史記·李將軍列傳》（太史公說：「《論語》上說：『他自身端正，不下達命令人民就會行動；他自身不端正，即使下達命令他的百姓也不會聽從。』大概說的就是李將軍這樣的人吧！」）</p>
+<h3 id="得無……乎？-得無……耶？"><a href="#得無……乎？-得無……耶？" class="headerlink" title="得無……乎？ 得無……耶？"></a>得無……乎？ 得無……耶？</h3><p>這是一種表揣測疑問語氣的固定格式，表示對某種情況的推測。應譯為現代漢語的下面三種格式：恐怕……吧； 莫非……吧； 該不會……吧</p>
+<p>這種格式在古文中出現的頻率也是相當高的。請看下面的例子：</p>
+<p>①覽物之情，得無異乎？《岳陽樓記》（看到自然景物所產生的思想感情，恐怕不一樣吧？）</p>
+<p>②得無教我獵蟲所耶？《促織》（莫非告訴我捕捉蟋蟀的地方吧？）</p>
+<p>③若輩得無苦貧乎？《記王忠肅公翱事》（你們恐怕被窮困所苦吧？）</p>
+<p>④得無楚之水土使民善盜耶？《晏子使楚》（莫非楚國的水土使老百姓善於偷盜吧？）</p>
+<p>⑤日飲食得無衰乎？《觸龍說趙太后》（每天的飲食該不會減少吧？）</p>
+<h3 id="奈……何-如……何-若……何"><a href="#奈……何-如……何-若……何" class="headerlink" title="奈……何 如……何 若……何"></a>奈……何 如……何 若……何</h3><p>這三個格式的用法是一樣的，都表示怎樣對待或處置某人某事。需要強調的是，「奈」、「如」、「若」是動詞，含有「對付」、「處置」、「辦理」一類的意思；而「何」則是補語，作「怎麼」、「怎樣」講。在中間插入的內容屬於「奈」、「如」、「若」的賓語。整個格式可譯為「把……怎麼樣」，或「對……怎麼辦」。先看下面例句。</p>
+<p>①以君之力，曾不能損魁父之丘，如王屋、太行何？（《愚公移山》）</p>
+<p>②試問古來幾曾見破鏡能重圓？則較死為苦也，將奈之何？（《與妻書》）</p>
+<p>③力拔山兮氣蓋世，時不力兮騅不逝。騅不逝兮可奈何？虞兮虞兮奈若何？（《垓下歌》）</p>
+<p>上面的三個例句中加線的句子應分別譯為：</p>
+<p>①把太行山和王屋山能怎麼樣呢？</p>
+<p>②（我們）對這種情況怎麼辦呢？</p>
+<p>③虞姬虞姬把你怎麼樣呢？</p>
+<h3 id="何有於……？"><a href="#何有於……？" class="headerlink" title="何有於……？"></a>何有於……？</h3><p>這是一種表反問的固定格式。需要強調的是，這種格式究其實質是兩種特殊句式的緊縮和移位。一是由介詞「於」與它的賓語構成的介賓短語後置，在原句作補語，翻譯過來必須還原到動詞謂語之前充當狀語；一是疑問句中疑問代詞作賓語謂賓前置，也就是說「有」的賓語是疑問代詞「何」，它前置了，在翻譯的時候，也必須還原到「有」的前面。知道了這一點再去理解這種格式就容易得多了。這種固定格式的意思是：「對於……來說，又有什麼……呢？」請看下面的例句。</p>
+<p>例句：子曰：「默而識之，學而不厭，誨人不倦，何有於我哉？」（應譯為「對於我來說又有什麼呢？」）</p>
+<h3 id="何……為？"><a href="#何……為？" class="headerlink" title="何……為？"></a>何……為？</h3><p>這種固定格式的正確翻譯為：「還要……做什麼？」或者：「要……幹什麼？」請看下面例句：</p>
+<p>例句：①如今人方為刀俎，我為魚肉，何辭為？（《史記·項羽本紀》）劃線句應譯為：「還要告辭做什麼呢？」</p>
+<p>例句：②項王笑曰：「天之王我，我何渡為？」（《史記·項羽本紀》）劃線句應譯為：「這是上天要滅亡我，我還要渡江做什麼呢？」</p>
+<h3 id="不亦……乎？"><a href="#不亦……乎？" class="headerlink" title="不亦……乎？"></a>不亦……乎？</h3><p>這是一種表示反問的固定格式。最需要強調的是這種格式中的「亦」。這是一個很容易產生誤解的詞，稍一疏忽就可能把它理解為副詞，其實，它是一個助詞，沒有實在意義，只有加強語氣的作用。這種固定格式可譯為：「不是……嗎？」或者譯為：「豈不是……嗎？」</p>
+<p>在古文中，這種固定格式的出現頻率是很高的。下面的幾個例句：</p>
+<p>①舟已行矣，而劍不行，求劍若此，不亦惑乎？（《呂氏春秋·察今》）句中的化線處應譯為：「像這樣尋找劍，豈不是太糊塗了嗎？」</p>
+<p>②吾射不亦精乎？（《賣油翁》）句中的劃線處應譯為：「我射箭的本領不是很高明嗎？」</p>
+<p>③子曰：「學而時習之，不亦說乎？有朋自遠方來，不亦樂乎？人不知而不慍，不亦君子乎？」（《論語》）句中的劃線處應譯為：「學習並且不時地溫習它，不是很快樂了的嗎？有同學從遠方來，不也是很高興的事嗎？別人不了解自己而不惱怒，不也是君子嗎？」</p>
+<h3 id="有……者"><a href="#有……者" class="headerlink" title="有……者"></a>有……者</h3><p>這種固定格式常用於敘事的開頭，以突出敘事的對象。必須強調的是，這種格式還有兩種情況。一是敘述的對象「人」在句首出現了，如「楚人有涉江者」，此刻，「有……者」屬於定語後置；二是敘述的對象在句中沒有出現，不屬於定語後置，如「杭有賣柑者」。請看下面例子：</p>
+<p>人有亡斧者。（《韓非子》）在這個句子中，「人」出現了，因此，「有……者」屬於定語後置，應譯為：「有一個丟了斧子的人。」</p>
+<p>邑有成名者，操童子業，久不售。（《促織》）在這個句子中，敘述的對象沒有出現，因而不屬於定語後置，應譯為：「城裏有個叫成名的人。」</p>
+<h3 id="何……之有？"><a href="#何……之有？" class="headerlink" title="何……之有？"></a>何……之有？</h3><p>這也是一種賓語提前的固定格式。句中的「何……」是「有」的賓語，「之」屬於結構助詞，表示提賓。這種格式可譯為：「有什麼……呢？」如下面的例子：</p>
+<p>①宋何罪之有？（《墨子·公輸》）應譯為：「宋國有什麼罪過呢？」</p>
+<p>②子曰：「君子居之，何陋之有？」（《論語》）應譯為：「君子住在裏面，有什麼簡陋呢？</p>
+<p>③夫晉，何厭（通「饜」）之有？（《左傳·崤之戰》）應譯為：「那晉國有什麼可滿足的呢？」</p>
+<p>④若不憂德之不建，而患貨之不足，將吊不暇，何賀之有？」（《叔向賀貧》）應譯為：「如果不憂慮德行沒有完善，卻憂慮財物不足，將要哀悼還來不及，有什麼可祝賀的呢？」</p>
+<h3 id="唯（惟）……是……-惟……之為……"><a href="#唯（惟）……是……-惟……之為……" class="headerlink" title="唯（惟）……是…… 惟……之為……"></a>唯（惟）……是…… 惟……之為……</h3><p>這種固定格式也是一種賓語提前的格式。需要再強調一下的是，在這種格式中的「是」與「之為」，均屬於結構助詞，起到的是提賓作用；而唯（惟），表示的則是動作的唯一性，譯為「只」。這種格式在成語中使用的頻率是很高的。請看下面的例句：</p>
+<p>① 惟命是從；</p>
+<p>② 惟利是圖；</p>
+<p>③ 唯你是問；</p>
+<p>④ 唯仁是親；</p>
+<p>⑤ 唯才是舉；</p>
+<p>⑥ 無乃爾是過與？</p>
+<h3 id="所以……-所以……者"><a href="#所以……-所以……者" class="headerlink" title="所以…… 所以……者"></a>所以…… 所以……者</h3><p>所＋介詞（以、從、與）＋動詞（或動詞性短語）</p>
+<p>這是古文中十分常見的固定格式，是一種名詞性的「所」字短語。首先我們得知道，在古文中的「所以」與現代漢語中的「所以」是完全不同的，現代漢語中的「所以」是一個複音虛詞，用在因果複句的後一分句，表結果，而在古代漢語中，可以說什麼都可以表示，就是不能表示結果。那麼，他都能表示什麼呢？它可以表示動作所涉及到的原因、根據、工具、處所、辦法、憑藉等。下面我們來看一些例子：</p>
+<p>①吾所以為此者，以先國家之急而後私仇也。（《廉頗藺相如列傳》）（表原因）</p>
+<p>②故釋先王之成法，而法其所以為法者。（《呂氏春秋·察今》）（表根據）</p>
+<p>③筆，所以書也。（表工具）</p>
+<p>④是吾劍之所從墜。（《呂氏春秋·察今》）（表處所）</p>
+<p>⑤吾知所以距（通「拒」）子者，吾不言。（《墨子·公輸》）（表辦法）</p>
+<p>⑥師者，所以傳道受業解惑也。（《師說》）（表憑藉）</p>
+<p>⑦聖者，非所與熙（通「嬉」）也。（《墨子》·公輸》）（表憑藉。應譯為：「聖人是不能與他隨便開玩笑的。」）</p>
+<p>⑧此所以學者不可以不深思而慎取之也。（《游褒禪山記》）(表原因)</p>
+<p>⑨天地之所以養人者，原不過此數也。（《治平篇》）（表方法）</p>
+<p>⑩臣所以去親戚而事君者，徒慕君之高義。（《史記·廉頗藺相如列傳》）（表原因）</p>
+<h3 id="……何所……"><a href="#……何所……" class="headerlink" title="……何所……"></a>……何所……</h3><p>這是一種表疑問的固定格式，是「所……者（為）何」的緊縮和移位。懂得了這一點，也就等於知道了在閱讀古文中遇上了這種固定格式時應該如何翻譯了。請看下面的例子：</p>
+<p>①問女何所思？問女何所憶？（《木蘭詩》）</p>
+<p>②賣炭得錢何所營？（《賣炭翁》）</p>
+<p>③白雪飄飄何所似？</p>
+<p>④我有親父母，逼迫兼弟兄。以我應他人，君還何所望？（《孔雀東南飛》）</p>
+<h3 id="有所……-無所……"><a href="#有所……-無所……" class="headerlink" title="有所…… 無所……"></a>有所…… 無所……</h3><p>這兩種固定格式在古文中出現的頻率就更高了，可以說比比皆是。需要強調的是，「有」、「無」是動詞，「所……」是名詞性的「所」字短語作它們的賓語。這兩種固定格式的翻譯比較靈活。請看下面的例子。</p>
+<p>①財物無所取，婦女無所幸。（《鴻門宴》）可譯為：「對財物沒有取什麼，對婦女沒有寵幸誰」</p>
+<p>②吾家後日當甚貧，貧無所苦，清淨過日而已。（《與妻書》）句中劃線的地方，可譯為：「貧困沒有什麼可苦惱的。」</p>
+<p>③吾入關，秋毫不敢有所近。（同上）句中劃線處，可譯為：「一絲一毫的財物都不敢接近。」</p>
+<h3 id="有以……-無以……"><a href="#有以……-無以……" class="headerlink" title="有以…… 無以……"></a>有以…… 無以……</h3><p>這兩種固定格式與上面講的實際上是一回事，因為「有以」與「無以」是「有（所）以」與「無（所）以」的省寫。「有」、「無」仍是動詞，「（所）以……」是「有」或「無」的賓語。如「軍中無以為樂」，就是「軍中無所以為樂」，但不必機械地譯為「軍中沒有用來作樂的東西」，可改變語法結構譯成「軍中沒有什麼用來作樂的」。「有以……」的譯法類同。如下面的例子：</p>
+<p>①故不積跬步，無以至千里；不積小流，無以成江海。（《勸學》）可靈活地譯為「沒有用來達到千里的方法」和「沒有用來匯聚成的江海的方法」。</p>
+<p>②臣乃得有以報太子。（《荊軻刺秦王》）可譯為：「我才有用來報答太子的方法。」</p>
+<p>還應該強調一下，「有以」常和「未」連用，此時，與「有以」的用法相同。</p>
+<p>如：臣未有以報也。（《莊暴見孟子》）</p>
  
       <!-- reward -->
       
@@ -229,12 +260,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/08/05/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%E2%85%A1/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/08/06/%E6%B1%89%E5%8C%96%EF%BC%9A%E6%96%87%E8%A8%80%E6%96%87%E5%9B%BA%E5%AE%9A%E5%8F%A5%E5%BC%8F/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B1%89%E5%8C%96/" rel="tag">汉化</a></li></ul>
 
     </footer>
   </div>
@@ -242,19 +273,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/08/06/%E7%AE%97%E6%B3%95%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/" class="article-nav-link">
+      <a href="/2024/08/06/%E6%B1%89%E5%8C%96%EF%BC%9A%E6%96%87%E8%A8%80%E5%AE%9E%E8%AF%8D/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            算法：哈希表
+            汉化：文言实词
           
         </div>
       </a>
     
     
-      <a href="/2024/08/05/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/" class="article-nav-link">
+      <a href="/2024/08/06/%E6%B1%89%E5%8C%96%EF%BC%9A%E8%AF%8D%E7%B1%BB%E6%B4%BB%E7%94%A8/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">算法：环形链表</div>
+        <div class="article-nav-title">汉化：词类活用</div>
       </a>
     
   </nav>

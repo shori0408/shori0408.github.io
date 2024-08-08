@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>算法：环形链表Ⅱ |  柳瀬しおこうの夢</title>
+      <title>汉化：文言虚词 |  柳瀬しおこうの夢</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -56,7 +56,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-算法：环形链表Ⅱ"
+  id="post-汉化：文言虚词"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  算法：环形链表Ⅱ
+  汉化：文言虚词
 </h1>
  
 
@@ -75,15 +75,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/08/05/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%E2%85%A1/" class="article-date">
-  <time datetime="2024-08-04T21:30:59.000Z" itemprop="datePublished">2024-08-05</time>
+      <a href="/2024/08/06/%E6%B1%89%E5%8C%96%EF%BC%9A%E6%96%87%E8%A8%80%E8%99%9A%E8%AF%8D/" class="article-date">
+  <time datetime="2024-08-06T01:38:04.000Z" itemprop="datePublished">2024-08-06</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.4k</span>
+            <span class="post-count">2.5k</span>
         </span>
     </span>
 
@@ -92,73 +92,216 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">5 min</span>
+            <span class="post-count">8 min</span>
         </span>
     </span>
 </div>
  
     </div>
       
-    <div class="tocbot"></div>
-
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/">142. 环形链表 II</a></p>
-<p>给定一个链表的头节点  <code>head</code> ，返回链表开始入环的第一个节点。 <em>如果链表无环，则返回 <code>null</code>。</em></p>
-<p>如果链表中有某个节点，可以通过连续跟踪 <code>next</code> 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 <code>pos</code> 来表示链表尾连接到链表中的位置（<strong>索引从 0 开始</strong>）。如果 <code>pos</code> 是 <code>-1</code>，则在该链表中没有环。<strong>注意：<code>pos</code> 不作为参数进行传递</strong>，仅仅是为了标识链表的实际情况。</p>
-<p><strong>不允许修改</strong> 链表。</p>
-<p><strong>示例 1：</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [3,2,0,-4], pos = 1</span><br><span class="line">输出：返回索引为 1 的链表节点</span><br><span class="line">解释：链表中有一个环，其尾部连接到第二个节点。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test2.png" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2], pos = 0</span><br><span class="line">输出：返回索引为 0 的链表节点</span><br><span class="line">解释：链表中有一个环，其尾部连接到第一个节点。</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/12/07/circularlinkedlist_test3.png" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1], pos = -1</span><br><span class="line">输出：返回 null</span><br><span class="line">解释：链表中没有环。</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li>链表中节点的数目范围在范围 <code>[0, 104]</code> 内</li>
-<li><code>-105 &lt;= Node.val &lt;= 105</code></li>
-<li><code>pos</code> 的值为 <code>-1</code> 或者链表中的一个有效索引</li>
-</ul>
-<p><strong>进阶：</strong>你是否可以使用 <code>O(1)</code> 空间解决此题？</p>
-<p>思路<br>这道题目，不仅考察对链表的操作，而且还需要一些数学运算。</p>
-<p>主要考察两知识点：</p>
-<p>判断链表是否环<br>如果有环，如何找到这个环的入口<br>判断链表是否环<br>可以使用快慢指针法， 分别定义 fast 和 slow指针，从头结点出发，fast指针每次移动两个节点，slow指针每次移动一个节点，如果 fast 和 slow指针在途中相遇 ，说明这个链表有环。</p>
-<p>为什么fast 走两个节点，slow走一个节点，有环的话，一定会在环内相遇呢，而不是永远的错开呢</p>
-<p>首先第一点： fast指针一定先进入环中，如果fast 指针和slow指针相遇的话，一定是在环中相遇，这是毋庸置疑的。</p>
-<p>那么我们来看一下，为什么fast指针和slow指针一定会相遇呢</p>
-<p>可以画一个环，然后让 fast指针在任意一个节点开始追赶slow指针。</p>
-<p>会发现最终都是这种情况， 如下图：</p>
-<p>fast和slow各自再走一步， fast和slow就相遇了</p>
-<p>这是因为fast是走两步，slow是走一步，其实相对于slow来说，fast是一个节点一个节点的靠近slow的，所以fast一定可以和slow重合。</p>
-<p>如果有环，如何找到这个环的入口<br>此时我们已经可以判断链表是否有环了，那么接下来要找这个环的入口了</p>
-<p>假设从头结点到环形入口节点 的节点数为x。<br>环形入口节点到 fast指针与slow指针相遇节点 节点数为y。<br>从相遇节点 再到环形入口节点节点数为 z。 如图所示：</p>
-<p>那么相遇时：<br>slow指针走过的节点数为: <strong>x + y</strong><br>fast指针走过的节点数： **x + y + n (y + z)**，n为fast指针在环内走了n圈才遇到slow指针， <strong>（y+z）</strong>为 一圈内节点的个数</p>
-<p>因为fast指针是一步走两个节点，slow指针一步走一个节点， 所以 fast指针走过的节点数 &#x3D; slow指针走过的节点数 * 2</p>
-<p><strong>(x + y) * 2 &#x3D; x + y + n (y + z)</strong></p>
-<p>两边消掉一个（x+y）: <strong>x + y &#x3D; n (y + z)</strong></p>
-<p>因为我们要找环形的入口，那么要求的是x，因为x表示 头结点到 环形入口节点的的距离。</p>
-<p>所以我们要求x ，将x单独放在左面：<strong>x &#x3D; n (y + z) - y</strong></p>
-<p>在从n(y+z)中提出一个 （y+z）来，整理公式之后为如下公式：<strong>x &#x3D; (n - 1) (y + z) + z</strong> 注意这里n一定是大于等于1的，因为 fast指针至少要多走一圈才能相遇slow指针</p>
-<p>这个公式说明什么呢，</p>
-<p>先拿n为1的情况来举例，意味着fast指针在环形里转了一圈之后，就遇到了 slow指针了。</p>
-<p>当 n为1的时候，公式就化解为 <strong>x &#x3D; z</strong></p>
-<p>这就意味着，从头结点出发一个指针，从相遇节点 也出发一个指针，这两个指针每次只走一个节点， 那么当这两个指针相遇的时候就是 环形入口的节点</p>
-<p>也就是在相遇节点处，定义一个指针<strong>index1</strong>，在头结点处定一个指针<strong>index2</strong>。</p>
-<p>让index1和index2同时移动，每次移动一个节点， 那么他们相遇的地方就是 环形入口的节点。</p>
-<p>那么 n如果大于1是什么情况呢，就是fast指针在环形转n圈之后才遇到 slow指针。</p>
-<p>其实这种情况和n为1的时候 效果是一样的，一样可以通过这个方法找到 环形的入口节点，只不过，index1 指针在环里 多转了(n-1)圈，然后再遇到index2，相遇点依然是环形的入口节点。</p>
-<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode *<span class="title">detectCycle</span><span class="params">(ListNode *head)</span> </span>&#123;</span><br><span class="line">        ListNode*fast=head;</span><br><span class="line">        ListNode*slow=head;</span><br><span class="line">        <span class="keyword">while</span>(fast!=<span class="literal">NULL</span>&amp;&amp;fast-&gt;next!=<span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            slow=slow-&gt;next;</span><br><span class="line">            fast=fast-&gt;next-&gt;next;</span><br><span class="line">            <span class="keyword">if</span>(slow==fast)</span><br><span class="line">            &#123;</span><br><span class="line">                ListNode*index1=fast;</span><br><span class="line">                ListNode*index2=head;</span><br><span class="line">                <span class="keyword">while</span>(index1!=index2)</span><br><span class="line">                &#123;</span><br><span class="line">                    index1=index1-&gt;next;</span><br><span class="line">                    index2=index2-&gt;next;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> index2;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+  <p><strong>一、 之</strong></p>
+<p>01、作助词用。主要用法有三种类型：</p>
+<p>(1)相当于“的”，是定语的标志。</p>
+<p>例如：①菊之爱，陱后鲜有闻。③水陆草木之花。</p>
+<p>(2)用在主谓之间，取消句子独立性，起舒缓语气作用，无实义。</p>
+<p>例如：①予独爱莲之出淤泥而不染。②无丝竹之乱耳，无案牍之劳形。</p>
+<p>(3)起补足调音节和舒缓语气作用，无实义。</p>
+<p>例如：①公将鼓之。②久之。③怅恨久之。</p>
+<p>02、作代词用。（可以代人，代事，代物）</p>
+<p>(1)人称代词，相当于现代汉语“我”、“他们”、“她们”、“它”、“它们”。</p>
+<p>例如：①具答之。②亲戚畔之。③彼竭我盈，故克之。</p>
+<p>(2)指示代词，相当于现代汉语“这”、“这样”“这件事”、“那”、“那样”等。</p>
+<p>例如：①渔为甚异之。</p>
+<p>(3)作动词用。相当于“到”、“往”、“去”。</p>
+<p>例如：①辍耕之垄上。②送杜少府之任蜀州。</p>
+<p>03、语法作用。</p>
+<p>（1）宾语前置的标志，无实义。例如：①何陋之有？②宋何罪之有？</p>
+<p>（2）定语后置标志，无实义。如：①马之千里者。②居庙堂之高则忧其民。</p>
+<p><strong>二、 乎</strong></p>
+<p>(1)语气词（一般用在句未）</p>
+<p>表提问或反问，也可表猜测、感叹。如：</p>
+<p>①死国可乎？②王侯将相宁有种乎？③是亦不可以已乎！</p>
+<p>(2)介词（一般用在句中）</p>
+<p>类似于“于”的用法。如：</p>
+<p>①在乎山水之间也②颓然乎其间者</p>
+<p><strong>三、 者</strong></p>
+<p>1、结构助词</p>
+<p>译“……的人”“……的事物”“……的情况”等，相当于名词性短语。如：</p>
+<p>①若有作奸犯科及为忠善者，宜付有司论其刑赏。</p>
+<p>2、语气助词，</p>
+<p>用在作主语的名词或名词性短语之后表示停顿，谓语部分一般用“也”字结尾，起判断作用。如：</p>
+<p>①陈胜者，阳城人也，字涉。②北山愚公者，年且九十。</p>
+<p><strong>四、以</strong></p>
+<p><strong>1、用作介词</strong></p>
+<p>表示动作行为所涉及的的工具、物件、时间等可以译为“把”、“用”、“拿”、“在”、“从”等，或表示动作、行为所凭借的条件，译为“靠”、“凭借”、“根据”等。如：</p>
+<p>（1）何以战？&#x2F;&#x2F;域民不以封疆之界。——凭借</p>
+<p>（2）虽不能察，必以情。&#x2F;&#x2F;策之不以其道。——根据</p>
+<p><strong>2、作连词</strong></p>
+<p>表目的时，可译作“（用）来”,“以便”； 表顺接时，相当于“而”；表结果时，可译作“以致”；</p>
+<p>表原因时，可译作“由于”、“因为”。如：</p>
+<p>（1）属予作文以记之——（用）来</p>
+<p>（2）以伤先帝之明——以致</p>
+<p>（3）不以物喜，不以己悲。——因为</p>
+<p>（4）卷石底以出。——相当于“而”</p>
+<p><strong>3、用作动词</strong></p>
+<p>可译作“认为”。如：</p>
+<p>（1）皆以美于徐公。</p>
+<p><strong>4、特殊用法：</strong></p>
+<p>通假字，通“已”,已经。如：固以怪之矣。</p>
+<p><strong>五、而</strong></p>
+<p>1表顺接关系的连词</p>
+<p>1、并列关系，一般不译，有时可译为“又”。</p>
+<p>如：温故而知新，可以为师矣 《（论语）十则》）</p>
+<p>2、承接关系</p>
+<p>可译作“就”“接着”，或不译。</p>
+<p>如：环而攻之而不胜。前一个“而”就表示承接关系。</p>
+<p>3、递进关系</p>
+<p>译作“而且”“并且”或不译。</p>
+<p>如： ①饮少辄醉，而年又最高，故自号曰醉翁也（《醉翁亭记》）</p>
+<p>②学而时习之，不亦说乎？</p>
+<p>4、修饰关系</p>
+<p>可译为“地”“着”，或不译。</p>
+<p>如：①河曲智叟笑而止之曰②面山而居。</p>
+<p>表转接关系的连词，译作“但是”“可是”“却”。</p>
+<p>如：(1)可远观而不可亵玩焉。</p>
+<p>(2)人不知而不愠，不亦君子乎？</p>
+<p>(3)学而不思则罔</p>
+<p><strong>六、其</strong></p>
+<p><strong>1、代词</strong></p>
+<p>(1)表示第三人称，译作“他”“他的”“他们”“他们的”“它”“它们”“它们的”。</p>
+<p>①择其善者而从之，其不善者而改之。</p>
+<p>(2)指示代词，可译为“那”“那个”“那些”“那里”；也可表示“其中的”，后面多为数词。</p>
+<p>①其人视端容寂，若听茶声然。</p>
+<p>②复前行，欲穷其林。</p>
+<p>③其一犬坐于前。</p>
+<p><strong>2、副词</strong></p>
+<p>放在句首或句中，表示测度、反诘、婉商、期望等语气，常和放在句末的语气词配合，视情况可译为“大概”“或许”“恐怕”“一定”“怎么”“难道”等，或省去。</p>
+<p>①其真无马耶？可译作：“难道”</p>
+<p>②其真不知马也。可译为：大概</p>
+<p>③其必曰：“先天下之忧而忧，后天下之乐而乐”乎。其：可译为“恐怕”。</p>
+<p>④安陵君其许寡人！其：可译为“一定”。</p>
+<p><strong>七、为</strong></p>
+<p><strong>1、作介词时</strong></p>
+<p>除表被动外都读作wèi，可译作“被”、“对”、“给”、“替”、“当”，“为了”、“因为”等。</p>
+<p>如：①舌一吐而二虫尽为所吞&#x2F;&#x2F;山峦为晴雪所洗（wéi，被。）</p>
+<p>②不足为外人道也。（wèi“向”“对”）</p>
+<p>③为楚造云梯之械。（wèi，“给”）</p>
+<p>④为其来也，臣请缚一人过王而行。(wèi，“当”)</p>
+<p>⑤问渠哪得清如许，为有源头活水来（《观书有感》wèi，因为，由于）</p>
+<p><strong>2、当“为”作动词时</strong></p>
+<p>读wéi，可依据语境的不同，译成各种相应的动词，如：“做”，“当作”、“成为”，“雕刻”，“是”等。如：</p>
+<p>①中峨冠而多髯者，为东坡。（是）</p>
+<p>②温故而知新，可以为师矣。（当，成为）</p>
+<p>③为宫室、器皿。（雕刻）</p>
+<p>④通计一舟，为人五，为窗八。（有）</p>
+<p>⑤橘生淮南则为橘，生淮北则为枳（称为，叫做）</p>
+<p>⑥为小门于大门之侧而延晏子（造）</p>
+<p><strong>3、特殊用法：</strong></p>
+<p>或异二者之为，何哉？（名词，心理活动）</p>
+<p><strong>八、于</strong></p>
+<p><strong>1、引进动作</strong></p>
+<p>时间、处所、范围、对象、方面、原因等，可灵活地译为“在”、“向”、“到”、“从”、“跟”、“对”、“给”等。例如：</p>
+<p>①苟全性命于乱世，不求闻达于诸侯。（在）</p>
+<p>②未尝不叹息痛恨于桓灵也（对）</p>
+<p>③舜发于畎亩之中（从）</p>
+<p>④欲报之于陛下也（向）</p>
+<p><strong>2、放在形容词之后</strong></p>
+<p>表示比较，一般可译为“比”，有时可译为“胜过”。</p>
+<p>例如：①人固有一死，或重于太山，或轻于鸿毛</p>
+<p>②皆以美于徐公。</p>
+<p><strong>九、焉</strong></p>
+<p><strong>1、疑问代词</strong></p>
+<p>相当于“怎么”“哪里”。如：不入虎穴，焉得虎子（熟语）</p>
+<p><strong>2、语气助词</strong></p>
+<p>如：寒暑易节，始一反焉（《愚公移山》</p>
+<p><strong>3、代词</strong></p>
+<p>相当于“之”。如：忽啼求之，父异焉（《伤仲永》）</p>
+<p><strong>4、兼词</strong></p>
+<p>相当于“于何”“在哪里”。如：且焉置土石（《愚公移山》）</p>
+<p><strong>5、兼词</strong></p>
+<p>相当于“于此”“在这里”“在那里”。如：夫大国，难测也，惧有伏焉（《曹刿论战》）</p>
+<p><strong>十、虽</strong></p>
+<p>连词“虽”在文言文中主要有两种用法。</p>
+<p><strong>1、表示假设，可译为“即使”。</strong></p>
+<p>如：①虽千里弗敢易也，岂止五百里哉（《唐雎不辱使命》）</p>
+<p>②虽乘奔御风，不以疾也（《三峡》）</p>
+<p><strong>2、表示转折，可译为“虽然”</strong></p>
+<p>如：故余虽愚，卒获有所闻（《送东阳马生序》）</p>
+<p><strong>十一、然</strong></p>
+<p><strong>1、代词，起指示作用，译作“这样”“如此”。</strong></p>
+<p>如：父利其然也（《伤仲永》）</p>
+<p><strong>2、连词，表转折关系，译作“然而”“但是”等。</strong></p>
+<p>如：①然足下卜之鬼乎（《陈涉世家》）</p>
+<p>②然侍卫之臣不懈于内《出师表》</p>
+<p><strong>3、助词</strong></p>
+<p>（1）用在形容词之后，作为词尾，译作“……的样子”。如：</p>
+<p>翼然临于泉上、颓然乎其间者&#x2F;&#x2F;　望之蔚然而深秀者</p>
+<p>（2）用于句尾，常与“如”“若”连用，构成“如……然”“若……然”格式，相当于“……的样子”“好像……似的”。如：</p>
+<p>其人视端容寂，若听茶声然（《核舟记》）</p>
+<p><strong>十二、以</strong></p>
+<p><strong>1. 用作介词</strong></p>
+<p>表示凭借，译为“凭、靠”。例：乃入见。问：“何以战？”（《曹刿论战》）</p>
+<p>表示工具、方式、方法，译为“用、拿、把、按照”。策之不以其道。（《马说》）</p>
+<p><strong>2. 用作连词</strong></p>
+<p>表示并列、承接、修饰，“以”相当于“而”。</p>
+<p>例：俯身倾耳以请</p>
+<p>表示目的，译为“来、用来”。例：属予作文以记之 （《岳阳楼记》）</p>
+<p>表示动作、行为产生的原因，可译为“因”，“因为”，“由于”。</p>
+<p>例：不以物喜，不以己悲。（《岳阳楼记》）</p>
+<p><strong>3. 用作副词</strong></p>
+<p>译为“已”，“已经”。例：固以怪之矣。（《陈涉世家》）</p>
+<p><strong>十三：则</strong></p>
+<p><strong>1．连词</strong></p>
+<p>（1）表示承接关系，可译为“就”。</p>
+<p>例：居庙堂之高则忧其民。（《岳阳楼记》）</p>
+<p>（2）表示假设关系，可译为“如果”，“那么”。</p>
+<p>例：万众则不辩礼义而受之。（《鱼我所欲也》）&#x2F;</p>
+<p>诚如是，则霸业可成。（《出师表》）</p>
+<p>（3）表示转折关系，可译为“却”。</p>
+<p>例：余则蕴袍敝衣处其间。（《送东阳马生序》）</p>
+<p><strong>2．表示判断，可译为“就是”。</strong></p>
+<p>例：此则岳阳楼之大观也。（《岳阳楼记》）</p>
+<p><strong>十四、因</strong></p>
+<p><strong>1. 连词，表示顺接上文，可译为“于是”、“就”。</strong></p>
+<p>例：安陵君因使唐雎使于秦。（《唐雎不辱使命》）</p>
+<p><strong>2. 介词，表示动作、行为发生的原因</strong></p>
+<p>依据、方式，可分别译为“由于”、“凭借”、“依靠”。例：高祖因之以成帝业。（《隆中对》）</p>
+<p><strong>3. 介词，可译为“根据”、“依照”。</strong></p>
+<p>例：罔不因势象形。（《核舟记》）</p>
+<p><strong>4. 副词，可译为“因此”。</strong></p>
+<p>例：因以为号焉。（《五柳先生传》）</p>
+<p><strong>十五、且</strong></p>
+<p><strong>1. 副词</strong></p>
+<p>（1）用在动词或数词前，表示动作行为将要发生，可译为“将”，“将要”、“将近”。</p>
+<p>例：北山愚公者，年且九十。（《愚公移山》）</p>
+<p>（2）表示行为的状态，可译为“姑且”、“暂且”。</p>
+<p>例：存着且偷生，死者长已矣。（《石壕吏》）</p>
+<p><strong>2．连词</strong></p>
+<p>（1）表示递进，可译为“况且”。例：且焉置土石？（《愚公移山》）</p>
+<p>（2）表示让步，可译为“尚且”、“还”。例：且欲与常马等不可得。（《马说》）</p>
+<p>（3）表示并列或递进，可译为“和”、“而且”、“并且”。例：盖余之勤且艰若此。</p>
+<p><strong>十六、乃</strong></p>
+<p><strong>1．副词</strong></p>
+<p>（1）可译为“竟然”。例：乃不知有汉，无论魏晋。（《桃花源记》）</p>
+<p>（2）可译为“于是”、“才”、“就”。</p>
+<p>例：乃重修岳阳楼。（于是，就）（《岳阳楼记》）</p>
+<p><strong>2．判断词，可译为“是”、“就是”。</strong></p>
+<p>当立者乃公子扶苏。（《陈涉世家》）</p>
+<p><strong>3．第二人称代词，可译为“你”、“你的”。</strong></p>
+<p>例：家祭无忘告乃翁。（《示儿》）</p>
+<p><strong>十七、矣</strong></p>
+<p><strong>1．句末语气词，表示肯定或判断推测语气，</strong>相当于“了”、“啊”。</p>
+<p>例： 温故而知新，可以为师矣。（了）（《论语》十则）</p>
+<p><strong>2．句末语气词，表示感叹语气，相当于“了”。</strong></p>
+<p>例：甚矣，汝之不惠！（了）</p>
+<p><strong>3．语气词，表命令或请求，相当于“了”、“啦”</strong></p>
+<p>例：登轼而望之，曰：“可矣。”</p>
  
       <!-- reward -->
       
@@ -229,12 +372,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/08/05/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%E2%85%A1/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/08/06/%E6%B1%89%E5%8C%96%EF%BC%9A%E6%96%87%E8%A8%80%E8%99%9A%E8%AF%8D/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B1%89%E5%8C%96/" rel="tag">汉化</a></li></ul>
 
     </footer>
   </div>
@@ -242,19 +385,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2024/08/06/%E7%AE%97%E6%B3%95%EF%BC%9A%E5%93%88%E5%B8%8C%E8%A1%A8/" class="article-nav-link">
+      <a href="/2024/08/07/%E6%80%9D%E8%80%83%E6%96%B9%E5%BC%8F/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            算法：哈希表
+            思考方式
           
         </div>
       </a>
     
     
-      <a href="/2024/08/05/%E7%AE%97%E6%B3%95%EF%BC%9A%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8/" class="article-nav-link">
+      <a href="/2024/08/06/%E6%B1%89%E5%8C%96%EF%BC%9A%E6%96%87%E8%A8%80%E5%AE%9E%E8%AF%8D/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">算法：环形链表</div>
+        <div class="article-nav-title">汉化：文言实词</div>
       </a>
     
   </nav>
