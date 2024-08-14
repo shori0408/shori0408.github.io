@@ -83,7 +83,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.2k</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -92,7 +92,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">5 min</span>
+            <span class="post-count">6 min</span>
         </span>
     </span>
 </div>
@@ -168,6 +168,17 @@
 </ul>
 <p><strong>进阶：</strong>如果字符串在你使用的编程语言中是一种可变数据类型，请尝试使用 <code>O(1)</code> 额外空间复杂度的 <strong>原地</strong> 解法。</p>
 <h4 id="自己的思路"><a href="#自己的思路" class="headerlink" title="自己的思路"></a>自己的思路</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">reverseWords</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; s1;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; a;</span><br><span class="line">        a.<span class="built_in">push_back</span>(<span class="number">-1</span>);</span><br><span class="line">        <span class="comment">//左边隔板的位置</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;s.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==<span class="string">&#x27; &#x27;</span>)&#123;a.<span class="built_in">push_back</span>(i);&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//记录中间隔板的位置</span></span><br><span class="line">        a.<span class="built_in">push_back</span>(s.<span class="built_in">size</span>());</span><br><span class="line">        <span class="comment">//右边界隔板的位置</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;a.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!a.<span class="built_in">size</span>()) <span class="keyword">return</span> s;</span><br><span class="line">            <span class="comment">//单个单词直接返回</span></span><br><span class="line">            s1.<span class="built_in">push_back</span>(s.<span class="built_in">begin</span>()+a[i]+<span class="number">1</span>,s.<span class="built_in">begin</span>()+a[i+<span class="number">1</span>]<span class="number">-1</span>);</span><br><span class="line">            <span class="comment">//左隔板前移动一位，右隔板后移一位，切出一个单词</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> l=<span class="number">0</span>,r=s1.<span class="built_in">size</span>()<span class="number">-1</span>;l&lt;r;l++,r--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">swap</span>(s1[l],s1[r]);</span><br><span class="line">        &#125;</span><br><span class="line">        string s2=s1[<span class="number">0</span>];</span><br><span class="line">        <span class="comment">//左右指针将单词反转</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;s1.<span class="built_in">size</span>();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            s2+=<span class="string">&#x27; &#x27;</span>+s1[i];</span><br><span class="line">        &#125;<span class="comment">//利用占头部的方式消除前置零</span></span><br><span class="line">        <span class="keyword">return</span> s2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><p>文本串 （m）<br>$$<br>aabaabaaf<br>$$<br>模式串（n）<br>$$<br>aabaaf<br>$$<br>暴力算法的时间复杂度O（m*n）</p>
+<h4 id="前缀表"><a href="#前缀表" class="headerlink" title="前缀表"></a>前缀表</h4><p>前缀：</p>
+<p>必须包含第一个字母但不包含最后一个字母的连续子串</p>
+<p>后缀：</p>
+<p>必须包含最后一个字母但不包含第一个字母的连续子串</p>
+<p>前缀表：</p>
+<p>最长相等前后缀（即这个字符串的前缀和后缀相等，还是最长的那个）</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/cebda048620efc235b1cdd19de36b6fa.png" alt="前缀表"></p>
+<p>设置一个next数组，来记录前缀表的值。</p>
+<h4 id="前缀函数的实现"><a href="#前缀函数的实现" class="headerlink" title="前缀函数的实现"></a>前缀函数的实现</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">prefix_function</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> n = (<span class="type">int</span>)s.<span class="built_in">length</span>();</span><br><span class="line">  <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">pi</span><span class="params">(n)</span></span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">      <span class="keyword">if</span> (s.<span class="built_in">substr</span>(<span class="number">0</span>, j) == s.<span class="built_in">substr</span>(i - j + <span class="number">1</span>, j)) &#123;</span><br><span class="line">        pi[i] = j;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">  <span class="keyword">return</span> pi;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
  
       <!-- reward -->
@@ -251,6 +262,15 @@
 
    
   <nav class="article-nav">
+    
+      <a href="/2024/08/11/%E7%94%B5%E5%BD%B1%E6%89%B9%E8%AF%84%EF%BC%9A%E9%98%BF%E5%87%A1%E8%BE%BE/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            电影批评：阿凡达
+          
+        </div>
+      </a>
     
     
       <a href="/2024/08/10/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%A8%A1%E6%9D%BF/" class="article-nav-link">
