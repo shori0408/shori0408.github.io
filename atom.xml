@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-08-18T01:08:14.659Z</updated>
+  <updated>2024-08-18T09:52:20.174Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>代码管理：SSH+Git+Gitee+Vscode</title>
-    <link href="http://example.com/2024/08/18/%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%EF%BC%9ASSH-Git-Gitee-Vscode/"/>
-    <id>http://example.com/2024/08/18/%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%EF%BC%9ASSH-Git-Gitee-Vscode/</id>
-    <published>2024-08-18T00:40:45.000Z</published>
-    <updated>2024-08-18T01:08:14.659Z</updated>
-    
-    <content type="html"><![CDATA[<p>网站地址</p><h3 id="知识补充Git"><a href="#知识补充Git" class="headerlink" title="知识补充Git"></a>知识补充Git</h3><h4 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;happy-yan&quot;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;网站地址&lt;/p&gt;
-&lt;h3 id=&quot;知识补充Git&quot;&gt;&lt;a href=&quot;#知识补充Git&quot; class=&quot;headerlink&quot; title=&quot;知识补充Git&quot;&gt;&lt;/a&gt;知识补充Git&lt;/h3&gt;&lt;h4 id=&quot;SSH&quot;&gt;&lt;a href=&quot;#SSH&quot; class=&quot;header</summary>
-      
-    
-    
-    
-    
-    <category term="代码管理" scheme="http://example.com/tags/%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
   
   <entry>
     <title>神樹の館竜胆線</title>
@@ -470,6 +447,28 @@
     
     
     <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>预处理器：/Zc:preprocessor</title>
+    <link href="http://example.com/2024/08/02/%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%EF%BC%9A-Zc-preprocessor/"/>
+    <id>http://example.com/2024/08/02/%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%EF%BC%9A-Zc-preprocessor/</id>
+    <published>2024-08-02T12:35:35.000Z</published>
+    <updated>2024-08-02T12:36:22.186Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Zc-preprocessor（启用预处理器一致性模式）"><a href="#Zc-preprocessor（启用预处理器一致性模式）" class="headerlink" title="/Zc:preprocessor（启用预处理器一致性模式）"></a><code>/Zc:preprocessor</code>（启用预处理器一致性模式）</h1><p>本文内容<a href="https://learn.microsoft.com/zh-cn/cpp/build/reference/zc-preprocessor?view=msvc-170#syntax">语法</a><a href="https://learn.microsoft.com/zh-cn/cpp/build/reference/zc-preprocessor?view=msvc-170#remarks">备注</a><a href="https://learn.microsoft.com/zh-cn/cpp/build/reference/zc-preprocessor?view=msvc-170#see-also">另请参阅</a></p><p>此选项将启用一个符合 C99 和 C++11 及更高标准的基于标记的预处理器。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/cpp/preprocessor/preprocessor-experimental-overview?view=msvc-170">MSVC 新预处理器概述</a>。</p><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote><p><strong><code>/Zc:preprocessor</code></strong>[<strong><code>-</code></strong>]</p></blockquote><h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>使用 <strong><code>/Zc:preprocessor</code></strong> 编译器选项可启用符合标准的预处理器。 可以使用 <strong><code>/Zc:preprocessor-</code></strong> 选项显式指定传统（不符合标准）的预处理器。</p><p>从 Visual Studio 2019 版本 16.5 开始，**<code>/Zc:preprocessor</code>** 选项可用。 从 Visual Studio 2017 版本 15.8 开始，Visual Studio 版本中提供了早期、不完整版本的新预处理器选项。 有关详细信息，请参阅 <a href="https://learn.microsoft.com/zh-cn/cpp/build/reference/experimental-preprocessor?view=msvc-170"><code>/experimental:preprocessor</code></a>。</p><h3 id="在-Visual-Studio-开发环境中设置此编译器选项"><a href="#在-Visual-Studio-开发环境中设置此编译器选项" class="headerlink" title="在 Visual Studio 开发环境中设置此编译器选项"></a>在 Visual Studio 开发环境中设置此编译器选项</h3><ol><li>打开项目的“属性页” 对话框。 有关详细信息，请参阅<a href="https://learn.microsoft.com/zh-cn/cpp/build/working-with-project-properties?view=msvc-170">在 Visual Studio 中设置 C++ 编译器和生成属性</a>。</li><li>选择“配置属性”&gt;“C&#x2F;C++”&gt;“预处理器”属性页。</li><li>修改“使用符合标准的预处理器”属性，然后选择“确定”。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Zc-preprocessor（启用预处理器一致性模式）&quot;&gt;&lt;a href=&quot;#Zc-preprocessor（启用预处理器一致性模式）&quot; class=&quot;headerlink&quot; title=&quot;/Zc:preprocessor（启用预处理器一致性模式）&quot;&gt;&lt;/a&gt;&lt;</summary>
+      
+    
+    
+    
+    
+    <category term="/Zc:preprocessor" scheme="http://example.com/tags/Zc-preprocessor/"/>
     
   </entry>
   
