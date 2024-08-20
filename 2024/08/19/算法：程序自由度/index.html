@@ -83,7 +83,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.1k</span>
+            <span class="post-count">1.9k</span>
         </span>
     </span>
 
@@ -92,7 +92,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">3 min</span>
+            <span class="post-count">6 min</span>
         </span>
     </span>
 </div>
@@ -153,7 +153,25 @@
 <li>去重型</li>
 </ul>
 <p>在三数之和的问题中，用到了while语句进行去重，算是一个条件指令。</p>
-<h4 id="仿射变换实现"><a href="#仿射变换实现" class="headerlink" title="仿射变换实现"></a>仿射变换实现</h4> 
+<h4 id="仿射变换实现"><a href="#仿射变换实现" class="headerlink" title="仿射变换实现"></a>仿射变换实现</h4><h4 id="功能性程序"><a href="#功能性程序" class="headerlink" title="功能性程序"></a>功能性程序</h4><p>例如用双栈实现队列的以下功能</p>
+<ul>
+<li>pop</li>
+<li>peek</li>
+<li>empty</li>
+<li>push</li>
+</ul>
+<p>实现功能的前提是熟知这个功能的具体内容是什么。</p>
+<h5 id="pop函数的功能："><a href="#pop函数的功能：" class="headerlink" title="pop函数的功能："></a>pop函数的功能：</h5><p>将最先进入队列的元素推出队列，并返回它的值。我们将功能依次翻译为代码，最先进入队列的元素：使用双栈，用out栈反向接受in栈的元素（我们只有栈作为工具，栈的特点是后进后出，我们的操作是为了让最先进队列的元素变成最先进栈的元素）、使用一个值记录要推出的元素的值，再对栈使用pop函数，将该元素退出。</p>
+<h5 id="peek函数的功能："><a href="#peek函数的功能：" class="headerlink" title="peek函数的功能："></a>peek函数的功能：</h5><p>要返回最后进入队列的元素，搭载队列的底层数据结构是栈，直接将队列当栈使用，调用栈的top函数。</p>
+<h5 id="empty函数的功能："><a href="#empty函数的功能：" class="headerlink" title="empty函数的功能："></a>empty函数的功能：</h5><p>当in栈和out栈都为空时，队列才为空，我们只需要返回一个判定两者是否同时为空的布尔变量。</p>
+<h5 id="push函数的功能："><a href="#push函数的功能：" class="headerlink" title="push函数的功能："></a>push函数的功能：</h5><p>要返回最后进入队列的元素，搭载队列的底层数据结构是栈，直接将队列当栈使用，调用栈的push函数。</p>
+<blockquote>
+<p>整体的程序设计其实有部分问题，在使用过队列的pop函数过后，in栈的元素全都逆向进入了out栈，此时再用栈的push函数，新元素进入in栈，这个时候问题就出现了，in栈和out栈的元素失去了原先的顺序特征。因此，在pop函数达到目标功能过后，最好把out栈的元素归位。</p>
+<p>注意：上方的注释忽略了一个事实，pop函数在执行的时候是有前提的，out栈为空，这样函数整体的逻辑就像从要从顶部将竹子分为竹节，我们为了便利（等竹子生长），从竹子的根部以上将其砍开，先分解上部的竹节，而下面竹子的生长能够继续，当我们分解完上部的竹节之后，再将下面的竹节砍下，继续分解，这样既不会耽误我们分解竹子，也不会耽误竹子生长。</p>
+</blockquote>
+<p>利用队列实现栈</p>
+<p>这部分的程序设计可以抽象出队列元素的特点，就像用栈实现队列的时候一样，是从顶上开始分解竹子的逻辑。这边将优先级放到了顶部的竹节上，类似地，可以将这个属性进行迁移。就像重要度不同的一系列人请你帮忙，假设队列的逻辑是从最重要的人开始处理，那栈的逻辑就是从最不重要的人开始处理，要用队列的逻辑实现栈的逻辑，就得将最重要的人转变为最不重要的人，这里选择的方式是将重要的人（具有优先处理权）直接转移到另一个队列里，然后将最不重要的人视为最重要的人处理。</p>
+ 
       <!-- reward -->
       
       <div id="reword-out">
