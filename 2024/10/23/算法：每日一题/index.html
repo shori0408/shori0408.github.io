@@ -83,7 +83,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">220</span>
+            <span class="post-count">310</span>
         </span>
     </span>
 
@@ -106,13 +106,17 @@
     <div class="article-entry" itemprop="articleBody">
        
   <p><strong>2024年10月23日</strong></p>
-<p>![img](file:&#x2F;&#x2F;&#x2F;D:\Backup\Documents\Tencent Files\1726935524\nt_qq\nt_data\Pic\2024-10\Ori\d939241e073b3bf46017619e08f5e9a1.png)</p>
+<p><img src="https://i.postimg.cc/DzNRDmP7/d939241e073b3bf46017619e08f5e9a1.png" alt="img"></p>
 <p>今天这个题目就是两数之和的应用，使用的方法是哈希表法。</p>
 <p><strong>语法回顾</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">map.<span class="built_in">count</span>(x);<span class="comment">//获得map中同种元素的个数</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> hour:hours);<span class="comment">//顺序遍历hours中的所有元素，每次遍历都用hour指代对应元素</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">const</span> &amp;pair:map);<span class="comment">//顺序遍历map中的所有元素</span></span><br><span class="line">pair.first;<span class="comment">//key</span></span><br><span class="line">pair.second;<span class="comment">//value</span></span><br></pre></td></tr></table></figure>
 
 <p>逻辑：</p>
 <p>​	取余数的过程相当于剥壳，取完余数之后，某些本来不相关的元素就同质化了。然后hours里面的一批人每个人拥有一把钥匙（可能相同），开完锁之后放一个东西在里面，后面通过特定的方式，给这些人重新分配一把钥匙，统计打开门之后，这些人能回收的物品个数。</p>
+<p>2024年10月24日</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-first-player-to-win-k-games-in-a-row/">3175. 找到连续赢 K 场比赛的第一位玩家</a></p>
+<p><img src="https://i.postimg.cc/Hkdm4JBK/image-20241024133340965.png" alt="image-20241024133340965"></p>
+<p>今天这个题目是双指针问题，遍历加上辅助指针解决问题，问题的简化就是：遍历指针的元素与辅助指针的元素进行大小的比较，需要辅助指针的元素胜利k次，然后就能顺利返回，不然就只能移动辅助指针，重新计数。</p>
  
       <!-- reward -->
       
